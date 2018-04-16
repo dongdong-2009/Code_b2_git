@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{c35a45e1-c627-44db-897c-ccde0814c09d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{834d3494-578e-4a77-a84d-904e6b03a077}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_src\DecisionDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\DecisionStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\DecisionStepEditorParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\DllInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\ExecutableDecisionStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\MftDecisionStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanStepEditDecisionParameterPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TaskDecision.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_src\DecisionDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="common\DecisionResponseParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\DecisionStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\DecisionStepEditorParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="common\DecisionStepParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\ExecutableDecisionStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\MftDecisionStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanStepEditDecisionParameterPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TaskDecision.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor_src\step_plugin.decision_step.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityDecision.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

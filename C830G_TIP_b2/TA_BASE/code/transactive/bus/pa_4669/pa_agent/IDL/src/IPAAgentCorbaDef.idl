@@ -1,0 +1,929 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File$
+// @author:  Sean Liew
+// @version: $Revision$
+//
+// Last modification: $DateTime$
+// Last modified by:  $Author$
+//
+// PA Agent IDL interface.
+//
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "bus/trains/TrainAgentCorba/idl/src/ITrainPaCorba.idl"
+
+
+module TA_Base_Bus
+{
+
+	interface IPAAgentCorbaDef
+	{
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     PA Agent exceptions
+        //
+		///////////////////////////////////////////////////////////////////////
+
+        // InvalidRequest replaced by TA_Base_Core::BadParameterException
+
+        exception BroadcastIdNotFound
+		{
+			string what;
+		};
+
+        exception FepcCommsFailure
+		{
+			string what;
+		};
+
+        // DatabaseCommsFailure replaced by TA_Core::TA_Core::DatabaseErrorException
+
+        exception TisAgentCommsFailure
+		{
+			string what;
+		};
+
+        exception TrainAgentCommsFailure
+		{
+			string what;
+		};
+
+		exception BroadcastLimitReached
+		{
+			string what;
+		};
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     PA Agent Constants
+        //
+		///////////////////////////////////////////////////////////////////////
+
+		enum EBroadcastType
+		{
+            StationMusic,
+            StationLive,
+            StationDva,
+            StationRecording,
+            TrainLive,
+            TrainDva
+		};
+
+		enum EBroadcastState
+		{
+            Creation,
+            Execution,
+            Runtime,
+            Termination,
+            PendingRemoval
+		};
+
+
+        enum EGlobalState
+		{
+            GLOBAL_STATE_NO_FAILURE,
+            GLOBAL_STATE_NO_FREE_ANNOUNCE_ID,
+            GLOBAL_STATE_NO_FREE_MESSAGE_SEQ_ID,
+            GLOBAL_STATE_NO_FREE_DVA_CHANNEL,
+            GLOBAL_STATE_RECORDING_SOURCE_BUSY,
+            GLOBAL_STATE_MESSAGE_BUSY_RECORDING,
+            GLOBAL_STATE_MESSAGE_BUSY_BROADCASTING,
+            GLOBAL_STATE_COMMS_FAILURE_TRAIN_AGENT,
+            GLOBAL_STATE_COMMS_FAILURE_TIS_AGENT,
+            GLOBAL_STATE_COMMS_FAILURE_AUTHENTICATION_AGENT,
+            GLOBAL_STATE_HARDWARE_FAILURE_TRAIN_AGENT,
+            GLOBAL_STATE_HARDWARE_FAILURE_TIS_AGENT,
+            GLOBAL_STATE_HARDWARE_FAILURE_PA_AGENT,
+            GLOBAL_STATE_NO_PERMISSION_FAILURE_TRAIN_AGENT,
+            GLOBAL_STATE_NO_PERMISSION_FAILURE_TIS_AGENT,
+            GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TRAIN_AGENT,
+            GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_TIS_AGENT,
+            GLOBAL_STATE_INVALID_PROTOCOL_FAILURE_PA_AGENT,
+            GLOBAL_STATE_PUBLIC_DVA_SET_VERSION_CONFLICT,
+			GLOBAL_STATE_RADIO_CALL_RESET,			// Applicable to PA Live trainborne, if the call is lost
+            GLOBAL_STATE_STATIC_GROUP_IN_USE
+        };
+
+
+		enum ELocalState
+		{
+            LOCAL_STATE_IN_PROGRESS,
+            LOCAL_STATE_IN_PROGRESS_DWELL_TIME,
+			LOCAL_STATE_CONNECTING,		// train pa live initial state (before train ready for live announcement)0
+            LOCAL_STATE_TRAIN_READY,
+            LOCAL_STATE_CONTINUE_LIVE_ANNOUNCEMENT_REQUIRED,
+            LOCAL_STATE_COMPLETED,
+            LOCAL_STATE_ABORTED,        
+            LOCAL_STATE_FAILED_CYCLE,
+            LOCAL_STATE_FAILED_ZONE,
+            LOCAL_STATE_FAILED_OVERRIDDEN,
+            LOCAL_STATE_FAILED_TRAIN,
+            LOCAL_STATE_FAILED_CONNECTION_RESET,
+            LOCAL_STATE_FAILED_INTERRUPTED,
+            LOCAL_STATE_FAILED_VERSION_CONFLICT,
+            LOCAL_STATE_FAILED_INVALID_REQUEST,
+            LOCAL_STATE_FAILED_BUSY,
+            LOCAL_STATE_FAILED_BUSY_WITH_OVERRIDE_OPTION,
+			LOCAL_STATE_FAILED_CONTINUE_LIVE_ANNOUNCEMENT_TIMEOUT,		// Trainborne Pa Live, an expected reset request was not received
+			LOCAL_STATE_FAILED_NO_PERMISSION,
+			LOCAL_STATE_TRAIN_FIRST_CYCLE_CANCELLED,
+            LOCAL_STATE_FAILED_BAD_COMMAND,
+            LOCAL_STATE_FAILED_DIFFERENT_ORIGIN,
+            LOCAL_STATE_FAILED_DIFFERENT_VERSION,
+            LOCAL_STATE_FAILED_MPU_CHANGEOVER
+		};
+
+
+   		enum EDvaSet
+		{
+            SetUnknown,
+            SetA,
+            SetB,
+            SetD
+		};
+
+   		enum EMusicType
+		{
+			// liuyu++ TD8857
+			NoOccMusic,
+			NoLocalMusic,
+			// liuyu++ TD8857
+            LocalMusic,
+            OccMusic
+		};
+
+		// ++ Bug456
+		  enum EExecutePhase
+		  {
+			  EXECUTE_PHASE_1,
+			  EXECUTE_PHASE_2
+		  };
+		// ++ Bug456
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //    PAS FEPC constants detailed in PAS SICD
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        // Enums should be used but we cannot explicitly define the constant values
+
+        const octet PA_SRC_PAGING_CONSOLE_MFT_STATION_SO   = 1;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_DEPOT_DCO    = 2;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_DEPOT_DPSCO  = 3;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_CS       = 4;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_TCO_1    = 5;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_TCO_2    = 6;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_TCO_3    = 7;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_SCO_1    = 8;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_SCO_2    = 9;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_MCO_1    = 10;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_MCO_2    = 11;
+        const octet PA_SRC_PAGING_CONSOLE_MFT_OCR_PSCO     = 12;
+        const octet PA_SRC_SPARE_1                         = 13;
+        const octet PA_SRC_SPARE_2                         = 14;
+        const octet PA_SRC_PAGING_CONSOLE_PCP_STATION_1    = 15;
+        const octet PA_SRC_PAGING_CONSOLE_PCP_STATION_2    = 16;
+        const octet PA_SRC_RADIO_EPAX                      = 17;
+        const octet PA_SRC_OCR_MUSIC                       = 18;
+        const octet PA_SRC_STATION_MUSIC                   = 19;
+        const octet PA_SRC_DEPOT_MUSIC                     = 20;
+        
+		// jeffrey++ Bug457
+		const octet PA_SRC_DVA1_SET_A                      = 21;
+        const octet PA_SRC_DVA1_SET_B_D                    = 22;
+        const octet PA_SRC_DVA2_SET_A                      = 23;
+        const octet PA_SRC_DVA2_SET_B_D                    = 24;
+        const octet PA_SRC_CIVIL_DEFENCE                   = 25;
+        const octet PA_SRC_NEL                             = 26;
+        const octet PA_SRC_PAGING_CONSOLE_FCC              = 27;
+		//const octet PA_SRC_DVA_SET_A                       = 21;
+        //const octet PA_SRC_DVA_SET_B                       = 22;
+        //const octet PA_SRC_DVA_SET_D                       = 23;
+        //const octet PA_SRC_CIVIL_DEFENCE                   = 24;
+        //const octet PA_SRC_NEL                             = 25;
+        //const octet PA_SRC_PAGING_CONSOLE_FCC              = 26;
+        //const octet PA_SRC_SPARE_3                         = 27;
+		// ++jeffrey Bug457
+        const octet PA_SRC_SPARE_4                         = 28;
+        const octet PA_SRC_SPARE_5                         = 29;
+        const octet PA_SRC_SPARE_6                         = 30;
+        const octet PA_SRC_SPARE_7                         = 31;
+        const octet PA_SRC_SPARE_8                         = 32;
+
+        const octet PA_MODE_CD_FCC_NEL                     = 1;
+        const octet PA_MODE_PCP_1                          = 2;
+		const octet PA_MODE_PCP_2                          = 3;
+        const octet PA_MODE_PSC_LIVE_ANNOUNCEMENT          = 4;
+        const octet PA_MODE_DCO_LIVE_ANNOUNCEMENT          = 5;
+        const octet PA_MODE_PSCO_LIVE_ANNOUNCEMENT         = 6;
+        const octet PA_MODE_FIRE_ALARM_SYSTEM              = 7;
+        const octet PA_MODE_PSC_EMERGENCY_PRERECORDED      = 8;
+        const octet PA_MODE_PSC_EMERGENCY_ADHOC            = 9;
+        const octet PA_MODE_DCO_EMERGENCY_PRERECORDED      = 10;
+        const octet PA_MODE_PSCO_EMERGENCY_PRERECORDED     = 11;
+        const octet PA_MODE_DCO_EMERGENCY_ADHOC            = 12;
+        const octet PA_MODE_PSCO_EMERGENCY_ADHOC           = 13;
+        const octet PA_MODE_OCC_LIVE_ANNOUNCEMENT          = 14;
+        const octet PA_MODE_OCC_EMERGENCY_PRERECORDED      = 15;
+        const octet PA_MODE_OCC_EMERGENCY_ADHOC            = 16;
+        const octet PA_MODE_RADIO_EPAX_LIVE                = 17;
+        const octet PA_MODE_PSC_NORMAL_PRERECORDED         = 18;
+        const octet PA_MODE_PSC_NORMAL_ADHOC               = 19;
+        const octet PA_MODE_DCO_NORMAL_PRERECORDED         = 20;
+        const octet PA_MODE_PSCO_NORMAL_PRERECORDED        = 21;
+        const octet PA_MODE_DCO_NORMAL_ADHOC               = 22;
+        const octet PA_MODE_PSCO_NORMAL_ADHOC              = 23;
+        const octet PA_MODE_OCC_NORMAL_PRERECORDED         = 24;
+        const octet PA_MODE_OCC_NORMAL_ADHOC               = 25;
+        const octet PA_MODE_TRAFFIC_EVENT_TRIGGER          = 26;
+        const octet PA_MODE_OCC_PSC_BACKGROUND_MUSIC       = 27;
+        const octet PA_MODE_DCO_BACKGROUND_MUSIC           = 28;
+        const octet PA_MODE_UNKNOWN_29                     = 29;
+        const octet PA_MODE_UNKNOWN_30                     = 30;
+        const octet PA_MODE_UNKNOWN_31                     = 31;
+        const octet PA_MODE_UNKNOWN_32                     = 32;
+
+        const short PA_NBADHOC                             = 6;
+        const short PA_NBPREREC                            = 494;
+        const short PA_MAXSRCID                            = 32;
+        const short PA_MAXZONEID                           = 32;
+        const short PA_MAXMODEID                           = 32;
+        const short PA_MAXSTNID                            = 50;
+        const short PA_MAXMSGSEQ                           = 4;
+
+        const unsigned short PA_MAX_DWELL_IN_SECS          = 10;
+        const unsigned short PA_MAX_PERIOD_IN_SECS         = 3599;
+        const short PA_MAX_MFT_PAGING_CONSOLE              = 16;
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //    PAS ISCS constants between PA Manager and PA Agents
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        const string BROADCAST_ID_FILTER_STRING            = "BroadcastId";
+        const short  MAX_ADHOC_LABEL_LENGTH                = 120;
+
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     Broadcast Configuration Structures
+        //
+		///////////////////////////////////////////////////////////////////////
+		
+        typedef sequence<unsigned long>     CoverageIndices;
+        typedef sequence<unsigned long>     TrainCoverage;
+        typedef sequence<unsigned long>     ZoneCoverage;
+        typedef sequence<unsigned long>     MessageKeySeq;
+
+        struct BroadcastIdType
+        {
+            string                          broadcastId;
+            EBroadcastType                  broadcastType;  // Used for filtering 
+            string                          sessionId;
+        };
+
+        typedef sequence<BroadcastIdType>   BroadcastIdTypeSeq;
+
+        // BroadcastLibraryUpdate Comms message data 		
+        struct CurrentBroadcastsUpdateData
+        {
+            string                          fromBroadcastId;
+            string                          toBroadcastId;
+            EBroadcastType                  broadcastType;  // Used for filtering 
+            string                          sessionId;
+        };
+
+    
+        struct StationMusicConfig
+		{
+		    //octet                           announceId;
+		    // jeffrey++ TES712
+			//octet                           priority;
+			// ++jeffrey TES712
+            octet                           sourceId;
+
+		    EMusicType                      musicType;
+		};
+
+        struct StationLiveConfig
+		{
+		    //octet                           announceId;
+		    // jeffrey++ TES712
+			//octet                           priority;
+			// ++jeffrey TES712
+            octet                           sourceId;
+		    
+            ZoneCoverage                    zones;
+		};
+
+        struct StationDvaConfig
+		{
+		    //octet                           announceId;
+		    // jeffrey++ TES712
+			//octet                           priority;
+			// ++jeffrey TES712
+            octet                           sourceId;
+
+		    ZoneCoverage                    zones;
+            MessageKeySeq                   messages;
+		    //octet                           messageSeqId;
+            unsigned short                  dwellInSecs;
+		    TA_Base_Core::DateTime          startTime;
+		    TA_Base_Core::DateTime          stopTime;
+		    unsigned short                  periodInSecs;
+		    boolean                         isSynchronisedWithTis;
+            boolean                         hasChime;
+			boolean                         isLocalPlayback; // playback to local paging console
+		};
+
+        struct StationRecordingConfig
+		{
+		    octet                           sourceId;
+            unsigned long                   messageKey;
+		};
+
+        struct TrainLiveConfig
+		{
+		    TrainCoverage                   trains;
+            octet							trainAnnouncementId;
+            boolean                         hasOverrideOption;
+            string                          staticGroupName;
+		};
+
+        struct TrainDvaConfig
+		{
+		    TrainCoverage                   trains;
+            boolean                         hasOverrideOption;
+		    unsigned long                   messageKey;
+            short                           libraryVersion;
+		    TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod;
+            unsigned short                  periodInSecs;
+		};
+
+        union BroadcastConfigSpecifics switch( EBroadcastType )
+        {
+            case StationMusic:
+                StationMusicConfig          theStationMusicConfig;
+
+            case StationLive:
+                StationLiveConfig           theStationLiveConfig;
+
+            case StationDva:
+                StationDvaConfig            theStationDvaConfig;
+
+            case StationRecording:
+                StationRecordingConfig      theStationRecordingConfig;
+
+            case TrainLive:
+                TrainLiveConfig             theTrainLiveConfig;
+
+            case TrainDva:
+                TrainDvaConfig              theTrainDvaConfig;
+        };
+
+        struct BroadcastConfig
+		{
+           string                           sessionId;
+		   string                           broadcastId;
+		   TA_Base_Core::DateTime                submitTime;
+		   EBroadcastType                   broadcastType;
+           BroadcastConfigSpecifics         theBroadcastConfigSpecifics;
+           boolean                          isEventTriggered;
+		};
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     Progress Report Structures
+        //
+		///////////////////////////////////////////////////////////////////////
+     
+
+        struct LocalProgress
+        { 
+           unsigned long                    zoneKeyOrTrainId;
+           ELocalState                      localState;
+           octet                            overridingSourcePriorityForZonesOnly;
+           boolean                          errorOccurred;
+        };
+        typedef sequence<LocalProgress>     LocalProgressSeq;
+
+        
+        struct ProgressReport
+        { 
+           string                           broadcastId;   // May be redundant
+           EBroadcastState                  broadcastState;
+           EGlobalState                     globalState;
+           LocalProgressSeq                 localProgresses;
+		   // ++ Bug456
+		   EExecutePhase					m_executionPhase;
+		   // ++ Bug456
+        };
+
+        // BroadcastProgressUpdate Comms message data 		
+        typedef ProgressReport              BroadcastProgressUpdateData;
+        
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     Priority Scheme Structures
+        //
+		///////////////////////////////////////////////////////////////////////
+
+
+        typedef sequence<octet>             ModePriorities;
+        typedef sequence<ModePriorities>    ZonePriorities;
+        typedef sequence<ZonePriorities>    StationPriorities;
+        typedef StationPriorities           PriorityScheme;
+
+		// PrioritySchemeUpdate Comms message data 		
+        typedef PriorityScheme              PrioritySchemeUpdateData;
+
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     CORBA structures to mimic those defined in 
+        //     app/pa/PAAgent/src/CachedMapDefinitions.h
+        //
+		///////////////////////////////////////////////////////////////////////
+        struct StationDvaMessageRecord
+        {
+            unsigned long                   m_pKey;
+            unsigned long                   m_locationKey;
+            unsigned long                   m_id;
+            string                          m_label;
+            char                            m_type;
+            
+			unsigned long                   m_tisMessageTag;
+			short							m_tisLibrarySection;
+			unsigned long					m_tisLibraryVersion;
+        };
+        typedef sequence<StationDvaMessageRecord> StationDvaMessageRecords;
+        typedef StationDvaMessageRecords DvaMessagesUpdateData;
+
+
+        struct DvaVersionRecord
+        {
+            unsigned long                   m_pKey;
+            unsigned long                   m_locationKey;
+
+            string                          m_privateAdhoc1;
+            string                          m_privateAdhoc2;
+            string                          m_privateAdhoc3;
+            string                          m_privateAdhoc4;
+            string                          m_privateAdhoc5;
+            string                          m_privateAdhoc6;
+            string                          m_privatePreRecorded;
+
+            string                          m_publicAdhoc1;
+            string                          m_publicAdhoc2;
+            string                          m_publicAdhoc3;
+            string                          m_publicAdhoc4;
+            string                          m_publicAdhoc5;
+            string                          m_publicAdhoc6;
+            string                          m_publicPreRecorded;
+        };
+        typedef sequence<DvaVersionRecord> DvaVersionRecords;
+
+        struct DvaPublicVersionRecord
+        {
+            unsigned long                   m_pKey;
+            unsigned long                   m_locationKey;
+
+            string                          m_publicAdhoc1;
+            string                          m_publicAdhoc2;
+            string                          m_publicAdhoc3;
+            string                          m_publicAdhoc4;
+            string                          m_publicAdhoc5;
+            string                          m_publicAdhoc6;
+            string                          m_publicPreRecorded;
+        };
+        typedef sequence<DvaPublicVersionRecord> DvaPublicVersionRecords;
+
+        struct DvaPrivateVersionRecord
+        {
+            unsigned long                   m_pKey;
+            unsigned long                   m_locationKey;
+
+            string                          m_privateAdhoc1;
+            string                          m_privateAdhoc2;
+            string                          m_privateAdhoc3;
+            string                          m_privateAdhoc4;
+            string                          m_privateAdhoc5;
+            string                          m_privateAdhoc6;
+            string                          m_privatePreRecorded;
+       };
+        typedef sequence<DvaPrivateVersionRecord> DvaPrivateVersionRecords;
+
+	struct TrainDvaMessageRecord
+        {
+            unsigned long                   m_pKeyOrId;	    
+	        string                          m_label;
+        };   
+        typedef sequence<TrainDvaMessageRecord> TrainDvaMessageRecords;
+
+
+        struct PaZoneRecord
+        {
+	        unsigned long                   m_pKey;
+            unsigned long                   m_locationKey;
+            string                          m_locationName;
+			string							m_occLocationName;
+            unsigned long                   m_id;
+			// liuyu++ TD8849
+			unsigned long                   m_orderId;
+			// ++liuyu TD8849
+	        string                          m_label;
+	        string                          m_area;
+
+			string                          m_stnZoneShortName;
+			string                          m_occZoneShortName;
+			//unsigned long                   m_entityKey;
+
+			string							m_stnEquipmentEntityName;	
+			string							m_occEquipmentEntityName;
+
+            sequence<string>                m_equipmentEntities;
+        };
+        typedef sequence<PaZoneRecord> PaZoneRecords;
+
+
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     Broadcast Parameter Update Structures
+        //
+		///////////////////////////////////////////////////////////////////////
+
+        enum EBroadcastParameter
+        {
+            BROADCAST_PARAMETER_WAS_EXECUTED_SUCCESSFULLY,
+            BROADCAST_PARAMETER_IS_CONNECTED,
+            BROADCAST_PARAMETER_NEXT_TRAIN_TO_EXECUTE,
+            BROADCAST_PARAMETER_TRAIN_ANNOUNCEMENT_ID,
+            BROADCAST_PARAMETER_STATION_ANNOUNCE_ID,
+            BROADCAST_PARAMETER_MESSAGE_SEQUENCE_ID,
+            BROADCAST_PARAMETER_PRIORITY,
+            BROADCAST_PARAMETER_HAS_OVERRIDE_OPTION,
+            BROADCAST_PARAMETER_SESSION_ID,
+            BROADCAST_PARAMETER_IS_TAGGED_FOR_REMOVAL,
+            BROADCAST_PARAMETER_EFFECTIVE_COVERAGE_INDICES
+        };
+
+        struct BroadcastParameter
+        {
+            string                          broadcastId;
+            EBroadcastParameter             parameter;
+            any                             data;
+        };
+
+        typedef sequence<BroadcastParameter>        BroadcastParameterSeq; 
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+		//     Complete Broadcast State Structures
+        //
+		///////////////////////////////////////////////////////////////////////
+
+        struct CompleteBroadcastState
+        {
+            string                          broadcastId;
+            BroadcastConfig                 theBroadcastConfig;
+            ProgressReport                  theProgressReport;
+            BroadcastParameterSeq           broadcastParameters;
+        };
+
+        typedef sequence<CompleteBroadcastState> CompleteBroadcastStateSeq;
+
+        struct CompleteAgentState
+        {
+            CompleteBroadcastStateSeq       broadcastStates;
+        };
+
+		///////////////////////////////////////////////////////////////////////
+        //
+		//     PA Agent Methods
+        //
+		///////////////////////////////////////////////////////////////////////
+
+		/////////////////////////
+		// Station Broadcasts 
+		/////////////////////////
+
+        // Returns a string for the broadcastId
+        string broadcastStationDva 
+            ( in MessageKeySeq messages, 
+              in ZoneCoverage zones, 
+              in unsigned short dwellInSecs, 
+              in boolean hasChime, 
+              in TA_Base_Core::DateTime startTime, 
+              in TA_Base_Core::DateTime stopTime, 
+              in unsigned short periodInSecs, 
+              in boolean isSynchronisedWithTis, 
+			  in string groupName,				// zone group selection for broadcast Id
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        // Returns a string for the broadcastId
+        string broadcastStationLive 
+            ( in octet sourceId, 
+              in ZoneCoverage zones, 
+			  in string groupName,				// zone group selection for broadcast Id
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastStationMusic 
+            ( in EMusicType musicType,
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        // Returns a string for the broadcastId
+        string recordAdhocMessage 
+            ( in octet sourceId, 
+              in unsigned long messageKey,
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void retryStationBroadcast 
+            ( in string broadcastId, 
+              in ZoneCoverage zones,
+              in string sessionId ) 
+            raises (BroadcastIdNotFound, 
+                    TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+		/////////////////////////
+		// Train Broadcasts
+		/////////////////////////
+
+        // Returns a string for the broadcastId
+        string broadcastTrainDva 
+            ( in TrainCoverage trains, 
+              in unsigned long messageKey,
+              in short libraryVersion,
+              in TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod,
+			  in boolean hasOverrideOption,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        // Returns a string for the broadcastId
+        string broadcastTrainLive 
+            ( in TrainCoverage trains,
+			  in boolean hasOverrideOption,
+              in string staticGroup,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+ 		void beginTrainLiveAnnouncement 
+            ( in string broadcastId )
+            raises (TA_Base_Core::BadParameterException, BroadcastIdNotFound,TA_Base_Core::OperationModeException);
+
+		void continueTrainLiveAnnouncement 
+            ( in string broadcastId )
+			raises (TA_Base_Core::BadParameterException, BroadcastIdNotFound,TA_Base_Core::OperationModeException);
+
+		void endTrainLiveAnnouncement
+            ( in string broadcastId )
+            raises (TA_Base_Core::BadParameterException, BroadcastIdNotFound,TA_Base_Core::OperationModeException);
+
+        void retryTrainBroadcast 
+            ( in string broadcastId, 
+              in TrainCoverage trains,
+              in boolean hasOverrideOption,
+              in string sessionId ) 
+            raises (BroadcastIdNotFound, 
+                    TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+		/////////////////////////
+		// Common 
+		/////////////////////////
+
+		// test jeffrey++ TD10377
+        void agentLinkTest();
+		// test ++jeffrey TD10377
+
+		// test jeffrey++ TES736
+        boolean hardwareLinkTest
+			( in string broadcastId, in string sessionId);
+		// test ++jeffrey TES736
+
+        void terminateBroadcast 
+            ( in string broadcastId,
+              in string sessionId ) 
+            raises (BroadcastIdNotFound,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+        // broadcast must be terminated first 
+        void removeBroadcast 
+            ( in string broadcastId,
+              in string sessionId ) 
+            raises (BroadcastIdNotFound,
+                    TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+		// jeffrey++ TD10853
+        //void setAdhocType 
+        boolean setAdhocType 
+		// ++jeffrey TD10853
+            ( in unsigned long messageKey, 
+              in char messageType,
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException, 
+                    FepcCommsFailure, 
+                    TA_Base_Core::DatabaseErrorException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+        void setAdhocLabel 
+            ( in unsigned long messageKey, 
+              in string label,
+              in string sessionId ) 
+            raises (TA_Base_Core::BadParameterException, 
+                    TA_Base_Core::DatabaseErrorException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+        BroadcastIdTypeSeq getBroadcastIdTypes();
+		CompleteBroadcastStateSeq getCompleteBroadcastStateSeqCopy();
+        
+        void changeBroadcastId 
+            ( in string fromBroadcastId, 
+              in string toBroadcastId,
+              in string sessionId ) 
+            raises (BroadcastIdNotFound, 
+                    TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,TA_Base_Core::OperationModeException);
+
+        BroadcastConfig getBroadcastConfig 
+            ( in string broadcastId ) 
+            raises (BroadcastIdNotFound,TA_Base_Core::OperationModeException);
+
+        ProgressReport getProgressReport 
+            ( in string broadcastId ) 
+            raises (BroadcastIdNotFound,TA_Base_Core::OperationModeException);
+
+        PriorityScheme getPriorityScheme() 
+            raises (FepcCommsFailure,TA_Base_Core::OperationModeException);
+
+		// song toan++
+		// TD10409
+		//
+		// query status of music at OCC or Station
+		// Parameter:
+		//		sessionid: session id
+		// return:
+        //      OccMusic: OCC music is playing
+        //      LocalMusic: Station music is playing
+        //      NoOccMusic or NoLocalMusic: No music is playing
+		EMusicType getMusicStatus( in string sessionId )
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+		// ++song toan
+		// TD10409
+
+		//wuzhongyi CL-19136
+		void forceTerminateAllExistPA()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);
+
+		////////////////////////////////////////////
+		// Methods to retrieve database configuration
+		////////////////////////////////////////////
+        
+		StationDvaMessageRecords getStationDvaMessageRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+        TrainDvaMessageRecords getTrainDvaMessageRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+        DvaVersionRecords getDvaVersionRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+		DvaPublicVersionRecords getDvaPublicVersionRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+		DvaPrivateVersionRecords getDvaPrivateVersionRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+        PaZoneRecords getPaZoneRecords()
+			raises (FepcCommsFailure,TA_Base_Core::OperationModeException);//limin
+
+
+		////////////////////////////////////////////
+		// Event Triggered Station DVA Broadcasts
+		////////////////////////////////////////////
+
+        void broadcastEventTriggeredStationDva
+            ( in unsigned long messageKey, 
+              in string messageVersionNumber,
+              in boolean hasChime, 
+              in boolean isSynchronisedWithTis, 
+              in unsigned long durationInSecs, 
+              in unsigned short periodInSecs, 
+              in string sessionId,
+              in ZoneCoverage zones )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredStationDvaForStation
+            ( in unsigned long messageKey, 
+              in string messageVersionNumber,
+              in boolean hasChime, 
+              in boolean isSynchronisedWithTis, 
+              in unsigned long durationInSecs, 
+              in unsigned short periodInSecs, 
+              in string sessionId)
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredStationDvaForArea
+            ( in unsigned long messageKey, 
+              in string messageVersionNumber,
+              in boolean hasChime, 
+              in boolean isSynchronisedWithTis, 
+              in unsigned long durationInSecs, 
+              in unsigned short periodInSecs, 
+              in string sessionId,
+              in string zoneArea )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredStationDvaForGroup
+            ( in unsigned long messageKey, 
+              in string messageVersionNumber,
+              in boolean hasChime, 
+              in boolean isSynchronisedWithTis, 
+              in unsigned long durationInSecs, 
+              in unsigned short periodInSecs, 
+              in string sessionId,
+              in string zoneGroupLabel )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+
+		////////////////////////////////////////////
+		// Event Triggered Train DVA Broadcasts
+		////////////////////////////////////////////
+
+        void broadcastEventTriggeredTrainDva 
+            ( in unsigned long messageKey,
+              in short libraryVersion,
+              in TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod,
+              in string sessionId,
+              in TrainCoverage trains )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredTrainDvaForStation 
+            ( in unsigned long messageKey,
+              in short libraryVersion,
+              in TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    TrainAgentCommsFailure,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredTrainDvaForInbound 
+            ( in unsigned long messageKey,
+              in short libraryVersion,
+              in TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    TrainAgentCommsFailure,
+                    BroadcastLimitReached,TA_Base_Core::OperationModeException);
+
+        void broadcastEventTriggeredTrainDvaForOutbound
+            ( in unsigned long messageKey,
+              in short libraryVersion,
+              in TA_Base_Bus::ITrainPaCorba::MessageSchedule announcementPeriod,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    TrainAgentCommsFailure,
+					BroadcastLimitReached,TA_Base_Core::OperationModeException);
+	}; // IPAAgentCorbaDef
+
+}; // TA_IRS_Bus
+

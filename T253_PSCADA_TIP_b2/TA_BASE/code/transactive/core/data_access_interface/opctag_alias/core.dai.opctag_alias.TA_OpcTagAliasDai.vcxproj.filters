@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{1713e2ea-0744-426e-9654-6d5a7a58701a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConfigOpcTagAlias.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcTagAlias.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcTagAliasAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcTagAliasHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConfigOpcTagAlias.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigOpcTagAlias.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IOpcTagAlias.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcTagAlias.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcTagAliasAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcTagAliasHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

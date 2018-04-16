@@ -1,0 +1,86 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.alarm.alarm_store_service" ProjectGUID="{B59335D9-3A3D-4D0E-8B2E-6980564C53BB}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_store_service" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nd/app.alarm.alarm_store_service.TA_AlarmStoreService.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src,../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;_DEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_store_service/app.alarm.alarm_store_service.TA_AlarmStoreService.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_store_service/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_store_service/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_store_service/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rtd.lib omniDynamic405_rtd.lib omnithread30_rtd.lib COS405_rtd.lib odbc32.lib odbccp32.lib oci.lib Rpcrt4.lib ws2_32.lib acemfcd.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib SharedAlarm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/TA_AlarmStoreService.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;../../../../../build\win32_nd;..\..\..\..\cots\omniOrb\omniORB_4.0.5\lib\x86_win32_win7;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\WinTech\OPCServerToolKit;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/TA_AlarmStoreService.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.alarm.alarm_store_service.TA_AlarmStoreService.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_store_service" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nr/app.alarm.alarm_store_service.TA_AlarmStoreService.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src,../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;NDEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_store_service/app.alarm.alarm_store_service.TA_AlarmStoreService.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_store_service/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_store_service/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_store_service/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rt.lib omniDynamic405_rt.lib omnithread30_rt.lib COS405_rt.lib odbc32.lib odbccp32.lib oci.lib Rpcrt4.lib ws2_32.lib acemfc.lib TA_Base_Core.lib TA_Base_Bus.lib SharedAlarm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/TA_AlarmStoreService.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;../../../../../build\win32_nr;..\..\..\..\cots\omniOrb\omniORB_4.0.5\lib\x86_win32_win7;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\WinTech\OPCServerToolKit;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/TA_AlarmStoreService.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.alarm.alarm_store_service.TA_AlarmStoreService.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AlarmStoreAgentUser.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmStoreAgentUser.h">
+			</File>
+			<File RelativePath="src\AlarmStoreService.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

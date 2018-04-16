@@ -1,0 +1,443 @@
+<project name="CODE_3001" default="build">
+    <taskdef name="BuildFile" classname="buildsystem.tasks.BuildFileTask"/>
+    <taskdef name="version" classname="buildsystem.tasks.VersionTask"/>
+    <taskdef name="SolarisPackage" classname="buildsystem.tasks.SolarisPackage"/>
+    
+    <target name="init"
+            description="--> Loads the build configuration if it hasn't already been loaded.">
+        <loadproperties srcFile="${basedir}/../config.ini"/>
+    </target>
+
+    <target name="version"
+            depends="init,changeAttributes4VersionGen"
+            description="--> Updates all VersionGen.cpp files to contain the correct version symbols.">
+		<exec dir="${basedir}" executable="perl">
+			<arg line="${3001.Dir}/Versioning.pl ${basedir}/code/transactive ${Version} ${Version.ProjectName}"/>
+		</exec>
+    </target>
+
+    <target name="clean_inter"
+            depends="init"
+            description="--> Cleans all intermediate files.">
+        <delete dir="${basedir}/build" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${basedir}/dep" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="clean"
+            depends="clean_inter"
+            description="--> Cleans all build artifacts.">
+        <delete dir="${basedir}/bin" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${3001.Dir.Staging}" includeEmptyDirs="true" quiet="true"/>
+		<delete dir="${3001.Dir.Staging-new}" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="clean_all"
+            depends="clean"
+            description="--> Cleans everything.">
+        <delete dir="${basedir}/code/tools" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${basedir}/code/transactive" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="generateTargets"
+            depends="init"
+            description="--> Creates the build files that will build all the targets.">
+        <BuildFile
+            basedir="${basedir}"
+            buildFileName="BuildUnix.xml"
+            buildConfiguration="${Build.Configuration}">
+
+            <fileset dir="${basedir}">
+                <include name="code/**/Makefile"/>
+				<exclude name="**/cots/**"/>
+                <exclude name="**/tools/**"/>
+                <exclude name="**/test/**"/>
+				<exclude name="code/transactive/app/cctv/GuangFuo/video_switch_agent/Makefile"/>
+				<exclude name="code/transactive/app/cctv/GuangFuo/video_switch_agent/protocols/COE/Makefile"/>
+            </fileset>
+
+
+
+            <exclude>
+                <pattern value="max1000drv"/>
+                <pattern value="test"/>
+                <pattern value="Test"/>
+                <pattern value="ConsoleManager"/>
+                <pattern value="Crontab"/>
+                <pattern value="netmon"/>
+                <pattern value="traffic_analysers"/>
+                <pattern value=".*(m|M)odbus.*"/>
+                <pattern value=".*DmIf"/>
+                <pattern value="AlarmProcessor"/>
+                <pattern value="video_switch_matrices"/>
+                <pattern value="traffic_historian"/>
+                <pattern value="modbus_driver"/>
+                <pattern value="environment_agent"/>
+                <pattern value="event_service"/>
+                <pattern value="TVSendEvent"/>
+                <pattern value="GenericDriver"/>
+                <pattern value="EntityControl"/>
+                <pattern value="EntityConfig"/>
+                <pattern value="HistorianDataAccess"/>
+                <pattern value=".*Simulator.*"/>
+                <pattern value="CppViewsData"/>
+                <pattern value="DriverTools"/>
+                <pattern value="MvData"/>
+                <pattern value="VsiTools"/>
+                <pattern value="EvtService"/>
+                <pattern value="StatisticsAgent"/>
+                <pattern value="DataRecordingAgent"/> 
+			<!--	<pattern value="RadioTetraAgent"/>  -->
+			<!--	<pattern value="TisAgent"/>  -->
+			<!--	<pattern value="WILDAgent"/> --> 			
+			</exclude>
+
+            <DirectoryTargets>
+                <pattern value="core"/>
+                <pattern value="bus"/>
+            </DirectoryTargets>
+        </BuildFile>
+    </target>
+	 
+    <target name="build"
+            depends="init,generateTargets"
+            description="--> Does the actual compilation and linking of the 3002 code.">
+        <ant antfile="${basedir}/ParallelBuildUnix.xml" inheritAll="false"/>
+    </target>
+      
+    <target name="stage"
+            depends="init"
+            description="--> Copies all the appropriate 3002 files to the staging area.">
+
+		<delete dir="${3001.Dir.Staging}" includeEmptyDirs="true" quiet="true"/>
+
+        <!-- staging/etc/init.d -->
+        <copy toDir="${3001.Dir.Staging}/etc/init.d" flatten="true" overwrite="true">
+            <fileset dir="${basedir}/code/tools/deployment_scripts" casesensitive="false">
+                <include name="**/transact" />
+            </fileset>
+
+			<fileset casesensitive="false" dir="${basedir}/code/tools/deployment_scripts">
+				<!-- include name="static-routes" -->
+				<include name="tcpip_timeout" />
+			</fileset>
+		</copy>
+
+        <!-- staging/etc/rc2.d -->
+        <copy toDir="${3001.Dir.Staging}/etc/rc2.d" flatten="true" overwrite="true">
+			<fileset casesensitive="false" dir="${basedir}/code/tools/deployment_scripts">
+				<include name="S76tcpip_timeout" />
+				<!--include name="S76static-routes" -->				
+			</fileset>
+        </copy>
+
+
+		<!-- staging/u01/transactive/.profile -->
+		<copy toDir="${3001.Dir.Staging}\u01\transactive" flatten="true" overwrite="true">
+
+            <fileset dir="${basedir}\code\tools\deployment_scripts" casesensitive="false" >
+                <include name="**\.profile" />
+            </fileset>
+		</copy>
+
+
+
+	    <!-- staging/u01/transactive/bin -->
+        <copy toDir="${3001.Dir.Staging}\u01\transactive\bin" flatten="true" overwrite="true">
+
+            <fileset dir="${basedir}\bin\${Bin.Folder}" casesensitive="false"/>
+
+
+            <fileset dir="${Base.Dir.Staging}\bin" casesensitive="false">
+                <exclude name="**\transact*"/>
+                <exclude name="**\watson"/>
+                <exclude name="**\version*"/>
+            </fileset>
+
+            <fileset dir="${basedir}\code\tools\deployment_scripts" casesensitive="false" >
+                <include name="**\watson" />
+                <include name="**\transactive" />
+                <include name="**\transactive.station" />
+            </fileset>
+
+	    <!-- 			<fileset dir="${Base.Dir.Staging}\bin" casesensitive="false">
+				<include name="*.csv" />
+			</fileset> temporary close for special *.csv file testing-->
+
+
+			<fileset casesensitive="false" dir="${basedir}\code\tools\deployment_scripts">
+				<include name="dmqsaf.jrn" />
+				<include name="dmq.ini" />
+			</fileset>
+
+	    <!-- 			<fileset dir="${basedir}\code\tools\database" casesensitive="false">
+				<include name="*.csv" />
+			</fileset> temporary close for special *.csv file testing-->
+
+		<!-- refer email (db connection string format) -->
+            <fileset dir="${basedir}\code\tools\database\955 connection string" casesensitive="false">
+				<include name="OCCConnectionStrings.csv" />
+				<include name="DT18ConnectionStrings.csv" />
+				<include name="DT17ConnectionStrings.csv" />
+			</fileset>
+
+        </copy>
+
+		<!-- staging/u01/transactive/binMms_Software -->
+        <copy toDir="${3001.Dir.Staging}\u01\transactive\bin\Mms_Software"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="${basedir}\code\tools\deployment_scripts\Mms_Software">
+                <exclude name="**/CVS" />
+            </fileset>
+        </copy>
+
+        <!-- staging/u01/transactive/bin/MmsConfig/BEA -->
+        <copy toDir="${3001.Dir.Staging}\u01\transactive\bin\MmsConfig\BEA" 
+			  flatten="true" 
+			  overwrite="true">
+            <fileset dir="${basedir}\code\cots\MmsApi\Solaris8\config" casesensitive="false">
+                <include name="address.txt"/>
+                <exclude name="dmq.ini"/>
+                <include name="Trace.prg"/>
+            </fileset>
+
+			<fileset casesensitive="false" dir="${basedir}\code\tools\deployment_scripts">
+				<include name="dmq.ini" />
+			</fileset>
+        </copy>
+
+        <!-- staging/u01/transacitve/bin/MmsConfig/Stubbed -->
+        <copy toDir="${3001.Dir.Staging}\u01\transactive\bin\MmsConfig\Stubbed" flatten="true" overwrite="true">
+            <fileset dir="${basedir}\code\cots\MmsApi\Solaris8\stub\config" casesensitive="false">
+                <include name="exitq.txt"/>
+                <include name="getPendingMsg.txt"/>
+                <include name="getq.txt"/>
+                <include name="putq.txt"/>
+                <include name="Trace.prg"/>
+            </fileset>
+        </copy>
+
+        <!-- staging/u01/transacitve/lib -->
+        <copy toDir="${3001.Dir.Staging}\u01\transactive\lib" flatten="true" overwrite="true">
+            <fileset dir="${Base.Dir.Staging}\sdk\lib" casesensitive="false">
+				<exclude name="libACE.so" />
+			</fileset>
+
+            <fileset dir="${basedir}\code\cots\BEAMessageQ\lib" casesensitive="false">
+                <include name="libdmqcl.so"/>
+            </fileset>
+        </copy>
+
+        <!-- Change the version numbers in the version files. -->
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.occa">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.occa" />
+        </exec>
+
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.occb">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.occb" />
+        </exec>
+
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.sms-dbg">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.sms-dbg" />
+        </exec>
+
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.sms-bbs">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.sms-bbs" />
+        </exec>
+
+		 <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.sms-epn">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.sms-epn" />
+        </exec>
+
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.kcda">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.kcda" />
+        </exec>
+
+        <exec executable="sed"
+              dir="${basedir}/code/tools/deployment_scripts"
+              output="${3001.Dir.Staging}/u01/transactive/bin/versions.kcdb">
+            <arg line="'s/Version:.*/Version:${Version.Major}/;s/:.*:/:${Version.Minor}:/g' versions.kcdb" />
+        </exec>
+    </target>
+
+    <target name="package"
+            depends="init"
+            description="--> Creates an installation package for the 3002 binaries.">
+        <SolarisPackage tempDir="${Temp.Package.Dir}" owner="transactive" group="scada">
+            <PackageInfo
+                PKG="transActive"
+                NAME="transActive"
+                ARCH="SPARC"
+                VERSION="${Version}"
+                CATEGORY="application"
+                VENDOR="Ripple Systems"
+                EMAIL="helpdesk@services.ripple-systems.com"
+                PSTAMP="Ripple Systems"
+                BASEDIR="/"
+                CLASSES="none" />
+
+            <InstallScripts
+                requestScript="${basedir}/code/tools/deployment_scripts/request.sh"
+                postInstallScript="${basedir}/code/tools/deployment_scripts/postinstall.sh"
+                preRemoveScript="${basedir}/code/tools/deployment_scripts/preremove.sh" />
+
+            <FileSet dir="${3001.Dir.Staging}">
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileProperty fileexpression="u01"
+                          owner="?"
+                          group="?"
+                          permission="?" />
+            <FileProperty fileexpression="u01/transactive"
+                          owner="?"
+                          group="?"
+                          permission="?" />
+            <FileProperty fileexpression=".*/bin/.*"
+                          owner="transactive"
+                          group="scada"
+                          permission="0755" />
+            <FileProperty fileexpression=".*/bin/System.*"
+                          owner="root"
+                          group="other"
+                          permission="0755" />
+            <FileProperty fileexpression="etc/?.*"
+                          owner="?"
+                          group="?"
+                          permission="?" />
+            <FileProperty fileexpression="etc/init\.d/transact"
+                          owner="root"
+                          group="other"
+                          permission="0755" />
+        </SolarisPackage>
+
+		<!-- Compress the package -->
+        <tar basedir="${Temp.Package.Dir}" longfile="gnu" compression="gzip" destfile="${3001.Dir.Staging}/transActive-${Version.Compile.Mode}${Version}-sparc.tar.gz"/>
+
+		<!-- Clean up the temporary files -->
+        <delete file="${Temp.Package.Dir}/pkginfo" />
+        <delete file="${Temp.Package.Dir}/postinstall" />
+        <delete file="${Temp.Package.Dir}/preremove" />
+        <delete file="${Temp.Package.Dir}/prototype" />
+        <delete file="${Temp.Package.Dir}/request" />
+        <delete dir="${Temp.Package.Dir}/transActive" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+	<target name="stage_new"
+            depends="init"
+            description="--> Copies all the appropriate 4669 files to the staging area.">
+
+		<delete dir="${3001.Dir.Staging-new}" includeEmptyDirs="true" quiet="true"/>
+
+        <!-- staging/u01/transactive/bin -->
+        <copy toDir="${3001.Dir.Staging-new}\transActive-${Version.Compile.Mode}${Version}-sparc_bin-lib\bin" flatten="true" overwrite="true">
+            <fileset dir="${BASE_dir}\bin\${Bin.Folder}" casesensitive="false"/>
+			<fileset dir="${basedir}\bin\${Bin.Folder}" casesensitive="false"/>
+        </copy>
+
+        <!-- staging/u01/transacitve/lib -->
+        <copy toDir="${3001.Dir.Staging-new}\transActive-${Version.Compile.Mode}${Version}-sparc_bin-lib\lib" flatten="true" overwrite="true">
+            <fileset dir="${Base.Dir.Staging}\sdk\lib" casesensitive="false">
+				<include name="libACE.so" />
+				<include name="libACE.so.6.0.4" />
+				<include name="libclntsh.so.10.1" />
+				<include name="libstdc++.so.6" />
+				<include name="libgcc_s.so.1" />
+			</fileset>
+
+            <fileset dir="${Base.Dir.Staging}\sdk\lib" casesensitive="false">
+				<exclude name="libACE.so" />
+				<exclude name="libACE.so.6.0.4" />
+				<exclude name="libclntsh.so.10.1" />
+				<exclude name="libstdc++.so.6" />
+				<exclude name="libgcc_s.so.1" />
+			</fileset>
+
+            <fileset dir="${basedir}\code\cots\BEAMessageQ\lib" casesensitive="false">
+                <include name="libdmqcl.so"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="package_new"
+            depends="init"
+            description="--> Creates a lib and bin package for the 3001.">
+
+		<!-- Compress the package -->
+        <tar basedir="${3001.Dir.Staging-new}/transActive-${Version.Compile.Mode}${Version}-sparc_bin-lib" longfile="gnu" compression="gzip" destfile="${3001.Dir.Staging-new}/transActive-${Version.Compile.Mode}${Version}-sparc_bin-lib.tar.gz"/>
+	</target>
+
+
+    <!-- checkout from Perforce -->	
+    <target name="p4checkoutCode" 
+			depends="p4checkoutCots,
+					 p4checkoutTools,
+					 p4checkoutTransactive">
+		<!-- Does nothing but invoke its dependencies -->
+    </target>
+
+    <target name="p4checkoutCots" 
+			depends="p4checkoutMmsApi, 
+					 p4checkoutBEAMessageQInclude,
+					 p4checkoutBEAMessageQLib">
+    <!-- Does nothing but invoke its dependencies -->
+    </target>
+    
+    <target name="p4checkoutMmsApi" depends="init">
+		<p4sync view="${P4.View.COTS}/MmsApi/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutBEAMessageQLib" depends="init">
+		<p4sync view="${P4.View.COTS}/BEAMessageQ/lib/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutBEAMessageQInclude" depends="init">
+		<p4sync view="${P4.View.COTS}/BEAMessageQ/include/..." force="yes"/>
+    </target>
+
+    <!-- checkout tools from Perforce -->
+    <target name="p4checkoutTools" depends="init">
+		<p4sync view="${P4.View.CODE_3001}/tools/..." force="yes"/>
+    </target>
+
+    <!-- checkout transactive from Perforce -->
+    <target name="p4checkoutTransactive" depends="init">
+		<p4sync view="${P4.View.CODE_3001}/transactive/..." force="yes"/>
+    </target>
+
+	<!-- checkout config from Perforce -->
+    <target name="p4checkoutConfig"
+            depends="init"
+            description="--> Checks out the config.">
+		<p4sync view="${P4.View.CONFIG_3002}" force="yes"/>
+    </target>
+
+    <target name="changeAttributes4VersionGen" depends="init">
+		<chmod dir="${basedir}\code\transactive" perm="ugo+rw" includes="**/VersionGen.cpp"/>
+    </target>
+
+
+    <target name="changeomniORBpermission" depends="init">
+		<chmod dir="${omni.Dir}\bin" perm="ugo+rwx" includes="omniidl"/>
+		<chmod dir="${omni.Dir}\bin" perm="ugo+rwx" includes="omnicpp"/>
+		<chmod dir="${omni.Dir}\lib" perm="ugo+rwx" includes="omnicpp"/>
+    </target>
+
+	<target name="changeAttributesomnicppomniidl" depends="init">
+		<chmod dir="${basedir}\sdk\omniORB/omniORB_4.1.6/sparc-sun-solaris2.10/bin" perm="ugo+rw" includes="omnicpp"/>
+		<chmod dir="${basedir}\sdk\omniORB/omniORB_4.1.6/sparc-sun-solaris2.10/bin" perm="ugo+rw" includes="omniidl"/>
+    </target>
+
+	</project>

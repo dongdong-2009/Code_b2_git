@@ -1,0 +1,109 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.alarm.shared_alarm" ProjectGUID="{73DD5C16-5A1A-496D-90B3-57A15B729B49}" RootNamespace="bus.alarm.shared_alarm" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/alarm/shared_alarm" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nd/bus.alarm.shared_alarm.TA_SharedAlarm.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm800 /GX-&#13;&#10;" Optimization="0" AdditionalIncludeDirectories="./src;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;..\..\..\;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers;..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;SHAREDALARM_EXPORTS;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;WIN32_LEAN_AND_MEAN;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/alarm/shared_alarm/bus.alarm.shared_alarm.TA_SharedAlarm.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/alarm/shared_alarm/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/alarm/shared_alarm/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/alarm/shared_alarm/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="2052"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib acemfcd.lib omniORB416_rtd.lib omniDynamic416_rtd.lib omnithread34_rtd.lib COS416_rtd.lib Rpcrt4.lib oci.lib libmysql.lib TA_mcl_d.lib TA_Base_Core_d.lib stracelib.lib" ShowProgress="0" OutputFile="../../../../../bin/win32_nd/TA_SharedAlarm_d.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;..\..\..\..\cots\omniOrb\omniORB_4.1.6\lib\x86_win32;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\mysql\5.5.15\winnt\lib;..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\cots\WinTech\OPCServerToolKit;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers\lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Debug;../../../../../build/win32_nd" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/TA_SharedAlarm_d.pdb" BaseAddress="0x1C000000" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nd/TA_SharedAlarm_d.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.alarm.shared_alarm.TA_SharedAlarm.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/alarm/shared_alarm" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nr/bus.alarm.shared_alarm.TA_SharedAlarm.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm800 /GX-&#13;&#10;" Optimization="2" AdditionalIncludeDirectories="./src;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;..\..\..\;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers;..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;SHAREDALARM_EXPORTS;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;WIN32_LEAN_AND_MEAN;_USE_32BIT_TIME_T" RuntimeLibrary="2" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/alarm/shared_alarm/bus.alarm.shared_alarm.TA_SharedAlarm.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/alarm/shared_alarm/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/alarm/shared_alarm/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/alarm/shared_alarm/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="2052"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib acemfc.lib omniORB416_rt.lib omniDynamic416_rt.lib omnithread34_rt.lib COS416_rt.lib Rpcrt4.lib oci.lib libmysql.lib TA_mcl.lib TA_Base_Core.lib stracelib.lib" ShowProgress="0" OutputFile="../../../../../bin/win32_nr/TA_SharedAlarm.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;..\..\..\..\cots\omniOrb\omniORB_4.1.6\lib\x86_win32;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\mysql\5.5.15\winnt\lib;..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\cots\WinTech\OPCServerToolKit;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers\lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Release;../../../../../build/win32_nr" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/TA_SharedAlarm_d.pdb" BaseAddress="0x1C000000" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nr/TA_SharedAlarm.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.alarm.shared_alarm.TA_SharedAlarm.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src">
+			<File RelativePath=".\src\ActionFlagGuard.cpp">
+			</File>
+			<File RelativePath=".\src\ActionFlagGuard.h">
+			</File>
+			<File RelativePath=".\src\AlarmDataItem.h">
+			</File>
+			<File RelativePath="src\AlarmIndices.h">
+			</File>
+			<File RelativePath=".\src\AllAlarmManager.cpp">
+			</File>
+			<File RelativePath=".\src\AllAlarmManager.h">
+			</File>
+			<File RelativePath="src\CommonDef.h">
+			</File>
+			<File RelativePath=".\src\ICheckVisibility.h">
+			</File>
+			<File RelativePath=".\Src\IDutyAlarmAccess.h">
+			</File>
+			<File RelativePath=".\src\IProcessLockable2.h">
+			</File>
+			<File RelativePath=".\src\IProcessRWLockable.h">
+			</File>
+			<File RelativePath=".\src\NonReEntrantProcessLockable2.cpp">
+			</File>
+			<File RelativePath=".\src\NonReEntrantProcessLockable2.h">
+			</File>
+			<File RelativePath=".\src\NonReEntrantProcessRWLockable.cpp">
+			</File>
+			<File RelativePath=".\src\NonReEntrantProcessRWLockable.h">
+			</File>
+			<File RelativePath=".\src\ProcessGuard2.cpp">
+			</File>
+			<File RelativePath=".\src\ProcessGuard2.h">
+			</File>
+			<File RelativePath=".\src\ProcessRWGuard.cpp">
+			</File>
+			<File RelativePath=".\src\ProcessRWGuard.h">
+			</File>
+			<File RelativePath="src\SharedAlarm.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SharedAlarm.h">
+			</File>
+			<File RelativePath=".\src\SharedAlarmMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\SharedAlarmMonitor.h">
+			</File>
+			<File RelativePath="src\SharedAllocator.h">
+			</File>
+		</Filter>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

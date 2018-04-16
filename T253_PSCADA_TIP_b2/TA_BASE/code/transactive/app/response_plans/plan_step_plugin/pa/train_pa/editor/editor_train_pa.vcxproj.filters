@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{35aa36c9-cb1a-493a-bf33-0a2b1c6d4590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{e99cec96-9153-4666-9300-fdb871ff4b38}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_src\DllInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\MftTrainPaStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PAMessagesDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PAMessageStepParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PaTrainDvaMsgEditorHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanStepEditPATrainPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TaskTrainPa.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TrainPAStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TrainPaStepEditorParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_src\MftTrainPaStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PAMessagesDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PAMessageStepParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PaTrainDvaMsgEditorHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanStepEditPATrainPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TaskTrainPa.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TrainPAStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TrainPaStepEditorParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor_src\step_plugin.train_pa_step.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityTrainPa.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

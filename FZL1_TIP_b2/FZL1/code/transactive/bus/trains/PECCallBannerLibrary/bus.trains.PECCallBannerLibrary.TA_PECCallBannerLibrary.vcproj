@@ -1,0 +1,102 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.trains.PECCallBannerLibrary" ProjectGUID="{A4E319BD-2194-40E1-ABE3-5A9368EBB319}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/trains/PECCallBannerLibrary" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm500 " Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\bus\cctv\video_switch_agent\IDL\src,..\..\..\..\..\sdk\include\transactive\core\alarm\IDL\src,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/trains/PECCallBannerLibrary/bus.trains.PECCallBannerLibrary.TA_PECCallBannerLibrary.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/trains/PECCallBannerLibrary/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/trains/PECCallBannerLibrary/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/trains/PECCallBannerLibrary/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd\TA_PECCallBannerLibrary_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.trains.PECCallBannerLibrary.TA_PECCallBannerLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/trains/PECCallBannerLibrary" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm500 " Optimization="2" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\bus\cctv\video_switch_agent\IDL\src,..\..\..\..\..\sdk\include\transactive\core\alarm\IDL\src,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/trains/PECCallBannerLibrary/bus.trains.PECCallBannerLibrary.TA_PECCallBannerLibrary.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/trains/PECCallBannerLibrary/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/trains/PECCallBannerLibrary/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/trains/PECCallBannerLibrary/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr\TA_PECCallBannerLibrary.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.trains.PECCallBannerLibrary.TA_PECCallBannerLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\LocationSelectionDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\LocationSelectionDialog.h">
+			</File>
+			<File RelativePath="src\PECCallEntry.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PECCallEntry.h">
+			</File>
+			<File RelativePath="src\PECCallFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PECCallFactory.h">
+			</File>
+			<File RelativePath="src\PECCallInitialiser.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PECCallInitialiser.h">
+			</File>
+			<File RelativePath="src\PECDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PECDialog.h">
+			</File>
+			<File RelativePath="src\PECDialog.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

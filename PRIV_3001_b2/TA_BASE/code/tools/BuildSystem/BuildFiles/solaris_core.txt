@@ -1,0 +1,161 @@
+# The source code in this file is the property of
+# Ripple Systems and is not for redistribution
+# in any form.
+#
+# Source:  $File: $ 
+# Author:  Grace Koh
+# Version: $Revision: $
+#
+# Last modification: $DateTime: $
+# Last modified by:  $Author: $
+
+# Things we need to know about this project
+ProjectInformation(
+	# Base directory should be 'code' 
+	# relative from here, or absolute both work, although absolute must be reconfigured more often
+	BaseDirectory	=> "code",
+);
+
+# Compilation environments
+BuildEnvironment (
+    Name            => 'unixsh',
+    OperatingSystem => 'solaris',
+    Makefile        => 'Makefile',
+    Processor       => 'sparc4u',
+    MakeProg        => 'gmake 2>&1',
+    CleanCommand    => 'gmake clean 2>&1',
+    InstallCommand  => 'gmake install 2>&1',
+    ErrorHandling   => 'Output:
+       $Warnings   = grep( /.* warning: .*/, split( /\n/, $Output ) );
+       $Errors     = grep( /(.*:d+: [abcdefghijklmnopqrstuvxyz].*)|(.* \*\*\* .*)/, split( /\n/, $Output ) ); ',
+);
+
+# Actual Components to make
+# ==========================================  Core ==========================================  
+
+Make (
+    Component       => "core/sockets",
+    SourceDir       => "core/sockets",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/versioning",
+    SourceDir       => "core/versioning",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/synchronisation",
+    SourceDir       => "core/synchronisation",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/threads",
+    SourceDir       => "core/threads",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/utilities",
+    SourceDir       => "core/utilities",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/uuid",
+    SourceDir       => "core/uuid",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "Exceptions",
+    SourceDir       => "core/exceptions",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/corba/IDL",
+    SourceDir       => "core/corba/IDL",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/corba",
+    SourceDir       => "core/corba",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/database",
+    SourceDir       => "core/database",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/data_access_interface/entity_access",
+    SourceDir       => "core/data_access_interface/entity_access",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/data_access_interface",
+    SourceDir       => "core/data_access_interface",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/message/IDL",
+    SourceDir       => "core/message/IDL",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/message",
+    SourceDir       => "core/message",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/process_management/IDL",
+    SourceDir       => "core/process_management/IDL",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/process_management",
+    SourceDir       => "core/process_management",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/alarm/IDL",
+    SourceDir       => "core/alarm/IDL",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/alarm",
+    SourceDir       => "core/alarm",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/naming/IDL",
+    SourceDir       => "core/naming/IDL",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/naming",
+    SourceDir       => "core/naming",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "core/corba_named_obj",
+    SourceDir       => "core/corba_named_obj",
+    BuildOn         => "unixsh",
+);
+
+# ==========================================  Bus ==========================================  
+
+Make (
+    Component       => "bus/generic_agent",
+    SourceDir       => "bus/generic_agent",
+    BuildOn         => "unixsh",
+);
+Make (
+    Component       => "bus/modbus_comms",
+    SourceDir       => "bus/modbus_comms",
+    BuildOn         => "unixsh",
+);
+
+# ==========================================  App ==========================================  
+
+Make (
+    Component       => "app/notification_service",
+    SourceDir       => "app/notification_service",
+    BuildOn         => "unixsh",
+);

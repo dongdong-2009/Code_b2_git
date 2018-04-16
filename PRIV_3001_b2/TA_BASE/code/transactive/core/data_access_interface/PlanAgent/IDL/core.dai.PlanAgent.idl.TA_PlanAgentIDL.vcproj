@@ -1,0 +1,35 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.dai.PlanAgent.idl" ProjectGUID="{2ED6530A-2B15-4C6A-84DE-313D060A5E9F}" Keyword="MakeFileProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\Debug/core.dai.PlanAgent.idl.TA_PlanAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\Release/core.dai.PlanAgent.idl.TA_PlanAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="IDL">
+			<File RelativePath="src\PlanAgentDataCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\PlanAgent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a33d42b2-0503-4126-b347-0dcea8eadbb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{82597677-279a-4aef-bb83-fef794273489}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_src\DllInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\JumpStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\JumpStepEditorParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\MftJumpStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanStepEditJumpPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TaskJump.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_src\JumpStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\JumpStepEditorParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\MftJumpStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanStepEditJumpPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TaskJump.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor_src\step_plugin.jump_step.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityJump.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

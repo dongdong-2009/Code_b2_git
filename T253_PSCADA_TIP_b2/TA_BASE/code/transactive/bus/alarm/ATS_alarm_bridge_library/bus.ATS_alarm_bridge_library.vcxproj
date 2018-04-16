@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{EB9B5882-3762-4AA3-92A5-10BB6385E69E}</ProjectGuid>
+    <RootNamespace>bus.ATS_alarm_bridge_library</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>bus.ATS_alarm_bridge_library</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>bus.ATS_alarm_bridge_library</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmACKCommandManager.cpp" />
+    <ClCompile Include="src\AlarmMMSJobCommandManager.cpp" />
+    <ClCompile Include="src\AlarmRequestManager.cpp" />
+    <ClCompile Include="src\ATSAlarmInfoManager.cpp" />
+    <ClCompile Include="src\ATSProfileManager.cpp" />
+    <ClCompile Include="src\CacheDataHead.cpp" />
+    <ClCompile Include="src\CacheDataWraper.cpp" />
+    <ClCompile Include="src\DataStoreReceiverAlarmRequest.cpp" />
+    <ClCompile Include="src\DataStoreReceiverATSAlarmInfo.cpp" />
+    <ClCompile Include="src\DataStoreReceiverATSProfile.cpp" />
+    <ClCompile Include="src\DataStoreReceiverISCSProfile.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterAlarmACKCommand.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterAlarmRequest.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterATSAlarmInfo.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterATSProfile.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterISCSProfile.cpp" />
+    <ClCompile Include="src\DataStoreUpdaterMMSJobCommand.cpp" />
+    <ClCompile Include="src\ISCSProfileManager.cpp" />
+    <ClCompile Include="src\ShareMemoryHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmACKCommandManager.h" />
+    <ClInclude Include="src\AlarmMMSJobCommandManager.h" />
+    <ClInclude Include="src\AlarmRequestManager.h" />
+    <ClInclude Include="src\ATSAlarmInfoManager.h" />
+    <ClInclude Include="src\ATSProfileManager.h" />
+    <ClInclude Include="src\BatchingProcessQueue.h" />
+    <ClInclude Include="src\CacheDataHead.h" />
+    <ClInclude Include="src\CacheDataManager.h" />
+    <ClInclude Include="src\CacheDataManagerChild.h" />
+    <ClInclude Include="src\CacheDataWraper.h" />
+    <ClInclude Include="src\DataStoreReceiver.h" />
+    <ClInclude Include="src\DataStoreReceiverAlarmRequest.h" />
+    <ClInclude Include="src\DataStoreReceiverATSAlarmInfo.h" />
+    <ClInclude Include="src\DataStoreReceiverATSProfile.h" />
+    <ClInclude Include="src\DataStoreReceiverISCSProfile.h" />
+    <ClInclude Include="src\DataStoreUpdater.h" />
+    <ClInclude Include="src\DataStoreUpdaterAlarmACKCommand.h" />
+    <ClInclude Include="src\DataStoreUpdaterAlarmRequest.h" />
+    <ClInclude Include="src\DataStoreUpdaterATSAlarmInfo.h" />
+    <ClInclude Include="src\DataStoreUpdaterATSProfile.h" />
+    <ClInclude Include="src\DataStoreUpdaterISCSProfile.h" />
+    <ClInclude Include="src\DataStoreUpdaterMMSJobCommand.h" />
+    <ClInclude Include="src\DataStructInfo.h" />
+    <ClInclude Include="src\ICacheDataUpdateObserver.h" />
+    <ClInclude Include="src\ISCSProfileManager.h" />
+    <ClInclude Include="src\ShareMemoryHelper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

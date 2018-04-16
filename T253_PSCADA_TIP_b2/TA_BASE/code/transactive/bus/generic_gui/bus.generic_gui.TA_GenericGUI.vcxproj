@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.generic_gui</ProjectName>
+    <ProjectGuid>{D7077DA8-F9B5-49D4-85C2-4B23CD6249D1}</ProjectGuid>
+    <RootNamespace>bus.generic_gui</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_GenericGUI_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_GenericGUI</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\event\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINVER=0x0501;TA_ASSERT_LOG=0;_LIB;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName />
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\event\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>TA_ASSERT_LOG=0;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ResourceOutputFileName />
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\core\exceptions\src\MessageResourceException.cpp" />
+    <ClCompile Include="src\AbstractDialogGUI.cpp" />
+    <ClCompile Include="src\AbstractDocumentGUI.cpp" />
+    <ClCompile Include="src\AbstractGUIApplication.cpp" />
+    <ClCompile Include="src\AbstractPropertySheetGUI.cpp" />
+    <ClCompile Include="src\AppLauncher.cpp" />
+    <ClCompile Include="src\GenericGUI.cpp" />
+    <ClCompile Include="src\HelpLauncher.cpp" />
+    <ClCompile Include="src\SystemControllerGroupUpdateSubscriber.cpp" />
+    <ClCompile Include="src\TransActiveDialog.cpp" />
+    <ClCompile Include="src\TransActiveFrame.cpp" />
+    <ClCompile Include="src\TransActiveMDIFrame.cpp" />
+    <ClCompile Include="src\TransActiveMessage.cpp" />
+    <ClCompile Include="src\TransActivePropertySheet.cpp" />
+    <ClCompile Include="src\TransActiveWinApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\core\exceptions\src\MessageResourceException.h" />
+    <ClInclude Include="src\AbstractDialogGUI.h" />
+    <ClInclude Include="src\AbstractDocumentGUI.h" />
+    <ClInclude Include="src\AbstractGUIApplication.h" />
+    <ClInclude Include="src\AbstractPropertySheetGUI.h" />
+    <ClInclude Include="src\AppLauncher.h" />
+    <ClInclude Include="src\GenericGUI.h" />
+    <ClInclude Include="src\GenericGuiConstants.h" />
+    <ClInclude Include="src\HelpLauncher.h" />
+    <ClInclude Include="src\IGUIAccess.h" />
+    <ClInclude Include="src\IGUIApplication.h" />
+    <ClInclude Include="src\ISystemStateUpdateObserver.h" />
+    <ClInclude Include="src\ITransActiveFrame.h" />
+    <ClInclude Include="src\StdAfx.h" />
+    <ClInclude Include="src\SystemControllerGroupUpdateSubscriber.h" />
+    <ClInclude Include="src\TransActiveDialog.h" />
+    <ClInclude Include="src\TransActiveFrame.h" />
+    <ClInclude Include="src\TransActiveMDIFrame.h" />
+    <ClInclude Include="src\TransActiveMessage.h" />
+    <ClInclude Include="src\TransActivePropertySheet.h" />
+    <ClInclude Include="src\TransActiveWinApp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TA_GenericGUI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

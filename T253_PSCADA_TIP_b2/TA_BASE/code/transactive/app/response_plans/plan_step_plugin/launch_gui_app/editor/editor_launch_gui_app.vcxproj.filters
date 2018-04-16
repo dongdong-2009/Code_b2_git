@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8dc44ab-498c-4f25-85f6-691c3b87a73e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{04ba6114-48ca-44a5-bd94-67da7669ecac}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_src\DllInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\ExecutableLaunchGuiAppStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\GuiAppStepEditorHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\GuiAppTypeStepParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\LaunchGuiAppDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\LaunchGuiAppStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\LaunchGuiAppStepEditorParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\MftLaunchGuiAppStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanStepEditLaunchGuiAppParameterPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TaskLaunchGuiApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_src\ExecutableLaunchGuiAppStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\GuiAppStepEditorHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\GuiAppTypeStepParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\LaunchGuiAppDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\LaunchGuiAppStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\LaunchGuiAppStepEditorParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\MftLaunchGuiAppStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanStepEditLaunchGuiAppParameterPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TaskLaunchGuiApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor_src\step_plugin.launch_gui_app_step.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityLaunchGuiApp.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

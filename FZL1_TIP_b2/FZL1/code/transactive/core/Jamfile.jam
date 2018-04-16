@@ -1,0 +1,23 @@
+
+alias TA_IRS_Core
+	: [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels project core
+			: is-library
+		]
+	;
+ta-install-lib library : TA_IRS_Core ;
+
+if [ option.get test : : true ]
+{
+	import option path print ;
+	if [ current-ta-project.get path ] = [ path.pwd ]
+	{
+		print.lines [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels project core
+			: is-library
+		] ;
+		exit ;
+	}
+}

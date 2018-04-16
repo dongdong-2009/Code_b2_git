@@ -1,0 +1,65 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_TIP/4677/transactive/bus/trains/train_agent/idl/src/ITrainAgentCorbaDef.idl $
+// @author:  Adam Radics
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2009/12/15 19:31:45 $
+// Last modified by:  $Author: grace.koh $
+//
+// Train IDL interface.
+//
+// This IDL is used to aggregate all the IDL to be implemented by the train agent.
+// This should not be used by cleints.
+//
+#include "bus/trains/train_agent/idl/src/ITrainInformationCorbaDef.idl"
+#include "bus/trains/train_agent/idl/src/IPaPidsTrainCommandsCorbaDef.idl"
+#include "bus/trains/train_agent/idl/src/IRecvSDSTrainAgentCorbaDef.idl"
+
+module TA_IRS_Bus_4677
+{
+	interface ITrainAgentCorbaDef : ITrainInformationCorbaDef,
+	                                IPaPidsTrainCommandsCorbaDef,
+									IRecvSDSTrainAgentCorbaDef
+	{
+		enum ETrainTalkgroupState
+		{
+			Depot,
+			Mainline,
+			Unknown
+		};
+
+		/*
+		 *	State Update message for train comms
+		 */
+		struct TrainCommsStateUpdate
+		{
+			octet trainId;	
+			ETrainTalkgroupState talkgroup;			
+			unsigned long talkgroupId;			// TD18758 ss++ To sync the talkgroup ID itself
+			unsigned long paLiveTransactionId;  // Used to group the train into a PA live broadcast. 
+												// If this is not 0 the train is part of an existing 
+												// PA Live announcement.
+		};
+
+        typedef sequence<TrainCommsStateUpdate> TrainStateUpdateList;
+
+		/**
+		  * getCurrentCommsState
+		  * 
+		  * Used to load the initial state of the comms
+		  * 
+		  * @return TrainStateUpdateList 
+	 	  *		  A list of TrainCommsStateUpdate objects
+		  * 
+		  * @exception TrainException
+		  */
+		TrainStateUpdateList getCurrentCommsState()
+			raises( TrainException, TA_Base_Core::OperationModeException);
+
+	}; // ITrainAgentCorbaDef
+}; // TA_IRS_Bus_4677
+

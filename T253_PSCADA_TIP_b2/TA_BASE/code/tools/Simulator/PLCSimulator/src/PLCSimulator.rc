@@ -1,0 +1,432 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE MOVEABLE PURE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\PLCSimulator.rc2""  // 非 Microsoft Visual C++ 编辑过的资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "PLCSimulator"
+FONT 9, "MS Shell Dlg"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "PLCSimulator Version 1.0.1.2",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_PLCSimulator_DIALOG DIALOGEX 0, 0, 551, 326
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "PLCSimulator"
+MENU IDR_MENU1
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_CONFIG,59,92,137,15,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    GROUPBOX        "PLC Status",IDC_STATIC,7,29,208,102,WS_GROUP
+    LTEXT           "Identification:",IDC_STATIC,13,46,45,8
+    LTEXT           "PLC IP:",IDC_STATIC,13,61,45,8
+    LTEXT           "Location:",IDC_STATIC,114,46,54,8
+    LTEXT           "Command Port:",IDC_STATIC,114,61,54,8
+    EDITTEXT        IDC_IDENTITY,60,45,49,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_ADDRESS,60,60,49,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_LOC,171,46,39,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    EDITTEXT        IDC_CMDPORT,171,61,39,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    LTEXT           "Polling Port:",IDC_STATIC,13,76,43,8
+    EDITTEXT        IDC_POLLPORT,59,77,137,15,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_BORDER
+    EDITTEXT        IDC_LOGS,16,200,518,100,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    CONTROL         "Primary",IDC_PRIMARY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,220,55,54,10
+    CONTROL         "Standby",IDC_STANDBY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,220,74,54,10
+    CONTROL         "Switching",IDC_SWITCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,220,93,54,10
+    LISTBOX         IDC_DEVICE,286,43,83,78,LBS_SORT | LBS_OWNERDRAWFIXED | 
+                    LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Set Data",IDC_STATIC,378,29,166,102
+    LTEXT           "Address:\n(WORD.BIT)",IDC_STATIC,383,53,42,18
+    LTEXT           "Value:",IDC_STATIC,383,78,42,18
+    CONTROL         "By Bit",IDC_BYBIT,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,493,43,46,10
+    CONTROL         "By Byte",IDC_BYBYTE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,493,57,46,10
+    CONTROL         "By Word",IDC_BYWORD,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,493,71,46,10
+    CONTROL         "By Dword",IDC_BYDWORD,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,493,85,46,10
+    PUSHBUTTON      "Set Data",IDC_SET,492,110,48,14,WS_DISABLED,
+                    WS_EX_CLIENTEDGE
+    PUSHBUTTON      "ReLoad SaveData",IDC_RELOADSAVEDATA,431,110,61,14,
+                    WS_DISABLED,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_ADDR,425,52,59,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_VAL,425,74,59,14,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "Write to files",IDC_LOGTOFILE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,16,302,59,10
+    PUSHBUTTON      "Get Data",IDC_GET,383,110,48,14,WS_DISABLED,
+                    WS_EX_CLIENTEDGE
+    GROUPBOX        "Communication Logs",IDC_STATIC,7,187,537,128
+    GROUPBOX        "Enable/Disable SWC/PLC",IDC_STATIC,279,29,98,102
+    GROUPBOX        "PLC Control",IDC_STATIC,216,29,62,102
+    EDITTEXT        IDC_EDIT_OUTPUT,16,141,518,38,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | 
+                    WS_VSCROLL
+    GROUPBOX        "Output Display",IDC_STATIC,7,128,537,60
+    CONTROL         "Pause communication display",IDC_PAUSECOMMDISPLAY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,76,302,103,10
+    LTEXT           "Config Path:",IDC_STATIC,13,91,41,8
+    CONTROL         "Pause output display",IDC_PAUSEOUTPUTDISPLAY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,187,302,80,10
+    COMBOBOX        IDC_COMBO_PROTOCAL,405,300,108,40,CBS_DROPDOWN | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_STRESSCFG,59,106,137,15,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_BORDER
+    LTEXT           "StressCfg:",IDC_STATIC,13,105,41,8
+    CONTROL         "Check client request address range",IDC_CHK_CLIENT_ADDRESS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,274,303,126,10
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "TODO: <公司名>\0"
+            VALUE "FileDescription", "TODO: <文件说明>\0"
+            VALUE "FileVersion", "1.0.0.1\0"
+            VALUE "InternalName", "PLCSimulator.exe\0"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PLCSimulator.exe\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "TODO: <产品名>\0"
+            VALUE "ProductVersion", "1.0.0.1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO MOVEABLE PURE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_PLCSimulator_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 544
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 319
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PLCSimulator_DIALOG DLGINIT
+BEGIN
+    IDC_COMBO_PROTOCAL, 0x403, 25, 0
+0x7453, 0x6e61, 0x6164, 0x6472, 0x4d20, 0x646f, 0x7562, 0x2073, 0x7250, 
+0x746f, 0x636f, 0x6c61, "\000" 
+    IDC_COMBO_PROTOCAL, 0x403, 21, 0
+0x3843, 0x3033, 0x4d20, 0x646f, 0x7562, 0x2073, 0x7250, 0x746f, 0x636f, 
+0x6c61, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 PLCSimulator(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_HELP DIALOG DISCARDABLE  0, 0, 147, 96
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+FONT 10, "System"
+BEGIN
+    EDITTEXT        IDC_EDIT_HELP,7,38,133,51,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    CONTROL         159,IDC_STATIC,"Static",SS_BITMAP,7,7,133,25
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DIALOG_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 140
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Load Config File",            ID_FILE_lOADCONFIGFILE
+        MENUITEM SEPARATOR
+        MENUITEM "Stress On",                   ID_TOOLBAR_STRESSON
+        MENUITEM "Stress Off",                  ID_TOOLBAR_STRESSOFF
+    END
+    POPUP "PLC Control"
+    BEGIN
+        MENUITEM "PLC Open",                    ID_TOOLBAR_RTUON
+        MENUITEM "PLC Close",                   ID_TOOLBAR_RTUOFF
+        MENUITEM SEPARATOR
+        MENUITEM "PLC ReLoad",                  ID_TOOLBAR_RTURELOAD
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\PLCSimulator.ico"
+IDI_ICON1               ICON    DISCARDABLE     "..\\res\\NET10A.ICO"
+IDI_ICON2               ICON    DISCARDABLE     "..\\res\\NET10B.ICO"
+IDI_ICON3               ICON    DISCARDABLE     "..\\res\\KEY04.ICO"
+IDI_ICON4               ICON    DISCARDABLE     "..\\res\\MISC14.ICO"
+IDI_ICON5               ICON    DISCARDABLE     "..\\res\\MISC15.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_FILE_lOADCONFIGFILE
+    BUTTON      ID_FILE_lOADSTRESSCFG
+    BUTTON      ID_TOOLBAR_STRESSON
+    BUTTON      ID_TOOLBAR_STRESSOFF
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_RTUON
+    BUTTON      ID_TOOLBAR_RTUOFF
+    BUTTON      ID_TOOLBAR_RTURELOAD
+    SEPARATOR
+    BUTTON      ID_TOOLBAR_HELP
+    BUTTON      ID_TOOLBAR_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "..\\res\\toolbar1.bmp"
+IDB_BITMAP2             BITMAP  DISCARDABLE     "..\\res\\OPEN1.bmp"
+IDB_BITMAP3             BITMAP  DISCARDABLE     "..\\res\\TransActive_Logo_RGBlarge.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM32771        "Load Config File"
+    ID_MENUITEM32772        "Stress On"
+    ID_MENUITEM32773        "Primary"
+    ID_MENUITEM32774        "Standby"
+    ID_TOOLBAR_STRESSON     "Stress On\n"
+    ID_TOOLBAR_STRESSOFF    "Stress Off\n"
+    ID_TOOLBAR_RTUON        "PLC On\n"
+    ID_TOOLBAR_RTURESET     "PLC Reset\n"
+    ID_TOOLBAR_HELP         "PLC Simulator Help\n"
+    ID_MENUITEM32780        "Switching"
+    ID_MENUITEM32781        "PLC Open"
+    ID_MENUITEM32782        "PLC Close"
+    ID_MENUITEM32783        "PLC Reset"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_MENUITEM32784        "Write To Files"
+    ID_MENUITEM32785        "Stress On"
+    ID_FILE_lOADCONFIGFILE  "Load Config File\n"
+    ID_FILE_STRESSON        "Stress On"
+    ID_FILE_STRESSOFF       "Stress Off"
+    ID_TOOLBAR_RTUOFF       "PLC Off\n"
+    ID_FILE_lOADSTRESSCFG   "Load Stress Config File\n"
+    ID_TOOLBAR_RTURELOAD    "ReLoad All Config Files\n"
+    ID_TOOLBAR_ABOUT        "PLC Simulator About\n"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\PLCSimulator.rc2"  // 非 Microsoft Visual C++ 编辑过的资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

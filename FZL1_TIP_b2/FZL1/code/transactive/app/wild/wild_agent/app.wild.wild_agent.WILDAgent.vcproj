@@ -1,0 +1,126 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.wild.wild_agent" ProjectGUID="{AF30F570-041B-4EDB-AF67-BA74AC057EB1}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/wild/wild_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nd/app.wild.wild_agent.WILDAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories=".\src,..\..\..,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\scada\common_library\IDL\src,..\..\..\..\..\sdk\include\transactive\core\alarm\IDL\src,..\..\..\..\..\sdk\include\transactive\core\process_management\idl\src,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers" PreprocessorDefinitions="_DEBUG;WIN32;_CONSOLE;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/wild/wild_agent/app.wild.wild_agent.WILDAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/wild/wild_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/wild/wild_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/wild/wild_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib aced.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_IRS_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Bus_d.lib oci.lib libmysql.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/WILDAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd,../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32,../../../../cots/oracle/11.2.0/winnt/lib,../../../../cots\Mysql\5.5.15\winnt\lib,..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/WILDAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.wild.wild_agent.WILDAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/wild/wild_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nr/app.wild.wild_agent.WILDAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories=".\src,..\..\..,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\scada\common_library\IDL\src,..\..\..\..\..\sdk\include\transactive\core\alarm\IDL\src,..\..\..\..\..\sdk\include\transactive\core\process_management\idl\src,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers" PreprocessorDefinitions="NDEBUG;WIN32;_CONSOLE;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/wild/wild_agent/app.wild.wild_agent.WILDAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/wild/wild_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/wild/wild_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/wild/wild_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib ace.lib TA_mcl.lib TA_Base_Core.lib TA_IRS_Core.lib TA_Base_Bus.lib TA_IRS_Bus.lib oci.lib libmysql.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/WILDAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr,../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32,../../../../cots/oracle/11.2.0/winnt/lib,../../../../cots\Mysql\5.5.15\winnt\lib,..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/WILDAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.wild.wild_agent.WILDAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ATSTrainTableSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataCorrelation.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataPointCache.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\main.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SingletonTrainDataMap.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\WildAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\WILDConfiguration.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\ATSTrainTableSubscriber.h">
+			</File>
+			<File RelativePath="src\DataCorrelation.h">
+			</File>
+			<File RelativePath="src\DataPointCache.h">
+			</File>
+			<File RelativePath="src\SingletonTrainDataMap.h">
+			</File>
+			<File RelativePath="src\WildAgent.h">
+			</File>
+			<File RelativePath="src\WILDConfiguration.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

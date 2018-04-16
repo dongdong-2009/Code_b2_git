@@ -1,0 +1,1218 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_PLAN_NEW_DROP_DOWN MENU
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "New Classic Plan",            ID_PLAN_NEW
+        MENUITEM "New Workflow Plan",           ID_WORK_FLOW_PLAN_NEW
+    END
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG  0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Plan Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,12,20,20
+    LTEXT           "Plan Manager Version 1.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_BLANK_VIEW DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_CATEGORY_NODE_VIEW DIALOGEX 0, 0, 193, 96
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,16,28,29,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_NAME_EDIT,16,39,162,12,ES_AUTOHSCROLL
+    LTEXT           "Description:",IDC_STATIC,16,59,38,8,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DESCRIPTION_EDIT,16,70,162,12,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_WANTRETURN
+    LTEXT           "Category -",IDC_HEADING_STATIC,0,0,193,12,0,WS_EX_DLGMODALFRAME
+    GROUPBOX        "Details",IDC_DETAILS_GRPBOX,7,16,179,76
+END
+
+IDD_PLAN_NODE_VIEW DIALOG  0, 0, 397, 230
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_PLANDETAIL_TAB,"SysTabControl32",0x0,7,7,382,216
+END
+
+IDD_PLAN_GENERAL_DETAIL_DLG DIALOGEX 0, 0, 374, 252
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,16,16,67,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_NAME_EDIT,16,27,342,14,ES_AUTOHSCROLL
+    LTEXT           "Description:",IDC_STATIC,15,109,97,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DESCRIPTION_EDIT,15,120,342,14,ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN
+    CONTROL         "Show all plan owners",IDC_ALL_OWNERS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,172,122,10
+    CONTROL         "Show all plan locations",IDC_ALL_LOCATIONS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,188,122,10
+    CONTROL         "List1",IDC_ACTIVE_INSTANCES_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,16,205,342,30
+    LTEXT           "Approval status:",IDC_STATIC,279,79,77,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_APPROVAL_STATUS_EDIT,279,90,77,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    GROUPBOX        "Details",IDC_DETAILS_GRPBOX,7,4,360,140
+    GROUPBOX        "Active instances",IDC_ACTIVE_INSTANCES_GRPBOX,7,159,360,86
+    LTEXT           "",IDC_SPLITTER_BAR,0,151,373,4,NOT WS_GROUP,WS_EX_DLGMODALFRAME
+    LTEXT           "Plan modified by:",IDC_STATIC,16,47,118,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PLAN_MODIFIED_BY_EDIT,16,58,119,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Plan modification:",IDC_STATIC,148,47,117,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PLAN_MODIFICATION_TIME_EDIT,148,58,119,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Approval modified by:",IDC_STATIC,16,79,118,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_APPROVAL_MODIFIED_BY_EDIT,16,90,119,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Approval modification:",IDC_STATIC,148,79,117,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_APPROVAL_MODIFICATION_TIME_EDIT,148,90,119,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+END
+
+IDD_PLAN_STEP_DETAIL_DLG DIALOGEX 0, 0, 374, 186
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Steps"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Show all plan owners",IDC_ALL_OWNERS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,17,122,10
+    CONTROL         "Show all plan locations",IDC_ALL_LOCATIONS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,33,122,10
+    COMBOBOX        IDC_ACTIVE_INSTANCE_COMBO,141,29,58,69,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_PLAN_STEPS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,16,70,342,34
+    CONTROL         "List1",IDC_STEP_PARAMETERS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,16,137,342,32
+    GROUPBOX        "Plan status",IDC_PLAN_STATUS_GRPBOX,7,4,360,51
+    GROUPBOX        "Plan steps",IDC_PLAN_STEPS_GRPBOX,7,59,359,51
+    GROUPBOX        "Step parameters",IDC_STEP_PARAMETERS_GRPBOX,7,122,360,55
+    LTEXT           "",IDC_SPLITTER_BAR,0,114,373,4,NOT WS_GROUP,WS_EX_DLGMODALFRAME
+    LTEXT           "Instance:",IDC_ACTIVE_INSTANCE_LABEL,141,17,57,11,0,WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_ACTIVE_INSTANCE_LIST,"SysListView32",LVS_REPORT | WS_BORDER,211,16,151,32
+END
+
+IDD_PLAN_STEP_EDIT_DLG DIALOG  0, 0, 370, 260
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Step Editor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,127,239,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,193,239,50,14
+END
+
+IDD_PLAN_STEP_NEW_DLG DIALOGEX 0, 0, 215, 117
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select plan step type and position"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Step type:",IDC_STATIC,8,7,136,10,0,WS_EX_TRANSPARENT
+    COMBOBOX        IDC_STEP_TYPE,7,17,201,84,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Before selected step",IDC_INSERT_BEFORE_SELECTION_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,18,52,182,10
+    CONTROL         "After selected step",IDC_INSERT_AFTER_SELECTION_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,18,67,182,10
+    DEFPUSHBUTTON   "OK",IDOK,49,96,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,115,96,50,14
+    GROUPBOX        "Insert position",IDC_STATIC,7,39,201,45
+END
+
+IDD_PLAN_STEP_EDIT_DETAILS_DLG DIALOGEX 0, 0, 353, 207
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "General"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Name:",IDC_STATIC,15,16,77,11,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STEP_NAME,15,27,180,14,ES_AUTOHSCROLL
+    LTEXT           "Description:",IDC_STATIC,15,46,77,10,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STEP_DESCRIPTION,15,58,322,67,ES_MULTILINE | ES_AUTOVSCROLL
+    CONTROL         "Step is skippable",IDC_SKIPABLE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,151,84,11
+    CONTROL         "Skip step",IDC_SKIP_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,167,59,11
+    GROUPBOX        "Execution properties",IDC_STATIC,6,138,171,62
+    GROUPBOX        "Details",IDC_STATIC,6,4,341,129
+    LTEXT           "Step type:",IDC_STATIC,204,16,92,11,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STEP_TYPE,204,27,132,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Delay:",IDC_STATIC,191,165,34,12,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "mm:ss",IDC_STATIC,285,165,37,12,SS_CENTERIMAGE
+    CONTROL         "Ignore step failure",IDC_IGNORE_FAILURE_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,183,143,10
+    GROUPBOX        "",IDC_STATIC,176,138,171,62
+    CONTROL         "DateTimePicker1",IDC_DELAY_PICKER,"SysDateTimePick32",DTS_UPDOWN | WS_TABSTOP | 0x8,229,164,51,15
+END
+
+IDD_PLAN_STEP_EDIT_TERMINATE_PLAN_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "...",IDC_PICK_PLAN_PATH_BUTTON,323,15,14,14
+    LTEXT           "Plan path:",-1,11,15,67,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PLAN_PATH,81,15,242,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+END
+
+IDD_PLAN_STEP_EDIT_RUN_PLAN_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "...",IDC_PICK_PLAN_PATH_BUTTON,323,15,14,14
+    CONTROL         "Manual plan launch",IDC_MANUAL_LAUNCH,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,81,39,198,12
+    CONTROL         "Wait for plan completion",IDC_WAIT_FOR_COMPLETION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,81,56,198,12
+    LTEXT           "Plan path:",-1,11,15,67,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PLAN_PATH,81,15,242,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+END
+
+IDD_PLAN_STEP_PASTE_DLG DIALOG  0, 0, 186, 89
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select plan step position"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,35,67,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,101,67,50,14
+    CONTROL         "Before selected step",IDC_PASTE_BEFORE_SELECTION_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,18,23,146,10
+    CONTROL         "After selected step",IDC_PASTE_AFTER_SELECTION_RADIO,
+                    "Button",BS_AUTORADIOBUTTON,18,38,146,10
+    GROUPBOX        "Paste position",IDC_STATIC,7,9,171,45
+END
+
+IDD_ACTIVE_PLAN_VIEW DIALOGEX 0, 0, 374, 99
+STYLE DS_SETFONT | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Show all plan owners",IDC_ALL_OWNERS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,19,122,10,WS_EX_TRANSPARENT
+    CONTROL         "Show all plan locations",IDC_ALL_LOCATIONS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,35,122,10,WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_ACTIVE_INSTANCES_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,16,52,342,30
+    GROUPBOX        "Active instances",IDC_ACTIVE_INSTANCES_GRPBOX,7,5,360,86
+END
+
+IDD_PLAN_FLOWCHART_DLG DIALOGEX 0, 0, 495, 321
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Flowchart"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Show all plan owners",IDC_ALL_OWNERS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,19,122,10
+    CONTROL         "Show all plan locations",IDC_ALL_LOCATIONS_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,35,122,10
+    COMBOBOX        IDC_ACTIVE_INSTANCE_COMBO,145,31,58,69,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Plan status",IDC_PLAN_STATUS_GRPBOX,11,6,474,59
+    LTEXT           "Instance:",IDC_ACTIVE_INSTANCE_LABEL,145,19,57,11,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_ACTIVE_INSTANCE_LIST,"SysListView32",LVS_REPORT | WS_BORDER,241,19,235,32
+END
+
+IDD_IMPORT_PLAN_NEW_NAME DIALOGEX 0, 0, 363, 81
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Plan name already exists"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,306,54,50,14,WS_GROUP
+    EDITTEXT        IDC_PROMPT_EDIT,16,12,329,26,ES_CENTER | NOT WS_BORDER
+    EDITTEXT        IDC_PLAN_NAME_EDIT,77,54,216,14,ES_AUTOHSCROLL
+    LTEXT           "Plan name :",IDC_STATIC,16,57,48,11,0,WS_EX_TRANSPARENT
+END
+
+IDD_CHANGE_IMPORT_PLAN_NAME DIALOGEX 0, 0, 442, 83
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Plan name already exists"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,367,58,50,14,WS_GROUP
+    EDITTEXT        IDC_PROMPT_EDIT,23,14,394,27,ES_CENTER | ES_MULTILINE | NOT WS_BORDER
+    EDITTEXT        IDC_PLAN_NAME_EDIT,85,53,255,19
+    LTEXT           "Plan name :",IDC_STATIC,24,58,53,14,0,WS_EX_TRANSPARENT
+END
+
+IDD_PLAN_STEP_EDIT_INCLUSIVE_GATEWAY_DLG DIALOGEX 0, 0, 353, 207
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 400, 0, 0x0
+BEGIN
+END
+
+IDD_PLAN_STEP_EDIT_EXCLUSIVE_GATEWAY_DLG DIALOGEX 0, 0, 353, 207
+STYLE DS_SETFONT | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 400, 0, 0x0
+BEGIN
+END
+
+IDD_PLAN_STEP_EDIT_PARALLEL_GATEWAY_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "...",IDC_PICK_INCOMING_STEP_BUTTON,144,15,14,14,NOT WS_VISIBLE
+    LTEXT           "Incoming steps:",IDC_STATIC,11,15,81,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LISTBOX         IDC_PARALLEL_GATEWAY_INCOMING_STEP,19,43,136,87,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "...",IDC_PICK_OUTGOING_STEP_BUTTON,305,14,14,14,NOT WS_VISIBLE
+    LTEXT           "Outgoing steps:",IDC_STATIC,172,14,98,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LISTBOX         IDC_PARALLEL_GATEWAY_OUTGOING_STEP,182,43,137,87,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\..\\..\\..\\bus\\resources\\icons\\PlanManager.ico"
+IDR_PLAN_CONTROLLER     ICON                    "..\\res\\PlanController.ico"
+IDR_PLAN_EDITOR         ICON                    "..\\res\\PlanEditor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+        MENUITEM "Import Plan...",              ID_IMPORT_PLAN
+        MENUITEM "Export Plan...",              ID_EXPORT_PLAN
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Plan Manager Help",           ID_HELP_INDEX
+        MENUITEM "&About Plan Manager",         ID_APP_ABOUT
+    END
+END
+
+IDR_PLAN_TREE_VIEW MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+        MENUITEM "Import Plan",                 ID_IMPORT_PLAN
+        MENUITEM "Export Plan",                 ID_EXPORT_PLAN
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&All Plans",                  ID_VIEW_ALLPLANS
+        MENUITEM "A&pproved Plans",             ID_VIEW_APPROVEDPLANS
+        MENUITEM "U&napproved Plans",           ID_VIEW_UNAPPROVEDPLANS
+        MENUITEM "A&ctive Plans",               ID_VIEW_ACTIVEPLANS
+    END
+    POPUP "&Category"
+    BEGIN
+        MENUITEM "&New\t    Shift+Ctrl+N",      ID_CATEGORY_NEW
+        MENUITEM "&Delete\t    Del",            ID_CATEGORY_DELETE
+        MENUITEM "&Rename",                     ID_CATEGORY_RENAME
+    END
+    POPUP "&Plan"
+    BEGIN
+        MENUITEM "&New\t    Ctrl+N",            ID_PLAN_NEW
+        MENUITEM "&Delete\t    Del",            ID_PLAN_DELETE
+        MENUITEM "Cu&t\t    Ctrl+X",            ID_PLAN_CUT
+        MENUITEM "&Copy\t    Ctrl+C",           ID_PLAN_COPY
+        MENUITEM "&Paste\t    Ctrl+V",          ID_PLAN_PASTE
+        MENUITEM "&Edit",                       ID_PLAN_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Approve",                    ID_PLAN_APPROVE
+        MENUITEM "&Unapprove",                  ID_PLAN_UNAPPROVE
+        MENUITEM SEPARATOR
+        MENUITEM "Sc&hedule Plan",              ID_PLAN_SCHEDULE
+        MENUITEM "Cont&rol",                    ID_PLAN_CONTROL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Plan Manager Help",           ID_HELP_INDEX
+        MENUITEM "&About Plan Manager",         ID_APP_ABOUT
+    END
+END
+
+IDR_ACTIVE_PLAN_VIEW MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&All Plans",                  ID_VIEW_ALLPLANS
+        MENUITEM "A&pproved Plans",             ID_VIEW_APPROVEDPLANS
+        MENUITEM "U&napproved Plans",           ID_VIEW_UNAPPROVEDPLANS
+        MENUITEM "A&ctive Plans",               ID_VIEW_ACTIVEPLANS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Plan Manager Help",           ID_HELP_INDEX
+        MENUITEM "&About Plan Manager",         ID_APP_ABOUT
+    END
+END
+
+IDR_PLAN_CONTROLLER MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Plan"
+    BEGIN
+        POPUP "S&tart"
+        BEGIN
+            MENUITEM "&Start New Instance\tCtrl+N", ID_PLAN_EXECUTE
+            MENUITEM "&Customise New Instance",     ID_PLAN_CUSTOMISE
+        END
+        MENUITEM "&Stop Instance\tCtrl+S",      ID_PLAN_STOP
+        MENUITEM "&Pause Instance\tCtrl+P",     ID_PLAN_PAUSE
+        MENUITEM "&Resume Instance\tCtrl+R",    ID_PLAN_RESUME
+        MENUITEM "Resume &Instance at Selected Step\tCtrl+I", ID_PLAN_RESUME_SELECTED_STEP
+        MENUITEM "Ta&ke Control of Instance",   ID_PLAN_TAKECONTROL
+        MENUITEM SEPARATOR
+        MENUITEM "Sc&hedule",                   ID_PLAN_SCHEDULE
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "&Customise",                  ID_STEP_CUSTOMISE
+    END
+END
+
+IDR_PLAN_EDITOR MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Plan"
+    BEGIN
+        MENUITEM "&Save\t    Ctrl+S",           ID_PLAN_SAVE
+        MENUITEM "&Upgrade\t    Ctrl+U",        ID_EDITOR_UPGRADE
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "&New\t    Ctrl+N",            ID_STEP_NEW
+        MENUITEM "&Delete\t    Del",            ID_STEP_DELETE
+        MENUITEM "Cu&t\t    Ctrl+X",            ID_STEP_CUT
+        MENUITEM "&Copy\t    Ctrl+C",           ID_STEP_COPY
+        MENUITEM "&Paste\t    Ctrl+V",          ID_STEP_PASTE
+        MENUITEM "&Edit",                       ID_STEP_EDIT
+    END
+END
+
+IDR_PLAN_STEP_EDITOR MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Exit",                       ID_FILE_EXIT
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "Save\t    Ctrl+S",            ID_SAVE_PLAN_STEP
+        MENUITEM "Edit Parameter",              ID_PLAN_STEP_EDIT_PARAMETER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "PlanManager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "PlanManager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "PlanManager.EXE"
+            VALUE "ProductName", "PlanManager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_CATEGORY_NODE_TOOLBAR BITMAP                  "..\\res\\CategoryNodeToolbar.bmp"
+IDR_PLAN_NODE_TOOLBAR   BITMAP                  "..\\res\\PlanNodeToolbar.bmp"
+IDR_PLAN_CONTROLLER_GENERAL_TOOLBAR BITMAP                  "..\\res\\PlanControllerGeneralToolbar.bmp"
+IDR_PLAN_CONTROLLER_STEPS_TOOLBAR BITMAP                  "..\\res\\PlanControllerStepsToolbar.bmp"
+IDR_PLAN_CONTROLLER_FLOWCHART_TOOLBAR BITMAP                  "..\\res\\PlanControllerFlowchartToolbar.bmp"
+IDR_PLAN_EDITOR_GENERAL_TOOLBAR BITMAP                  "..\\res\\PlanEditorGeneralToolbar.bmp"
+IDR_PLAN_EDITOR_STEPS_TOOLBAR BITMAP                  "..\\res\\PlanEditorStepsToolbar.bmp"
+IDR_PLAN_EDITOR_FLOWCHART_TOOLBAR BITMAP                  "..\\res\\PlanEditorFlowchartToolbar.bmp"
+IDB_TREE_NODE_IMAGE_LIST_BMP BITMAP                  "..\\res\\TreeNodeImageList.bmp"
+IDB_STEP_EXEC_STATE_IMAGE_LIST_BMP BITMAP                  "..\\res\\StepExecStateImageList.bmp"
+IDR_PLAN_NODE_ADMIN_TOOLBAR BITMAP                  "..\\res\\plan_nod.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_CATEGORY_NODE_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_CATEGORY_NEW
+    BUTTON      ID_CATEGORY_DELETE
+    SEPARATOR
+    BUTTON      ID_PLAN_NEW
+    BUTTON      ID_PLAN_PASTE
+END
+
+IDR_PLAN_NODE_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_CATEGORY_NEW
+    SEPARATOR
+    BUTTON      ID_PLAN_NEW
+    BUTTON      ID_PLAN_DELETE
+    BUTTON      ID_PLAN_CUT
+    BUTTON      ID_PLAN_COPY
+    BUTTON      ID_PLAN_PASTE
+    BUTTON      ID_PLAN_EDIT
+    SEPARATOR
+    BUTTON      ID_PLAN_APPROVE
+    BUTTON      ID_PLAN_UNAPPROVE
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+    BUTTON      ID_PLAN_CONTROL
+END
+
+IDR_PLAN_CONTROLLER_GENERAL_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_EXECUTE
+    BUTTON      ID_PLAN_STOP
+    BUTTON      ID_PLAN_PAUSE
+    BUTTON      ID_PLAN_RESUME
+    BUTTON      ID_PLAN_TAKECONTROL
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+END
+
+IDR_PLAN_CONTROLLER_STEPS_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_EXECUTE
+    BUTTON      ID_PLAN_STOP
+    BUTTON      ID_PLAN_PAUSE
+    BUTTON      ID_PLAN_RESUME
+    BUTTON      ID_PLAN_TAKECONTROL
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+    BUTTON      ID_STEP_CUSTOMISE
+END
+
+IDR_PLAN_CONTROLLER_FLOWCHART_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_EXECUTE
+    BUTTON      ID_PLAN_STOP
+    BUTTON      ID_PLAN_PAUSE
+    BUTTON      ID_PLAN_RESUME
+    BUTTON      ID_PLAN_TAKECONTROL
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+    SEPARATOR
+    BUTTON      ID_FLOWCHAR_ZOOM_IN
+    BUTTON      ID_FLOWCHAR_ZOOM_OUT
+    BUTTON      ID_FLOWCHAR_ZOOM_NORMAL
+    BUTTON      ID_FLOWCHAR_FIT_WINDOW
+END
+
+IDR_PLAN_EDITOR_GENERAL_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_SAVE
+    BUTTON      ID_EDITOR_UPGRADE
+END
+
+IDR_PLAN_EDITOR_STEPS_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_SAVE
+    SEPARATOR
+    BUTTON      ID_STEP_NEW
+    BUTTON      ID_STEP_DELETE
+    BUTTON      ID_STEP_CUT
+    BUTTON      ID_STEP_COPY
+    BUTTON      ID_STEP_PASTE
+    BUTTON      ID_STEP_EDIT
+END
+
+IDR_PLAN_EDITOR_FLOWCHART_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_PLAN_SAVE
+    SEPARATOR
+    BUTTON      ID_FLOWCHAR_DELETE
+    BUTTON      ID_FLOWCHAR_COPY
+    BUTTON      ID_FLOWCHAR_PASTE
+    BUTTON      ID_FLOWCHAR_ZOOM_IN
+    BUTTON      ID_FLOWCHAR_ZOOM_OUT
+    BUTTON      ID_FLOWCHAR_ZOOM_NORMAL
+    BUTTON      ID_FLOWCHAR_FIT_WINDOW
+END
+
+IDR_PLAN_NODE_ADMIN_TOOLBAR TOOLBAR  24, 24
+BEGIN
+    BUTTON      ID_CATEGORY_NEW
+    SEPARATOR
+    BUTTON      ID_PLAN_NEW
+    BUTTON      ID_PLAN_DELETE
+    BUTTON      ID_PLAN_CUT
+    BUTTON      ID_PLAN_COPY
+    BUTTON      ID_PLAN_PASTE
+    BUTTON      ID_PLAN_EDIT
+    SEPARATOR
+    BUTTON      ID_PLAN_APPROVE
+    BUTTON      ID_PLAN_UNAPPROVE
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+    BUTTON      ID_PLAN_CONTROL
+    SEPARATOR
+    BUTTON      ID_PLAN_VISIBLE
+    BUTTON      ID_PLAN_INVISIBLE
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\PlanManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#include ""..\\..\\..\\bus\\response_plans\\plan_tree\\src\\PlanTree.rc""\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_PLAN_CONTROLLER ACCELERATORS 
+BEGIN
+    "N",            ID_PLAN_EXECUTE,        VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_PLAN_PAUSE,          VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_PLAN_RESUME,         VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_PLAN_STOP,           VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_PLAN_EDITOR ACCELERATORS 
+BEGIN
+    "C",            ID_STEP_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_STEP_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_PLAN_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "U",            ID_EDITOR_UPGRADE,      VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_STEP_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_STEP_DELETE,         VIRTKEY, NOINVERT
+    "X",            ID_STEP_CUT,            VIRTKEY, CONTROL, NOINVERT
+END
+
+IDR_PLAN_TREE_VIEW ACCELERATORS 
+BEGIN
+    "C",            ID_PLAN_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_PLAN_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_CATEGORY_NEW,        VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "V",            ID_PLAN_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_CATEGORY_OR_PLAN_DELETE, VIRTKEY, NOINVERT
+    "X",            ID_PLAN_CUT,            VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PLAN_STEP_EDIT_DATA_POINT_SET_DLG DLGINIT
+BEGIN
+    IDC_DATA_POINT_VALUE_BOOL, 0x403, 5, 0
+0x7254, 0x6575, "\000" 
+    IDC_DATA_POINT_VALUE_BOOL, 0x403, 6, 0
+0x6146, 0x736c, 0x0065, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Plan Manager"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Plan Manager"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Open another window for the active document\nNew Window"
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+    ID_VIEW_AUTOARRANGE     "Arrange icons on a grid."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_TREE_ALLPLANS_ROOT_LABEL "All Plans"
+    IDS_TREE_APPROVEDPLANS_ROOT_LABEL "Approved Plans"
+    IDS_TREE_UNAPPROVEDPLANS_ROOT_LABEL "Unapproved Plans"
+    IDS_PLAN_GENERAL_DETAIL_TAB_LABEL "General"
+    IDS_PLAN_STEP_DETAIL_TAB_LABEL "Steps"
+    IDS_PLAN_APPROVED_STATUS "Approved"
+    IDS_PLAN_UNAPPROVED_STATUS "Unapproved"
+    IDS_PLAN_UNDEFINED_APPROVAL_STATUS "Undefined"
+    IDS_ACTIVE_PLAN_LIST_PLAN_COLUMN "Plan"
+    IDS_ACTIVE_PLAN_LIST_CATEGORY_COLUMN "Category"
+    IDS_ACTIVE_PLAN_LIST_INSTANCE_COLUMN "Instance"
+    IDS_ACTIVE_PLAN_LIST_OWNER_COLUMN "Owner"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_SMALLICON       "Display items by using small icons.\nSmall Icons"
+    ID_VIEW_LARGEICON       "Display items by using large icons.\nLarge Icons"
+    ID_VIEW_LIST            "Displays items in a list.\nList"
+    ID_VIEW_DETAILS         "Displays detailed information about each item in the window.\nDetails"
+    ID_VIEW_LINEUP          "Arranges icons in a grid."
+    ID_VIEW_BYNAME          "Sorts the icons alphabetically."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_CATEGORY_NODE_TOOLBAR 
+                            "New Category\nDelete Category\nNew Plan\nPaste Plan"
+    IDR_PLAN_NODE_TOOLBAR   "New Category\nNew Plan\nDelete Plan\nCut Plan\nCopy Plan\nPaste Plan\nEdit Plan\nApprove Plan\nUnapprove Plan\nSchedule Plan\nControl Plan"
+    IDR_PLAN_CONTROLLER_GENERAL_TOOLBAR 
+                            "Start\nStop\nPause\nResume\nTake Control\nSchedule"
+    IDR_PLAN_CONTROLLER_STEPS_TOOLBAR 
+                            "Start\nStop\nPause\nResume\nTake Control\nSchedule\nCustomise Step"
+    IDR_PLAN_CONTROLLER_FLOWCHART_TOOLBAR 
+                            "Start\nStop\nPause\nResume\nTake Control\nSchedule\nZoom+10%\nZoom-10%\nZoom 100%\nFit Window"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_ALLPLANS        "Show all available plans\nShow All Plans"
+    ID_VIEW_APPROVEDPLANS   "Show approved plans only\nShow Approved Plans"
+    ID_VIEW_UNAPPROVEDPLANS "Show unapproved plans only\nShow Unapproved Plans"
+    ID_VIEW_ACTIVEPLANS     "Show all active plan instances\nShow All Active Plans"
+    ID_CATEGORY_NEW         "Add a new category to the selected category or the selected plan's parent category\nCreate New Category (Shift+Ctrl+N)"
+    ID_CATEGORY_DELETE      "Delete the selected category\nDelete Current Category (Del)"
+    ID_CATEGORY_RENAME      "Rename the selected category\nRename Current Category"
+    ID_PLAN_NEW             "Add a new plan to the selected category or the selected plan's parent category\nCreate New Plan (Ctrl+N)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_PLAN_PASTE           "Paste the plan from the clipboard to the selected category or the selected plan's parent directory\nPaste Cut/Copied Plan (Ctrl+V)"
+    ID_PLAN_DELETE          "Delete the selected plan\nDelete Current Plan (Del)"
+    ID_PLAN_CUT             "Move the selected plan to the clipboard\nCut Current Plan (Ctrl+X)"
+    ID_PLAN_COPY            "Copy the selected plan to the clipboard\nCopy Current Plan (Ctrl+C)"
+    ID_PLAN_EDIT            "Edit the selected plan\nEdit Current Plan"
+    ID_PLAN_SCHEDULE        "Schedule the execution of the selected plan\nSchedule Plan Execution"
+    ID_PLAN_CONTROL         "Control the execution of the selected plan\nControl Plan Execution"
+    ID_PLAN_EXECUTE         "Activate a new instance of the plan\nRun New Instance (Ctrl+N)"
+    ID_PLAN_STOP            "Stop the selected active instance of the plan\nStop Selected Instance (Ctrl+S)"
+    ID_PLAN_PAUSE           "Pause the selected active instance of the plan\nPause Selected Instance (Ctrl+P)"
+    ID_PLAN_RESUME          "Resume the selected active instance of the plan\nResume Selected Instance (Ctrl+R)"
+    ID_PLAN_TAKECONTROL     "Request control of the selected active instance of the plan\nTake Control of Selected Instance"
+    ID_PLAN_RELEASECONTROL  "Release to system the control of the selected active instance of the plan\nRelease Control of Selected Instance"
+    ID_STEP_CUSTOMISE       "Customise the selected plan step's execution characteristics; the changes only apply to the current plan instance"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_IMPORT_PLAN          "Import plan details from a plan (.pln) file"
+    ID_EXPORT_PLAN          "Export plan details to a plan (.pln) file"
+    ID_PLAN_RESUME_SELECTED_STEP 
+                            "Resume the selected active instance of the plan at selected step\nResume Selected Instance at Selected Step (Ctrl+I)"
+    ID_PLAN_VISIBLE         "Add a new plan to the selected category or the selected plan's parent category\nCreate New Plan (Ctrl+N)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTIVE_PLAN_LIST_STATE_COLUMN "State"
+    IDS_ACTIVE_PLAN_LIST_STEP_COLUMN "Step"
+    IDS_PLAN_RUNNING_EXEC_STATE "Running"
+    IDS_PLAN_STOPPED_EXEC_STATE "Stopped"
+    IDS_PLAN_PAUSED_EXEC_STATE "Paused"
+    IDS_PLAN_UNDEFINED_EXEC_STATE "Undefined"
+    IDS_PLAN_COMPLETED_EXEC_STATE "Completed"
+    IDS_STEP_LIST_STEP_COLUMN "Step"
+    IDS_STEP_LIST_NAME_COLUMN "Name"
+    IDS_STEP_LIST_TYPE_COLUMN "Type"
+    IDS_STEP_LIST_DESCRIPTION_COLUMN "Description"
+    IDS_STEP_LIST_SKIP_COLUMN "Skip"
+    IDS_STEP_LIST_DELAY_COLUMN "Delay\n(mm:ss)"
+    IDS_STEP_PARAMETER_LIST_NAME_COLUMN "Parameter Name"
+    IDS_STEP_PARAMETER_LIST_VALUE_COLUMN "Parameter Value"
+    IDS_STEP_TYPE_ABORT     "Abort"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STEP_LIST_REMARK_COLUMN "Remark"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STEP_TYPE_ACTIVE_PLAN_CHECK "Active Plan Check"
+    IDS_STEP_TYPE_ACTIVATE_CAMERA_PRESET "Activate Camera Preset"
+    IDS_STEP_TYPE_CHANGE_MODE "Change Mode"
+    IDS_STEP_TYPE_DATA_POINT_CHECK "Data Point Check"
+    IDS_STEP_TYPE_DATA_POINT_SET "Set Data Point"
+    IDS_STEP_TYPE_DECISION  "Decision"
+    IDS_STEP_TYPE_JUMP      "Jump"
+    IDS_STEP_TYPE_LOG       "Log"
+    IDS_STEP_TYPE_ASSIGN_CAMERA_TO_MONITOR "Assign Camera To Monitor"
+    IDS_STEP_TYPE_PROMPT    "Prompt"
+    IDS_STEP_TYPE_RUN_PLAN  "Run Plan"
+    IDS_STEP_TYPE_TERMINATE_PLAN "Terminate Plan"
+    IDS_STEP_TYPE_TIS_SET_SCENE "TIS Set Scene"
+    IDS_STEP_TYPE_VMS_SET_SCENE "VMS Set Scene"
+    IDS_STEP_TYPE_PAGE      "Page"
+    IDS_STEP_TYPE_UNDEFINED "Undefined step type"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FAILURE_SUMMARY_STEP_DIALOG_TITLE_PREFIX "Failed Step Summary"
+    IDS_STEP_PARAMETER_PROFILE_NAME "Profile Name"
+    IDS_STEP_PARAMETER_NOTIFY_PEER "Notify Peer"
+    IDS_STEP_TYPE_INCLUSIVE_GATEWAY "Inclusive Gateway"
+    IDS_STEP_PARAMETER_EXPRESSION1 "Expression1"
+    IDS_STEP_PARAMETER_EXPRESSION2 "Expression2"
+    IDS_STEP_PARAMETER_EXPRESSION3 "Expression3"
+    IDS_STEP_PARAMETER_NEXT_STEP1 "Step1"
+    IDS_STEP_PARAMETER_NEXT_STEP2 "Step2"
+    IDS_STEP_PARAMETER_NEXT_STEP3 "Step3"
+    IDS_STEP_TYPE_EXCLUSIVE_GATEWAY "Exclusive Gateway"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_YES                 "Yes"
+    IDS_NO                  "No"
+    IDS_TRUE                "True"
+    IDS_FALSE               "False"
+    IDS_NEW_ACTIVE_PLAN_INSTANCE "None"
+    IDS_PLAN_ABORTED_EXEC_STATE "Aborted"
+    IDS_PLAN_FAILED_EXEC_STATE "Failed"
+    IDS_PLAN_PENDING_EXEC_STATE "Pending"
+    IDS_MSGBOX_CAPTION_FATALERROR "Fatal Error"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MSGBOX_CAPTION_ERROR "Error"
+    IDS_MSGBOX_CAPTION_WARNING "Warning"
+    IDS_MSGBOX_CAPTION_INFORMATION "Information"
+    IDS_CATEGORY_HEADING_PREFIX "Category"
+    IDS_PLAN_HEADING_PREFIX "Plan"
+    IDS_STEP_HEADING_PREFIX "Step"
+    IDS_DECISION_STEP_DIALOG_TITLE_PREFIX "Decision"
+    IDS_LOGENTRY_STEP_DIALOG_TITLE_PREFIX "Log"
+    IDS_PROMPT_STEP_DIALOG_TITLE_PREFIX "Prompt"
+    IDS_STEP_TYPE_END       "End Step"
+    IDS_STEP_PARAMETER_PLAN_PATH "Plan Path"
+    IDS_STEP_PARAMETER_YES_STEP "Yes Step"
+    IDS_STEP_PARAMETER_NO_STEP "No Step"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_PROGRESS   "progress here"
+    IDS_STEP_LIST_NOWAIT_COLUMN "No Wait"
+    IDS_UPGRADE_EDITOR      "Upgrade To Workflow"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_PLAN_CONTROLLER     "Plan Controller"
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_PLAN_EDITOR_GENERAL_TOOLBAR "Save Plan\nWorkflow"
+    IDR_PLAN_EDITOR_STEPS_TOOLBAR 
+                            "Save Plan\nNew Step\nDelete Step\nCut Step\nCopy Step\nPaste Step\nEdit Step"
+    IDR_PLAN_EDITOR_FLOWCHART_TOOLBAR 
+                            "Save Plan\nDelete\nCopy\nPaste\nZoom+10%\nZoom-10%\nZoom 100%\nFit Window"
+    IDR_PLAN_NODE_ADMIN_TOOLBAR 
+                            "New Category\nNew Plan\nDelete Plan\nCut Plan\nCopy Plan\nPaste Plan\nEdit Plan\nApprove Plan\nUnapprove Plan\nSchedule Plan\nControl Plan\nVisible Plan\nInvisible Plan"
+    IDR_PLAN_EDITOR         "Plan Editor"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_PLAN_SAVE            "Save the current configuration of the plan\nCommit To Database (Ctrl+S)"
+    ID_PLAN_APPROVE         "Approve the plan for execution\nGrant Execution Approval"
+    ID_PLAN_UNAPPROVE       "Withdraw the plan's execution approval\nRevoke Execution Approval"
+    ID_STEP_NEW             "Add a new step to the plan\nCreate New Step (Ctrl+N)"
+    ID_STEP_DELETE          "Remove the selected step(s) from the plan\nRemove Current Step Selection (Del)"
+    ID_STEP_CUT             "Move the selected step(s) to the clipboard\nCut Current Step Selection (Ctrl+X)"
+    ID_STEP_COPY            "Copy the selected step(s) to the clipboard\nCopy Current Step Selection (Ctrl+C)"
+    ID_STEP_PASTE           "Paste the step(s) from the clipboard to the selected position\nPaste Cut/Copied Step (Ctrl+V)"
+    ID_STEP_EDIT            "Edit the selected step\nEdit Current Step"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDITOR_UPGRADE       "Upgrade classic plan to workflow plan\nUpgrade To Workflow (Ctrl+U)"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_SAVE_STEP            "Save changes to the step\nSave Step (Ctrl+S)"
+    ID_STEP_EDITSTEPPARAMETER "Edit the step paremeter"
+END
+
+STRINGTABLE 
+BEGIN
+    DS_PLAN_FLOW_DETAIL_TAB_LABEL "Flow"
+    IDS_NODE_LIST_NAME_COLUMN "Name"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NODE_LIST_TYPE_COLUMN "Type"
+    IDS_NODE_LIST_STATUS_COLUMN "Status"
+    IDS_NODE_TYPE_ROOT      "Root"
+    IDS_NODE_TYPE_CATEGORY  "Category"
+    IDS_NODE_TYPE_PLAN      "Plan"
+    IDS_CATEGORY_EMPTY      "Empty"
+    IDS_CATEGORY_NONEMPTY   "Populated"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DELETE_SINGLE_STEP  "delete this step"
+    IDS_DELETE_MULTIPLE_STEPS "delete these steps"
+    IDS_UNKNOWN             "unknown"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_UNAPPROVE_PLAN      "unapprove plan '%1'"
+    IDS_DELETE_PLAN         "delete plan '%1'"
+    IDS_VIEW_PLAN_STEP      "view plan step"
+    IDS_RUN_PLAN_STEP_DIALOG_TITLE_PREFIX "Run Plan"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACTIVE_PLAN_LIST_LOCATION_COLUMN "Location"
+    IDS_ACTIVE_PLAN_LIST_ACTIVATION_COLUMN "Activation"
+    IDS_STEP_PARAMETER_DECISION_MESSAGE "Decision Message"
+    IDS_ACTIVE_PLAN_LIST_REMARKS_COLUMN "Remarks"
+    IDS_STEP_LIST_IGNORE_FAILURE_COLUMN "Ignore failure"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FLOWCHART_EXTENSION ".html"
+    IDS_UNSPECIFIED         "unspecified"
+    IDS_INVALID             "invalid"
+    IDS_LAUNCH_PLAN_CONTROLLER "launch Plan Controller"
+    IDS_PROCESS_APPROVAL_STATE_UPDATE "process approval state update"
+    IDS_SEARCH_CATEGORY_PATH "search category path"
+    IDS_LAUNCH_PLAN_EDITOR  "launch Plan Editor"
+    IDS_RELEASE_LOCK        "release lock"
+    IDS_INITIALISE          "initialise"
+    IDS_RETRIEVE_PLAN       "retrieve plan"
+    IDS_SAVE_USER_SETTINGS  "save user settings"
+    IDS_SHOW_EXECUTION_STATUS_FOR_INSTANCE 
+                            "show execution status for selected instance"
+    IDS_UPDATE_STATE_PARAMETER_LIST "update state parameter list"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_UPDATE_PLAN_STEP_LIST "update plan step list"
+    IDS_REFRESH_CONTENTS    "refresh contents"
+    IDS_CUSTOMISE_STEP      "customise step"
+    IDS_LAUNCH_SCHEDULING_MANAGER "launch Scheduling Manager"
+    IDS_DISPLAY_CATEGORY    "display category"
+    IDS_RIGHTS_AGENT        "Rights Agent"
+    IDS_DETERMINE_IF_NODE_IS_ACCESSIBLE "determine if node is accessible"
+    IDS_ENFORCE_RESTRICTION_ON_CATEGORY 
+                            "enforce plan tree access restrictions on the category"
+    IDS_RETRIEVE_APPLICATION_NAME "retrieve application name"
+    IDS_SCHEDULING_AGENT    "Scheduling Agent"
+    IDS_ESTABLISH_LOCALITY_OF_INSTANCE 
+                            "establish the locality of the selected instance"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PLAN_EDITOR         "Plan Editor"
+    IDS_APPROVE_PLAN        "approve plan '%1'"
+    IDS_SCHEDULING_MANAGER  "Scheduling Manager"
+    IDS_CREATE_NEW_PLAN     "create new plan"
+    IDS_DELETE_SINGLE_PLAN  "delete the selected plan"
+    IDS_DELETE_MULTIPLE_PLANS "delete the selected plans"
+    IDS_COPY_PLAN           "copy plan '%1'"
+    IDS_MOVE_PLAN           "move plan '%1'"
+    IDS_CREATE_CATEGORY     "create category"
+    IDS_EXPAND_CATEGORY     "expand category"
+    IDS_EDIT                "edit"
+    IDS_RENAME              "rename"
+    IDS_FIND_TREE_NODE      "locate node %1 in the plan tree"
+    IDS_DETERMINE_OWNER_OF_INSTANCE 
+                            "determine the owner of the selected instance"
+    IDS_SAVE_PLAN           "save plan"
+    IDS_EDIT_PLAN_STEP      "edit plan step"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_CREATE_NEW_STEP     "create new step"
+    IDS_PASTE_STEP          "paste step"
+    IDS_DELETE_CATEGORY     "delete category"
+    IDS_DISPLAY_TREE_CONTENTS "display contents of the plan tree"
+    IDS_REPORT_COMPLETION_STATUS "report completion status"
+    IDS_START_NEW_INSTANCE  "start a new instance"
+    IDS_CUSTOMISE_INSTANCE  "customise the selected instance"
+    IDS_STOP_INSTANCE       "stop the selected instance"
+    IDS_PAUSE_INSTANCE      "pause the selected instance"
+    IDS_RESUME_INSTANCE     "resume the selected instance"
+    IDS_TAKE_CONTROL_OF_INSTANCE "take control of the selected instance"
+    IDS_RELEASE_CONTROL_OF_INSTANCE "release control of the selected instance"
+    IDS_LOAD_APPLICATIONS   "load the list of applications"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\PlanManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#include "..\..\..\bus\response_plans\plan_tree\src\PlanTree.rc"
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

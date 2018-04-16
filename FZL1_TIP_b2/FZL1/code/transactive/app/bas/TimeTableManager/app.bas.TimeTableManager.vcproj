@@ -1,0 +1,154 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.bas.TimeTableManager" ProjectGUID="{E274579E-5522-4128-893E-3A96231966D9}" RootNamespace="app.bas.TimeTableManager" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="..\..\..\..\..\bin\win32_nd" IntermediateDirectory="..\..\..\..\..\build\win32_nd\transactive\app\bas\TimeTableManager" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" ValidateParameters="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\..\..\;..\..\..\..\transactive;..\..\..\..\..\build\win32_n\transactive;..\..\..\..\..\sdk\include\transactive;..\..\..\..\..\sdk\include\transactive\core\message\IDL\src;..\..\..\..\..\sdk\include\transactive\core\exceptions\idl\src;..\..\..\..\..\sdk\include\transactive\bus\scada\common_library\IDL\src;..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers;..\..\..\..\..\sdk\include\COTS\boost\boost_1_56_0\;..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;__WIN32__;__NT__;__x86__;_WIN32_WINNT=0x700;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="0" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread34_rtd.lib omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib oci.lib libmysql.lib TA_mcl_d.lib htmlhelp.lib Rpcrt4.lib acemfcd.lib stracelib.lib ws2_32.lib winmm.lib" OutputFile="..\..\..\..\..\bin\win32_nd\BasTimeTableManager.exe" LinkIncremental="2" AdditionalLibraryDirectories="..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\lib\x86_win32,..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\sdk\lib,..\..\..\..\..\build\win32_nd,..\..\..\..\..\sdk\include\cots\WinStackTrace\build\Debug" GenerateDebugInformation="true" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="..\..\..\..\..\bin\win32_nr" IntermediateDirectory="..\..\..\..\..\build\win32_nr\transactive\app\bas\TimeTableManager" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false" ValidateParameters="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\..\..\;..\..\..\..\transactive;..\..\..\..\..\build\win32_n\transactive;..\..\..\..\..\sdk\include\transactive;..\..\..\..\..\sdk\include\transactive\core\message\IDL\src;..\..\..\..\..\sdk\include\transactive\core\exceptions\idl\src;..\..\..\..\..\sdk\include\transactive\bus\scada\common_library\IDL\src;..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers;..\..\..\..\..\sdk\include\COTS\boost\boost_1_56_0\;..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;__WIN32__;__NT__;__x86__;_WIN32_WINNT=0x700;_USE_32BIT_TIME_T" RuntimeLibrary="2" UsePrecompiledHeader="0" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread34_rt.lib omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib oci.lib libmysql.lib TA_mcl.lib htmlhelp.lib Rpcrt4.lib acemfc.lib stracelib.lib ws2_32.lib winmm.lib" OutputFile="..\..\..\..\..\bin\win32_nr\BasTimeTableManager.exe" LinkIncremental="1" AdditionalLibraryDirectories="..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\lib\x86_win32,..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\sdk\lib,..\..\..\..\..\build\win32_nr,..\..\..\..\..\sdk\include\cots\WinStackTrace\build\Release" GenerateDebugInformation="true" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="CommonFiles" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\AgentAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\AgentAccessFactory.h">
+			</File>
+			<File RelativePath=".\src\CommonDefine.h">
+			</File>
+			<File RelativePath=".\src\ModeAndTimeDatapointPair.cpp">
+			</File>
+			<File RelativePath=".\src\ModeAndTimeDatapointPair.h">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\TimeTableDatapointPairManager.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableDatapointPairManager.h">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\TimeTableListCtrl.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableListCtrl.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManager.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManager.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerActionThread.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerActionThread.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerBaseDialog.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerBaseDialog.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerDataHelper.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerDataHelper.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerGUI.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerGUI.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerMainDlg.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerMainDlg.h">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerUtility.cpp">
+			</File>
+			<File RelativePath=".\src\TimeTableManagerUtility.h">
+			</File>
+			<File RelativePath=".\src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\src\Resource.h">
+			</File>
+			<File RelativePath=".\src\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\stdafx.h">
+			</File>
+			<File RelativePath=".\res\TimeTableManager.ico">
+			</File>
+			<File RelativePath=".\src\TimeTableManager.rc">
+			</File>
+			<File RelativePath=".\res\TimeTableManager.rc2">
+			</File>
+		</Filter>
+		<Filter Name="OCCTimeTableManager">
+			<File RelativePath=".\src\OCCTimeTableListCtrl.cpp">
+			</File>
+			<File RelativePath=".\src\OCCTimeTableListCtrl.h">
+			</File>
+			<File RelativePath=".\src\OCCTimeTableManagerDlg.cpp">
+			</File>
+			<File RelativePath=".\src\OCCTimeTableManagerDlg.h">
+			</File>
+		</Filter>
+		<Filter Name="StationTimeTableManager">
+			<File RelativePath=".\src\StationTimeTableListCtrl.cpp">
+			</File>
+			<File RelativePath=".\src\StationTimeTableListCtrl.h">
+			</File>
+			<File RelativePath=".\src\StationTimeTableManagerDlg.cpp">
+			</File>
+			<File RelativePath=".\src\StationTimeTableManagerDlg.h">
+			</File>
+		</Filter>
+		<File RelativePath=".\src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="src\TimeTableManager.rc"/>
+	</Globals>
+</VisualStudioProject>

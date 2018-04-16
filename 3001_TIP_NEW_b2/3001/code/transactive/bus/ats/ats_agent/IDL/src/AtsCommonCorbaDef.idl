@@ -1,0 +1,85 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// ATS IDL interface.
+//
+// This IDL is used to provide common definitions for all the IDL to be implemented by the ATS agent.
+//
+#ifndef ATSCOMMONCORBADEF_IDL
+#define ATSCOMMONCORBADEF_IDL
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_IRS_Bus
+{
+	//
+	// Physical Train Number (PV Train Number) - number from 0-99
+	//
+	typedef octet				PhysicalTrainNumberType;
+
+	// 
+	// 16 bit identifiers for ATC Physical Train Number,
+	// ATC Physical Car Number, Service Number, Schedule Number
+	//
+	typedef unsigned long		AtcTrainNumberType;
+	typedef unsigned long		AtcCarNumberType;
+
+	typedef unsigned long		ServiceNumberType;
+	typedef unsigned long		ScheduleNumberType;
+	typedef boolean			RevenueFlagType; 
+
+	//
+	// Station Id is the TransActive location key for the station
+	// Platform Id is the numeric platform Id
+	// CCTV Zone Id is the zone identifier for the CCTV Zone/Boundary Zone
+	//
+	typedef unsigned long		StationIdType;
+	typedef unsigned long		PlatformIdType;
+	typedef double				CctvZoneIdType;
+
+	// the TIS platform ID can be between 1 and 9
+	typedef octet				TisPlatformIdType;
+
+	// 
+	// TimeStampType is a timestamp in the format
+	// year - range from 2000 to 2100
+	//
+	struct TimeStampType
+	{
+		unsigned long			year;
+		octet					month;
+		octet					day;
+		octet					hour;
+		octet					minute;
+		octet					second;
+	};
+
+	// 
+	// TimeTTimeStampType is a timestamp in time_t format
+	//
+	typedef	long				TimeTTimeStampType;
+
+	//
+	// Enumeration for track
+	//
+	enum ETrack
+	{
+		TrackUnknown,
+		TrackInnerbound,
+		TrackCentralInnerbound,
+		TrackOuterbound,
+		TrackCentralOuterbound
+	};
+
+}; // TA_Bus
+
+#endif

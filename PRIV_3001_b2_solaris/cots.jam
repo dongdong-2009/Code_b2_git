@@ -1,0 +1,949 @@
+import "class" : new ;
+import os path string assert print sequence numbers option path ;
+
+rule init ( root : gcc-ver ? : msvc-ver ? )
+{
+	.root = [ path.make $(root) ] ;
+	.cots = ;
+
+	if [ os.on-unix ]
+	{
+		OP_SYS_VERSION	= [ string.words [ SHELL "uname -r" ] ] ;
+		ARCHITECTURE	= [ string.words [ SHELL "arch" ] ] ;
+
+		if [ os.name ] = SOLARIS
+		{
+			switch $(OP_SYS_VERSION)
+			{
+				case 5.8  : OMNI_OS_IDENTIFIER = sun4_sosV_$(OP_SYS_VERSION) ;
+				case 5.9  : OMNI_OS_IDENTIFIER = ;
+				case 5.10 :
+				{
+					SHELL "chmod +x $(.root)/omniORB/omniORB_4.1.6/bin/scripts/config.guess" ;
+					OMNI_OS_IDENTIFIER = [ string.words [ SHELL $(.root)/omniORB/omniORB_4.1.6/bin/scripts/config.guess ] ] ;
+					assert.variable-not-empty OMNI_OS_IDENTIFIER ;
+				}
+			}
+
+			TA_OS_IDENTIFIER = SOLARIS_$(OP_SYS_VERSION)_$(ARCHITECTURE) ;
+		}
+
+		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
+		.ta-os-identifier		= $(TA_OS_IDENTIFIER) ;
+		.gcc-ver				= $(gcc-ver) ;
+	}
+	else
+	{
+		.visual-studio-ver		= [ convert-msvc-to-visual-studio $(msvc-ver) ] ;
+	}
+}
+
+rule get ( var )
+{
+	assert.variable-not-empty .$(var) ;
+	return $(.$(var)) ;
+}
+
+# accept two patterns :
+# 1) name_version
+#   	for example: omniORB_4.1.6
+# 2) name/version
+#		for example: ACE/6_0_4
+rule create ( cots-name-patterns + )
+{
+	.cots = [ new cots ] ;
+	for local pattern in $(cots-name-patterns)
+	{
+		local cot-name = ;
+		local cot-version = ;
+		local split = [ SPLIT_BY_CHARACTERS $(pattern) : / ] ;
+
+		if [ sequence.length $(split) ] = 1
+		{
+			local split = [ SPLIT_BY_CHARACTERS $(pattern) : -_ ] ;
+			cot-name = $(split[1]:L) ;
+			cot-version ?= $(pattern) ;
+		}
+		else
+		{
+			cot-name = $(split[1]:L) ;
+			cot-version = $(split[2]) ;
+			params = $(split[3-]) ;
+		}
+
+		if ! [ MATCH "([-_.][0-9][-_.])" : $(cot-version) ]
+		{
+			cot-version = ;
+		}
+
+		$(.cots).add $(cot-name) : [ new $(cot-name) $(cot-version) ] ;
+	}
+	$(.cots).verify ;
+	return $(.cots) ;
+}
+
+rule convert-msvc-to-visual-studio ( msvc-ver )
+{
+	switch $(msvc-ver)
+	{
+		case 9.0  : return VS2008 ;
+		case 12.0 : return VS2013 ;
+		case 14.1 : return VS2017 ;
+		case *    : return $(msvc-ver) ;
+	}
+}
+
+class cots
+{
+	import cots ;
+	import string print os path sequence assert ;
+
+	rule __init__ ( )
+	{
+		self.all = ;
+		self.os = [ os.name ] ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.omni-os-identifier		= [ cots.get omni-os-identifier ] ;
+		self.ta-os-identifier		= [ cots.get ta-os-identifier ] ;
+	}
+
+	rule add ( name : object )
+	{
+		self.$(name) = $(object) ;
+		self.all += $(object) ;
+	}
+
+	rule get ( name : rule-name ? )
+	{
+		if $(rule-name)
+		{
+			return [ $(self.$(name:L)).$(rule-name) ] ;
+		}
+		else
+		{
+			return $(self.$(name:L)) ;
+		}
+	}
+
+	rule get-includes ( )
+	{
+		local result = ;
+		for local cot in $(self.all)
+		{
+			result += [ $(cot).include-path ] ;
+		}
+		return <include>$(result) ;
+	}
+
+	rule get-libraries ( )
+	{
+		local result = ;
+		for local cot in $(self.all)
+		{
+			local include-path = [ $(cot).include-path ] ;
+			local library = [ $(cot).library ] ;
+			local library-path = [ $(cot).library-path ] ;
+			if $(library) && $(library-path)
+			{
+				for local l in $(library)
+				{
+					result += [ lib $(l) : : <name>$(l) <search>$(library-path) : : <include>$(include-path) ] ;
+				}
+			}
+			else
+			{
+				local debug-library = [ $(cot).debug-library ] ;
+				local release-library = [ $(cot).release-library ] ;
+				local debug-library-path = [ $(cot).debug-library-path ] ;
+				local release-library-path = [ $(cot).release-library-path ] ;
+
+				while $(release-library)
+				{
+					result += [ lib $(release-library[1]) : : <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
+					debug-library = $(debug-library[2-]) ;
+					release-library = $(release-library[2-]) ;
+				}
+			}
+		}
+		if [ os.on-unix ]
+		{
+			result	+= [ lib z posix4 socket pthread nsl uuid ] ;
+		}
+		else
+		{
+			result	+= [ lib winmm Rpcrt4 Ws2_32 ] ;
+		}
+		return $(result) ;
+	}
+
+	rule show-versions ( indent ? )
+	{
+		for local cot in $(self.all)
+		{
+			print.lines [ string.join [ PAD [ $(cot).name ] : 16 ] " => " [ $(cot).version ] ] : $(indent) $(indent) ;
+		}
+	}
+
+	rule show-os-identifiers ( indent ? )
+	{
+		if [ os.on-unix ]
+		{
+			for local i in omni-os-identifier ta-os-identifier
+			{
+				print.lines [ string.join [ PAD $(i) : 24 ] " => " $(self.$(i)) ] : $(indent) $(indent) ;
+			}
+		}
+	}
+
+	rule show-includes ( indent ? )
+	{
+		 for local i in [ get-includes ]
+		 {
+			print.lines [ path.native $(i:G=) ] : $(indent) $(indent) ;
+		 }
+	}
+
+	rule show-paths ( indent ? )
+	{
+		for local cot in $(self.all)
+		{
+			print.lines [ string.join [ PAD [ $(cot).name ] : 16 ] " => " [ path.native [ $(cot).path ] ] ] : $(indent) $(indent) ;
+		}
+	}
+
+	rule show-libraries ( indent ? )
+	{
+		local variant = [ MATCH (release) : [ modules.peek : ARGV ] ] ;
+		variant ?= debug ;
+		for local cot in $(self.all)
+		{
+			local library =  [ $(cot).$(variant)-library ] ;
+			local library-path =  [ $(cot).$(variant)-library-path ] ;
+			for local l in $(library)
+			{
+				if [ os.on-windows ]
+				{
+					print.lines [ string.join [ PAD $(l).lib : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;
+				}
+				else
+				{
+					print.lines [ string.join [ PAD lib$(l).a : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;
+				}
+			}
+		}
+	}
+
+	rule show-shared-libraries ( indent ? )
+	{
+		local variant = [ MATCH (release) : [ modules.peek : ARGV ] ] ;
+		variant ?= debug ;
+		local shared-libraries = ;
+		for local cot in $(self.all)
+		{
+			local libraries = [ $(cot).$(variant)-shared-library ] ;
+			local psths = [ $(cot).$(variant)-shared-library-path ] ;
+			if $(libraries)
+			{
+				if [ os.on-windows ]
+				{
+					shared-libraries += [ path.glob $(psths) : $(libraries).dll ] ;
+				}
+				else
+				{
+					shared-libraries += [ path.glob $(psths) : lib$(libraries).so* ] ;
+				}
+			}
+		}
+		print.lines [ sequence.transform path.native : $(shared-libraries) ] : $(indent) $(indent) ;
+	}
+
+	rule verify ( )
+	{
+		local all-paths = ;
+		for local cot in $(self.all)
+		{
+			all-paths +=
+				[ $(cot).include-path ]
+				[ $(cot).library-path ]
+				[ $(cot).debug-library-path ] [ $(cot).release-library-path ]
+				[ $(cot).debug-shared-library-path ] [ $(cot).release-shared-library-path ]
+				;
+		}
+		all-paths += [ get omniorb : omniidl ] ;
+		all-paths += [ get sqlgen : sqlgen ] ;
+		for local p in [ sequence.transform path.native : $(all-paths) ]
+		{
+			assert.true path.exists $(p) ;
+		}
+	}
+
+	rule __debug__ ( )
+	{
+		for local r in versions os-identifiers paths includes libraries shared-libraries
+		{
+			echo $(r) ;
+			show-$(r) "\t" ;
+		}
+	}
+}
+
+class cot-class
+{
+	import cots ;
+	import os modules path print sequence version ;
+	import ta-version ;
+
+	rule __init__ ( name version ? )
+	{
+		self.os						= [ os.name ] ;
+		self.root					= [ cots.get root ] ;
+		init-cot-$(self.os) ;
+
+		self.name					= $(name) ;
+		self.version				= $(version) ;
+		self.version-numbers		= [ ta-version.numbers $(version) ] ;
+		self.main-version			= $(self.version-numbers[1]) ;
+	}
+
+	rule init-cot-SOLARIS ( )
+	{
+		self.gcc-ver				= [ cots.get gcc-ver ] ;
+		self.omni-os-identifier		= [ cots.get omni-os-identifier ] ;
+		self.ta-os-identifier		= [ cots.get ta-os-identifier ] ;
+	}
+
+	rule init-cot-NT ( )
+	{
+		self.visual-studio-ver				= [ cots.get visual-studio-ver ] ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+	}
+
+	rule init-NT ( )
+	{
+	}
+
+	rule root ( paths * )
+	{
+		local result = ;
+		for local p in $(paths)
+		{
+			result += [ path.root $(p) $(self.root) ] ;
+		}
+		return $(result) ;
+	}
+
+	rule name ( )
+	{
+		return $(self.name) ;
+	}
+
+	rule version ( )
+	{
+		return $(self.version) ;
+	}
+
+	rule version-numbers ( )
+	{
+		return $(self.version-numbers) ;
+	}
+
+	rule path ( )
+	{
+		return [ root $(self.path) ] ;
+	}
+
+	rule variant-what ( variant what )
+	{
+		local items = $(what) $(variant)-$(what) ;
+		return $(self.$(items)) ;
+	}
+
+	rule variant-what-path ( variant what )
+	{
+		return [ root [ variant-what $(variant) $(what)-path ] ] ;
+	}
+
+	rule include-path ( )
+	{
+		return [ root $(self.include-path) ] ;
+	}
+
+	rule library ( )
+	{
+		return $(self.library) ;
+	}
+
+	rule debug-library ( )
+	{
+		return [ variant-what debug library ] ;
+	}
+
+	rule release-library ( )
+	{
+		return [ variant-what release library ] ;
+	}
+
+	rule library-path ( )
+	{
+		return [ root $(self.library-path) ] ;
+	}
+
+	rule debug-library-path ( )
+	{
+		return [ variant-what-path debug library ] ;
+	}
+
+	rule release-library-path ( )
+	{
+		return [ variant-what-path release library ] ;
+	}
+
+	rule debug-shared-library ( )
+	{
+		return [ variant-what debug shared-library ] [ variant-what debug library ] ;
+	}
+
+	rule release-shared-library ( )
+	{
+		return [ variant-what release shared-library ] [ variant-what release library ] ;
+	}
+
+	rule debug-shared-library-path ( )
+	{
+		return [ variant-what-path debug shared-library ] [ variant-what-path debug library ] [ root $(self.bin-path) ] ;
+	}
+
+	rule release-shared-library-path ( )
+	{
+		return [ variant-what-path release shared-library ] [ variant-what-path release library ] [ root $(self.bin-path) ] ;
+	}
+
+	rule __debug__ ( )
+	{
+		local variant = debug release ;
+		local library-var-names = library shared-library ;
+		local var-names = path include-path library library-path $(variant)-$(library-var-names) $(variant)-$(library-var-names)-path ;
+
+		for local var in name version $(var-names)
+		{
+			print.lines [ sequence.join [ PAD $(var) : 32 ] " => " $(self.$(var):J=" ") ] : "\t" "\t" ;
+		}
+	}
+}
+
+class omniorb : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ omniORB $(version) ;
+		self.thread-version				= [ omnithread-version $(version) ] ;
+		self.path						= omniORB/$(version) ;
+		self.library-names				= omniORB omniDynamic COS AttNotification COSNotify ;
+
+		if [ ta-version.ge $(version) : 4.2.2 ]
+		{
+			self.library-names += omniZIOP ;
+		}
+
+		self.idl-path					= $(self.path)/idl ;
+		self.idl-cos-path				= $(self.path)/idl/COS ;
+		self.notify-path				= $(self.path)/src/services/omniNotify ;
+		self.notify-idl-path			= $(self.notify-path)/idl ;
+		self.notify-include-path		= $(self.notify-path)/include ;
+		self.omniidl-options			= "-nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -Wbkeep_inc_path" ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.prefix						= $(self.path)/$(self.omni-os-identifier) ;
+		self.include-path				= $(self.path) $(self.prefix) $(self.prefix)/include $(self.prefix)/include/COS $(self.prefix)/include/omniORB$(self.main-version) $(self.notify-include-path) ;
+		self.library-path				= $(self.prefix)/lib ;
+		self.library					= $(self.library-names)$(self.main-version) omnithread ;
+		self.bin-path					= $(self.prefix)/bin ;
+		self.omniidl					= $(self.bin-path)/omniidl ;
+		SHELL "chmod +x $(self.root)/$(self.omniidl:D)/*" ;
+	}
+
+	rule init-NT ( )
+	{
+		self.include-path				= $(self.path) $(self.path)/include $(self.path)/include/COS $(self.path)/include/omniORB$(self.main-version) $(self.notify-include-path) ;
+		self.library-path				= $(self.path)/lib/x86_win32 ;
+		self.release-library			= $(self.library-names)$(self.version-numbers:J=)_rt omnithread$(self.thread-version)_rt ;
+		self.debug-library				= $(self.release-library)d ;
+		self.vc-version					= [ get-vc-version $(self.visual-studio-ver) ] ;
+		self.release-shared-library		= $(self.library-names)$(self.version-numbers:J=) omnithread$(self.thread-version) ;
+		self.release-shared-library		= $(self.release-shared-library)_$(self.vc-version)_rt ;
+		self.debug-shared-library		= $(self.release-shared-library)d ;
+		self.bin-path					= $(self.path)/bin/x86_win32 ;
+		self.omniidl					= $(self.bin-path)/omniidl.exe ;
+	}
+
+	rule omniidl ( )
+	{
+		return [ root $(self.omniidl) ] ;
+	}
+
+	rule omniidl-options ( )
+	{
+		return $(self.omniidl-options) ;
+	}
+
+	rule idl-include-path ( )
+	{
+		return [ root $(self.idl-path) $(self.idl-cos-path) $(self.notify-idl-path) ] ;
+	}
+
+	rule omnithread-version ( omniorb-version )
+	{
+		switch $(omniorb-version)
+		{
+			case omniORB_4.0.5 : return 30 ;
+			case omniORB_4.1.2 : return 33 ;
+			case omniORB_4.1.4 : return 34 ;
+			case omniORB_4.1.6 : return 34 ;
+			case omniORB_4.2.1 : return 40 ;
+			case omniORB_4.2.2 : return 40 ;
+		}
+	}
+
+	rule get-vc-version ( visual-studio-version )
+	{
+		switch $(visual-studio-version)
+		{
+			case VS2008	: return vc9 ;
+			case 9.0	: return vc9 ;
+			case VS2013	: return vc12 ;
+			case 12.0	: return vc12 ;
+			case VS2017	: return vc15 ;
+			case 14.1	: return vc15 ;
+		}
+	}
+}
+
+class boost : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ Boost $(version) ;
+		self.path						= boost/$(version) ;
+		self.include-path				= $(self.path) ;
+		self.library-names				= system filesystem regex date_time ; #TODO: parameter
+
+		if [ ta-version.ge $(version) : 1_65_1 ]
+		{
+			self.library-names += chrono thread ;
+		}
+
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.library					= boost_$(self.library-names) ;
+
+		if $(version) = boost_1_39_0
+		{
+			self.library				= boost_$(self.library-names)-gcc34-mt-1_39 ;
+		}
+
+		self.library-path				= $(self.path)/libs/$(self.ta-os-identifier) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.library-path				= $(self.path)/stage/lib ;
+	}
+
+	rule library-names ( )
+	{
+		return $(self.library-names) ;
+	}
+}
+
+class icu : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ ICU $(version) ;
+		self.path						= icu/$(version) ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.prefix						= $(self.path)/$(self.ta-os-identifier) ;
+		self.include-path				= $(self.prefix)/include ;
+		self.library-path				= $(self.prefix)/lib ;
+		self.library					= icuuc ;
+	}
+}
+
+class ace : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ ACE $(version) ;
+		self.path						= ACE/$(version) ;
+		self.include-path				= $(self.path)/ACE_wrappers ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS
+	{
+		self.library					= ACE ;
+		self.library-path				= $(self.path)/lib/$(self.ta-os-identifier) ;
+	}
+
+	rule init-NT
+	{
+		self.library-path				= $(self.path)/ACE_wrappers/lib ;
+		self.release-library			= ACE ACEmfc ;
+		self.debug-library				= $(self.release-library)d ;
+	}
+}
+
+class oracle : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ Oracle $(version) ;
+		self.path 						= oracle/$(version) ;
+		init-$(self.os) ;
+		self.include-path				= $(self.prefix)/inc ;
+		self.library-path				= $(self.prefix)/lib ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.prefix						= $(self.path)/$(self.ta-os-identifier) ;
+		self.library					= clntsh ;
+	}
+
+	rule init-NT ( )
+	{
+		self.prefix						= $(self.path)/winnt ;
+		self.library					= oci orasql$(self.main-version) ;
+	}
+}
+
+class mysql : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ MySQL $(version) ;
+		self.path						= mysql/$(version) ;
+		init-$(self.os) ;
+		self.include-path				= $(self.prefix)/inc ;
+		self.library-path				= $(self.prefix)/lib ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.prefix						= $(self.path)/$(self.ta-os-identifier) ;
+		self.library					= mysqlclient ;
+	}
+
+	rule init-NT ( )
+	{
+		self.prefix						= $(self.path)/winnt ;
+		self.library					= libmysql ;
+	}
+}
+
+class mcl : cot-class
+{
+	# TODO: handle boost-version, mysql-version
+	rule __init__ ( version )
+	{
+		cot-class.__init__ MCL $(version) ;
+		self.path						= mcl/$(version) ;
+		self.include-path				= $(self.path) ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		if [ ta-version.ge $(self.version) : 1.1.5 ]
+		{
+			self.library				= mysqlcppconn ;
+		}
+		else
+		{
+			self.library				= TA_mcl ;
+		}
+
+		switch $(self.version)
+		{
+			case 1.1.0 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier) ;
+			case 1.1.1 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier)_mysql5.5.15_boost1.56.0 ;
+		}
+	}
+
+	rule init-NT ( )
+	{
+		if [ ta-version.ge $(self.version) : 1.1.5 ]
+		{
+			self.release-library		= mysqlcppconn ;
+			self.debug-library			= mysqlcppconn_d ;
+		}
+		else
+		{
+			self.release-library		= TA_mcl ;
+			self.debug-library			= TA_mcl_d ;
+		}
+
+		switch $(self.version)
+		{
+			case 1.1.0 : self.library-path	= $(self.path)/lib/winnt ;
+			case 1.1.1 : self.library-path	= $(self.path)/lib/winnt_mysql.5.5.15_boost1.56.0 ;
+			case 1.1.9 : self.library-path	= $(self.path)/lib_mysql6.1.11_boost_1_65_1/winnt_vs2017 ;
+		}
+	}
+}
+
+class openssl : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ OpenSSL $(version) ;
+		self.path						= openssl/$(version) ;
+		self.include-path				= $(self.path)/build/include ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
+		self.library					= ssl crypto ;
+	}
+
+	rule init-NT ( )
+	{
+		self.library-path				= $(self.path)/build/lib/windows ;
+		self.library					= libeay32 ;
+	}
+}
+
+class libssh2 : cot-class
+{
+	rule __init__ ( version ? )
+	{
+	}
+}
+
+class beamessageq : cot-class
+{
+	rule __init__ ( version ? )
+	{
+		cot-class.__init__ BEAMessageQ $(version) ;
+		self.path						= [ path.join BEAMessageQ $(version) ] ;
+		self.include-path				= $(self.path)/include ;
+		self.library-path				= $(self.path)/lib ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		if [ os.platform ] = SPARC
+		{
+			self.library				= dmqcl ;
+		}
+	}
+
+	rule init-NT ( )
+	{
+		self.library					= dmqcl32 ;
+	}
+}
+
+class poco : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ Poco $(version) ;
+		self.path						= poco/$(version) ;
+		self.release-library			= PocoUtil PocoNet PocoXML PocoFoundation ;
+		self.debug-library				= $(self.release-library)d ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.prefix						= $(self.path)/lib/$(self.ta-os-identifier) ;
+		self.include-path				= $(self.prefix)/include ;
+		self.library-path				= $(self.prefix)/lib ;
+	}
+
+	rule init-NT ( )
+	{
+		self.components					= Net Foundation Util XML ;
+		self.include-path				= $(self.path)/$(self.components)/include ;
+		self.library-path				= $(self.path)/lib/winnt_vc9/lib ;
+		self.shared-library-path		= $(self.path)/lib/winnt_vc9/bin ;
+	}
+}
+
+class curl : cot-class
+{
+	rule __init__ ( version )
+	{
+		if [ os.on-windows ] && $(version) = curl-7.21.7
+		{
+			version = $(version)-win32 ;
+		}
+
+		cot-class.__init__ Curl $(version) ;
+		self.path						= curl/$(self.version) ;
+		self.include-path				= $(self.path)/include ;
+		init-$(self.os) ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.library					= curl ;
+		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.library					= libcurl ;
+
+		switch $(self.visual-studio-ver)
+		{
+		case VS2008 :
+			self.debug-library-path		= $(self.path)/lib/Debug ;
+			self.release-library-path	= $(self.path)/lib/Release ;
+		case VS201? :
+			self.debug-library-path		= $(self.path)/lib/Debug_$(self.visual-studio-ver) ;
+			self.release-library-path	= $(self.path)/lib/Release_$(self.visual-studio-ver) ;
+		}
+	}
+}
+
+class snmp_pp : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ SNMP_PP $(version) ;
+		self.path						= SNMP_PP/$(version) ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.include-path				= $(self.path)/include ;
+		self.library-path				= $(self.path)/lib/winnt ;
+		self.release-library			= snmp_pp ;
+		self.debug-library				= snmp_pp_d ;
+	}
+}
+
+class ziparchive : cot-class
+{
+	rule __init__ ( version ? )
+	{
+		cot-class.__init__ ZipArchive $(version) ;
+		self.path						= [ path.join ZipArchive $(version) ] ;
+		self.include-path				= $(self.path) $(self.path)/zlib ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.library					= ZipArchive ;
+		switch $(self.visual-studio-ver)
+		{
+		case VS2008 :
+			self.debug-library-path		= $(self.path)/Debug ;
+			self.release-library-path	= $(self.path)/Release ;
+		case VS201? :
+			self.debug-library-path		= $(self.path)/Debug_$(self.visual-studio-ver) ;
+			self.release-library-path	= $(self.path)/Release_$(self.visual-studio-ver) ;
+		}
+	}
+}
+
+class winstacktrace : cot-class
+{
+	rule __init__ ( version ? )
+	{
+		cot-class.__init__ WinStackTrace $(version) ;
+		self.path						= [ path.join WinStackTrace $(version) ] ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.include-path				= $(self.path)/include ;
+		self.debug-library-path			= $(self.path)/build/Debug ;
+		self.release-library-path		= $(self.path)/build/Release ;
+		self.library					= stracelib ;
+
+		switch $(self.visual-studio-ver)
+		{
+		case VS2008 :
+			self.debug-library-path		= $(self.path)/build/Debug ;
+			self.release-library-path	= $(self.path)/build/Release ;
+		case VS201? :
+			self.debug-library-path		= $(self.path)/build/Debug_$(self.visual-studio-ver) ;
+			self.release-library-path	= $(self.path)/build/Release_$(self.visual-studio-ver) ;
+		}
+	}
+}
+
+class htmlhelp : cot-class
+{
+	rule __init__ ( version ? )
+	{
+		cot-class.__init__ HTMLHelp $(version) ;
+		self.path						= [ path.join HTMLHelp $(version) ] ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.components					= Net Foundation Util XML ;
+		self.include-path				= $(self.path)/inc ;
+		self.library-path				= $(self.path)/lib ;
+		self.library					= htmlhelp ;
+	}
+}
+
+class sqlgen : cot-class
+{
+	rule __init__ ( version )
+	{
+		cot-class.__init__ SqlGen $(version) ;
+		self.path						= sqlgen/$(version) ;
+		init-$(self.os) ;
+	}
+
+	rule init-NT ( )
+	{
+		self.sqlgen						= $(self.path)/bin/winnt/sqlgen.exe ;
+	}
+
+	rule init-SOLARIS ( )
+	{
+		self.sqlgen						= $(self.path)/bin/$(self.ta-os-identifier)/sqlgen ;
+		SHELL "chmod +x $(self.root)/$(self.sqlgen:D)/*" ;
+	}
+
+	rule sqlgen ( )
+	{
+		return [ root $(self.sqlgen) ] ;
+	}
+}

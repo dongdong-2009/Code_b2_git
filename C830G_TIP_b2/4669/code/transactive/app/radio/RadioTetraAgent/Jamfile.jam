@@ -1,0 +1,9 @@
+
+ta-exe RadioTetraAgent
+	: [ glob src/*.cpp :
+			src/RadioServerAgentStatusManager.cpp
+			src/CallGenerator.cpp
+			src/RadioMonitorManager.cpp
+		]
+	  /proj/app/radio/RadioTetraAgent/RadioProtocolLibrary//TA_RadioProtocolLibrary
+	;

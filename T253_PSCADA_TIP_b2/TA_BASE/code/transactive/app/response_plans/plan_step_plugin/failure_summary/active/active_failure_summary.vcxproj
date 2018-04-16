@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.response_plans.plan_step_plugin.active_failure_summary</ProjectName>
+    <ProjectGuid>{1B170BF2-7BBA-4484-A5A1-B33A302055D3}</ProjectGuid>
+    <RootNamespace>active_failure_summary</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>TA_PlanActiveFailureSummaryStep_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>TA_PlanActiveFailureSummaryStep</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;BUILD_DLL;NOMINMAX;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>rpcrt4.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;winmm.lib;comsupp.lib;TA_ActiveStep_d.lib;TA_PlanStepCommon_d.lib;%(AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;BUILD_DLL;NOMINMAX;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>rpcrt4.lib;TA_Base_Core.lib;TA_Base_Bus.lib;winmm.lib;comsupp.lib;TA_ActiveStep.lib;TA_PlanStepCommon.lib;%(AdditionalDependencies);%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActiveFailureSummaryStep.cpp" />
+    <ClCompile Include="src\ActivePlanFailureSummaryStepMessage.cpp" />
+    <ClCompile Include="src\DllActiveInstance.cpp" />
+    <ClCompile Include="src\FailureSummaryStepComponent.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActiveFailureSummaryStep.h" />
+    <ClInclude Include="src\ActivePlanFailureSummaryStepMessage.h" />
+    <ClInclude Include="src\FailureSummaryStepComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\app.response_plans.plan_step_plugin.common.vcxproj">
+      <Project>{d5416048-b7dc-4845-86de-413ed4c3ca2d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\common_active\active_step.vcxproj">
+      <Project>{3f238135-1b98-4359-a8be-8259f77b65d0}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

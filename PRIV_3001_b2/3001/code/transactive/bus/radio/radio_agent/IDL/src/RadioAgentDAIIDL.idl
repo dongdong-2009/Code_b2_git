@@ -1,0 +1,55 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_TIP/4677/transactive/bus/radio/radio_agent/IDL/src/RadioAgentDAIIDL.idl $
+// @author:  zou chunzhong
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2009/12/15 19:31:45 $
+// Last modified by:  $	$
+//
+// Radio Agents IDL interface.
+//
+
+#ifndef INTERFACE_RADIO_AGENT_DAI_IDL
+#define INTERFACE_RADIO_AGENT_DAI_IDL
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+#include "bus/radio/radio_agent/IDL/src/RadioCommonExceptionsIDL.idl"
+
+#include "bus/radio/radio_agent/IDL/src/CommonRadioAgentIDL.idl"
+
+module TA_IRS_Bus
+{
+	interface RadioAgentDAIIDL
+	{
+		struct PredefinedTextMessageListUpdated
+		{
+			string  operationSession;
+		};
+
+		ResourceButtonCollection getResourceButtonCollection( in string operatorSession);
+
+		PredefinedMessageCollection getPredefinedMessageList( in string operationSession);
+
+		void changePredefinedMessage( in string operatorSession, in unsigned long messageKey, in MessageName msgName, in MessageText msgText);
+
+		void deletePredefinedMessage( in string operatorSession, in unsigned long messageKey);
+
+		MessageCollection getMessageInbox( in string operatorSession);
+
+		void associateButtonWithResource( in string session, in RadioResource resource, in string buttonSet, in short buttonRef);
+
+		void updateEntity( in RadioResource resource, in RadioResourceCollection members);
+
+		void deleteEntity();
+	};
+
+};//End of TA_IRS_Bus;
+#endif
+

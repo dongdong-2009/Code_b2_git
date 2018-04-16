@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{14ac4f62-01a6-4a01-becb-b4c54d135cbb}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{87dbd546-84e7-46a0-b472-91b5173a5874}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Action">
+      <UniqueIdentifier>{68f7fb86-81c1-4948-9f19-770d3a1e05d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DB Access">
+      <UniqueIdentifier>{cadf64ff-fd95-44e9-a69c-591617cf323f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI Control">
+      <UniqueIdentifier>{4a622a51-f6bc-473d-a015-9c0fa19d6737}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main GUI">
+      <UniqueIdentifier>{6c1ca132-2704-4820-b766-f7f7338b2118}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{7ac76938-ed88-4934-9b3d-0dfb2d0913f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Simulator">
+      <UniqueIdentifier>{5df8685d-b7b3-4a84-a499-1c1e7bb46f14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Workers">
+      <UniqueIdentifier>{13f2e308-095e-45bb-90db-5a2db9eb8106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sync">
+      <UniqueIdentifier>{4bf7dfb0-4056-4a8d-a11e-5b2b38a5f5b3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ATSComWrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventFilter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GUIObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MySink.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionCreateIncidentReport.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionShowComment.cpp">
+      <Filter>Action</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseAccess.cpp">
+      <Filter>DB Access</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StatusProgressBar.cpp">
+      <Filter>GUI Control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventFilterDlg.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewer.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewerDlg.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewerGUI.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultipleLoadDlg.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WaitNotificationBox.cpp">
+      <Filter>Main GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AvalancheNamedFilter.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FilterCriteria.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSHistoricalWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSRealTimeObserverManager.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSRealTimeWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventHandler.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventHandlerManager.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IEventWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IEventWorkObserver.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSHistoricalWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSRealTimeAgentCache.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSRealTimeAgentWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSRealTimeDBWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSRealTimeWorker.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSWorkerHelper.cpp">
+      <Filter>Workers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApplyRightsThread.cpp">
+      <Filter>Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CreateDefaultFilterThread.cpp">
+      <Filter>Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PopulateEventLevelsThread.cpp">
+      <Filter>Sync</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ATSComWrapper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventFilter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUIObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MySink.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionCreateIncidentReport.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionIds.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionShowComment.h">
+      <Filter>Action</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseAccess.h">
+      <Filter>DB Access</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StatusProgressBar.h">
+      <Filter>GUI Control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventFilterDlg.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewer.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewerDlg.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewerGUI.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FilterDlg.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultipleLoadDlg.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WaitNotificationBox.h">
+      <Filter>Main GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionCommand.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AvalancheNamedFilter.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConstantItems.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventDisplayMode.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FilterCriteria.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SearchStatus.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSHistoricalWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSRealTimeObserverManager.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSRealTimeWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventHandler.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventHandlerManager.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventWorkObserver.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSHistoricalWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSRealTimeAgentCache.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSRealTimeAgentWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSRealTimeDBWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSRealTimeWorker.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSWorkerHelper.h">
+      <Filter>Workers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApplyRightsThread.h">
+      <Filter>Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CreateDefaultFilterThread.h">
+      <Filter>Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PopulateEventLevelsThread.h">
+      <Filter>Sync</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\AlarmManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\AlarmManagerHot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\east_arr.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EventViewer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\filter.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\filterhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00005.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00006.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pagedown.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pageup.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Plan.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\print.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\printhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refresh.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refreshot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\save.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\savehot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\WarningDot.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EventViewer.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\EventViewer.rc">
+      <Filter>Main GUI</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{11022807-c1b6-4a54-843d-cdeacebef2b3}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6ee5802e-7fc8-4f37-892f-6f9fdd5b772f}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8353a176-cc50-45fd-9288-15e6aa363141}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="AlarmCommand">
+      <UniqueIdentifier>{76c27d99-6ea8-422f-9906-6da67efb6c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AlarmInfo">
+      <UniqueIdentifier>{e0d76d1b-dcac-4d61-904a-177fd21277fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Profile">
+      <UniqueIdentifier>{58f523c0-c8be-4953-b405-5fd4f8799252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="NewShareMemoryCommon">
+      <UniqueIdentifier>{ef53a6cf-2b12-43de-b1cd-bcd8d4f32645}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AlarmProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ISCSAlarm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ISCSAlarmQueueItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MmsQueueItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShareMemoryDLL.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmACKCommandManager.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmMMSJobCommandManager.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="AlarmRequestManager.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverAlarmACKCommand.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverAlarmMMSJobCommand.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverAlarmRequest.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterACKCommand.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterAlarmRequest.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterMMSJobCommand.cpp">
+      <Filter>AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="AckQueueItem.cpp">
+      <Filter>AlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="ATSAlarmInfoManager.cpp">
+      <Filter>AlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverATSAlarmInfo.cpp">
+      <Filter>AlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterATSAlarmInfo.cpp">
+      <Filter>AlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="ATSProfileManager.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverATSProfile.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreReceiverISCSProfile.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterATSProfile.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStoreUpdaterISCSProfile.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="ISCSProfileManager.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="CacheDataHead.cpp">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="NonReEntrantProcessLockable.cpp">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessGuard.cpp">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClCompile>
+    <ClCompile Include="ShareMemoryHelper.cpp">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ResInfo.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AckQueueItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmAPI.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmProvider.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStructInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISCSAlarm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ISCSAlarmQueueItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MmsQueueItem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareMemoryDLL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmACKCommandManager.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmMMSJobCommandManager.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="AlarmRequestManager.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverAlarmACKCommand.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverAlarmMMSJobCommand.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverAlarmRequest.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterACKCommand.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterAlarmRequest.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterMMSJobCommand.h">
+      <Filter>AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ATSAlarmInfoManager.h">
+      <Filter>AlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverATSAlarmInfo.h">
+      <Filter>AlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterATSAlarmInfo.h">
+      <Filter>AlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="ATSProfileManager.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverATSProfile.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiverISCSProfile.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterATSProfile.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdaterISCSProfile.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="ISCSProfileManager.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="CacheDataHead.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="CacheDataManager.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="CacheDataManagerChild.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="CacheDataWraper.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreReceiver.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="DataStoreUpdater.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="ICacheDataUpdateObserver.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="IProcessLockable.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="NonReEntrantProcessLockable.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessGuard.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+    <ClInclude Include="ShareMemoryHelper.h">
+      <Filter>NewShareMemoryCommon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="log4C.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+
+ta-lib	TA_DataPointLibrary
+	: [ glob src/*.cpp : src/ExpressionEvaluator.cpp src/ExpressionNode.cpp ]
+	: <dependency>/bus/scada/common_library/idl
+	  <dependency>/core/alarm/idl
+	;

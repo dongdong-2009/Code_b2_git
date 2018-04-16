@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{7c083510-346a-413e-850b-0dcb2bc2fc69}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ContextOnlineUpdatable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ContextSubDutyMsgSubscriber.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocSubSesProf.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XacmlContextFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XacmlFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XacmlPolicyFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ContextOnlineUpdatable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ContextSubDutyMsgSubscriber.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocSubSesProf.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XacmlContextFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XacmlFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XacmlFactoryInternal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XacmlPolicyFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

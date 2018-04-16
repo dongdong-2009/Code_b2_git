@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SQL">
+      <UniqueIdentifier>{44f49019-6c8a-4169-8b18-5176ef53fbcd}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\sqlcode.txt">
+      <Filter>SQL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

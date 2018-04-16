@@ -1,0 +1,318 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.pa.PAAgent" ProjectGUID="{F8CB329C-0F0D-46F6-8FAD-AE11A297955D}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nd/app.pa.PAAgent.PAAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 /I /Z&quot;src&quot; " Optimization="0" AdditionalIncludeDirectories="..\..\..\,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\core\data_access_interface\tis_agent_4669\IDL\src,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\transactive\core\process_management\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\scada/common_library/IDL/src,..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include,..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/IDL/src,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0,../../..,../../../../../sdk/include/transactive,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/core/process_management/IDL/src,../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src,../../../../../sdk/include/transactive/bus/security/duty_agent/IDL/src,../../../../../sdk/include/transactive/bus/security/authentication_agent/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src,../../../../../sdk/include/transactive/bus/radio/radioagentcorbadef_4669/IDL/src,../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;WIN32;_CONSOLE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent/app.pa.PAAgent.PAAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib aced.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib oci.lib libmysql.lib ws2_32.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/PAAgent.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd,../../../../../build/win32_nd,../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" IgnoreDefaultLibraryNames="msvcrt.lib,msvcprt.lib,LIBCMT.lib" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../build/win32_nd/PAAgent.pdb" GenerateMapFile="true" MapFileName=".\../../../../../build/win32_nd/transactive/app/pa/PAAgent/PAAgent.map" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.pa.PAAgent.PAAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nr/app.pa.PAAgent.PAAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 /I /Z&quot;src&quot; " Optimization="2" AdditionalIncludeDirectories="..\..\..\,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\core\data_access_interface\tis_agent_4669\IDL\src,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\transactive\core\process_management\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\scada/common_library/IDL/src,..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include,..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/IDL/src,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/boost/boost_1_39_0,../../..,../../../../../sdk/include/transactive,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/core/process_management/IDL/src,../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src,../../../../../sdk/include/transactive/bus/security/duty_agent/IDL/src,../../../../../sdk/include/transactive/bus/security/authentication_agent/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src,../../../../../sdk/include/transactive/bus/radio/radioagentcorbadef_4669/IDL/src,../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;WIN32;_CONSOLE;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent/app.pa.PAAgent.PAAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib ace.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib oci.lib libmysql.lib ws2_32.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/PAAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr,../../../../../build/win32_nr,../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32,../../../../../sdk/lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" IgnoreDefaultLibraryNames="LIBC" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../build/win32_nr/PAAgent.pdb" GenerateMapFile="true" MapFileName=".\../../../../../build/win32_nr/transactive/app/pa/PAAgent/PAAgent.map" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.pa.PAAgent.PAAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Master PA Agent">
+			<File RelativePath=".\src\MasterPAAgent.cpp">
+			</File>
+			<File RelativePath=".\src\MasterPAAgent.h">
+			</File>
+		</Filter>
+		<Filter Name="Station PA Agent">
+			<File RelativePath=".\src\StationPAAgent.cpp">
+			</File>
+			<File RelativePath=".\src\StationPAAgent.h">
+			</File>
+		</Filter>
+		<Filter Name="Common">
+			<File RelativePath=".\src\AbstractPAAgent.cpp">
+			</File>
+			<File RelativePath=".\src\AbstractPAAgent.h">
+			</File>
+			<File RelativePath=".\src\AtsAgentSubscriber.cpp">
+			</File>
+			<File RelativePath=".\src\AtsAgentSubscriber.h">
+			</File>
+			<File RelativePath=".\src\CachedConfig.cpp">
+			</File>
+			<File RelativePath=".\src\CachedConfig.h">
+			</File>
+			<File RelativePath=".\src\CircularList.h">
+			</File>
+			<File RelativePath=".\src\DataPointQualityController.cpp">
+			</File>
+			<File RelativePath=".\src\DataPointQualityController.h">
+			</File>
+			<File RelativePath=".\src\DvaMsgLib.cpp">
+			</File>
+			<File RelativePath=".\src\DvaMsgLib.h">
+			</File>
+			<File RelativePath=".\src\main.cpp">
+			</File>
+			<File RelativePath=".\src\PasFaultStatus.cpp">
+			</File>
+			<File RelativePath=".\src\PasFaultStatus.h">
+			</File>
+			<File RelativePath=".\src\PasFireAlarmManager.cpp">
+			</File>
+			<File RelativePath=".\src\PasFireAlarmManager.h">
+			</File>
+			<File RelativePath=".\src\PasHelpers.cpp">
+			</File>
+			<File RelativePath=".\src\PasHelpers.h">
+			</File>
+			<File RelativePath=".\src\PasZonesState.cpp">
+			</File>
+			<File RelativePath=".\src\PasZonesState.h">
+			</File>
+			<File RelativePath=".\src\ScheduledDvaHistory.cpp">
+			</File>
+			<File RelativePath=".\src\ScheduledDvaHistory.h">
+			</File>
+			<File RelativePath=".\src\ScheduleDvaIdSupplier.cpp">
+			</File>
+			<File RelativePath=".\src\ScheduleDvaIdSupplier.h">
+			</File>
+			<File RelativePath=".\src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Broadcast Classes">
+			<File RelativePath=".\src\AbstractBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\AbstractBroadcast.h">
+			</File>
+			<File RelativePath=".\src\AbstractBroadcastCircularList.cpp">
+			</File>
+			<File RelativePath=".\src\AbstractBroadcastCircularList.h">
+			</File>
+			<File RelativePath=".\src\AbstractStationBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\AbstractStationBroadcast.h">
+			</File>
+			<File RelativePath=".\src\AbstractTrainBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\AbstractTrainBroadcast.h">
+			</File>
+			<File RelativePath=".\src\BroadcastManager.cpp">
+			</File>
+			<File RelativePath=".\src\BroadcastManager.h">
+			</File>
+			<File RelativePath=".\src\BroadcastWorker.cpp">
+			</File>
+			<File RelativePath=".\src\BroadcastWorker.h">
+			</File>
+			<File RelativePath=".\src\CyclicBroadcastWorker.cpp">
+			</File>
+			<File RelativePath=".\src\CyclicBroadcastWorker.h">
+			</File>
+			<File RelativePath=".\src\DVARecordingBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\DVARecordingBroadcast.h">
+			</File>
+			<File RelativePath=".\src\IBroadcastManager.h">
+			</File>
+			<File RelativePath=".\src\MasterDVABroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\MasterDVABroadcast.h">
+			</File>
+			<File RelativePath=".\src\MasterLiveBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\MasterLiveBroadcast.h">
+			</File>
+			<File RelativePath=".\src\NonTrainDVABroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\NonTrainDVABroadcast.h">
+			</File>
+			<File RelativePath=".\src\NonTrainLiveBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\NonTrainLiveBroadcast.h">
+			</File>
+			<File RelativePath=".\src\ProgressReportSentry.cpp">
+			</File>
+			<File RelativePath=".\src\ProgressReportSentry.h">
+			</File>
+			<File RelativePath=".\src\StationBroadcastProxy.cpp">
+			</File>
+			<File RelativePath=".\src\StationBroadcastProxy.h">
+			</File>
+			<File RelativePath=".\src\StationDVABroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StationDVABroadcast.h">
+			</File>
+			<File RelativePath=".\src\StationLiveBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StationLiveBroadcast.h">
+			</File>
+			<File RelativePath=".\src\StationMusicBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StationMusicBroadcast.h">
+			</File>
+			<File RelativePath=".\src\StationPaSyncTisProxy.cpp">
+			</File>
+			<File RelativePath=".\src\StationPaSyncTisProxy.h">
+			</File>
+			<File RelativePath=".\src\TrainAgentSubscriber.cpp">
+			</File>
+			<File RelativePath=".\src\TrainAgentSubscriber.h">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastProxy.cpp">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastProxy.h">
+			</File>
+			<File RelativePath=".\src\TrainDVABroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\TrainDVABroadcast.h">
+			</File>
+			<File RelativePath=".\src\TrainLiveBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\TrainLiveBroadcast.h">
+			</File>
+		</Filter>
+		<Filter Name="misc">
+			<File RelativePath=".\src\GlobalConstants.h">
+			</File>
+			<File RelativePath=".\src\GlobalStructDefine.h">
+			</File>
+		</Filter>
+		<Filter Name="PasTransaction">
+			<File RelativePath=".\src\AcknowledgeFireAlarm.cpp">
+			</File>
+			<File RelativePath=".\src\AcknowledgeFireAlarm.h">
+			</File>
+			<File RelativePath=".\src\CreateScheduleDva.cpp">
+			</File>
+			<File RelativePath=".\src\CreateScheduleDva.h">
+			</File>
+			<File RelativePath=".\src\DeleteScheduleDva.cpp">
+			</File>
+			<File RelativePath=".\src\DeleteScheduleDva.h">
+			</File>
+			<File RelativePath=".\src\DvaMsgLibDownload.cpp">
+			</File>
+			<File RelativePath=".\src\DvaMsgLibDownload.h">
+			</File>
+			<File RelativePath=".\src\IPasConnectionObserver.h">
+			</File>
+			<File RelativePath=".\src\IPasDataProcessor.h">
+			</File>
+			<File RelativePath=".\src\IPasPollingObserver.h">
+			</File>
+			<File RelativePath=".\src\ITransactionExecutor.h">
+			</File>
+			<File RelativePath=".\src\ITransactionOwner.h">
+			</File>
+			<File RelativePath=".\src\PasConnectionAgency.cpp">
+			</File>
+			<File RelativePath=".\src\PasConnectionAgency.h">
+			</File>
+			<File RelativePath=".\src\PasModbusConnection.cpp">
+			</File>
+			<File RelativePath=".\src\PasModbusConnection.h">
+			</File>
+			<File RelativePath=".\src\PasPollingManager.cpp">
+			</File>
+			<File RelativePath=".\src\PasPollingManager.h">
+			</File>
+			<File RelativePath=".\src\PasPollingWorker.cpp">
+			</File>
+			<File RelativePath=".\src\PasPollingWorker.h">
+			</File>
+			<File RelativePath=".\src\PasReading.cpp">
+			</File>
+			<File RelativePath=".\src\PasReading.h">
+			</File>
+			<File RelativePath=".\src\PasTransaction.cpp">
+			</File>
+			<File RelativePath=".\src\PasTransaction.h">
+			</File>
+			<File RelativePath=".\src\PasTransactionManager.cpp">
+			</File>
+			<File RelativePath=".\src\PasTransactionManager.h">
+			</File>
+			<File RelativePath=".\src\PasTransactionWorker.cpp">
+			</File>
+			<File RelativePath=".\src\PasTransactionWorker.h">
+			</File>
+			<File RelativePath=".\src\ScheduledDvaDownload.cpp">
+			</File>
+			<File RelativePath=".\src\ScheduledDvaDownload.h">
+			</File>
+			<File RelativePath=".\src\StartBackgroundMusic.cpp">
+			</File>
+			<File RelativePath=".\src\StartBackgroundMusic.h">
+			</File>
+			<File RelativePath=".\src\StartDvaBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StartDvaBroadcast.h">
+			</File>
+			<File RelativePath=".\src\StartDvaPlayback.cpp">
+			</File>
+			<File RelativePath=".\src\StartDvaPlayback.h">
+			</File>
+			<File RelativePath=".\src\StartDvaRecording.cpp">
+			</File>
+			<File RelativePath=".\src\StartDvaRecording.h">
+			</File>
+			<File RelativePath=".\src\StartLiveBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StartLiveBroadcast.h">
+			</File>
+			<File RelativePath=".\src\StopBackgroundMusic.cpp">
+			</File>
+			<File RelativePath=".\src\StopBackgroundMusic.h">
+			</File>
+			<File RelativePath=".\src\StopDvaBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\StopDvaBroadcast.h">
+			</File>
+			<File RelativePath=".\src\StopDvaPlayback.cpp">
+			</File>
+			<File RelativePath=".\src\StopDvaPlayback.h">
+			</File>
+			<File RelativePath=".\src\StopDvaRecording.cpp">
+			</File>
+			<File RelativePath=".\src\StopDvaRecording.h">
+			</File>
+			<File RelativePath=".\src\UpdateDvaMessage.cpp">
+			</File>
+			<File RelativePath=".\src\UpdateDvaMessage.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

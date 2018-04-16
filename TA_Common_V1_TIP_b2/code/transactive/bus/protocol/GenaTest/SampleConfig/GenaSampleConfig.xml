@@ -1,0 +1,56 @@
+<?xml version='1.0'?>
+<config>
+	<Server ID='1' Enabled='1'>
+		<Name>192.168.253.173:8080</Name>
+		<IPAddress>192.168.253.173</IPAddress>
+		<Port>8080</Port>
+		<HTTPKeepAlive>1</HTTPKeepAlive>
+		<HTTPTimeOut>20000</HTTPTimeOut>
+		<SubscriptionTO>60000</SubscriptionTO>
+	</Server>
+	
+	<Client ID='1' Enabled='0'>
+		<Resubscription>20000</Resubscription>
+		<Callback>
+			<Name>192.168.253.173:7060</Name>
+			<IPAddress>192.168.253.173</IPAddress>
+			<Port>7060</Port>
+			<HTTPKeepAlive>1</HTTPKeepAlive>
+			<HTTPTimeOut>20000</HTTPTimeOut>
+		</Callback>
+		<SourceServer>
+			<ServerURL MaxRetry='3' TimeOut='20000' KeepAlive='1'>http://192.168.253.173:8080</ServerURL>
+			<ServerURL MaxRetry='3' TimeOut='20000' KeepAlive='1'>http://192.168.253.173:7045</ServerURL>
+		</SourceServer>
+		<SubcribeTopic>
+			<Topic Name='Platform' URL='/Platform' Notification='gena:birth, gena:death, gena:update' />
+			<Topic Name='Train' URL='/Train' Notification='gena:birth, gena:death, gena:update' />
+			<Topic Name='Switch' URL='/Switch' Notification='gena:birth, gena:death, gena:update' />
+		</SubcribeTopic>
+	</Client>
+	
+	<Bridge Enabled='0'>
+		<Server ID='2'>
+			<Name>192.168.253.173:8070</Name>
+			<IPAddress>192.168.253.173</IPAddress>
+			<Port>8070</Port>
+			<HTTPKeepAlive>1</HTTPKeepAlive>
+			<HTTPTimeOut>20000</HTTPTimeOut>
+			<SubscriptionTO>60000</SubscriptionTO>
+		</Server>
+		<Client ID='2'>
+			<Resubscription>20000</Resubscription>
+			<Callback>
+				<Name>192.168.253.173:7050</Name>
+				<IPAddress>192.168.253.173</IPAddress>
+				<Port>7050</Port>
+				<HTTPKeepAlive>1</HTTPKeepAlive>
+				<HTTPTimeOut>20000</HTTPTimeOut>
+			</Callback>
+			<SourceServer>
+				<ServerURL MaxRetry='3' TimeOut='20000' KeepAlive='1'>http://192.168.253.173:8080</ServerURL>
+				<ServerURL MaxRetry='3' TimeOut='20000' KeepAlive='1'>http://192.168.253.173:7045</ServerURL>
+			</SourceServer>
+		</Client>
+	</Bridge>
+</config>

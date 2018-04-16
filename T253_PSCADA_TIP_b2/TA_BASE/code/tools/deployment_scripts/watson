@@ -1,0 +1,226 @@
+#!/usr/bin/perl
+
+use Sys::Hostname;
+
+use strict;
+
+my $opt = shift @ARGV;
+
+use vars qw( %agents $count $version);
+
+$version="";
+    
+# get the apps we are looking for
+my $name=hostname;
+open( VERSION, "$ENV{HOME}/bin/versions.$name" );
+
+my @allPrograms = <VERSION>;
+$count = 0;
+foreach my $prog (@allPrograms)
+{
+    # if its the major version tag
+	if($prog=~/.*Version.*/)
+	{
+		$prog=~/.*:(.*)/;
+        $version=$1;
+        $version=~s/ //g;
+    }
+    else
+    {
+        # its an agent
+        # get the information and add it to the list of agents
+        my @row = split(/:/, $prog);
+        if (@row == 3)
+        {
+            $agents{$count}{name} = $row[0];
+            $agents{$count}{version} = $version.".".$row[1];
+            $agents{$count}{pattern} = $row[2];
+            $agents{$count}{pattern} =~ s/\r//g;
+            $agents{$count}{pattern} =~ s/\n//g;
+            $agents{$count}{pid} = "";
+            $agents{$count}{runningSince} = "Not Running";
+                            
+            $count++;
+        }
+    }
+}
+
+close ( VERSION );
+
+    
+system ("/usr/bin/clear");
+do{
+    #
+    # clear pid and running times
+    #
+    for (my $key = 0; $key < $count; ++$key)
+    {
+        $agents{$key}{pid} = "";
+        $agents{$key}{mem} = "";
+        $agents{$key}{runningSince} = "Not Running"; 
+    }
+        
+	#
+	# Display list of all Agents and there Process ID if running
+	#
+	#open( ALLPROG, "/bin/ps -auxww | egrep '(transact)|(root )' |" );
+	#open( ALLPROG, "/bin/ps auxww | egrep '(transact)|(root )' |" );															  
+	open ( ALLPROG, "/bin/ps axo euser,pid,%cpu,%mem,vsz,rss,tty,stat,lstart,args | egrep '(transact)|(root )' |" );
+
+	my @allPrograms = <ALLPROG>;
+	foreach my $prog (@allPrograms)
+	{
+        my $temp;
+		my $tempTime;
+		my $tempPid;
+        my $tempMem;
+
+		#we need the 2 column of ps for the PID and the 5th column for the "running since"
+		my @psinfo = split(/\s+/,$prog);
+		$tempPid = $psinfo[1];
+        $tempMem = $psinfo[5];
+		$tempTime = $psinfo[9]; 
+
+                #--- Memory Usage Start
+                # The rest of this script makes the assumption that mem%, sz, and rss are merged so I will to!
+
+                # $tempMem originally contains <MEM%><SZ><RSS>.
+
+                #$tempMem =~ s/^[0-9]+\.[0-9]//;
+                # $tempMem now contains <SZ><RSS>.
+
+                #$temp = length( $tempMem );
+                #if ( $temp%2 == 1 )
+                #{
+                        # Uneven number of chars so give the extra one to the SZ as it is
+                        # always > RSS
+                #        $temp = ( $temp/2 )+1;
+                #}
+                #else
+                #{
+                #        $temp = $temp/2;
+                #}
+                # $temp now contains the length of SZ.
+                
+                #$tempMem = substr( $tempMem, 0, $temp );
+                # $tempMem now contains <SZ>
+
+                # Convert to nicer numbers.
+                if ( $tempMem >= 1024 )
+                {
+                        $tempMem = int( $tempMem/1024 );
+                        $tempMem = $tempMem . " Mb";
+                }
+                else
+                {
+                        $tempMem = $tempMem . " Kb";
+                }
+
+                #--- Memory Usage End
+
+		#if the time doesnt contain ':' then it has run for 
+		#longer than 24hrs and is contained in two words
+		if($tempTime !~ /.*:.*/)
+		{
+			my $temp = $psinfo[10];
+			my $intermediateTempTime = $psinfo[11];
+			$tempTime = "$tempTime $temp $intermediateTempTime";
+		}
+		else
+		{
+			my $nowString = localtime;
+			my @nowArray = split(/\s+/,$nowString);
+			shift @nowArray;
+			shift @nowArray;
+			shift @nowArray;
+			$nowString = shift @nowArray;
+			#to tell if the time is yesterday or today we must compare hours to hours etc
+			@nowArray = split (/:/,$nowString);
+			my @psTime = split (/:/,$tempTime);
+			my $day="Today";
+			my $i;
+			for ($i=0; $i < 3; ++$i)
+			{
+				my $timeComponent = pop @nowArray;
+				my $psTimeComponent = pop @psTime;
+				
+				if ($timeComponent > $psTimeComponent)
+				{
+					$day = "Today";
+				}
+				elsif ($timeComponent < $psTimeComponent)
+				{
+					$day = "YesterDay"
+				}
+			}
+			
+			$tempTime = "$day $tempTime";
+			
+		}
+
+        #
+        # See if it matches any of our processes
+        #
+	for (my $key = 0; $key < $count; ++$key)
+        {
+            my $regex = $agents{$key}{pattern};
+            if( $prog =~ $regex)
+            {
+                $agents{$key}{pid} = "$tempPid";
+                $agents{$key}{runningSince} = "$tempTime";
+                $agents{$key}{mem} = "$tempMem";
+            }
+        }	
+	}
+    
+	print "\e[1;1f";
+
+
+format TOP =
+                      Transactive T253 Version @>>>>>>>>>>
+$version
+                      Currently Running Transactive Agents
+ --------------------------------------------------------------------------------------------------
+                Agent                 |   PID   |     BUILD     |  MEM USAGE  |    RUNNING SINCE
+                -----                 |   ---   |     -----     |  ---------  |    -------------
+.
+
+    $~ = 'TOP';
+    write;
+
+    my $name;
+    my $pid;
+    my $ver;
+    my $mem;
+    my $running;
+
+format ENTRY = 
+~@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< | @|||||| |  @||||||||||  |  @||||||||  | @>>>>>>>>>>>>>>>>
+$name,$pid,$ver,$mem,$running
+.
+    for (my $key = 0; $key < $count; ++$key)
+    {
+        $name = $agents{$key}{name};
+        $pid = $agents{$key}{pid};
+        $ver = $agents{$key}{version};
+        $mem = $agents{$key}{mem};
+        $running = $agents{$key}{runningSince};
+        
+	if ($opt eq "kill")
+	{
+		if ($pid ne "")
+		{
+			system ("kill -9 $pid");
+			$pid = "killed";
+		}
+	}
+	
+        $~ = 'ENTRY';
+        write;
+    }
+
+
+    sleep 1
+
+} while($opt ne "kill");
+

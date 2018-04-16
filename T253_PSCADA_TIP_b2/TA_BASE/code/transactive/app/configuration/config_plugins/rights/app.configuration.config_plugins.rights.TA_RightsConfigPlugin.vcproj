@@ -1,0 +1,142 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.configuration.config_plugins.rights" ProjectGUID="{697B7E73-0ED8-4D34-AE01-AFE66FBD45B4}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/rights" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nd/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..,../../../../../../build/win32_n/transactive,..\..\..\..\..\cots\omniORB\omniORB_4.1.6\include,../../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION=4;TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/rights/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/rights/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/rights/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/rights/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081" AdditionalIncludeDirectories="../../../../bus/resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread34_rtd.lib omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib oci.lib libmysql.lib Rpcrt4.lib Msimg32.lib acemfcd.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_ConfigPluginHelper_d.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nd/TA_RightsConfigPlugin.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../sdk/win32_nd,..\..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32,..\..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib,..\..\..\..\..\cots\boost\boost_1_39_0\stage\lib,../../../../../cots/WinStackTrace\build\Debug,../../../../../cots/mysql\5.5.15\winnt\lib,..\..\..\..\..\cots\mcl\1.1.0\lib\winnt" ModuleDefinitionFile=".\src\TA_RightsConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nd/TA_RightsConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nd/TA_RightsConfigPlugin.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/rights" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nr/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../..,../../../../../../build/win32_n/transactive,..\..\..\..\..\cots\omniORB\omniORB_4.1.6\include,../../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION=4;TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/rights/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/rights/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/rights/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/rights/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081" AdditionalIncludeDirectories="../../../../bus/resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread34_rt.lib omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib oci.lib libmysql.lib Rpcrt4.lib Msimg32.lib acemfc.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib TA_ConfigPluginHelper.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nr/TA_RightsConfigPlugin.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../sdk/win32_nr,..\..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32,..\..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib,..\..\..\..\..\cots\boost\boost_1_39_0\stage\lib,../../../../../cots/WinStackTrace\build\Release,../../../../../cots/mysql\5.5.15\winnt\lib,..\..\..\..\..\cots\mcl\1.1.0\lib\winnt" ModuleDefinitionFile=".\src\TA_RightsConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nr/TA_RightsConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nr/TA_RightsConfigPlugin.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/app.configuration.config_plugins.rights.TA_RightsConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\RightsComponent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RightsComponent.h">
+			</File>
+			<File RelativePath="src\RightsDatabaseAccessor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RightsDatabaseAccessor.h">
+			</File>
+			<File RelativePath="src\RightsGridControl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RightsGridControl.h">
+			</File>
+			<File RelativePath="src\RightsView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RightsView.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TA_RightsConfigPlugin.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TA_RightsConfigPlugin.def">
+			</File>
+			<File RelativePath="src\TA_RightsConfigPlugin.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\central.ico">
+			</File>
+			<File RelativePath="res\copy.ico">
+			</File>
+			<File RelativePath="res\local.ico">
+			</File>
+			<File RelativePath="res\location.ico">
+			</File>
+			<File RelativePath="res\Mandatory.bmp">
+			</File>
+			<File RelativePath="res\profile.ico">
+			</File>
+			<File RelativePath="res\rights.ico">
+			</File>
+			<File RelativePath="res\TA_RightsConfigPlugin.rc2">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

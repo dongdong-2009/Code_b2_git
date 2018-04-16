@@ -1,0 +1,85 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.banner_pages.call_page_library" ProjectGUID="{B371E1FC-3382-428C-86B0-796B9B6F2291}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/banner_pages/call_page_library" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\radio\RadioAgentCorbaDef_4669\idl\src\,..\..\..\..\..\sdk\include\transactive\core\data_access_interface\tis_agent_4669\IDL\src,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers,..\..\..\..\..\build\win32_n\transactive\core\exceptions\idl\src,..\..\..\..\..\build\win32_n\transactive\core\message\idl\src,..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\tis_agent_4669\IDL\src" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/banner_pages/call_page_library/bus.banner_pages.call_page_library.TA_CallPageLibrary.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/banner_pages/call_page_library/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/banner_pages/call_page_library/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/banner_pages/call_page_library/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_CallPageLibrary_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.banner_pages.call_page_library.TA_CallPageLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/banner_pages/call_page_library" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\sdk\include\transactive\core\exceptions\IDL\src,..\..\..\..\..\sdk\include\transactive\core\message\IDL\src,..\..\..\..\..\sdk\include\transactive\bus\radio\RadioAgentCorbaDef_4669\idl\src\,..\..\..\..\..\sdk\include\transactive\core\data_access_interface\tis_agent_4669\IDL\src,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0,..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\include,..\..\..\..\..\sdk\include\cots\ace\6_0_4\ACE_wrappers,..\..\..\..\..\build\win32_n\transactive\core\exceptions\idl\src,..\..\..\..\..\build\win32_n\transactive\core\message\idl\src,..\..\..\..\..\build\win32_n\transactive\core\data_access_interface\tis_agent_4669\IDL\src" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/banner_pages/call_page_library/bus.banner_pages.call_page_library.TA_CallPageLibrary.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/banner_pages/call_page_library/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/banner_pages/call_page_library/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/banner_pages/call_page_library/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_CallPageLibrary.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.banner_pages.call_page_library.TA_CallPageLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AbstractCallEntry.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AbstractCallEntryFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CallEntryManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\AbstractCallEntry.h">
+			</File>
+			<File RelativePath="src\AbstractCallEntryFactory.h">
+			</File>
+			<File RelativePath="src\CallEntryDoesNotExistException.h">
+			</File>
+			<File RelativePath="src\CallEntryManager.h">
+			</File>
+			<File RelativePath="src\ICallBanner.h">
+			</File>
+			<File RelativePath="src\ICallEntry.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

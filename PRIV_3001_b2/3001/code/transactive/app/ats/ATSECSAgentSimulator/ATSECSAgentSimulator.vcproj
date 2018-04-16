@@ -1,0 +1,134 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="ATSECSAgentSimulator" ProjectGUID="{140601F1-7404-485B-9255-8E1B3B3DA076}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/ats/AtsEcsAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/ATSECSAgentSimulator.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src;../../..;../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src;../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src;../../../../../sdk\include\transactive\core\process_management\idl\src;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/IDL/src;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/transactive/core/alarm/IDL/src;..\..\..\..\..\sdk\include\transactive\bus\trains\TrainAgentCorba\idl\src" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;__OSVERSION__=4" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\Debug/ATSECSAgentSimulator.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/libpath:&quot;..\..\..\cots/ACE/5_3/ACE_wrappers/ace" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib odbc32.lib odbccp32.lib WS2_32.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib aced.lib oci.lib libmysql.lib Rpcrt4.lib winmm.lib htmlhelp.lib stracelib.lib TA_AtsMethod.lib TA_AtsTCPCommunication.lib" OutputFile="../../../../../bin/win32_nd/AtsEcsSimulator.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../cots/oracle/10.2.0/winnt/lib;../../../../cots/mysql/5.5.15/winnt/lib;..\..\..\..\..\sdk\win32_nd;..\..\..\..\..\sdk\lib;../../../../../sdk/include/cots/WinStackTrace\build\Debug;../../../../../bin/win32_nd;../../../../cots/mcl/1.1.0/lib/winnt" GenerateDebugInformation="true" ProgramDatabaseFile=".\Debug/ATSECSAgentSimulator.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Debug/ATSECSAgentSimulator.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/ats/AtsEcsAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/ATSECSAgentSimulator.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src;../../..;../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src;../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src;../../../../../sdk\include\transactive\core\process_management\idl\src;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/IDL/src;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/transactive/core/alarm/IDL/src;..\..\..\..\..\sdk\include\transactive\bus\trains\TrainAgentCorba\idl\src" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;__OSVERSION__=4" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\Release/ATSECSAgentSimulator.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/libpath:&quot;..\..\..\cots/ACE/5_3/ACE_wrappers/ace" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib odbc32.lib odbccp32.lib WS2_32.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib ace.lib oci.lib libmysql.lib Rpcrt4.lib winmm.lib htmlhelp.lib stracelib.lib TA_AtsMethod.lib TA_AtsTCPCommunication.lib" OutputFile="../../../../../bin/win32_nr/AtsEcsSimulator.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../cots/oracle/10.2.0/winnt/lib;../../../../cots/mysql/5.5.15/winnt/lib;..\..\..\..\..\sdk\win32_nr;..\..\..\..\..\sdk\lib;../../../../../sdk/include/cots/WinStackTrace\build\Release;../../../../../bin/win32_nr;../../../../cots/mcl/1.1.0/lib/winnt" GenerateDebugInformation="true" ProgramDatabaseFile=".\Release/ATSECSAgentSimulator.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Release/ATSECSAgentSimulator.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ATSECSAgentSimulator.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ATSECSAgentSimulator.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ATSECSAgentSimulatorDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ATSECSAgentSimulatorGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ECSAgentUpdater.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RandomGenerator.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\ATSECSAgentSimulator.h">
+			</File>
+			<File RelativePath="src\ATSECSAgentSimulatorDlg.h">
+			</File>
+			<File RelativePath="src\ATSECSAgentSimulatorGUI.h">
+			</File>
+			<File RelativePath="src\ECSAgentUpdater.h">
+			</File>
+			<File RelativePath="src\RandomGenerator.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\ATSECSAgentSimulator.ico">
+			</File>
+			<File RelativePath="res\ATSECSAgentSimulator.rc2">
+			</File>
+		</Filter>
+		<File RelativePath="src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

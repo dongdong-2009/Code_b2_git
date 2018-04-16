@@ -1,0 +1,162 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_STATION_TIS_DLG DIALOGEX 0, 0, 353, 208
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Station:",IDC_STATIONTIS_STATION_RADIO,"Button",BS_AUTORADIOBUTTON | BS_BOTTOM | WS_TABSTOP,13,19,61,12
+    COMBOBOX        IDC_STATIONTIS_STATION_COMBO,86,19,80,179,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "All stations",IDC_STATIONTIS_ALL_STATIONS_RADIO,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,13,37,61,12
+    CONTROL         "PID list:",IDC_STATIONTIS_PID_LIST_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,80,69,12
+    PUSHBUTTON      "...",IDC_STATIONTIS_PICK_PID_BUTTON,151,79,14,14
+    EDITTEXT        IDC_STATIONTIS_MESSAGE_EDIT,180,33,146,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_STATIONTIS_PICK_MESSAGE_BUTTON,325,33,14,14
+    COMBOBOX        IDC_STATIONTIS_PRIORITY_COMBO,228,55,112,117,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_STATIONTIS_DURATION_PICKER,
+                    "SysDateTimePick32",DTS_UPDOWN | WS_TABSTOP | 0x8,227,76,66,15
+    LTEXT           "Duration:",IDC_STATIC,180,77,45,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Message:",IDC_STATIC,180,19,48,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        "Destination",IDC_STATIC,6,7,167,48
+    GROUPBOX        "",IDC_STATIC,6,50,167,149
+    LTEXT           "Priority:",IDC_STATIC,180,55,45,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        "Display",IDC_STATIC,173,7,174,192
+    LTEXT           "hh:mm:ss",IDC_STATIC,298,77,42,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    CONTROL         "List1",IDC_STATIONTIS_PID_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SORTASCENDING | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,13,98,152,94
+END
+
+IDD_PLAN_STEP_PARAMETER_TIS_PIDLIST_EDIT_DLG DIALOGEX 0, 0, 584, 362
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select target PIDs"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_STATIONTIS_AVAILABLE_PID_LIST,7,44,269,289,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      ">",IDC_STATIONTIS_ADD_SELECTION_BUTTON,283,146,17,14
+    PUSHBUTTON      ">>",IDC_STATIONTIS_ADD_ALL_BUTTON,283,194,17,14
+    LISTBOX         IDC_STATIONTIS_SELECTED_PID_LIST,308,44,269,289,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "<",IDC_STATIONTIS_REMOVE_SELECTION_BUTTON,283,170,17,14
+    PUSHBUTTON      "<<",IDC_STATIONTIS_REMOVE_ALL_BUTTON,283,218,17,14
+    DEFPUSHBUTTON   "OK",IDOK,234,341,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,300,341,50,14
+    LTEXT           "Parameter name:",IDC_STATIC,7,8,82,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Available PIDs:",IDC_STATIC,7,32,96,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STATIONTIS_PARAMETER_NAME,94,8,182,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Selected PIDs:",IDC_STATIC,308,32,96,10,0,WS_EX_TRANSPARENT
+END
+
+IDD_PLAN_STEP_PARAMETER_STATION_TIS_MESSAGE_EDIT_DLG DIALOGEX 0, 0, 430, 321
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select message"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_STATIONTIS_MESSAGE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,67,415,226
+    DEFPUSHBUTTON   "OK",IDOK,157,300,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,223,300,50,14
+    LTEXT           "Destination",IDC_STATIC,166,26,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "library version:",IDC_STATIC,166,35,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Message",IDC_STATIC,291,26,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "library version:",IDC_STATIC,291,35,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Parameter name:",IDC_STATIC,7,8,82,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Message list:",IDC_STATIC,7,55,96,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STATIONTIS_PARAMETER_NAME,94,8,328,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Library type:",IDC_STATIC,8,29,82,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_STATIONTIS_LIBRARY_TYPE,94,29,51,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATIONTIS_DEST_LIBRARY_VERSION,237,29,34,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    EDITTEXT        IDC_STATIONTIS_MSG_LIBRARY_VERSION,362,29,59,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_STATIONTIS_STEP_PARAMETER_STATION "Station"
+    IDS_STATIONTIS_STEP_PARAMETER_TIS_STATION_LEVEL "Station Level"
+    IDS_STATIONTIS_STEP_PARAMETER_TIS_PID_LIST "PID List"
+    IDS_STATIONTIS_STEP_PARAMETER_TIS_MESSAGE "Message"
+    IDS_STATIONTIS_STEP_PARAMETER_TIS_PRIORITY "Priority"
+    IDS_STATIONTIS_STEP_PARAMETER_TIS_DURATION "Duration"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

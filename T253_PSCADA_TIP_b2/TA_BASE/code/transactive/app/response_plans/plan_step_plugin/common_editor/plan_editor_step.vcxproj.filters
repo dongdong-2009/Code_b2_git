@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a9f73d4d-231e-48de-9a90-4b4ea6e7b0aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EditorParameterHelper">
+      <UniqueIdentifier>{8c72d682-2359-4401-beb6-e5570437abfb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActivePlanStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointConfigAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EditorStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InteractiveStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftPlanAgentAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProfileConfigAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointValueTypeEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanNodeEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainGroupEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainIDEditorHelper.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UniqueListItemCache.cpp">
+      <Filter>EditorParameterHelper</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActivePlanStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointConfigAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EditorStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEditorStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMftPlanAgentAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InteractiveStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanAgentAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanNode.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftPlanAgentAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProfileConfigAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointValueTypeEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanNodeEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimeConvertHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainGroupEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainIDEditorHelper.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TreeItemCache.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UniqueListItemCache.h">
+      <Filter>EditorParameterHelper</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\PlanStepParameter.inl">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

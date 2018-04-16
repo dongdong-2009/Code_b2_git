@@ -1,0 +1,16 @@
+
+for exe in [ $(TA_Projects).selects : is-levels base app : is-exe : is-target-name-not-in SNMPStatusAgent SynchEngine TA_MAQ ConsoleManager ]
+{
+	build-project [ $(exe).path ] ;
+}
+
+if [ option.get test : : true ]
+{
+	import option path print ;
+	if [ current-ta-project.get path ] = [ path.pwd ]
+	{
+		current-ta-project.get __debug__ ;
+		print.lines [ $(TA_Projects).selects-x target-id : : is-levels base app : is-exe : is-target-name-not-in SNMPStatusAgent SynchEngine TA_MAQ ConsoleManager ] : "\t" "\t" ;
+		exit ;
+	}
+}

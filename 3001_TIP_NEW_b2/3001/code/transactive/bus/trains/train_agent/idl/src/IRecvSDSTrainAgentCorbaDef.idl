@@ -1,0 +1,92 @@
+//
+
+// The source code in this file is the property of
+
+// Ripple Systems and is not for redistribution
+
+// in any form.
+
+//
+
+// Source:   $File: //depot/CODE_4677/transactive/bus/trains/train_agent/idl/src/ITrainAgentCorbaDef.idl $
+
+// @author:  hongzhi
+
+// @version: $Revision: #1 $
+
+//
+
+// Last modification: $DateTime: 2008/04/22 10:21:16 $
+
+// Last modified by:  $Author: trainteam $
+
+//
+
+// Train IDL interface.
+
+//
+
+// This IDL is used to aggregate all the IDL to be implemented by the train agent.
+
+// This should not be used by cleints.
+
+//
+
+//#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+
+
+module TA_IRS_Bus_4677
+
+{
+
+/*	exception InvalidParameterException
+
+    {
+
+        string message;
+
+    };
+
+*/
+
+	interface IRecvSDSTrainAgentCorbaDef
+
+	{
+
+		typedef sequence<octet> SDSData;
+
+		/**
+
+		  * ReceiveSDSData
+
+		  * 
+
+		  * Used to receive SDS Data From Radio Agent
+
+		  * 
+
+		  * @return none
+
+		  * 
+
+		  * @exception none
+
+		  */
+
+		void ReceiveSDSData(in SDSData data,in unsigned long srcRadioId,in unsigned long destRadioId);
+
+
+
+//		void ReceiveSDSData(in octet data)
+
+//					raises (InvalidParameterException);
+
+	}; // IRecvSDSTrainAgentCorbaDef
+
+}; // TA_IRS_Bus_4677
+
+
+

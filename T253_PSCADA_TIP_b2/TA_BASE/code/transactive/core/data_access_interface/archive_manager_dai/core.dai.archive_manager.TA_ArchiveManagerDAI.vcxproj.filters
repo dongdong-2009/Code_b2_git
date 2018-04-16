@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ArchiveTables">
+      <UniqueIdentifier>{84bc6e06-456e-4860-b6af-be2758617486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archive Inventory">
+      <UniqueIdentifier>{29133bd7-14e4-4272-98d7-2dc34b9b9f31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ArchiveOnline">
+      <UniqueIdentifier>{175103d5-c1ea-49b2-ba33-ff8fa61db40d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ArchiveTable.cpp">
+      <Filter>ArchiveTables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveTableAccessFactory.cpp">
+      <Filter>ArchiveTables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveTableHelper.cpp">
+      <Filter>ArchiveTables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigArchiveTable.cpp">
+      <Filter>ArchiveTables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveInventoryAccessFactory.cpp">
+      <Filter>Archive Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveInventoryData.cpp">
+      <Filter>Archive Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveOnline.cpp">
+      <Filter>ArchiveOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveOnlineAccessFactory.cpp">
+      <Filter>ArchiveOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveOnlineHelper.cpp">
+      <Filter>ArchiveOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigArchiveOnline.cpp">
+      <Filter>ArchiveOnline</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveManagerDaiUtilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ArchiveTable.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveTableAccessFactory.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveTableHelper.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveTableTable.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigArchiveTable.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IArchiveTable.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigArchiveTable.h">
+      <Filter>ArchiveTables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveInventoryAccessFactory.h">
+      <Filter>Archive Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveInventoryData.h">
+      <Filter>Archive Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveInventoryTable.h">
+      <Filter>Archive Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IArchiveInventory.h">
+      <Filter>Archive Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveOnline.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveOnlineAccessFactory.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveOnlineHelper.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveOnlineTable.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigArchiveOnline.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IArchiveOnline.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigArchiveOnline.h">
+      <Filter>ArchiveOnline</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveManagerDaiUtilities.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/GZL6_TIP/3002/transactive/app/scada/Prototypes/GXW_COM_Demo/RippleUtil/RippleUtil.idl $
+  * @author:  Ripple
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2012/06/12 13:35:44 $
+  * Last modified by:  $Author: builder $
+  *
+  */
+// RippleUtil.idl : IDL source for RippleUtil.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RippleUtil.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(D0E6060B-89B7-4DD1-9FB6-CE6B0DBBA03F),
+		dual,
+		helpstring("IRippleTimer Interface"),
+		pointer_default(unique)
+	]
+	interface IRippleTimer : IDispatch
+	{
+		[id(1), helpstring("method SetPeriod")] HRESULT SetPeriod(long period);
+		[id(2), helpstring("method Start")] HRESULT Start();
+		[id(3), helpstring("method Stop")] HRESULT Stop();
+	};
+
+[
+	uuid(67CE85A4-B4CD-4D62-8FA9-109DB030938D),
+	version(1.0),
+	helpstring("RippleUtil 1.0 Type Library")
+]
+library RIPPLEUTILLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(BC647DF8-9345-4AD9-B007-751D7DD5EE61),
+		helpstring("_IRippleTimerEvents Interface")
+	]
+	dispinterface _IRippleTimerEvents
+	{
+		properties:
+		methods:
+		[id(1), helpstring("method Tick")] HRESULT Tick();
+	};
+
+	[
+		uuid(6C550E1E-AEA7-4081-8B8A-C731FBB1660C),
+		helpstring("RippleTimer Class")
+	]
+	coclass RippleTimer
+	{
+		[default] interface IRippleTimer;
+		[default, source] dispinterface _IRippleTimerEvents;
+	};
+};

@@ -1,0 +1,68 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/3001_TIP_NEW/3001/transactive/core/data_access_interface/incident_dai/src/IncidentCauseType.h $
+  * @author:  Grace Koh
+  * @version: $Revision: #2 $
+  *
+  * Last modification: $DateTime: 2012/02/06 16:15:14 $
+  * Last modified by:  $Author: haijun.li $
+  *
+  * This structure captures the cause of the incident
+  */
+#if !defined(IncidentCauseType_0CAE8B2E_1E68_499c_AA9A_783818799FE1__INCLUDED_)
+#define IncidentCauseType_0CAE8B2E_1E68_499c_AA9A_783818799FE1__INCLUDED_
+
+/**
+ * This structure captures the cause of the incident
+ * @author San Teo
+ * @version 1.0
+ * @created 16-May-2005 12:33:50 PM
+ */
+#include <string>
+
+namespace TA_IRS_Core
+{	
+struct IncidentCauseType
+{
+
+public:
+	/**
+	 * Set this to true if it the incident was caused by ESP
+	 */
+	bool eSP;
+	/**
+	 * Set this to true if it the incident was caused by BLS
+	 */
+	bool bLS;
+	/**
+	 * Set this to true if it the incident was caused by Pax
+	 */
+	bool pax;
+	/**
+	 * Set this to true if it the incident was caused by Point
+	 */
+	bool point;
+	/**
+	 * Set this to true if it the incident was caused by Power
+	 */
+	bool power;
+	/**
+	 * Set this to true if it the incident was caused by Signal
+	 */
+	bool signal;
+	/**
+	 * Set this to true if it the incident was caused by TkCct
+	 */
+	bool tkCct;
+	/**
+	 * This contains the factors that caused the accident beside the ones that are
+	 * predefined.
+	 */
+	std::string other;
+
+	};
+}// end TA_IRS_Core
+#endif // !defined(IncidentCauseType_0CAE8B2E_1E68_499c_AA9A_783818799FE1__INCLUDED_)

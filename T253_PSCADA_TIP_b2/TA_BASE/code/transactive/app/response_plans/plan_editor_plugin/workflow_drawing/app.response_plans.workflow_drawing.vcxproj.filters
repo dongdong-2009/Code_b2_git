@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Geometry.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PresentEntity.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ResourcePool.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DrawingContext.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Geometry.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDrawingContext.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PresentEntity.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ResourcePool.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DrawingContext.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{9161572a-8d43-4cfe-a2b5-09ee75050cae}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{1e6ac1c1-67ba-45e9-bfea-8876413a86db}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+</Project>

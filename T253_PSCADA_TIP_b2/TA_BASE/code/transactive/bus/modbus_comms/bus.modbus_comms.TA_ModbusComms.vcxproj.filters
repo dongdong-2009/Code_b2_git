@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{f5394d3a-3abc-4c3d-b2d2-22499446f0e0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CrcCalculator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DuplexModbusTcpConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusInClient.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusSerialConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusService.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusTcpConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SerialPort.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SerialPortException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteModbusTcpConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CrcCalculator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataBlock.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DuplexModbusTcpConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IModbus.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusInClient.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusSerialConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusService.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusTcpConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SerialPort.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SerialPortException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteModbusTcpConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

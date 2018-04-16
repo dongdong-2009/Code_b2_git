@@ -1,0 +1,89 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: core.utilities.TA_Util - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSPC24.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /Zi /Od /I "..\..\..\cots\omniORB\omniORB_4.0.5\include" /I "..\..\\" /I ".\src" /I "..\..\..\cots\boost\boost_1_31_0" /I "..\..\..\cots\ACE\5_3\ACE_wrappers" /I "..\..\..\\" /D "_AFXDLL" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /FR"../../../../build/win32_nd/transactive/core/utilities/" /Fo"../../../../build/win32_nd/transactive/core/utilities/" /Fd"../../../../build/win32_nd/transactive/core/utilities/" /FD /GZ /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DataConversion.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DateFormat.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DllHandler.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\Hostname.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\TA_String.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\TAAssert.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\ThreasdafeScreenOutput.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\GenericLogType.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\ILogType.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\Logger.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\PreformattedLogType.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DebugSETranslator.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DebugUtil.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\DebugUtilInit.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\FunctionEntry.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\RunParams.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\MatrixException.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\AlarmClock.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\utilities\src\Timer.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSPC24.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSPC25.tmp" with contents
+[
+/nologo /out:"../../../../build/win32_nd/TA_Utilities_d.lib" /ignore:4006 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DataConversion.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DateFormat.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DllHandler.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\Hostname.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\TA_String.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\TAAssert.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\ThreasdafeScreenOutput.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\GenericLogType.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\ILogType.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\Logger.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\PreformattedLogType.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DebugSETranslator.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DebugUtil.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\DebugUtilInit.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\FunctionEntry.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\RunParams.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\MatrixException.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\AlarmClock.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\utilities\Timer.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSPC25.tmp"
+<h3>Output Window</h3>
+Compiling...
+DataConversion.cpp
+C:\Program Files\Microsoft Visual Studio\VC98\INCLUDE\set(30) : warning C4786: '?s_trueLabels@DataConversion@TA_Base_Core@@0V?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B' : identifier was truncated to '255' characters in the browser information
+..\..\core/utilities/src/DataConversion.h(136) : warning C4786: '?s_falseLabels@DataConversion@TA_Base_Core@@0V?$set@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@B' : identifier was truncated to '255' characters in the browser information
+DateFormat.cpp
+DllHandler.cpp
+Hostname.cpp
+TA_String.cpp
+TAAssert.cpp
+ThreasdafeScreenOutput.cpp
+GenericLogType.cpp
+ILogType.cpp
+Logger.cpp
+PreformattedLogType.cpp
+DebugSETranslator.cpp
+DebugUtil.cpp
+DebugUtilInit.cpp
+FunctionEntry.cpp
+RunParams.cpp
+MatrixException.cpp
+AlarmClock.cpp
+Timer.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_Utilities_d.lib - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>

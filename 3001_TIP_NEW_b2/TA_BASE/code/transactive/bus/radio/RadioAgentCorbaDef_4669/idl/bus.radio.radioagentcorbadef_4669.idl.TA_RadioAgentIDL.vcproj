@@ -1,0 +1,56 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.radio.radioagentcorbadef_4669.idl" ProjectGUID="{C1424FE5-E39C-40BC-AE55-C921125FDBCE}" Keyword="MakeFileProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src" IntermediateDirectory=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src/bus.radio.radioagentcorbadef_4669.idl.TA_RadioAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src" IntermediateDirectory=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/idl/src/bus.radio.radioagentcorbadef_4669.idl.TA_RadioAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="IDL" Filter="idl">
+			<File RelativePath="src\IRadioCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IRadioDirectoryCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IRadioSessionCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IRadioStateSynchronisationCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

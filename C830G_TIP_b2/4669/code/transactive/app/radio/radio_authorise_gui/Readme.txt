@@ -1,0 +1,1 @@
+This directory will house the application used to authorise radio calls.  It will be called from the incoming call banner and passed a callID.

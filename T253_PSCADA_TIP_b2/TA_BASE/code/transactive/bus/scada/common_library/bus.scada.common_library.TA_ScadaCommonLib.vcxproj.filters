@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9942f338-a241-43d0-9b08-accedfc889f9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditMessageUtility.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CobraCppConvertUtilities.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DpValue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsScadaUtility.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaPersistence.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaUtilities.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuditMessageUtility.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlockingSingletonQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CobraCppConvertUtilities.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonDefs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DpValue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EPersistedItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsScadaUtility.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaPersistence.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaUtilities.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SingletonQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadsafeMap.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlockingSingletonMap.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,61 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution in any form.
+  *
+  * Source:    $File: //depot/WXL1_TIP/3002/transactive/app/cctv/video_switch_agent/src/CommunicationsHandler.cpp $
+  * @author:   Katherine Thomson
+  * @version:  $Revision: #4 $
+  *
+  * Last modification: $DateTime: 2013/07/30 17:42:30 $
+  * Last modified by:  $Author: huang.wenbo $
+  *
+  * Implements the ICommunicationsHandler interface.  Handles Agent specific
+  * tasks required on start up and shutdown, as well as process
+  * management messages and instructions originating from the System Controller.
+  */
+
+#ifdef _MSC_VER
+#pragma warning( disable : 4786 )
+#endif // _MSC_VER
+
+#include <algorithm>
+#include <sstream>
+
+#include "app/cctv/video_switch_agent/src/CommunicationsHandler.h"
+#include "app/cctv/video_switch_agent/src/AgentModeMonitor.h"
+#include "app/cctv/video_switch_agent/protocols/src/PDInterfaceFactory.h"
+
+#include "core/exceptions/src/VideoSwitchAgentInternalException.h"
+#include "core/utilities/src/DebugUtil.h"
+#include "core/utilities/src/TAAssert.h"
+
+namespace TA_IRS_App
+{
+    CommunicationsHandler::CommunicationsHandler(TA_Base_Core::VideoSwitchAgentPtr videoSwitchAgentData)
+        : m_pdCommunicationsHandler(0)
+    {
+        m_pdCommunicationsHandler = std::auto_ptr< IPDCommunicationsHandler >(PDInterfaceFactory::createCommunicationsHandler(videoSwitchAgentData));
+    }
+
+
+    CommunicationsHandler::~CommunicationsHandler()
+    {
+    }
+
+    void CommunicationsHandler::connect()
+    {
+        if(AgentModeMonitor::getInstance().isInControlMode())
+        {
+            TA_ASSERT(0 != m_pdCommunicationsHandler.get(), "The protocol dependent CommunicationsHandler has not been initialised.");
+            m_pdCommunicationsHandler->connect();
+        }
+    }
+
+
+    void CommunicationsHandler::disconnect()
+    {
+        TA_ASSERT(0 != m_pdCommunicationsHandler.get(), "The protocol dependent CommunicationsHandler has not been initialised.");
+        m_pdCommunicationsHandler->disconnect();
+    }
+
+}

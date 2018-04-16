@@ -1,0 +1,122 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_RATIS_APPROVAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 337
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RATIS_APPROVAL DIALOG DISCARDABLE  0, 0, 215, 344
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Incoming RATIS Message"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_MESSAGE_CONTENT,17,21,178,57,ES_MULTILINE
+    EDITTEXT        IDC_PRIORITY,164,135,29,12,ES_NUMBER
+    CONTROL         "Emergency",IDC_EMERGENCY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,28,242,47,11
+    CONTROL         "Normal",IDC_NORMAL,"Button",BS_AUTORADIOBUTTON,92,241,
+                    35,14
+    CONTROL         "Priority 6",IDC_PRIORITY6,"Button",BS_AUTORADIOBUTTON,
+                    144,240,42,16
+    PUSHBUTTON      "Approve",IDC_APPROVE,26,284,71,22
+    PUSHBUTTON      "Reject",IDC_REJECT,117,284,71,22
+    PUSHBUTTON      "Cancel",IDCANCEL,158,323,50,14
+    EDITTEXT        IDC_TYPE,136,98,57,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Message Details",IDC_STATIC,7,7,201,209
+    LTEXT           "Content",IDC_STATIC,18,81,28,9
+    LTEXT           "Type",IDC_STATIC,136,112,19,9
+    EDITTEXT        IDC_TAG,18,98,111,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "RATIS Tag",IDC_STATIC,18,112,36,10
+    GROUPBOX        "Action",IDC_STATIC,7,269,201,47
+    LTEXT           "Start Time",IDC_STATIC,18,130,36,9
+    LTEXT           "End Time",IDC_STATIC,18,145,31,9
+    LTEXT           "Priority",IDC_STATIC,136,136,24,10
+    LTEXT           "Destination",IDC_STATIC,19,204,38,8
+    EDITTEXT        IDC_EDIT3,18,162,175,41,ES_MULTILINE | ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_EDIT4,56,128,73,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,56,144,73,12,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Clear Type",IDC_STATIC,7,224,201,37
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

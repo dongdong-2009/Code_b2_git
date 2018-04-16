@@ -1,0 +1,40 @@
+<Config>
+   <Settings>
+      <CallbackAddr>http://192.168.253.173</CallbackAddr>
+      <ServerAddr>192.168.253.173</ServerAddr>
+      <ServerPort>8080</ServerPort>
+      <SendRenewalInterval>20</SendRenewalInterval>
+      <SubscriptionTimeout>60</SubscriptionTimeout>
+      <RefreshTimeout>2</RefreshTimeout>
+   </Settings>
+
+   <Subscription>
+      <!-- FireAlarm -->
+      <FireAlarm Enabled='0'>
+         <NotificationType>gena:birth, gena:update, gena:death</NotificationType>
+         <ObjectIdList/>
+         <AttributeNameList><Name>AlarmStatus</Name></AttributeNameList>
+         <EventList/>
+      </FireAlarm>
+      <!-- PowerSection  -->
+      <PowerSection Enabled='0'>
+         <NotificationType>gena:birth, gena:update, gena:death</NotificationType>
+         <AttributeNameList><Name>Status</Name></AttributeNameList>
+         <EventList/>
+         <ObjectIdList/>
+	  </PowerSection>
+      <!-- Ventilation  -->
+      <Ventilation Enabled='0'>
+         <NotificationType>gena:birth, gena:update, gena:death</NotificationType>
+         <AttributeNameList><Name>FanStatus</Name><Name>FanDirection</Name></AttributeNameList>
+         <EventList/>
+         <ObjectIdList/>
+      </Ventilation>
+	  <Platform Enabled='1'>
+         <NotificationType>gena:birth, gena:update, gena:death</NotificationType>
+         <AttributeNameList><Name>OpenStatus</Name><Name>Hold</Name></AttributeNameList>
+         <EventList/>
+         <ObjectIdList/>
+      </Platform>
+   </Subscription>
+</Config>

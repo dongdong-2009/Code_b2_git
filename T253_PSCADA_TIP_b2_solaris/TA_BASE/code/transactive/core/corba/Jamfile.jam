@@ -1,0 +1,9 @@
+
+ta-lib	TA_CorbaUtil
+	: [ glob src/*.cpp : src/VisitType.* ]
+	: <link>static
+	  <dependency>/core/exceptions/idl
+	  <dependency>/core/message/idl
+	  <dependency>/core/naming/idl
+	  <dependency>/core/corba/idl
+	;

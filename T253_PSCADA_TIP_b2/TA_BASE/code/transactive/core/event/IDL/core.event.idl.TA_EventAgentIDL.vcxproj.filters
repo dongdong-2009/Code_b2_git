@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{ab309612-7a98-441d-aa49-3db56626d2c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\EventAgentCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\EventDetailCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\EventSyncCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

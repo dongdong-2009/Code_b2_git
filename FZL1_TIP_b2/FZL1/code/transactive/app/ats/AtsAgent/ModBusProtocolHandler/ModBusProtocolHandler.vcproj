@@ -1,0 +1,96 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.ats.AtsAgent.ModBusProtocolHandler" ProjectGUID="{A85F1977-D251-44F1-B2FF-41B2B38CC139}" RootNamespace="ModBusHandlerProtocol" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/ats/AtsAgent/ModBusHandlerProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../../build/win32_n/transactive;./src;../../../..;../../../../../../sdk/include/transactive/core/process_management/IDL/src;../../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../../sdk/include/transactive;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../../build/win32_nd/transactive;../../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src;../../../../../../build/win32_n/transactive/bus/response_plans/plan_agent/IDL/src;../../../../../build/win32_n/transactive/core/data_access_interface/PlanAgent/IDL/src" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" WarningLevel="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_ModBusProtocolHandler_d.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/ats/AtsAgent/ModBusHandlerProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../../build/win32_n/transactive;./src;../../../..;../../../../../../sdk/include/transactive/core/process_management/IDL/src;../../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../../sdk/include/transactive;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../../build/win32_nr/transactive;../../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src;../../../../../../build/win32_n/transactive/bus/response_plans/plan_agent/IDL/src;../../../../../build/win32_n/transactive/core/data_access_interface/PlanAgent/IDL/src" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" RuntimeLibrary="2" WarningLevel="3" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_ModBusProtocolHandler.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Common">
+			<File RelativePath=".\src\AtsConstants.h">
+			</File>
+			<File RelativePath=".\src\AtsModBusManager.cpp">
+			</File>
+			<File RelativePath=".\src\AtsModBusManager.h">
+			</File>
+			<File RelativePath=".\src\IAtsTable.h">
+			</File>
+			<File RelativePath=".\src\ModBusFactory.cpp">
+			</File>
+			<File RelativePath=".\src\ModBusFactory.h">
+			</File>
+			<File RelativePath=".\src\ModBusProtocolManager.cpp">
+			</File>
+			<File RelativePath=".\src\ModBusProtocolManager.h">
+			</File>
+		</Filter>
+		<Filter Name="Data Parsers">
+			<File RelativePath=".\src\BaseTableParser.cpp">
+			</File>
+			<File RelativePath=".\src\BaseTableParser.h">
+			</File>
+			<File RelativePath=".\src\PATableParser.cpp">
+			</File>
+			<File RelativePath=".\src\PATableParser.h">
+			</File>
+			<File RelativePath=".\src\PIDSTableParser.cpp">
+			</File>
+			<File RelativePath=".\src\PIDSTableParser.h">
+			</File>
+			<File RelativePath=".\src\TrainPISTableParser.cpp">
+			</File>
+			<File RelativePath=".\src\TrainPISTableParser.h">
+			</File>
+			<File RelativePath=".\src\TrainTableParser.cpp">
+			</File>
+			<File RelativePath=".\src\TrainTableParser.h">
+			</File>
+			<File RelativePath=".\src\SIGStatusWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SIGStatusWorker.h">
+			</File>
+			<File RelativePath=".\src\SIGRTUManager.cpp">
+			</File>
+			<File RelativePath=".\src\SIGRTUManager.h">
+			</File>			
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{be1e905f-1a4b-46ec-a127-81b107a078b4}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{fe1d48fd-6ec6-4c1b-b368-8749692306a0}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentPlanAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CategoryItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabasePlanAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanFilter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanTreeCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RootItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentPlanAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CategoryItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabasePlanAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanFilter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanTree_resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanTreeCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RootItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ApprovedPlan.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\CollapsedCategory.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ExpandedCategory.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\PlanTreeRoot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\UnapprovedPlan.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PlanTree.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\PlanTree.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

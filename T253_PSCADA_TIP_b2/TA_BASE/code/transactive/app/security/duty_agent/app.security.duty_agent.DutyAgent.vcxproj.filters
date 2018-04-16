@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e9bcdbef-3b66-4f78-bd80-ee7b708d6356}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="DutyStateConverter">
+      <UniqueIdentifier>{67735f5f-6688-41dd-b012-fb90650ce268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SeObserver">
+      <UniqueIdentifier>{1b8306ae-02f9-4e56-bf58-6a5f0ad6474f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DutyAgentCommand">
+      <UniqueIdentifier>{4ff0f4ac-bd96-40c8-aa99-12c294771bba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DutyMonitor">
+      <UniqueIdentifier>{440e88e3-c4b5-4525-8b23-09456f77d3e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ControlExecutive.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\DutyAgentException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentUser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MonitorExecutive.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CorbaDutyStateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DegradedPopupConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAuditMessageConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyManagerSnapshotConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyManagerUpdateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetDutyConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetExclusiveDutyConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HandoverAlarmConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HandoverPopupConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsLibraryUpdateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemStateSnapshotConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemStateUpdateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferableRegionStateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferableSubsystemStateConverter.cpp">
+      <Filter>DutyStateConverter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAlarmSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAuditMessageSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyManagerUpdateSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PopupMessageSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsLibraryUpdateSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemStateUpdateSender.cpp">
+      <Filter>SeObserver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AllocateDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DegradeDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FreeDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetSessionStateDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetStateDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetSubsystemStateDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetTransferableRegionsDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetTransferableSubsystemsDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HasDutyDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HasExclusiveDutyDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IDutyAgentCommand.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OverrideBeginDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OverrideEndDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferRegionDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferSubsystemDAC.cpp">
+      <Filter>DutyAgentCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitor.cpp">
+      <Filter>DutyMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitorAlarmSender.cpp">
+      <Filter>DutyMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitorManager.cpp">
+      <Filter>DutyMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitorStateConverter.cpp">
+      <Filter>DutyMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitorTask.cpp">
+      <Filter>DutyMonitor</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ControlExecutive.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\DutyAgentException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentImpl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentUser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyAgentExecutive.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MonitorExecutive.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CorbaDutyStateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DegradedPopupConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAuditMessageConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManagerSnapshotConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManagerUpdateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetDutyConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetExclusiveDutyConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HandoverAlarmConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HandoverPopupConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsLibraryUpdateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemStateSnapshotConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemStateUpdateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferableRegionStateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferableSubsystemStateConverter.h">
+      <Filter>DutyStateConverter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAlarmSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAuditMessageSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManagerUpdateSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PopupMessageSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsLibraryUpdateSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemStateUpdateSender.h">
+      <Filter>SeObserver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllocateDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DegradeDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FreeDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetSessionStateDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetStateDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetSubsystemStateDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetTransferableRegionsDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetTransferableSubsystemsDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HasDutyDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HasExclusiveDutyDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyAgentCommand.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OverrideBeginDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OverrideEndDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferRegionDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferSubsystemDAC.h">
+      <Filter>DutyAgentCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitor.h">
+      <Filter>DutyMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorAlarmSender.h">
+      <Filter>DutyMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorManager.h">
+      <Filter>DutyMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorStateConverter.h">
+      <Filter>DutyMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorTask.h">
+      <Filter>DutyMonitor</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,316 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SELECT_SES_SUB_DUTY_DLG DIALOGEX 0, 0, 318, 207
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Session"
+FONT 10, "Arial", 700, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Select",IDOK,80,186,72,14
+    PUSHBUTTON      "Cancel",IDCANCEL,166,186,72,14
+    CONTROL         "",IDC_SELECT_SESSION_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,9,11,300,168
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DUTY_MANAGER_DLG DIALOGEX 0, 0, 276, 130
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Rights Manager"
+MENU IDR_DUTYMANAGER_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_STATUS_STATIC,2,119,273,10,SS_SUNKEN | NOT WS_GROUP
+END
+
+IDD_REGIONS_DLG DIALOGEX 0, 0, 276, 130
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPCHILDREN | WS_CAPTION
+CAPTION "Locations"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "Active Region Duties",IDC_RGN_DUTY_GRID,"MFCGridCtrl",WS_BORDER | WS_TABSTOP,5,5,266,99
+    DEFPUSHBUTTON   "Take region duty",IDC_TRANSFER_RGN_DUTY_BTN,9,111,125,14
+    CONTROL         "System Wide Delegation",IDC_DELEGATE_SUB_DUTY_BTN,
+                    "Button",BS_OWNERDRAW | WS_TABSTOP,138,111,127,14
+END
+
+IDD_SUBSYSTEMS_DLG DIALOGEX 0, 0, 389, 130
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPCHILDREN | WS_CAPTION
+CAPTION "Subsystems"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "Active Subsystem Duties",IDC_SUB_DUTY_GRID,"MFCGridCtrl",WS_BORDER | WS_TABSTOP,5,5,379,99
+    DEFPUSHBUTTON   "Request Subsystem",IDC_TRANSFER_SUB_DUTY_BTN,121,111,133,14
+    CONTROL         "Show All Subsystems",IDC_SHOW_ALL_SUBS_CHECK,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,5,111,113,14
+    PUSHBUTTON      "Request All Subsystems",IDC_TRANSFER_ALL_SUB_DUTY_BTN,256,111,128,14
+END
+
+IDD_SUBSYSTEM_DUTY_XFER_DLG DIALOGEX 0, 0, 344, 232
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Request subsystem"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,205,213,50,14
+    CONTROL         "List1",IDC_TRANSFERABLE_SUB_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,12,51,320,149
+    GROUPBOX        "Locations",IDC_REGIONS_BOX,5,4,334,30
+    EDITTEXT        IDC_REGIONS_EDIT,12,15,308,12,ES_READONLY
+    GROUPBOX        "Subsystems",IDC_STATIC,5,40,334,167
+    PUSHBUTTON      "...",IDC_SELECT_RGNS_BTN,320,15,12,12
+    DEFPUSHBUTTON   "OK",IDC_REQUEST_DUTY_BTN,147,213,50,14
+    PUSHBUTTON      "Select All",IDC_REQUEST_ALLDUTY_BTN,89,213,50,14
+END
+
+IDD_REGION_DUTY_XFER_DLG DIALOGEX 0, 0, 230, 221
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Take location duty"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,119,202,50,14
+    DEFPUSHBUTTON   "Take",IDC_TAKE_DUTY_BTN,62,202,50,14
+    CONTROL         "List1",IDC_TRANSFERABLE_RGN_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,6,220,190
+END
+
+IDD_REGION_SELECT_DLG DIALOGEX 0, 0, 117, 122
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select locations"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,5,103,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,62,103,50,14
+    CONTROL         "List1",IDC_ASSIGNED_RGN_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,5,6,107,91
+END
+
+IDD_OTHER_SES_SUB_DLG DIALOGEX 0, 0, 386, 214
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Other Session Subsystems"
+FONT 10, "Arial", 700, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Select Session",IDC_SEL_SES_BTN,205,195,85,14
+    CONTROL         "Active Selected Session Subsystem Duties",IDC_OTHER_SES_SUB_GRID,
+                    "MFCGridCtrl",WS_BORDER | WS_TABSTOP,8,6,370,168
+    PUSHBUTTON      "Reload",IDC_RELOAD_SES_SUB_BTN,294,195,85,14
+    CONTROL         "Show All Subsystems",IDC_SHOW_ALL_SUBS_CHECK_BTN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,8,195,85,14
+    EDITTEXT        IDC_SELECT_SESSION_INFO_EDIT,8,177,370,14,ES_AUTOHSCROLL | ES_READONLY,WS_EX_DLGMODALFRAME
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "Rights Manager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "Rights Manager"
+            VALUE "LegalCopyright", "Copyright (C) 2004"
+            VALUE "OriginalFilename", "DutyManager.EXE"
+            VALUE "ProductName", "Rights Manager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\DutyManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_DUTYMANAGER_ICON    ICON                    "..\\..\\..\\..\\bus\\resources\\icons\\DutyManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_DUTYMANAGER_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Rights Manager &Help...",     ID_HELP_DUTY_MGR
+        MENUITEM SEPARATOR
+        MENUITEM "&About Rights Manager...",    ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_GRID_IMAGES_BMP     BITMAP                  "..\\res\\grid_images.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_REGION_DUTY_XFER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+    END
+
+    IDD_REGION_SELECT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 110
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 115
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application\nExit"
+    IDS_LOCATION_STATUS     "Loading Location rights ..."
+    IDS_SUBSYSTEM_STATUS    "Loading Subsystem rights ..."
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\DutyManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

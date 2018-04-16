@@ -1,0 +1,830 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.radio_manager_gui" ProjectGUID="{4093057D-4EBC-4770-AAE4-0775758B862A}" RootNamespace="app.radio.radio_manager_gui" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nd/app.radio.radio_manager_gui.RadioManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/MD" Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../..;../../../../;../../../../../sdk/include/transactive;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../..\sdk\include\transactive\bus\trains\TrainAgentCorba\idl\src\;../../../../../sdk/include/transactive/bus/radio/radioagentcorbadef_4669/idl/src" PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__WIN32__;__x86__;_CRT_SECURE_NO_DEPRECATE;&quot;WINVER= 0x0500&quot;" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/app.radio.radio_manager_gui.RadioManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" UseLibraryDependencyInputs="false" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib Rpcrt4.lib stracelib.lib acemfcd.lib TA_IRS_Core_d.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_IRS_Bus_d.lib TA_Base_Bus_d.lib oci.lib libmysql.lib htmlhelp.lib ConsoleProtocol_d.lib RadioMFTAgent_d.lib mca.lib mcdb32.lib mcdi.lib aced.lib Winmm.lib" OutputFile="../../../../../bin/win32_nd/RadioManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd;../../../../../sdk/lib;../../../../../sdk/win32_nd;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../cots/motorola_sdk/lib;../../../../../bin/win32_nd;../../../../cots\boost\boost_1_39_0\stage\lib;$(NOINHERIT)" IgnoreAllDefaultLibraries="false" IgnoreDefaultLibraryNames="" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/RadioManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.radio.radio_manager_gui.RadioManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Debug Stub|Win32" OutputDirectory=".\RadioManager___Win32_Debug_Stub" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\RadioManager___Win32_Debug_Stub/app.radio.radio_manager_gui.RadioManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../..,../../../../../sdk/include/transactive,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers,../../../../../sdk/include/cots/boost/boost_1_39_0,../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive/core/process_management/idl/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src" PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__WIN32__;__x86__" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/app.radio.radio_manager_gui.RadioManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/radio/RadioManager/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread34_rtd.lib omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib Rpcrt4.lib acemfcd.lib TA_IRS_Core_d.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_IRS_Bus_d.lib TA_Base_Bus_d.lib oci.lib libmysql.lib htmlhelp.lib ConsoleProtocol_d.lib RadioMFTAgent_d.lib mcdb32.lib stracelib.lib Winmm.lib" OutputFile=".\RadioManager___Win32_Debug_Stub/app.radio.radio_manager_gui.RadioManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd,../../../../../sdk/win32_nd,../../../../../sdk/lib,../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32,../../../../cots/motorola_sdk/lib,../../../../../bin/win32_nd" GenerateDebugInformation="true" ProgramDatabaseFile=".\RadioManager___Win32_Debug_Stub/app.radio.radio_manager_gui.RadioManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\RadioManager___Win32_Debug_Stub/app.radio.radio_manager_gui.RadioManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/radio/RadioManager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nr/app.radio.radio_manager_gui.RadioManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/MD" Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../..;../../../../;../../../../../sdk/include/transactive;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../..\sdk\include\transactive\bus\trains\TrainAgentCorba\idl\src\;../../../../../sdk/include/transactive/bus/radio/radioagentcorbadef_4669/idl/src" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__WIN32__;__x86__;_CRT_SECURE_NO_DEPRECATE;&quot;WINVER= 0x0500&quot;" RuntimeLibrary="2" RuntimeTypeInfo="true" UsePrecompiledHeader="0" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioManager/app.radio.radio_manager_gui.RadioManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/radio/RadioManager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioManager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/radio/RadioManager/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" UseLibraryDependencyInputs="false" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib Rpcrt4.lib stracelib.lib acemfc.lib TA_IRS_Core.lib TA_mcl.lib TA_Base_Core.lib TA_IRS_Bus.lib TA_Base_Bus.lib oci.lib libmysql.lib htmlhelp.lib ConsoleProtocol.lib RadioMFTAgent.lib mca.lib mcdb32.lib mcdi.lib ace.lib Winmm.lib" OutputFile="../../../../../bin/win32_nr/RadioManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr;../../../../../sdk/lib;../../../../../sdk/win32_nr;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../cots/motorola_sdk/lib;../../../../../bin/win32_nr;../../../../cots\boost\boost_1_39_0\stage\lib;$(NOINHERIT)" IgnoreAllDefaultLibraries="false" IgnoreDefaultLibraryNames="LIBC" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/RadioManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.radio.radio_manager_gui.RadioManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\CRadioManagerDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CRadioMonitoringSheet.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaRadioManagerSummary.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DebugMsg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioErrorMsg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioInitMsgDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RadioInitMsgDlgHelper.cpp">
+			</File>
+			<File RelativePath="src\RadioManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioManagerFramework.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentCallbackSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RadioTetraAgentCallbackSubscriber.cpp">
+			</File>
+			<File RelativePath=".\src\SingletonDlgLoader.cpp">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TabCtrlEx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\CRadioManagerDlg.h">
+			</File>
+			<File RelativePath="src\CRadioMonitoringSheet.h">
+			</File>
+			<File RelativePath="src\CtaRadioManagerSummary.h">
+			</File>
+			<File RelativePath="src\DebugMsg.h">
+			</File>
+			<File RelativePath=".\src\IDlgLoader.h">
+			</File>
+			<File RelativePath="src\ItaRadioManagerSummary.h">
+			</File>
+			<File RelativePath="src\RadioErrorMsg.h">
+			</File>
+			<File RelativePath="src\RadioHelper.h">
+			</File>
+			<File RelativePath="src\RadioInitMsgDlg.h">
+			</File>
+			<File RelativePath=".\src\RadioInitMsgDlgHelper.h">
+			</File>
+			<File RelativePath="src\RadioManager.h">
+			</File>
+			<File RelativePath="src\RadioManagerFramework.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentCallbackSubscriber.h">
+			</File>
+			<File RelativePath=".\src\RadioTetraAgentCallbackSubscriber.h">
+			</File>
+			<File RelativePath="src\RadioUserDefinedEvents.h">
+			</File>
+			<File RelativePath=".\src\SingletonDlgLoader.h">
+			</File>
+			<File RelativePath=".\stdafx.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TabCtrlEx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="src\res\AG_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\bitmap1.bmp">
+			</File>
+			<File RelativePath="src\res\bmp_dial.bmp">
+			</File>
+			<File RelativePath="src\res\DG_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\drop_ima.bmp">
+			</File>
+			<File RelativePath="src\res\MS_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\Mu_SW_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\PG_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\Rad_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\RadioManager.ico">
+			</File>
+			<File RelativePath="src\RadioManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\res\RadioManager.rc2">
+			</File>
+			<File RelativePath="src\resource.h">
+			</File>
+			<File RelativePath="src\res\SW_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\TG_BMP.bmp">
+			</File>
+			<File RelativePath="src\res\toolbar1.bmp">
+			</File>
+		</Filter>
+		<Filter Name="RadioCallStackPage">
+			<File RelativePath=".\src\RadioCallstackPage\CallStackFilterList.cpp">
+			</File>
+			<File RelativePath=".\src\RadioCallstackPage\CallStackFilterList.h">
+			</File>
+			<File RelativePath="src\RadioCallstackPage\CCallStackPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".." PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".." PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories=".." PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioCallstackPage\CCallStackPage.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioOperations">
+			<File RelativePath="src\RadioOperations\IRadioOperationsObserver.h">
+			</File>
+			<File RelativePath="src\RadioOperations\RadioOperations.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioOperations\RadioOperations.h">
+			</File>
+			<File RelativePath="src\RadioOperations\RadioOperationsObserverHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioOperations\RadioOperationsObserverHelper.h">
+			</File>
+			<File RelativePath="src\RadioOperations\RadioSystemStatus.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioOperations\RadioSystemStatus.h">
+			</File>
+			<File RelativePath=".\src\RadioOperations\TcpException.cpp">
+			</File>
+			<File RelativePath=".\src\RadioOperations\TcpException.h">
+			</File>
+			<File RelativePath=".\src\RadioOperations\TcpMethodTimeoutException.cpp">
+			</File>
+			<File RelativePath=".\src\RadioOperations\TcpMethodTimeoutException.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioDirectory">
+			<File RelativePath="src\RadioDirectory\CRadioDirectoryPageDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\CRadioDirectoryPageDlg.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\DynamicGroupDirectoryPageStrategy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\DynamicGroupDirectoryPageStrategy.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\IRadioDirectoryPageDlgStrategy.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\MultiSelectDirectoryPageStrategy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\MultiSelectDirectoryPageStrategy.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\PatchGroupDirectoryPageStrategy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\PatchGroupDirectoryPageStrategy.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\RadioDirectoryPageDlgStrategyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\RadioDirectoryPageDlgStrategyFactory.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\RadioDirectoryPageStrategy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\RadioDirectoryPageStrategy.h">
+			</File>
+			<File RelativePath=".\src\RadioDirectory\RadioManagerFilterList.cpp">
+			</File>
+			<File RelativePath=".\src\RadioDirectory\RadioManagerFilterList.h">
+			</File>
+			<File RelativePath="src\RadioDirectory\TalkGroupDirectoryPageStrategy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioDirectory\TalkGroupDirectoryPageStrategy.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioStatusBar">
+			<File RelativePath="src\RadioStatusBar\CRadioManagerDlgStatusBar.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioStatusBar\CRadioManagerDlgStatusBar.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioStatusPage">
+			<File RelativePath="src\RadioStatusPage\CRadioStatusPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Debug Stub|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioStatusPage\CRadioStatusPage.h">
+			</File>
+			<File RelativePath="src\RadioStatusPage\IResourceButtonContainer.h">
+			</File>
+			<Filter Name="ResourceButton">
+				<File RelativePath="src\RadioStatusPage\ResourceButton\ButtonDecoratorType.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\CResourceButton.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\CResourceButton.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\EmptyButtonStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\EmptyButtonStrategy.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\IResourceButtonStrategy.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\MultiSelectRadioResourceButtonStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\MultiSelectRadioResourceButtonStrategy.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\PatchGroupRadioResourceButtonStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\PatchGroupRadioResourceButtonStrategy.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\RadioResourceButtonStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\RadioResourceButtonStrategy.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\ResourceButtonStrategyFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\ResourceButtonStrategyFactory.h">
+				</File>
+				<File RelativePath=".\src\RadioStatusPage\ResourceButton\SameWidthBorderDecorator.cpp">
+				</File>
+				<File RelativePath=".\src\RadioStatusPage\ResourceButton\SameWidthBorderDecorator.h">
+				</File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\TalkGroupRadioResourceButtonStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioStatusPage\ResourceButton\TalkGroupRadioResourceButtonStrategy.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="MiscBus">
+			<Filter Name="RadioBus">
+				<File RelativePath="..\..\..\bus\radio\RadioBus\src\RadioResourceMFTServerAttributes.h">
+				</File>
+				<File RelativePath="..\..\..\bus\radio\RadioBus\src\RadioTypes.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="RadioCallForwardingPage">
+			<File RelativePath=".\src\RadioCallForwardingPage\CRadioCallForwardingPage.cpp">
+			</File>
+			<File RelativePath=".\src\RadioCallForwardingPage\CRadioCallForwardingPage.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioSubsMonitoringPage">
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsMonitoringPage.cpp">
+			</File>
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsMonitoringPage.h">
+			</File>
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsResourceStatic.cpp">
+			</File>
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsResourceStatic.h">
+			</File>
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsResourceText.cpp">
+			</File>
+			<File RelativePath=".\src\RadioSubsMonitoringPage\CRadioSubsResourceText.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioSelectedEntity">
+			<Filter Name="SelectedEntityDetails">
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\CEntityDetailsAreaDlg.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\CEntityDetailsAreaDlg.h">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\CEntityDetailsAreaListBox.cpp">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\CEntityDetailsAreaListBox.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\DynamicRegroupEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\DynamicRegroupEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\EmptyEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\EmptyEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\EntityDetailsAreaStrategyFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\EntityDetailsAreaStrategyFactory.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\IEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\MultiselectEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\MultiselectEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\PatchGroupEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\PatchGroupEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\RadioEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\RadioEntityDetailsAreaStrategy.h">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\SelectListCtrl.cpp">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\SelectListCtrl.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\TalkGroupEntityDetailsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityDetails\TalkGroupEntityDetailsAreaStrategy.h">
+				</File>
+			</Filter>
+			<Filter Name="SelectedEntityOperations">
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\CEntityOperationsAreaDlg.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\CEntityOperationsAreaDlg.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\DynamicRegroupEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\DynamicRegroupEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\EmptyEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\EmptyEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\EntityOperationsAreaStrategyFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\EntityOperationsAreaStrategyFactory.h">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\GroupEntityStrategy.cpp">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityDetails\GroupEntityStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\IEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\MultiselectEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\MultiselectEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\PatchGroupEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\PatchGroupEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\RadioEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\RadioEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\TalkGroupEntityOperationsAreaStrategy.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Debug Stub|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\RadioSelectedEntity\SelectedEntityOperations\TalkGroupEntityOperationsAreaStrategy.h">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityOperations\TrainEntityOperationsAreaStrategy.cpp">
+				</File>
+				<File RelativePath=".\src\RadioSelectedEntity\SelectedEntityOperations\TrainEntityOperationsAreaStrategy.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="TrainAgenInterface">
+			<File RelativePath=".\src\TrainAgentInterface\ITrainAgentIF.h">
+			</File>
+			<File RelativePath=".\src\TrainAgentInterface\TrainAgentIF.cpp">
+			</File>
+			<File RelativePath=".\src\TrainAgentInterface\TrainAgentIF.h">
+			</File>
+		</Filter>
+		<File RelativePath="readme.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="src\RadioManager.rc"/>
+	</Globals>
+</VisualStudioProject>

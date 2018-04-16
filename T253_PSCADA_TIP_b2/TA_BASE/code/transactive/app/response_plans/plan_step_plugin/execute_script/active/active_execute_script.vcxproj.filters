@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{15a6bd7f-6539-48a2-8c2f-6d74f04b6d2c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="active_src\ActiveExecuteScriptStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\ExecuteScriptStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\DllActiveInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="active_src\ActiveExecuteScriptStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\ExecuteScriptStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,118 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/PRIV_3001/3001/transactive/bus/ecs/ecs_agent/IDL/src/IStationEcsAgentCorbaDef.idl $
+// @author:  Sean Liew
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2018/03/14 13:51:20 $
+// Last modified by:  $Author: lim.cy $
+//
+// PA Agent IDL interface.
+//
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+#include "bus/ecs/ecs_agent/IDL/src/CommonEcsAgentCorbaDef.idl"
+
+
+module TA_IRS_Bus
+{
+
+    interface IStationEcsAgentCorbaDef
+    {
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Station ECS Agent exceptions
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        exception StationLocked
+        {
+            string what;
+        };
+
+        exception StationInLocalMode
+        {
+            string what;
+        };
+
+        exception StationModeInProgress
+        {
+            long stationMode;
+            string what;
+        };
+        
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Message structures
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+
+        struct EcsStationModeExecutionUpdateData
+        {
+            long                                    fromStationMode;
+            long                                    toStationMode;
+            long                                    forMasterMode;
+            long                                    locationKey;
+            string                                  sessionId;
+
+            EEcsExecutionState                      executionState;
+            EEcsExecutionError                      executionError;
+
+            string                                  additionalInfo;
+        };
+
+
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Station ECS Agent methods
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        void executeStationMode
+            ( in long stationMode,
+              in boolean canOverrideStationModeInProgress,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    StationModeInProgress,
+                    StationLocked,
+                    StationInLocalMode,
+					TA_Base_Core::OperationModeException);
+
+        void executeStationModeForMasterMode
+            ( in long stationMode,
+              in long forMasterMode,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    StationLocked,
+                    StationInLocalMode,
+					TA_Base_Core::OperationModeException);
+
+        // Convenience methods to set Station ECS Agent datapoints.  This should only
+        // be used by the Master ECS Agent
+
+        void setSelectedMasterModeDataPoint( in long value )
+			raises(TA_Base_Core::OperationModeException);
+        void setSelectedOverridingStationModeDataPoint( in long value )
+			raises(TA_Base_Core::OperationModeException);
+        void setLastAppliedMasterModeDataPoint( in long value )
+			raises(TA_Base_Core::OperationModeException);
+        void setLastAppliedStationModeDataPoint( in long value )
+			raises(TA_Base_Core::OperationModeException);
+        void setMasterModeLockDataPoint( in boolean value)
+			raises(TA_Base_Core::OperationModeException);
+
+	unsigned short getFlexibleTimeOutValue()
+			raises(TA_Base_Core::OperationModeException);
+
+    }; // IStationEcsAgentCorbaDef
+
+}; // TA_Bus
+

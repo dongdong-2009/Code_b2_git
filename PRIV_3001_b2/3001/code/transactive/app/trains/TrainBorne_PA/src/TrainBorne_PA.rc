@@ -1,0 +1,280 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_ICON_TRAIN_BROADCAST ICON                    "..\\res\\TrainBornePA.ico"
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TRAIN_BROADCAST_LIVE_STATUS DIALOGEX 0, 0, 444, 299
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Live Announcement Request Status"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "List2",IDC_TRAIN_STATUS_PROGRESS_LST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,153
+    CONTROL         "List2",IDC_TRAIN_STATUS_FAILURES_LST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,120
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,308,144,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,359,144,39,10
+    PUSHBUTTON      "Retry Unsuccessful",ID_TRAIN_STATUS_RETRY_FAILURES_BTN,243,158,125,14
+    PUSHBUTTON      "Retry All",ID_TRAIN_STATUS_RETRY_ALL_BTN,375,158,47,14
+    PUSHBUTTON      "Begin Live Announcement",IDC_BUTTON_BEGIN,13,252,131,13
+    CONTROL         "Continue Broadcast",IDC_BUTTON_CONTINUE,"Button",BS_OWNERDRAW | WS_TABSTOP,156,252,131,13
+    PUSHBUTTON      "End Live Announcement",IDC_BUTTON_END,299,252,131,13
+    PUSHBUTTON      "Help",ID_TRAIN_HELP,7,277,84,15,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "Close",ID_TRAIN_STATUS_CLOSE_BTN,353,277,84,15
+    GROUPBOX        "Live Announcement Status",IDC_STATIC,7,182,429,87
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,172
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,172
+    LTEXT           "Retry mode:",IDC_STATIC,249,145,40,8,NOT WS_VISIBLE
+    LISTBOX         IDC_LIVE_STATUS,14,195,416,52,NOT LBS_NOTIFY | LBS_DISABLENOSCROLL | LBS_NOSEL | WS_VSCROLL
+END
+
+IDD_TRAIN_BROADCAST_DVA_STATUS DIALOGEX 0, 0, 444, 299
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "DVA Broadcast Request Status"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "List2",IDC_TRAIN_STATUS_PROGRESS_LST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,14,19,198,153
+    CONTROL         "List2",IDC_TRAIN_STATUS_FAILURES_LST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,232,19,198,120
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,308,144,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,359,144,39,10
+    PUSHBUTTON      "Retry Unsuccessful",ID_TRAIN_STATUS_RETRY_FAILURES_BTN,243,158,125,14
+    PUSHBUTTON      "Retry All",ID_TRAIN_STATUS_RETRY_ALL_BTN,375,158,47,14
+    EDITTEXT        IDC_TRAIN_STATUS_BROADCAST_ID_TB_NEW,106,280,141,12,ES_AUTOHSCROLL | ES_WANTRETURN | NOT WS_VISIBLE
+    PUSHBUTTON      "Help",ID_TRAIN_HELP,7,277,84,15,NOT WS_VISIBLE
+    PUSHBUTTON      "Abort",ID_TRAIN_STATUS_ABORT_BTN,258,277,84,15
+    DEFPUSHBUTTON   "Close",ID_TRAIN_STATUS_CLOSE_BTN,353,277,84,15
+    GROUPBOX        "DVA Broadcast Configuration",IDC_STATIC,7,182,429,87
+    GROUPBOX        "Broadcast Progress",IDC_STATIC,7,7,212,172
+    GROUPBOX        "Broadcast Failures",IDC_STATIC,225,7,212,172
+    LTEXT           "Message",IDC_STATIC,14,209,29,8
+    EDITTEXT        IDC_TRAIN_STATUS_BROADCAST_ID_TB,103,280,141,12,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAIN_STATUS_STOP_TB,112,280,120,12,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAIN_STATUS_START_TB,112,280,120,12,ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAIN_MESSAGE_TO_BROADCAST,52,209,237,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Retry mode:",IDC_STATIC,249,145,40,8,NOT WS_VISIBLE
+    LTEXT           "Priority",IDC_STATIC,14,239,28,8
+    EDITTEXT        IDC_DVA_MSG_PRIORITY,52,239,237,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_TRAIN_BROADCAST DIALOGEX 0, 0, 515, 319
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_DYNAMIC_GROUPS,55,202,135,74,CBS_DROPDOWN | CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save Selection",IDC_BUTTON_SAVE_GROUP_SEL,58,159,63,13,NOT WS_VISIBLE
+    PUSHBUTTON      "Delete Group",IDC_BUTTON_DELETE_GROUP,97,130,63,13,NOT WS_VISIBLE
+    COMBOBOX        IDC_STATIC_GROUPS,307,43,80,74,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Check1",IDC_TRN_LIVE_BTN,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,266,21,31,34
+    CONTROL         "Check1",IDC_TRN_DVA_BTN,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,231,21,31,34
+    EDITTEXT        IDC_TRN_MESSAGE_FILTER_TB,2,217,210,13,ES_AUTOHSCROLL | NOT WS_VISIBLE | WS_GROUP
+    CONTROL         "Cyclical Broadcast",IDC_TRN_CYCLIC_CB,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,120,145,75,14,WS_EX_TRANSPARENT
+    CONTROL         "DateTimePicker1",IDC_TRN_CYCLICAL_STOP,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | NOT WS_VISIBLE | WS_TABSTOP | 0x8,152,112,57,11
+    CONTROL         "DateTimePicker1",IDC_TRN_CYCLICAL_START,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | NOT WS_VISIBLE | WS_TABSTOP | 0x8,123,175,57,11
+    GROUPBOX        "Broadcast Mode",IDC_STATIC,228,9,282,53
+    LTEXT           "Message Selection",IDC_STATIC,150,201,61,8,NOT WS_VISIBLE
+    CONTROL         "Tab1",IDC_TRAINLIST_TAB,"SysTabControl32",NOT WS_VISIBLE | WS_TABSTOP,12,-2,6,10,WS_EX_TRANSPARENT
+    CONTROL         "Normal",IDC_RADIO_NORMAL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,302,17,39,10
+    CONTROL         "Override",IDC_RADIO_OVERRIDE,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_TABSTOP,350,18,39,10
+    LTEXT           "Static Group selection for multiple Train Live PA",IDC_STATIC,303,31,153,8
+    GROUPBOX        "DVA Broadcast Attribute",IDC_STATIC,230,76,280,89
+    COMBOBOX        IDC_COMBO_DVA_PRIORITY,262,99,98,30,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Priority",IDC_STATIC,234,102,28,8
+    LTEXT           "DVA Version",IDC_STATIC,43,134,49,8,NOT WS_VISIBLE
+    LTEXT           "",IDC_DVA_VERSION_FIELD,116,132,54,10,NOT WS_VISIBLE | WS_BORDER
+    GROUPBOX        "Restore DVA",IDC_STATIC,229,178,281,79
+    LTEXT           "DVA History List",IDC_STATIC,233,198,54,8
+    COMBOBOX        IDC_STATUS_CB,286,195,221,30,CBS_DROPDOWNLIST | CBS_AUTOHSCROLL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Restore DVA",IDC_RESTORE_STATUS_BTN,457,219,50,14
+    PUSHBUTTON      "Clear DVA",IDC_KILL_STATUS_BTN,319,221,50,14,NOT WS_VISIBLE | WS_DISABLED
+    PUSHBUTTON      "Clear all DVA",IDC_KILL_ALL_STATUS_BTN,382,221,50,14,NOT WS_VISIBLE | WS_DISABLED
+    GROUPBOX        "Message Selection",IDC_STATIC,1,9,222,301
+    CONTROL         "List2",IDC_TRN_DVA_MESSAGES_LST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,3,21,217,281
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_TRAIN_BROADCAST DLGINIT
+BEGIN
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0031, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0032, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0033, 
+    IDC_DYNAMIC_GROUPS, 0x403, 6, 0
+0x6554, 0x7473, 0x0034, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_TRAIN_BROADCAST_LIVE_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 300
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+        HORZGUIDE, 19
+        HORZGUIDE, 172
+        HORZGUIDE, 195
+        HORZGUIDE, 251
+        HORZGUIDE, 265
+    END
+
+    IDD_TRAIN_BROADCAST_DVA_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 14
+        VERTGUIDE, 84
+        VERTGUIDE, 127
+        VERTGUIDE, 144
+        VERTGUIDE, 176
+        VERTGUIDE, 212
+        VERTGUIDE, 219
+        VERTGUIDE, 225
+        VERTGUIDE, 232
+        VERTGUIDE, 244
+        VERTGUIDE, 289
+        VERTGUIDE, 430
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 292
+        HORZGUIDE, 19
+        HORZGUIDE, 172
+        HORZGUIDE, 209
+        HORZGUIDE, 224
+        HORZGUIDE, 239
+        HORZGUIDE, 254
+    END
+
+    IDD_TRAIN_BROADCAST, DIALOG
+    BEGIN
+        RIGHTMARGIN, 510
+        VERTGUIDE, 15
+        VERTGUIDE, 18
+        VERTGUIDE, 25
+        VERTGUIDE, 43
+        VERTGUIDE, 160
+        VERTGUIDE, 170
+        VERTGUIDE, 180
+        VERTGUIDE, 190
+        VERTGUIDE, 195
+        VERTGUIDE, 267
+        VERTGUIDE, 270
+        VERTGUIDE, 280
+        VERTGUIDE, 332
+        VERTGUIDE, 382
+        VERTGUIDE, 477
+        BOTTOMMARGIN, 309
+        HORZGUIDE, 8
+        HORZGUIDE, 34
+        HORZGUIDE, 159
+        HORZGUIDE, 230
+        HORZGUIDE, 251
+        HORZGUIDE, 257
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

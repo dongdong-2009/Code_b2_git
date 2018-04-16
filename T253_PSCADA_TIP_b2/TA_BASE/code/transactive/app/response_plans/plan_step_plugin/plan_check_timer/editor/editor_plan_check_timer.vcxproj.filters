@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{69d30698-b42d-4188-9dd5-3e9673bc6589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{28c18f93-bb07-46fa-a753-361bc5b09901}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="editor_src\DllInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\MftPlanCheckTimerStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanCheckTimerStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanCheckTimerStepEditorParameter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\PlanStepPlanCheckTimerPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\TaskPlanCheckTimer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="editor_src\MftPlanCheckTimerStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanCheckTimerStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanCheckTimerStepEditorParameter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\PlanStepPlanCheckTimerPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\stdafx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_src\TaskPlanCheckTimer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="editor_src\step_plugin.plan_check_timer_step.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityPlanCheckTimer.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

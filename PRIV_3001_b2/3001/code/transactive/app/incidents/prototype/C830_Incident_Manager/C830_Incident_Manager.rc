@@ -1,0 +1,513 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About C830_Incident_Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "C830_Incident_Manager Version 1.0",IDC_STATIC,40,10,119,
+                    8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2004",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_C830_INCIDENT_MANAGER_DIALOG DIALOGEX 0, 0, 639, 381
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Incident Manager"
+MENU IDR_MENU1
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,25,625,349
+    LTEXT           "Static",IDC_PAGER_CTRL,7,1,625,22,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "C830_Incident_Manager MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "C830_Incident_Manager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2004\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "C830_Incident_Manager.EXE\0"
+            VALUE "ProductName", "C830_Incident_Manager Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_C830_INCIDENT_MANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 632
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 374
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About C830_Incident_Manager..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INCIDENT_LOG_SHEET DIALOGEX 0, 0, 517, 421
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Incident Report"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Save",IDSAVE,348,400,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,460,400,50,14
+    DEFPUSHBUTTON   "Print",IDPRINT,404,400,50,14
+    GROUPBOX        "Incident Report",IDC_STATIC,7,3,503,70
+    GROUPBOX        "Incident",IDC_STATIC,7,77,503,27
+    GROUPBOX        "Response",IDC_STATIC,7,261,503,134
+    DEFPUSHBUTTON   "View Station Report",IDPRINT2,7,400,76,14
+    LTEXT           "ID:",IDC_STATIC,14,16,10,13,SS_CENTERIMAGE
+    LTEXT           "Creator:",IDC_STATIC,13,35,26,13,SS_CENTERIMAGE
+    LTEXT           "Creation Date:",IDC_STATIC,277,35,49,13,SS_CENTERIMAGE
+    LTEXT           "Creation Time:",IDC_STATIC,394,35,51,13,SS_CENTERIMAGE
+    LTEXT           "Modified Date:",IDC_STATIC,277,54,50,13,SS_CENTERIMAGE
+    LTEXT           "Modified Time:",IDC_STATIC,394,54,51,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT7,216,16,285,13,ES_AUTOHSCROLL
+    LTEXT           "Title:",IDC_STATIC,173,16,16,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT9,267,335,236,52,ES_MULTILINE
+    EDITTEXT        IDC_EDIT10,14,283,181,36,ES_MULTILINE | WS_VSCROLL
+    LTEXT           "Comments",IDC_STATIC,14,324,60,8
+    LTEXT           "Recommendation",IDC_STATIC,269,324,60,8
+    EDITTEXT        IDC_EDIT11,14,335,236,52,ES_MULTILINE
+    DEFPUSHBUTTON   "Add Plan...",IDPRINT3,200,283,50,14
+    DEFPUSHBUTTON   "Remove Plan",IDPRINT4,200,305,50,14
+    DEFPUSHBUTTON   "Edit Station Report",IDPRINT5,89,400,76,14
+    LTEXT           "Plans Executed",IDC_STATIC,14,272,60,8
+    EDITTEXT        IDC_EDIT12,269,283,234,36,ES_MULTILINE
+    LTEXT           "Operators",IDC_STATIC,269,272,60,8
+    CTEXT           "Additional Alarm Descriptions:",IDC_STATIC,13,225,56,18
+    EDITTEXT        IDC_EDIT13,76,219,427,30,ES_MULTILINE
+    LTEXT           "Associated Alarm:",IDC_STATIC,13,183,61,30,
+                    SS_CENTERIMAGE
+    LTEXT           "Train ID:",IDC_STATIC,13,126,42,12,SS_CENTERIMAGE
+    LTEXT           "Asset:",IDC_STATIC,13,108,22,12,SS_CENTERIMAGE
+    CONTROL         "Inner Track",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,76,144,53,12
+    CONTROL         "Outer Track",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,142,144,54,12
+    LTEXT           "Location 1:",IDC_STATIC,221,108,42,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO3,272,108,84,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Location 2:",IDC_STATIC,369,108,42,12,SS_CENTERIMAGE
+    COMBOBOX        IDC_COMBO4,417,108,84,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,272,126,84,12
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER2,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,272,144,
+                    84,12
+    LTEXT           "Start Date:",IDC_STATIC,221,126,42,12,SS_CENTERIMAGE
+    LTEXT           "Start Time:",IDC_STATIC,221,144,42,12,SS_CENTERIMAGE
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER3,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,417,126,84,12
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER4,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,417,144,
+                    84,12
+    LTEXT           "End Date:",IDC_STATIC,369,126,42,12,SS_CENTERIMAGE
+    LTEXT           "End Time:",IDC_STATIC,369,144,42,12,SS_CENTERIMAGE
+    CONTROL         "False Incident",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,13,88,60,10
+    EDITTEXT        IDC_EDIT8,272,161,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "Initial Delay:",IDC_STATIC,221,161,42,13,SS_CENTERIMAGE
+    CTEXT           "Accumulated Delay:",IDC_STATIC,369,160,41,18
+    LTEXT           "Kilometre Loss:",IDC_STATIC,13,162,48,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT16,76,162,120,13,ES_AUTOHSCROLL
+    GROUPBOX        "Incident",IDC_STATIC,7,77,503,179
+    LTEXT           " Joe Operator",IDC_STATIC,49,35,103,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           " 1473",IDC_STATIC,49,16,103,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "  02-Aug-04",IDC_STATIC,331,35,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_STATIC,331,54,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_STATIC,449,54,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "  17:23:34",IDC_STATIC,449,35,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Date/Time = ""23-Aug-04 15:51:00"", Sev = ""3"", Asset = ""DBG/ECS/TVS/TVF0"", Description = ""Tunnel Ventilation Fan 0"", Value = ""INCONSISTENT"", D = """", A = """", M = """", Ack By = """", C = """"",
+                    IDC_STATIC,76,183,427,30,0,WS_EX_CLIENTEDGE
+    EDITTEXT        IDC_EDIT17,76,126,120,12,ES_AUTOHSCROLL
+    LTEXT           "Creator Profile:",IDC_STATIC,159,35,57,13,
+                    SS_CENTERIMAGE
+    LTEXT           "Modifier Profile:",IDC_STATIC,159,54,55,13,
+                    SS_CENTERIMAGE
+    LTEXT           " TCO",IDC_STATIC,216,35,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_STATIC,216,54,52,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "Modifier:",IDC_STATIC,13,54,28,13,SS_CENTERIMAGE
+    LTEXT           "",IDC_STATIC,49,54,103,13,SS_CENTERIMAGE,
+                    WS_EX_CLIENTEDGE
+    LTEXT           "hr",IDC_STATIC,287,161,8,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT14,299,161,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "min",IDC_STATIC,314,161,12,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT18,330,161,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "sec",IDC_STATIC,344,161,12,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT15,417,162,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "hr",IDC_STATIC,432,162,8,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT19,443,162,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "min",IDC_STATIC,458,162,12,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT20,474,162,13,13,ES_AUTOHSCROLL | ES_NUMBER,
+                    WS_EX_RIGHT
+    LTEXT           "sec",IDC_STATIC,489,162,12,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT21,76,108,120,13,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON1,198,108,17,13
+END
+
+IDD_STATION_REPORT DIALOG DISCARDABLE  0, 0, 444, 433
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Station Report"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Save",IDOK,329,412,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,387,412,50,14
+    LTEXT           "Submitted By:",IDC_STATIC,7,25,46,15,SS_CENTERIMAGE
+    LTEXT           "EP:",IDC_STATIC,190,25,12,15,SS_CENTERIMAGE
+    LTEXT           "Date:",IDC_STATIC,339,25,17,15,SS_CENTERIMAGE
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER1,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,361,25,76,14
+    EDITTEXT        IDC_EDIT3,60,25,114,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,208,25,120,14,ES_AUTOHSCROLL
+    LTEXT           "Type:",IDC_STATIC,7,44,19,10
+    CONTROL         "Train Service Delay",IDC_CHECK1,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,60,44,79,10
+    CONTROL         "Equipment Abnormality",IDC_CHECK2,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,162,44,91,10
+    CONTROL         "Derailment",IDC_CHECK4,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,60,59,51,10
+    CONTROL         "Equipment Malfunction",IDC_CHECK5,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,162,59,89,10
+    CONTROL         "Arrest of Person",IDC_CHECK6,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,263,44,67,10
+    CONTROL         "Assualt",IDC_CHECK7,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,263,59,39,10
+    CONTROL         "Damaged Facility/Property",IDC_CHECK8,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,60,74,101,10
+    CONTROL         "Trespassing",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,162,74,54,10
+    CONTROL         "Heated Argument",IDC_CHECK9,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,263,74,72,10
+    CONTROL         "Fire",IDC_CHECK10,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    60,89,29,10
+    CONTROL         "Criminal Act",IDC_CHECK11,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,162,89,55,10
+    CONTROL         "Others (Specify)",IDC_CHECK12,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,60,104,66,10
+    EDITTEXT        IDC_EDIT5,130,102,307,14,ES_AUTOHSCROLL
+    LTEXT           "Location:",IDC_STATIC,7,125,29,10,SS_CENTERIMAGE
+    CONTROL         "Train",IDC_CHECK13,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,60,125,33,10
+    CONTROL         "Trackside",IDC_CHECK14,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,93,125,44,10
+    CONTROL         "Station",IDC_CHECK15,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,137,125,37,10
+    CONTROL         "Depot",IDC_CHECK16,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,125,35,10
+    CONTROL         "Other",IDC_CHECK17,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,125,34,10
+    EDITTEXT        IDC_EDIT6,251,123,186,14,ES_AUTOHSCROLL
+    LTEXT           "Condition:",IDC_STATIC,7,144,34,8,SS_CENTERIMAGE
+    CONTROL         "Dry",IDC_CHECK18,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    60,144,27,10
+    CONTROL         "Wet",IDC_CHECK19,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    93,144,29,10
+    CONTROL         "Clean",IDC_CHECK20,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,137,144,35,10
+    CONTROL         "Dirty",IDC_CHECK21,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,144,31,10
+    CONTROL         "Well Lit",IDC_CHECK22,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,144,41,10
+    CONTROL         "Poorly Lit",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,251,144,47,10
+    LTEXT           "Caused By:",IDC_STATIC,7,161,37,8,SS_CENTERIMAGE
+    LTEXT           "Action Taken:",IDC_STATIC,7,182,45,8,SS_CENTERIMAGE
+    LTEXT           "Staff Involved:",IDC_STATIC,7,201,47,8,SS_CENTERIMAGE
+    CONTROL         "ESP",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    60,161,29,10
+    CONTROL         "BLS",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    93,161,29,10
+    CONTROL         "Pax",IDC_CHECK26,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    137,161,29,10
+    CONTROL         "Point",IDC_CHECK27,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,174,161,36,10
+    CONTROL         "Power",IDC_CHECK28,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,210,161,37,10
+    CONTROL         "Signal",IDC_CHECK29,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,251,161,41,10
+    CONTROL         "Tk Cct",IDC_CHECK30,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,292,161,37,10
+    CONTROL         "Other:",IDC_CHECK31,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,329,161,33,10
+    EDITTEXT        IDC_EDIT8,362,159,75,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,60,179,377,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,60,198,377,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,7,220,430,187,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "ID:",IDC_STATIC,7,7,10,15,SS_CENTERIMAGE
+    EDITTEXT        IDC_EDIT2,60,7,114,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INCIDENT_LOG_SHEET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 510
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 414
+    END
+
+    IDD_STATION_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 437
+        VERTGUIDE, 60
+        VERTGUIDE, 93
+        VERTGUIDE, 137
+        VERTGUIDE, 174
+        VERTGUIDE, 210
+        VERTGUIDE, 251
+        VERTGUIDE, 292
+        VERTGUIDE, 329
+        VERTGUIDE, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 426
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\C830_Incident_Manager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\C830_Incident_Manager.ico"
+IDI_VIEW                ICON    DISCARDABLE     "res\\view.ico"
+IDI_NEW                 ICON    DISCARDABLE     "res\\new.ico"
+IDI_PRINT               ICON    DISCARDABLE     "res\\print.ico"
+IDI_DELETE              ICON    DISCARDABLE     "res\\delete.ico"
+IDI_CLOSE               ICON    DISCARDABLE     "res\\close.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BUTTON32771
+    SEPARATOR
+    BUTTON      ID_BUTTON32772
+    BUTTON      ID_BUTTON32773
+    BUTTON      ID_BUTTON32774
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "res\\toolbar1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    MENUITEM "&File",                       65535
+    MENUITEM "&View",                       ID_VIEW
+    MENUITEM "&Incident",                   65535
+    MENUITEM "&Help",                       65535
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\C830_Incident_Manager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

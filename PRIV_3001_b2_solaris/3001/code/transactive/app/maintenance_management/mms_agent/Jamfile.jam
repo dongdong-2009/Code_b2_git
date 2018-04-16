@@ -1,0 +1,5 @@
+
+ta-exe MmsAgent
+	: [ glob src/*.cpp : src/MmsStubbedApiWrapper.cpp ]
+	: <toolset>gcc:<define>UNIX
+	;

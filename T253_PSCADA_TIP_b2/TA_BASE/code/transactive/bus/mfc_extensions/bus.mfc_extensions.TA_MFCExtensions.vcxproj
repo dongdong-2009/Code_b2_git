@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.mfc_extensions</ProjectName>
+    <ProjectGuid>{7DDC2408-DDAA-4244-86B7-98BC479CD8AA}</ProjectGuid>
+    <RootNamespace>bus.mfc_extensions</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../build/win32_nd/bus.mfc_extensions.TA_MFCExtensions.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention />
+      <ImportLibrary>.\../../../../build/win32_nd/TA_MFCExtensions_d.lib</ImportLibrary>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../build/win32_nr/bus.mfc_extensions.TA_MFCExtensions.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Windows</SubSystem>
+      <DataExecutionPrevention />
+      <ImportLibrary>.\../../../../build/win32_nr/TA_MFCExtensions.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\auto_sort_list_ctrl\AutoSortListCtrl.cpp" />
+    <ClCompile Include="src\bitmap_and_text_push_button\FooButton.cpp" />
+    <ClCompile Include="src\bitmap_and_text_push_button\Sxbutton.cpp" />
+    <ClCompile Include="src\coding\Encoder.cpp" />
+    <ClCompile Include="src\coloured_controls\ColorButton.cpp" />
+    <ClCompile Include="src\coloured_controls\ColorCheck.cpp" />
+    <ClCompile Include="src\coloured_controls\ColorComboBox.cpp" />
+    <ClCompile Include="src\coloured_controls\ColourCombo.cpp" />
+    <ClCompile Include="src\coloured_controls\HighlightItemListCtrl.cpp" />
+    <ClCompile Include="src\combo_temporary_item\ComboTempItem.cpp" />
+    <ClCompile Include="src\decorator_button\AbstractDecoratorButton.cpp" />
+    <ClCompile Include="src\decorator_button\BackgroundDecorator.cpp" />
+    <ClCompile Include="src\decorator_button\BitmapDecorator.cpp" />
+    <ClCompile Include="src\decorator_button\BorderDecorator.cpp" />
+    <ClCompile Include="src\decorator_button\ButtonDecorator.cpp" />
+    <ClCompile Include="src\decorator_button\CDecoratorButton.cpp" />
+    <ClCompile Include="src\decorator_button\TextDecorator.cpp" />
+    <ClCompile Include="src\editable_list_control\EditableListCtrl.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellButton.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellCheckBox.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellComboBox.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellDateTime.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellEdit.cpp" />
+    <ClCompile Include="src\editable_list_control\ListCellMaskedEdit.cpp" />
+    <ClCompile Include="src\editable_list_control\XTipListBox.cpp" />
+    <ClCompile Include="src\file_dialog_no_folder_change\FileDialogArialDisableFolders.cpp" />
+    <ClCompile Include="src\filter_list_ctrl\FilterListCtrl.cpp" />
+    <ClCompile Include="src\filter_list_ctrl\MultiFilterListCtrl.cpp" />
+    <ClCompile Include="src\fixed_column_header_ctrl\FixedHeaderCtrl.cpp" />
+    <ClCompile Include="src\flashing_button\FlashButton.cpp" />
+    <ClCompile Include="src\focus_management\XorListSelectionController.cpp" />
+    <ClCompile Include="src\grid_control\GridCtrl.cpp" />
+    <ClCompile Include="src\grid_control\GridCtrlS.cpp" />
+    <ClCompile Include="src\grid_control\GridDropTarget.cpp" />
+    <ClCompile Include="src\grid_control\InPlaceDateTime.cpp" />
+    <ClCompile Include="src\grid_control\InPlaceEdit.cpp" />
+    <ClCompile Include="src\grid_control\InPlaceList.cpp" />
+    <ClCompile Include="src\grid_control\TitleTip.cpp" />
+    <ClCompile Include="src\grid_control_border_selection\GridCtrlBorderSelection.cpp" />
+    <ClCompile Include="src\list_ctrl_on_off_selection\ListCtrlOnOffSel.cpp" />
+    <ClCompile Include="src\list_ctrl_selection_without_focus\ListCtrlSelNoFocus.cpp" />
+    <ClCompile Include="src\list_ctrl_with_hidden_scrollbar\ListCtrlHiddenSB.cpp" />
+    <ClCompile Include="src\message_box\XMessageBox.cpp" />
+    <ClCompile Include="src\message_dialog_helper\MessageDialogHelper.cpp" />
+    <ClCompile Include="src\mfc_extensions.cpp" />
+    <ClCompile Include="src\multi_dialog\MultiDialog.cpp" />
+    <ClCompile Include="src\multi_font_property_sheet\MultiFontPropertySheet.cpp" />
+    <ClCompile Include="src\numeric_edit_control\numericedit.cpp" />
+    <ClCompile Include="src\object_tree_control\ObjectTreeCtrl.cpp" />
+    <ClCompile Include="src\object_tree_control\ObjectTreeItem.cpp" />
+    <ClCompile Include="src\outlook_bar_control\GfxGroupEdit.cpp" />
+    <ClCompile Include="src\outlook_bar_control\GfxOutBarCtrl.cpp" />
+    <ClCompile Include="src\outlook_bar_control\GfxPopupMenu.cpp" />
+    <ClCompile Include="src\print_list_ctrl\CellColourMap.cpp" />
+    <ClCompile Include="src\print_list_ctrl\ListCtrlPrint.cpp" />
+    <ClCompile Include="src\print_list_ctrl\PrinterJob.cpp" />
+    <ClCompile Include="src\prnScreen\prnScreen.cpp" />
+    <ClCompile Include="src\progress_window\ProgressWnd.cpp" />
+    <ClCompile Include="src\readonly_enabled_listbox\ReadOnlyListBox.cpp" />
+    <ClCompile Include="src\redraw_control_lock\LockControlRedraw.cpp" />
+    <ClCompile Include="src\selection_helpers\SelectionHelper.cpp" />
+    <ClCompile Include="src\standard_dialogs_arial_bold\FileDialogArial.cpp" />
+    <ClCompile Include="src\tab_control_with_disable\TabCtrlEx.cpp" />
+    <ClCompile Include="src\tab_control_with_disable\TabCtrlWithDisable.cpp" />
+    <ClCompile Include="src\tab_control_with_disable\TabCtrlWithDisableEx.cpp" />
+    <ClCompile Include="src\tab_dialog_control\TabDialogCtrl.cpp" />
+    <ClCompile Include="src\text_colour_edit\TextColourEdit.cpp" />
+    <ClCompile Include="src\toggleButton\toggleButton.cpp" />
+    <ClCompile Include="src\transactiveHelp\transactiveHelp.cpp" />
+    <ClCompile Include="src\tree_ctrl_multi_sel\MltiTree.cpp" />
+    <ClCompile Include="src\tree_ctrl_multi_sel\TrCtrlVw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\tree_list_control\TreeListCtrl.cpp" />
+    <ClCompile Include="src\utilities\DateUtility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\mfc_extensions.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\auto_sort_list_ctrl\AutoSortListCtrl.h" />
+    <ClInclude Include="src\auto_sort_list_ctrl\ISortingCallback.h" />
+    <ClInclude Include="src\bitmap_and_text_push_button\FooButton.h" />
+    <ClInclude Include="src\bitmap_and_text_push_button\Sxbutton.h" />
+    <ClInclude Include="src\coding\Encoder.h" />
+    <ClInclude Include="src\coloured_controls\ColorButton.h" />
+    <ClInclude Include="src\coloured_controls\ColorCheck.h" />
+    <ClInclude Include="src\coloured_controls\ColorComboBox.h" />
+    <ClInclude Include="src\coloured_controls\ColourCombo.h" />
+    <ClInclude Include="src\coloured_controls\HighlightItemListCtrl.h" />
+    <ClInclude Include="src\combo_temporary_item\ComboTempItem.h" />
+    <ClInclude Include="src\decorator_button\AbstractDecoratorButton.h" />
+    <ClInclude Include="src\decorator_button\BackgroundDecorator.h" />
+    <ClInclude Include="src\decorator_button\BitmapDecorator.h" />
+    <ClInclude Include="src\decorator_button\BorderDecorator.h" />
+    <ClInclude Include="src\decorator_button\ButtonDecorator.h" />
+    <ClInclude Include="src\decorator_button\CDecoratorButton.h" />
+    <ClInclude Include="src\decorator_button\IDecoratorButtonBehaviourStrategy.h" />
+    <ClInclude Include="src\decorator_button\TextDecorator.h" />
+    <ClInclude Include="src\editable_list_control\EditableListCtrl.h" />
+    <ClInclude Include="src\editable_list_control\ICellManager.h" />
+    <ClInclude Include="src\editable_list_control\IListCellButtonProcessor.h" />
+    <ClInclude Include="src\editable_list_control\ListCellButton.h" />
+    <ClInclude Include="src\editable_list_control\ListCellCheckBox.h" />
+    <ClInclude Include="src\editable_list_control\ListCellComboBox.h" />
+    <ClInclude Include="src\editable_list_control\ListCellDateTime.h" />
+    <ClInclude Include="src\editable_list_control\ListCellEdit.h" />
+    <ClInclude Include="src\editable_list_control\ListCellMaskedEdit.h" />
+    <ClInclude Include="src\editable_list_control\XTipListBox.h" />
+    <ClInclude Include="src\file_dialog_no_folder_change\FileDialogArialDisableFolders.h" />
+    <ClInclude Include="src\filter_list_ctrl\FilterListCtrl.h" />
+    <ClInclude Include="src\filter_list_ctrl\MultiFilterListCtrl.h" />
+    <ClInclude Include="src\fixed_column_header_ctrl\FixedHeaderCtrl.h" />
+    <ClInclude Include="src\flashing_button\FlashButton.h" />
+    <ClInclude Include="src\focus_management\XorListSelectionController.h" />
+    <ClInclude Include="src\grid_control\CellRange.h" />
+    <ClInclude Include="src\grid_control\GridCtrl.h" />
+    <ClInclude Include="src\grid_control\GridCtrlS.h" />
+    <ClInclude Include="src\grid_control\GridDropTarget.h" />
+    <ClInclude Include="src\grid_control\InPlaceDateTime.h" />
+    <ClInclude Include="src\grid_control\InPlaceEdit.h" />
+    <ClInclude Include="src\grid_control\InPlaceList.h" />
+    <ClInclude Include="src\grid_control\MemDC.h" />
+    <ClInclude Include="src\grid_control\TitleTip.h" />
+    <ClInclude Include="src\grid_control_border_selection\GridCtrlBorderSelection.h" />
+    <ClInclude Include="src\list_ctrl_on_off_selection\ListCtrlOnOffSel.h" />
+    <ClInclude Include="src\list_ctrl_selection_without_focus\ListCtrlSelNoFocus.h" />
+    <ClInclude Include="src\list_ctrl_with_hidden_scrollbar\ListCtrlHiddenSB.h" />
+    <ClInclude Include="src\message_box\XMessageBox.h" />
+    <ClInclude Include="src\message_dialog_helper\MessageDialogHelper.h" />
+    <ClInclude Include="src\multi_dialog\MultiDialog.h" />
+    <ClInclude Include="src\multi_font_property_sheet\MultiFontPropertySheet.h" />
+    <ClInclude Include="src\numeric_edit_control\numericedit.h" />
+    <ClInclude Include="src\object_tree_control\ObjectTreeCtrl.h" />
+    <ClInclude Include="src\object_tree_control\ObjectTreeItem.h" />
+    <ClInclude Include="src\outlook_bar_control\GfxGroupEdit.h" />
+    <ClInclude Include="src\outlook_bar_control\GfxOutBarCtrl.h" />
+    <ClInclude Include="src\outlook_bar_control\GfxPopupMenu.h" />
+    <ClInclude Include="src\print_list_ctrl\CellColourMap.h" />
+    <ClInclude Include="src\print_list_ctrl\ListCtrlPrint.h" />
+    <ClInclude Include="src\print_list_ctrl\PrinterJob.h" />
+    <ClInclude Include="src\prnScreen\prnScreen.h" />
+    <ClInclude Include="src\progress_window\ProgressWnd.h" />
+    <ClInclude Include="src\readonly_enabled_listbox\ReadOnlyListBox.h" />
+    <ClInclude Include="src\redraw_control_lock\LockControlRedraw.h" />
+    <ClInclude Include="src\selection_helpers\SelectionHelper.h" />
+    <ClInclude Include="src\standard_dialogs_arial_bold\FileDialogArial.h" />
+    <ClInclude Include="src\tab_control_with_disable\TabCtrlEx.h" />
+    <ClInclude Include="src\tab_control_with_disable\TabCtrlWithDisable.h" />
+    <ClInclude Include="src\tab_control_with_disable\TabCtrlWithDisableEx.h" />
+    <ClInclude Include="src\tab_dialog_control\tabdialogctrl.h" />
+    <ClInclude Include="src\text_colour_edit\TextColourEdit.h" />
+    <ClInclude Include="src\toggleButton\toggleButton.h" />
+    <ClInclude Include="src\transactiveHelp\transactiveHelp.h" />
+    <ClInclude Include="src\tree_ctrl_multi_sel\MltiTree.h" />
+    <ClInclude Include="src\tree_ctrl_multi_sel\TrCtrlVw.h" />
+    <ClInclude Include="src\tree_list_control\TreeListCtrl.h" />
+    <ClInclude Include="src\utilities\DateUtility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\check.ico" />
+    <Image Include="res\disabledcheck.ico" />
+    <Image Include="res\disablednocheck.ico" />
+    <Image Include="res\nocheck.ico" />
+    <Image Include="res\sort_ascending.bmp" />
+    <Image Include="res\sort_descending.bmp" />
+    <Image Include="res\state.bmp" />
+    <Image Include="src\tree_ctrl_multi_sel\res\TreeTest.ico" />
+    <Image Include="src\tree_ctrl_multi_sel\res\TreeTestDoc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\dragging.cur" />
+    <None Include="res\handcur.cur" />
+    <None Include="res\mfc_extensions.rc2" />
+    <None Include="res\nodraggi.cur" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,93 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3002_TIP/3002/transactive/bus/ats/ats_agent/IDL/src/IAtsPidsCorbaDef.idl $
+// @author:  
+// @version:  $Revision: # $
+//
+// Last modification: $DateTime:  $
+// Last modified by:  $Author:  $
+//
+// IAtsPidsCorbaDef structure definition for the ATS/PIDS Agent interfacing.  
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsPidsCorbaDef
+	{
+		
+		///////////////////////////////////////////////////////////////////////
+		//
+		//      Platform Information Table
+		//
+		///////////////////////////////////////////////////////////////////////
+		// 
+		// The following attributes are taken straight from the current 
+		// ATS OCC Platform Table.
+		// 
+		//<Time to Next Passenger Train >
+		//< Remaining Dwell Time>
+		//<Destination of Next Passenger Train >
+		//
+		///////////////////////////////////////////////////////////////////////
+		struct PlatformInfo
+		{
+			TimeTTimeStampType  nTimeToNextTrain;// (in minutes)
+			TimeTTimeStampType  nDeptTime; // (in seconds)
+			TimeTTimeStampType nDwellTime;// (in seconds)
+			StationIdType nDestStationId;
+			boolean bSkip;
+			TimeTTimeStampType  nTimeTo2NextTrain;// (in minutes)
+			TimeTTimeStampType  nDeptTime2; // (in seconds)
+			TimeTTimeStampType nDwellTime2;// (in seconds)
+			StationIdType nDestStationId2;
+			boolean bSkip2;
+
+
+		}; // PlatformInformation
+		
+		// AtsPidsMessageCorbaDef is expected to be sent to the PIDS Agent through the 
+		// 'any messageState' member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsPidsMessageCorbaDef
+		{
+			StationIdType				stationId;
+			PlatformIdType				platformId;			
+			
+			PlatformInfo			platformInformation;
+		}; // AtsPidsMessageCorbaDef
+
+		//
+		// A sequence of AtsPidsMessageCorbaDef defined for getPidsInformationList
+		//
+		typedef sequence<AtsPidsMessageCorbaDef>  PidsInfoList;
+
+		/**
+          * getPidsInformationList
+          *
+          * This method is used to access the full list of PIDS information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsPidsMessageCorbaDef for all platforms known
+		  *			to the ATS agent.           */
+		PidsInfoList getPidsInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccPidsUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on PIDS
+		  * information
+          *
+		  * @param	pidsUpdate	A sequence of AtsPidsMessageCorbaDef for updates  
+		  *						to platforms for the sector
+          */
+		void processOccPidsUpdate(in PidsInfoList pidsUpdate)
+			raises (TA_Base_Core::OperationModeException);
+
+	}; // IAtsPidsCorbaDef
+}; // TA_App

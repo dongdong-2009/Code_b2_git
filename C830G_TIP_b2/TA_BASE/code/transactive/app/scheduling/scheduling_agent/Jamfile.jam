@@ -1,0 +1,4 @@
+
+ta-exe SchedulingAgent
+	: [ glob src/*.cpp : src/JobMonitorThread.cpp ]
+	;

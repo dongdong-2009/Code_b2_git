@@ -1,0 +1,48 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: bus.security.rights_agent.xacml_factory.TA_XacmlFactory - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP2AB7.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "../../../.." /I "../../../../../../build/win32_n/transactive" /I "../../../../../../build/win32_n/transactive/core/message/IDL/src" /I "../../../../../../build/win32_n/transactive/core/exceptions/IDL/src" /I "../../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src" /I "../../../../../cots/omniORB/omniORB_4.0.5/include" /I "../../../../../cots/ACE/5_3/ACE_wrappers" /I "..\..\..\..\..\cots\boost\boost_1_31_0" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /Fo"../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/" /Fd"../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/" /FD /GZ /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\ContextOnlineUpdatable.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\ContextSubDutyMsgSubscriber.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\LocSubSesProf.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\XacmlContextFactory.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\XacmlFactory.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\rights_agent\xacml_factory\src\XacmlPolicyFactory.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP2AB7.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP2AB8.tmp" with contents
+[
+/nologo /out:"../../../../../../build/win32_nd/TA_XacmlFactory_d.lib" 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\ContextOnlineUpdatable.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\ContextSubDutyMsgSubscriber.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\LocSubSesProf.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\XacmlContextFactory.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\XacmlFactory.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\rights_agent\xacml_factory\XacmlPolicyFactory.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP2AB8.tmp"
+<h3>Output Window</h3>
+Compiling...
+ContextOnlineUpdatable.cpp
+ContextSubDutyMsgSubscriber.cpp
+LocSubSesProf.cpp
+XacmlContextFactory.cpp
+XacmlFactory.cpp
+XacmlPolicyFactory.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_XacmlFactory_d.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

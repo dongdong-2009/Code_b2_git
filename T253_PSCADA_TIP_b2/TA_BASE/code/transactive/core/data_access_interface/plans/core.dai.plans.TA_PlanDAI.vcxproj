@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.dai.plans</ProjectName>
+    <ProjectGuid>{E1A95E92-2997-4287-A386-A747D7354E3F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_PlanDAI_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmPlanAssocAccessFactory.h" />
+    <ClInclude Include="src\AlarmPlanAssocData.h" />
+    <ClInclude Include="src\AlarmPlanAssocHelper.h" />
+    <ClInclude Include="src\ConfigAlarmPlanAssoc.h" />
+    <ClInclude Include="src\ConfigEventPlanAssocData.h" />
+    <ClInclude Include="src\ConfigPlanDssDpRule.h" />
+    <ClInclude Include="src\EventPlanAssocAccessFactory.h" />
+    <ClInclude Include="src\EventPlanAssocData.h" />
+    <ClInclude Include="src\EventPlanAssocHelper.h" />
+    <ClInclude Include="src\IAlarmPlanAssocData.h" />
+    <ClInclude Include="src\IConfigAlarmPlanAssoc.h" />
+    <ClInclude Include="src\IConfigEventPlanAssocData.h" />
+    <ClInclude Include="src\IConfigPlanDssDpRule.h" />
+    <ClInclude Include="src\IEventPlanAssocData.h" />
+    <ClInclude Include="src\IPlan.h" />
+    <ClInclude Include="src\IPlanDssDpRule.h" />
+    <ClInclude Include="src\PlanAccessFactory.h" />
+    <ClInclude Include="src\PlanDAI.h" />
+    <ClInclude Include="src\PlanDssDpRule.h" />
+    <ClInclude Include="src\PlanDssDpRuleAccessFactory.h" />
+    <ClInclude Include="src\PlanDssDpRuleHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmPlanAssocAccessFactory.cpp" />
+    <ClCompile Include="src\AlarmPlanAssocData.cpp" />
+    <ClCompile Include="src\AlarmPlanAssocHelper.cpp" />
+    <ClCompile Include="src\ConfigAlarmPlanAssoc.cpp" />
+    <ClCompile Include="src\ConfigEventPlanAssocData.cpp" />
+    <ClCompile Include="src\ConfigPlanDssDpRule.cpp" />
+    <ClCompile Include="src\EventPlanAssocAccessFactory.cpp" />
+    <ClCompile Include="src\EventPlanAssocData.cpp" />
+    <ClCompile Include="src\EventPlanAssocHelper.cpp" />
+    <ClCompile Include="src\PlanAccessFactory.cpp" />
+    <ClCompile Include="src\PlanDAI.cpp" />
+    <ClCompile Include="src\PlanDssDpRule.cpp" />
+    <ClCompile Include="src\PlanDssDpRuleAccessFactory.cpp" />
+    <ClCompile Include="src\PlanDssDpRuleHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\message\IDL\core.message.idl.TA_MessageIDL.vcxproj">
+      <Project>{90f02999-b013-441e-8e32-a7fefd58786b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

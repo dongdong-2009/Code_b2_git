@@ -1,0 +1,246 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\DBSyncSimulator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\DBSyncSimulator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About DBSyncSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "DBSyncSimulator, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2013",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_DBSYNCSIMULATOR_DIALOG DIALOGEX 0, 0, 622, 325
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DBSyncSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,565,304,50,14
+    GROUPBOX        "Configurations",IDC_STATIC,7,7,176,311
+    CONTROL         "",IDC_LIST_DBSYNC,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,189,11,426,269
+    PUSHBUTTON      "Start Clients",IDC_BTN_START,190,304,70,14
+    GROUPBOX        "Server Info",IDC_STATIC,16,22,157,69
+    CONTROL         "",IDC_IP_SERVER,"SysIPAddress32",WS_TABSTOP,68,52,100,15
+    COMBOBOX        IDC_CBO_QUEUE_NAME,68,71,100,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "IP Address",IDC_STATIC,23,55,36,8
+    LTEXT           "Port",IDC_STATIC,23,37,14,8
+    EDITTEXT        IDC_EDT_PORT,68,34,40,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Queue Name",IDC_STATIC,23,73,42,8
+    GROUPBOX        "Clients Info",IDC_STATIC,15,95,158,155
+    LTEXT           "Client Size",IDC_STATIC,24,111,34,8
+    EDITTEXT        IDC_EDT_CLIENT_SIZE,86,107,40,14,ES_AUTOHSCROLL
+    LTEXT           "Start Msg Seq ID",IDC_STATIC,23,127,55,8
+    EDITTEXT        IDC_EDT_START_MSG_SEQ_ID,86,125,40,14,ES_AUTOHSCROLL
+    LTEXT           "End Msg Seq ID",IDC_STATIC,23,144,51,8
+    EDITTEXT        IDC_EDT_END_MSG_SEQ_ID,86,142,40,14,ES_AUTOHSCROLL
+    LTEXT           "Number Of Insert",IDC_STATIC,23,180,57,8
+    EDITTEXT        IDC_EDT_NUM_INSERT,85,177,28,14,ES_AUTOHSCROLL
+    LTEXT           "Number Of Group",IDC_STATIC,23,197,57,8
+    EDITTEXT        IDC_EDT_NUM_GROUP,85,195,27,14,ES_AUTOHSCROLL
+    LTEXT           "Number Of Public",IDC_STATIC,23,214,56,8
+    EDITTEXT        IDC_EDT_NUM_PUBLIC,85,212,27,14,ES_AUTOHSCROLL
+    LTEXT           "Number Of MMS",IDC_STATIC,23,231,52,8
+    EDITTEXT        IDC_EDT_NUM_MMS,85,229,27,14,ES_AUTOHSCROLL
+    GROUPBOX        "Test Configuration",IDC_STATIC,15,253,157,53
+    LTEXT           "Package Size",IDC_STATIC,23,268,42,8
+    EDITTEXT        IDC_EDT_PACKAGE_SIZE,85,266,54,14,ES_AUTOHSCROLL
+    LTEXT           "Test Duration",IDC_STATIC,22,285,44,8
+    EDITTEXT        IDC_EDT_TEST_DURATION,85,283,54,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_INTERVAL_INSERT,116,178,51,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_INTERVAL_GROUP,116,195,51,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_INTERVAL_PUBLIC,116,212,51,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDT_INTERVAL_MMS,115,229,52,14,ES_AUTOHSCROLL
+    LTEXT           "Intervals Mili sec",IDC_STATIC,116,167,54,8
+    LTEXT           "Kb",IDC_STATIC,143,268,9,8
+    LTEXT           "Minutes",IDC_STATIC,142,285,26,8
+    PUSHBUTTON      "Pause",IDC_BTN_PAUSE,264,304,70,14
+    PUSHBUTTON      "Print Status",IDC_BTN_PRINT_STATUS,338,304,70,14
+    EDITTEXT        IDC_EDT_DEQ_TOTAL,243,284,66,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_EDT_ENQ_TOTAL,367,284,66,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    LTEXT           "Total Dequeue",IDC_STATIC,191,284,48,8
+    LTEXT           "Total Enqueue",IDC_STATIC,315,284,47,8
+    EDITTEXT        IDC_EDT_RUNNING_TIME,565,284,50,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Running Time",IDC_STATIC,519,286,44,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "DBSYNCSIMULATOR"
+            VALUE "FileDescription", "DBSyncSimulator"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "DBSyncSimulator.exe"
+            VALUE "LegalCopyright", "DBSYNCSIMULATOR.  All rights reserved."
+            VALUE "OriginalFilename", "DBSyncSimulator.exe"
+            VALUE "ProductName", "DBSyncSimulator"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DBSYNCSIMULATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 615
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 318
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About DBSyncSimulator..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\DBSyncSimulator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

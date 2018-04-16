@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{96714338-7cf6-431d-abb8-3d0fdb3ad643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RunPlanStep">
+      <UniqueIdentifier>{b64b9933-2c89-4f24-95c3-611a1ebf0b19}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActivePlanAgency.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftProcessorPluginFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentUpdateProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanMFTProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="RunPlanStep\ExecutableRunPlanStep.cpp">
+      <Filter>RunPlanStep</Filter>
+    </ClCompile>
+    <ClCompile Include="RunPlanStep\MftRunPlanComponent.cpp">
+      <Filter>RunPlanStep</Filter>
+    </ClCompile>
+    <ClCompile Include="RunPlanStep\RunPlanDlg.cpp">
+      <Filter>RunPlanStep</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActivePlanAgency.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftProcessorPluginFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentUpdateProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="RunPlanStep\ExecutableRunPlanStep.h">
+      <Filter>RunPlanStep</Filter>
+    </ClInclude>
+    <ClInclude Include="RunPlanStep\MftRunPlanComponent.h">
+      <Filter>RunPlanStep</Filter>
+    </ClInclude>
+    <ClInclude Include="RunPlanStep\resource.h">
+      <Filter>RunPlanStep</Filter>
+    </ClInclude>
+    <ClInclude Include="RunPlanStep\RunPlanDlg.h">
+      <Filter>RunPlanStep</Filter>
+    </ClInclude>
+    <ClInclude Include="RunPlanStep\stdafx.h">
+      <Filter>RunPlanStep</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RunPlanStep\step_plugin.run_plan_step.rc">
+      <Filter>RunPlanStep</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

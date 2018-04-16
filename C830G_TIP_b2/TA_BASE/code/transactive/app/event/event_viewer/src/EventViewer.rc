@@ -1,0 +1,447 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "EventListComponent_rc.h"
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""EventListComponent_rc.h""\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\EventViewer.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""EventListComponent.rc""\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\EventViewer.ico"
+IDI_PRINT_HOT           ICON    DISCARDABLE     "..\\res\\printhot.ico"
+IDI_PRINT               ICON    DISCARDABLE     "..\\res\\print.ico"
+IDI_SAVE_HOT            ICON    DISCARDABLE     "..\\res\\savehot.ico"
+IDI_SAVE                ICON    DISCARDABLE     "..\\res\\save.ico"
+IDI_FILTERS             ICON    DISCARDABLE     "..\\res\\filter.ico"
+IDI_FILTERS_HOT         ICON    DISCARDABLE     "..\\res\\filterhot.ico"
+IDI_NEXT                ICON    DISCARDABLE     "..\\res\\icon1.ico"
+IDI_PREVIOUS_HOT        ICON    DISCARDABLE     "..\\res\\ico00001.ico"
+IDI_PREVIOUS            ICON    DISCARDABLE     "..\\res\\east_arr.ico"
+IDI_NEXT_HOT            ICON    DISCARDABLE     "..\\res\\ico00002.ico"
+ID_NAMED_FILTER_COMBO   ICON    DISCARDABLE     "..\\res\\ico00005.ico"
+IDI_INCIDENT_HOT        ICON    DISCARDABLE     "..\\res\\Planhot.ico"
+IDI_INCIDENT            ICON    DISCARDABLE     "..\\res\\Plan.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EVENTVIEWER_DIALOG DIALOGEX 0, 0, 403, 253
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_EV_MAIN_MENU
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Static",IDC_PAGER_CTRL,1,7,382,23,SS_CENTERIMAGE,
+                    WS_EX_DLGMODALFRAME
+    CONTROL         "List1",IDC_EVENT_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_OWNERDATA | 
+                    WS_TABSTOP,1,33,402,208,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_MENU_LINE,"Static",SS_ETCHEDHORZ,1,2,402,1
+    PUSHBUTTON      "UP",IDC_PAGE_UP,390,7,13,11,BS_ICON
+    PUSHBUTTON      "DN",IDC_PAGE_DOWN,390,19,13,11,BS_ICON
+END
+
+IDD_MULTIPLE_LOAD DIALOG DISCARDABLE  0, 0, 186, 226
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Dialog"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,28,205,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,205,50,14
+    LISTBOX         IDC_LOAD_LIST,7,7,172,188,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_COMBINED_EVENT_FILTER DIALOG DISCARDABLE  0, 0, 509, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Event Filter"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,163,186,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,221,186,50,14
+    GROUPBOX        "Subsystem",IDC_STATIC,15,4,152,28
+    GROUPBOX        "Location",IDC_STATIC,178,4,151,28
+    GROUPBOX        "Operator",IDC_STATIC,15,39,152,28
+    GROUPBOX        "Event Type",IDC_STATIC,178,39,151,28
+    GROUPBOX        "Alarm Type",IDC_STATIC,339,139,162,28
+    GROUPBOX        "Asset",IDC_STATIC,15,74,314,28
+    EDITTEXT        IDC_ASSET,21,83,304,14,ES_AUTOHSCROLL
+    GROUPBOX        "Alarm ID",IDC_STATIC,339,174,162,28
+    EDITTEXT        IDC_ALARM_ID,346,183,152,12,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Description",IDC_STATIC,15,109,314,28
+    EDITTEXT        IDC_DESCRIPTION,21,118,304,14,ES_AUTOHSCROLL
+    GROUPBOX        "Date/Time",IDC_STATIC,339,4,162,63
+    CONTROL         "To:",IDC_CURRENT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    347,43,36,9
+    PUSHBUTTON      "Apply",ID_APPLY,279,186,50,14
+    PUSHBUTTON      "Default/Clear",ID_DEFAULT_FILTER,15,186,50,14
+    EDITTEXT        IDC_SUBSYSTEM,21,14,125,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SUBSYSTEM_EXT,151,14,11,12
+    EDITTEXT        IDC_LOCATION,183,14,127,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_LOCATION_EX,314,14,11,12
+    CONTROL         "DateTimePicker1",IDC_FROM_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,386,19,48,12
+    CONTROL         "DateTimePicker2",IDC_FROM_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,447,19,48,
+                    12
+    CONTROL         "DateTimePicker3",IDC_TO_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | WS_TABSTOP,387,41,48,12
+    CONTROL         "DateTimePicker4",IDC_TO_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,447,41,48,
+                    12
+    GROUPBOX        "Severity",IDC_STATIC_SEVERITY,339,74,85,60
+    GROUPBOX        "Static",IDC_LIST_PLACEHOLDER,345,85,75,44
+    CONTROL         "From:",IDC_FROM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    347,21,34,10
+    PUSHBUTTON      "...",IDC_OPERATOR_EXT,151,49,11,12
+    PUSHBUTTON      "...",IDC_EVENTTYPE_EXT,314,49,11,12
+    PUSHBUTTON      "...",IDC_ALARMTYPE_EXT,486,150,11,12
+    EDITTEXT        IDC_OPERATOR,21,49,125,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EVENT_TYPE,183,49,127,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    EDITTEXT        IDC_ALARM_TYPE,344,150,137,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "Named Filter",IDC_STATIC,15,143,314,37
+    COMBOBOX        IDC_COMBO_NAMEDFILTER,20,158,150,75,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_BUTTON_SAVEFILTER,193,156,48,15
+    PUSHBUTTON      "Delete",IDC_BUTTON_DELETEFILTER,264,156,48,15
+END
+
+IDD_WAIT_FOR_CLOSE DIALOG DISCARDABLE  0, 0, 162, 53
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Please wait while the Event Viewer closes down...",
+                    IDC_STATIC,34,18,93,18
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Event Viewer MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "Event Viewer\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "Event Viewer.EXE\0"
+            VALUE "ProductName", "Event Viewer Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_EVENTVIEWER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 245
+    END
+
+    IDD_MULTIPLE_LOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_WAIT_FOR_CLOSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 155
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_EV_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Print...",                   IDC_PRINT
+        MENUITEM "Export...",                   IDC_EXPORT
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Filter...",                  IDC_VIEW_FILTERS
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    IDC_TOOL_BAR
+        MENUITEM "&Status Bar",                 IDC_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Show All Events",             IDC_SHOW_ALL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&Event Viewer Help",          ID_HELP
+        MENUITEM "&About Event Viewer",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CAP_ACTIVE          BITMAP  DISCARDABLE     "..\\res\\WarningDot.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_SIZE       "Event Count: 0"
+    ID_FILE_EXPORT          "Export events to file"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_EXIT            "Close the application"
+    IDC_VIEW_FILTERS        "Show Filter Control Dialog"
+    ID_VIEW_TOOLBARS_STATUSBAR "Enable or disable the Status Bar"
+    ID_VIEW_TOOLBARS_TOOLBAR "Enable or disable the Events Toolbar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_PRINT               "Print the current Event View"
+    IDC_EXPORT              "Export the current Event View to file"
+    IDC_PREVIOUS            "View the previous time-slice of events"
+    IDC_NEXT                "View the next time-slice of events"
+    IDC_VIEW_INCIDENTS      "View the incident(s) associated with this event"
+    IDC_ALARM_MANAGER       "Bring the Alarm Manager into focus."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_LOAD_AUDIT_FILTER   "Change the display to show audit events"
+    IDC_LOAD_DATAPOINT_FILTER 
+                            "Change display to show DataPoint state update events"
+    IDC_COLUMNS             "Enable or disable list columns"
+    IDC_STATUS_BAR          "Enable or disable the Status Bar"
+    IDC_TOOL_BAR            "Enable or disable the toolbar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display application version information"
+    ID_APP_EXIT             "Close the active window"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_ABOUTBOX            "Display application version information"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SYS_EXIT             "Close the appliction"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_CAP        "Event Display Capped"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PAGE_UP             ICON    DISCARDABLE     "..\\res\\pageup.ico"
+IDI_PAGE_DOWN           ICON    DISCARDABLE     "..\\res\\pagedown.ico"
+IDI_ALARMMANAGER_HOT    ICON    DISCARDABLE     "..\\res\\AlarmManager.ico"
+IDI_ALARMMANAGER        ICON    DISCARDABLE     "..\\res\\AlarmManagerHot.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SHOW_COMMENT DIALOG DISCARDABLE  0, 0, 189, 102
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "View Alarm Comment"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,70,82,50,14
+    EDITTEXT        IDC_EDIT_ALARM_COMMENT,7,7,175,68,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SHOW_COMMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\EventViewer.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "EventListComponent.rc"
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

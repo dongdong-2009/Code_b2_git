@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E33BCA44-A1A6-46A5-80F8-8BBD3718A586}</ProjectGuid>
+    <RootNamespace>app.response_plans</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_WorkflowElement_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>TA_WorkflowElement</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../../../</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories />
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Data">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+    <Reference Include="System.Xml">
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BitmapActivity.cpp" />
+    <ClCompile Include="src\ElementShortcut.cpp" />
+    <ClCompile Include="src\SequenceFlow.cpp" />
+    <ClCompile Include="src\ServiceTask.cpp" />
+    <ClCompile Include="src\Stringification.cpp" />
+    <ClCompile Include="src\WorkflowActivity.cpp" />
+    <ClCompile Include="src\WorkflowElement.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BitmapActivity.h" />
+    <ClInclude Include="src\ElementShortcut.h" />
+    <ClInclude Include="src\GlobalStructure.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\SequenceFlow.h" />
+    <ClInclude Include="src\ServiceTask.h" />
+    <ClInclude Include="src\Stringification.h" />
+    <ClInclude Include="src\WorkflowActivity.h" />
+    <ClInclude Include="src\WorkflowElement.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanServiceTask.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanServiceTask.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanServiceTask.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanServiceTask.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanServiceTask.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanShortcutArrow.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanShortcutArrow.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanShortcutArrow.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanShortcutArrow.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanShortcutArrow.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanStepStateFailed.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanStepStateFailed.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateFailed.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanStepStateFailed.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateFailed.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanStepStatePaused.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanStepStatePaused.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStatePaused.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanStepStatePaused.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStatePaused.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanStepStateRunning.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanStepStateRunning.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateRunning.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanStepStateRunning.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateRunning.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanStepStateSkipped.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanStepStateSkipped.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateSkipped.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanStepStateSkipped.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateSkipped.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanStepStateSucceed.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanStepStateSucceed.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateSucceed.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanStepStateSucceed.bmp ..\..\..\..\..\..\bin\win32_nd\res\*</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\..\bin\win32_nd\res\PlanStepStateSucceed.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

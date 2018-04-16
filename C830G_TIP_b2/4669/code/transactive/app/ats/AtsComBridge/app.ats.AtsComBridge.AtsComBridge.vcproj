@@ -1,0 +1,137 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.ats.AtsComBridge" ProjectGUID="{43523BFB-BC93-4134-AD66-DAD69645C7C2}" Keyword="AtlProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/ats/AtsComBridge" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool" Description="" CommandLine="" Outputs=""/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nd/app.ats.AtsComBridge.AtsComBridge.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../..,./src,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive,../../../../../build/win32_n/transactive/app/ats/AtsComBridge" PreprocessorDefinitions="_DEBUG;__WIN32__;__NT__;__x86__;__OSVERSION__=4;TA_ASSERT_LOG=1;TA_ASSERT_FAIL=EXCEPTION;WIN32;_WINDOWS;_USRDLL;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="2" PrecompiledHeaderThrough="stdafx.h" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/ats/AtsComBridge/app.ats.AtsComBridge.AtsComBridge.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/ats/AtsComBridge/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/ats/AtsComBridge/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/ats/AtsComBridge/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081" AdditionalIncludeDirectories="../../../../../build/win32_nd/" ResourceOutputFileName=""/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib oci.lib aced.lib Rpcrt4.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/AtsComBridge.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\build\win32_nd,..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" ModuleDefinitionFile=".\src\AtsComBridge.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/AtsComBridge.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nd/AtsComBridge.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.ats.AtsComBridge.AtsComBridge.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release MinDependency|Win32" OutputDirectory=".\ReleaseMinDependency" IntermediateDirectory=".\ReleaseMinDependency" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" UseOfATL="1" ATLMinimizesCRunTimeLibraryUsage="true" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool" Description="Performing registration" CommandLine="regsvr32 /s /c &quot;$(TargetPath)&quot;&#13;&#10;echo regsvr32 exec. time &gt; &quot;$(OutDir)\regsvr32.trg&quot;&#13;&#10;" Outputs="$(OutDir)\regsvr32.trg"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="1" InlineFunctionExpansion="1" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL" StringPooling="true" RuntimeLibrary="0" EnableFunctionLevelLinking="true" UsePrecompiledHeader="2" PrecompiledHeaderThrough="stdafx.h" PrecompiledHeaderFile=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.pch" AssemblerListingLocation=".\ReleaseMinDependency/" ObjectFile=".\ReleaseMinDependency/" ProgramDataBaseFileName=".\ReleaseMinDependency/" WarningLevel="3" SuppressStartupBanner="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" OutputFile=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.dll" LinkIncremental="1" SuppressStartupBanner="true" ModuleDefinitionFile=".\src\AtsComBridge.def" ProgramDatabaseFile=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\ReleaseMinDependency/app.ats.AtsComBridge.AtsComBridge.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/ats/AtsComBridge" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool" Description="" CommandLine="" Outputs=""/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nr/app.ats.AtsComBridge.AtsComBridge.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../..,./src,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/transactive,../../../../../build/win32_n/transactive/app/ats/AtsComBridge" PreprocessorDefinitions="NDEBUG;__WIN32__;__NT__;__x86__;__OSVERSION__=4;TA_ASSERT_LOG=1;TA_ASSERT_FAIL=EXCEPTION;WIN32;_WINDOWS;_USRDLL;_USE_32BIT_TIME_T" RuntimeLibrary="2" UsePrecompiledHeader="2" PrecompiledHeaderThrough="stdafx.h" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/ats/AtsComBridge/app.ats.AtsComBridge.AtsComBridge.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/ats/AtsComBridge/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/ats/AtsComBridge/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/ats/AtsComBridge/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081" AdditionalIncludeDirectories="../../../../../build/win32_nr/" ResourceOutputFileName=""/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib oci.lib ace.lib Rpcrt4.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/AtsComBridge.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\build\win32_nr,..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" ModuleDefinitionFile=".\src\AtsComBridge.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/AtsComBridge.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nr/AtsComBridge.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.ats.AtsComBridge.AtsComBridge.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AtsComBridge.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release MinDependency|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions="_ATL_MIN_CRT"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AtsComBridge.def">
+			</File>
+			<File RelativePath="src\AtsComBridge.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCMIDLTool" GenerateStublessProxies="true" TypeLibraryName="$(OUTDIR)/AtsComBridge.tlb" HeaderFileName="../../../../../build/win32_n/transactive/app/ats/AtsComBridge/AtsComBridge.h" InterfaceIdentifierFileName="../../../../../build/win32_n/transactive/app/ats/AtsComBridge/AtsComBridge_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release MinDependency|Win32">
+					<Tool Name="VCMIDLTool" GenerateStublessProxies="true" TypeLibraryName=".\src\AtsComBridge.tlb" HeaderFileName="AtsComBridge.h" InterfaceIdentifierFileName="AtsComBridge_i.c"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCMIDLTool" GenerateStublessProxies="true" TypeLibraryName="$(OUTDIR)/AtsComBridge.tlb" HeaderFileName="../../../../../build/win32_n/transactive/app/ats/AtsComBridge/AtsComBridge.h" InterfaceIdentifierFileName="../../../../../build/win32_n/transactive/app/ats/AtsComBridge/AtsComBridge_i.c"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AtsComBridge.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src;.\../../../../../build/win32_nd;../../../../../build/win32_nd;res;$(OUTDIR);$(NoInherit)"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release MinDependency|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src;$(OUTDIR)"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src;.\../../../../../build/win32_nr;../../../../../build/win32_nr;res;$(OUTDIR);$(NoInherit)"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AtsSoundManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release MinDependency|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions="_ATL_MIN_CRT"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release MinDependency|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions="_ATL_MIN_CRT" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\AtsSoundManager.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="src\AtsSoundManager.rgs">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

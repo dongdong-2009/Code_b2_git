@@ -1,0 +1,12 @@
+addmod cvc radio 5013
+clearsim
+loadsim RadioSimulator.ini
+loadsim TrainRadioSimulator.ini
+loadsim AtsStcpVol1.ini
+loadsim RadioMonitorSimulator.ini
+loadsim RadioSubscriberSupport.ini
+loadsim IncomingCallSupport.ini
+loadsim OutgoingCall_Single2Billy.ini
+loadsim CatchAll.ini
+start
+showsim

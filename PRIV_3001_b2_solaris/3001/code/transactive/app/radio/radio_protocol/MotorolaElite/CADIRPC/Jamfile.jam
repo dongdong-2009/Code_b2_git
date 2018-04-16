@@ -1,0 +1,17 @@
+import os ;
+source = [ glob src/*.c src/stub/*.c ] ;
+if [ os.on-windows ]
+{
+	source += [ glob src/stub/rpc/*.c src/stub/rpc/*.cpp ] ;
+}
+
+lib TA_CADIRPC
+	: $(source)
+	: <link>static
+	  <include>src
+	  <include>src/stub
+	  <include>src/stub/rpc
+	  [ get-transactive-includes ]
+	;
+
+ta-install-lib library : TA_CADIRPC ;

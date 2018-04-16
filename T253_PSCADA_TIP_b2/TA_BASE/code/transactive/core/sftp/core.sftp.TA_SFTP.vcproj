@@ -1,0 +1,68 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.sftp" ProjectGUID="{42B047A7-D1A8-4B82-B38A-6661807D9C11}" RootNamespace="core.sftp" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../build/win32_nd" IntermediateDirectory=".\../../../../build/win32_nd/transactive/core/sftp" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\tools\build\VCPropSheet\commonDebug.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../;../../../cots\omniORB\$(OMNI_VERSION)\include;&quot;..\..\..\cots\curl\curl-7.21.7-win32\include&quot;;..\..\..\cots\boost\boost_1_57_0" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x400;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T;CURL_STATICLIB" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nd/transactive/core/sftp/core.sftp.TA_SFTP.pch" AssemblerListingLocation=".\../../../../build/win32_nd/transactive/core/sftp/" ObjectFile=".\../../../../build/win32_nd/transactive/core/sftp/" ProgramDataBaseFileName=".\../../../../build/win32_nd/transactive/core/sftp/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" AdditionalDependencies="libcurl.lib ws2_32.lib" OutputFile="../../../../build/win32_nd/TA_SFTP_d.lib" AdditionalLibraryDirectories="&quot;..\..\..\cots\curl\curl-7.21.7-win32\lib\Debug&quot;" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nd/core.sftp.TA_SFTP.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../build/win32_nr" IntermediateDirectory=".\../../../../build/win32_nr/transactive/core/sftp" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\tools\build\VCPropSheet\commonRelease.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../;../../../cots\omniORB\$(OMNI_VERSION)\include;&quot;..\..\..\cots\curl\curl-7.21.7-win32\include&quot;;..\..\..\cots\boost\boost_1_57_0" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x400;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T;CURL_STATICLIB" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nr/transactive/core/sftp/core.sftp.TA_SFTP.pch" AssemblerListingLocation=".\../../../../build/win32_nr/transactive/core/sftp/" ObjectFile=".\../../../../build/win32_nr/transactive/core/sftp/" ProgramDataBaseFileName=".\../../../../build/win32_nr/transactive/core/sftp/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" AdditionalDependencies="libcurl.lib ws2_32.lib" OutputFile="../../../../build/win32_nr/TA_SFTP.lib" AdditionalLibraryDirectories="&quot;..\..\..\cots\curl\curl-7.21.7-win32\lib\Debug&quot;" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nr/core.sftp.TA_SFTP.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\SFTPException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SFTPException.h">
+			</File>
+			<File RelativePath="src\SFTPManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SFTPManager.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

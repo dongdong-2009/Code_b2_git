@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.security.rights_agent.policy_decision_point</ProjectName>
+    <ProjectGuid>{9C068593-EBBA-4599-ADE2-86CAEF695588}</ProjectGuid>
+    <RootNamespace>bus.security.rights_agent.policy_decision_point</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_PolicyDecisionPoint_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActionAttributeSelector.cpp" />
+    <ClCompile Include="src\AttributeSet.cpp" />
+    <ClCompile Include="src\CompareFunction.cpp" />
+    <ClCompile Include="src\Condition.cpp" />
+    <ClCompile Include="src\ConstAttributeSelector.cpp" />
+    <ClCompile Include="src\Context.cpp" />
+    <ClCompile Include="src\Function.cpp" />
+    <ClCompile Include="src\Policy.cpp" />
+    <ClCompile Include="src\PolicyCombiningAlg.cpp" />
+    <ClCompile Include="src\PolicySet.cpp" />
+    <ClCompile Include="src\ResourceAttributeSelector.cpp" />
+    <ClCompile Include="src\Rule.cpp" />
+    <ClCompile Include="src\RuleCombiningAlg.cpp" />
+    <ClCompile Include="src\SubjectAttributeSelector.cpp" />
+    <ClCompile Include="src\Target.cpp" />
+    <ClCompile Include="src\UnmatchedTarget.cpp" />
+    <ClCompile Include="src\ValueSet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActionAttributeSelector.h" />
+    <ClInclude Include="src\AttributeSet.h" />
+    <ClInclude Include="src\CompareFunction.h" />
+    <ClInclude Include="src\Condition.h" />
+    <ClInclude Include="src\ConstAttributeSelector.h" />
+    <ClInclude Include="src\Context.h" />
+    <ClInclude Include="src\Function.h" />
+    <ClInclude Include="src\Policy.h" />
+    <ClInclude Include="src\PolicyCombiningAlg.h" />
+    <ClInclude Include="src\PolicyDecisionPoint.h" />
+    <ClInclude Include="src\PolicySet.h" />
+    <ClInclude Include="src\ResourceAttributeSelector.h" />
+    <ClInclude Include="src\Rule.h" />
+    <ClInclude Include="src\RuleCombiningAlg.h" />
+    <ClInclude Include="src\SubjectAttributeSelector.h" />
+    <ClInclude Include="src\Target.h" />
+    <ClInclude Include="src\UnmatchedTarget.h" />
+    <ClInclude Include="src\ValueSet.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

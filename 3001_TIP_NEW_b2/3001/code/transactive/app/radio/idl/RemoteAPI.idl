@@ -1,0 +1,308 @@
+//*******************************************************************************
+//
+//                   F I L E    S P E C I F I C A T I O N
+//
+//                       COPYRIGHT 2009 MOTOROLA INC.
+//                              ALL RIGHTS RESERVED.
+//                     MOTOROLA CONFIDENTIAL PROPRIETARY
+//
+//*******************************************************************************
+module MCC7500SDK
+{
+   // Microsoft Windows specific basic types
+   typedef unsigned long   DWORD;
+   typedef unsigned short  WORD;
+   typedef octet           BYTE;
+   typedef boolean         BOOL;
+   typedef long            HANDLE;
+
+   // MCC7500 specific types, see mca.h and mcdb.h
+   typedef DWORD           RID;
+   typedef DWORD           USER_ID;
+   typedef WORD            SITE_ID;
+   typedef WORD            ZONE_ID;
+   typedef WORD            LC_ID;
+   typedef BYTE            SPEAKER_ID;
+   typedef DWORD           AUXID;
+   typedef DWORD           OPID;
+   typedef DWORD           UNIT_ID;
+   typedef DWORD           URID;
+   typedef DWORD           TONE_ID;
+   typedef DWORD           IN_ADDR;
+   typedef WORD            OP_CID;
+   typedef WORD            OP_CAP_INDEX;
+   typedef WORD            RES_CID;
+   typedef WORD            RES_CAP_INDEX;
+
+   // Enumaration of types supported by CRAM
+   enum EVariantType
+   {
+      eUINT8_T,
+      eUINT16_T,
+      eUINT32_T,
+      eUINT64_T,
+
+      eINT8_T,
+      eINT16_T,
+      eINT32_T,
+      eINT64_T,
+
+      eFLOAT32_T,
+      eFLOAT64_T,
+
+      eBOOLEAN_T,
+
+      eSEQUENCE_T,  // sequence of UVariants e.g. array 
+
+      eSTRING_T,
+      eWSTRING_T,
+      
+      eEMPTY_T     // for output parameters which are null
+   };
+   
+   union UVariant;
+   
+   // Sequence of variants which is used as parameter (argument) list in API calls and callbacks.
+   typedef sequence<UVariant> Parameters;
+
+   // Variant used in parameter list
+   union UVariant switch(EVariantType)
+   {
+      case eUINT8_T:
+         octet V_UINT8;
+      case eUINT16_T:
+         unsigned short V_UINT16;
+      case eUINT32_T:
+         unsigned long V_UINT32;
+      case eUINT64_T:
+         unsigned long long V_UINT64;
+
+      case eINT8_T:
+         char V_INT8;
+      case eINT16_T:
+         short V_INT16;
+      case eINT32_T:
+         long V_INT32;
+      case eINT64_T:
+         long long V_INT64;
+
+      case eFLOAT32_T:
+         float V_FLOAT32;
+      case eFLOAT64_T:
+         double V_FLOAT64;
+
+      case eBOOLEAN_T:
+         boolean V_BOOLEAN;
+
+      case eSEQUENCE_T:
+         Parameters V_SEQUENCE;
+
+      case eSTRING_T:
+         string V_STRING;
+      case eWSTRING_T:
+         wstring V_WSTRING;
+      
+      case eEMPTY_T:
+         octet V_EMPTY;
+   };
+   
+   // Struct that store client/server version. It is used to return correct IAPIRequest interface
+   struct Version
+   {
+      BYTE Major;
+      BYTE Minor;
+   };
+
+   // method ID
+   typedef short    METHOD_ID;
+
+   // response ID
+   typedef WORD     RESPONSE_ID;
+
+
+   // Forward declaration
+   interface IBaseAPIRequest;
+
+   // API Response to be implemented by client.
+   interface IAPIResponse
+   {
+      void CallBack(in Parameters Message);
+   };
+
+   // IAPIRequestServer interface. This is the interface that clients connect to. It is used to registration and
+   // authentication and to getting correct IAPIRequest interface.
+   interface IAPIRequestServer
+   {
+      // The server version
+      readonly attribute Version ServerVersion;
+
+      // Raises when another user is already registered
+      exception AnotherUserAlreadyRegistered{};
+
+      // Raises when internal error occured. ErrorCode contain internal error code, see documentation for details.
+      exception RegistrationInternalFail{long ErrorCode;};
+
+      // Returns the byClientId used in the API requests
+      BYTE RegisterApp(in IAPIResponse ClientCallback) raises(AnotherUserAlreadyRegistered, RegistrationInternalFail);
+
+      // Remote client deregistration - the clientId will let the server know
+      // which remote client needs to be deregistered. This is to cover for future
+      // enhancement, where the server can serve more then one remote client
+      // Return values:
+      //    TRUE  - Deregistration succeeded
+      //    FALSE - Deregistration failed. This indicates an internal error.
+      BOOL DeregisterApp(in BYTE clientId);
+
+      // This method authenticates remote user. Authentication result will be send by callback mechanism
+      // Parameters:
+      //    UserName - NM database user name
+      //    Password - NM database user password
+      //    ClientID - client ID returned by RegisterApp
+      //    UserID   - user identification (for internal server identification)
+      // Return values:
+      //    TRUE  - call was accepted by the API
+      //    FALSE - system was unable to accept the API call. The Client should wait 10-20 seconds and
+      //    resend the authentication request.
+      // If the user name/password combination is invalid McdiAuthenticationError message is sent from the API.
+      // The DUI will need to send another authentication request
+      BOOL AuthenticateUser(in wstring UserName, in wstring Password, in BYTE ClientID, in wstring UserID);
+
+      // Raises when client requests 'request interface' in version that is not supported by server
+      exception UnsupportedVersion {};
+
+      // Raises when unknown ClientID is provided to the GetAPIRequest method
+      exception UnknownClientID {};
+
+      // This method returns handle to the request object that can support
+      // a particular version of the API object that the remote client application wants to communicate with
+      IBaseAPIRequest GetAPIRequest(in BYTE ClientID, in Version ClientRequestedVersion) raises(UnsupportedVersion, UnknownClientID);
+   };
+
+   // Used as a base class for all types of IAPIRequest objects.
+   // Different versions will use a derived version of this base
+   // object making it possible to create a generic upgradeable
+   // solution
+   interface IBaseAPIRequest
+   {
+      // Remote API interface version
+      readonly attribute Version Ver;
+   };
+
+   // IAPIRequests interface. Allows clients to access to console features (MCA) and resource configuration (MCDB)
+   interface IAPIRequest : IBaseAPIRequest
+   {
+      // Raises when the request (methodId) is not known by the server
+      exception UnknownApiRequest 
+      {
+          // requested methodId
+          METHOD_ID   methodId;  
+      };
+
+      // Raises when wrong type of parameters in a parameter list for API request is provided
+      exception ParameterTypeMismatch 
+      {
+         // The number of the first parameter which was incorrect. 
+         octet parameter_num;
+         // Information regarding actual versus expected parameter type.
+         EVariantType actual, expected;
+         // requested methodId
+         METHOD_ID  methodId;
+      };
+
+      // Raises when wrong number of parameters for API request is provided
+      exception ParameterCountMismatch 
+      {
+         // Information regarding actual versus expected number of parameters for API request
+         octet actual, expected;
+         // requested methodId
+         METHOD_ID  methodId;
+      };
+
+      // Raises when internal error occured. ErrorCode contain internal error code, 
+      // see documentation for details.    
+      exception ApiRequestInternalFail 
+      {
+          long ErrorCode;
+          // requested methodId
+          METHOD_ID methodId;
+      };
+    
+
+      // API request method (for MCA, MCDB and MCDI)
+      // Parameters:
+      //    methodID   - id of method to invoke, see documentation for details
+      //    paramListIn  - input parameter list, see documentation for details
+      //    paramListOut - output parameter list, see documentation for details
+      //    returnValue -  return value (e.g. status), see documentation for details
+      void ApiRequest(in METHOD_ID methodId, in Parameters paramListIn, 
+		              out Parameters paramListOut, out UVariant returnValue)
+                    raises(UnknownApiRequest,ParameterTypeMismatch, 
+                           ParameterCountMismatch, ApiRequestInternalFail);
+
+
+   };
+
+   // Sequence of variants which is used as parameter (argument) list in API calls and callbacks.
+   typedef sequence<RESPONSE_ID> ResponseIDs;
+
+   // IAPIRequest2 interface. Provides the same functionality as IAPIRequest and 
+   // provides the ability to filter/unfilter API Responses
+   interface IAPIRequest2 : IAPIRequest
+   {
+       // Raised on attempt to filter API Response passing invalid Response ID.
+       exception InvalidResponseIdException
+       {
+           // response ID requested to be filtered
+           RESPONSE_ID  responseID;
+       };
+
+       // Raised on internal error during filter/unfilter request processing.
+       exception FilterInternalFailureException
+       {
+           // Indicates internal failure reason.
+           long         errorCode;
+           // response ID being processed during failure occurrence.
+           // If failure was not related with response ID, this field is set to 0.
+           RESPONSE_ID  responseID;
+       };
+
+       // Raised on requests originating from not registered client.
+       exception ClientNotRegisteredException
+       {
+       };
+
+       // FilterAPIResponse method
+       // Description:
+       //    filters API Responses (specified by IDs) so they are not forwarded back to the requesting client
+       // Parameters:
+       //    msgResponseIDs - a sequence of API Response IDs to be filtered
+       // Remarks:
+       //   If an exception is raised due to invalid ID, no filter operation is to be performed.
+       //   If more than one invalid IDs are passed the exception concerns the first encountered invalid ID.
+       void FilterAPIResponse(in ResponseIDs msgResponseIDs)
+           raises (InvalidResponseIdException, FilterInternalFailureException, ClientNotRegisteredException);
+
+       // UnfilterAPIResponse method
+       // Description:
+       //    removes filtering of API Responses (specified by IDs) so they can be forwarded back to the requesting client
+       // Parameters:
+       //    msgResponseIDs - a sequence of API Response IDs to be not filtered
+       // Remarks:
+       //   If an exception is raised due to invalid ID, no unfilter operation is to be performed.
+       //   If more than one invalid IDs are passed the exception concerns the first encountered invalid ID.
+       void UnfilterAPIResponse(in ResponseIDs msgResponseIDs)
+           raises (InvalidResponseIdException, FilterInternalFailureException, ClientNotRegisteredException);
+
+       // UnfilterAllAPIResponses method
+       // Description:
+       //    removes filtering of all API Responses requested previously
+       void UnfilterAllAPIResponses()
+           raises (FilterInternalFailureException, ClientNotRegisteredException);
+
+       // GetFilteredAPIResponses method
+       // Description:
+       //    returns a sequence of API Responses IDs of responses currently filtered
+       void GetFilteredAPIResponses(out ResponseIDs msgResponseIDs)
+           raises (FilterInternalFailureException, ClientNotRegisteredException);
+   };
+};

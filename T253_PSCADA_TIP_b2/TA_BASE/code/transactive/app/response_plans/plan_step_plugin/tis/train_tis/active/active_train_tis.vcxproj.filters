@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{467a6fdb-db2e-4907-aeba-24120349ec8d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="active_src\ActiveTrainTisStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\TrainTisStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\DllActiveInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="active_src\ActiveTrainTisStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\TrainTisStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

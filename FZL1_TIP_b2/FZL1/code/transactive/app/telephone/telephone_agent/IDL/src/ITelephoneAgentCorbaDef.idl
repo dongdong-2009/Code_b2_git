@@ -1,0 +1,84 @@
+#if !defined(TELEPHONEAGENTCORBADEF_IDL)
+#define TELEPHONEAGENTCORBADEF_IDL
+
+/**
+  * The source code in this file is the property of 
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/GZL6_TIP/3002/transactive/app/telephone/telephone_agent/IDL/src/ITelephoneAgentCorbaDef.idl $
+  * @author:  Bavo De Pauw
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2012/06/12 13:35:44 $
+  * Last modified by:  $Author: builder $
+  * 
+  * This is the interface to the Telephone Agent
+  */
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "app/telephone/telephone_agent/IDL/src/IDirectoryCorbaDef.idl"
+#include "app/telephone/telephone_agent/IDL/src/ITelephoneCorbaDef.idl"
+
+module TA_App
+{
+    interface ITelephoneAgentCorbaDef
+    {
+		/**
+		  * Exceptions
+		  */
+		// Generic exception thrown by the TelephoneAgent whenever something is wrong
+        exception TelephoneAgentException
+        {
+            string reason;
+        };
+
+		/**
+		  * Typedefs
+		  */
+	    typedef sequence<ITelephoneCorbaDef> ITelephoneCorbaDefSequence;
+	    typedef sequence<IDirectoryCorbaDef> IDirectoryCorbaDefSequence;
+
+		/**
+		  * methods
+		  */
+		/**
+		  * returns the telephone object for this session ID for control
+		  */
+		ITelephoneCorbaDef			getTelephoneFromSessionId(in string sessionId)
+			raises( TelephoneAgentException );
+		/**
+		  * returns the telephone object for a specific number for control
+		  */
+		ITelephoneCorbaDef			getTelephoneByNumber(in string sessionId, in string number)
+			raises( TelephoneAgentException );
+		/**
+		  * returns the telephone object for this directory entry for control
+		  */
+		ITelephoneCorbaDef			getTelephoneFromDirectoryEntry(in string sessionId, in IDirectoryCorbaDef::DirectoryEntryData directoryEntry)
+			raises( TelephoneAgentException );
+		/**
+		  * returns all telephone objects
+		  */
+		ITelephoneCorbaDefSequence	getAllTelephones(in string sessionId)
+			raises( TelephoneAgentException );
+		/**
+		  * returns all telephone objects for a specified location
+		  */
+		ITelephoneCorbaDefSequence	getTelephonesForLocation(in string sessionId, in unsigned long locationKey)
+			raises( TelephoneAgentException );
+		/**
+		  * returns all telephone object for a given name
+		  */
+		ITelephoneCorbaDefSequence	getTelephonesByName(in string sessionId, in string name)
+			raises( TelephoneAgentException );
+		/**
+		  * returns all telephone directories
+		  */
+		IDirectoryCorbaDefSequence	getAllTelephoneDirectories(in string sessionId)
+			raises( TelephoneAgentException );
+	};
+
+}; // module TA_App
+
+#endif // !defined(TELEPHONEAGENTCORBADEF_IDL)

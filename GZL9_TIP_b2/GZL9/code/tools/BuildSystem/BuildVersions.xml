@@ -1,0 +1,198 @@
+<!--
+
+ $Source: /cvs/1TS-9999-T/code/tools/BuildSystem/BuildVersions.xml,v $
+ $Revision: 1.1.2.6 $
+ $Date: 2003/06/12 02:29:54 $
+
+  This file contains the version that will be used to identify the build of the 
+ TransActive software for C830
+
+-->
+<BUILD>
+    <DETAILS>
+       <TITLE>Singapore Circle Line</TITLE>
+        <VERSION>0.4.0</VERSION>
+    </DETAILS>
+    <COMPONENTS>
+        <SYSTEM_MANAGER>
+            <NAME>System Manager</NAME>
+	    <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>6</PATCH_LEVEL>
+            <LOCATION>code/app/administration/admin_client/src/</LOCATION>
+            <OTHER></OTHER>
+        </SYSTEM_MANAGER>
+	<CONFIGURATION_EDITOR>
+            <NAME>Configuration Editor</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/administration/configurator/src/</LOCATION>
+            <OTHER></OTHER>
+        </CONFIGURATION_EDITOR>
+	<ALARM_AGENT>
+            <NAME>Alarm Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/alarms_events/alarm_agent/src/</LOCATION>
+            <OTHER></OTHER>
+        </ALARM_AGENT>
+	<ALARM_MANAGER>
+            <NAME>Alarm Manager</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/alarms_events/alarm_viewer/src/</LOCATION>
+            <OTHER></OTHER>
+        </ALARM_MANAGER>
+	<EVENT_VIEWER>
+            <NAME>Event Viewer</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/alarms_events/event_viewer/src/</LOCATION>
+            <OTHER></OTHER>
+        </EVENT_VIEWER>
+	<EVENT_LOGGING_AGENT>
+            <NAME>Event Logging Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/alarms_events/event_logging_agent/src/</LOCATION>
+            <OTHER></OTHER>
+        </EVENT_LOGGING_AGENT>
+        <DISPLAY_MANAGER>
+            <NAME>Display Manager</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/cctv/video_display_manager/src/</LOCATION>
+            <OTHER></OTHER>
+        </DISPLAY_MANAGER>
+        <TREND_VIEWER>
+            <NAME>Trend Viewer</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/history/history_viewer/src/</LOCATION>
+            <OTHER></OTHER>
+        </TREND_VIEWER>
+        <DATA_RECORDING_AGENT>
+            <NAME>Data Recording Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/history/scada_historian/src/</LOCATION>
+            <OTHER></OTHER>
+        </DATA_RECORDING_AGENT>
+        <NOTIFICATION_SERVICE>
+            <NAME>Notification Service Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/notification_service/src/</LOCATION>
+            <OTHER></OTHER>
+        </NOTIFICATION_SERVICE>
+        <PLAN_AGENT>
+            <NAME>Plan Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/response_plans/plan_agent/src/</LOCATION>
+            <OTHER></OTHER>
+        </PLAN_AGENT>
+        <PLAN_MANAGER>
+            <NAME>Plan Manager</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/response_plans/plan_manager/src/</LOCATION>
+            <OTHER></OTHER>
+        </PLAN_MANAGER>
+	<INSPECTOR_PANEL>
+            <NAME>Inspector Panel</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/scada/inspector_panel/src</LOCATION>
+            <OTHER></OTHER>
+        </INSPECTOR_PANEL>
+        <MODBUS>
+            <NAME>Modbus</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/scada/modbus/src/</LOCATION>
+            <OTHER></OTHER>
+        </MODBUS>
+        <PMS_AGENT>
+            <NAME>PMS Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/scada/PMSAgent/src/</LOCATION>
+            <OTHER></OTHER>
+        </PMS_AGENT>
+        <TRANSACTIVE_OPC_BRIDGE>
+            <NAME>TransActive OPC Bridge</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/scada/TransActiveOPCBridge/</LOCATION>
+            <OTHER></OTHER>
+        </TRANSACTIVE_OPC_BRIDGE>
+        <CONTROL_STATION>
+            <NAME>Control Station</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/system_control/control_station/src/</LOCATION>
+            <OTHER></OTHER>
+        </CONTROL_STATION>
+        <NETWORK_STATUS_AGENT>
+            <NAME>Network Status Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/system_control/network_monitor/src/</LOCATION>
+            <OTHER></OTHER>
+        </NETWORK_STATUS_AGENT>
+        <SCHEDULING_AGENT>
+            <NAME>Scheduling Agent</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/system_control/scheduler/src/</LOCATION>
+            <OTHER></OTHER>
+        </SCHEDULING_AGENT>
+        <SYSTEM_CONTROLLER>
+            <NAME>System Controller</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/system_control/system_controller/src/</LOCATION>
+            <OTHER></OTHER>
+        </SYSTEM_CONTROLLER>
+	<TELEPHONE_CONTROLLER>
+            <NAME>Telephone Controller</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/telephone/telephone_manager/src</LOCATION>
+            <OTHER></OTHER>
+        </TELEPHONE_CONTROLLER>
+	<RADIO_CONTROLLER>
+            <NAME>Radio Controller</NAME>
+            <BUILDNUMBER>1</BUILDNUMBER>
+            <LIBS></LIBS>
+            <PATCH_LEVEL>0</PATCH_LEVEL>
+            <LOCATION>code/app/radio/radio_manager_gui/src</LOCATION>
+            <OTHER></OTHER>
+        </RADIO_CONTROLLER>
+        
+    </COMPONENTS>
+</BUILD>
+
+
+

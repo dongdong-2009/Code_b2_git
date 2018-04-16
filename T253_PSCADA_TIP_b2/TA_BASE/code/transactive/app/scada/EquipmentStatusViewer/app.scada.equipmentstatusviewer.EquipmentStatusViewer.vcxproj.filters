@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{0b81a568-530a-452a-8ada-80e6f8d74351}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{19e21d89-1a5c-4da7-8a31-c1c574d7c493}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditMessageUtility.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeAgentProxy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeListItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeSummaryListItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointListItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dlgbars.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DnUpdateProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusListItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusViewer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusViewerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusViewerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExportFileDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileUtility.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProgressBar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReportCommentDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuditMessageUtility.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CustomDefines.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeAgentProxy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeListItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeSummaryListItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointListItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dlgbars.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DnUpdateProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DnUpdateRequest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusListItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusViewer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusViewerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusViewerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExportFileDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FileUtility.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProgressBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ReportCommentDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\EquipmentStatusViewer.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\blue.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EquipmentStatusViewer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\green.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\orange.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\red.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sort_ascending.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sort_descending.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\stop.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EquipmentStatusViewer.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

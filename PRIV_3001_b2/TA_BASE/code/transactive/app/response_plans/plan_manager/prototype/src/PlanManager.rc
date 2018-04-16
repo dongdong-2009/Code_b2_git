@@ -1,0 +1,988 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\PlanViewer.ico"
+IDR_PLANEDTYPE          ICON    DISCARDABLE     "..\\res\\PlanViewerDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  24, 24
+BEGIN
+    BUTTON      ID_CAT_NEW
+    BUTTON      ID_SEP_CAT
+    BUTTON      ID_SEP_PLAN1
+    BUTTON      ID_SEP_PLAN2
+    BUTTON      ID_SEP_PLAN3
+    BUTTON      ID_SEP_STEP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "&All Plans",                  ID_VIEW_ALLPLANS
+        MENUITEM "A&ctive Plans",               ID_VIEW_ACTIVEPLANS
+        MENUITEM "A&pproved Plans",             ID_VIEW_APPROVEDPLANS
+        MENUITEM "&Unapproved Plans",           ID_VIEW_UNAPPROVEDPLANS
+    END
+    POPUP "&Category"
+    BEGIN
+        MENUITEM "&New Category \t    Shift+Ctrl+N", ID_CAT_NEW
+        MENUITEM "&Delete Category \t    Del",  ID_CAT_DELETE
+        MENUITEM "&Edit Category",              ID_CAT_EDIT
+    END
+    POPUP "&Plan"
+    BEGIN
+        MENUITEM "&New Plan \t    Ctrl+N",      ID_PLAN_NEW
+        MENUITEM "&Delete Plan \t    Del",      ID_PLAN_DELETE
+        MENUITEM "Cu&t Plan \t    Ctrl+X",      ID_PLAN_CUT
+        MENUITEM "&Copy Plan \t    Ctrl+C",     ID_PLAN_COPY
+        MENUITEM "&Paste Plan \t    Ctrl+V",    ID_PLAN_PASTE
+        MENUITEM "&Edit Plan",                  ID_PLAN_EDIT
+        MENUITEM SEPARATOR
+        MENUITEM "&Approve Plan",               ID_PLAN_APPROVE
+        MENUITEM "&Unapprove Plan",             ID_PLAN_UNAPPROVE
+        MENUITEM SEPARATOR
+        MENUITEM "Sc&hedule Plan",              ID_PLAN_SCHEDULE
+        MENUITEM "Cont&rol Plan",               ID_PLAN_CONTROL
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "About Plan Manager...",       ID_HELP_ABOUTPLANMANAGER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Plan Manager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Plan Manager Version 1.0",IDC_STATIC,40,10,73,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2001",IDC_STATIC,40,25,71,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+    COMBOBOX        IDC_PARAM_SELECT_COMBO,121,21,107,13,CBS_DROPDOWNLIST | 
+                    CBS_SORT | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_PARAM_EDIT,121,36,107,12,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+END
+
+IDR_MAINFRAME DIALOG DISCARDABLE  0, 0, 95, 14
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "TODO: layout dialog bar ",IDC_STATIC,12,3,81,8
+END
+
+IDD_PLANVIEWER_DIALOG DIALOGEX 0, 0, 7, 6
+STYLE WS_POPUP | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PlanViewer MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "PlanViewer\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PlanViewer.EXE\0"
+            VALUE "ProductName", "PlanViewer Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Plan Manager"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+    ID_VIEW_AUTOARRANGE     "Arrange icons on a grid."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_SMALLICON       "Display items by using small icons.\nSmall Icons"
+    ID_VIEW_LARGEICON       "Display items by using large icons.\nLarge Icons"
+    ID_VIEW_LIST            "Displays items in a list.\nList"
+    ID_VIEW_DETAILS         "Displays detailed information about each item in the window.\nDetails"
+    ID_VIEW_LINEUP          "Arranges icons in a grid."
+    ID_VIEW_BYNAME          "Sorts the icons alphabetically."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_CAT_DEL              "Delete the current Plan Category\nDelete the currently selected category"
+    ID_CAT_NEW              "Add a new Plan Category\nAdd a new sub-category to the\rcurrently selected category"
+    ID_CAT_SAVE             "Save the current Plan Category details\nSave category details"
+    ID_PLAN_NEW             "Add a New Plan to current category\nAdd a new plan to the current category"
+    ID_PLAN_SAVE            "Save the current Plan details\nSave plan details"
+    ID_PLAN_DELETE          "Delete the current Plan\nDelete the currently selected plan"
+    ID_PLAN_APPROVE         "Approve the current Plan\nApprove the plan for execution"
+    ID_STEP_NEW             "Add a new Step to the current Plan\nAdd a new step to the plan.\rUser will give step's target position."
+    ID_STEP_SAVE            "Save the current Step details\nSave step details"
+    ID_STEP_DELETE          "Delete the current Step\nDelete the currently selected step"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLAN_APPROVE_MENU    "Approve the current Plan\nApprove Plan"
+    ID_STEP_COPY            "Copy the currently selected step(s)\nCopy the currently selected step(s) to clipboard"
+    ID_STEP_PASTE           "Paste the steps\nPaste step(s) from clipboard below\ror above the currently selected step"
+    ID_PLAN_EXECUTE         "Execute the current plan\nStart a new instance of the plan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STEP_MOVE_UP         "Move the current Step up one step\nMove Step Up"
+    ID_STEP_MOVE_DOWN       "Move the current Step down one step\nMove Step Down"
+    ID_PLAN_MOVE            "Move selected Plan to a specified Category\nMove Plan to"
+    ID_PLAN_COPY            "Copy selected Plan to Clipboard\nCopy the currently selected plan to clipboard"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Plan Manager\n\nPlanEd\n\n\nPlanManager.Document\nPlanEd Document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STEP_MOVE_UP_MENU    "Move the current Step up one step\nMove Step Up"
+    ID_STEP_MOVE_DOWN_MENU  "Move the current Step down one step\nMove Step Down"
+    ID_CAT_DELETE           "Delete the current Plan Category\nDelete the currently selected category"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_PLANCTRL            "Plan Controller\n\n\n\n.cplan"
+    IDR_PLANEDIT            "Plan Editor\n\n\n\n.eplan"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_STEPEDIT            "Step Editor\n\n\n\n.step"
+    IDR_CATEDIT             "Category Editor\n\n\n\n.cat"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLAN_EDIT            "Edit the current Plan\nEdit the currently selected plan"
+    ID_STEP_EDIT            "Edit the current Step\nEdit the currently selected step"
+    ID_CAT_EDIT             "Edit the current Plan Category\nEdit the currently selected category"
+    ID_STEP_CUT             "Cut the currently selected step(s)\nCut the currently selected step(s) to clipboard"
+    ID_PLAN_CUT             "Cut selected Plan to Clipboard\nCut the currently selected plan to clipboard"
+    ID_PLAN_PASTE           "Paste a Plan from Clipboard\nPaste plan from clipboard\rto the current category.\rDisabled if clipboard empty."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLAN_VERIFY          "Verify the current Plan\nVerify that the plan is runnable"
+    ID_PLAN_UNAPPROVE       "Unapprove the current Plan\nRevoke the plan's execution approval"
+    ID_STEP_EDITPARAM       "Edit step parameters\nEdit the currently selected step parameter"
+    ID_STEP_CUSTOMOK        "Accept customisation changes to the Step\nAccept changes and exit. Changes are\rapplied to the given instance but not saved."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLAN_STOP            "Stop the current Plan Instance\nStop the currently selected\rinstance of the plan"
+    ID_PLAN_PAUSE           "Pause the current Plan Instance\nPause the currently selected\rinstance of the plan"
+    ID_PLAN_RESUME          "Resume the current Plan Instance\nResume execution of the currently\rselected instance of the plan"
+    ID_PLAN_TAKECONTROL     "Take Control of the current Plan Instance\nTake control of the currently\rselected instance of the plan"
+    ID_PLAN_RELEASECONTROL  "Release Control of the current Plan Instance\nRelease control of the current plan instance."
+    ID_STEP_CUSTOMISE       "Customise the current Step\nCustomise the currently selected step\rbefore execution. Changes are not saved."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_NEWCAT_ICON         ICON    DISCARDABLE     "..\\res\\new_cat.ico"
+IDI_SAVECAT_ICON        ICON    DISCARDABLE     "..\\res\\savecat_.ico"
+IDI_DELCAT_ICON         ICON    DISCARDABLE     "..\\res\\delcat_i.ico"
+IDI_SAVEPLAN_ICON       ICON    DISCARDABLE     "..\\res\\saveplan.ico"
+IDI_NEWPLAN_ICON        ICON    DISCARDABLE     "..\\res\\newplan_.ico"
+IDI_DELPLAN_ICON        ICON    DISCARDABLE     "..\\res\\delplan_.ico"
+IDI_MOVEPLAN_ICON       ICON    DISCARDABLE     "..\\res\\moveplan.ico"
+IDI_COPYPLAN_ICON       ICON    DISCARDABLE     "..\\res\\copyplan.ico"
+IDI_APPPLAN_ICON        ICON    DISCARDABLE     "..\\res\\appplan_.ico"
+IDI_SAVESTEP_ICON       ICON    DISCARDABLE     "..\\res\\savestep.ico"
+IDI_NEWSTEP_ICON        ICON    DISCARDABLE     "..\\res\\newstep_.ico"
+IDI_DELSTEP_ICON        ICON    DISCARDABLE     "..\\res\\delstep_.ico"
+IDI_STEPUP_ICON         ICON    DISCARDABLE     "..\\res\\stepup_i.ico"
+IDI_STEPDOWN_ICON       ICON    DISCARDABLE     "..\\res\\stepdown.ico"
+IDI_CATS_ICON           ICON    DISCARDABLE     "..\\res\\cats_ico.ico"
+IDI_CAT_ICON            ICON    DISCARDABLE     "..\\res\\category.ico"
+IDI_PLAN_ICON           ICON    DISCARDABLE     "..\\res\\cat_icon.ico"
+IDI_BLANK_ICON          ICON    DISCARDABLE     "..\\res\\blank.ico"
+IDI_COPY_STEP           ICON    DISCARDABLE     "..\\res\\copy_ste.ico"
+IDI_PASTE_STEP          ICON    DISCARDABLE     "..\\res\\paste_st.ico"
+IDI_EXECPLAN_ICON       ICON    DISCARDABLE     "..\\res\\execute_plan.ico"
+IDI_NEXT_STEP_ICON      ICON    DISCARDABLE     "..\\res\\next_step.ico"
+IDI_STEP_FAIL_ICON      ICON    DISCARDABLE     "..\\res\\step_fail.ico"
+IDI_STEP_OK_ICON        ICON    DISCARDABLE     "..\\res\\step_ok.ico"
+IDI_STEP_SKIP_ICON      ICON    DISCARDABLE     "..\\res\\step_skip.ico"
+IDI_FOLDERCLOSED_ICON   ICON    DISCARDABLE     "..\\res\\folder_closed.ico"
+IDI_FOLDEROPEN_ICON     ICON    DISCARDABLE     "..\\res\\folder_open.ico"
+IDI_TICK_ICON           ICON    DISCARDABLE     "..\\res\\tick.ico"
+IDI_NOTES_ICON          ICON    DISCARDABLE     "..\\res\\notes.ico"
+IDI_EDITPLAN_ICON       ICON    DISCARDABLE     "..\\res\\editplan.ico"
+IDI_CROSS_ICON          ICON    DISCARDABLE     "..\\res\\cross.ico"
+IDI_PAUSED_NEXT_STEP_ICON ICON    DISCARDABLE     "..\\res\\psd_next_step.ico"
+IDI_EDITCAT_ICON        ICON    DISCARDABLE     "..\\res\\editcat.ico"
+IDI_PASTEPLAN_ICON      ICON    DISCARDABLE     "..\\res\\pasteplan.ico"
+IDI_CUTPLAN_ICON        ICON    DISCARDABLE     "..\\res\\cutplan.ico"
+IDI_SCHEDULEPLAN_ICON   ICON    DISCARDABLE     "..\\res\\schedule_plan.ico"
+IDI_ROOT_ICON           ICON    DISCARDABLE     "..\\res\\root_icon.ico"
+IDI_UNAPPPLAN_ICON      ICON    DISCARDABLE     "..\\res\\unappplan.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_PLANCTRL            BITMAP  DISCARDABLE     "..\\res\\plan_ctrl.bmp"
+IDR_PLANEDIT            BITMAP  DISCARDABLE     "..\\res\\plan_edit.bmp"
+IDR_STEPEDIT            BITMAP  DISCARDABLE     "..\\res\\stepedit.bmp"
+IDR_CATEDIT             BITMAP  DISCARDABLE     "..\\res\\catedit.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_PLANCTRL TOOLBAR DISCARDABLE  24, 24
+BEGIN
+    BUTTON      ID_PLAN_EXECUTE
+    BUTTON      ID_PLAN_STOP
+    BUTTON      ID_PLAN_PAUSE
+    BUTTON      ID_PLAN_RESUME
+    BUTTON      ID_PLAN_TAKECONTROL
+    SEPARATOR
+    BUTTON      ID_PLAN_SCHEDULE
+    BUTTON      ID_STEP_CUSTOMISE
+END
+
+IDR_PLANEDIT TOOLBAR DISCARDABLE  24, 24
+BEGIN
+    BUTTON      ID_PLAN_SAVE
+    BUTTON      ID_PLAN_APPROVE
+    BUTTON      ID_PLAN_UNAPPROVE
+    SEPARATOR
+    BUTTON      ID_STEP_NEW
+    BUTTON      ID_STEP_DELETE
+    BUTTON      ID_STEP_CUT
+    BUTTON      ID_STEP_COPY
+    BUTTON      ID_STEP_PASTE
+    BUTTON      ID_STEP_EDIT
+END
+
+IDR_STEPEDIT TOOLBAR DISCARDABLE  24, 24
+BEGIN
+    BUTTON      ID_STEP_SAVE
+    BUTTON      ID_STEP_EDITPARAM
+    BUTTON      ID_STEP_CUSTOMOK
+END
+
+IDR_CATEDIT TOOLBAR DISCARDABLE  24, 24
+BEGIN
+    BUTTON      ID_CAT_SAVE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_PLANEDIT MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_PLAN_EXIT
+    END
+    POPUP "&Plan"
+    BEGIN
+        MENUITEM "&Save Plan \t    Ctrl+S",     ID_PLAN_SAVE
+        MENUITEM "&Approve Plan \t    Ctrl+A",  ID_PLAN_APPROVE
+        MENUITEM "&Unapprove Plan \t    Ctrl+U", ID_PLAN_UNAPPROVE
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "&New Step \t    Ctrl+N",      ID_STEP_NEW
+        MENUITEM "&Delete Step \t    Del",      ID_STEP_DELETE
+        MENUITEM "Cu&t Step \t    Ctrl+X",      ID_STEP_CUT
+        MENUITEM "&Copy Step \t    Ctrl+C",     ID_STEP_COPY
+        MENUITEM "&Paste Step \t    Ctrl+V",    ID_STEP_PASTE
+        MENUITEM "&Edit Step",                  ID_STEP_EDIT
+    END
+END
+
+IDR_PLANCTRL MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_PLAN_EXIT
+    END
+    POPUP "&Plan"
+    BEGIN
+        POPUP "S&tart"
+        BEGIN
+            MENUITEM "&Start New Instance\t    Ctrl +N", ID_PLAN_EXECUTE
+            MENUITEM "&Customise New Instance",     ID_PLAN_EXECUTE_CUSTOM
+        END
+        MENUITEM "&Stop Instance \t    Ctrl+S", ID_PLAN_STOP
+        MENUITEM "&Pause Instance \t    Ctrl+P", ID_PLAN_PAUSE
+        MENUITEM "&Resume Instance \t    Ctrl+R", ID_PLAN_RESUME
+        MENUITEM "&Ta&ke Control of Instance",  ID_PLAN_TAKECONTROL
+        MENUITEM SEPARATOR
+        MENUITEM "Sc&hedule Plan",              ID_PLAN_SCHEDULE
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "&Customise Step",             ID_STEP_CUSTOMISE
+    END
+END
+
+IDR_STEPEDIT MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_STEP_EXIT
+    END
+    POPUP "&Step"
+    BEGIN
+        MENUITEM "&Save Step \t    Ctrl+S",     ID_STEP_SAVE
+        MENUITEM "&Edit Step Parameter",        ID_STEP_EDITPARAM
+    END
+END
+
+IDR_CATEDIT MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_CAT_EXIT
+    END
+    POPUP "&Category"
+    BEGIN
+        MENUITEM "&Save Category \t    Ctrl+S", ID_CAT_SAVE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLANCAT_FORM DIALOGEX 0, 0, 175, 88
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Plan Category -",IDC_CATEGORY_HEADER,0,0,175,12,
+                    SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
+    LTEXT           "Name:",IDC_NAME_LABEL,8,15,23,9
+    EDITTEXT        IDC_CATEGORY_NAME_EDIT,8,25,159,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Description:",IDC_DESC_LABEL,8,41,41,10
+    EDITTEXT        IDC_CATEGORY_DESCRIPTION_EDIT,8,51,159,27,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,131,15,21,20,SS_NOTIFY | 
+                    WS_GROUP
+END
+
+IDD_PLAN_FORM DIALOG DISCARDABLE  0, 0, 273, 235
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tab1",IDC_PLANEDIT_TAB,"SysTabControl32",0x0,7,6,259,
+                    221
+END
+
+IDD_BLANK_FORM DIALOG DISCARDABLE  0, 0, 32, 22
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+IDD_PLANSTEP_FORM DIALOG DISCARDABLE  0, 0, 321, 275
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Name:",IDC_NAME_LABEL,15,18,23,9
+    EDITTEXT        IDC_STEP_NAME_EDIT,15,28,289,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Delay:",IDC_STEPDELAY_LABEL,113,153,59,10
+    EDITTEXT        IDC_MINUTE_EDIT,113,164,25,13,ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_MINUTE_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | WS_DISABLED,127,164,11,13
+    EDITTEXT        IDC_SECOND_EDIT,154,164,25,13,ES_READONLY | ES_NUMBER
+    CONTROL         "Spin1",IDC_SECOND_SPIN,"msctls_updown32",UDS_WRAP | 
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | 
+                    UDS_ARROWKEYS | WS_DISABLED,167,164,11,13
+    LTEXT           "Description:",IDC_DESC_LABEL,15,72,41,10
+    EDITTEXT        IDC_STEP_DESCRIPTION_EDIT,15,82,289,42,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+    CONTROL         "List1",IDC_STEPPARAM_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,15,207,289,50
+    LTEXT           "Step Type:",IDC_STEPTYPE_LABEL,15,44,36,10
+    GROUPBOX        "Details",IDC_STEPDETAILS_BOX,6,5,309,128
+    EDITTEXT        IDC_STEPTYPE_EDIT,15,55,80,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    GROUPBOX        "Parameters",IDC_STEPPARAM_BOX,6,192,309,75
+    GROUPBOX        "Execution characteristics",IDC_STEPEXEC_BOX,6,139,309,
+                    47
+    CONTROL         "",IDC_STEPSKIPPABLE_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,15,152,9,10
+    CONTROL         "",IDC_STEPSKIP_CHECK,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,15,166,9,10
+    LTEXT           "min",IDC_STATIC,139,166,13,10
+    LTEXT           "sec",IDC_STATIC,180,166,12,10
+    LTEXT           "Step is skippable",IDC_STATIC,27,152,67,10,
+                    SS_CENTERIMAGE
+    LTEXT           "Skip step",IDC_STATIC,27,166,67,10,SS_CENTERIMAGE
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,116,52,21,20,SS_NOTIFY | 
+                    NOT WS_VISIBLE
+END
+
+IDD_STEPPARAM_DIALOG DIALOG DISCARDABLE  0, 0, 226, 85
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Specify Parameter Value"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Parameter name:",IDC_STATIC,7,10,54,12
+    EDITTEXT        IDC_PARAMNAME_EDIT,69,8,147,13,ES_READONLY | NOT 
+                    WS_TABSTOP
+    LTEXT           "Parameter value:",IDC_STATIC,7,30,58,11
+    EDITTEXT        IDC_PARAMVALUE_EDIT,69,29,147,22,ES_MULTILINE | 
+                    ES_AUTOVSCROLL
+    COMBOBOX        IDC_PARAMVALUE_COMBO,69,29,147,111,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,55,64,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,121,64,50,14
+END
+
+IDD_ALLPLANS_FORM DIALOG DISCARDABLE  0, 0, 269, 154
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,25,18,21,20,SS_NOTIFY
+END
+
+IDD_ACTIVEPLANS_FORM DIALOG DISCARDABLE  0, 0, 278, 182
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,98,2,20,20,SS_NOTIFY
+    CONTROL         "List1",IDC_ALLACTIVEPLANINST_LIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,7,7,264,168
+END
+
+IDD_UNAPPROVEDPLANS_FORM DIALOG DISCARDABLE  0, 0, 278, 159
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,25,18,21,20,SS_NOTIFY
+END
+
+IDD_PLAN_DETAILS_DIALOG DIALOGEX 0, 0, 369, 239
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "Name:",IDC_NAME_LABEL,16,20,73,9
+    EDITTEXT        IDC_PLAN_NAME_EDIT,16,30,336,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Execution mode:",IDC_STATIC,16,46,54,8
+    EDITTEXT        IDC_PLANEXECMODE_EDIT,16,57,58,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Approval status:",IDC_STATIC,93,46,52,8
+    EDITTEXT        IDC_PLANAPPSTATUS_EDIT,93,57,58,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Description:",IDC_DESC_LABEL,16,73,41,10
+    EDITTEXT        IDC_PLAN_DESCRIPTION_EDIT,16,84,336,42,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY
+    CONTROL         "List1",IDC_ACTIVEPLAN_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,16,171,336,54
+    GROUPBOX        "Details",IDC_PLANDETAILS_BOX,6,6,357,128
+    GROUPBOX        "Active instances",IDC_ACTIVEPLANS_BOX,6,154,357,80
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,176,51,21,20,SS_NOTIFY
+    LTEXT           "",IDC_SPLITBAR,0,142,369,4,NOT WS_GROUP,
+                    WS_EX_DLGMODALFRAME
+END
+
+IDD_STEPLIST_DIALOG DIALOGEX 0, 0, 341, 238
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Plan status",IDC_PLANSTATUS_BOX,6,6,329,46
+    LTEXT           "Instance:",IDC_PLANINST_LABEL,17,17,31,13,
+                    SS_CENTERIMAGE
+    COMBOBOX        IDC_PLANINST_COMBO,16,30,33,57,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Owner:",IDC_PLANOWNER_LABEL,68,17,24,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANOWNER_EDIT,67,30,55,12,ES_READONLY
+    LTEXT           "Execution state:",IDC_PLANEXECSTATE_LABEL,141,17,52,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANEXECSTATE_EDIT,141,30,55,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Execution mode:",IDC_PLANEXECMODE_LABEL,216,17,55,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANEXECMODE_EDIT,216,30,54,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "Plan steps",IDC_PLANSTEPS_BOX,6,59,329,80
+    CONTROL         "List1",IDC_PLANSTEP_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,16,75,307,54
+    LTEXT           "",IDC_SPLITBAR,0,145,341,4,NOT WS_GROUP,
+                    WS_EX_DLGMODALFRAME
+    GROUPBOX        "Step parameters",IDC_STEPPARAM_BOX,6,154,329,80
+    CONTROL         "List2",IDC_STEPPARAM_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,15,170,307,54
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,296,22,20,20,SS_NOTIFY
+END
+
+IDD_PLANFLOW_DIALOG DIALOG DISCARDABLE  0, 0, 341, 318
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "",IDC_FLOW_PICT,"Static",SS_BLACKRECT,28,82,271,203
+    ICON            IDI_NOTES_ICON,IDC_NOTES_PICT,296,22,20,20,SS_NOTIFY
+    SCROLLBAR       IDC_FLOW_HOR_SBAR,6,301,318,10,NOT WS_VISIBLE
+    SCROLLBAR       IDC_FLOW_VER_SBAR,323,63,11,238,SBS_VERT | NOT 
+                    WS_VISIBLE
+    GROUPBOX        "Plan status",IDC_PLANSTATUS_BOX,6,6,329,46
+    LTEXT           "Instance:",IDC_PLANINST_LABEL,17,17,31,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANINST_EDIT,16,30,32,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    COMBOBOX        IDC_PLANINST_COMBO,16,30,33,57,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Owner:",IDC_PLANOWNER_LABEL,68,17,24,13,SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANOWNER_EDIT,67,30,55,12,ES_READONLY
+    LTEXT           "Execution state:",IDC_PLANEXECSTATE_LABEL,141,17,52,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANEXECSTATE_EDIT,141,30,55,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Execution mode:",IDC_PLANEXECMODE_LABEL,216,17,55,13,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_PLANEXECMODE_EDIT,216,30,54,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "Plan flow",IDC_PLANFLOW_BOX,6,59,329,252
+END
+
+IDD_APPROVEDPLANS_FORM DIALOG DISCARDABLE  0, 0, 278, 151
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PLANCAT_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 172
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 85
+    END
+
+    IDD_PLAN_FORM, DIALOG
+    BEGIN
+        TOPMARGIN, 6
+    END
+
+    IDD_BLANK_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 25
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 15
+    END
+
+    IDD_STEPPARAM_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_ALLPLANS_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_ACTIVEPLANS_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_UNAPPROVEDPLANS_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_PLAN_DETAILS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 362
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_STEPLIST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 334
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 231
+    END
+
+    IDD_PLANFLOW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 334
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 311
+    END
+
+    IDD_APPROVEDPLANS_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\PlanManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_STEPLIST_DIALOG DLGINIT
+BEGIN
+    IDC_PLANINST_COMBO, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    0
+END
+
+IDD_PLANFLOW_DIALOG DLGINIT
+BEGIN
+    IDC_PLANINST_COMBO, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+IDR_STEPFLOW_ACTIVE_JPG JPG     DISCARDABLE     "..\\res\\step_flow_active.jpg"
+IDR_STEPFLOW_INACTIVE_JPG JPG     DISCARDABLE     "..\\res\\step_flow_inactive.jpg"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\PlanManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

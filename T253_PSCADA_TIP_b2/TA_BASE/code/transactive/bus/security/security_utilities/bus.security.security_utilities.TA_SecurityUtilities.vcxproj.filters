@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{79c09281-b11c-40ba-9962-cdccabbbb99b}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DbCacheLookup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyUpdateSubject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyUpdateObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISessionUpdateObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SecurityUtilities.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SecurityUtilitiesInternal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SecurtyCorbaMacros.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SeDutyStateObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SeDutyStateSubject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SeObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionDetailsCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionUpdateSubject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SeSubject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimePair.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimePairMapBuilder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DutyUpdateSubject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IDutyUpdateObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISessionUpdateObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionDetailsCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionUpdateSubject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimePair.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimePairMapBuilder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

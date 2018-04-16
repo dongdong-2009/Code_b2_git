@@ -1,0 +1,122 @@
+<project default="install" basedir="c:\temp">
+    <taskdef name="Install" classname="Install"/>
+
+    <target name="init">
+        <!-- The following won't be needed when this is integrated into the build system. -->
+        <property name="BuildTag" value="CODE_4669_00170000" />
+        <property name="stagingDir" value="${basedir}/staging/${BuildTag}" />
+        <property name="NSIS.exe" value="c:\program files\nsis\makensis.exe" />
+    </target>
+
+    <target name="install" depends="init">
+        <property name="files" value="${stagingDir}/mft" />
+        <property name="base" value="c:\transActive"/>
+        <property name="bin" value="bin"/>
+        <property name="lib" value="lib"/>
+        <property name="log" value="log"/>
+        <Install Destination="${base}">
+            <!-- The registry keys that must exist before hand. -->
+            <RegistryCheck>
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ORACLE"
+                    KeyName="oracle_home"
+                    ErrorMsg="Oracle not installed" />
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ICONICS\Common"
+                    KeyName="path"
+                    ErrorMsg="GraphWorx not installed" />
+            </RegistryCheck>
+
+            <!-- The files to copy.  Note: Everything in the base dir is -->
+            <!-- copied.  We need a fileset to get the names of the exe's-->
+            <!-- to kill before we uninstall because you cannot delete   -->
+            <!-- a file that is currently executed.                      -->
+            <FileSet dir="${files}">
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileRegistration> 
+                <!-- These are files to register with regsvr32 /s -->
+                <File name="${base}\${lib}\opccomn_ps.dll"/>
+                <File name="${base}\${lib}\opcproxy.dll"/>
+                <File name="${base}\${lib}\opc_aeps.dll"/>
+                <File name="${base}\${lib}\opchda_ps.dll"/>
+                <File name="${base}\${lib}\BCGDurationCtrl.ocx"/>
+                <File name="${base}\${lib}\TeeChart6.ocx"/>
+                <File name="${base}\${lib}\craxdrt9.dll"/>
+                <File name="${base}\${lib}\crqe.dll"/>
+                <File name="${base}\${lib}\crtslv.dll"/>
+                <File name="${base}\${lib}\crviewer9.dll"/>
+                <File name="${base}\${lib}\ExportModeller.dll"/>
+                <File name="c:\winnt\system32actxprxy.dll"/>
+            </FileRegistration>
+
+            <!-- Prompt for the inclusion of the GUI that will get the -->
+            <!-- necessary data to run transActive whereever it is     -->
+            <!-- installed.                                            -->
+            <ServerInformation/>
+
+            <!-- Specify any environment variables that need to be changed. -->
+            <Environment path="${base}\${bin};${base}\${lib}"/>
+
+            <!-- Specify the shortcuts and where they are suppose to be. -->
+            <Shortcuts>
+                <Shortcut
+                    name="ControlStation"
+                    target="${base}\${bin}\ControlStation.exe"
+                    args="--entity-name=ControlStation --debug-file=${base}\${log}\ControlStation.log --debug-level=DEBUG --host-names=$PRIMARY,$SECONDARY"
+                    location="Desktop"
+                    username="operator" />
+                <Shortcut
+                    name="ControlStation"
+                    target="${base}\${bin}\ControlStation.exe"
+                    args="--entity-name=ControlStation --debug-file=${base}\${log}\ControlStation.log --debug-level=DEBUG --host-names=$PRIMARY,$SECONDARY"
+                    location="Quick Launch"
+                    username="operator" />
+                <Shortcut
+                    name="ConfigurationEditor"
+                    target="${base}\${bin}\ConfigurationEditor.exe"
+                    args="--entity-name=ConfigurationEditor --debug-file=${base}\${log}\Log_ConfigurationEditor.log --debug-level=INFO"
+                    location="Quick Launch"
+                    username="operator" />
+                <Shortcut
+                    name="SystemManager"
+                    target="${base}\${bin}\SystemManager.exe"
+                    args="--entity-name=SystemControlClient"
+                    location="Quick Launch"
+                    username="operator" />
+            </Shortcuts>
+
+            <!-- List commands to be executed after successful installation.-->
+            <PostInstallCommands>
+                <command install="${base}\${bin}\ControlStation --regserver"/>
+                <command install="${base}\${bin}\SoundManager --regserver --hostname=$PRIMARY,$SECONDARY"/>
+                <command
+                    install="${base}\${bin}\AlarmStoreService --entity-name=$ALARMSTOREENTITY --operation-mode=Control --host-names=$PRIMARY,$SECONDARY --debug-level=INFO --debug-file=${base}\${log}\Log_AlarmStoreService.log -install"
+                    uninstall="${base}\${bin}\AlarmStoreService -remove"/>
+                <command
+                    install="${base}\${bin}\OpcBridgeService --entity-name=OPCBridge --host-names=$PRIMARY,$SECONDARY --debug-level=INFO --debug-file=${base}\${log}\Log_OpcBridge.log -install"
+                    uninstall="${base}\${bin}\OPCBridgeService -remove"/>
+            </PostInstallCommands>
+
+            <!-- The part that deals with the services.  The services will -->
+            <!-- installed and started on install.  On uninstall, the      -->
+            <!-- services will be stopped and removed.                     -->
+            <Services>
+                <service name="AlarmStore"/>
+                <service name="OPC Bridge"/>
+            </Services>
+
+            <!-- Import the necessary registry file. -->
+            <RegistrySettings>
+                <RegistrySetting file="${stagingDir}\mft\lib\HKLMssce.reg"/>
+                <RegistrySetting file="${stagingDir}\mft\lib\CR9Deploy.reg"/>
+            </RegistrySettings>
+        </Install>
+
+        <!-- Now compile the script. -->
+        <exec command="${NSIS.exe} script.nsi" failonerror="true"/>
+    </target>
+</project>

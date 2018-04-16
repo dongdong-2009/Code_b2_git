@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{514912e6-e167-4d16-bbd3-b4cf75ded662}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c523bc9d-cab8-48c6-af80-bba0ff118231}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Job Logic Files">
+      <UniqueIdentifier>{b87a0b1e-c1ab-4850-b77c-a0d3412c5db8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DLL Logic Files">
+      <UniqueIdentifier>{8c504981-4dcb-4a09-a4f5-fd989f83c14e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\JobDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainFrm.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingManagerDoc.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingManagerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingManagerView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Job.cpp">
+      <Filter>Job Logic Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobManager.cpp">
+      <Filter>Job Logic Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Schedule.cpp">
+      <Filter>Job Logic Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentLibraryAccessor.cpp">
+      <Filter>DLL Logic Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\JobDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainFrm.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManagerConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManagerDoc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManagerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManagerView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJobUpdatable.h">
+      <Filter>Job Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Job.h">
+      <Filter>Job Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobManager.h">
+      <Filter>Job Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Schedule.h">
+      <Filter>Job Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Component.h">
+      <Filter>DLL Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentLibraryAccessor.h">
+      <Filter>DLL Logic Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJobDetailsPlugin.h">
+      <Filter>DLL Logic Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\SchedulingManager.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\bus\resources\icons\SchedulingManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SchedulingManager.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

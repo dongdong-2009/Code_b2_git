@@ -1,0 +1,62 @@
+/**
+  * The source code in this file is the property of
+  * MI Services Group (Australia) and is not for
+  * redistribution in any form.
+  *
+  * Source: $File: //depot/GZL6_TIP/3002/transactive/app/history/traffic_historian/traffic_historian_dmif/src/StatisticsDmIf.idl $
+  * @author Katherine Thomson
+  * @version $Revision: #1 $
+  * Last modification: $DateTime: 2012/06/12 13:35:44 $
+  * Last modified by:
+  *
+  * This is a CORBA inteface for the Statistics Agent.  
+  * It enables processes to turn on and off statistics
+  * collection and logging for specified traffic stations.
+  */ 
+
+#ifndef STATISTICSDMIF_IDL
+#define STATISTICSDMIF_IDL
+
+#include "CommonDmIf.idl"
+
+module its
+{
+    interface StatisticsDmIf
+    {
+		typedef sequence<unsigned long> t_EntityKeys;
+
+		exception InvalidEntityKeyException
+		{
+			t_EntityKeys entityKeys;
+		};
+
+		// Types of traffic information to be collected.
+		typedef sequence<string> t_Statistics;
+		
+		// A structure datatype that specifies what data should be collected
+		// and logged for the given traffic station.
+		struct StatsInfo
+		{
+			unsigned long entityKey;	// The entity key of the traffic station.
+			t_Statistics statistics;	// The required statistics.
+		};
+		typedef sequence<StatsInfo> t_StatsInfoSeq;
+    
+        // Start collecting and logging statistics for the 
+        // specified traffic stations. 
+        void StartCollecting( in t_StatsInfoSeq info )
+			raises ( InvalidEntityKeyException );
+    
+        // Stop collecting and logging statistics for the 
+        // specified traffic stations. 
+        void StopCollecting( in t_StatsInfoSeq info )
+			raises ( InvalidEntityKeyException );
+
+		// Shows which statistics are being collected for a particular
+		// traffic station.
+		t_Statistics GetActiveStatistics( in unsigned long entityKey )
+			raises ( InvalidEntityKeyException );
+    };
+};
+
+#endif // STATISTICSDMIF_IDL

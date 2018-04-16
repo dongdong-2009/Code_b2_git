@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.scheduling.scheduling_agent</ProjectName>
+    <ProjectGuid>{C063AD56-CDE3-4D48-8E2B-E7D25DD7671A}</ProjectGuid>
+    <RootNamespace>app.scheduling.scheduling_agent</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>SchedulingAgent</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.scheduling.scheduling_agent.SchedulingAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm300  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\data_access_interface\planagent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\response_plans\plan_manager\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Rpcrt4.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.scheduling.scheduling_agent.SchedulingAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalOptions>/Zm300  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\data_access_interface\planagent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\response_plans\plan_manager\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Rpcrt4.lib;TA_Base_Core.lib;TA_Base_Bus.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractJob.cpp" />
+    <ClCompile Include="src\AbstractJobInstance.cpp" />
+    <ClCompile Include="src\AlarmGeneratorJob.cpp" />
+    <ClCompile Include="src\AlarmGeneratorJobFactory.cpp" />
+    <ClCompile Include="src\AlarmGeneratorJobInstance.cpp" />
+    <ClCompile Include="src\JobFactory.cpp" />
+    <ClCompile Include="src\JobInstanceManager.cpp" />
+    <ClCompile Include="src\JobQueue.cpp" />
+    <ClCompile Include="src\JobRunner.cpp" />
+    <ClCompile Include="src\JobThread.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\PlanAgentLocationAccess.cpp" />
+    <ClCompile Include="src\PlanAgentMap.cpp" />
+    <ClCompile Include="src\PlanRunnerJob.cpp" />
+    <ClCompile Include="src\PlanRunnerJobFactory.cpp" />
+    <ClCompile Include="src\PlanRunnerJobInstance.cpp" />
+    <ClCompile Include="src\Schedule.cpp" />
+    <ClCompile Include="src\SchedulingAccessManager.cpp" />
+    <ClCompile Include="src\SchedulingAgent.cpp" />
+    <ClCompile Include="src\SchedulingAlarmSender.cpp" />
+    <ClCompile Include="src\SchedulingController.cpp" />
+    <ClCompile Include="src\SchedulingMessageSender.cpp" />
+    <ClCompile Include="src\SchedulingMonitor.cpp" />
+    <ClCompile Include="src\SchedulingSessionManager.cpp" />
+    <ClCompile Include="src\SchedulingTimer.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractJob.h" />
+    <ClInclude Include="src\AbstractJobInstance.h" />
+    <ClInclude Include="src\AlarmGeneratorJob.h" />
+    <ClInclude Include="src\AlarmGeneratorJobFactory.h" />
+    <ClInclude Include="src\AlarmGeneratorJobInstance.h" />
+    <ClInclude Include="src\IJob.h" />
+    <ClInclude Include="src\IJobExecutionListener.h" />
+    <ClInclude Include="src\IJobFactory.h" />
+    <ClInclude Include="src\IJobInstance.h" />
+    <ClInclude Include="src\JobFactory.h" />
+    <ClInclude Include="src\JobInstanceCreationException.h" />
+    <ClInclude Include="src\JobInstanceExecutionException.h" />
+    <ClInclude Include="src\JobInstanceManager.h" />
+    <ClInclude Include="src\JobInstanceNotFoundException.h" />
+    <ClInclude Include="src\JobInstanceStateRetrievalException.h" />
+    <ClInclude Include="src\JobQueue.h" />
+    <ClInclude Include="src\JobRunner.h" />
+    <ClInclude Include="src\JobThread.h" />
+    <ClInclude Include="src\PlanAgentLocationAccess.h" />
+    <ClInclude Include="src\PlanAgentMap.h" />
+    <ClInclude Include="src\PlanRunnerJob.h" />
+    <ClInclude Include="src\PlanRunnerJobFactory.h" />
+    <ClInclude Include="src\PlanRunnerJobInstance.h" />
+    <ClInclude Include="src\Schedule.h" />
+    <ClInclude Include="src\SchedulingAccessManager.h" />
+    <ClInclude Include="src\SchedulingAgent.h" />
+    <ClInclude Include="src\SchedulingController.h" />
+    <ClInclude Include="src\SchedulingException.h" />
+    <ClInclude Include="src\SchedulingMessageSender.h" />
+    <ClInclude Include="src\SchedulingMonitor.h" />
+    <ClInclude Include="src\SchedulingSessionManager.h" />
+    <ClInclude Include="src\SchedulingTimer.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

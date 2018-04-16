@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ABF01E93-6042-43F2-82A7-51655FDD6B5E}</ProjectGuid>
+    <RootNamespace>app.response_plans</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>TA_WorkflowEditor_d</TargetName>
+    <IgnoreImportLibrary>false</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>TA_WorkflowEditor</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+      <AdditionalIncludeDirectories>../../../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_WorkflowElement_d.lib;TA_WorkflowDrawing_d.lib</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile />
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>../../../../../../bin/win32_nd/TA_WorkflowEditor_d.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>../../../../../../sdk/win32_nd/TA_WorkflowEditor_d.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalOptions>/VERBOSE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../../build/win32_nd/app.respons_plan.plan_editor_plugin.TA_WorkflowEditor_d.bsc</OutputFile>
+    </Bscmake>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(TA_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AssemblerListingLocation>.\../../../../../../build/win32_nd/transactive/app/respons_plan/plan_editor_plugin/workflow_editor/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../../build/win32_nd/transactive/app/respons_plan/plan_editor_plugin/workflow_editor/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../../build/win32_nd/transactive/app/respons_plan/plan_editor_plugin/workflow_editor/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+      <AdditionalIncludeDirectories>../../../../../../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_WorkflowElement.lib;TA_WorkflowDrawing.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>.\../../../../../../bin/win32_nr/TA_WorkflowEditor.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../../build/win32_nr/app.respons_plan.plan_editor_plugin.TA_WorkflowEditor.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActivityLibrary.cpp" />
+    <ClCompile Include="src\DllInstance.cpp" />
+    <ClCompile Include="src\DragTreeCtrl.cpp" />
+    <ClCompile Include="src\DynamicFuncLoader.cpp" />
+    <ClCompile Include="src\EditListCtrl.cpp" />
+    <ClCompile Include="src\FontHelper.cpp" />
+    <ClCompile Include="src\GridEditorDialog.cpp" />
+    <ClCompile Include="src\GridEditorPage.cpp" />
+    <ClCompile Include="src\ListPickerDialog.cpp" />
+    <ClCompile Include="src\MultipleListDialog.cpp" />
+    <ClCompile Include="src\MultipleTreeDialog.cpp" />
+    <ClCompile Include="src\SelectionFrame.cpp" />
+    <ClCompile Include="src\SingleListDialog.cpp" />
+    <ClCompile Include="src\SingleTreeDialog.cpp" />
+    <ClCompile Include="src\TextEditDialog.cpp" />
+    <ClCompile Include="src\TreePickerDialog.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+    <ClCompile Include="src\WorkflowDiagram.cpp" />
+    <ClCompile Include="src\WorkflowEditor.cpp" />
+    <ClCompile Include="src\WorkflowEditorDlg.cpp" />
+    <ClCompile Include="src\WorkflowEditorForm.cpp" />
+    <ClCompile Include="src\WorkflowException.cpp" />
+    <ClCompile Include="src\WorkflowHelper.cpp" />
+    <ClCompile Include="src\WorkflowViewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActivityLibrary.h" />
+    <ClInclude Include="src\DragTreeCtrl.h" />
+    <ClInclude Include="src\DynamicFuncLoader.h" />
+    <ClInclude Include="src\EditListCtrl.h" />
+    <ClInclude Include="src\FontHelper.h" />
+    <ClInclude Include="src\GlobalStructure.h" />
+    <ClInclude Include="src\GridEditorDialog.h" />
+    <ClInclude Include="src\GridEditorPage.h" />
+    <ClInclude Include="src\IDiagramViewer.h" />
+    <ClInclude Include="src\IEditListOwner.h" />
+    <ClInclude Include="src\ListPickerDialog.h" />
+    <ClInclude Include="src\MultipleListDialog.h" />
+    <ClInclude Include="src\MultipleTreeDialog.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\SelectionFrame.h" />
+    <ClInclude Include="src\SingleListDialog.h" />
+    <ClInclude Include="src\SingleTreeDialog.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\TextEditDialog.h" />
+    <ClInclude Include="src\TreePickerDialog.h" />
+    <ClInclude Include="src\WorkflowDiagram.h" />
+    <ClInclude Include="src\WorkflowEditor.h" />
+    <ClInclude Include="src\WorkflowEditorDlg.h" />
+    <ClInclude Include="src\WorkflowEditorForm.h" />
+    <ClInclude Include="src\WorkflowException.h" />
+    <ClInclude Include="src\WorkflowHelper.h" />
+    <ClInclude Include="src\WorkflowViewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\add.bmp" />
+    <None Include="res\Arrow.bmp" />
+    <None Include="res\delete.bmp" />
+    <None Include="res\WorkflowEditor.ico" />
+    <None Include="res\WorkflowEditor.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\WorkflowEditor.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\workflow_drawing\app.response_plans.workflow_drawing.vcxproj">
+      <Project>{eefa70d3-4465-47d9-bbb3-e90143839837}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\workflow_element\app.response_plans.workflow_element.vcxproj">
+      <Project>{e33bca44-a1a6-46a5-80f8-8bbd3718a586}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

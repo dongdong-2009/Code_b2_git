@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.event</ProjectName>
+    <ProjectGuid>{6A951067-D2E1-4A36-928E-490DFF335D37}</ProjectGuid>
+    <RootNamespace>event</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\event\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\idl\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;..\..\..\cots\ZipArchive\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LIBPATH:"..\..\..\cots\ZipArchive\zlib" /NOLOGO zlib_d.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>zlib_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\event\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\idl\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;..\..\..\cots\ZipArchive\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Lib>
+      <AdditionalOptions>/LIBPATH:"..\..\..\cots\ZipArchive\zlib" /NOLOGO zlib.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EventDeSerialize.cpp" />
+    <ClCompile Include="src\EventHelper.cpp" />
+    <ClCompile Include="src\EventHelperException.cpp" />
+    <ClCompile Include="src\EventSerialize.cpp" />
+    <ClCompile Include="src\EventUtilities.cpp" />
+    <ClCompile Include="src\EventZlibDeflate.cpp" />
+    <ClCompile Include="src\EventZlibInflate.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EventDeSerialize.h" />
+    <ClInclude Include="src\EventHelper.h" />
+    <ClInclude Include="src\EventHelperException.h" />
+    <ClInclude Include="src\EventItem.h" />
+    <ClInclude Include="src\EventSerialize.h" />
+    <ClInclude Include="src\EventSerializeHelper.h" />
+    <ClInclude Include="src\EventUtilities.h" />
+    <ClInclude Include="src\EventZlibDeflate.h" />
+    <ClInclude Include="src\EventZlibInflate.h" />
+    <ClInclude Include="src\IEventProcessor.h" />
+    <ClInclude Include="src\IEventSubscriber.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\corba\IDL\core.corba.idl.TA_IDL.vcxproj">
+      <Project>{bd262114-29cb-425d-aa7f-c18a63aafa68}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\data_access_interface\entity_access\core.dai.entity_access.TA_EntityAccess.vcxproj">
+      <Project>{751df256-19dd-488f-be98-a874359dc9ca}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\exceptions\IDL\core.exceptions.idl.TA_CommonExceptionsIDL.vcxproj">
+      <Project>{8d12961c-485a-4007-9f7b-eac7c4031509}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\message\IDL\core.message.idl.TA_MessageIDL.vcxproj">
+      <Project>{90f02999-b013-441e-8e32-a7fefd58786b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\naming\IDL\core.naming.idl.TA_NamingIDL.vcxproj">
+      <Project>{f1780617-e451-4a45-8c52-a64897bd836e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="IDL\core.event.idl.TA_EventAgentIDL.vcxproj">
+      <Project>{d972a944-a1d3-402f-b73d-eb6c8b36dbe7}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,200 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="SynchEngine" ProjectGUID="{A5D5FF44-988C-4281-A417-0D85A9381B7B}" RootNamespace="SynchEngineClient" Keyword="Win32Proj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="1" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS/omniORB/$(OMNI_VERSION)/include;..\..\..\..\COTS\boost\boost_1_56_0\boost;..\..\..\..\COTS\boost\boost_1_56_0;..\..\..\..\cots\mcl\1.1.1;..\..\..\..\COTS\ZipArchive\zlib;..\..\..\..\COTS\oracle\11.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src;..\MAQLib\src" PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=5;_WIN32_WINNT=0x500" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="0" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="4" DisableSpecificWarnings="4996;4244;4819"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="  $(OMNI_LIB_D) TA_mcl_d.lib TA_Sockets_d.lib TA_Thread_d.lib TA_Utilities_d.lib TA_Exceptions_d.lib TA_Synchronisation_d.lib TA_Version_d.lib TA_MAQ_d.lib stracelib.lib zlib_d.lib ocilib_d.lib TA_Uuid_d.lib Rpcrt4.lib" OutputFile="../../../../../bin/win32_nd/SynchEngine_d.exe" LinkIncremental="2" AdditionalLibraryDirectories="..\..\..\..\..\build\win32_nd;..\..\..\..\cots\boost\boost_1_56_0\stage\lib;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\lib\x86_win32\;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib\;..\..\..\..\cots\mcl\1.1.1\lib\winnt_mysql.5.5.15_boost1.56.0;..\..\..\..\cots\WinStackTrace\build\Debug;..\..\..\..\cots\ZipArchive\zlib;..\..\..\..\COTS\ZipArchive\zlib\Debug;..\..\..\..\cots\ocilib\3.9.3\lib\winnt;..\..\..\..\cots\oracle\11.2.0\winnt\lib" GenerateDebugInformation="true" SubSystem="1" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="1" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS/omniORB/$(OMNI_VERSION)/include;..\..\..\..\COTS\boost\boost_1_56_0\boost;..\..\..\..\COTS\boost\boost_1_56_0;..\..\..\..\cots\mcl\1.1.1;..\..\..\..\COTS\ZipArchive\zlib;..\..\..\..\COTS\oracle\11.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src;..\MAQLib\src" PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=5;_WIN32_WINNT=0x500" RuntimeLibrary="2" UsePrecompiledHeader="0" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="3" DisableSpecificWarnings="4996;4244;4819" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="  $(OMNI_LIB) TA_mcl.lib TA_Sockets.lib TA_Thread.lib TA_Utilities.lib TA_Exceptions.lib TA_Synchronisation.lib TA_Version.lib TA_MAQ.lib stracelib.lib zlib.lib ocilib.lib TA_Uuid.lib Rpcrt4.lib" OutputFile="../../../../../bin/win32_nr/SynchEngine_d.exe" LinkIncremental="1" AdditionalLibraryDirectories="..\..\..\..\..\build\win32_nr;..\..\..\..\cots\boost\boost_1_56_0\stage\lib;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\lib\x86_win32\;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib\;..\..\..\..\cots\mcl\1.1.1\lib\winnt_mysql.5.5.15_boost1.56.0;..\..\..\..\cots\WinStackTrace\build\Release;..\..\..\..\cots\ZipArchive\zlib;..\..\..\..\COTS\ZipArchive\zlib\Release;..\..\..\..\cots\ocilib\3.9.3\lib\winnt;..\..\..\..\cots\oracle\11.2.0\winnt\lib" GenerateDebugInformation="true" SubSystem="1" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Propagate" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\src\AQMsgThreadPool.cpp">
+			</File>
+			<File RelativePath=".\src\AQMsgThreadPool.h">
+			</File>
+			<File RelativePath=".\src\DeqMsgJob.cpp">
+			</File>
+			<File RelativePath=".\src\DeqMsgJob.h">
+			</File>
+			<File RelativePath=".\src\MsgDispatcher.cpp">
+			</File>
+			<File RelativePath=".\src\MsgDispatcher.h">
+			</File>
+			<File RelativePath=".\src\ProcessRcvMsg.cpp">
+			</File>
+			<File RelativePath=".\src\ProcessRcvMsg.h">
+			</File>
+			<File RelativePath=".\src\PropagateMsg.cpp">
+			</File>
+			<File RelativePath=".\src\PropagateMsg.h">
+			</File>
+		</Filter>
+		<Filter Name="ClientTcp">
+			<File RelativePath=".\src\ClientComWorker.cpp">
+			</File>
+			<File RelativePath=".\src\ClientComWorker.h">
+			</File>
+			<File RelativePath=".\src\ITcpComType.h">
+			</File>
+		</Filter>
+		<Filter Name="Common">
+			<File RelativePath=".\src\CommonData.h">
+			</File>
+			<File RelativePath=".\src\CommonDef.h">
+			</File>
+		</Filter>
+		<Filter Name="Public">
+			<File RelativePath=".\src\Buffer.cpp">
+			</File>
+			<File RelativePath=".\src\Buffer.h">
+			</File>
+			<File RelativePath=".\src\ComProtocol.cpp">
+			</File>
+			<File RelativePath=".\src\ComProtocol.h">
+			</File>
+			<File RelativePath=".\src\ConfigInfoHelper.cpp">
+			</File>
+			<File RelativePath=".\src\ConfigInfoHelper.h">
+			</File>
+			<File RelativePath=".\src\IMsgItem.h">
+			</File>
+			<File RelativePath=".\src\IMsgPackage.h">
+			</File>
+			<File RelativePath=".\src\IObserverRcvMsg.h">
+			</File>
+			<File RelativePath=".\src\IPropagateHandler.h">
+			</File>
+			<File RelativePath=".\src\MsgHelper.cpp">
+			</File>
+			<File RelativePath=".\src\MsgHelper.h">
+			</File>
+			<File RelativePath=".\src\MsgItemImp.cpp">
+			</File>
+			<File RelativePath=".\src\MsgItemImp.h">
+			</File>
+			<File RelativePath=".\src\MsgPackageImp.cpp">
+			</File>
+			<File RelativePath=".\src\MsgPackageImp.h">
+			</File>
+		</Filter>
+		<Filter Name="ServerTcp">
+			<File RelativePath=".\src\ConnectionActorReleaser.cpp">
+			</File>
+			<File RelativePath=".\src\ConnectionActorReleaser.h">
+			</File>
+			<File RelativePath=".\src\IServerTcpComType.cpp">
+			</File>
+			<File RelativePath=".\src\IServerTcpComType.h">
+			</File>
+			<File RelativePath=".\src\MonitorWorker.cpp">
+			</File>
+			<File RelativePath=".\src\MonitorWorker.h">
+			</File>
+			<File RelativePath=".\src\MysqlSrvEnqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlSrvEnqWorker.h">
+			</File>
+			<File RelativePath=".\src\MysqlSrvWorkSingle.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlSrvWorkSingle.h">
+			</File>
+			<File RelativePath=".\src\SrvComWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvComWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvDeqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvDeqWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvEnqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvEnqWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvInitWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvInitWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvWorkMutil.cpp">
+			</File>
+			<File RelativePath=".\src\SrvWorkMutil.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionActor.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionActor.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionListen.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionListen.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionPool.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionPool.h">
+			</File>
+			<File RelativePath=".\src\WorkTime.cpp">
+			</File>
+			<File RelativePath=".\src\WorkTime.h">
+			</File>
+		</Filter>
+		<Filter Name="main">
+			<File RelativePath=".\src\main.cpp">
+			</File>
+			<File RelativePath=".\src\SyncAQMsgManager.cpp">
+			</File>
+			<File RelativePath=".\src\SyncAQMsgManager.h">
+			</File>
+			<File RelativePath=".\src\SynModeMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\SynModeMonitor.h">
+			</File>
+			<File RelativePath=".\src\UniqueCheck.cpp">
+			</File>
+			<File RelativePath=".\src\UniqueCheck.h">
+			</File>
+			<File RelativePath=".\src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<File RelativePath=".\src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

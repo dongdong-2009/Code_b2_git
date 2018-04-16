@@ -1,0 +1,549 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ALARMSGUI_DIALOG DIALOGEX 0, 0, 488, 211
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_VISIBLE | WS_CLIPCHILDREN | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Alarm Manager"
+MENU IDR_AM_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List3",IDC_ALARM_LIST,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | LVS_ALIGNLEFT | LVS_OWNERDATA | WS_TABSTOP,2,1,486,210,WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_STATUSBAR,65,178,331,8,SS_CENTERIMAGE,WS_EX_STATICEDGE
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",0x0,1,178,279,7,WS_EX_CLIENTEDGE
+    LTEXT           "PagerCtrl",IDC_PAGER_CTRL,2,2,252,20,SS_CENTERIMAGE,WS_EX_DLGMODALFRAME
+    CONTROL         "",IDC_MENU_LINE,"Static",SS_ETCHEDHORZ,2,0,373,1
+    LTEXT           "Total",IDC_STATIC_TOTALARMS,437,11,17,8
+    EDITTEXT        IDC_TOTAL_ALARMS,456,11,32,12,ES_AUTOHSCROLL | ES_READONLY,WS_EX_RIGHT
+    LTEXT           "Not Ack",IDC_STATIC_NOTACK,428,1,25,8
+    EDITTEXT        IDC_NOT_ACKED,456,1,32,12,ES_AUTOHSCROLL | ES_READONLY,WS_EX_RIGHT
+    COMBOBOX        IDC_NAMED_FILTER,296,8,128,179,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Current Filter",IDC_STATIC_CURRENT_FILTER,267,5,27,16
+END
+
+IDD_RULES DIALOGEX 0, 0, 603, 183
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "System / Non-physical Subsystem Alarm Inhibitions"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Remove Inhibition",IDC_REMOVE_BUTTON,5,159,66,14
+    CONTROL         "List1",IDC_RULES_LIST,"SysListView32",LVS_REPORT | LVS_NOLABELWRAP | WS_TABSTOP,5,51,591,100,WS_EX_CLIENTEDGE
+    CONTROL         "Show All Inhibitions",IDC_RADIO_SHOW_ALL,"Button",BS_AUTORADIOBUTTON,25,10,80,10
+    CONTROL         "Filter on Location :",IDC_RADIO_FILTER_LOCATION,"Button",BS_AUTORADIOBUTTON,25,26,79,10
+    GROUPBOX        "",IDC_STATIC,5,2,591,38
+    PUSHBUTTON      "Close",IDC_CLOSE,531,159,65,14
+    PUSHBUTTON      "Refresh",IDC_REFRESH,453,159,65,14
+    COMBOBOX        IDC_COMBO_LOCATIONS,108,23,271,96,CBS_DROPDOWN | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Export List",IDC_EXPORT_LIST,373,159,65,14
+    PUSHBUTTON      "Print List",IDC_PRINT_LIST,292,159,65,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "AlarmsGui MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "AlarmsGui"
+            VALUE "LegalCopyright", "Copyright (C) 2001"
+            VALUE "OriginalFilename", "AlarmsGui.EXE"
+            VALUE "ProductName", "AlarmsGui Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ALARMSGUI_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 210
+    END
+
+    IDD_RULES, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 596
+        VERTGUIDE, 25
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 173
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATOR1 ACCELERATORS 
+BEGIN
+    VK_ESCAPE,      IDK_UNSELECT_KEY,       VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ALARMSGUI_DIALOG DLGINIT
+BEGIN
+    IDC_NAMED_FILTER, 0x403, 15, 0
+0x6544, 0x6166, 0x6c75, 0x2074, 0x6946, 0x746c, 0x7265, "\000" 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ALARM_FILTER DIALOGEX 0, 0, 463, 183
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alarm Filter"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Subsystem",IDC_SUBSYSTEM_STATIC,109,152,127,26,NOT WS_VISIBLE
+    EDITTEXT        IDC_SUBSYSTEM_EDIT,114,163,100,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    PUSHBUTTON      "...",IDC_SUBSYSTEM_BUTTON,217,163,14,12,NOT WS_VISIBLE
+    GROUPBOX        "Location",IDC_LOCATION_STATIC,137,29,128,26
+    EDITTEXT        IDC_LOCATION_EDIT,145,37,100,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_LOCATION_BUTTON,248,37,14,12
+    GROUPBOX        "Date/Time",IDC_ALARM_STATUS_STATIC2,270,2,186,53
+    CONTROL         "",IDC_FROM_TIME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,282,16,10,9
+    LTEXT           "From:",IDC_STATIC_FROM,294,16,18,8
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_FROMDATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,322,15,46,12
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_FROMTIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,376,15,52,12
+    GROUPBOX        "Operator",IDC_OPERATOR_STATIC,8,29,127,26
+    EDITTEXT        IDC_OPERATOR_EDIT,13,38,100,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_OPERATOR_BUTTON,116,38,14,12
+    GROUPBOX        "Alarm Type",IDC_ALARMT_TYPE_STATIC,271,129,127,26,NOT WS_VISIBLE
+    EDITTEXT        IDC_ALARM_TYPE_EDIT,275,138,100,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    PUSHBUTTON      "...",IDC_ALARM_TYPE_BUTTON,378,138,14,12,NOT WS_VISIBLE
+    CONTROL         "",IDC_TO_TIME,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,282,37,12,8
+    LTEXT           "To:",IDC_STATIC_TO,296,37,17,8
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_TODATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,322,36,46,12
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_TOTIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,376,36,52,12
+    GROUPBOX        "Equipment ID",IDC_ASSET_STATIC,7,59,176,28
+    EDITTEXT        IDC_EDIT_ASSET,12,69,167,12,ES_AUTOHSCROLL
+    GROUPBOX        "Description",IDC_DESCRIPTION_STATIC,7,93,176,28
+    EDITTEXT        IDC_EDIT_DESCRIPTION,12,102,167,12,ES_AUTOHSCROLL
+    GROUPBOX        "Severity",IDC_STATIC,188,59,70,61
+    GROUPBOX        "Acknowledge",IDC_ACK_GROUP,377,59,52,61
+    CONTROL         "Acked",IDC_ACK_ACKED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,382,69,37,11
+    CONTROL         "Unacked",IDC_ACK_UNACKED,"Button",BS_AUTORADIOBUTTON,382,82,39,11
+    CONTROL         "All",IDC_ACK_ALL,"Button",BS_AUTORADIOBUTTON,382,96,40,8
+    GROUPBOX        "State",IDC_STATE,404,59,52,61,NOT WS_VISIBLE
+    CONTROL         "Open",IDC_STATE_OPEN,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE | WS_GROUP,409,69,37,11
+    CONTROL         "Closed",IDC_STATE_CLOSED,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,409,82,39,11
+    CONTROL         "All",IDC_STATE_ALL,"Button",BS_AUTORADIOBUTTON | NOT WS_VISIBLE,409,96,35,9
+    GROUPBOX        "Named Filter",IDC_NAMED_FILTER_BOX,7,122,260,32
+    COMBOBOX        IDC_NAMED_FILTER,11,135,147,56,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_SAVE,165,133,46,14
+    PUSHBUTTON      "Delete",IDC_DELETE,215,133,46,14
+    DEFPUSHBUTTON   "Default/Clear",IDC_CLEAR_FILTERS_BUTTON,7,164,73,14
+    DEFPUSHBUTTON   "OK",IDC_OK,274,164,50,14
+    PUSHBUTTON      "Cancel",IDC_CANCEL,328,164,50,14
+    PUSHBUTTON      "Apply",IDC_APPLY,406,164,50,14
+    GROUPBOX        "Static",IDC_LIST_PLACEHOLDER,192,70,61,45
+    COMBOBOX        IDC_COMBO_FROM,322,15,46,12,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_TO,322,36,46,12,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_FROM,376,15,52,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TO,376,36,52,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN_FROM,"msctls_updown32",UDS_ARROWKEYS,419,16,8,10
+    CONTROL         "Spin1",IDC_SPIN_TO,"msctls_updown32",UDS_ARROWKEYS,419,37,8,10
+    GROUPBOX        "System",IDC_SYSTEM_STATIC,7,2,127,26
+    EDITTEXT        IDC_SYSTEM_EDIT,12,13,100,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SYSTEM_BUTTON,115,13,14,12
+    GROUPBOX        "Operation/Maintenance",IDC_OMTYPE_GROUP,276,59,82,61
+    CONTROL         "Operation",IDC_OMTYPE_OPERATION,"Button",BS_AUTORADIOBUTTON | WS_GROUP,285,69,47,11
+    CONTROL         "Maintenance",IDC_OMTYPE_MAINTENANCE,"Button",BS_AUTORADIOBUTTON,285,82,52,11
+    CONTROL         "Both",IDC_OMTYPE_BOTH,"Button",BS_AUTORADIOBUTTON,285,96,40,8
+    CONTROL         "All",IDC_OMTYPE_ALL,"Button",BS_AUTORADIOBUTTON,285,107,40,8
+    GROUPBOX        "Subsystem",IDC_SUBSYSTEMTYPE_STATIC,138,2,127,26
+    EDITTEXT        IDC_SUBSYSTEMTYPE_EDIT,145,13,100,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_SUBSYSTEMTYPE_BUTTON,248,13,14,12
+END
+
+IDD_MULTIPLE_SEL_DLG DIALOGEX 0, 0, 187, 226
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alarm Manager"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",ID_MULTIOK,73,205,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,130,205,50,14
+    LISTBOX         IDC_MULTI_SEL_LIST,7,7,173,191,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ALARM_FILTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 456
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 178
+        HORZGUIDE, 59
+    END
+
+    IDD_MULTIPLE_SEL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ALARM_FILTER DLGINIT
+BEGIN
+    IDC_NAMED_FILTER, 0x403, 8, 0
+0x6544, 0x6166, 0x6c75, 0x0074, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "..\\res\\Spelling.bmp"
+IDB_BITMAP2             BITMAP                  "..\\res\\Delete.bmp"
+IDB_COMMENTSGREY        BITMAP                  "..\\res\\commentsGrey.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\AlarmsGui.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""..\\..\\..\\bus\\alarm\\alarm_list_control\\src\\AlarmListCtrl.rc""\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\AlarmsGui.ico"
+IDI_ACKNOWLEDGE         ICON                    "..\\res\\ack.ico"
+IDI_DELETE_HOT          ICON                    "..\\res\\delhot.ico"
+IDI_ACKNOWLEDGE_HOT     ICON                    "..\\res\\ackhot.ico"
+IDI_DELETE              ICON                    "..\\res\\del.ico"
+IDI_VIEWCAM_HOT         ICON                    "..\\res\\vwcamhot.ico"
+IDI_VIEWCAM             ICON                    "..\\res\\viewcam.ico"
+IDI_REFRESH_HOT         ICON                    "..\\res\\refreshot.ico"
+IDI_PLAN_HOT            ICON                    "..\\res\\Planhot.ico"
+IDI_PRINT               ICON                    "..\\res\\print.ico"
+IDI_PRINT_HOT           ICON                    "..\\res\\printhot.ico"
+IDI_REFRESH             ICON                    "..\\res\\refresh.ico"
+IDI_PLAN                ICON                    "..\\res\\Plan.ico"
+IDI_SILENCE_HOT         ICON                    "..\\res\\mutehot.ico"
+IDI_DETAIL_HOT          ICON                    "..\\res\\dethot.ico"
+IDI_SILENCE             ICON                    "..\\res\\mute.ico"
+IDI_DETAIL              ICON                    "..\\res\\det.ico"
+IDI_APPLY_FILTERS_HOT   ICON                    "..\\res\\appfltht.ico"
+IDI_APPLY_FILTERS       ICON                    "..\\res\\appfilt.ico"
+IDI_SHOW_FILTERS_HOT    ICON                    "..\\res\\shwfltht.ico"
+IDI_SHOW_FILTERS        ICON                    "..\\res\\shwfilt.ico"
+IDI_SM_BELL             ICON                    "..\\res\\sm_bell.ico"
+IDI_TBAR_HOT            ICON                    "..\\res\\tbar_hot.ico"
+IDI_TBAR                ICON                    "..\\res\\tbar.ico"
+IDI_SUPPRESS_HOT        ICON                    "..\\res\\suphot.ico"
+IDI_SUPPRESS            ICON                    "..\\res\\suppress.ico"
+IDI_SHOW_RULES_HOT      ICON                    "..\\res\\shwrlsht.ico"
+IDI_SHOW_RULES          ICON                    "..\\res\\showruls.ico"
+IDI_SAVE_HOT            ICON                    "..\\res\\savehot.ico"
+IDI_SAVE                ICON                    "..\\res\\save.ico"
+IDI_VIEWS_HOT           ICON                    "..\\res\\acknowle.ico"
+IDI_VIEWS               ICON                    "..\\res\\views.ico"
+IDI_SORT                ICON                    "..\\res\\Sort.ico"
+IDI_SORT_HOT            ICON                    "..\\res\\sort_hot.ico"
+IDI_UNACKBOX            ICON                    "..\\res\\icon1.ico"
+IDI_MANUAL_CLOSE_HOT    ICON                    "..\\res\\manualClose_hot.ico"
+IDI_MANUAL_CLOSE        ICON                    "..\\res\\manualClose.ico"
+IDI_COMMENT             ICON                    "..\\res\\comment.ico"
+IDI_COMMENT_HOT         ICON                    "..\\res\\commenthot.ico"
+IDI_EVENT_VIEWER_COLD   ICON                    "..\\res\\EventViewer_cold.ico"
+IDI_EVENT_VIEWER_HOT    ICON                    "..\\res\\EventViewer_hot.ico"
+IDI_UNREMOVABLE_RULE    ICON                    "..\\res\\closed_padlock.ico"
+IDI_RULE_REMOVABLE      ICON                    "..\\res\\open_padlock.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MONITOR_MENU MENU 
+BEGIN
+    POPUP "PlaceHolder"
+    BEGIN
+        MENUITEM "Launch Camera Control",       ID_LAUNCH_CAM_CTRL
+        MENUITEM SEPARATOR
+    END
+END
+
+IDR_AM_MAIN_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Print...",                   ID_FILE_PRINT
+        MENUITEM "&Export...",                  ID_FILE_EXPORT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Filter...",                  ID_VIEW_SHOWFILTERS
+        //MENUITEM "Show In&hibitions...",        ID_VIEW_SHOWINHIBITIONS
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR, CHECKED
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR, CHECKED
+    END
+    POPUP "&Alarm"
+    BEGIN
+        MENUITEM "&Acknowledge Selection",      ID_AM_ALARM_ACKNOWLEDGE
+        MENUITEM SEPARATOR
+        MENUITEM "Related &Schematic",          ID_AM_ALARM_SCHEMATIC
+        MENUITEM "Related &Inspector...",       ID_AM_ALARM_INSPECTOR
+        MENUITEM "Related &Events...",          ID_AM_ALARM_EVENTS
+        MENUITEM SEPARATOR
+        MENUITEM "Related P&lan...",             ID_AM_ALARM_PLAN
+		MENUITEM "Related Plan I&nstance...",    ID_AM_ALARM_PLAN_INSTANCE
+        MENUITEM "&Postpone Plan",              ID_AM_CANCEL_ALARM_PLAN
+        MENUITEM SEPARATOR
+        MENUITEM "Raise Service Re&quest...",       ID_AM_ALARM_JOB_REQUEST
+        MENUITEM "Related A&valanche Events...", ID_AM_ALARM_AVALANCHE_EVENTS
+        MENUITEM "Create Incident &Report...",  ID_AM_ALARM_EVENT_LOG
+		/*
+        MENUITEM SEPARATOR
+        POPUP "In&hibit..."
+        BEGIN
+            MENUITEM "By T&ype",                    ID_AM_INHIBIT_BY_TYPE
+            MENUITEM "By Descripti&on",             ID_AM_INHIBIT_BY_DESCRIPTION
+        END*/
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Alarm Manager &Help",         ID_HELP
+        MENUITEM "&About Alarm Manager",        ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_PRINT           "Print Alarms"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TOOLS_LAUNCHCAMERA   "Launch Camera"
+    ID_FILE_EXPORT          "Export Alarms to File"
+    ID_ALARM_DELETE         "Delete Alarm"
+    ID_ALARM_INHIBIT        "Inhibit System Alarms"
+    ID_ALARM_ADDCOMMENT     "Add a Comment to the Alarm"
+    ID_TOOLS_RUNPLAN        "Run a Plan"
+    ID_TOOLS_SILENCE        "Toggle Silent Mode"
+    ID_VIEW_APPLYFILTERS    "Apply Alarm Filters"
+    ID_VIEW_SHOWFILTERS     "Display Alarm Filter Dialog"
+    ID_VIEW_SHOWINHIBITIONS "Display Inhibition Dialog"
+    ID_VIEW_REFRESH         "Refresh the View"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_ALARM_ALL_ACKNOWLEDGE "Acknowledges all Alarms"
+    ID_TOOLS_LAUNCHVIEW     "Launch DataView"
+    ID_VIEW_COLUMN_ALARMTYPE "Display the Alarm Type Column"
+    ID_VIEW_COLUMN_SYSTEM   "Display the System Column"
+    ID_VIEW_COLUMN_TIME_LOGGED "Display the Time Logged Column"
+    ID_VIEW_COLUMN_ACKNOWLEDGE "Display the Acknowledge Column"
+    ID_VIEW_COLUMN_STATE    "Toggle state column"
+    ID_VIEW_COLUMN_REGION   "Toggle Region Column"
+    ID_RUN_PLAN             "Launches an associated plan for the alarm"
+    ID_RELATED_INSPECTOR    "Launches related inspector panel."
+    ID_RELATED_TREND        "Launches the trend viewer"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_JOB_REQUEST          "displays window that allows a job request to MMS to be generated. "
+    ID_VIEW_COLUMN_COMMENTS "Expands the comments column in the Alarm Manager."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_DETAILS         "Toggle Detailed View"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Toggle the Toolbar"
+    ID_VIEW_STATUS_BAR      "Toggle the Status Bar"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "About Alarms"
+    ID_HELP                 "Alarms Help"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\AlarmsGui.rc2"  // non-Microsoft Visual C++ edited resources
+#include "..\..\..\bus\alarm\alarm_list_control\src\AlarmListCtrl.rc"
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

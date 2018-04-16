@@ -1,0 +1,8 @@
+
+ta-exe SystemStatusAgent
+	: [ glob src/*.cpp
+			 src/pingDriver/*.cpp
+			 src/taComponentsDriver/*.cpp
+			 src/threadedDriver/*.cpp
+		]
+	;

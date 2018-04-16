@@ -1,0 +1,160 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "CallBannerPage_rc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "CallBannerPage_rc.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#include ""bus/trains/PECCallBannerLibrary/src/PECDialog.rc""\r\n"
+    "#include ""bus/radio/AuthorisationCallBannerLibrary/src/AuthorisationDialog.rc""\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_CALLS DIALOG  0, 0, 1280, 57
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "PEC 0",IDC_PEC_BUTTON,"Button",BS_OWNERDRAW | WS_TABSTOP,47,0,45,14
+    CONTROL         "Telephony",IDC_RXH_BUTTON,"Button",BS_OWNERDRAW | WS_TABSTOP,1,30,45,14
+    CONTROL         "Radio 0",IDC_RADIO_BUTTON,"Button",BS_OWNERDRAW | WS_TABSTOP,1,0,45,14
+    CONTROL         "Auth",IDC_AUTH_BUTTON,"Button",BS_OWNERDRAW | WS_TABSTOP,1,15,45,14
+    CONTROL         "List1",IDC_CALL_LIST,"SysListView32",LVS_REPORT | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,108,0,505,57
+    CHECKBOX        "Vetting",IDC_VETTING_CHECK,53,32,39,10,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_CALLS, DIALOG
+    BEGIN
+        HORZGUIDE, 47
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) (unknown sub-lang: 0x12) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENE)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, 0x12
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,0,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "480904b0"
+        BEGIN
+            VALUE "CompanyName", "Ripple"
+            VALUE "FileDescription", "CallBannerPage DLL"
+            VALUE "FileVersion", "0, 0, 0, 0"
+            VALUE "InternalName", "CallBannerPage"
+            VALUE "LegalCopyright", "Copyright (C) 2013"
+            VALUE "OriginalFilename", "CallBannerPage"
+            VALUE "ProductName", "CallBannerPage Dynamic Link Library"
+            VALUE "ProductVersion", "0, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x4809, 1200
+    END
+END
+
+#endif    // English (U.S.) (unknown sub-lang: 0x12) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#include "bus/trains/PECCallBannerLibrary/src/PECDialog.rc"
+#include "bus/radio/AuthorisationCallBannerLibrary/src/AuthorisationDialog.rc"
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

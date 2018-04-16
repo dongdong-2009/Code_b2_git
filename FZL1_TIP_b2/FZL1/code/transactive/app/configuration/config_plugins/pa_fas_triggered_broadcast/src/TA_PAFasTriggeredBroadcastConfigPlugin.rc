@@ -1,0 +1,195 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PA_FAS_TRIGGERED_BROADCAST_RECORD_VIEW DIALOGEX 0, 0, 538, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_CHILD
+FONT 10, "宋体", 400, 0, 0x86
+BEGIN
+    EDITTEXT        IDC_EDIT_LOCATION,105,48,144,13,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_LOCATION,253,49,12,13
+    EDITTEXT        IDC_EDIT_CYCLIC_TIMES,412,78,57,13,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    CONTROL         "",IDC_CHECK_CYCLIC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,337,82,16,8
+    CONTROL         "",IDC_SPIN_CYCLIC_TIMES,"msctls_updown32",UDS_WRAP | UDS_SETBUDDYINT | UDS_ARROWKEYS,470,78,10,14
+    PUSHBUTTON      "...",IDC_BUTTON_ZONE_GROUP,253,100,12,13
+    PUSHBUTTON      "...",IDC_BUTTON_STATION_DVA_MESSAGE,253,74,12,13
+    PUSHBUTTON      "...",IDC_BUTTON_FAS_ALARM_ENTITY,499,22,12,13
+    CONTROL         "",IDC_CHECK_IS_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,314,142,16,8
+    DEFPUSHBUTTON   "应用(&A)",IDC_BUTTON_APPLY,113,159,50,14
+    PUSHBUTTON      "重设(&R)",IDC_BUTTON_RESET,177,159,50,14
+    EDITTEXT        IDC_EDIT_ZONE_GROUP,105,100,144,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_STATION_DVA_MESSAGE,104,74,145,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_FAS_ALARM_ENTITY,104,23,377,13,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    GROUPBOX        "<类型>",IDC_STATIC_TYPE,8,5,522,178
+    LTEXT           "创建日期:",IDC_CREATE_STATIC,18,122,53,9,SS_CENTERIMAGE
+    LTEXT           "最后修改:",IDC_MOD_STATIC,18,138,53,9,SS_CENTERIMAGE
+    LTEXT           "日期在此显示",IDC_STATIC_CREATEDATE,105,122,144,13
+    LTEXT           "日期在此显示",IDC_STATIC_MODIFYDATE,105,138,144,13
+    LTEXT           "车站:",IDC_LOCATION_STATIC,18,50,31,8,SS_CENTERIMAGE
+    CONTROL         9005,IDC_LOCATION_BITMAP,"Static",SS_BITMAP,94,48,11,11
+    CONTROL         9005,IDC_ZONE_GROUP_BITMAP,"Static",SS_BITMAP,94,101,11,11
+    CONTROL         9005,IDC_DVA_MESSAGE_BITMAP,"Static",SS_BITMAP,94,76,11,11
+    CONTROL         9005,IDC_FAS_ALARM_ENTITY_BITMAP,"Static",SS_BITMAP,94,24,11,11
+    LTEXT           "循环次数:",IDC_STATIC,367,81,38,8,SS_CENTERIMAGE
+    LTEXT           "火灾警报点:",IDC_STATIC,18,23,46,13,SS_CENTERIMAGE
+    LTEXT           "循环播放",IDC_STATIC,289,83,42,8
+    LTEXT           "广播区域组:",IDC_STATIC,18,100,47,8,SS_CENTERIMAGE
+    LTEXT           "预存广播消息:",IDC_STATIC,18,76,61,8,SS_CENTERIMAGE
+    LTEXT           "启用:",IDC_STATIC,278,141,28,8
+    GROUPBOX        "广播参数",IDC_STATIC,278,46,204,74
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PA_FAS_TRIGGERED_BROADCAST_RECORD_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 530
+        VERTGUIDE, 18
+        VERTGUIDE, 94
+        VERTGUIDE, 105
+        VERTGUIDE, 249
+        VERTGUIDE, 265
+        VERTGUIDE, 278
+        VERTGUIDE, 337
+        VERTGUIDE, 492
+        VERTGUIDE, 511
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 183
+        HORZGUIDE, 159
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+2 VERSIONINFO
+ FILEVERSION 0,0,0,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "Ripple"
+            VALUE "FileDescription", "TA_PAFasTriggeredBroadcastConfigPlugin DLL"
+            VALUE "FileVersion", "0, 0, 0, 0"
+            VALUE "InternalName", "TA_PAFasTriggeredBroadcastConfigPlugin"
+            VALUE "LegalCopyright", "版权 (C) 2003"
+            VALUE "OriginalFilename", "TA_PAFasTriggeredBroadcastConfigPlugin.DLL"
+            VALUE "ProductName", "TA_PAFasTriggeredBroadcastConfigPlugin Dynamic Link Library"
+            VALUE "ProductVersion", "0, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TA_PAFasTriggeredBroadcastConfigPlugin.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""app\\configuration\\config_plugins\\config_plugin_helper\\src\\TA_ConfigPluginHelper.rc"" // Config Plugin Helper library resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\TA_PAFasTriggeredBroadcastConfigPlugin.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "app\configuration\config_plugins\config_plugin_helper\src\TA_ConfigPluginHelper.rc" // Config Plugin Helper library resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,84 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: bus.security.duty_monitor_framework.TA_DutyMonitorFramework - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP8422.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "..\..\.." /I "../../../../../build/win32_n/transactive" /I "../../../../../build/win32_n/transactive/core/exceptions/IDL/src" /I "../../../../../build/win32_n/transactive/core/message/IDL/src" /I "../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src" /I "..\..\..\..\cots\omniORB\omniORB_4.0.5\include" /I "..\..\..\..\cots\boost\boost_1_31_0" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /D "_AFXDLL" /Fo"../../../../../build/win32_nd/transactive/bus/security/duty_monitor_framework/" /Fd"../../../../../build/win32_nd/transactive/bus/security/duty_monitor_framework/" /FD /GZ /Zm300 /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DataCache.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DefaultRegionAssignmentMatrix.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyAgentAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyAgentAccessSingleton.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyDataStore.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyDataStoreSingleton.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyMonitorFrameworkException.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyRights.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\DutyRightsSingleton.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\IConfigDataObserver.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\IRegionDutyObserver.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\ISessionObserver.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\ISubsystemDutyObserver.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\RegionDutyMatrix.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\RegionDutyMatrixElement.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\SessionCache.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\SubsystemDutyMatrix.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\security\duty_monitor_framework\src\SubsystemDutyMatrixElement.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP8422.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP8423.tmp" with contents
+[
+/nologo /out:"../../../../../build/win32_nd/TA_DutyMonitorFramework_d.lib" 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DataCache.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DefaultRegionAssignmentMatrix.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyAgentAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyAgentAccessSingleton.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyDataStore.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyDataStoreSingleton.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyMonitorFrameworkException.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyRights.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\DutyRightsSingleton.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\IConfigDataObserver.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\IRegionDutyObserver.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\ISessionObserver.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\ISubsystemDutyObserver.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\RegionDutyMatrix.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\RegionDutyMatrixElement.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\SessionCache.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\SubsystemDutyMatrix.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\security\duty_monitor_framework\SubsystemDutyMatrixElement.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP8423.tmp"
+<h3>Output Window</h3>
+Compiling...
+DataCache.cpp
+DefaultRegionAssignmentMatrix.cpp
+DutyAgentAccess.cpp
+DutyAgentAccessSingleton.cpp
+DutyDataStore.cpp
+DutyDataStoreSingleton.cpp
+DutyMonitorFrameworkException.cpp
+DutyRights.cpp
+DutyRightsSingleton.cpp
+IConfigDataObserver.cpp
+IRegionDutyObserver.cpp
+ISessionObserver.cpp
+ISubsystemDutyObserver.cpp
+RegionDutyMatrix.cpp
+RegionDutyMatrixElement.cpp
+SessionCache.cpp
+SubsystemDutyMatrix.cpp
+SubsystemDutyMatrixElement.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_DutyMonitorFramework_d.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

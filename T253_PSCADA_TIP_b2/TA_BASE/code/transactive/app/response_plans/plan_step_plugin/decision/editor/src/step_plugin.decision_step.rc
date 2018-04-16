@@ -1,0 +1,173 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_STEP_PARAMETER_DECISION_MESSAGE "Decision Message"
+    IDS_STEP_PARAMETER_DECISION_RESPONSE_TIMEOUT "Response Timeout"
+    IDS_STEP_PARAMETER_YES_STEP "Yes Step"
+    IDS_STEP_PARAMETER_NO_STEP "No Step"
+    IDS_STEP_PARAMETER_YES_LABEL "Yes Button Label"
+    IDS_STEP_PARAMETER_NO_LABEL "No Button Label"
+    IDS_STEP_PARAMETER_PAUSE_LABEL "Pause Button Label"
+    IDS_STEP_PARAMETER_NO_ENABLED "No Button Enabled"
+    IDS_STEP_PARAMETER_PAUSE_ENABLED "Pause Button Enabled"
+    IDS_DECISION_REPORT_COMPLETION_STATUS "report completion status"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_DECISION_DLG DIALOGEX 0, 0, 353, 194
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_DECISION_MESSAGE,109,15,231,53,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    PUSHBUTTON      "...",IDC_YES_PICK_STEP_BUTTON,326,97,14,14
+    PUSHBUTTON      "...",IDC_NO_PICK_STEP_BUTTON,326,116,14,14
+    LTEXT           "Decision message:",IDC_STATIC,11,14,95,12,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Response timeout:",IDC_STATIC,11,74,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Yes step:",IDC_STATIC,11,97,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_YES_STEP,109,97,217,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "No step:",IDC_STATIC,11,116,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_NO_STEP,109,116,217,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "mm:ss",IDC_STATIC,179,75,41,14,SS_CENTERIMAGE
+    LTEXT           "Yes button label:",IDC_STATIC,11,135,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "No button label:",IDC_STATIC,11,154,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Pause button label:",IDC_STATIC,11,173,95,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_YES_BUTTON_LABEL,109,135,103,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_NO_BUTTON_LABEL,109,154,103,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PAUSE_BUTTON_LABEL,109,173,103,14,ES_AUTOHSCROLL
+    CONTROL         "No button enabled",IDC_NO_BUTTON_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,153,115,14
+    CONTROL         "Pause button enabled",IDC_PAUSE_BUTTON_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,171,124,14
+    CONTROL         "",IDC_DECISION_RESPONSE_TIMEOUT,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,110,75,51,15
+END
+
+IDD_DECISION_DLG DIALOGEX 0, 0, 326, 197
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Decision"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Plan:",IDC_STATIC,57,22,40,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DECISION_PLAN_PATH_EDIT,101,22,202,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Instance:",IDC_STATIC,57,45,40,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DECISION_ACTIVE_INSTANCE_EDIT,101,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Location:",IDC_STATIC,147,45,42,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DECISION_LOCATION_NAME_EDIT,193,45,37,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Step:",IDC_STATIC,246,45,24,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DECISION_STEP_NUMBER_EDIT,274,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_DECISION_QUERY_EDIT,45,80,269,85,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | NOT WS_TABSTOP
+    DEFPUSHBUTTON   "Yes",IDYES,69,176,58,14
+    PUSHBUTTON      "No",IDNO,140,176,58,14
+    ICON            32514,IDC_STATIC,11,10,20,20
+    GROUPBOX        "Step summary",IDC_STATIC,45,7,269,62,NOT WS_VISIBLE
+    PUSHBUTTON      "Pause",IDPAUSE,211,176,58,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_PLAN_STEP_EDIT_DECISION_DLG, DIALOG
+    BEGIN
+    END
+
+    IDD_DECISION_DLG, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

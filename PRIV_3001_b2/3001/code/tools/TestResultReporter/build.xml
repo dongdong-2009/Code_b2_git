@@ -1,0 +1,31 @@
+<project name="TestResultReporter" default="build" basedir="C:/9999_sandbox/CODE_4669/code/tools/TestResultReporter">
+  <target name="init">
+    <!-- This needs to point towards the servlet implementation for the webserver the system will be deployed on -->
+    <property name="servletapi" value="C:/Program Files/Apache Software Foundation/Tomcat 5.0/common/lib/servlet-api.jar"/>
+    <property name="dbdriverpath" value="C:/Program Files/PostgreSQL/8.0.0-beta4/jdbc"/>
+    <property name="dbdrivername" value="pgdev.307.jdbc3.jar"/>
+  </target>
+ 
+  <!-- Build all of the classes required by the servlet backend -->
+  <target name="build" depends="init">
+    <mkdir dir="${basedir}/deploy/classes"/>
+    <javac srcdir="${basedir}/src"
+           destdir="${basedir}/deploy/classes"
+           classpath="${servletapi}"
+           debug="true" />
+  </target>
+
+  <!-- Generates the deployable WAR file -->
+  <target name="package" depends="init,build">
+    <war destfile="${basedir}/TestResultReporter.war" webxml="${basedir}/deploy/web.xml">
+      <classes dir="${basedir}/deploy/classes"/>
+      <zipfileset dir="${basedir}/deploy/jsp"
+                  prefix="WEB-INF/jsp"/>
+      <zipfileset dir="${basedir}/deploy/css"
+                  prefix="css"/>
+      <lib dir="${dbdriverpath}">
+        <include name="${dbdrivername}"/>
+      </lib>
+    </war>
+  </target>
+</project>

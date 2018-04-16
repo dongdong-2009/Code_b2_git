@@ -1,0 +1,10 @@
+
+ta-lib TA_TrainSelectionComponent
+	: [ glob src/*.cpp :
+			src/MFCTrainSelectorGUI.cpp
+			src/TrainGroupComboBox.cpp
+			src/TrainListCtrl.cpp
+			src/TrainSelectorGUI.cpp
+			src/TrainStaticGroupComboBox.cpp
+		]
+	;

@@ -1,0 +1,559 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INSPECTOR_PANEL_DIALOG DIALOGEX 0, 0, 321, 220
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Inspector Panel"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_STATUS,12,156,300,37,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Help",ID_HELP_IP,7,202,50,14
+    PUSHBUTTON      "Close",IDCANCEL,265,202,50,14
+    CONTROL         "Tab1",IDC_MAINTAB,"SysTabControl32",NOT WS_VISIBLE | 
+                    WS_TABSTOP,7,26,307,120
+    LTEXT           "",IDC_EQUIPMENT_DESCRIPTION,7,4,307,17
+    GROUPBOX        "Status",IDC_STATUS_GROUP_BOX,7,147,308,51
+    LTEXT           "",IDC_COUNT,274,14,23,12,NOT WS_VISIBLE
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "InspectorPanel MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "InspectorPanel\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "InspectorPanel.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "InspectorPanel Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INSPECTOR_PANEL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INFORMATION DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INFO_DATAPOINTLIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,1,2,297,97
+END
+
+IDD_CONTROL DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_CONTROLLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | 
+                    WS_BORDER | WS_TABSTOP,1,2,297,97
+END
+
+IDD_TAG DIALOG DISCARDABLE  0, 0, 300, 109
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Tag",IDC_TAG,5,0,290,85
+    RADIOBUTTON     "Not Tagged",IDC_RADIO_NOT_TAGGED,11,10,47,11,
+                    WS_DISABLED
+    RADIOBUTTON     "Tag",IDC_RADIO_TAG,11,22,45,11,WS_DISABLED
+    RADIOBUTTON     "Tag with PTW",IDC_RADIO_TAG_PTW,11,34,57,11,WS_DISABLED
+    LTEXT           "PTW ID",IDC_STATIC,83,11,33,9
+    EDITTEXT        IDC_PTW_ID,83,20,110,31,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Comment",IDC_STATIC,12,47,33,9
+    EDITTEXT        IDC_COMMENT,12,56,275,24,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    WS_DISABLED | WS_VSCROLL
+    GROUPBOX        "Inhibit",IDC_INHIBIT,204,0,91,52
+    PUSHBUTTON      "Apply",IDC_APPLY_TAG,245,89,50,14,WS_DISABLED
+    CONTROL         "Inhibit Scan",IDC_SCANINHIBIT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,213,7,54,10
+    CONTROL         "Inhibit Control",IDC_CONTROLINHIBIT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,213,40,61,10
+    CONTROL         "Inhibit Alarm",IDC_ALARMINHIBIT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,222,18,57,10
+    CONTROL         "Inhibit MMS",IDC_MMSINHIBIT_CHECK,"Button",
+                    BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,232,29,54,10
+END
+
+IDD_CONFIRM_CONTROL_DIALOG DIALOG DISCARDABLE  0, 0, 269, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Command confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CC,5,86,50,14
+    GROUPBOX        "Please confirm command...",IDC_STATIC,5,7,257,76
+    LTEXT           "Equipment",IDC_STATIC,14,22,43,8
+    LTEXT           "Attribute",IDC_STATIC,14,47,40,13
+    LTEXT           "Command",IDC_STATIC,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,62,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,62,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,62,64,176,11,SS_SUNKEN
+END
+
+IDD_CONFIRM_TAG_DIALOG DIALOG DISCARDABLE  0, 0, 269, 104
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tag confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CT,5,86,50,14
+    GROUPBOX        "Please confirm tag...",IDC_STATIC,5,7,257,75
+    LTEXT           "Equipment",IDC_STATIC,15,22,43,13
+    LTEXT           "Tag",IDC_STATIC,15,47,40,13
+    LTEXT           "Inhibit",IDC_STATIC,15,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,61,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_TAG,61,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_INHIBIT,61,64,176,11,SS_SUNKEN
+END
+
+IDD_MAINTENANCE DIALOG DISCARDABLE  0, 0, 474, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INFO_MAINTENANCELIST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_EDITLABELS | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,25,460,77
+    LTEXT           "Description",IDC_STATIC,10,7,40,17
+    LTEXT           "Type",IDC_STATIC,110,7,28,17
+    LTEXT           "Control Inhibit",IDC_STATIC,170,7,28,17
+    LTEXT           "Scan Inhibit",IDC_STATIC,200,7,28,17
+    LTEXT           "Alarm Inhibit",IDC_STATIC,230,7,28,17
+    LTEXT           "Override Enable",IDC_STATIC,260,7,28,17
+    LTEXT           "Override Value",IDC_STATIC,290,7,28,17
+    LTEXT           "Current Value",IDC_STATIC,378,7,28,17
+END
+
+IDD_NOTES DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDITNOTES,1,2,297,76,ES_MULTILINE | ES_WANTRETURN | 
+                    WS_DISABLED | WS_VSCROLL
+    PUSHBUTTON      "Update",IDC_UPDATE,32,83,50,14,WS_DISABLED
+    PUSHBUTTON      "Clear",IDC_REMOVE,222,83,50,14,WS_DISABLED
+END
+
+IDD_CONFIRM_OVERRIDE_DIALOG DIALOG DISCARDABLE  0, 0, 269, 96
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Override confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Override",IDOK,157,79,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,212,79,50,14
+    PUSHBUTTON      "Help",ID_HELP_CO,5,79,50,14
+    GROUPBOX        "Please enter override value...",IDC_STATIC,5,7,257,68
+    LTEXT           "Equipment",IDC_STATIC,15,22,43,13
+    LTEXT           "Attribute",IDC_STATIC,15,44,40,13
+    LTEXT           "Value",IDC_STATIC,15,58,41,13
+    LTEXT           "",IDC_EQUIPMENT,61,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,61,44,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,61,58,176,11,SS_SUNKEN
+END
+
+IDD_LIMITS DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INFO_DATAPOINTLIST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,1,2,107,97
+    EDITTEXT        IDC_LIMIT_INFO,113,2,184,22,ES_MULTILINE | ES_READONLY | 
+                    ES_WANTRETURN | NOT WS_TABSTOP
+    CONTROL         "List1",IDC_LIMITS_DETAILSLIST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,113,23,184,75
+END
+
+IDD_STATUS DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_STATUS_INFO,1,2,297,97,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_INHIBIT DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INHIBIT_DATAPOINTLIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,1,2,297,97
+END
+
+IDD_OVERRIDE DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_OVERRIDE_DATAPOINTLIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,1,2,297,97
+END
+
+IDD_METER DIALOG DISCARDABLE  0, 0, 300, 101
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_METER_DATAPOINTLIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER | WS_TABSTOP,1,2,297,97
+END
+
+IDD_CONFIRM_ADJUST_DIALOG DIALOG DISCARDABLE  0, 0, 269, 103
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Command confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CA,5,86,50,14
+    GROUPBOX        "Please confirm metering adjustment...",IDC_STATIC,5,7,
+                    257,76
+    LTEXT           "Equipment",IDC_STATIC,14,22,43,8
+    LTEXT           "Meter",IDC_STATIC,14,47,40,13
+    LTEXT           "Adjustment",IDC_STATIC,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,62,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,62,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,62,64,176,11,SS_SUNKEN
+END
+
+IDD_CONFIRM_DIRECT_CONTROL_DIALOG DIALOG DISCARDABLE  0, 0, 307, 121
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDCONFIRM,250,97,50,14
+    GROUPBOX        "Please confirm command...",IDC_STATIC,0,0,307,118
+    LTEXT           "Equipment",IDC_STATIC,14,22,43,8
+    LTEXT           "Attribute",IDC_STATIC,14,47,40,13
+    LTEXT           "Command",IDC_STATIC,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,57,22,243,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,57,47,243,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,57,64,243,11,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INFORMATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+    END
+
+    IDD_CONTROL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+    END
+
+    IDD_TAG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+    END
+
+    IDD_CONFIRM_CONTROL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_CONFIRM_TAG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_MAINTENANCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+    END
+
+    IDD_NOTES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 97
+    END
+
+    IDD_CONFIRM_OVERRIDE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_LIMITS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 297
+        TOPMARGIN, 7
+    END
+
+    IDD_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_INHIBIT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+    END
+
+    IDD_OVERRIDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+    END
+
+    IDD_METER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+    END
+
+    IDD_CONFIRM_ADJUST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 96
+    END
+
+    IDD_CONFIRM_DIRECT_CONTROL_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 57
+        VERTGUIDE, 300
+        BOTTOMMARGIN, 118
+        HORZGUIDE, 111
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\InspectorPanel.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\InspectorPanel.ico"
+IDI_GREEN               ICON    DISCARDABLE     "..\\res\\blank.ico"
+IDI_ORANGE              ICON    DISCARDABLE     "..\\res\\green1.ico"
+IDI_BLUE                ICON    DISCARDABLE     "..\\res\\green2.ico"
+IDI_RED                 ICON    DISCARDABLE     "..\\res\\green3.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_GREEN               BITMAP  DISCARDABLE     "..\\res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Inspector Panel"
+    IDS_ENABLE_DATAPOINT    "enable %1 for %2"
+    IDS_DISABLE_DATAPOINT   "disable %1 for %2"
+    IDS_APPLY_TAG_CHANGES   "apply tag changes"
+    IDS_SCAN_INHIBIT        "Scan Inhibit"
+    IDS_ALARM_INHIBIT       "Alarm Inhibit"
+    IDS_MMS_INHIBIT         "MMS Inhibit"
+    IDS_CONTROL_INHIBIT     "Control Inhibit"
+    IDS_OVERRIDE            "override"
+    IDS_REMOVE_EQUIPMENT_STATUS "remove equipment status"
+    IDS_UPDATE_EQUIPMENT_STATUS "update equipment status"
+    IDS_REMOVE_EQUIPMENT_NOTES "remove equipment notes"
+    IDS_UPDATE_EQUIPMENT_NOTES "update equipment notes"
+    IDS_OVERRIDE_ALARM_ENABLED "%1"
+    IDS_OVERRIDE_ALARM_THRESHOLD "%1"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\InspectorPanel.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

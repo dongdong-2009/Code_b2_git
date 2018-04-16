@@ -1,0 +1,900 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\VideoDisplayManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_QUADS DIALOGEX 0, 0, 411, 138
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "????"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_QUADTREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,4,7,403,124
+END
+
+IDD_SEQUENCES DIALOGEX 0, 0, 411, 136
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "??"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_SEQUENCETREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,4,7,403,123
+END
+
+IDD_SEQUENCEEDITOR_DIALOG DIALOGEX 0, 0, 308, 180
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "视频序列编辑器"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    LTEXT           "序列描述",IDC_SE_DESCRIPTION_LABEL,9,20,41,8
+    EDITTEXT        IDC_SE_DESCRIPTION_EDIT_BOX,50,19,155,12,ES_AUTOHSCROLL
+    LTEXT           "停留时间",IDC_SE_DWELLTIME_LABEL,214,20,37,8
+    EDITTEXT        IDC_SE_DWELLTIME_EDIT_BOX,250,19,14,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_DWELLTIME_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ARROWKEYS,264,18,10,14
+    LTEXT           "秒",IDC_SE_SECONDS_LABEL,276,20,12,8
+    LTEXT           "摄像头",ID_SE_AVAILABLECAMERAS_LABEL,9,41,65,8
+    CONTROL         "Tree1",IDC_SE_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,7,53,121,98
+    LTEXT           "序列列表",IDC_SE_SOURCES_INSEQUENCE_LABEL,158,41,105,8,SS_CENTERIMAGE
+    LISTBOX         IDC_SE_SEQUENCES_LIST,157,53,121,98,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "应用",IDC_SE_SAVE_BUTTON,136,159,74,14
+    PUSHBUTTON      "关闭",IDCANCEL,227,159,74,14
+    PUSHBUTTON      "??",IDC_SE_ADD_BUTTON,134,81,17,14,BS_ICON
+    PUSHBUTTON      "??",IDC_SE_REMOVE_BUTTON,134,105,17,14,BS_ICON
+    PUSHBUTTON      "?",IDC_SE_TOP_BUTTON,284,75,17,14,BS_ICON
+    PUSHBUTTON      "?",IDC_SE_UP_BUTTON,284,89,17,14,BS_ICON
+    PUSHBUTTON      "?",IDC_SE_DOWN_BUTTON,284,103,17,14,BS_ICON
+    PUSHBUTTON      "?",IDC_SE_BOTTOM_BUTTON,284,117,17,14,BS_ICON
+END
+
+IDD_CAMERAS DIALOGEX 0, 0, 412, 148
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "???"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,4,7,405,134
+END
+
+IDD_TRAINS DIALOGEX 0, 0, 411, 147
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "??"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_TRAINSLIST_IB,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,3,20,200,120
+    CONTROL         "List1",IDC_TRAINSLIST_OB,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,208,20,199,120
+    LTEXT           "??",IDC_STATIC,3,5,40,8
+    LTEXT           "??",IDC_STATIC,208,5,42,8
+END
+
+IDD_TRAINBORNECONTROLLER DIALOGEX 0, 0, 306, 177
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "?????????"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CTEXT           "????",IDC_TC_TRAIN_LABEL,127,7,52,8
+    GROUPBOX        "?? 1",IDC_TRAINCAR1,32,21,80,58,BS_CENTER
+    GROUPBOX        "?? 2",IDC_TRAINCAR2,113,21,80,58,BS_CENTER
+    GROUPBOX        "?? 3",IDC_TRAINCAR3,194,21,80,58,BS_CENTER
+    CONTROL         "?",IDC_QUADRADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,28,91,27,10
+    CONTROL         "??",IDC_SINGLERADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,112,91,30,10
+    CONTROL         "??",IDC_SEQUENCERADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,197,91,42,10
+    COMBOBOX        IDC_SEQUENCECOMBO,197,105,102,55,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         182,IDC_TRAINSINGLEMON,"Static",SS_BITMAP,111,105,63,47
+    CONTROL         183,IDC_TRAINQUADMON1,"Static",SS_BITMAP,26,105,32,24
+    CONTROL         183,IDC_TRAINQUADMON2,"Static",SS_BITMAP,57,105,32,24
+    CONTROL         183,IDC_TRAINQUADMON3,"Static",SS_BITMAP,26,128,32,24
+    CONTROL         183,IDC_TRAINQUADMON4,"Static",SS_BITMAP,57,128,32,24
+    PUSHBUTTON      "??(&A)",IDC_TC_APPLY_BUTTON,193,156,48,14
+    PUSHBUTTON      "??(&C)",IDCANCEL,250,156,48,14
+    CONTROL         130,IDC_TRAINCAM1,"Static",SS_BITMAP,10,31,20,20
+    CONTROL         129,IDC_TRAINCAM2,"Static",SS_BITMAP,35,31,20,20
+    CONTROL         130,IDC_TRAINCAM3,"Static",SS_BITMAP,89,31,20,20
+    CONTROL         129,IDC_TRAINCAM4,"Static",SS_BITMAP,116,31,20,20
+    CONTROL         130,IDC_TRAINCAM5,"Static",SS_BITMAP,170,31,20,20
+    CONTROL         129,IDC_TRAINCAM6,"Static",SS_BITMAP,197,31,20,20
+    CONTROL         130,IDC_TRAINCAM7,"Static",SS_BITMAP,251,31,20,20
+    CONTROL         129,IDC_TRAINCAM8,"Static",SS_BITMAP,276,31,20,20
+    LTEXT           "??? 1",IDC_CAM1_LABEL,9,52,22,8
+    LTEXT           "??? 2",IDC_CAM2_LABEL,36,52,22,8
+    LTEXT           "??? 3",IDC_CAM3_LABEL,89,52,22,8
+    LTEXT           "??? 4",IDC_CAM4_LABEL,116,52,22,8
+    LTEXT           "??? 5",IDC_CAM5_LABEL,169,52,22,8
+    LTEXT           "??? 6",IDC_CAM6_LABEL,197,52,22,8
+    LTEXT           "??? 7",IDC_CAM7_LABEL,251,52,22,8
+    LTEXT           "??? 8",IDC_CAM8_LABEL,277,52,22,8
+    CTEXT           "",IDC_QUAD1_TEXT,31,113,22,8
+    CTEXT           "",IDC_QUAD2_TEXT,62,113,22,8
+    CTEXT           "",IDC_QUAD3_TEXT,31,135,22,8
+    CTEXT           "",IDC_QUAD4_TEXT,62,135,22,8
+    CTEXT           "",IDC_SINGLEMON_TEXT,131,123,22,8
+END
+
+IDD_DLG_INITPROGRESS DIALOGEX 0, 0, 212, 52
+STYLE DS_SETFONT | WS_POPUP | WS_BORDER
+FONT 10, "System", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "??",IDCANCEL,76,38,50,14,NOT WS_VISIBLE
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",PBS_SMOOTH | WS_BORDER,7,19,198,16
+    LTEXT           "Static",IDC_STATIC_TEXT1,7,7,198,10
+    LTEXT           "Static",IDC_STATIC_TEXT2,7,38,29,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT3,163,37,24,8,NOT WS_VISIBLE
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_IMOS DIALOGEX 0, 0, 669, 368
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "闭路电视系统管理器（控制中心）"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         144,IDC_WALL_MONITOR_1,"Static",SS_BITMAP,21,31,65,41
+    CONTROL         144,IDC_WALL_MONITOR_2,"Static",SS_BITMAP,88,31,65,41
+    CONTROL         144,IDC_WALL_MONITOR_3,"Static",SS_BITMAP,155,31,65,41
+    CONTROL         144,IDC_WALL_MONITOR_4,"Static",SS_BITMAP,222,31,65,41
+    CONTROL         144,IDC_WALL_MONITOR_5,"Static",SS_BITMAP,289,31,65,41
+    CONTROL         144,IDC_WALL_MONITOR_6,"Static",SS_BITMAP,356,31,65,41
+    GROUPBOX        "显示器",IDC_COMMON_BOX,7,7,432,129
+    CONTROL         198,IDC_CONSOLE_MONITOR_1,"Static",SS_BITMAP,181,89,65,41
+    CTEXT           "1",IDC_LABEL_WALL_MONITOR_1,68,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "2",IDC_LABEL_WALL_MONITOR_2,135,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "3",IDC_LABEL_WALL_MONITOR_3,202,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "4",IDC_LABEL_WALL_MONITOR_4,269,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "5",IDC_LABEL_WALL_MONITOR_5,336,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "6",IDC_LABEL_WALL_MONITOR_6,403,32,15,8,0,WS_EX_TRANSPARENT
+    CTEXT           "本机显示器",IDC_LABEL_OVERVIEW_DISPLAY,177,77,71,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_1,22,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_2,89,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_3,156,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_4,223,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_5,290,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_6,357,43,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEXT_CONSOLE_MONITOR_2,182,101,63,16,0,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_MENU_LINE,"Static",SS_ETCHEDHORZ,7,0,568,1
+    GROUPBOX        "视频序列",IDC_GF_SEQUENCE_OCC,450,7,211,129
+    COMBOBOX        IDC_GF_OCC_SEQ_STATION_COMB,458,22,108,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_GF_SEQENCE_TREE,"SysTreeView32",TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,458,36,108,75
+    PUSHBUTTON      "编辑",IDC_GF_EDIT_SEQ_BTN,498,115,38,12
+    LISTBOX         IDC_GF_SEQ_LST,572,23,81,102,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_GF_OCC_SEL_STATION_COMB,18,160,81,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_GF_OCC_STATION_PIC,"Static",SS_BLACKFRAME,111,155,543,198
+    LTEXT           "OPS 显示器",IDC_OPC_MONITOR_DESC,193,17,48,8
+    GROUPBOX        "选择摄像头",IDC_STATIC,7,141,655,220
+    LISTBOX         IDC_SCHEMATIC_SEL_LIST,18,181,81,172,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_RECORDINGUNIT_DIALOG DIALOGEX 0, 0, 131, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "???????"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_RU_RECORDINGUNIT_EDIT,7,13,117,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_RU_MONITOR_EDIT,7,36,117,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "?",IDC_RU_STOP_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,7,55,17,14
+    CONTROL         "?",IDC_RU_RECORD_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,24,55,17,14
+    CONTROL         "?",IDC_RU_REWIND_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,41,55,17,14
+    CONTROL         "??",IDC_RU_PLAY_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,58,55,32,14
+    CONTROL         "?",IDC_RU_FAST_FORWARD_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,90,55,17,14
+    CONTROL         "??",IDC_RU_PAUSE_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,107,55,17,14
+    LTEXT           "????:",IDC_STATIC,9,4,87,8
+    LTEXT           "??:",IDC_STATIC,9,27,87,8
+END
+
+IDD_QUADCONTROLLER_DIALOG DIALOGEX 0, 0, 253, 137
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "???"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_QC_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,7,29,121,101
+    PUSHBUTTON      "??(&A)",IDC_QC_APPLY_BUTTON,139,116,48,14
+    PUSHBUTTON      "??(&C)",IDCANCEL,197,116,48,14
+    CONTROL         173,IDC_QUADSEG1,"Static",SS_BITMAP,137,29,55,41
+    CONTROL         173,IDC_QUADSEG2,"Static",SS_BITMAP,191,29,55,41
+    CONTROL         173,IDC_QUADSEG3,"Static",SS_BITMAP,137,69,55,41
+    CONTROL         173,IDC_QUADSEG4,"Static",SS_BITMAP,191,69,55,41
+    LTEXT           "?????:",ID_QC_AVAILABLECAMERAS_LABEL,8,18,65,8
+    CTEXT           "",IDC_TEXT_QUADSEG_1,141,47,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_3,141,85,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_4,195,85,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_2,195,47,48,8
+    EDITTEXT        IDC_SEQUENCENAMEDESC_EDIT,23,6,208,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END
+
+IDD_SAVEAS_DIALOG DIALOGEX 0, 0, 242, 156
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "另存为"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "保存",IDOK,124,135,50,14
+    PUSHBUTTON      "关闭",IDCANCEL,185,135,50,14
+    CONTROL         "Tree1",IDC_SAVEAS_SEQUENCETREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,7,7,228,122
+END
+
+IDD_LOCATION_SELECTION DIALOGEX 0, 0, 115, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "??????"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "??",IDOK,7,26,43,13
+    PUSHBUTTON      "??",IDCANCEL,64,26,43,13
+    LTEXT           "??:",IDC_STATIC,7,9,31,8
+    COMBOBOX        IDC_LOCSEL_COMBOBOX_LOCATIONS,45,7,63,146,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_STATIONDISPLAY_DIALOG_IMOS DIALOGEX 0, 0, 696, 368
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "闭路电视系统管理器(车站)"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         198,IDC_QUAD1,"Static",SS_BITMAP,15,35,65,41
+    CONTROL         198,IDC_QUAD3,"Static",SS_BITMAP,15,77,65,41
+    CONTROL         198,IDC_QUAD2,"Static",SS_BITMAP,82,35,65,41
+    CONTROL         198,IDC_QUAD4,"Static",SS_BITMAP,82,77,65,41
+    CONTROL         198,IDC_LOCAL_MONITOR,"Static",SS_BITMAP,156,58,65,41
+    LTEXT           "1",IDC_QUAD1_INDEX,62,36,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "3",IDC_QUAD3_INDEX,62,78,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "2",IDC_QUAD2_INDEX,129,36,8,8,0,WS_EX_TRANSPARENT
+    LTEXT           "4",IDC_QUAD4_INDEX,129,78,8,8,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_QUAD1_TEXT,16,47,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_QUAD3_TEXT,16,89,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_QUAD2_TEXT,83,47,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_QUAD4_TEXT,83,89,63,16,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_LOCAL_MONITOR_TEXT,157,70,63,16,0,WS_EX_TRANSPARENT
+    GROUPBOX        "显示器",IDC_STATION_MONITOR_GROUP,7,7,221,121,0,WS_EX_TRANSPARENT
+    GROUPBOX        "视频序列",IDC_STATION_SEQUENCE_GROUP,237,7,274,121
+    COMBOBOX        IDC_STATION_SEQ_STATION_COMB,244,20,143,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATION_SEQENCE_TREE,"SysTreeView32",TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,244,36,143,66
+    PUSHBUTTON      "编辑",IDC_STATION_EDIT_SEQ_BTN,297,107,50,14
+    LISTBOX         IDC_STATION_SEQ_LST,397,18,108,103,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    GROUPBOX        "PTZ 控制",IDC_STATION_PTZ_GROUP,521,7,165,121
+    COMBOBOX        IDC_STATION_SEL_STATION_COMB,19,156,89,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATION_STATION_PIC,"Static",SS_BLACKFRAME,122,151,543,194
+    GROUPBOX        "选择摄像头",IDC_STATION_PIC_GROUP,7,135,680,226
+    PUSHBUTTON      "1",IDC_PT_LEFT_UP_BTN,529,23,28,25,BS_ICON
+    PUSHBUTTON      "2",IDC_TILT_UP_BTN,557,23,28,25,BS_ICON
+    PUSHBUTTON      "3",IDC_PT_RIGHT_UP_BTN,585,23,28,25,BS_ICON
+    PUSHBUTTON      "4",IDC_PAN_RIGHT_BTN,585,48,28,25,BS_ICON
+    PUSHBUTTON      "5",IDC_PT_RIGHT_DOWN_BTN,585,73,28,25,BS_ICON
+    PUSHBUTTON      "6",IDC_TILT_DOWN_BTN,557,73,28,25,BS_ICON
+    PUSHBUTTON      "7",IDC_PT_LEFT_DOWN_BTN,529,73,28,25,BS_ICON
+    PUSHBUTTON      "8",IDC_PAN_LEFT_BTN,529,48,28,25,BS_ICON
+    PUSHBUTTON      "9",IDC_ZOOM_IN_BTN,619,48,28,25,BS_ICON
+    PUSHBUTTON      "10",IDC_ZOOM_OUT_BTN,651,48,28,25,BS_ICON
+    CTEXT           "四分屏",IDC_STATIC_QUAD,63,20,35,8
+    CONTROL         "本机显示器",181,"Static",WS_GROUP | 0x20,45,41,8,0
+    LTEXT           "本机显示器",IDC_STATIC,168,45,41,8
+    LISTBOX         IDC_SCHEMATIC_SEL_LIST,19,175,89,170,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_VIDEO_PLAY_IMOS DIALOGEX 0, 0, 543, 391
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "视频播放窗口"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_IMOS_MEDIAOCXCTRL1,
+                    "{067A4418-EBAC-4394-BFBE-8C533BA6503A}",WS_TABSTOP,0,0,541,390
+END
+
+IDD_VIDEO_PLAY_MODBUS DIALOGEX 0, 0, 543, 391
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "视频播放窗口"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_ACTIVEXCLIENTCTRL1,
+                    "{489B7964-F1E4-4826-9362-9E0BCA75841F}",WS_TABSTOP,0,0,543,390
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_MODBUS DIALOGEX 0, 0, 1003, 420
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "闭路电视系统管理器（控制中心）"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "显示器",IDC_COMMON_BOX,7,3,775,187
+    CTEXT           "单画面",IDC_LABEL_OVERVIEW_DISPLAY,76,124,26,8
+    CONTROL         "",IDC_MENU_LINE,"Static",SS_ETCHEDHORZ,7,0,568,1
+    GROUPBOX        "视频序列",IDC_GF_SEQUENCE_OCC,787,3,211,187
+    COMBOBOX        IDC_GF_OCC_SEQ_STATION_COMB,795,22,108,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_GF_SEQENCE_TREE,"SysTreeView32",TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,795,36,108,128
+    PUSHBUTTON      "编辑",IDC_GF_EDIT_SEQ_BTN,835,170,38,12
+    LISTBOX         IDC_GF_SEQ_LST,909,23,81,160,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_GF_OCC_SEL_STATION_COMB,18,216,81,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_GF_OCC_STATION_PIC,"Static",SS_BLACKFRAME,111,206,879,203
+    GROUPBOX        "选择摄像头",IDC_STATIC,7,195,990,220
+    LTEXT           "四分屏",IDC_OPC_MONITOR_DESC2,76,24,26,8
+    LTEXT           "四分屏",IDC_OPC_MONITOR_DESC4,230,24,26,8
+    LTEXT           "四分屏",IDC_OPC_MONITOR_DESC6,384,24,26,8
+    LTEXT           "四分屏",IDC_OPC_MONITOR_DESC8,537,24,26,8
+    LTEXT           "四分屏",IDC_OPC_MONITOR_DESC10,692,24,26,8
+    CTEXT           "单画面",IDC_LABEL_OVERVIEW_DISPLAY2,230,124,26,8
+    CTEXT           "单画面",IDC_LABEL_OVERVIEW_DISPLAY3,384,124,26,8
+    CTEXT           "单画面",IDC_LABEL_OVERVIEW_DISPLAY4,537,124,26,8
+    CTEXT           "单画面",IDC_LABEL_OVERVIEW_DISPLAY5,692,124,26,8
+    GROUPBOX        "本地显示器",IDC_MON_GROUP_LOCAL,15,15,144,168
+    GROUPBOX        "OPS显示器1",IDC_MON_GROUP_OPS1,169,15,144,168
+    GROUPBOX        "OPS显示器2",IDC_MON_GROUP_OPS2,323,15,144,168
+    GROUPBOX        "OPS显示器3",IDC_MON_GROUP_OPS3,476,15,144,168
+    GROUPBOX        "OPS显示器4",IDC_MON_GROUP_OPS4,632,15,144,168
+    LISTBOX         IDC_SCHEMATIC_SEL_LIST,18,236,81,173,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+IDD_STATIONDISPLAY_DIALOG_MODBUS DIALOGEX 0, 0, 944, 421
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "闭路电视系统管理器(车站)"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "本地显示器",IDC_MON_GROUP_STATION_LOCAL,7,4,148,173,0,WS_EX_TRANSPARENT
+    GROUPBOX        "视频序列",IDC_STATION_SEQUENCE_GROUP,487,4,274,173
+    COMBOBOX        IDC_STATION_SEQ_STATION_COMB,494,20,143,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATION_SEQENCE_TREE,"SysTreeView32",TVS_SHOWSELALWAYS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,494,36,143,66
+    PUSHBUTTON      "编辑",IDC_STATION_EDIT_SEQ_BTN,547,107,50,14
+    LISTBOX         IDC_STATION_SEQ_LST,647,18,108,103,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    GROUPBOX        "PTZ 控制",IDC_STATION_PTZ_GROUP,771,4,165,173
+    COMBOBOX        IDC_STATION_SEL_STATION_COMB,21,202,89,30,CBS_DROPDOWN | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATION_STATION_PIC,"Static",SS_BLACKFRAME,122,195,806,213
+    GROUPBOX        "选择摄像头",IDC_STATION_PIC_GROUP,7,183,929,234
+    PUSHBUTTON      "1",IDC_PT_LEFT_UP_BTN,779,23,28,25,BS_ICON
+    PUSHBUTTON      "2",IDC_TILT_UP_BTN,807,23,28,25,BS_ICON
+    PUSHBUTTON      "3",IDC_PT_RIGHT_UP_BTN,835,23,28,25,BS_ICON
+    PUSHBUTTON      "4",IDC_PAN_RIGHT_BTN,835,48,28,25,BS_ICON
+    PUSHBUTTON      "5",IDC_PT_RIGHT_DOWN_BTN,835,73,28,25,BS_ICON
+    PUSHBUTTON      "6",IDC_TILT_DOWN_BTN,807,73,28,25,BS_ICON
+    PUSHBUTTON      "7",IDC_PT_LEFT_DOWN_BTN,779,73,28,25,BS_ICON
+    PUSHBUTTON      "8",IDC_PAN_LEFT_BTN,779,48,28,25,BS_ICON
+    PUSHBUTTON      "9",IDC_ZOOM_IN_BTN,869,48,28,25,BS_ICON
+    PUSHBUTTON      "10",IDC_ZOOM_OUT_BTN,901,48,28,25,BS_ICON
+    CONTROL         "本机显示器",181,"Static",WS_GROUP | 0x20,45,41,8,0
+    GROUPBOX        "监视器1",IDC_MON_GROUP_STATION_1,169,4,148,173,0,WS_EX_TRANSPARENT
+    GROUPBOX        "监视器2",IDC_MON_GROUP_STATION_2,331,4,148,173,0,WS_EX_TRANSPARENT
+    CTEXT           "四分屏",IDC_STATIC_QUAD,62,15,35,8
+    CTEXT           "单画面",IDC_STATIC,62,118,35,8
+    CTEXT           "四分屏",IDC_STATIC_QUAD2,229,15,30,8
+    CTEXT           "单画面",IDC_STATIC,229,118,30,8
+    CTEXT           "四分屏",IDC_STATIC_QUAD3,387,15,35,8
+    CTEXT           "单画面",IDC_STATIC,387,118,35,8
+    LISTBOX         IDC_SCHEMATIC_SEL_LIST,21,222,89,186,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,27,13,50
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "VideoDisplayManager MFC Application"
+            VALUE "FileVersion", "01, 27, 13, 50"
+            VALUE "InternalName", "VideoDisplayManager"
+            VALUE "LegalCopyright", "?? (C) 2003"
+            VALUE "OriginalFilename", "VideoDisplayManager.EXE"
+            VALUE "ProductName", "VideoDisplayManager Application"
+            VALUE "ProductVersion", "01, 27, 13, 50"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_QUADS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 131
+    END
+
+    IDD_SEQUENCES, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 407
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_SEQUENCEEDITOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 301
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_CAMERAS, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 409
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_TRAINS, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 407
+        VERTGUIDE, 203
+        VERTGUIDE, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 140
+    END
+
+    IDD_TRAINBORNECONTROLLER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 299
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 170
+    END
+
+    IDD_DLG_INITPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+
+    IDD_VIDEODISPLAYMANAGER_DIALOG_IMOS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 646
+        VERTGUIDE, 574
+        VERTGUIDE, 575
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 364
+        HORZGUIDE, 41
+    END
+
+    IDD_STATIONDISPLAY_DIALOG_IMOS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 648
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 361
+        HORZGUIDE, 139
+        HORZGUIDE, 361
+    END
+
+    IDD_VIDEO_PLAY_MODBUS, DIALOG
+    BEGIN
+        TOPMARGIN, 1
+        BOTTOMMARGIN, 390
+    END
+
+    IDD_VIDEODISPLAYMANAGER_DIALOG_MODBUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 980
+        VERTGUIDE, 574
+        VERTGUIDE, 575
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 416
+        HORZGUIDE, 41
+    END
+
+    IDD_STATIONDISPLAY_DIALOG_MODBUS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 896
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 361
+        HORZGUIDE, 139
+        HORZGUIDE, 361
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TRAINCAMRIGHT       BITMAP                  "..\\res\\TrainCamRight.bmp"
+IDB_TRAINCAMLEFT        BITMAP                  "..\\res\\TrainCamLeft.bmp"
+IDB_TRAINCAMRIGHT_HILITE BITMAP                  "..\\res\\TrainCamRightHighLite.bmp"
+IDB_TRAINCAMLEFT_HILITE BITMAP                  "..\\res\\TrainCamLeftHighLite.bmp"
+IDB_VMON_HILITE         BITMAP                  "..\\res\\VmonHighLite.bmp"
+IDB_VMON                BITMAP                  "..\\res\\Vmon.bmp"
+IDB_QUADVMON            BITMAP                  "..\\res\\QuadVmon.bmp"
+IDB_QUADVMON_HILITE     BITMAP                  "..\\res\\QuadVmonHighLite.bmp"
+IDB_VCR                 BITMAP                  "..\\res\\VCR.bmp"
+IDB_VCR_HILITE          BITMAP                  "..\\res\\VCRHighLite.bmp"
+IDB_SINGLEVMON          BITMAP                  "..\\res\\SingleVmon.bmp"
+IDB_SINGLEVMON_HILITE   BITMAP                  "..\\res\\SingleVmonHighLite.bmp"
+IDB_ODS                 BITMAP                  "..\\res\\ODS.bmp"
+IDB_ODS_HILITE          BITMAP                  "..\\res\\ODSHighLite.bmp"
+IDB_SINGLEVMON_DISABLED BITMAP                  "..\\res\\SingleVmonDisabled.bmp"
+IDB_QUADVMON_DISABLED   BITMAP                  "..\\res\\QuadVmonDisabled.bmp"
+IDB_SINGLEVMON_FORTRAIN BITMAP                  "..\\res\\SingleVmonForTrain.bmp"
+IDB_SINGLEVMON_FORTRAIN_HILITE BITMAP                  "..\\res\\SingleVmonForTrainHighLite.bmp"
+IDB_QUADSEG             BITMAP                  "..\\res\\QuadSegment.bmp"
+IDB_QUADSEG_HILITE      BITMAP                  "..\\res\\QuadSegmentHighLite.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\VideoDisplayManager.ico"
+IDI_CAMERA              ICON                    "..\\res\\camera.ico"
+IDI_CLOSEDFOLDER        ICON                    "..\\res\\closedfolder.ico"
+IDI_OPENFOLDER          ICON                    "..\\res\\openfolder.ico"
+IDI_SEQUENCE            ICON                    "..\\res\\sequence.ico"
+IDI_QUAD                ICON                    "..\\res\\quad.ico"
+IDI_ADD                 ICON                    "..\\res\\add.ico"
+IDI_REMOVE              ICON                    "..\\res\\remove.ico"
+IDI_TOP                 ICON                    "..\\res\\top.ico"
+IDI_UP                  ICON                    "..\\res\\up.ico"
+IDI_DOWN                ICON                    "..\\res\\down.ico"
+IDI_BOTTOM              ICON                    "..\\res\\bottom.ico"
+IDI_TRAIN               ICON                    "..\\res\\train.ico"
+IDI_PLAY_ICON           ICON                    "..\\res\\play.ico"
+IDI_HALT_ICON           ICON                    "..\\res\\halt.ico"
+IDI_PAUSE_ICON          ICON                    "..\\res\\pause.ico"
+IDI_NEXTELEMENT_FF_ICON ICON                    "..\\res\\nextElement_FF.ico"
+IDI_RECORD_ICON         ICON                    "..\\res\\record.ico"
+IDI_PREVIOUSELEMENT_RW_ICON ICON                    "..\\res\\previousElement_RW.ico"
+IDI_ZOOM_OUT            ICON                    "..\\res\\icon4.ico"
+IDI_EAST_ARROW          ICON                    "..\\res\\east_arrow_new.ico"
+IDI_WEST_ARROW          ICON                    "..\\res\\west_arrow_new.ico"
+IDI_NORTH_ARROW         ICON                    "..\\res\\north_arrow_new.ico"
+IDI_SOUTH_ARROW         ICON                    "..\\res\\south_arrow_new.ico"
+IDI_ZOOM_IN             ICON                    "..\\res\\zoom_in.ico"
+IDI_PT_NW_ICON          ICON                    "..\\res\\narrow11_new.ico"
+IDI_PT_NE_ICON          ICON                    "..\\res\\narrow3_new.ico"
+IDI_PT_SE_ICON          ICON                    "..\\res\\narrow88_new.ico"
+IDI_PT_SW_ICON          ICON                    "..\\res\\narrow66_new.ico"
+IDI_ZOOM_IN_ICON        ICON                    "..\\res\\GF_ZOOM_IN.ico"
+IDI_ZOOM_OUT_ICON       ICON                    "..\\res\\GF_ZOOM_OUT.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DRAG_CURSOR         CURSOR                  "..\\res\\Dragmove.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MONCAMCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "清除摄像头(&C)",                   ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONSEQCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "清除摄像头(&C)",                   ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONQUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "??????(&L)",                  ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "?????(&C)",                   ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONTRAINCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "???????????(&L)",             ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "?????(&C)",                   ID_CLEAR_MONITOR
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&D)",                  ID_DEACTIVATE_TRAIN
+    END
+END
+
+IDR_PAGEQUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "??????(&L)",                  ID_LOAD_CONTROLLER
+    END
+END
+
+IDR_PAGETRAINCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "???????????(&L)",             ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "??????(&D)",                  ID_DEACTIVATE_TRAIN
+    END
+END
+
+IDR_PAGESEQCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "???????(&L)",                 ID_NEW_EDIT_SEQUENCE
+    END
+END
+
+IDR_VCRCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "????(&T)",                    ID_TIMELAPSE_MODE
+        MENUITEM "????(&R)",                    ID_REALTIME_MODE
+    END
+END
+
+IDR_QUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "???(&C)",                     ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MAIN_MENU MENUEX 
+BEGIN
+    POPUP "帮助(&H)",                         65535,MFT_STRING,MFS_ENABLED
+    BEGIN
+        MENUITEM "帮助(&H)",                      ID_APP_HELP,MFT_STRING | MFT_RIGHTJUSTIFY,MFS_ENABLED
+        MENUITEM "关于(&A)",                      ID_APP_ABOUT,MFT_STRING,MFS_ENABLED
+    END
+END
+
+IDR_MONALARMCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        POPUP "????????"
+        BEGIN
+            MENUITEM SEPARATOR
+        END
+    END
+END
+
+IDR_VIDEO_CONTROL MENU 
+BEGIN
+    POPUP "         "
+    BEGIN
+        MENUITEM "Stop Video",                  ID_VIDEO_CONTROL_STOP
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_VIDEO_PLAY_IMOS DLGINIT
+BEGIN
+    IDC_IMOS_MEDIAOCXCTRL1, 0x376, 20, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x53ec, 0x0000, 0x4187, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+IDD_VIDEO_PLAY_MODBUS DLGINIT
+BEGIN
+    IDC_ACTIVEXCLIENTCTRL1, 0x376, 20, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x543c, 0x0000, 0x4187, 0x0000, 0x0000, 
+0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "?? ????? ???? ?????"
+    IDS_UE010016_CANNOT_LOAD_DATA "%s????????%s"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_HELP             "????????????"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "???"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEST_DLG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,162,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,259,162,50,14
+    PUSHBUTTON      "AssginCam",IDC_BUTTON1,17,31,50,14
+    PUSHBUTTON      "ClearMon",IDC_BUTTON2,103,31,50,14
+    PUSHBUTTON      "AssginSeq",IDC_BUTTON3,16,63,50,14
+    PUSHBUTTON      "EditSeq",IDC_BUTTON4,103,63,50,14
+    PUSHBUTTON      "AssignToLocal",IDC_BUTTON5,17,94,50,14
+    PUSHBUTTON      "PanCam",IDC_BUTTON6,103,94,50,14
+    PUSHBUTTON      "TiltCam",IDC_BUTTON7,17,126,50,14
+    PUSHBUTTON      "ZoomCam",IDC_BUTTON8,103,126,50,14
+    EDITTEXT        IDC_PARAM,185,99,85,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PARAM_VALUE,185,119,85,14,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_TEST_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP                  "..\\res\\GFSingleVmon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_UNKNOW              ICON                    "..\\res\\BackupKeyUnknow.ico"
+IDI_BACKUP              ICON                    "..\\res\\LockMode.ico"
+IDI_UNLOCK              ICON                    "..\\res\\UnlockMode.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\VideoDisplayManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

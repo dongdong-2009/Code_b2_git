@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{badb57d1-ffe3-469b-a0a6-3c1a7ff21166}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="active_src\ActiveFailureSummaryStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\ActivePlanFailureSummaryStepMessage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\FailureSummaryStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\DllActiveInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="active_src\ActiveFailureSummaryStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\ActivePlanFailureSummaryStepMessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\FailureSummaryStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.event.ATSBridge.ATSBridgeUtil</ProjectName>
+    <ProjectGuid>{4B58EE03-169F-470B-A5D1-C6790B746350}</ProjectGuid>
+    <RootNamespace>ATSBridgeUtil</RootNamespace>
+    <Keyword>AtlProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>ATSBridgeUtil</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(TA_SdkPath)\$(TA_Platform)$(TA_ConfigurationSuffix)\ATSBridgeUtil.tlb</TypeLibraryName>
+      <OutputDirectory>src/</OutputDirectory>
+      <HeaderFileName>ATSBridgeUtil_i.h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>ATSBridgeUtil_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>ATSBridgeUtil_p.c</ProxyFileName>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\..\..\..\..\..\build\win32_nd\transactive\app\event\ATSBridgeUtil\;..\..\..\..\COTS\IATSAlarmEvent\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;_DEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT = 0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(TA_SdkPath)\$(TA_Platform)$(TA_ConfigurationSuffix)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\COTS\IATSAlarmEvent\lib\IATSEventsAPI_Lib.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
+      <ModuleDefinitionFile>.\src\$(TargetName).def</ModuleDefinitionFile>
+    </Link>
+    <PostBuildEvent>
+      <Command>Copy "$(ProjectDir)\Src\ATSBridgeUtil_i.h" ".\../../../../../build/win32_nd/transactive/app/event/ATSBridgeUtil/ATSBridgeUtil_i.h"
+Copy "$(ProjectDir)\Src\ATSBridgeUtil_i.c" ".\../../../../../build/win32_nd/transactive/app/event/ATSBridgeUtil/ATSBridgeUtil_i.c"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(TA_SdkPath)\$(TA_Platform)$(TA_ConfigurationSuffix)\ATSBridgeUtil.tlb</TypeLibraryName>
+      <OutputDirectory>src/</OutputDirectory>
+      <HeaderFileName>ATSBridgeUtil_i.h</HeaderFileName>
+      <DllDataFileName />
+      <InterfaceIdentifierFileName>ATSBridgeUtil_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>ATSBridgeUtil_p.c</ProxyFileName>
+      <ValidateAllParameters>true</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\..\..\..\..\..\build\win32_nr\transactive\app\event\ATSBridgeUtil\;..\..\..\..\COTS\IATSAlarmEvent\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;NDEBUG;_USRDLL;_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT = 0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(TA_SdkPath)\$(TA_Platform)$(TA_ConfigurationSuffix)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>..\..\..\..\COTS\IATSAlarmEvent\lib\IATSEventsAPI_Lib.lib;shell32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ModuleDefinitionFile>.\src\ATSBridgeUtil.def</ModuleDefinitionFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>Copy "$(ProjectDir)\Src\ATSBridgeUtil_i.h" ".\../../../../../build/win32_nr/transactive/app/event/ATSBridgeUtil/ATSBridgeUtil_i.h"
+Copy "$(ProjectDir)\Src\ATSBridgeUtil_i.c" ".\../../../../../build/win32_nr/transactive/app/event/ATSBridgeUtil/ATSBridgeUtil_i.c"
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ATSBridgeUtil.cpp" />
+    <ClCompile Include="src\ATSBridgeUtility.cpp" />
+    <ClCompile Include="src\ATSBridgeUtil_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="src\ATSDateTime.cpp" />
+    <ClCompile Include="src\ATSEvent.cpp" />
+    <ClCompile Include="src\ATSEventList.cpp" />
+    <ClCompile Include="src\ATSEventSubscription.cpp" />
+    <ClCompile Include="src\ATSEventSystem.cpp" />
+    <ClCompile Include="src\ATSEventSystemList.cpp" />
+    <ClCompile Include="src\ATSFilterCriteria.cpp" />
+    <ClCompile Include="src\ATSIntList.cpp" />
+    <ClCompile Include="src\ATSStringList.cpp" />
+    <ClCompile Include="src\CallbackHandler.cpp" />
+    <ClCompile Include="src\Convert.cpp" />
+    <ClCompile Include="src\dllmain.cpp" />
+    <ClCompile Include="src\NonReEntrantThreadLockable.cpp" />
+    <ClCompile Include="src\Semaphore.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\Thread.cpp" />
+    <ClCompile Include="src\ThreadGuard.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ATSBridgeUtility.h" />
+    <ClInclude Include="src\ATSBridgeUtil_i.h" />
+    <ClInclude Include="src\ATSDateTime.h" />
+    <ClInclude Include="src\ATSEvent.h" />
+    <ClInclude Include="src\ATSEventList.h" />
+    <ClInclude Include="src\ATSEventSubscription.h" />
+    <ClInclude Include="src\ATSEventSystem.h" />
+    <ClInclude Include="src\ATSEventSystemList.h" />
+    <ClInclude Include="src\ATSFilterCriteria.h" />
+    <ClInclude Include="src\ATSIntList.h" />
+    <ClInclude Include="src\ATSStringList.h" />
+    <ClInclude Include="src\CallbackHandler.h" />
+    <ClInclude Include="src\Convert.h" />
+    <ClInclude Include="src\dllmain.h" />
+    <ClInclude Include="src\IThreadLockable.h" />
+    <ClInclude Include="src\logger.h" />
+    <ClInclude Include="src\NonReEntrantThreadLockable.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\Semaphore.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\targetver.h" />
+    <ClInclude Include="src\Thread.h" />
+    <ClInclude Include="src\_IATSEventSubscriptionEvents_CP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ATSBridgeUtil.def" />
+    <None Include="src\ATSBridgeUtil.rgs" />
+    <None Include="src\ATSBridgeUtility.rgs" />
+    <None Include="src\ATSDateTime.rgs" />
+    <None Include="src\ATSEvent.rgs" />
+    <None Include="src\ATSEventList.rgs" />
+    <None Include="src\ATSEventSubscription.rgs" />
+    <None Include="src\ATSEventSystem.rgs" />
+    <None Include="src\ATSEventSystemList.rgs" />
+    <None Include="src\ATSFilterCriteria.rgs" />
+    <None Include="src\ATSIntList.rgs" />
+    <None Include="src\ATSStringList.rgs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="src\ATSBridgeUtil.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\ATSBridgeUtil.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

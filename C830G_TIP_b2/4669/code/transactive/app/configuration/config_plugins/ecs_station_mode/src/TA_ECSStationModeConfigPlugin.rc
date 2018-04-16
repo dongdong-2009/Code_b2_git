@@ -1,0 +1,223 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ECS_STATION_MODE_RECORD_VIEW DIALOG DISCARDABLE  0, 0, 546, 179
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDIT_STATION_MODE,97,21,222,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_LOCATION,97,40,209,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_BUTTON_LOCATION,307,40,12,13
+    EDITTEXT        IDC_EDIT_OPERATION,97,59,222,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_TRACK,97,78,222,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_CONDITION,97,97,222,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Apply",IDC_BUTTON_APPLY,142,148,50,14
+    PUSHBUTTON      "&Reset",IDC_BUTTON_RESET,206,148,50,14
+    GROUPBOX        "<TYPE>",IDC_STATIC_TYPE,8,5,530,166
+    LTEXT           "Date Created:",IDC_CREATE_STATIC,21,119,53,9,
+                    SS_CENTERIMAGE
+    LTEXT           "Last Modified:",IDC_MOD_STATIC,21,132,53,9,
+                    SS_CENTERIMAGE
+    LTEXT           "Date goes here",IDC_STATIC_CREATEDATE,97,119,218,13
+    LTEXT           "Date goes here",IDC_STATIC_MODIFYDATE,97,132,218,13
+    LTEXT           "Track:",IDC_TRACK_STATIC,21,78,63,13,SS_CENTERIMAGE
+    LTEXT           "Station Mode:",IDC_STATION_STATIC,21,21,53,13,
+                    SS_CENTERIMAGE
+    LTEXT           "Location:",IDC_LOCATION_STATIC,21,40,53,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_LOCATION_BITMAP,"Static",SS_BITMAP,90,44,11,11
+    CONTROL         9005,IDC_STATION_BITMAP,"Static",SS_BITMAP,90,25,11,11
+    LTEXT           "Condition:",IDC_CONDITION_STATIC,21,97,63,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_TRACK_BITMAP,"Static",SS_BITMAP,90,82,11,11
+    CONTROL         9005,IDC_CONDITION_BITMAP,"Static",SS_BITMAP,90,101,11,
+                    11
+    LTEXT           "Operation:",IDC_OPERATION_STATIC,21,59,63,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_OPERATION_BITMAP,"Static",SS_BITMAP,90,63,11,11
+    EDITTEXT        IDC_EDIT_CONGESTION,327,40,201,122,ES_MULTILINE | 
+                    ES_AUTOVSCROLL
+    LTEXT           "Congestion Logic:",IDC_CONGESTION_STATIC,327,21,63,13,
+                    SS_CENTERIMAGE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ECS_STATION_MODE_RECORD_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 538
+        VERTGUIDE, 21
+        VERTGUIDE, 90
+        VERTGUIDE, 97
+        VERTGUIDE, 319
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 171
+        HORZGUIDE, 132
+        HORZGUIDE, 162
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TA_ECSStationModeConfigPlugin.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""..\\config_plugin_helper\\src\\TA_ConfigPluginHelper.rc"" // Config Plugin Helper library resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Ripple\0"
+            VALUE "FileDescription", "TA_ECSStationModeConfigPlugin DLL\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "TA_ECSStationModeConfigPlugin\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TA_ECSStationModeConfigPlugin.DLL\0"
+            VALUE "ProductName", "TA_ECSStationModeConfigPlugin Dynamic Link Library\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TA_ECSStationModeConfigPlugin.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "app\configuration\config_plugins\config_plugin_helper\src\TA_ConfigPluginHelper.rc" // Config Plugin Helper library resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

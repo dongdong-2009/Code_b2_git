@@ -1,0 +1,177 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.trains.TrainBorne_PA" ProjectGUID="{4F290687-38F3-4478-8AB5-8CAEBB7824CD}" RootNamespace="app.trains.TrainBorne_PA" Keyword="MFCDLLProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="4" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/bus/trains/trainagentcorbadef/idl/src;../../../;../../../../../sdk/include/transactive/core/message/idl/src;../../../../../sdk/include/transactive/core/exceptions/idl/src;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/core/threads/src;../../../../../sdk/include/transactive/core/synchronisation/src;../../../../../sdk/include/transactive/core/process_management\idl\src;..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include;..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;..\TrainBorneManager" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="0" WarningLevel="0" Detect64BitPortabilityProblems="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../bin/win32_nd/TrainBorne_PA.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="4" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/bus/trains/trainagentcorbadef/idl/src;../../../;../../../../../sdk/include/transactive/core/message/idl/src;../../../../../sdk/include/transactive/core/exceptions/idl/src;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/core/threads/src;../../../../../sdk/include/transactive/core/synchronisation/src;../../../../../sdk/include/transactive/core/process_management\idl\src;..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include;..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;..\TrainBorneManager" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" UsePrecompiledHeader="0" WarningLevel="0" Detect64BitPortabilityProblems="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../bin/win32_nr/TrainBorne_PA.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\src\CachedConfig.cpp">
+			</File>
+			<File RelativePath=".\src\CachedMapChangedWindowNotificationHandler.cpp">
+			</File>
+			<File RelativePath=".\src\CachedMapLoader.cpp">
+			</File>
+			<File RelativePath=".\src\DVAStatusModel.cpp">
+			</File>
+			<File RelativePath=".\src\DvaStatusPage.cpp">
+			</File>
+			<File RelativePath=".\src\GenericBroadcastModel.cpp">
+			</File>
+			<File RelativePath=".\src\GenericStatusModel.cpp">
+			</File>
+			<File RelativePath=".\src\GenericStatusPage.cpp">
+			</File>
+			<File RelativePath=".\src\LiveStatusModel.cpp">
+			</File>
+			<File RelativePath=".\src\LiveStatusPage.cpp">
+			</File>
+			<File RelativePath=".\src\LockControlRedraw.cpp">
+			</File>
+			<File RelativePath=".\src\PAErrorHandler.cpp">
+			</File>
+			<File RelativePath=".\src\PAProgressReportSubscriber.cpp">
+			</File>
+			<File RelativePath=".\src\PaRightsManager.cpp">
+			</File>
+			<File RelativePath=".\src\PAStatusNameChangeSubscriber.cpp">
+			</File>
+			<File RelativePath=".\src\PATrainSelectorGUI.cpp">
+			</File>
+			<File RelativePath=".\src\stdafx.cpp">
+			</File>
+			<File RelativePath=".\src\TrainBorne_PA.cpp">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastModel.cpp">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastPage.cpp">
+			</File>
+			<File RelativePath=".\src\TrainDvaStatusDlg.cpp">
+			</File>
+			<File RelativePath=".\src\TrainDvaStatusModel.cpp">
+			</File>
+			<File RelativePath=".\src\TrainListUpdateContainer.cpp">
+			</File>
+			<File RelativePath=".\src\TrainLiveStatusDlg.cpp">
+			</File>
+			<File RelativePath=".\src\TrainLiveStatusModel.cpp">
+			</File>
+			<File RelativePath=".\src\TrainRadioPttMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\TrainStatusHelper.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\CachedConfig.h">
+			</File>
+			<File RelativePath=".\src\CachedMapChangedWindowNotificationHandler.h">
+			</File>
+			<File RelativePath=".\src\CachedMapLoader.h">
+			</File>
+			<File RelativePath=".\src\DVAStatusModel.h">
+			</File>
+			<File RelativePath=".\src\DvaStatusPage.h">
+			</File>
+			<File RelativePath=".\src\GenericBroadcastModel.h">
+			</File>
+			<File RelativePath=".\src\GenericStatusModel.h">
+			</File>
+			<File RelativePath=".\src\GenericStatusPage.h">
+			</File>
+			<File RelativePath=".\src\IGenericBroadcastPage.h">
+			</File>
+			<File RelativePath=".\src\ITBTrainSelectorGUI.h">
+			</File>
+			<File RelativePath=".\src\ITrainBroadcastPage.h">
+			</File>
+			<File RelativePath=".\src\IWindow.h">
+			</File>
+			<File RelativePath=".\src\LiveStatusModel.h">
+			</File>
+			<File RelativePath=".\src\LiveStatusPage.h">
+			</File>
+			<File RelativePath=".\src\LockControlRedraw.h">
+			</File>
+			<File RelativePath=".\src\PAErrorHandler.h">
+			</File>
+			<File RelativePath=".\src\PAProgressReportSubscriber.h">
+			</File>
+			<File RelativePath=".\src\PaRightsManager.h">
+			</File>
+			<File RelativePath=".\src\PaStatusNameChangeSubscriber.h">
+			</File>
+			<File RelativePath=".\src\PATrainSelectorGUI.h">
+			</File>
+			<File RelativePath=".\src\resource.h">
+			</File>
+			<File RelativePath=".\src\stdafx.h">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastModel.h">
+			</File>
+			<File RelativePath=".\src\TrainBroadcastPage.h">
+			</File>
+			<File RelativePath=".\src\TrainDvaStatusDlg.h">
+			</File>
+			<File RelativePath=".\src\TrainDvaStatusModel.h">
+			</File>
+			<File RelativePath=".\src\TrainListUpdateContainer.h">
+			</File>
+			<File RelativePath=".\src\TrainLiveStatusDlg.h">
+			</File>
+			<File RelativePath=".\src\TrainLiveStatusModel.h">
+			</File>
+			<File RelativePath=".\src\TrainRadioPttMonitor.h">
+			</File>
+			<File RelativePath=".\src\TrainStatusHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="Res">
+			<File RelativePath=".\ReadMe.txt">
+			</File>
+			<File RelativePath=".\src\TrainBorne_PA.rc">
+			</File>
+			<File RelativePath=".\res\TrainBornePA.ico">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="TrainBorne_PA1.rc"/>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,8 @@
+
+ta-exe VideoSwitchAgent
+	: [ glob src/*.cpp :
+			src/BVSStage.cpp
+		]
+	  /proj/app/cctv/video_switch_agent/protocols/imos//TA_IMOSSwitchAgent
+	  /proj/app/cctv/video_switch_agent/protocols/modbus//TA_MODBUSSwitchAgent
+	;

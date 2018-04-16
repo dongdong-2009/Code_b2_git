@@ -1,0 +1,201 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.ecs.ecs_manager" ProjectGUID="{2EB29221-940A-40C8-ABAE-DD395F22B245}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.ecs.ecs_manager.ECSManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src,../../..,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src,../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src,../../../../../sdk\include\transactive\core\process_management\idl\src,../../../../../sdk\include\transactive\core\alarm\idl\src,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/app.ecs.ecs_manager.ECSManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib TA_Base_Core_d.lib TA_IRS_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Bus_d.lib ws2_32.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfcd.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/ECSManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/ECSManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.ecs.ecs_manager.ECSManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.ecs.ecs_manager.ECSManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src,../../..,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src,../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src,../../../../../sdk\include\transactive\core\process_management\idl\src,../../../../../sdk\include\transactive\core\alarm\idl\src,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager/app.ecs.ecs_manager.ECSManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nr/transactive/app/ecs/ecs_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib TA_Base_Core.lib TA_IRS_Core.lib TA_Base_Bus.lib TA_IRS_Bus.lib ws2_32.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfc.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/ECSManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\sdk\lib,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/ECSManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.ecs.ecs_manager.ECSManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AuditMessageUtility.cpp">
+			</File>
+			<File RelativePath="src\CongestionParameterDlg.cpp">
+			</File>
+			<File RelativePath="src\DecisionDialog.cpp">
+			</File>
+			<File RelativePath="src\ECSColourAccessor.cpp">
+			</File>
+			<File RelativePath="src\ECSManager.cpp">
+			</File>
+			<File RelativePath="src\ECSManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ECSManagerConfigurationAccess.cpp">
+			</File>
+			<File RelativePath="src\ECSManagerGUI.cpp">
+			</File>
+			<File RelativePath="src\ECSMasterModes.cpp">
+			</File>
+			<File RelativePath="src\ECSMasterModesDlg.cpp">
+			</File>
+			<File RelativePath="src\ECSOverallTimetableListCtrl.cpp">
+			</File>
+			<File RelativePath="src\EcsOverallTimetableSettingDlg.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModes.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModesDlg.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModesOverview.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModesOverviewDlg.cpp">
+			</File>
+			<File RelativePath="src\MappedECSDataCache.cpp">
+			</File>
+			<File RelativePath="src\MasterModesGridCtrl.cpp">
+			</File>
+			<File RelativePath="src\ProposedMasterModeUpdateSubscriber.cpp">
+			</File>
+			<File RelativePath="src\ProposedStationModeUpdateSubscriber.cpp">
+			</File>
+			<File RelativePath="src\RightsMgrSingleton.cpp">
+			</File>
+			<File RelativePath="src\StationModesDataPointManager.cpp">
+			</File>
+			<File RelativePath="src\StationModesListCtrl.cpp">
+			</File>
+			<File RelativePath="src\StationModesOverviewGridCtrl.cpp">
+			</File>
+			<File RelativePath="src\TextDisplay.cpp">
+			</File>
+			<File RelativePath="src\TimetableSelectionDlg.cpp">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\AuditMessageUtility.h">
+			</File>
+			<File RelativePath="src\CongestionParameterDlg.h">
+			</File>
+			<File RelativePath="src\DecisionDialog.h">
+			</File>
+			<File RelativePath="src\ECSColourAccessor.h">
+			</File>
+			<File RelativePath="src\ECSManager.h">
+			</File>
+			<File RelativePath="src\ECSManagerCommonDefs.h">
+			</File>
+			<File RelativePath="src\ECSManagerConfigurationAccess.h">
+			</File>
+			<File RelativePath="src\ECSManagerGUI.h">
+			</File>
+			<File RelativePath="src\ECSMasterModes.h">
+			</File>
+			<File RelativePath="src\ECSMasterModesDlg.h">
+			</File>
+			<File RelativePath="src\ECSOverallTimetableListCtrl.h">
+			</File>
+			<File RelativePath="src\EcsOverallTimetableSettingDlg.h">
+			</File>
+			<File RelativePath="src\ECSStationModes.h">
+			</File>
+			<File RelativePath="src\ECSStationModesDlg.h">
+			</File>
+			<File RelativePath="src\ECSStationModesOverview.h">
+			</File>
+			<File RelativePath="src\ECSStationModesOverviewDlg.h">
+			</File>
+			<File RelativePath="src\IECSMasterModesView.h">
+			</File>
+			<File RelativePath="src\IECSStationModesOverviewView.h">
+			</File>
+			<File RelativePath="src\IECSStationModesView.h">
+			</File>
+			<File RelativePath="src\IProposedMasterModeObserver.h">
+			</File>
+			<File RelativePath="src\IProposedStationModeObserver.h">
+			</File>
+			<File RelativePath="src\IStationModeStatusObserver.h">
+			</File>
+			<File RelativePath="src\MappedECSDataCache.h">
+			</File>
+			<File RelativePath="src\MasterModesGridCtrl.h">
+			</File>
+			<File RelativePath="src\ProposedMasterModeUpdateSubscriber.h">
+			</File>
+			<File RelativePath="src\ProposedStationModeUpdateSubscriber.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\RightsMgrSingleton.h">
+			</File>
+			<File RelativePath="src\StationModesDataPointManager.h">
+			</File>
+			<File RelativePath="src\StationModesListCtrl.h">
+			</File>
+			<File RelativePath="src\StationModesOverviewGridCtrl.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TextDisplay.h">
+			</File>
+			<File RelativePath="src\TimetableSelectionDlg.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\bitmap_l.bmp">
+			</File>
+			<File RelativePath="res\CurrentTimetable.ico">
+			</File>
+			<File RelativePath="res\ECSManager.ico">
+			</File>
+			<File RelativePath="res\ECSManager.rc2">
+			</File>
+			<File RelativePath="res\icon_lef.ico">
+			</File>
+			<File RelativePath="res\icon_rig.ico">
+			</File>
+			<File RelativePath="res\SelectedTimetable.ico">
+			</File>
+		</Filter>
+		<File RelativePath="src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

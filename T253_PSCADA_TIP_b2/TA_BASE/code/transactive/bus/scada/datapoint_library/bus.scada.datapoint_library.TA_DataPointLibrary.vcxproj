@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.scada.datapoint_library</ProjectName>
+    <ProjectGuid>{176F0152-CA9C-4050-A91A-B5E8FA65A975}</ProjectGuid>
+    <RootNamespace>bus.scada.datapoint_library</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_DataPointLibrary_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_DataPointLibrary</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmAckStateProcessor.cpp" />
+    <ClCompile Include="src\AnalogueDataPoint.cpp" />
+    <ClCompile Include="src\AnswerBackErrorUser.cpp" />
+    <ClCompile Include="src\BooleanDataPoint.cpp" />
+    <ClCompile Include="src\CalculatedExpression.cpp" />
+    <ClCompile Include="src\CombinedOutputDataPoint.cpp" />
+    <ClCompile Include="src\CommandProcessor.cpp" />
+    <ClCompile Include="src\CommonContext.cpp" />
+    <ClCompile Include="src\DataPoint.cpp" />
+    <ClCompile Include="src\DataPointAlarmDetails.cpp" />
+    <ClCompile Include="src\DataPointAlarmDetailsFactory.cpp" />
+    <ClCompile Include="src\DataPointFactory.cpp" />
+    <ClCompile Include="src\DataPointStateChangeEvent.cpp" />
+    <ClCompile Include="src\DataPointStateUpdateSender.cpp" />
+    <ClCompile Include="src\DataPointStateUpdateServant.cpp" />
+    <ClCompile Include="src\DerivedDataPoint.cpp" />
+    <ClCompile Include="src\DerivedState.cpp" />
+    <ClCompile Include="src\EnumDataPoint.cpp" />
+    <ClCompile Include="src\EventDetailsFactory.cpp" />
+    <ClCompile Include="src\FALSEAlarmDetails.cpp" />
+    <ClCompile Include="src\GeneralAlarmDetails.cpp" />
+    <ClCompile Include="src\HIAlarmDetails.cpp" />
+    <ClCompile Include="src\HIHIAlarmDetails.cpp" />
+    <ClCompile Include="src\InputAssociation.cpp" />
+    <ClCompile Include="src\LaunchingConditionCheck.cpp" />
+    <ClCompile Include="src\LFThreadPoolSingleton.cpp" />
+    <ClCompile Include="src\LOAlarmDetails.cpp" />
+    <ClCompile Include="src\LOLOAlarmDetails.cpp" />
+    <ClCompile Include="src\MeteredDataPoint.cpp" />
+    <ClCompile Include="src\MultiBitDataPoint.cpp" />
+    <ClCompile Include="src\NotifyEventProcessor.cpp" />
+    <ClCompile Include="src\OverScaleHiAlarmDetails.cpp" />
+    <ClCompile Include="src\OverScaleLoAlarmDetails.cpp" />
+    <ClCompile Include="src\PersistProcessor.cpp" />
+    <ClCompile Include="src\SafetyOutputDataPoint.cpp" />
+    <ClCompile Include="src\SingletonAnswerBackErrorUtil.cpp" />
+    <ClCompile Include="src\TextDataPoint.cpp" />
+    <ClCompile Include="src\TRUEAlarmDetails.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmAckStateProcessor.h" />
+    <ClInclude Include="src\AnalogueAlarmDetails.h" />
+    <ClInclude Include="src\AnalogueDataPoint.h" />
+    <ClInclude Include="src\AnswerBackErrorUser.h" />
+    <ClInclude Include="src\BooleanDataPoint.h" />
+    <ClInclude Include="src\CalculatedExpression.h" />
+    <ClInclude Include="src\CombinedOutputDataPoint.h" />
+    <ClInclude Include="src\CommandProcessor.h" />
+    <ClInclude Include="src\CommonContext.h" />
+    <ClInclude Include="src\DataPoint.h" />
+    <ClInclude Include="src\DataPointAlarmDetails.h" />
+    <ClInclude Include="src\DataPointAlarmDetailsFactory.h" />
+    <ClInclude Include="src\DataPointFactory.h" />
+    <ClInclude Include="src\DataPointState.h" />
+    <ClInclude Include="src\DataPointStateChangeEvent.h" />
+    <ClInclude Include="src\DataPointStateUpdate.h" />
+    <ClInclude Include="src\DataPointStateUpdateSender.h" />
+    <ClInclude Include="src\DataPointStateUpdateServant.h" />
+    <ClInclude Include="src\DataPointWriteQueue.h" />
+    <ClInclude Include="src\DataPointWriteRequest.h" />
+    <ClInclude Include="src\DerivedDataPoint.h" />
+    <ClInclude Include="src\DerivedState.h" />
+    <ClInclude Include="src\EnumDataPoint.h" />
+    <ClInclude Include="src\EventDetailsFactory.h" />
+    <ClInclude Include="src\FALSEAlarmDetails.h" />
+    <ClInclude Include="src\GeneralAlarmDetails.h" />
+    <ClInclude Include="src\HIAlarmDetails.h" />
+    <ClInclude Include="src\HIHIAlarmDetails.h" />
+    <ClInclude Include="src\IAlarmAckStateUser.h" />
+    <ClInclude Include="src\IAnswerBackErrorNotification.h" />
+    <ClInclude Include="src\IDataPointObserverNotification.h" />
+    <ClInclude Include="src\IExpressionNodeNotification.h" />
+    <ClInclude Include="src\InputAssociation.h" />
+    <ClInclude Include="src\LaunchingConditionCheck.h" />
+    <ClInclude Include="src\LFThreadPoolSingleton.h" />
+    <ClInclude Include="src\LOAlarmDetails.h" />
+    <ClInclude Include="src\LOLOAlarmDetails.h" />
+    <ClInclude Include="src\MeteredDataPoint.h" />
+    <ClInclude Include="src\MultiBitDataPoint.h" />
+    <ClInclude Include="src\NotifyEventProcessor.h" />
+    <ClInclude Include="src\NotifyEventQueue.h" />
+    <ClInclude Include="src\NotifyEventRequest.h" />
+    <ClInclude Include="src\OverScaleHiAlarmDetails.h" />
+    <ClInclude Include="src\OverScaleLoAlarmDetails.h" />
+    <ClInclude Include="src\PersistProcessor.h" />
+    <ClInclude Include="src\PersistQueue.h" />
+    <ClInclude Include="src\PersistRequest.h" />
+    <ClInclude Include="src\SafetyOutputDataPoint.h" />
+    <ClInclude Include="src\SingletonAnswerBackErrorUtil.h" />
+    <ClInclude Include="src\TextDataPoint.h" />
+    <ClInclude Include="src\TRUEAlarmDetails.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,172 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="app.alarm.alarm_generator" ProjectGUID="{E9075908-37EA-47FA-9E87-BDF5A90C14EB}" RootNamespace="app.alarm.alarm_generator" Keyword="MFCProj">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_generator" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.alarm.alarm_generator.AlarmGenerator.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/process_management/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;../../../../cots/boost/boost_1_39_0;../../../../cots/ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/app.alarm.alarm_generator.AlarmGenerator.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_generator/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_generator/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_generator/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/force" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib oci.lib orasql10.LIB htmlhelp.lib Rpcrt4.lib ws2_32.lib acemfcd.lib TA_Alarm_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/AlarmGenerator.exe " LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\HTMLHelp\lib;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;../../../../../build/win32_nd;E:\perforce\Base\code\transactive\bus\alarm\shared_alarm\Debug;..\..\..\..\cots\WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/AlarmGenerator.pdb" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.alarm.alarm_generator.AlarmGenerator.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCWebDeploymentTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_generator" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.alarm.alarm_generator.AlarmGenerator.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/process_management/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;../../../../cots/boost/boost_1_39_0;../../../../cots/ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/app.alarm.alarm_generator.AlarmGenerator.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_generator/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_generator/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_generator/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalOptions="/force" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib oci.lib orasql10.LIB htmlhelp.lib Rpcrt4.lib ws2_32.lib acemfc.lib TA_Alarm.lib TA_Base_Core.lib TA_Base_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/AlarmGenerator.exe " LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\HTMLHelp\lib;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;../../../../../build/win32_nr;E:\perforce\Base\code\transactive\bus\alarm\shared_alarm\Release;..\..\..\..\cots\WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/AlarmGenerator.pdb" SubSystem="2" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.alarm.alarm_generator.AlarmGenerator.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCWebDeploymentTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\src\agAlarmData.cpp">
+			</File>
+			<File RelativePath=".\src\agDebug.cpp">
+			</File>
+			<File RelativePath="src\AlarmGenerator.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmGenerator.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmGeneratorDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\alarmqtydlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmsCollection.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AutoAlarmsOption.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AutoAlarmsOptionDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ModifyMmsDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SetupDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath=".\src\agAlarmData.h">
+			</File>
+			<File RelativePath=".\src\agDebug.h">
+			</File>
+			<File RelativePath="src\AlarmGenerator.h">
+			</File>
+			<File RelativePath="src\AlarmGeneratorDlg.h">
+			</File>
+			<File RelativePath="src\alarmqtydlg.h">
+			</File>
+			<File RelativePath="src\AlarmsCollection.h">
+			</File>
+			<File RelativePath="src\AutoAlarmsOption.h">
+			</File>
+			<File RelativePath="src\AutoAlarmsOptionDlg.h">
+			</File>
+			<File RelativePath="src\ModifyMmsDialog.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\SetupDialog.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\AlarmGenerator.ico">
+			</File>
+			<File RelativePath="res\AlarmGenerator.rc2">
+			</File>
+		</Filter>
+		<File RelativePath="src\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="src\AlarmGenerator.rc"/>
+	</Globals>
+</VisualStudioProject>

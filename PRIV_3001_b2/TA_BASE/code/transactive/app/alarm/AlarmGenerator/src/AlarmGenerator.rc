@@ -1,0 +1,378 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ALARMGENERATOR_DIALOG DIALOGEX 0, 0, 737, 408
+STYLE DS_LOCALEDIT | DS_SETFONT | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "AlarmGenerator"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Submit",IDOK,292,78,56,17
+    PUSHBUTTON      "Exit Generator",IDEXIT,292,157,56,17
+    GROUPBOX        "Output",IDC_STATIC,378,325,349,78
+    EDITTEXT        IDC_OUTPUT_BOX,385,332,342,65,ES_MULTILINE | ES_AUTOVSCROLL | ES_OEMCONVERT | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL | NOT WS_TABSTOP
+    GROUPBOX        "Alarm Controls",IDC_STATIC,285,67,131,139
+    PUSHBUTTON      "Close",IDCLOSE,292,131,56,17
+    LISTBOX         IDC_ACTIVE_ALARMS_LIST,422,18,306,308,LBS_SORT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "Active Alarms (ie Open or Unacknowledged):",IDC_ACTIVE_ALARMS_CAPTION,357,3,195,8,SS_CENTERIMAGE
+    PUSHBUTTON      "Refresh Action Alarm List",ID_REFRESH,306,183,95,14
+    PUSHBUTTON      "Ack",IDACK,359,131,56,17
+    PUSHBUTTON      "Change MMS",IDMMS,292,104,56,17
+    PUSHBUTTON      "Submit X Alarms",ID_MULTI_ALARMS,359,78,56,17
+    PUSHBUTTON      "Ack and Close",IDACKCLOSE,359,104,56,17,BS_CENTER | BS_VCENTER | BS_MULTILINE
+    GROUPBOX        "Alarm Details",IDC_STATIC_DETAIL,2,5,280,316,BS_CENTER
+    LTEXT           "Alarm Type",IDC_DATAPOINT_SELECT_CAPTION,8,38,94,8,SS_CENTERIMAGE
+    COMBOBOX        IDC_ALARMTYPE_SELECT,8,47,266,152,CBS_DROPDOWN | CBS_AUTOHSCROLL | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Alarm Description",IDC_ALARM_SELECT_CAPTION,8,61,130,10,SS_CENTERIMAGE
+    COMBOBOX        IDC_SEVERITY_SELECT,286,23,129,13,CBS_DROPDOWNLIST | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Severity",IDC_ALARM_SELECT_CAPTION2,286,12,56,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_ASSETNAME,8,279,266,13,ES_AUTOHSCROLL
+    LTEXT           "Asset Name",IDC_ALARM_SELECT_CAPTION3,8,269,52,10,SS_CENTERIMAGE
+    GROUPBOX        "Alarm Unique?",IDC_STATIC,285,40,106,22,BS_CENTER,WS_EX_RIGHT
+    CONTROL         "Yes",IDC_IS_UNIQUE,"Button",BS_AUTORADIOBUTTON,303,50,28,10
+    CONTROL         "No",IDC_NOT_UNIQUE,"Button",BS_AUTORADIOBUTTON,351,50,25,10
+    LTEXT           "Entity Key && Name",IDC_ENTITY_KEY,8,189,77,10,SS_CENTERIMAGE
+    LTEXT           "Entity Type Key",IDC_ENTITY_TYPE_KEY,80,242,56,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_SUBSYSTEM,9,252,57,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Subsystem Key",IDC_SUBSYSTEM_KEY,8,242,56,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_ALARM_DES,8,71,266,35,ES_MULTILINE | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Alarm Description Parameters",IDC_DESC_PARAM,8,107,266,80
+    LTEXT           "Static",IDC_STATIC1,18,120,67,12
+    EDITTEXT        IDC_PARAM1,88,118,178,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Static",IDC_STATIC2,18,134,65,12
+    EDITTEXT        IDC_PARAM2,88,132,178,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Static",IDC_STATIC3,18,147,65,12
+    EDITTEXT        IDC_PARAM3,88,146,178,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Static",IDC_STATIC4,18,160,65,12
+    EDITTEXT        IDC_PARAM4,88,159,178,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Static",IDC_STATIC5,18,173,65,12
+    EDITTEXT        IDC_PARAM5,88,172,178,12,ES_AUTOHSCROLL | ES_READONLY
+    COMBOBOX        IDC_ENTITY_TYPE,79,253,195,75,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_ENTITY_KEY_SELECT,8,200,266,96,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_CLOSE_VALUE,8,305,266,12,ES_AUTOHSCROLL
+    LTEXT           "Close Value",IDC_ALARM_CLOSE_VALUE_STATIC,8,294,52,10,SS_CENTERIMAGE
+    EDITTEXT        IDC_UUID,8,23,266,12,ES_AUTOHSCROLL
+    LTEXT           "Alarm UUID",IDC_ALARM_ID_STATIC,9,11,52,10,SS_CENTERIMAGE
+    LTEXT           "Location Key",IDC_ALARM_LOCATION_KEY,8,215,52,10,SS_CENTERIMAGE
+    COMBOBOX        IDC_ENTITY_LOCATION_KEY,8,226,266,96,CBS_DROPDOWN | CBS_SORT | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Auto On",ID_AUTO,359,157,56,17
+    LTEXT           "UnSubmitted Alarms:",IDC_STATIC,204,325,70,8
+    EDITTEXT        IDC_EDIT_AUTO_ALARM_COUNT,201,335,73,15,ES_AUTOHSCROLL | ES_READONLY,WS_EX_DLGMODALFRAME | WS_EX_RIGHT
+    LTEXT           "Alarms :",IDC_STATIC,14,334,38,11
+    EDITTEXT        IDC_EDIT_COUNT,115,331,59,12,ES_AUTOHSCROLL
+    LTEXT           "Threads :",IDC_STATIC,14,346,32,11
+    EDITTEXT        IDC_EDIT_THREAD_COUNT,115,345,59,12,ES_AUTOHSCROLL
+    LTEXT           "Submit Interval (ms):",IDC_STATIC,14,359,70,11
+    EDITTEXT        IDC_EDIT_INTERVAL,116,359,58,12,ES_AUTOHSCROLL
+    GROUPBOX        "Auto Alarms Options",IDC_STATIC,8,321,175,82
+    LTEXT           "UnClosed Alarms:",IDC_STATIC,204,357,62,8
+    EDITTEXT        IDC_EDIT_UNCLOSED_AUTO_ALARM_COUNT,202,369,72,15,ES_AUTOHSCROLL | ES_READONLY,WS_EX_DLGMODALFRAME | WS_EX_RIGHT
+    CONTROL         "Ack / Close alarms of lifetime(sec) :",IDC_CHECK_ACK_CLOSE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,375,122,12
+    EDITTEXT        IDC_EDIT_EXPIRY,144,374,34,13,ES_AUTOHSCROLL
+    LTEXT           "Hour",IDC_STATIC,339,344,18,10
+    LTEXT           "Sec",IDC_STATIC,341,382,16,9
+    EDITTEXT        IDC_EDIT_HOUR,299,342,34,15,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    EDITTEXT        IDC_EDIT_SEC,299,379,33,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    GROUPBOX        "Elapsed Time",IDC_STATIC,285,325,88,78
+    LTEXT           "Min",IDC_STATIC,341,362,16,11
+    EDITTEXT        IDC_EDIT_MIN,299,360,33,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_CLIENTEDGE | WS_EX_RIGHT
+    CONTROL         "Send to Alarm Store",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,390,79,10
+    PUSHBUTTON      "SetFilter",IDC_BUTTON1,286,225,50,14
+END
+
+IDD_AUTO_ALARMS_OPTION DIALOG  0, 0, 186, 115
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Auto Alarms - Option"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,36,94,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,100,94,50,14
+    LTEXT           "Alarms :",IDC_STATIC,13,17,38,11
+    EDITTEXT        IDC_EDIT_COUNT,86,13,59,15,ES_AUTOHSCROLL
+    LTEXT           "Threads :",IDC_STATIC,13,39,32,11
+    EDITTEXT        IDC_EDIT_THREAD_COUNT,87,35,57,15,ES_AUTOHSCROLL
+    LTEXT           "Submit Interval (ms):",IDC_STATIC,13,58,70,11
+    EDITTEXT        IDC_EDIT_INTERVAL,88,55,57,15,ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,2
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "AlarmGenerator MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 2"
+            VALUE "InternalName", "AlarmGenerator"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "AlarmGenerator.EXE"
+            VALUE "ProductName", "AlarmGenerator Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ALARMGENERATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 727
+        VERTGUIDE, 8
+        VERTGUIDE, 266
+        VERTGUIDE, 274
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 403
+        HORZGUIDE, 141
+        HORZGUIDE, 358
+    END
+
+    IDD_AUTO_ALARMS_OPTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETUP_DIALOG DIALOGEX 200, 200, 235, 206
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT
+CAPTION "Initialisation Setup For Alarm Generator"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,178,147,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,178,180,50,14
+    EDITTEXT        IDC_NOTIFY,5,17,160,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_DB_CONNECTION,5,50,159,15,ES_AUTOHSCROLL
+    LTEXT           "Notify Hosts:",IDC_NOTIFY_CAPTION,5,6,83,8,SS_CENTERIMAGE
+    LTEXT           "DB Connection String",IDC_DB_CONNECTION_CAPTION,5,39,83,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_LOCATION_NAME,5,81,161,15,ES_AUTOHSCROLL
+    LTEXT           "Location Name",IDC_LOCATION_NAME_CAPTION,7,70,83,8,SS_CENTERIMAGE
+    EDITTEXT        IDC_USER_ID,7,113,161,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_PROFILE_ID,7,146,161,15,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MGR_PORT,7,179,161,15,ES_AUTOHSCROLL
+    LTEXT           "User ID",IDC_USER_ID_CAPTION,7,102,83,8,SS_CENTERIMAGE
+    LTEXT           "Mgr Port",IDC_MGR_PORT_CAPTION,8,167,83,8,SS_CENTERIMAGE
+    LTEXT           "Profile ID",IDC_PROFILE_ID_CAPTION,7,135,83,8,SS_CENTERIMAGE
+END
+
+IDD_MMS_DIALOG DIALOG  0, 0, 294, 174
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Modify Mms State Type of Alarm"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Commit",IDCOMMIT,236,10,50,14
+    PUSHBUTTON      "Close",IDCLOSE,236,32,50,14
+    GROUPBOX        "MMS State Type",IDC_MOD_MMS,7,119,279,48
+    CONTROL         "MMS_CUR",IDC_MMS_CUR,"Button",BS_AUTORADIOBUTTON,122,99,83,10
+    CONTROL         "MMS5",IDC_MMS5,"Button",BS_AUTORADIOBUTTON,122,148,69,10
+    CONTROL         "MMS1",IDC_MMS1,"Button",BS_AUTORADIOBUTTON,40,130,61,10
+    CONTROL         "MMS4",IDC_MMS4,"Button",BS_AUTORADIOBUTTON,40,148,64,10
+    CONTROL         "MMS3",IDC_MMS3,"Button",BS_AUTORADIOBUTTON,205,130,61,10
+    CONTROL         "MMS6",IDC_MMS6,"Button",BS_AUTORADIOBUTTON,205,148,65,10
+    CONTROL         "MMS2",IDC_MMS2,"Button",BS_AUTORADIOBUTTON,122,130,65,10
+    EDITTEXT        IDC_ALARM_DETAIL,7,10,217,72,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Current MMS State",IDC_CURRENT_MMS,7,86,279,29
+    PUSHBUTTON      "Refresh",IDC_REFRESH,236,57,50,14
+END
+
+IDD_ALARM_QTY_DLG DIALOG  0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alarm Qty Dialog"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_ALARM_QTY,7,48,172,17,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Key in alarm quantity to generate",IDC_STATIC_QTY,7,7,99,29
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SETUP_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_MMS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 286
+        VERTGUIDE, 40
+        VERTGUIDE, 122
+        VERTGUIDE, 205
+        TOPMARGIN, 10
+        BOTTOMMARGIN, 167
+        HORZGUIDE, 130
+        HORZGUIDE, 148
+    END
+
+    IDD_ALARM_QTY_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\AlarmGenerator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\AlarmGenerator.ico"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\AlarmGenerator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

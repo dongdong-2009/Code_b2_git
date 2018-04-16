@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{282f0c91-6d76-4c7c-86b9-1d769b8f38f9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuthenConst.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenPeerTask.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenPeerTaskManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenPeerTaskMO.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenticationLibrary.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetActiveSessionsMO.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KeepSessionAliveThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KeepSessionAliveThreadManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionInfo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuthenPeerTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenPeerTaskManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenPeerTaskMO.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenticationLibrary.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetActiveSessionsMO.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeepSessionAliveThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeepSessionAliveThreadManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

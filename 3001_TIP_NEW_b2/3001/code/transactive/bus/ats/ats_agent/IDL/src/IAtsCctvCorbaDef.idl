@@ -1,0 +1,166 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/IAtsCctvCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// IAtsCctvCorbaDef interface definition for the ATS/CCTV Agent interfacing.   
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsCctvCorbaDef
+	{
+
+		struct AtsCctvLocalisation
+		{
+			boolean							valid;
+			StationIdType					stationId;
+			StationIdType					lastStationId;
+		};
+
+		//
+		// Data from OA1
+		//
+
+		enum EFireSmokeDetectionStatus
+		{
+			FireSmokeDetectionUnknown,
+			FireSmokeNotDetected,
+			FireSmokeDetectionFailure,
+			FireSmokeDetected
+		};
+
+		enum EFireExtinguisherStatus
+		{
+			ExtinguisherStatusUnknown,
+			ExtinguisherStatusAllNormal,
+			ExtinguisherStatusAtLeastOneRemoved
+		};
+
+		enum EInteriorSmokeDetectionStatus
+		{
+			InteriorSmokeUnknown,
+			InteriorSmokeNoPreAlarm,
+			InteriorSmokeMinorFault,
+			InteriorSmokePreAlarm,
+			InteriorSmokeAlarm
+		};
+
+		enum EEhsStatus
+		{
+			EhsStatusUnknown,
+			EhsStatusNotActivated,
+			EhsStatusActivated
+		};
+
+		typedef EEhsStatus EhsData[8];				// A1, A2, A3, A4, B1, B2, B3, B4 indexes 0-7 respectively.
+
+		enum EDdStatus
+		{
+			DdUnknown,
+			DdClosedAndLocked,
+			DdCoverOpen,
+			DdEvacuationRequired,
+			DdNotLockedOrNotClosed
+		};
+
+		struct AtsCctvOa1Data
+		{
+			boolean							valid;
+
+			EFireSmokeDetectionStatus		underFrameFireStatus[3];
+			EFireExtinguisherStatus			fireExtinguisherStatus[3];	// Cars 1-3 indexes 0-2 respectively
+			EFireSmokeDetectionStatus		exteriorSmoke[3];
+			EInteriorSmokeDetectionStatus	interiorSmoke[3];
+			EFireSmokeDetectionStatus		underSeatFire[3];
+			EhsData							ehsStatus[3];				// Cars 1-3 indexes 0-2 respectively 
+			EDdStatus						detrainmentDoorStatus[2];	// Car 1/Car 3 indexes 0/1 respectively
+		};
+
+		//
+		// Data from OA2
+		//
+
+		enum EDriverConsoleCoverStatus
+		{
+			ConsoleCoverStatusUnknown,
+			ConsoleCoverStatusClosed,
+			ConsoleCoverStatusOpen
+		};
+
+		enum ETrainDoorStatus
+		{
+			TrainDoorStatusUnknown,
+			TrainDoorStatusClosedAndLocked,
+			TrainDoorStatusOpened,
+			TrainDoorStatusPushBack,
+			TrainDoorStatusObstacleDetection,
+			TrainDoorStatusDoorFailureClosed,
+			TrainDoorStatusDoorFailureOpen,
+			TrainDoorStatusIsolated
+		};
+
+		typedef ETrainDoorStatus TrainDoorDataType[8];							// doors A1-A4, B1-B4 indexes 0-7 respectively
+
+		struct AtsCctvOa2Data
+		{
+			boolean								valid;
+			EDriverConsoleCoverStatus			driverConsoleCoverStatus[2];		// Car 1/Car 3 indexes 0/1 respectively
+			TrainDoorDataType					trainDoorData[3];		// Cars 1-3 indexes 0-2 respectively
+		};
+
+		//
+		// AtsCctvMessageCorbaDef is expected to be sent to the CCTV Agent through the 'any messageState' 
+		// member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsCctvMessageCorbaDef
+		{
+			PhysicalTrainNumberType			physicalTrainNumber;
+			ServiceNumberType				serviceNumber;
+
+			AtsCctvLocalisation				localisation;
+			AtsCctvOa1Data					oa1;
+			AtsCctvOa2Data					oa2;
+		}; // AtsCctvMessageCorbaDef
+
+
+		//
+		// A sequence of AtsCctvMessageCorbaDef defined for getCctvInformationList
+		//
+		typedef sequence<AtsCctvMessageCorbaDef>  CctvInfoList;
+
+		/**
+          * getCctvInformationList
+          *
+          * This method is used to access the full list of CCTV information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsCctvMessageCorbaDef for all trains known
+		  *			to the ATS agent.
+          */
+		CctvInfoList getCctvInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccCctvUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on CCTV
+		  * information
+          *
+		  * @param	cctvUpdate	A sequence of AtsCctvMessageCorbaDef for updates  
+		  *						to trains for the sector
+          */
+		void processOccCctvUpdate(in CctvInfoList cctvUpdate)
+			raises (TA_Base_Core::OperationModeException);
+
+	}; // IAtsCctvCorbaDef
+}; // TA_Bus

@@ -1,0 +1,51 @@
+To test PA Manager Live/DVA calls to train...
+
+loadsim PAMgrRadioSimulator.ini
+
+1. DVA non-cyclic
+
+PA Manager -> select train -> select dva -> make call -> dialog appears and should transition to "in progress"
+
+Radio Simulator will show announcementID, use this to select correct message to reply (look for PAMGR-1.2 rules) and execute
+	runsim <message num> 
+
+2. DVA cyclic
+
+PA Manager -> select train -> select dva -> select cyclic checkbox -> make call -> dialog appears and should transition to "in progress"
+
+Radio Simulator will show announcementID, use this to select correct message to reply (look for PAMGR-3.2 rules) and execute
+	runsim <message num> 
+
+3. Live announcment
+
+PA Manager -> select train -> select live -> make call -> dialog appears and should transition to "connected"
+
+A.
+To test continuation, look for PAMGR-5.2 rules and select one matching the announcementID
+	runsim <message num>
+You will need to execute this several times before seeing an effect on the GUI, as TrainAgent will automatically reply to a certain number of requests.
+On PA Manager, choose to continue the call. If not done within the timeout period, the call may be automatically terminated, so be quick ;). 
+
+B.
+To end the call via the PA MAnager, simply end it. 
+
+C.
+To end the call via the simulator:
+Radio Simulator will show announcementID, use this to select correct message to reply (look for PAMGR-5.5 rules) and execute
+	runsim <message num> 
+
+
+
+Note: only a small set of trains are valid for particular activities, the table below shows this info...
+
+Train 
+4	DVA non-cyclic (success)
+5	DVA non-cyclic (busy)
+6	DVA cyclic (success)
+7	DVA cyclic (busy)
+8	Live announcement (success)
+9	Live announcement (busy)
+
+Note: only a limited number of announcement id's are configured in the simulator, if you see an id greater than 10 reported, you will need to restart PA Agent and PA Manager to reset the counter.
+
+

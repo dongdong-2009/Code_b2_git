@@ -1,0 +1,13 @@
+ExcelTemplateName=TDS_Script.xlsm
+Username=IT271350_4
+Password=IT271350_4
+Servicename=TRANSACT
+OutputFileName=955_tds.xlsm
+HideLoadSheets=1
+datapoints_sql=select en.pkey, en.name, en.address, en.description, enp.value AssetName, enp2.value DataTypeShortName, enp3.value DataType from entity en, entityparametervalue enp, entityparametervalue enp2, entityparametervalue enp3 where en.typekey in (select pkey from entitytype where name = 'DataPoint') and enp.entitykey = en.parentkey and enp.parameterkey in (select pkey from entityparameter where name = 'AssetName') and enp2.entitykey = en.pkey and enp2.parameterkey in (select pkey from entityparameter where name = 'DataTypeShortName') and enp2.value in ('AI', 'EI', 'DI', 'DDI', 'TDI', 'MI', 'TI') and enp3.entitykey = en.pkey and enp3.parameterkey in (select pkey from entityparameter where name = 'DataType') order by en.parentkey, en.description
+derivedState_sql=select derived_dp_pkey, state_value, state_description, state_return_condition from sc_derived_state where derived_dp_pkey in (select pkey from entity where typekey in (select pkey from entitytype where name = 'DataPoint')) order by derived_dp_pkey, state_value
+trueFalseLabel_sql=select entitykey, parametername, value from entityparametervalue_v where entitykey in (select pkey from entity where typekey in (select pkey from entitytype where name = 'DataPoint')) and parameterkey in (select pkey from entityparameter where name in ('TrueLabel', 'FalseLabel')) order by entitykey, parametername
+input_association_sql=select input_a.main_entity_pkey, input_a.input_calc_order, en.address from sc_input_association input_a, entity en where input_a.input_entity_pkey = en.pkey order by input_a.main_entity_pkey, input_a.input_calc_order
+locations_sql=select pkey, name, description from location order by name, description
+datanodes_sql=select en.pkey, en.name, en.description, en.locationname, en.physical_subsystem_name, enp.value AssetName from entity_v en, entityparametervalue enp where en.pkey in (select parentkey from entity where typekey in (select pkey from entitytype where name = 'DataPoint')) and enp.entitykey = en.pkey and enp.parameterkey in (select pkey from entityparameter where name = 'AssetName') order by en.locationname, en.physical_subsystem_name, AssetName
+locationSubSys_sql=select distinct locationname, physical_subsystem_name from entity_v where pkey in (select parentkey from entity where typekey in (select pkey from entitytype where name = 'DataPoint')) order by locationname, physical_subsystem_name

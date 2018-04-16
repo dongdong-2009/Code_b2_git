@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.scada.rtu_library</ProjectName>
+    <ProjectGuid>{97D4075F-56BD-40DB-97A7-838AE28BE01D}</ProjectGuid>
+    <RootNamespace>bus.scada.rtu_library</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_RTULib_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_RTULib</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\datanode_library\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\DataPointCorbaDef\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\IDL\src\;$(TA_BuildPath)\win32_n\transactive\core\alarm\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\datanode_library\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\DataPointCorbaDef\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\IDL\src\;$(TA_BuildPath)\win32_n\transactive\core\alarm\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BaseRTUManager.cpp" />
+    <ClCompile Include="src\CommandQueue.cpp" />
+    <ClCompile Include="src\CommonDpProcessor.cpp" />
+    <ClCompile Include="src\HeartBeatWorker.cpp" />
+    <ClCompile Include="src\ModbusDpProcessor.cpp" />
+    <ClCompile Include="src\ModbusPollingScheduler.cpp" />
+    <ClCompile Include="src\NumberConversionUtil.cpp" />
+    <ClCompile Include="src\RTU.cpp" />
+    <ClCompile Include="src\RTUCommandWorker.cpp" />
+    <ClCompile Include="src\RTUDownloadWorker.cpp" />
+    <ClCompile Include="src\RTUFactory.cpp" />
+    <ClCompile Include="src\RTUOutputWorker.cpp" />
+    <ClCompile Include="src\RTUPollingWorker.cpp" />
+    <ClCompile Include="src\RTURedundancyWorker.cpp" />
+    <ClCompile Include="src\RTUStatusWorker.cpp" />
+    <ClCompile Include="src\StandardRTU.cpp" />
+    <ClCompile Include="src\StandardRTUManager.cpp" />
+    <ClCompile Include="src\StationSystemOutputWriter.cpp" />
+    <ClCompile Include="src\STDModbusPollingWorker.cpp" />
+    <ClCompile Include="src\SteRTU.cpp" />
+    <ClCompile Include="src\SteRTUDpProcessor.cpp" />
+    <ClCompile Include="src\SteRTUManager.cpp" />
+    <ClCompile Include="src\SteRTUStatusWorker.cpp" />
+    <ClCompile Include="src\TimerWorker.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BaseRTUManager.h" />
+    <ClInclude Include="src\CommandQueue.h" />
+    <ClInclude Include="src\CommonDpProcessor.h" />
+    <ClInclude Include="src\DataBlockInterface.h" />
+    <ClInclude Include="src\HeartBeatWorker.h" />
+    <ClInclude Include="src\ModbusDpProcessor.h" />
+    <ClInclude Include="src\ModbusPollingScheduler.h" />
+    <ClInclude Include="src\NumberConversionUtil.h" />
+    <ClInclude Include="src\RTU.h" />
+    <ClInclude Include="src\RTUCommandWorker.h" />
+    <ClInclude Include="src\RTUDownloadWorker.h" />
+    <ClInclude Include="src\RTUFactory.h" />
+    <ClInclude Include="src\RTUOutputWorker.h" />
+    <ClInclude Include="src\RTUPollingWorker.h" />
+    <ClInclude Include="src\RTURedundancyWorker.h" />
+    <ClInclude Include="src\RTUStatusTableConstants.h" />
+    <ClInclude Include="src\RTUStatusWorker.h" />
+    <ClInclude Include="src\StandardRTU.h" />
+    <ClInclude Include="src\StandardRTUManager.h" />
+    <ClInclude Include="src\StationSystemOutputWriter.h" />
+    <ClInclude Include="src\STDModbusPollingWorker.h" />
+    <ClInclude Include="src\SteRTU.h" />
+    <ClInclude Include="src\SteRTUDpProcessor.h" />
+    <ClInclude Include="src\SteRTUManager.h" />
+    <ClInclude Include="src\SteRTUStatusWorker.h" />
+    <ClInclude Include="src\TimerWorker.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

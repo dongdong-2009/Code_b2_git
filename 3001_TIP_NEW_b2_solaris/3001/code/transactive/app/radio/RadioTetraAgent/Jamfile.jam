@@ -1,0 +1,12 @@
+
+ta-exe RadioTetraAgent
+	: [ glob src/*.cpp :
+			src/RadioServerAgentStatusManager.cpp
+		]
+	  /proj/app/radio/radiotetraagent/radiomethodprotocol//TA_RadioMethodProtocol
+	  /proj/app/radio/radiotetraagent/radiopdsprotocol//TA_RadioPDSProtocol
+	  /proj/app/radio/RadioTetraAgent/RadioTcpCommunication//TA_RadioTcpCommunication
+	  /proj/app/radio/radio_protocol/motorolaelite/sdtsprotocol//TA_SDTSProtocol
+	  /proj/app/radio/radio_protocol/motorolaelite/cadiprotocol//TA_CADIProtocol
+	  /proj/app/radio/radio_protocol/motorolaelite/cadirpc//TA_CADIRPC
+	;

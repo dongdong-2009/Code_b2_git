@@ -1,0 +1,9 @@
+
+import os ;
+
+if [ os.name ] != NT
+{
+	source = [ glob src/*.cpp : src/WindowsTimerQueue.cpp ] ;
+}
+
+ta-lib TA_Timers : $(source) ;

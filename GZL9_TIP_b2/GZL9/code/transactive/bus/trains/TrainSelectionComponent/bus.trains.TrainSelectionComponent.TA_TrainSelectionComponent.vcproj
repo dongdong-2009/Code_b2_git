@@ -1,0 +1,129 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.trains.TrainSelectionComponent" ProjectGUID="{5BE3E8B6-45D6-4E40-B539-A2E67285460A}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/trains/TrainSelectionComponent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../sdk/include/transactive\core\exceptions\idl\src;../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive\bus\trains\TrainAgentCorba\idl\src;../../..;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.2.1/include;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/idl/src;../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../build/win32_n/transactive/core/message/idl/src" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/trains/TrainSelectionComponent/bus.trains.TrainSelectionComponent.TA_TrainSelectionComponent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/trains/TrainSelectionComponent/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/trains/TrainSelectionComponent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/trains/TrainSelectionComponent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_TrainSelectionComponent_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.trains.TrainSelectionComponent.TA_TrainSelectionComponent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/trains/TrainSelectionComponent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../sdk/include/transactive\core\exceptions\idl\src;../../../../../build/win32_n/transactive;../../../../../sdk/include/transactive\bus\trains\TrainAgentCorba\idl\src;../../..;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.2.1/include;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/idl/src;../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../build/win32_n/transactive/core/message/idl/src" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/trains/TrainSelectionComponent/bus.trains.TrainSelectionComponent.TA_TrainSelectionComponent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/trains/TrainSelectionComponent/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/trains/TrainSelectionComponent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/trains/TrainSelectionComponent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_TrainSelectionComponent.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.trains.TrainSelectionComponent.TA_TrainSelectionComponent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ITrainSelectorGUI.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TrainList.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainList.h">
+			</File>
+			<File RelativePath="src\TrainSelector.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainSelector.h">
+			</File>
+		</Filter>
+		<Filter Name="MFC Specific">
+			<File RelativePath="src\ICustomTrainDataProvider.h">
+			</File>
+			<File RelativePath="src\ITrainGroupComboEventListener.h">
+			</File>
+			<File RelativePath="src\ITrainListCtrlEventListener.h">
+			</File>
+			<File RelativePath="src\ITrainSelectionListener.h">
+			</File>
+			<File RelativePath="src\ITrainStaticGroupComboEventListener.h">
+			</File>
+			<File RelativePath="src\MFCTrainSelectorGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack;..\..\..\..\..\" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MFCTrainSelectorGUI.h">
+			</File>
+			<File RelativePath="src\TrainGroupComboBox.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainGroupComboBox.h">
+			</File>
+			<File RelativePath="src\TrainListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainListCtrl.h">
+			</File>
+			<File RelativePath="src\TrainSelectorGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="omniHack\omniHack" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainSelectorGUI.h">
+			</File>
+			<File RelativePath="src\TrainStaticGroupComboBox.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainStaticGroupComboBox.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

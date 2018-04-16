@@ -1,0 +1,231 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $Source: /cvs/1TS-9999-T/code/transactive/bus/trains/train_agent/idl/src/Attic/IPaPidsTrainCommandsCorbaDef.idl,v $
+// @author:  Andy Parker
+// @version: $Revision: #2 $
+//
+// Last modification: $Date: 2009/12/15 $
+// Last modified by:  $Author: grace.koh $
+//
+// Train PA IDL interface.
+//
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_IRS_Bus_4677
+{
+	interface IPaPidsTrainCommandsCorbaDef
+    {
+
+		/**
+         * This indicates a train's error state.
+         */
+        enum ETrainErrorState
+        {
+            NoError,
+			InvalidLibrary,
+            TrainBusy,
+			TrainAccessDeniedException,
+            TrainTimeout,
+			InvalidParameter,
+            TrainGeneralFailure
+        };
+
+       /*
+		* This exception is thrown when there is an error associated with a train 
+		*/
+        exception TrainException
+		{
+			ETrainErrorState error;
+		    string  details;
+		};
+
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //    Constants detailed in RST-COM interface
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        enum EFreeTextEffect
+        {
+            EffectImmediate,
+            EffectScrollLeft,
+            EffectScrollDown,
+            EffectScrollUp
+        };
+
+        enum EFreeTextColour
+        {
+            ColourBlack,
+            ColourRed
+        };
+
+        enum EFreeTextFont
+        {
+            FontEnglish7x5,
+            FontEnglish16x8Chinese16x16,
+            FontEnglish24x12Chinese32x32
+        };
+        
+        typedef sequence<octet> TrainIdList;
+
+        /**
+         * This is the global state of a live announcement.
+         */
+        enum ELiveAnnouncementState
+        {
+            InProgress,
+            Completed,
+            Failed
+        };
+
+        /**
+         * This is a train Id/Error state pair
+         */
+        struct TrainErrorState
+        {
+            octet trainId;
+            ETrainErrorState state;
+        };
+
+        typedef sequence<TrainErrorState> TrainErrorList;
+
+        /**
+         * This is sent when the status of a live announcement changes,
+         * it is not sent as a result of calls to setup, begin, or
+         * end live announcement. It is only sent for example if the
+         * audio call is lost, it notifies the GUI of an unexpected update.
+         *
+         */
+        struct LiveAnnouncementUpdate
+        {
+            unsigned long transactionId;                    // The live announcement's transaction Id
+            ELiveAnnouncementState announcementState;       // The state of the live announcement
+            string details;                                 // If the state is failed this contains details
+        };
+       
+        /**
+    	 * Displays a pre-defined message on a train.
+    	 * 
+    	 * @param trainId        As provided by the train selection component
+    	 * @param libraryVersion Train Message Library stored in ISCS database.
+    	 * @param messageId      Message ID as stored in ISCS database
+    	 * @param sessionId      For operator rights authentication
+    	 * 
+    	 * @exception TrainException
+       	 * 
+    	 */
+	    void displayPredefinedMessage( in octet trainId,
+                                       in unsigned long libraryVersion,
+                                       in octet messageId,
+                                       in string sessionId )
+             raises( TrainException );
+
+        /**
+    	 * Displays a free text message on a train.
+    	 * 
+    	 * @param trainId     As provided by the train selection component
+    	 * @param speed     Speed of the text animation.   Range is 0-9.
+    	 * @param effect    See EFreeTextEffect
+    	 * @param colour    See EFreeTextColour
+    	 * @param font      See EFreeTextFont
+    	 * @param stayTime  Time for the message to stay displayed.   Range is 1-15
+    	 * seconds
+    	 * @param freeText  Message to display.  Either ASCII for english or Big5
+    	 * encoding for chinese.
+    	 * @param sessionId      For operator rights authentication
+    	 * 
+    	 * @exception TrainException
+    	 * 
+    	 */
+	    void displayFreeText( in octet trainId,
+                              in octet speed,
+                              in EFreeTextEffect effect,
+                              in EFreeTextColour colour,
+                              in EFreeTextFont font,
+                              in octet stayTime,
+                              in string freeText,
+                              in string sessionID )
+             raises( TrainException );
+
+        /**
+         * Sets up a PA Live announcement.
+		 * This is a call for all trains that are valid, agent would do a call concurrently for each train.
+		 * If there is only one train in the list, setupLiveAnnouncement will be called for that single train.
+		 * If there are more than one train in trainIds List, a different setup process will be called.
+		 * All trains in the list will be in a single common broadcast.
+		 * Once function completes it can be assumed all transmission has been successful.
+		 * It is then the clients decision when to initiate the audio
+         *
+         * @param trainIds      As provided by the train selection component
+         * @param sessionId     For operator rights authentication
+         *
+         * @return  The state of all trains. In case some succeeded and some failed.
+		 *
+    	 * @exception TrainException
+    	 */
+    	TrainErrorList setupLiveAnnouncement( in TrainIdList trainIds,
+											  in string sessionID)
+            raises( TrainException );
+
+        /**
+         * Begins a PA Live announcement to a group of trains.
+         * Initiates the audio.
+         *
+         * @param trainIds      As provided by the train selection component
+         *                      (these trains must have previously been successfully set up by calling setupLiveAnnouncement)
+         * @param sessionId     For operator rights authentication
+         *
+         * @return a transaction ID for this group of trains. This ID is used to end the live announcement.
+
+    	 * @exception TrainException
+    	 */
+	    unsigned long beginLiveAnnouncement( in TrainIdList trainIds,
+                                             in string sessionID )
+            raises( TrainException );
+
+	    /**
+    	 * This ends a PA live announcement. A message will be sent to end an
+	     * announcement after we cut the audio is.
+    	 * 
+	     * @param trainTransactionId    The transaction to terminate
+    	 * @param sessionId             For operator rights authentication
+         *
+         * @return  The state of all trains. In case some succeeded and some failed.
+	     * 
+    	 * @exception TrainException
+    	 */
+    	TrainErrorList endLiveAnnouncement( in unsigned long trainTransactionId,
+                                            in string sessionID )
+            raises( TrainException );
+
+	    /**
+    	 * This ends a PA live announcement. A message will be sent to the trains to end an
+	     * announcement. Audio resource will not be cut.  This should only be used when 
+		 * beginLiveAnnouncement fails or radio resources are not acquired.
+    	 * 
+         * @param trainIds      As provided by the train selection component
+         *                      (these trains are trains that although having received the start 
+		 *						 PA live message, failed to begin the announcement)
+         * @param sessionId     For operator rights authentication
+         *
+         * @return  The state of all trains. In case some succeeded and some failed.
+	     * 
+    	 * @exception TrainException
+    	 */
+    	TrainErrorList endTrainsLiveAnnouncement( in TrainIdList trainIds,
+									              in string sessionID )
+            raises( TrainException );
+
+		// FlexibleTimeoutNamedObject calls this method to calculate the
+		// timoeut value based on the current configuration
+		unsigned short getFlexibleTimeOutValue() raises (TA_Base_Core::OperationModeException);
+
+	}; // IPaPidsTrainCommandsCorbaDef
+    
+}; // TA_IRS_Bus
+

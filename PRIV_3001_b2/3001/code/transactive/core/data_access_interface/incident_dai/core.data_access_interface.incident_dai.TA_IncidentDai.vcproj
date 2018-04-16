@@ -1,0 +1,143 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.data_access_interface.incident_dai" ProjectGUID="{EA90D8EB-60E9-4BCA-B2CA-44B7DD8D14BF}" RootNamespace="core.data_access_interface.incident_dai" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/incident_dai" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../..,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/bus/scada/DataPointCorbaDef/src,../../../../../sdk/include/cots/ace/6_0_4/ace_wrappers/,../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="WIN32;_DEBUG;_LIB;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/incident_dai/core.data_access_interface.incident_dai.TA_IncidentDai.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/incident_dai/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/incident_dai/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/incident_dai/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_IncidentDai.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../build/win32_nd/TA_IncidentDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/incident_dai" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../..,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/bus/scada/DataPointCorbaDef/src,../../../../../sdk/include/cots/ace/6_0_4/ace_wrappers/,../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../sdk/include/cots/boost/boost_1_39_0" PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/incident_dai/core.data_access_interface.incident_dai.TA_IncidentDai.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/incident_dai/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/incident_dai/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/incident_dai/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_IncidentDai.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../build/win32_nr/TA_IncidentDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\CtaIncidentReportData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaIncidentReportFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaLocationAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaReportAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaStationReportData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentReportHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\ItaStationReportData.cpp">
+			</File>
+			<File RelativePath="src\StationReportHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\AssetType.h">
+			</File>
+			<File RelativePath="src\CtaIncidentReportData.h">
+			</File>
+			<File RelativePath="src\CtaIncidentReportFactory.h">
+			</File>
+			<File RelativePath="src\CtaLocationAccessFactory.h">
+			</File>
+			<File RelativePath="src\CtaReportAccessFactory.h">
+			</File>
+			<File RelativePath="src\CtaStationReportData.h">
+			</File>
+			<File RelativePath="src\EAccessType.h">
+			</File>
+			<File RelativePath="src\IncidentCauseType.h">
+			</File>
+			<File RelativePath="src\IncidentConditionType.h">
+			</File>
+			<File RelativePath="src\IncidentLocationType.h">
+			</File>
+			<File RelativePath="src\IncidentReportHelper.h">
+			</File>
+			<File RelativePath="src\IncidentType.h">
+			</File>
+			<File RelativePath="src\ItaIncidentGuiCallback.h">
+			</File>
+			<File RelativePath="src\ItaIncidentReportData.h">
+			</File>
+			<File RelativePath="src\ItaIncidentReportFactory.h">
+			</File>
+			<File RelativePath="src\ItaLocationAccessFactory.h">
+			</File>
+			<File RelativePath="src\ItaReportAccessFactory.h">
+			</File>
+			<File RelativePath="src\ItaStationReportData.h">
+			</File>
+			<File RelativePath="src\PlanType.h">
+			</File>
+			<File RelativePath="src\StationReportHelper.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

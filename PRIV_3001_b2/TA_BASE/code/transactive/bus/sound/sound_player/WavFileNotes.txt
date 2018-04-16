@@ -1,0 +1,31 @@
+Below is a description of a problem that the program Flash has with some wav files. Out SoundManager has the same problems. This needs to be paraphased and included in the maintenance manual.
+
+
+
+Issue 
+Some WAV files won't import into Flash. The Windows version of Flash supports standard WAV file import. However, some import commands will generate "This file type is not recognized" messages, when importing WAV files.
+
+Reason
+Flash supports the standard PCM WAV file format. There are several varieties of WAV file formats. Flash supports the PCM format only. Non-supported WAV file formats include: CCITT A-Law, CCITT u-Law, DSP Group TrueSpeech(TM), elemediaTM AX2400P music codec, IMA ADPCM, Microsoft ADPCM, MSN Audio, and GSM 6.10. 
+
+Solution 
+Convert nonstandard WAV file formats to the standard PCM WAV file format. Converting WAV files to the standard PCM format is very straight forward. Most Windows operating systems include the Sound Recorder application, which can be used to convert non compatible WAV files to PCM WAV files. 
+
+Below are the steps to using Sound Recorder to convert files to PCM WAV files. 
+1 
+Launch Sound Recorder: Start Button>Programs>Accessories>Multimedia>Sound Recorder. 
+2 
+Choose File>Open to open the WAV file in need of conversion. 
+3 
+Choose File>Save As. 
+4
+In the Save As dialog box, click the Change button.
+5
+In the Sound Selection dialog box, select PCM from the format pop-menu, then click OK.
+6 
+Click Save in the Save As dialog box. 
+
+The WAV file will now be compatible with Flash, and can be imported as normal.
+
+Note: If Sound Recorder is not installed, the same procedure can be completed with any Windows compatible sound editing software, such as Sound Forge: http://www.sonicfoundry.com
+

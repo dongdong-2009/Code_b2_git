@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{708a4b3d-3a05-46dc-b0e8-47f0dd0f672d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4e1314d2-0a68-4651-bb1e-ad16d3e72bec}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="PropertyPages">
+      <UniqueIdentifier>{cc87d123-5f66-44ca-b8cb-9be217bb1dff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AddAssociationDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeParentDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeParentEntityFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointStateDataHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaTreeView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SelectAssociationEntityFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_ScadaConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnalogueAlarmConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnalogueEngUnitsConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BooleanAlarmConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BooleanEngUnitsConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeSynthesisConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HelpConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputAssociationConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputDataPointListCtrl.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MeteredConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OutputAssociationConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OutputDataPointListCtrl.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParameterListCtrl.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateConfiguration.cpp">
+      <Filter>PropertyPages</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AddAssociationDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeParentDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeParentEntityFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateDataHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaTreeView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SelectAssociationEntityFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnalogueAlarmConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnalogueEngUnitsConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AttributeConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanAlarmConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanEngUnitsConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeSynthesisConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HelpConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigurationPage.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputAssociationConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputDataPointListCtrl.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MeteredConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OutputAssociationConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OutputDataPointListCtrl.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParameterListCtrl.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateConfiguration.h">
+      <Filter>PropertyPages</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TA_ScadaConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+    <None Include="res\TA_ScadaConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_ScadaConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\location.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\scada.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

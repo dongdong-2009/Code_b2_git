@@ -1,0 +1,56 @@
+#
+# $Source: /cvs/1TS-9999-T/code/transactive/app/simulator/ats/Attic/Makefile_hidden,v $
+# $Revision: 1.1.2.2 $
+# $Date: 2006/03/02 06:36:41 $ 
+# $Author: lachlanp $
+#
+# Make file for the Radio Tetra Agent 
+#
+# History
+#
+# $Log: Makefile_hidden,v $
+# Revision 1.1.2.2  2006/03/02 06:36:41  lachlanp
+# Remove TA_Logging project
+#
+# Revision 1.1.2.1  2005/02/25 04:44:21  robertvh
+# new Makefile but hidden to prevent being made during normal build
+#
+#
+
+#
+
+PROJ_ROOT_DIR	= ../../../../..
+PROJ_CODE_DIR	= transactive/app/simulator/ats
+PROJ_NAME	= AtsSimulator
+PROJ_SOURCE	= main.cpp \
+		VersionGen.cpp
+
+PROJ_TYPE     = exe
+PROJ_INC_DIR    = ./src $(PROJ_ROOT_DIR)/code/transactive $(PROJ_ROOT_DIR)/sdk/include/transactive
+PROJ_OUT_DIR    = $(PROJ_ROOT_DIR)/bin/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
+
+PROJ_LIBS	= \
+		TA_ATSSimulatorLibrary \
+		TA_GenericServerSimulator \
+		TA_Utilities \
+		TA_CorbaUtil \
+		TA_Version \
+		TA_Thread \
+		TA_GenericAgent \
+		TA_Message \
+		TA_Alarm \
+		TA_Naming \
+		TA_Sockets \
+		TA_Synchronisation \
+		TA_CorbaDef \
+		TA_ConfigurationUpdates \
+		TA_Exceptions \
+		TA_CommonExceptionsCorbaDef \
+		TA_Uuid
+             
+DEPENDENT_LIBRARIES	= $(PROJ_ROOT_DIR)/code/transactive/app/ats/ATSSimulatorLibrary
+ 
+include $(PROJ_ROOT_DIR)/code/tools/build/CommonMakefile.mak
+
+install:
+	#Do Nothing

@@ -1,0 +1,124 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_DATA_POINT_SET_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "...",IDC_DPSET_PICK_DATA_POINT_BUTTON,322,14,14,14
+    COMBOBOX        IDC_DPSET_DATA_POINT_VALUE_BOOL,90,63,122,97,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DPSET_DATA_POINT_VALUE_NUMBER,90,63,122,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_DPSET_DATA_POINT_VALUE_TEXT,90,63,232,14,ES_AUTOHSCROLL
+    LTEXT           "Data point name:",IDC_STATIC,9,14,80,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DPSET_DATA_POINT,90,14,232,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Data point type:",IDC_STATIC,9,38,80,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_DPSET_DATA_POINT_TYPE,90,38,232,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Data point new value:",IDC_STATIC,9,60,54,28,0,WS_EX_TRANSPARENT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PLAN_STEP_EDIT_DATA_POINT_SET_DLG DLGINIT
+BEGIN
+    IDC_DPSET_DATA_POINT_VALUE_BOOL, 0x403, 5, 0
+0x7254, 0x6575, "\000" 
+    IDC_DPSET_DATA_POINT_VALUE_BOOL, 0x403, 6, 0
+0x6146, 0x736c, 0x0065, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DPSET_STEP_PARAMETER_DATA_POINT_NAME "Data Point Name"
+    IDS_DPSET_STEP_PARAMETER_DATA_POINT_NEW_VALUE "Data Point New Value"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

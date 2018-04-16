@@ -1,0 +1,243 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.trains.TrainCorbaProxy" ProjectGUID="{10C2325D-9C9A-4E96-9CE4-F2AF5201F9A6}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/trains/TrainCorbaProxy" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../../;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/IDL/src/;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/bus/trains/TrainAgentCorba/src;../../../core/message/idl/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers/;../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src;../../..;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src/;../../../../../sdk/include/transactive/bus/radio/RadioAgentCorbaDef_4669/idl/src/;../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../build/win32_n/transactive/bus/trains/TrainAgentCorba/idl/src;../../../../../build/win32_n/transactive/core/exceptions/idl/src;../../../../../build/win32_n/transactive/core/message/idl/src" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/trains/TrainCorbaProxy/bus.trains.TrainCorbaProxy.TA_TrainCorbaProxy.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/trains/TrainCorbaProxy/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/trains/TrainCorbaProxy/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/trains/TrainCorbaProxy/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_TrainCorbaProxy_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.trains.TrainCorbaProxy.TA_TrainCorbaProxy.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/trains/TrainCorbaProxy" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../../;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/bus/radio/radioagentcorbadef_4669/IDL/src/;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/bus/trains/TrainAgentCorba/src;../../../core/message/idl/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers/;../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src;../../..;../../../../../sdk/include/transactive;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src/;../../../../../sdk/include/transactive/bus/radio/RadioAgentCorbaDef_4669/idl/src/;../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../build/win32_n/transactive/bus/trains/TrainAgentCorba/idl/src;../../../../../build/win32_n/transactive/core/exceptions/idl/src;../../../../../build/win32_n/transactive/core/message/idl/src" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/trains/TrainCorbaProxy/bus.trains.TrainCorbaProxy.TA_TrainCorbaProxy.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/trains/TrainCorbaProxy/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/trains/TrainCorbaProxy/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/trains/TrainCorbaProxy/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_TrainCorbaProxy.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.trains.TrainCorbaProxy.TA_TrainCorbaProxy.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="observer">
+			<File RelativePath="src\ITrainCctvUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainDriverCallUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainInformationUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainPaUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainPecUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainRadioGroupUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainStateUpdateObserver.h">
+			</File>
+			<File RelativePath="src\ITrainTisUpdateObserver.h">
+			</File>
+		</Filter>
+		<Filter Name="conversion">
+			<File RelativePath="src\CallTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CallTypesConversion.h">
+			</File>
+			<File RelativePath="src\CctvTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CctvTypesConversion.h">
+			</File>
+			<File RelativePath="src\CommonTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CommonTypesConversion.h">
+			</File>
+			<File RelativePath="src\ExceptionConversion.h">
+			</File>
+			<File RelativePath="src\PaTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PaTypesConversion.h">
+			</File>
+			<File RelativePath="src\PecTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PecTypesConversion.h">
+			</File>
+			<File RelativePath="src\RadioGroupTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioGroupTypesConversion.h">
+			</File>
+			<File RelativePath="src\StateUpdateTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StateUpdateTypesConversion.h">
+			</File>
+			<File RelativePath="src\TisTypesConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisTypesConversion.h">
+			</File>
+			<File RelativePath="src\TrainInformationConversion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainInformationConversion.h">
+			</File>
+		</Filter>
+		<Filter Name="proxy">
+			<File RelativePath="src\TrainAgentProxyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainAgentProxyFactory.h">
+			</File>
+			<File RelativePath="src\TrainCctvCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainCctvCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainDriverCallCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainDriverCallCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainInformationCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainInformationCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainOperationModeCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainOperationModeCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainPaCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainPaCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainPecCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainPecCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainRadioGroupCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainRadioGroupCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainStateUpdateCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainStateUpdateCorbaProxy.h">
+			</File>
+			<File RelativePath="src\TrainTisCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainTisCorbaProxy.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,530 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.RadioTetraAgent" ProjectGUID="{E95E1B7A-A485-4533-BA8E-A1640FAEF851}" RootNamespace="app.radio.RadioTetraAgent" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nd/app.radio.RadioTetraAgent.RadioServerAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src" PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/app.radio.RadioTetraAgent.RadioServerAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib oci.lib libmysql.lib aced.lib acemfcd.lib Rpcrt4.lib TA_RadioMethodProtocol_d.lib TA_RadioTCPCommunication_d.lib TA_IRS_Core_d.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Bus_d.lib SDTSProtocol_d.lib stracelib.lib winmm.lib TA_RadioPDSProtocol_d.lib" OutputFile="../../../../../bin/win32_nd/RadioServerAgent.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd;../../../../../sdk/win32_nd;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../../sdk/lib;../../../../../bin/win32_nd" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/RadioServerAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.radio.RadioTetraAgent.RadioServerAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../build/win32_nr/app.radio.RadioTetraAgent.RadioServerAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/include/transactive/bus/trains/TrainAgentCorba/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src" PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/app.radio.RadioTetraAgent.RadioServerAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib oci.lib libmysql.lib ace.lib acemfc.lib Rpcrt4.lib TA_RadioMethodProtocol.lib TA_RadioTCPCommunication.lib TA_IRS_Core.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Bus.lib SDTSProtocol.lib stracelib.lib winmm.lib TA_RadioPDSProtocol.lib" OutputFile="../../../../../bin/win32_nr/RadioServerAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr;../../../../../sdk/win32_nr;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../../sdk/lib;../../../../../bin/win32_nr" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/RadioServerAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.radio.RadioTetraAgent.RadioServerAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\main.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\MccProtocolHelper.cpp">
+			</File>
+			<File RelativePath=".\src\RadioDpStatusUpdateThread.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMFTHandler.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMFTResponse.cpp">
+			</File>
+			<File RelativePath=".\src\RadioProfileHandler.cpp">
+			</File>
+			<File RelativePath=".\src\RadioResourceSync.cpp">
+			</File>
+			<File RelativePath="src\RadioSDS.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioSDSHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RadioSDSLinkStatusThread.cpp">
+			</File>
+			<File RelativePath="src\RadioSDSSummary.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioServerAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioServerAgentCommandServant.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioServerAgentFramework.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioServerMonitor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RadioStatusHandler.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteAPI.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\IRadioServerAgentCommand.h">
+			</File>
+			<File RelativePath=".\src\MccProtocolHelper.h">
+			</File>
+			<File RelativePath=".\src\RadioDpStatusUpdateThread.h">
+			</File>
+			<File RelativePath=".\src\RadioMFTHandler.h">
+			</File>
+			<File RelativePath=".\src\RadioMFTResponse.h">
+			</File>
+			<File RelativePath=".\src\RadioProfileHandler.h">
+			</File>
+			<File RelativePath=".\src\RadioResourceSync.h">
+			</File>
+			<File RelativePath="src\RadioSDS.h">
+			</File>
+			<File RelativePath="src\RadioSDSHandler.h">
+			</File>
+			<File RelativePath=".\src\RadioSDSLinkStatusThread.h">
+			</File>
+			<File RelativePath="src\RadioSDSSummary.h">
+			</File>
+			<File RelativePath="src\RadioServerAgent.h">
+			</File>
+			<File RelativePath="src\RadioServerAgentCommandServant.h">
+			</File>
+			<File RelativePath="src\RadioServerAgentFramework.h">
+			</File>
+			<File RelativePath="src\RadioServerMonitor.h">
+			</File>
+			<File RelativePath=".\src\RadioStatusHandler.h">
+			</File>
+			<File RelativePath=".\src\RemoteAPI.h">
+			</File>
+		</Filter>
+		<Filter Name="RadioMethodProtocol">
+		</Filter>
+		<Filter Name="RadioTcpCommunication">
+		</Filter>
+		<Filter Name="tests">
+			<Filter Name="autogenerated">
+				<Filter Name="Source Files">
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_main_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_MccProtocolHelper_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioDpStatusUpdateThread_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMFTHandler_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMFTResponse_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioProfileHandler_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioResourceSync_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioSDS_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioSDSHandler_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioSDSSummary_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioServerAgent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioServerAgentCommandServant_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioServerAgentFramework_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioServerMonitor_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioStatusHandler_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+				<Filter Name="Header Files">
+					<File RelativePath=".\tests\autogenerated\Header Files\TestSuite_MccProtocolHelper_h.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Header Files\TestSuite_RadioSDS_h.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter Name="stubs">
+			<File RelativePath=".\stubs\Stub_ACE.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Alarm.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_BaseTcpServer.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_CallForwarding.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Console.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Corba.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_CtaRunTime.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_DataNode.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_DataNodeAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_DataPoint.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_EntityAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_EntityData.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_GenericAgent.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_MCC.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_MessagePublicationManager.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Profile.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioEvent.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioMFTAgentEntityData.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioPDSManager.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioSDSHandler.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_RadioTextMessageInboxFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_ScadaPersistence.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_ScadaProxyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_SDSQueueManager.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_SDSRegisterSession.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_SDSUnregisterSession.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_SDTSProtocolEvent.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_ServantBase.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Thread.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_TrainAgentProxy.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_TrainOperationModeCorbaProxy.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_TrainProxyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+		</Filter>
+		<File RelativePath=".\ClassDiagram1.cd">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

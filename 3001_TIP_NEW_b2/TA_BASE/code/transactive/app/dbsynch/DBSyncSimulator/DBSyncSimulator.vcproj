@@ -1,0 +1,278 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="DBSyncSimulator" ProjectGUID="{CE4B32DA-142D-4CA0-8529-6B9F4B5E2D50}" RootNamespace="DBSyncSimulator" Keyword="MFCProj" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS/omniORB/omniORB_4.1.6/include;..\..\..\..\COTS\boost\boost_1_39_0\boost;..\..\..\..\COTS\boost\boost_1_39_0;..\..\..\..\COTS\mcl\1.1.0;..\..\..\..\COTS\ZipArchive\zlib;..\..\..\..\COTS\oracle\10.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src;..\MAQLib\src;./src" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=5;" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="0" WarningLevel="3" DebugInformationFormat="4" DisableSpecificWarnings="4996;4018"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib omnithread34_rtd.lib TA_mcl_d.lib TA_Sockets_d.lib TA_Thread_d.lib TA_Utilities_d.lib TA_Exceptions_d.lib TA_Synchronisation_d.lib TA_Version_d.lib TA_MAQ_d.lib stracelib.lib zlib_d.lib ocilib_d.lib TA_Uuid_d.lib Rpcrt4.lib" OutputFile="../../../../../bin/win32_nd/$(ProjectName).exe" LinkIncremental="2" AdditionalLibraryDirectories="..\..\..\..\..\build\win32_nd;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32\;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib\;..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\cots\WinStackTrace\build\Debug;..\..\..\..\cots\ZipArchive\zlib;..\..\..\..\COTS\ZipArchive\zlib\Debug;..\..\..\..\cots\ocilib\3.9.3\lib\winnt;..\..\..\..\cots\oracle\10.2.0\winnt\lib" GenerateDebugInformation="true" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS/omniORB/omniORB_4.1.6/include;..\..\..\..\COTS\boost\boost_1_39_0\boost;..\..\..\..\COTS\boost\boost_1_39_0;..\..\..\..\COTS\mcl\1.1.0;..\..\..\..\COTS\ZipArchive\zlib;..\..\..\..\COTS\oracle\10.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src;..\MAQLib\src;./src" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=5;" RuntimeLibrary="2" UsePrecompiledHeader="0" WarningLevel="3" DebugInformationFormat="3" DisableSpecificWarnings="4996;4018" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib omnithread34_rt.lib TA_mcl.lib TA_Sockets.lib TA_Thread.lib TA_Utilities.lib TA_Exceptions.lib TA_Synchronisation.lib TA_Version.lib TA_MAQ.lib stracelib.lib zlib.lib ocilib.lib TA_Uuid.lib Rpcrt4.lib" OutputFile="../../../../../bin/win32_nr/$(ProjectName).exe" LinkIncremental="1" AdditionalLibraryDirectories="..\..\..\..\..\build\win32_nr;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\cots\omniORB\omniORB_4.1.6\lib\x86_win32\;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib\;..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\cots\WinStackTrace\build\Release;..\..\..\..\cots\ZipArchive\zlib;..\..\..\..\COTS\ZipArchive\zlib\Release;..\..\..\..\cots\ocilib\3.9.3\lib\winnt;..\..\..\..\cots\oracle\10.2.0\winnt\lib" GenerateDebugInformation="true" SubSystem="2" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\DbSyncListCtrl.cpp">
+			</File>
+			<File RelativePath=".\DBSyncSimulator.cpp">
+			</File>
+			<File RelativePath=".\DBSyncSimulatorDlg.cpp">
+			</File>
+			<File RelativePath=".\DbSyncTestMonitor.cpp">
+			</File>
+			<File RelativePath=".\GUIUpdateHandler.cpp">
+			</File>
+			<File RelativePath=".\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\DbSyncListCtrl.h">
+			</File>
+			<File RelativePath=".\DBSyncSimCommon.h">
+			</File>
+			<File RelativePath=".\DBSyncSimulator.h">
+			</File>
+			<File RelativePath=".\DBSyncSimulatorDlg.h">
+			</File>
+			<File RelativePath=".\DbSyncTestMonitor.h">
+			</File>
+			<File RelativePath=".\GUIUpdateHandler.h">
+			</File>
+			<File RelativePath=".\IDBSyncSimGUIAccess.h">
+			</File>
+			<File RelativePath=".\Resource.h">
+			</File>
+			<File RelativePath=".\stdafx.h">
+			</File>
+			<File RelativePath=".\targetver.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\res\DBSyncSimulator.ico">
+			</File>
+			<File RelativePath=".\DBSyncSimulator.rc">
+			</File>
+			<File RelativePath=".\res\DBSyncSimulator.rc2">
+			</File>
+		</Filter>
+		<Filter Name="ClientTcp">
+			<File RelativePath=".\src\ClientComWorker.cpp">
+			</File>
+			<File RelativePath=".\src\ClientComWorker.h">
+			</File>
+			<File RelativePath=".\src\ITcpComType.h">
+			</File>
+			<File RelativePath=".\src\TcpClientManager.cpp">
+			</File>
+			<File RelativePath=".\src\TcpClientManager.h">
+			</File>
+			<File RelativePath=".\src\TcpClientWrapper.cpp">
+			</File>
+			<File RelativePath=".\src\TcpClientWrapper.h">
+			</File>
+		</Filter>
+		<Filter Name="Common">
+			<File RelativePath=".\src\CommonData.h">
+			</File>
+			<File RelativePath=".\src\CommonDef.h">
+			</File>
+		</Filter>
+		<Filter Name="Propagate">
+			<File RelativePath=".\src\AQMsgThreadPool.cpp">
+			</File>
+			<File RelativePath=".\src\AQMsgThreadPool.h">
+			</File>
+			<File RelativePath=".\src\DeqMsgJob.cpp">
+			</File>
+			<File RelativePath=".\src\DeqMsgJob.h">
+			</File>
+			<File RelativePath=".\src\MsgDispatcher.cpp">
+			</File>
+			<File RelativePath=".\src\MsgDispatcher.h">
+			</File>
+		</Filter>
+		<Filter Name="Public">
+			<File RelativePath=".\src\Buffer.cpp">
+			</File>
+			<File RelativePath=".\src\Buffer.h">
+			</File>
+			<File RelativePath=".\src\ComProtocol.cpp">
+			</File>
+			<File RelativePath=".\src\ComProtocol.h">
+			</File>
+			<File RelativePath=".\src\ConfigInfoHelper.cpp">
+			</File>
+			<File RelativePath=".\src\ConfigInfoHelper.h">
+			</File>
+			<File RelativePath=".\src\IMsgItem.h">
+			</File>
+			<File RelativePath=".\src\IMsgPackage.h">
+			</File>
+			<File RelativePath=".\src\IObserverRcvMsg.h">
+			</File>
+			<File RelativePath=".\src\IPropagateHandler.h">
+			</File>
+			<File RelativePath=".\src\MsgHelper.cpp">
+			</File>
+			<File RelativePath=".\src\MsgHelper.h">
+			</File>
+			<File RelativePath=".\src\MsgItemImp.cpp">
+			</File>
+			<File RelativePath=".\src\MsgItemImp.h">
+			</File>
+			<File RelativePath=".\src\MsgPackageImp.cpp">
+			</File>
+			<File RelativePath=".\src\MsgPackageImp.h">
+			</File>
+		</Filter>
+		<Filter Name="ServerTcp">
+			<File RelativePath=".\src\ConnectionActorReleaser.cpp">
+			</File>
+			<File RelativePath=".\src\ConnectionActorReleaser.h">
+			</File>
+			<File RelativePath=".\src\IServerTcpComType.cpp">
+			</File>
+			<File RelativePath=".\src\IServerTcpComType.h">
+			</File>
+			<File RelativePath=".\src\MonitorWorker.cpp">
+			</File>
+			<File RelativePath=".\src\MonitorWorker.h">
+			</File>
+			<File RelativePath=".\src\MysqlSrvEnqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlSrvEnqWorker.h">
+			</File>
+			<File RelativePath=".\src\MysqlSrvWorkSingle.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlSrvWorkSingle.h">
+			</File>
+			<File RelativePath=".\src\SrvComWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvComWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvDeqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvDeqWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvEnqWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvEnqWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvInitWorker.cpp">
+			</File>
+			<File RelativePath=".\src\SrvInitWorker.h">
+			</File>
+			<File RelativePath=".\src\SrvWorkMutil.cpp">
+			</File>
+			<File RelativePath=".\src\SrvWorkMutil.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionActor.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionActor.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionListen.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionListen.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionPool.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionPool.h">
+			</File>
+			<File RelativePath=".\src\WorkTime.cpp">
+			</File>
+			<File RelativePath=".\src\WorkTime.h">
+			</File>
+		</Filter>
+		<Filter Name="SimClient">
+			<File RelativePath=".\src\dbSynTestClientManager.cpp">
+			</File>
+			<File RelativePath=".\src\dbSynTestClientManager.h">
+			</File>
+			<File RelativePath=".\src\dbSynTestCreateEnqMsg.cpp">
+			</File>
+			<File RelativePath=".\src\dbSynTestCreateEnqMsg.h">
+			</File>
+			<File RelativePath=".\src\dbSynTestCreateMsgManager.cpp">
+			</File>
+			<File RelativePath=".\src\dbSynTestCreateMsgManager.h">
+			</File>
+			<File RelativePath=".\src\ProcessRcvMsg.cpp">
+			</File>
+			<File RelativePath=".\src\ProcessRcvMsg.h">
+			</File>
+			<File RelativePath=".\src\PropagateMsg.cpp">
+			</File>
+			<File RelativePath=".\src\PropagateMsg.h">
+			</File>
+			<File RelativePath=".\src\SynSimuCliientInfo.cpp">
+			</File>
+			<File RelativePath=".\src\SynSimuCliientInfo.h">
+			</File>
+			<File RelativePath=".\src\TimeMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\TimeMonitor.h">
+			</File>
+		</Filter>
+		<Filter Name="main">
+			<File RelativePath=".\src\SyncAQMsgManager.cpp">
+			</File>
+			<File RelativePath=".\src\SyncAQMsgManager.h">
+			</File>
+			<File RelativePath=".\src\SynModeMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\SynModeMonitor.h">
+			</File>
+			<File RelativePath=".\src\UniqueCheck.cpp">
+			</File>
+			<File RelativePath=".\src\UniqueCheck.h">
+			</File>
+			<File RelativePath=".\src\VersionGen.cpp">
+			</File>
+		</Filter>
+		<File RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="DBSyncSimulator.rc"/>
+	</Globals>
+</VisualStudioProject>

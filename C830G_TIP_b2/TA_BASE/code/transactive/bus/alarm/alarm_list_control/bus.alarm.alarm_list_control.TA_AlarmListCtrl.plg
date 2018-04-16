@@ -1,0 +1,222 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: bus.alarm.alarm_list_control.TA_AlarmListCtrl - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0xc09 /fo"../../../../../build/win32_nd/transactive/bus/alarm/alarm_list_control/AlarmListCtrl.res" /i "..\..\..\bus\resources\\" /i "src" /d "_DEBUG" /d "_AFXDLL" "E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmListCtrl.rc"" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP26A3.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "../../.." /I "../../../../../build/win32_n/transactive" /I "../../../../../build/win32_n/transactive/core/exceptions/IDL/src" /I "../../../../../build/win32_n/transactive/core/message/IDL/src" /I "../../../../../build/win32_n/transactive/core/alarm/IDL/src" /I "../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src/" /I "../../../../../build/win32_n/transactive/bus/trains/TrainAgentCorba/idl/src" /I "../../../../cots/boost/boost_1_31_0" /I "../../../../cots/omniORB/omniORB_4.0.5/include" /I "../../../../cots/ACE/5_3/ACE_wrappers" /D "_DEBUG" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fo"../../../../../build/win32_nd/transactive/bus/alarm/alarm_list_control/" /Fd"../../../../../build/win32_nd/transactive/bus/alarm/alarm_list_control/" /FD /GZ /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmListCtrl.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmSynchronisor.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\Filter.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\ListHeaderCtrl.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\Sort.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\StdAfx.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\TrainAgentAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\TrainAlarms.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\Utilities.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionAcknowledgeAlarm.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionAcknowledgeAllAlarms.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionCloseAndAckAlarm.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionDisplayComment.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionEventsViewer.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionIncidentLogSheet.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionJobRequest.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionPostponeDSS.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedAvalancheEvents.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedDSS.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedEvents.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedInspector.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedPlanInstance.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedSchematic.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionRelatedTrend.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\actions\ActionSuppressAlarm.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmActionFactory.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\CommentDialog.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\CSuppressAlarmConfirmDlg.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\EditCommentDialog.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\LocationSelectionDialog.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\PlanAssociationDialog.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\PreConflictAckDlg.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\SuppressAlarmDialog.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\ActionThread.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmRetriever.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmStore.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\AlarmStoreCallback.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\DatabaseCache.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\RightsChecker.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAck.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAckBy.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAckTime.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAlarmType.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAsset.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnAvalanche.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnCloseTime.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnComment.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnDecisionSupport.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnDescription.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnEntityName.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnLocation.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnMms.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnSeverity.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnSourceTimestamp.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnState.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnSubsystem.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnTransActiveTimestamp.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\alarm\alarm_list_control\src\columns\ColumnValue.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP26A3.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP26A4.tmp" with contents
+[
+/nologo /out:"../../../../../build/win32_nd/TA_AlarmListCtrl_d.lib" /ignore:4006 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmListCtrl.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmSynchronisor.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\Filter.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ListHeaderCtrl.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\Sort.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\StdAfx.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\TrainAgentAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\TrainAlarms.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\Utilities.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionAcknowledgeAlarm.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionAcknowledgeAllAlarms.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionCloseAndAckAlarm.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionDisplayComment.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionEventsViewer.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionIncidentLogSheet.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionJobRequest.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionPostponeDSS.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedAvalancheEvents.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedDSS.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedEvents.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedInspector.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedPlanInstance.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedSchematic.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionRelatedTrend.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionSuppressAlarm.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmActionFactory.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\CommentDialog.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\CSuppressAlarmConfirmDlg.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\EditCommentDialog.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\LocationSelectionDialog.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\PlanAssociationDialog.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\PreConflictAckDlg.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\SuppressAlarmDialog.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ActionThread.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmRetriever.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmStore.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmStoreCallback.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\DatabaseCache.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\RightsChecker.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAck.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAckBy.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAckTime.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAlarmType.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAsset.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnAvalanche.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnCloseTime.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnComment.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnDecisionSupport.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnDescription.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnEntityName.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnLocation.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnMms.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnSeverity.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnSourceTimestamp.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnState.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnSubsystem.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnTransActiveTimestamp.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\ColumnValue.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\alarm\alarm_list_control\AlarmListCtrl.res
+\T1350_DE\Base_4669\Base\build\win32_nd\TA_TrainAgentCorba_d.lib
+\T1350_DE\Base_4669\Base\build\win32_nd\TA_TrainAgentObjectNames_d.lib
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP26A4.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+AlarmListCtrl.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.cpp(853) : warning C4018: '>=' : signed/unsigned mismatch
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.cpp(859) : warning C4018: '>=' : signed/unsigned mismatch
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.cpp(3093) : warning C4018: '>' : signed/unsigned mismatch
+AlarmSynchronisor.cpp
+Filter.cpp
+ListHeaderCtrl.cpp
+Sort.cpp
+StdAfx.cpp
+TrainAgentAccess.cpp
+TrainAlarms.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+Utilities.cpp
+ActionAcknowledgeAlarm.cpp
+ActionAcknowledgeAllAlarms.cpp
+ActionCloseAndAckAlarm.cpp
+ActionDisplayComment.cpp
+ActionEventsViewer.cpp
+ActionIncidentLogSheet.cpp
+ActionJobRequest.cpp
+ActionPostponeDSS.cpp
+ActionRelatedAvalancheEvents.cpp
+ActionRelatedDSS.cpp
+ActionRelatedEvents.cpp
+Generating Code...
+Compiling...
+ActionRelatedInspector.cpp
+ActionRelatedPlanInstance.cpp
+ActionRelatedSchematic.cpp
+ActionRelatedTrend.cpp
+ActionSuppressAlarm.cpp
+AlarmActionFactory.cpp
+CommentDialog.cpp
+CSuppressAlarmConfirmDlg.cpp
+EditCommentDialog.cpp
+LocationSelectionDialog.cpp
+PlanAssociationDialog.cpp
+PreConflictAckDlg.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+SuppressAlarmDialog.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+ActionThread.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+AlarmRetriever.cpp
+e:\t1350_de\base_4669\base\code\transactive\bus\alarm\alarm_list_control\src\alarmlistctrl.h(291) : warning C4018: '<' : signed/unsigned mismatch
+AlarmStore.cpp
+AlarmStoreCallback.cpp
+DatabaseCache.cpp
+RightsChecker.cpp
+ColumnAck.cpp
+Generating Code...
+Compiling...
+ColumnAckBy.cpp
+ColumnAckTime.cpp
+ColumnAlarmType.cpp
+ColumnAsset.cpp
+ColumnAvalanche.cpp
+ColumnCloseTime.cpp
+ColumnComment.cpp
+ColumnDecisionSupport.cpp
+ColumnDescription.cpp
+ColumnEntityName.cpp
+ColumnLocation.cpp
+ColumnMms.cpp
+ColumnSeverity.cpp
+ColumnSourceTimestamp.cpp
+ColumnState.cpp
+ColumnSubsystem.cpp
+ColumnTransActiveTimestamp.cpp
+ColumnValue.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_AlarmListCtrl_d.lib - 0 error(s), 9 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{95cb8822-7a05-4cc8-806c-911a52c1acb7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="active_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\AssignCameraToMonitorStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\ActiveAssignCameraToMonitorStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\DllActiveInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="active_src\ActiveAssignCameraToMonitorStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\AssignCameraToMonitorStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

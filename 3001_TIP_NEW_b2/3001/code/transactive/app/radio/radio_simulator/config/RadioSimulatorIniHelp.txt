@@ -1,0 +1,106 @@
+
+ Source:   $Source: /cvs/1TS-9999-T/code/transactive/app/radio/radio_simulator/config/Attic/RadioSimulatorIniHelp.txt,v $
+ @author   Andy Parker
+ @version: $Revision: 1.1.2.1 $
+
+ Last modification: $Date: 2005/01/21 12:05:10 $
+ Last modified by:  $Author: julienc $
+
+
+Summary
+-------
+
+Brief but useful description of the RadioSimulator ini file format
+
+
+
+Fields
+------
+
+Name: That which is displayed in the RadioSimulator for the entry.
+    Also defines the start of each entry.
+
+Data: hex, wild card specified by '*'
+    Now supports a single quoted string on a line with an optional size specifier
+    eg. "123" is equivalent to 313233
+    eg. "123"/5 is equivalent to 3132330000
+
+Ivar format: <Char> : <offset (in data)> : <length> : <offset (in resp)>
+
+Ilog format: <string with no spaces or colon> : <offset (in data)> : <length> : < h/a/n hex/ascii/numeric>
+
+Ovar format: <Var> : <offset (in resp)> : length
+How to determine what to do with generated vars??? Hardcode special symbols for now...
+    'L' - length of full packet (not supported)
+    'M' - length of train message (not supported)
+    '#' - use custom CCIT crc16
+
+Resp: '*' are replaced by Vars/Ovar or, if none, then Data is used to fill
+
+RespSize: (optional) to allow zero padding of message to specified size,
+    useful for sds train messages.
+    [default=byte size of Resp]
+
+Continue: (optional) only used to trigger a cascade of events matching input
+    data, handy for auto sending radio control messages for train sds calls
+    'YES'|'ON'  - continue executing subsequent matching UseCases
+    'NO'|'OFF'  - [default] do not cascade/continue
+    'FIRST'     - execute this matching UC IFF it is the FIRST match. Entries
+                  so marked can be "overridden" by *earlier* defined entries
+    [default=NO]
+
+Wait: (optional) milliseconds to wait after matching, before sending response
+    If there is no Data to match this still delays before sending the Resp
+    [default=0]
+
+NOTE: multiple response blocks can be specified, seperated by a "Wait" field
+
+Verbose: can be specified between use case blocks and affects everything to
+    next Verbose specification or end of file
+    0 / OFF / NO - terse info
+    1 / ON       - some hex dumps of received/sent messages
+    2            - more detail - also show ascii'fied dumps
+    [default=NO]
+
+
+
+Command Line Arguments
+----------------------
+
+The RadioSimulator also supports a --parser-verbosity command line argument
+with following possible values:
+
+    0..9 : [default=1] Specifies verbosity as a numeric value.
+    ON   : same as 9
+    OFF  : same as 0
+
+These values are currently used in the Simulator for following:
+    1 : informs of errors and when processing is complete
+    3 : also includes processed Name/IVar/ILog/OVar/RespSize
+    5 : also includes actual line processed
+
+
+
+Sample Entry
+------------
+
+Name = A rule name
+Data = 00112233
+Data = 00****33
+Data = 00112233 "a string"
+Data = 00112233 "a long string"/100
+Ivar = X:4:4:4
+Ivar = Y:8:4:8
+Ilog = Xhex:4:4:h
+Ilog = Xascii:4:4:a
+Ilog = Xnumeric:4:4:n
+Resp = DEADBEEF ******** ******** DEADBEEF
+Resp = 00000000 **
+Respsize = 22
+Ovar = #:-2:2
+Continue = YES
+Wait = 500
+Resp = 12
+Respsize = 16
+Wait = 500
+

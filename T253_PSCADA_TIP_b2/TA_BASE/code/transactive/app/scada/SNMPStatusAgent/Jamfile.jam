@@ -1,0 +1,4 @@
+
+ta-exe SNMPStatusAgent
+	: [ glob src/*.cpp : src/ModbusPointThread.cpp ]
+	;

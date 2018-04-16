@@ -1,0 +1,301 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/core/data_access_interface/tis_agent/src/TISMessageDataDefinitions.idl $
+// @author:  Rob Ashcroft
+// @version: $Revision: #3 $
+//
+// Last modification: $DateTime: 2012/02/10 15:24:16 $
+// Last modified by:  $Author: weikun.lin $
+//
+// TIS Message common data definitions.
+//
+
+
+module TA_Core
+{
+
+	// Display attribute parameter definitions
+
+	enum EDisplayMode
+	{
+		SCROLL_LEFT,
+		SCROLL_RIGHT,
+		SCROLL_UP,
+		SCROLL_DOWN,
+		INSTANT_ON,
+		BLINKING,
+		WIPING,
+		SNOW
+	};
+
+	enum EScrollSpeed
+	{
+		SCROLL_SLOW,
+		SCROLL_MEDIUM,
+		SCROLL_FAST
+	};
+
+	enum EJustification
+	{
+		LEFT,
+		CENTRED,
+		RIGHT
+	};
+
+	enum EFontType
+	{
+		DEFAULT_PLASMA_FONT,
+		TIMES_NEW_ROMAN,
+		ARIAL,
+		COURIER_NEW,
+		PLASMA_FONT_RESERVED4,	// valid values according to the protocol
+		PLASMA_FONT_RESERVED5,	// just not defined - reserved
+		PLASMA_FONT_RESERVED6,
+		PLASMA_FONT_RESERVED7,
+		PLASMA_FONT_RESERVED8,
+		PLASMA_FONT_RESERVED9
+	};
+
+	enum EPlasmaColour
+	{
+		PLASMA_BLACK,
+		PLASMA_WHITE,
+		PLASMA_RED,
+		PLASMA_GREEN,
+		PLASMA_BLUE,
+		PLASMA_YELLOW,
+		PLASMA_CYAN,
+		PLASMA_MAGENTA,
+		PLASMA_ORANGE,
+		PLASMA_BROWN,
+		PLASMA_GREY,
+		PLASMA_LIGHT_BLUE,
+		PLASMA_LIGHT_GREEN,
+		PLASMA_LIGHT_RED,
+		PLASMA_COLOUR_RESERVED_E,
+		PLASMA_COLOUR_RESERVED_F
+	};
+
+	enum EPlasmaFontSize
+	{
+		PLASMA_FONT_SIZE_UNUSED,
+		PLASMA_FONT_SIZE_24,
+		PLASMA_FONT_SIZE_36,
+		PLASMA_FONT_SIZE_42,
+		PLASMA_FONT_SIZE_48,
+		PLASMA_FONT_SIZE_60,
+		PLASMA_FONT_SIZE_72,
+		PLASMA_FONT_SIZE_96,
+		PLASMA_FONT_SIZE_128
+	};
+
+	enum EStationType
+	{
+		DEPARTURE,
+		ARRIVAL
+	};
+
+	enum ELEDColour
+	{
+		UNUSED_LED_COLOUR,
+		LED_BLACK,
+		LED_RED	
+	};
+
+	enum ELEDFontSize
+	{
+		UNUSED_LED_FONT_SIZE,  // This is present so that the first real font size maps perfectly to the protocol numbers 
+		FONT_SIZE_SMALL, // 1
+		FONT_SIZE_MEDIUM,// 2
+		FONT_SIZE_LARGE  // 3
+	};
+
+	enum ELEDIntensity
+	{
+		INTENSITY_LOW,
+		INTENSITY_MEDIUM,
+		INTENSITY_HIGH
+	};
+
+	enum ETTISLEDIntensity
+	{
+		NORMAL,
+		HIGH
+	};
+
+	enum ETTISClearType
+	{
+		CLEAR_ALL,
+		CLEAR_EMERGENCY,
+		CLEAR_NORMAL,
+		CLEAR_PRIORITY6
+	};
+
+	enum EStatusRequestType
+	{
+		STATUS_REQUEST_OCC,
+		STATUS_REQUEST_STATION
+	};
+
+	enum ERATISMessageType
+	{
+		RATIS_NEW,
+		RATIS_UPDATE,
+		RATIS_CLEAR
+	};
+
+	enum ERATISMessageStatus
+	{
+		APPROVED,           // Message has been successfully approved
+		NOT_APPROVED,       // Message has not been approved/rejected
+        REJECTED,           // Message has been successfully rejected
+        APPROVE_FAILED      // Message failed to be approved due to some failure e.g. fail to contact STIS server
+	};
+
+	enum EPIDControl
+	{
+		TURN_ON,
+		TURN_OFF
+	};
+
+	enum EPIDSelection
+	{
+		ENTIRE_TRAIN,
+		ALL_CAR1,
+		ALL_CAR2,
+		ALL_CAR3,
+		CAR1_PID1,
+		CAR1_PID2,
+		CAR1_PID3,
+		CAR1_PID4,
+		CAR2_PID1,
+		CAR2_PID2,
+		CAR2_PID3,
+		CAR2_PID4,
+		CAR3_PID1,
+		CAR3_PID2,
+		CAR3_PID3,
+		CAR3_PID4
+	};
+
+	enum ELibrarySection
+	{
+		EMERGENCY_SECTION,
+		NORMAL_SECTION
+	};
+
+	typedef sequence<EPIDSelection> TrainPIDList;
+	typedef sequence<string> PIDList;
+	typedef sequence<string> LevelList;
+
+	struct STISDestination
+	{
+		string station;   // 3 character station ID, e.g 'DBG'
+        LevelList levels; // List of levels as they appear in the datanode name, e.g. 'Concourse' 'Basement2'
+		PIDList pids;     // Datanode name as it appears in the full datanode name e.g 'PDP02' 'LED05'
+	};
+
+	typedef sequence<STISDestination> STISDestinationList;
+
+	struct DisplayAttributes
+	{
+		EDisplayMode displayMode;
+		EScrollSpeed scrollSpeed;
+		short repeatInterval;
+		short displayTime;
+		EJustification justification;
+	};
+
+	struct PlasmaAttributes
+	{
+		EFontType fontType;
+		EPlasmaFontSize fontSize;
+		EPlasmaColour fontColour;
+		EPlasmaColour backgroundColour;
+	};
+
+	struct LEDAttributes
+	{
+		ELEDFontSize fontSize;
+		ELEDIntensity intensity;
+		ELEDColour fontColour;
+		ELEDColour backgroundColour;
+	};
+
+	// holds the current versions for each train
+	// requested by guis, and also sent as an update by the Tis Agent
+	struct TrainDataVersion
+	{
+		unsigned short trainNumber;
+
+		unsigned short predefinedLibraryVersion;
+		boolean predefinedLibraryUpgraded;
+
+		unsigned short trainTimeScheduleVersion;
+		boolean trainTimeScheduleUpgraded;
+	};
+
+	struct TrainDownload
+	{
+		unsigned short trainNumber;
+		boolean predefinedDownloadInProgress;
+		boolean timeScheduleDownloadInProgress;
+	};
+
+	struct TimeScheduleVersion
+	{
+		unsigned short version;
+		unsigned long timeScheduleKey;
+	};
+
+	typedef sequence<unsigned short> TrainIdList;
+	typedef sequence<TrainDataVersion> TrainDataVersionList;
+	typedef sequence<TrainDownload> TrainDownloadList;
+
+	enum EDownloadChangeType
+	{
+		LibraryDownloadStart,
+		LibraryDownloadFinish,
+		LibraryUpgrade,
+		ScheduleDownloadStart,
+		ScheduleDownloadFinish,
+		ScheduleUpgrade
+	};
+
+	// sent in a message when a download/upgrade starts or finishes
+	struct TrainDownloadStatus
+	{
+		unsigned short trainNumber;
+		EDownloadChangeType type;
+		boolean success;	// only on download/upgrage finish
+		string errorDetails; // only on download/upgrage finish
+	};
+
+	enum ETimeScheduleChangeType
+	{
+		Added,
+		Deleted,
+		Modified
+	};
+
+	// sent when a GUI notifies the agent it has changed a time schedule
+	// this is so other guis know when the schedules change
+	struct TimeScheduleChange
+	{
+		unsigned long timeSchedulePkey;
+		ETimeScheduleChangeType changeType;
+	};
+
+	struct CurrentDisplayingMessage
+	{
+		string messageContent;
+		string startTime;
+		string endTime;
+		short priority;
+	};
+
+}; // TA_App
+

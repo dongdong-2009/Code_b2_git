@@ -1,0 +1,86 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/IAtsWildCorbaDef.idl $
+// @author:  Andy Siow
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// IAtsWildCorbaDef interface definition for the ATS/WILD Agent interfacing.   
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsWildCorbaDef
+	{
+		// 
+		// 16 bit identifier for Active Cab Number
+		//
+		typedef unsigned long		ActiveCabNumberType;
+
+		//
+		// Enumeration for head cab direction
+		//
+		enum EHeadCabDirection
+		{
+			HeadCabDirectionUnknown,
+			HeadCabDirectionDown,
+			HeadCabDirectionUp
+		};
+		
+		//
+		// AtsWildMessageCorbaDef is expected to be sent to the WILD Agent through the 'any messageState' 
+		// member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsWildMessageCorbaDef
+		{
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      WILD Information
+			//
+			///////////////////////////////////////////////////////////////////////
+			// 
+			// The following attributes are taken straight from the current 
+			// ATS OCC WILD Table.  They are only used by ECS for additional 
+			// logging info.
+			// 
+			//      <Timestamp>
+			//      <PV number>
+			//      <Active Cab number>
+			//
+			///////////////////////////////////////////////////////////////////////
+        
+			TimeTTimeStampType			timeStamp;
+			PhysicalTrainNumberType		physicalTrainNumber;
+			ActiveCabNumberType			activeCabNumber;
+			EHeadCabDirection			direction;
+			RevenueFlagType				isRevenue;
+
+		}; // AtsWildMessageCorbaDef
+
+		//
+		// A sequence of AtsWildMessageCorbaDef defined for getWildInformationList
+		//
+		typedef sequence<AtsWildMessageCorbaDef>  WildInfoList;
+
+		/**
+          * getWildInformationList
+          *
+          * This method is used to access the full list of WILD information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsWildMessageCorbaDef for all trains known
+		  *			to the ATS agent for WILD.
+          */
+		WildInfoList getWildInformationList()
+			raises (TA_Base_Core::OperationModeException);//limin
+
+	}; // IAtsWildCorbaDef
+}; // TA_Bus

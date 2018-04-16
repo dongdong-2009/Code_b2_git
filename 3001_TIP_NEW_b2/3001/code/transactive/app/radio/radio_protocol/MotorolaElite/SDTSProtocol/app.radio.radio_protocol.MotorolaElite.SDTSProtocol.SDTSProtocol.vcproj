@@ -1,0 +1,563 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.radio_protocol.motorolaelite.sdts_protocol" ProjectGUID="{EDD97913-7DDB-4F1C-A5FF-C1E6EDF38BED}" RootNamespace="app.radio.radio_protocol.motorolaelite.sdts_protocol" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../../build/win32_nd/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./motorola/include,../../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../../../../../../sdk/include/transactive,../CADIProtocol/src,../../../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../" PreprocessorDefinitions="WIN32;_DEBUG;_LIB;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../../build/win32_nd/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/app.radio.radio_protocol.MotorolaElite.SDTSProtocol.SDTSProtocol.pch" AssemblerListingLocation=".\../../../../../../../build/win32_nd/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" ObjectFile=".\../../../../../../../build/win32_nd/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" ProgramDataBaseFileName=".\../../../../../../../build/win32_nd/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../../build/win32_nd/SDTSProtocol_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../../build/win32_nd/app.radio.radio_protocol.MotorolaElite.SDTSProtocol.SDTSProtocol.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../../build/win32_nr/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./motorola/include,../../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../../../../../../sdk/include/transactive,../CADIProtocol/src,../../../../../../../sdk/omniORB/omniORB_4.1.6/include,../../../../../" PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../../build/win32_nr/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/app.radio.radio_protocol.MotorolaElite.SDTSProtocol.SDTSProtocol.pch" AssemblerListingLocation=".\../../../../../../../build/win32_nr/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" ObjectFile=".\../../../../../../../build/win32_nr/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" ProgramDataBaseFileName=".\../../../../../../../build/win32_nr/transactive/app/radio/RadioProtocol/MotorolaElite/SDTSProtocol/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../../build/win32_nr/SDTSProtocol.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../../build/win32_nr/app.radio.radio_protocol.MotorolaElite.SDTSProtocol.SDTSProtocol.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\RadioSDSSocket.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSAckRecvText.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSAckSendText.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSFunction.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSInputQueue.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSOutputQueue.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSQueueManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSRecvText.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSRegisterSession.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSSendText.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDSUnregisterSession.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDTSTransactionManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\ISocketConnectionObserver.h">
+			</File>
+			<File RelativePath="src\RadioSDSSocket.h">
+			</File>
+			<File RelativePath="src\SDSAckRecvText.h">
+			</File>
+			<File RelativePath="src\SDSAckSendText.h">
+			</File>
+			<File RelativePath="src\SDSEvent.h">
+			</File>
+			<File RelativePath="src\SDSEventObserver.h">
+			</File>
+			<File RelativePath="src\SDSEventSubject.h">
+			</File>
+			<File RelativePath="src\SDSFunction.h">
+			</File>
+			<File RelativePath="src\SDSInputQueue.h">
+			</File>
+			<File RelativePath="src\SDSOutputQueue.h">
+			</File>
+			<File RelativePath="src\SDSQueueManager.h">
+			</File>
+			<File RelativePath="src\SDSRecvText.h">
+			</File>
+			<File RelativePath="src\SDSRegisterSession.h">
+			</File>
+			<File RelativePath="src\SDSSendText.h">
+			</File>
+			<File RelativePath="src\SDSUnregisterSession.h">
+			</File>
+			<File RelativePath="src\SDTSTransaction.h">
+			</File>
+			<File RelativePath="src\SDTSTransactionManager.h">
+			</File>
+		</Filter>
+		<Filter Name="SDTSProtocol">
+			<File RelativePath="src\CM_Broadcast.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CM_Broadcast.h">
+			</File>
+			<File RelativePath="src\CM_Data.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CM_Data.h">
+			</File>
+			<File RelativePath="src\CM_RegisterRequest.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CM_RegisterRequest.h">
+			</File>
+			<File RelativePath="src\CM_RegisterResponse.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CM_RegisterResponse.h">
+			</File>
+			<File RelativePath="src\CM_ReportEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CM_ReportEvent.h">
+			</File>
+			<File RelativePath="src\CMCommon1.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CMCommon1.h">
+			</File>
+			<File RelativePath="src\CMCommon2.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CMCommon2.h">
+			</File>
+			<File RelativePath="src\CMCommon3.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CMCommon3.h">
+			</File>
+			<File RelativePath="src\CMTypes.h">
+			</File>
+			<File RelativePath="src\msgDataFormat_TextMsg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\msgDataFormat_TextMsg.h">
+			</File>
+			<File RelativePath="src\msgDataFormat_TrainborneSDS.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\msgDataFormat_TrainborneSDS.h">
+			</File>
+			<File RelativePath="src\SDTSHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDTSHelper.h">
+			</File>
+			<File RelativePath="src\SDTSMsgFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDTSMsgFactory.h">
+			</File>
+			<File RelativePath="src\SDTSProtocolEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SDTSProtocolEvent.h">
+			</File>
+			<File RelativePath="src\TL_DataEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TL_DataEvent.h">
+			</File>
+			<File RelativePath="src\TL_ReportEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TL_ReportEvent.h">
+			</File>
+			<File RelativePath="src\TL_ShortReportEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TL_ShortReportEvent.h">
+			</File>
+			<File RelativePath="src\TL_UnitDataEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TL_UnitDataEvent.h">
+			</File>
+			<File RelativePath="src\TLCommon.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TLCommon.h">
+			</File>
+		</Filter>
+		<Filter Name="tests">
+			<Filter Name="autogenerated">
+				<Filter Name="SDTSProtocol">
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CM_Broadcast_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CM_Data_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CM_RegisterRequest_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CM_RegisterResponse_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CM_ReportEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CMCommon1_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CMCommon2_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_CMCommon3_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_msgDataFormat_TextMsg_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_msgDataFormat_TrainborneSDS_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_SDTSHelper_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_SDTSMsgFactory_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_SDTSProtocolEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_TL_DataEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_TL_ReportEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_TL_ShortReportEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_TL_UnitDataEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\SDTSProtocol\TestSuite_TLCommon_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+				<Filter Name="Source Files">
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioSDSSocket_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSAckRecvText_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSAckSendText_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSInputQueue_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSOutputQueue_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSQueueManager_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSRecvText_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSRegisterSession_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+					<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSSendText_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDSUnregisterSession_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_SDTSTransactionManager_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter Name="stubs">
+			<File RelativePath=".\stubs\stub_ACE.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

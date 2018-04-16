@@ -1,0 +1,84 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.maintenance_management.mmsHelper" ProjectGUID="{177B31BC-730E-487F-BFA3-D7C64FD0C985}" RootNamespace="bus.maintenance_management.mmsHelper" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/bus/maintenance_management/mmsHelper" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/data_access_interface/planagent/IDL/src,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/bus/maintenance_management/mmscorbadef/IDL/src,../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src,../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src,../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src,../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.1.6\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile="" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/bus/maintenance_management/mmsHelper/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/bus/maintenance_management/mmsHelper/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/bus/maintenance_management/mmsHelper/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../sdk/win32_nd/TA_MMSHelp.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/bus.maintenance_management.mmsHelper.TA_MMSHelp.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/bus/maintenance_management/mmsHelper" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/data_access_interface/planagent/IDL/src,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/bus/maintenance_management/mmscorbadef/IDL/src,../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src,../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src,../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src,../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.1.6\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile="" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/bus/maintenance_management/mmsHelper/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/bus/maintenance_management/mmsHelper/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/bus/maintenance_management/mmsHelper/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../sdk/win32_nr/TA_MMSHelp.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/bus.maintenance_management.mmsHelper.TA_MMSHelp.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="ClienttInterface" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\src\IMMSSubmitter.h">
+			</File>
+			<File RelativePath=".\src\MMSGlobalInhibitionManager.cpp">
+			</File>
+			<File RelativePath=".\src\MMSGlobalInhibitionManager.h">
+			</File>
+			<File RelativePath=".\src\MMSSubmitManager.cpp">
+			</File>
+			<File RelativePath=".\src\MMSSubmitManager.h">
+			</File>
+			<File RelativePath=".\src\MMSSubmitterDatabase.cpp">
+			</File>
+			<File RelativePath=".\src\MMSSubmitterDatabase.h">
+			</File>
+		</Filter>
+		<Filter Name="COMMON">
+			<File RelativePath=".\src\MMSDatabaseCache.cpp">
+			</File>
+			<File RelativePath=".\src\MMSDatabaseCache.h">
+			</File>
+			<File RelativePath=".\src\MMSUtility.cpp">
+			</File>
+			<File RelativePath=".\src\MMSUtility.h">
+			</File>
+		</Filter>
+		<Filter Name="APIInterface">
+			<File RelativePath=".\src\IMMSAPI.cpp">
+			</File>
+			<File RelativePath=".\src\IMMSAPI.h">
+			</File>
+			<File RelativePath=".\src\MMSAPIManager.cpp">
+			</File>
+			<File RelativePath=".\src\MMSAPIManager.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

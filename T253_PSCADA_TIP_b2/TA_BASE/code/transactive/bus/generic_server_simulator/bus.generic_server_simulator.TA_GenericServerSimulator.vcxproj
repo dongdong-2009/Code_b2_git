@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.generic_server_simulator</ProjectName>
+    <ProjectGuid>{B5F5CEED-AAF4-4A80-86DC-FEE76E2A2124}</ProjectGuid>
+    <RootNamespace>bus.generic_server_simulator</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_GenericServerSimulator_d.</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_GenericServerSimulator</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation />
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>\l 0xc09 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <AdditionalOptions>\nologo %(AdditionalOptions)</AdditionalOptions>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BrowseInformation />
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalOptions>\l 0xc09 %(AdditionalOptions)</AdditionalOptions>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <AdditionalOptions>\nologo %(AdditionalOptions)</AdditionalOptions>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BackgroundCommsObserver.cpp" />
+    <ClCompile Include="src\BackgroundModuleCreator.cpp" />
+    <ClCompile Include="src\BackgroundSimulationModule.cpp" />
+    <ClCompile Include="src\CommandException.cpp" />
+    <ClCompile Include="src\CommandMonitor.cpp" />
+    <ClCompile Include="src\CommandOwner.cpp" />
+    <ClCompile Include="src\ConsoleDetachUtility.cpp" />
+    <ClCompile Include="src\DetachCommand.cpp" />
+    <ClCompile Include="src\ExecCommand.cpp" />
+    <ClCompile Include="src\GenericCommandProcessor.cpp" />
+    <ClCompile Include="src\GenericSimulator.cpp" />
+    <ClCompile Include="src\GssAbstractModuleCreator.cpp" />
+    <ClCompile Include="src\GssCommandMonitor.cpp" />
+    <ClCompile Include="src\GssCommandProcessor.cpp" />
+    <ClCompile Include="src\GssCommsObserver.cpp" />
+    <ClCompile Include="src\GssSimulationModule.cpp" />
+    <ClCompile Include="src\GssSimulationModuleFactory.cpp" />
+    <ClCompile Include="src\GssUtility.cpp" />
+    <ClCompile Include="src\IntermediateCommand.cpp" />
+    <ClCompile Include="src\LeafCommand.cpp" />
+    <ClCompile Include="src\StatusCommand.cpp" />
+    <ClCompile Include="src\TelnetCommon.cpp" />
+    <ClCompile Include="src\TelnetCommsObserver.cpp" />
+    <ClCompile Include="src\VersionCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BackgroundCommsObserver.h" />
+    <ClInclude Include="src\BackgroundModuleCreator.h" />
+    <ClInclude Include="src\BackgroundSimulationModule.h" />
+    <ClInclude Include="src\CommandException.h" />
+    <ClInclude Include="src\CommandMonitor.h" />
+    <ClInclude Include="src\CommandOwner.h" />
+    <ClInclude Include="src\ConsoleDetachUtility.h" />
+    <ClInclude Include="src\DetachCommand.h" />
+    <ClInclude Include="src\ExecCommand.h" />
+    <ClInclude Include="src\GenericCommandProcessor.h" />
+    <ClInclude Include="src\GenericSimulator.h" />
+    <ClInclude Include="src\GssAbstractModuleCreator.h" />
+    <ClInclude Include="src\GssCommandMonitor.h" />
+    <ClInclude Include="src\GssCommandProcessor.h" />
+    <ClInclude Include="src\GssCommon.h" />
+    <ClInclude Include="src\GssCommsObserver.h" />
+    <ClInclude Include="src\GssSimulationModule.h" />
+    <ClInclude Include="src\GssSimulationModuleFactory.h" />
+    <ClInclude Include="src\GssUtility.h" />
+    <ClInclude Include="src\ICommand.h" />
+    <ClInclude Include="src\IntermediateCommand.h" />
+    <ClInclude Include="src\ISimulationCommandProcessor.h" />
+    <ClInclude Include="src\ISimulationModule.h" />
+    <ClInclude Include="src\LeafCommand.h" />
+    <ClInclude Include="src\StatusCommand.h" />
+    <ClInclude Include="src\TelnetCommon.h" />
+    <ClInclude Include="src\TelnetCommsObserver.h" />
+    <ClInclude Include="src\VersionCommand.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

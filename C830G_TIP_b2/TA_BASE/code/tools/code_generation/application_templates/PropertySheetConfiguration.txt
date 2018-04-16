@@ -1,0 +1,34 @@
+# The source code in this file is the property of
+# Ripple Systems and is not for redistribution
+# in any form.
+#
+# Source:  $File: $ 
+# Author:  Grace Koh
+# Version: $Revision: $
+#
+# Last modification: $DateTime: $
+# Last modified by:  $Author: $
+#
+[LOCATION]
+# the new project location
+ProjectLocation=app/test-dir/AppName
+# the template project's location, relative to the code directory
+TemplateProject=bus/generic_gui/templates/PropertySheet
+
+[REPLACE]
+# replace this in filenames and in files
+# eg TemplatePropertySheet.dsw=AppName.dsw will rename the file,
+# and wont watch anything within the file
+
+# these will match both files and patterns within files
+TemplatePropertySheet=AppName
+TEMPLATEPROPERTYSHEET=APPNAME
+
+# This appears as the window title
+Template Property Sheet=Application Name
+
+# fix location of 'code' from the new project location
+..\..\..\..=..\..\..
+../../../..=../../..
+
+

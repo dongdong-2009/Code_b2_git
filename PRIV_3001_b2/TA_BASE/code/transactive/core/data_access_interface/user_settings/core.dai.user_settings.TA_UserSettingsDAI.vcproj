@@ -1,0 +1,97 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.dai.user_settings" ProjectGUID="{1A9DEB69-145F-46BD-A4F8-51B97320F107}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/user_settings" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/user_settings/core.dai.user_settings.TA_UserSettingsDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/user_settings/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/user_settings/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/user_settings/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_UserSettingsDAI_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.dai.user_settings.TA_UserSettingsDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/user_settings" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/user_settings/core.dai.user_settings.TA_UserSettingsDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/user_settings/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/user_settings/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/user_settings/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_UserSettingsDAI.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.dai.user_settings.TA_UserSettingsDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\IUserSettings.h">
+			</File>
+			<File RelativePath="src\UserSettingsAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\UserSettingsAccessFactory.h">
+			</File>
+			<File RelativePath="src\UserSettingsData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\UserSettingsData.h">
+			</File>
+		</Filter>
+		<Filter Name="tests">
+			<Filter Name="autogenerated">
+				<Filter Name="src">
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_UserSettingsAccessFactory_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_UserSettingsAccessFactory_h.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_UserSettingsData_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

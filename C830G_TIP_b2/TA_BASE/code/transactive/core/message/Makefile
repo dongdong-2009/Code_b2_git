@@ -1,0 +1,58 @@
+# The source code in this file is the property of
+# Ripple Systems and is not for redistribution
+# in any form.
+#
+# Source:  $File: //depot/4669_T01271350/TA_BASE/transactive/core/message/Makefile $ 
+# Author:  Ripple
+# Version: $Revision: #1 $
+#
+# Last modification: $DateTime: 2008/11/28 16:26:01 $
+# Last modified by:  $Author: builder $
+#
+# Make file for the CommonDmIf classes.
+#
+#
+
+PROJ_ROOT_DIR	= ../../../..
+PROJ_CODE_DIR	= transactive/core/message
+PROJ_NAME	= TA_Message
+PROJ_SOURCE	= \
+		  AuditMessageSender.cpp \
+		  BackwardsCompatibility.cpp \
+		  BindingRequestMessageSender.cpp \
+		  CommsMessageSender.cpp \
+		  ConfigUpdateMessageSender.cpp \
+		  MessageConfig.cpp \
+		  EventChannelUser.cpp \
+		  ConnectionChecker.cpp \
+		  ConnectionThread.cpp \
+		  MessageTypes.cpp \
+		  MessagePublicationManager.cpp \
+		  TransactiveMessageSubscription.cpp \
+		  PublicationManager.cpp \
+		  StateUpdateMessageSender.cpp \
+		  StructuredEventConsumer.cpp \
+		  StructuredEventConsumerDispatchers.cpp \
+		  StructuredEventSupplier.cpp \
+		  SubscriptionManager.cpp \
+    		  AuditEvent.cpp \
+		  CtaAuditing.cpp \
+		  TA_CosUtility.cpp \
+		  TA_CosNotifyChannel.cpp
+PROJ_TYPE	= lib
+PROJ_INC_DIR	= ./src $(PROJ_ROOT_DIR)/code/transactive
+PROJ_OUT_DIR	= $(PROJ_ROOT_DIR)/sdk/$(OPERATING_SYSTEM)_$(STRING_FLAG)$(RELEASE_FLAG)
+
+DEPENDENT_LIBRARIES = \
+    	$(PROJ_ROOT_DIR)/code/transactive/core/message/IDL \
+	$(PROJ_ROOT_DIR)/code/transactive/core/corba/IDL \
+	$(PROJ_ROOT_DIR)/code/transactive/core/event_processing
+
+##############################################################
+# The main include file that has all the wiz bang stuff for neato compiling
+##############################################################
+
+include $(PROJ_ROOT_DIR)/code/tools/build/CommonMakefile.mak
+
+install:
+	#Do Nothing

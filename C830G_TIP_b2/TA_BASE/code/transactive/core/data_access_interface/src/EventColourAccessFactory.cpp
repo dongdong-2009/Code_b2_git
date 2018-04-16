@@ -1,0 +1,169 @@
+/**
+ * The source code in this file is the property of 
+ * Ripple Systems and is not for redistribution
+ * in any form.
+ *
+ * Source:   $File: //depot/4669_T01271350/TA_BASE/transactive/core/data_access_interface/src/EventColourAccessFactory.cpp $
+ * @author:  Derrick Liew
+ * @version: $Revision: #1 $
+ *
+ * Last modification: $DateTime: 2008/11/28 16:26:01 $
+ * Last modified by:  $Author: builder $
+ * 
+ * EventColourAccessFactory is a singleton that is used to retrieve EventColour objects from the database.
+ * It provides both read-write, and read-only objects, but does not create new objects as they are not
+ * able to be defined through the system.
+ */
+
+// EventColourAccessFactory.cpp: implementation of the EventColourAccessFactory class.
+//
+//////////////////////////////////////////////////////////////////////
+#ifdef __WIN32__
+#pragma warning(disable:4786)
+#endif
+
+#include "EventColourAccessFactory.h"
+#include "core/data_access_interface/src/EventColourAccessFactory.h"
+#include "core/data_access_interface/src/EventColourData.h"
+#include "core/data_access_interface/src/ConfigEventColourData.h"
+
+#include "core/exceptions/src/DataException.h"
+#include "core/utilities/src/DebugUtil.h"
+
+namespace TA_Base_Core
+{
+
+    EventColourAccessFactory* EventColourAccessFactory::m_instance = 0;
+
+
+	//////////////////////////////////////////////////////////////////////
+	// Construction/Destruction
+	//////////////////////////////////////////////////////////////////////
+
+	EventColourAccessFactory::~EventColourAccessFactory()
+	{
+	}
+
+    EventColourAccessFactory& EventColourAccessFactory::getInstance()
+    {
+        if( m_instance == 0 )
+        {
+            m_instance = new EventColourAccessFactory();
+        }
+        return *m_instance;
+    }
+
+    void EventColourAccessFactory::getEventColourBySql(const std::string& sql, std::vector< IEventColourData* >& eventColours, const bool readWrite)
+    {
+        // get a connection to the database
+        IDatabase* databaseConnection = DatabaseFactory::getInstance().getDatabase(Event_Ad, Read);
+
+        // Set up the columnNames vector to be passed to executeQuery()
+        std::vector<std::string> columnNames;
+		columnNames.push_back("PKEY");
+		columnNames.push_back("NAME");
+        columnNames.push_back("OPEN_ACKED_FG_COLOUR1");
+        columnNames.push_back("OPEN_ACKED_BG_COLOUR1");
+        columnNames.push_back("OPEN_UNACKED_FG_COLOUR1");
+        columnNames.push_back("OPEN_UNACKED_BG_COLOUR1");
+        columnNames.push_back("CLOSED_UNACKED_FG_COLOUR1");
+        columnNames.push_back("CLOSED_UNACKED_BG_COLOUR1");
+        columnNames.push_back("CLOSED_ACKED_FG_COLOUR1");
+        columnNames.push_back("CLOSED_ACKED_BG_COLOUR1");
+        columnNames.push_back("DATE_MODIFIED");
+        columnNames.push_back("DATE_CREATED");
+
+        // Execute the query. The method can throw a DatabaseException.
+        // This is documented in the comment of this method.
+        // We are responsible for deleting the returned IData object when we're done with it
+        IData* data = databaseConnection->executeQuery(sql,columnNames);
+
+        // Loop for each row returned
+        do
+        {
+            for (unsigned long i = 0; i < data->getNumRows(); i++)
+            {
+                // The getUnsignedLongData() call can throw an exception. Need to catch
+                // it to do pointer clean up.
+                try
+                {
+                    if (readWrite)
+                    {
+						eventColours.push_back( new ConfigEventColourData( i, *data ) );
+                    }
+                    else
+                    {
+						eventColours.push_back( new EventColourData( i, *data ) );
+                    }
+                }
+                catch (DataException&)
+                {
+                    // Clean up the data pointer
+                    delete data;
+                    data = NULL;
+                    throw;
+                }
+            }
+			delete data;
+			data = NULL;
+        }
+        while ( databaseConnection->moreData(data) );
+    }
+	
+
+    IEventColourData* EventColourAccessFactory::getEventColourByKey(const unsigned long key,const bool readWrite)
+    {
+		FUNCTION_ENTRY("getEventColourByKey");
+
+		// create the SQL string to retrieve the data of the Severity
+        std::ostringstream sql;
+        sql << " select PKEY, NAME,"
+			<< " OPEN_ACKED_FG_COLOUR1, OPEN_ACKED_BG_COLOUR1,"
+			<< " OPEN_UNACKED_FG_COLOUR1, OPEN_UNACKED_BG_COLOUR1,"
+			<< " CLOSED_UNACKED_FG_COLOUR1, CLOSED_UNACKED_BG_COLOUR1,"
+			<< " CLOSED_ACKED_FG_COLOUR1, CLOSED_ACKED_BG_COLOUR1,"
+			<< " TO_CHAR(DATE_MODIFIED,'YYYYMMDDHH24MISS'),"
+			<< " TO_CHAR(DATE_CREATED,'YYYYMMDDHH24MISS')"
+			<< " from EVENTCOLOUR where PKEY = " << key;
+
+		std::vector< IEventColourData* > eventColours;
+		getEventColourBySql(sql.str(), eventColours, readWrite);
+		
+        if ( 0 == eventColours.size())
+        {
+            std::ostringstream message;
+			message << "No data found for EventColour with key " << key;
+            TA_THROW( DataException( message.str().c_str(), DataException::NO_VALUE, sql.str() ) );
+        }
+
+		TA_ASSERT(1 == eventColours.size(), "EventColour key unique constraint violated");
+
+        // Return the pointer. The class that recieves this pointer is responsible for deleting it.
+		FUNCTION_EXIT;
+		return eventColours[0];
+    }
+
+    std::vector<IEventColourData*> EventColourAccessFactory::getAllEventColours(const bool readWrite)
+    {
+		FUNCTION_ENTRY("getAllEventColours");
+
+		// create the SQL string to retrieve the data of the Severity
+        std::ostringstream sql;
+        sql << " select PKEY, NAME,"
+			<< " OPEN_ACKED_FG_COLOUR1, OPEN_ACKED_BG_COLOUR1,"
+			<< " OPEN_UNACKED_FG_COLOUR1, OPEN_UNACKED_BG_COLOUR1,"
+			<< " CLOSED_UNACKED_FG_COLOUR1, CLOSED_UNACKED_BG_COLOUR1,"
+			<< " CLOSED_ACKED_FG_COLOUR1, CLOSED_ACKED_BG_COLOUR1,"
+			<< " TO_CHAR(DATE_MODIFIED,'YYYYMMDDHH24MISS'),"
+			<< " TO_CHAR(DATE_CREATED,'YYYYMMDDHH24MISS')"
+			<< " from EVENTCOLOUR order by PKEY";
+
+		std::vector< IEventColourData* > eventColours;
+		getEventColourBySql(sql.str(), eventColours, readWrite);
+
+		// Return the pointer. The class that recieves this pointer is responsible for deleting it.
+		FUNCTION_EXIT;
+		return eventColours;
+    }
+
+} //close namespace

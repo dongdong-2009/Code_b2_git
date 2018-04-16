@@ -1,0 +1,125 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RUN_PLAN_DLG DIALOGEX 0, 0, 326, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Run Plan"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Plan:",IDC_STATIC,57,22,40,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_RUN_PLAN_PLAN_PATH_EDIT,101,22,202,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Instance:",IDC_STATIC,57,45,40,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_RUN_PLAN_ACTIVE_INSTANCE_EDIT,101,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Location:",IDC_STATIC,147,45,42,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_RUN_PLAN_LOCATION_NAME_EDIT,193,45,37,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Step:",IDC_STATIC,246,45,24,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_RUN_PLAN_STEP_NUMBER_EDIT,274,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    CONTROL         "This message will self-acknowledge upon timing out.",IDC_STATIC,
+                    "Static",SS_LEFTNOWORDWRAP | WS_GROUP,45,147,267,13,WS_EX_TRANSPARENT
+    DEFPUSHBUTTON   "OK",IDOK,138,169,50,14
+    ICON            32516,IDC_STATIC,11,10,21,20
+    GROUPBOX        "Step summary",IDC_STATIC,45,7,269,62
+    LTEXT           "<message text>",IDC_RUN_PLAN_MESSAGE,45,79,267,69
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_RUN_PLAN_DLG, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_RUN_PLAN_REPORT_COMPLETION_STATUS "report completion status"
+    IDS_RUN_PLAN_LAUNCH_PLAN_CONTROLLER "launch Plan Controller"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

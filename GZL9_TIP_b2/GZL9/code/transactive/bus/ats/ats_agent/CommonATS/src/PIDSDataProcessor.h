@@ -1,0 +1,52 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution in any form.
+  * 
+  * Source:    $File: g:\depot\FZL1_TIP\FZL1\transactive\bus\ats\ats_agent\CommonATS\src\PIDSDataProcessor.h $
+  * @author:   Lucky Cuizon
+  * @version:  $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2015/03/9 11:17:43 $
+  * Last modified by:  $Author: Lucky Cuizon $
+  *
+  * This object is responsible for handling PIDS data processing
+  * It is responsible for forwarding whole SIG data to PIDS agent->PIDS subsystem
+  */
+#ifndef _PIDS_DATA_PROCESSOR_H_
+#define _PIDS_DATA_PROCESSOR_H_
+
+#include "bus/ats/ats_agent/CommonATS/src/DataProcessorThread.h"
+#include "core/data_access_interface/entity_access/src/AtsAgentEntityData.h"
+#include "bus/ats/ats_agent/CommonATS/src/DataNotification.h"
+#include "bus/ats/ats_agent/CommonATS/src/PIDSDataNotification.h"
+
+namespace TA_IRS_Bus
+{
+	class PIDSDataProcessor : public DataProcessorThread
+	{
+	public:
+		PIDSDataProcessor(TA_Base_Core::AtsAgentEntityDataPtr EntityData);
+		virtual ~PIDSDataProcessor();
+
+		void processItem(DataNotificationPtr item);
+		void processAtsData(DataNotificationPtr atsDataNotif);
+		
+	private:
+		/**
+		 * Disable copy and assignment constructor
+		 */
+		PIDSDataProcessor(const PIDSDataProcessor&);
+		PIDSDataProcessor& operator= (const PIDSDataProcessor&);
+
+		void processPIDSData(PIDSDataNotificationPtr trainDataPtr);
+		/**
+		 * processPIDSDataItem
+		 *
+		 * This will process PIDS Data item from the Queue
+		 *
+		 * @param item : Train Data Item to process
+		 */
+		void processPIDSDataItem(DataNotificationPtr item);
+	};
+}
+#endif

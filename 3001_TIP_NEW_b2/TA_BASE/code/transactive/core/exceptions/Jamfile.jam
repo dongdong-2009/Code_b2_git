@@ -1,0 +1,13 @@
+import os ;
+
+if [ os.name ] != NT
+{
+	local no-build = TrendViewer CCTV BannerFramework AlarmViewer Corba EventViewer DataUserSetting Session MessageResource
+		GraphWorx GenericGUI PlanController PlanEditor SchedulingManager SoundPlayer Incident SoundInit Thread UserSettings  ;
+	source = [ glob src/*.cpp : src/$(no-build)Exception.cpp ] ;
+}
+
+ta-lib TA_Exception
+	: $(source)
+	: <dependency>/core/data_access_interface/planagent/idl
+;

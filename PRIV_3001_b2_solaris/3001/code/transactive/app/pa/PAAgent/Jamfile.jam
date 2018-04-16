@@ -1,0 +1,7 @@
+
+ta-exe PAAgent
+	: [ glob src/*.cpp :
+			src/InvalidatePASDataPoints.cpp
+			src/ForcedDataPointSynchroniser.cpp
+		]
+	;

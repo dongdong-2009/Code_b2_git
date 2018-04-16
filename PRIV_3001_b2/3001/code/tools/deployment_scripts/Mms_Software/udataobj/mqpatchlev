@@ -1,0 +1,84 @@
+MessageQ V5.0 Rolling Patch
+
+01 CR015150 TMQUEUE_BMQ and TMQFORWARD_BMQ stop working after 32K messages.
+   CR015237 Cross group acknowledgements may be lost.
+   CR015428 Link driver fails if fully qualified domain name used on NT.
+   CR015360 Handling of multiple network connections corrected.
+
+02 CR015280 NT links fail to recover on remote group shutdown/restart.
+   CR015282 NT links do not recover from sender kills.
+   CR015868 notices fail to be enqueued because of bad quota check.
+   CR015897 Fix qe shutdown when clock is turned back > 100,000,000 seconds.
+   CR017111 Client SAF failed to forward messages in a special case.
+   CR017110 Permission for attaching dmqqe output queue allow group access.
+
+03 CR017110 Permission for attaching dmqqe output queue allow other access.
+
+04 CR129268 Dual Naming Agent race condition.
+   CR016996 Fix endian of client SAF messages.
+   CR016988 Fix padding of LINKMGT_RESP structure on Digital Unix.
+   CR017102 Fix printing of handle messages for tracing.   
+   CR017130 Fix handling of hostname in multi-home configuration.
+   CR017030 Added environment variable to disable journal history checking 
+   CR017177 Return node name for LIST_ALL_GROUPS.
+
+05 CR017852 Fix ACCVIO in CLS for large messages
+   CR018418 Corrected PAMS__FMLERROR returned by pams_get_msg(w). 
+   CR018619 Fixed fast restart causing unexpected AVAIL messages from SBS 
+
+06 CR019496 Fixed Windows client reconnect timer failure causing ACCVIO
+
+07 CR019645 Add support for hypens and dollar signs in queue names
+   CR019719 Corrected JRN exit with -4 status
+   CR019802 Corrected SAF journal drain problem on Windows Client
+
+08 CR020284 Disabled MPP check from Windows Client registry
+
+09 CR020807 Correct endian determination for initial connect request
+
+10 CR020835 Corrected pams_cancel_timer() failure
+
+11 CR033269 Corrected client SAF drain problem
+
+12 CR033654 Corrected client get msg reconnect failure
+
+13 CR034330 Corrected PAMS__NETERROR on client attach with long client hostname 
+
+14 CR036081 Corrected logging problem on Solaris 8
+
+15 CR038576 Updated dmqmonm and dmqtestm binaries for HP-UX 10.20
+
+16 CR015237 Corrected LD bounce problem caused by unrecognized control msgs
+
+17 CR011601 Corrected LD duplicate link receiver condition on Windows NT
+
+18 CR054945 Corrected memory leak in CLS when using FML or PSYM_MSG_BUFFER_PTR
+
+19 CR056728 Corrected GCP crash when hostname is removed from db while group is running
+   CR058938 Corrected potential loss of SAF data caused by a failure to write to DQF 
+
+20 CR061672 Corrected CLS exit on accept error
+
+21 CR063670 Corrected incorrect PSB uma status return on WF_DEQ/DISC timeout
+
+22 CR066546 Corrected JRN exit with -256 and -4 errors 
+
+23 CR074126 Corrected problem with Client SAF messages with V4.0A CLS Server
+
+24 CR076431 Corrected xgroup failover reconnect problems
+
+25 CR077435 Corrected loss of 1st msg after client reconnect and SAF drain
+   CR074126 Corrected endian conversion problem introduced with RP23
+
+26 CR095729 Corrected LD listener failure on socket accept error
+   CR017115 Log an LD message when attempting to bind to a port already in use
+
+27 CR172468 Add support for DMQJRN_QUOTAS_ON_CONFIRM 
+
+28 CR173578 Fixed issue in detecting process exit in Windows server 2003
+
+29 CR127890 Fixed DMQSRV to free memory when a group is shutdown using monitor
+30 CR184664 Corrected problem with internal header visit-cnt not initialized 
+	    properly by SBS 
+31 CR228082 Add network timeout configuration in dmq.ini
+   CR091978 Fix dynamic gcp tracing does not work on HP

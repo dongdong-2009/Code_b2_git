@@ -1,0 +1,40 @@
+# The source code in this file is the property of
+# Ripple Systems and is not for redistribution
+# in any form.
+#
+# Source:  $File: $ 
+# Author:  Grace Koh
+# Version: $Revision: $
+#
+# Last modification: $DateTime: $
+# Last modified by:  $Author: $
+
+# Things we need to know about this project
+ProjectInformation(
+	# Base directory should be 'code' 
+	# relative from here, or absolute both work, although absolute must be reconfigured more often
+	BaseDirectory	=> "code",
+);
+
+# Compilation environments
+BuildEnvironment (
+    Name            => 'unixsh',
+    OperatingSystem => 'solaris',
+    Makefile        => 'Makefile',
+    Processor       => 'sparc4u',
+    MakeProg        => 'gmake 2>&1',
+    CleanCommand    => 'gmake clean 2>&1',
+    InstallCommand  => 'gmake install 2>&1',
+    ErrorHandling   => 'Output:
+       $Warnings   = grep( /.* warning: .*/, split( /\n/, $Output ) );
+       $Errors     = grep( /(.*:d+: [abcdefghijklmnopqrstuvxyz].*)|(.* \*\*\* .*)/, split( /\n/, $Output ) ); ',
+);
+
+# Actual Components to make
+Make (
+    Component       => "System Controller",
+    SourceDir       => "app/system_control/system_controller/src",
+    BuildOn         => "unixsh",
+);
+
+

@@ -1,0 +1,145 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_TIP/4677/transactive/bus/radio/radio_agent/IDL/src/RadioServerAgentIDL.idl $
+// @author:  zou chunzhong
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2009/12/15 19:31:45 $
+// Last modified by:  $	$
+//
+// Radio Agents IDL interface.
+//
+
+#ifndef INTERFACE_RADIO_SERVER_AGENT_IDL
+#define INTERFACE_RADIO_SERVER_AGENT_IDL
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+#include "bus/radio/radio_agent/IDL/src/RadioCommonExceptionsIDL.idl"
+
+#include "bus/radio/radio_agent/IDL/src/CommonRadioAgentIDL.idl"
+
+
+module TA_IRS_Bus
+{
+	interface RadioServerAgentIDL
+	{
+	    typedef sequence<octet> SDSData; 
+
+		void sendSDS( in unsigned long recipientSSI, in SDSData rawMessage )
+			   		  raises( TA_Base_Core::BadParameterException ,TA_Base_Core::OperationModeException);
+
+		void sendText( in string session, in Radio::RadioResource resource, in Radio::ERadioServerAgentEncodeType encoding, in string rawMessage )
+			   		   raises( TA_Base_Core::BadParameterException ,TA_Base_Core::OperationModeException);
+
+		void radioStatusMsg( in unsigned long recipientSSI, in unsigned long statusMsg );
+
+		boolean connectDynamicRegroup( in Radio::RadioResource resource, in string talkgroupAlias)
+			   						raises( TA_Base_Core::BadParameterException ,TA_Base_Core::OperationModeException);
+
+		boolean releaseDynamicRegroup( in Radio::RadioResource resource, in string talkgroupAlias)
+			   						raises( TA_Base_Core::BadParameterException ,TA_Base_Core::OperationModeException);
+
+		void requestRadioCheck( in Radio::RadioResource resource, out string baseStation, out string talkgroupAlias)
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		void updateOperatorProfile( in string opName, out TA_IRS_Bus::Radio::OpTalkgroups talkgroups)
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		boolean callForwarding(in boolean condition, in unsigned long forwardingISSI, in unsigned long forwardedISSI)
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		boolean cancelCallForwarding(in unsigned long ISSI)
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		void queryCallForwarding(in unsigned long ISSI, out unsigned short condition, out unsigned long forwardingISSI, out unsigned long forwardedISSI)
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		boolean getIscsStatus()
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+		
+		boolean getRadioStatus()
+									raises(TA_Base_Core::BadParameterException, TA_Base_Core::OperationModeException);
+
+		
+
+		struct recvSDS
+		{
+			Radio::RadioResource originatingTrain;
+
+			sequence<octet> message;
+
+			string mftName;
+		};
+
+		struct recvText
+		{
+			Radio::RadioResource originator;
+
+			Radio::RadioResource receivingOperator; 
+
+			Radio::Message messageData;
+
+			string mftName;
+		};	
+
+		struct DbResSync
+		{
+			Radio::RadioResource oldResource;
+
+			Radio::RadioResource newResource;
+		};
+
+		struct ProfileTgSync
+		{
+			unsigned long profileKey;
+
+			TA_IRS_Bus::Radio::OpTalkgroups talkgroups;
+		};
+
+		//*************************
+		// PDS Data transfers     *
+		//*************************
+		// This exception is thrown if a call is already in progress for the ITSI
+		exception dataCallInProgressException {};
+
+		// This exception is thrown if a call is not in progress for the ITSI
+		exception dataCallNotInProgressException {};
+
+		typedef sequence<octet> PDSDataType;
+
+		exception radioException
+		{
+			string what;
+		};
+		/*
+		 * Send data will create a new data call to the destination and transfer the 
+		 * data to that location.  If useXON is specified, the function will monitor the 
+		 * incoming data for XON/OFF characters and modify the transmission flow accordingly.
+		 * A time out fron XOFF to XON will be used to ensure that flow is not stopped
+		 * indefinitely.
+		 * The radio will use the ISCS session to perform the circuit data call as it 
+		 * can keep going even if the scheduling MFT logs out.
+		 */
+		void sendData(in string ITSI, in unsigned long trainID,in PDSDataType pdsData,in boolean useXON, in string sessionID)
+		             raises (dataCallInProgressException,radioException,TA_Base_Core::OperationModeException);
+		/*
+		* This will cancel the library downoload based on the specified trainID.
+		*/
+		void cancelSendData(in unsigned long trainID, in string sessionID)
+			         raises (dataCallInProgressException,radioException,TA_Base_Core::OperationModeException);
+		/**
+		 * Return the Status of End of Ttis Download
+		 */
+		void notifyEndofTtisDownloadStatus( in unsigned long trainID, in unsigned short notifyStatus )
+					raises (dataCallInProgressException,radioException,TA_Base_Core::OperationModeException);
+	};
+
+};//End of TA_IRS_Bus;
+#endif
+

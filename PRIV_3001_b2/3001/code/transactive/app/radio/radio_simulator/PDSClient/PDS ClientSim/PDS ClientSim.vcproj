@@ -1,0 +1,187 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="PDS ClientSim" ProjectGUID="{161A3EEC-2A6C-4C47-8035-1A5FA83644FA}" RootNamespace="PDS ClientSim" Keyword="MFCProj">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Debug/PDS ClientSim.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 " Optimization="0" AdditionalIncludeDirectories="../../../../../../../TA_BASE/transactive;../../../../../../../sdk/include/transactive;../../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../../sdk/omniORB/omniORB_4.1.4/include;../../../../../;../Common" PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" PrecompiledHeaderFile=".\Debug/PDS ClientSim.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB414_rtd.lib omniDynamic414_rtd.lib COS414_rtd.lib omnithread34_rtd.lib Rpcrt4.lib stracelib.lib acemfcd.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib" OutputFile="$(OutDir)\PDSClientSimulator.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../../bin/win32_nd;../../../../../../../sdk/win32_nd;../../../../../../../sdk/lib;../../../../../../../sdk/omniORB/omniORB_4.1.4/lib/x86_win32;../../../../../../../build/win32_nd" GenerateDebugInformation="true" ProgramDatabaseFile=".\Debug/PDS ClientSim.pdb" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Debug/PDS ClientSim.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCWebDeploymentTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\Release/PDS ClientSim.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 " Optimization="2" AdditionalIncludeDirectories="../../../../../../../TA_BASE/transactive;../../../../../../../sdk/include/transactive;../../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../../sdk/omniORB/omniORB_4.1.4/include;../../../../../;../Common" PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" PrecompiledHeaderFile=".\Release/PDS ClientSim.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB414_rt.lib omniDynamic414_rt.lib COS414_rt.lib omnithread34_rt.lib Rpcrt4.lib stracelib.lib acemfc.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_IRS_Bus.lib" OutputFile="$(OutDir)\PDSClientSimulator.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../../bin/win32_nr;../../../../../../../sdk/win32_nr;../../../../../../../sdk/lib;../../../../../../../sdk/omniORB/omniORB_4.1.4/lib/x86_win32;../../../../../../../build/win32_nr" GenerateDebugInformation="true" ProgramDatabaseFile=".\Release/PDS ClientSim.pdb" SubSystem="2" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Release/PDS ClientSim.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCWebDeploymentTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="ConfigDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="DlgDataValidator.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="FrameHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="FrameRepeatDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="ParamReader.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="PDS ClientSim.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="PDS ClientSim.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="PDS ClientSimDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="RandFrameDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions="" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\TtdFrame.cpp">
+			</File>
+			<File RelativePath="..\Common\UdpSocket.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="..\Common\UDPSocketManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="ConfigDlg.h">
+			</File>
+			<File RelativePath="DlgDataValidator.h">
+			</File>
+			<File RelativePath="FrameHandler.h">
+			</File>
+			<File RelativePath="FrameRepeatDlg.h">
+			</File>
+			<File RelativePath="IConfigServerObserver.h">
+			</File>
+			<File RelativePath="IFrameRandGenerator.h">
+			</File>
+			<File RelativePath="IParamReader.h">
+			</File>
+			<File RelativePath="..\Common\IPDSClientConnectionObserver.h">
+			</File>
+			<File RelativePath="ParamReader.h">
+			</File>
+			<File RelativePath="PDS ClientSim.h">
+			</File>
+			<File RelativePath="PDS ClientSimDlg.h">
+			</File>
+			<File RelativePath="RandFrameDlg.h">
+			</File>
+			<File RelativePath="Resource.h">
+			</File>
+			<File RelativePath="StdAfx.h">
+			</File>
+			<File RelativePath=".\TtdFrame.h">
+			</File>
+			<File RelativePath="..\Common\UdpSocket.h">
+			</File>
+			<File RelativePath="..\Common\UDPSocketManager.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\PDS ClientSim.ico">
+			</File>
+			<File RelativePath="res\PDS ClientSim.rc2">
+			</File>
+		</Filter>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="PDS ClientSim.rc"/>
+	</Globals>
+</VisualStudioProject>

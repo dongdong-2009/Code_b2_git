@@ -1,0 +1,35 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.dai.sql" ProjectGUID="{6B618973-0792-41DD-B60D-3D27AE77491B}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../build/win32_nd" IntermediateDirectory=".\../../../../build/win32_nd/transactive/core/data_access_interface" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/core/data_access_interface/entity_access/IDL/src/core.dai.entity_access.idl.TA_EntityStatusUpdateIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../build/win32_nr" IntermediateDirectory=".\../../../../build/win32_nr/transactive/core/data_access_interface" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/core/data_access_interface/entity_access/IDL/src/core.dai.entity_access.idl.TA_EntityStatusUpdateIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="SQL" Filter="idl">
+			<File RelativePath=".\src\sqlcode.txt">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="call &quot;../../../COTS/sqlgen/1.1.1/bin/winnt/sqlgen.exe&quot; --Inputfile=./src/sqlcode.txt --Outpath=./src" Outputs="sql.h sqlmacrodef.h"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="call &quot;../../../COTS/sqlgen/1.1.1/bin/winnt/sqlgen.exe&quot; --Inputfile=./src/sqlcode.txt --Outpath=./src" Outputs="sql.h sqlmacrodef.h"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

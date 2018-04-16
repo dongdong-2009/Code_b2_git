@@ -1,0 +1,495 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\WtSvrTst2.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\WtSvrTst2.ico"
+IDR_WTSVRTTYPE          ICON    DISCARDABLE     "res\\WtSvrTst2Doc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 WtSvrTst2"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "WtSvrTst2 版本 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版本 (C) 2000",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确认",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_WTSVRTST2_FORM DIALOG DISCARDABLE  0, 0, 320, 200
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_TAGTREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_FULLROWSELECT | 
+                    WS_BORDER | WS_TABSTOP,7,16,163,86
+    LISTBOX         IDC_EVENTLIST,7,113,306,80,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "暂停更新",IDC_SUSPEND,235,7,70,14,WS_DISABLED
+    LTEXT           "标签数目:",IDC_NUMBER,179,32,128,8
+    LTEXT           "更新频率:",IDC_FREQUENCY,179,64,128,8
+    LTEXT           "标签列表创建时间:",IDC_CREATETIME,179,41,128,8
+    LTEXT           "测试过程:",IDC_CURRENTTIME,179,73,128,8
+    LTEXT           "测试开始时间:",IDC_STARTTIME,179,50,128,8
+    LTEXT           "标签列表更新时间:",IDC_UPDATETIME,179,92,128,8
+    GROUPBOX        "效率",IDC_STATIC,174,22,139,89
+    LTEXT           "更新数目:",IDC_UPDATES,179,81,128,8
+    LTEXT           "DCOM 接口 信息",IDC_STATIC,13,105,71,8
+    LTEXT           "平均更新时间:",IDC_AVGUPDATE,179,100,128,8
+    LTEXT           "标签列表",IDC_STATIC,7,7,26,8
+END
+
+IDD_CREATETAGS DIALOG DISCARDABLE  0, 0, 240, 202
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "创建标签列表"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,64,181,50,14
+    PUSHBUTTON      "取消",IDCANCEL,120,181,50,14
+    LTEXT           "标签数目",IDC_STATIC,48,23,72,10
+    COMBOBOX        IDC_COUNT,127,21,48,67,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "频率,(秒):",IDC_STATIC,62,53,59,8
+    EDITTEXT        IDC_UPDATE,131,49,40,14,ES_AUTOHSCROLL
+    CONTROL         "随机的",IDC_RANDOM,"Button",BS_AUTORADIOBUTTON,77,68,43,
+                    10
+    CONTROL         "增加的",IDC_INCREMENTAL,"Button",
+                    BS_AUTORADIOBUTTON,131,68,53,10
+    GROUPBOX        "模拟更新",IDC_STATIC,29,37,174,46
+    GROUPBOX        "类型选项",IDC_STATIC,30,91,173,42
+    CONTROL         "VT_R4",IDC_FLOATTYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,86,100,39,10
+    CONTROL         "VT_I2",IDC_INTTYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,86,114,35,10
+    CONTROL         "VT_BOOL",IDC_BOOLTYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,136,101,49,10
+    CONTROL         "VT_BSTR",IDC_STRTYPE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,136,113,49,10
+    CONTROL         "根据列表更新",IDC_LISTUPDATES,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,135,148,62,10
+    GROUPBOX        "效率选项",IDC_STATIC,31,140,172,34
+    CONTROL         "String Hashing",IDC_HASH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,135,160,62,10
+END
+
+IDD_DELIMITERDLG DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "标签名称分隔符"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_EDIT1,85,44,13,14,ES_CENTER | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "确认",IDOK,43,74,50,14
+    PUSHBUTTON      "取消",IDCANCEL,97,74,50,14
+    LTEXT           "目前服务器使用的分隔符",
+                    IDC_STATIC,15,17,146,8
+    LTEXT           "来分开层级名称空间的节点",
+                    IDC_STATIC,13,28,154,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "WtSvrTst2 MFC 应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "WtSvrTst2\0"
+            VALUE "LegalCopyright", "版本 (C) 2000\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "WtSvrTst2.EXE\0"
+            VALUE "ProductName", "WtSvrTst2 Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_WTSVRTST2_FORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 313
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_CREATETAGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 233
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_DELIMITERDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_CREATETAGS DLGINIT
+BEGIN
+    IDC_COUNT, 0x403, 7, 0
+0x3032, 0x302c, 0x3030, "\000" 
+    IDC_COUNT, 0x403, 7, 0
+0x3031, 0x302c, 0x3030, "\000" 
+    IDC_COUNT, 0x403, 5, 0
+0x3035, 0x3030, "\000" 
+    IDC_COUNT, 0x403, 5, 0
+0x3032, 0x3030, "\000" 
+    IDC_COUNT, 0x403, 5, 0
+0x3031, 0x3030, "\000" 
+    IDC_COUNT, 0x403, 4, 0
+0x3031, 0x0030, 
+    IDC_COUNT, 0x403, 3, 0
+0x3031, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "退出(&X)",                       ID_CLOSE_APP
+    END
+    POPUP "服务器(&S)"
+    BEGIN
+        MENUITEM "注册(&R)",                   ID_SERVER_REGISTER
+        MENUITEM "注销(&U)",                 ID_SERVER_UNREGISTER
+        MENUITEM "设置间隔符(&S)",              ID_SERVER_SETDELIMITER
+        MENUITEM "创建 标签列表(&C)",             ID_SERVER_CREATETAGS
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 WtSvrTst2 (&A)...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "WtSvrTst2\n\nWtSvrT\n\n\nWtSvrTst2.Document\nWtSvrT Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "WtSvrTst2"
+    AFX_IDS_IDLEMESSAGE     "准备"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_OPEN            "打开文档\n打开"
+    ID_FILE_CLOSE           "关闭当前文档\n关闭"
+    ID_FILE_SAVE            "保存当前文档\n保存"
+    ID_FILE_SAVE_AS         "当前文档另存为\n另存为"
+    ID_FILE_PAGE_SETUP      "更改打印选项\n打印页设置"
+    ID_FILE_PRINT_SETUP     "更改打印机和打印选项\n打印设置"
+    ID_FILE_PRINT           "打印当前文档\n打印"
+    ID_FILE_PRINT_PREVIEW   "显示全部页\n打印预览"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "显示程序信息，版本号和版权\n关于"
+    ID_APP_EXIT             "退出应用程序; 提示保存文档\n退出"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "打开这个文档"
+    ID_FILE_MRU_FILE2       "打开这个文档"
+    ID_FILE_MRU_FILE3       "打开这个文档"
+    ID_FILE_MRU_FILE4       "打开这个文档"
+    ID_FILE_MRU_FILE5       "打开这个文档"
+    ID_FILE_MRU_FILE6       "打开这个文档"
+    ID_FILE_MRU_FILE7       "打开这个文档"
+    ID_FILE_MRU_FILE8       "打开这个文档"
+    ID_FILE_MRU_FILE9       "打开这个文档"
+    ID_FILE_MRU_FILE10      "打开这个文档"
+    ID_FILE_MRU_FILE11      "打开这个文档"
+    ID_FILE_MRU_FILE12      "打开这个文档"
+    ID_FILE_MRU_FILE13      "打开这个文档"
+    ID_FILE_MRU_FILE14      "打开这个文档"
+    ID_FILE_MRU_FILE15      "打开这个文档"
+    ID_FILE_MRU_FILE16      "打开这个文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "切换到下个窗口面板\n下一个面板"
+    ID_PREV_PANE            "切换回前一个窗口面板\n前一个面板"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "划分当前窗口为面板\n划分"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "删除选择\n删除"
+    ID_EDIT_CLEAR_ALL       "删除全部\n删除全部"
+    ID_EDIT_COPY            "复制选择部分到剪贴板\n复制"
+    ID_EDIT_CUT             "剪切选择部分到剪贴板\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复最后一次动作\n重复"
+    ID_EDIT_REPLACE         "替换文本\n替换"
+    ID_EDIT_SELECT_ALL      "选择整个文档\n选择全部"
+    ID_EDIT_UNDO            "取消最后一次动作\n取消"
+    ID_EDIT_REDO            "重做之前未完成动作\n重做"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "改变窗口大小"
+    AFX_IDS_SCMOVE          "改变窗口位置"
+    AFX_IDS_SCMINIMIZE      "缩小窗口为图标"
+    AFX_IDS_SCMAXIMIZE      "放大窗口到最大"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档\n窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档\n文档窗口"
+    AFX_IDS_SCCLOSE         "关闭当前窗口并且提示保存文档"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "恢复窗口到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "关闭打印预览模式\n取消预览"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\WtSvrTst2.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

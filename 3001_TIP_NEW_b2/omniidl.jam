@@ -1,0 +1,144 @@
+import "class" : new ;
+import toolset : flags ;
+import path type scanner generators feature property-set property os sequence ;
+import generators-helper ;
+
+if [ os.on-unix ]
+{
+	type.register IDL : idl ;
+}
+
+type.register HH : hh : H ;
+
+rule init ( omniidl : options : include + )
+{
+	.omniidl = [ path.native $(omniidl) ] ;
+	.options = $(options) ;
+	.include = [ sequence.transform path.native : $(include) ] ;
+}
+
+class omniidl-generator : generator
+{
+	rule __init__ ( * : * )
+    {
+        generator.__init__ $(1) : $(2) : $(3) : $(4) : $(5) : $(6) : $(7) : $(8) : $(9) ;
+    }
+
+    rule generated-targets ( sources + : property-set : project name ? )
+    {
+        if ! $(name)
+        {
+            name = [ determine-output-name $(sources) ] ;
+        }
+
+		if [ is-special-idl [ $(sources[0]).name ] ]
+		{
+			return [ generated-targets-for-special-idl $(sources) : $(property-set) : $(project) $(name) ] ;
+		}
+
+        # Assign an action for each target.
+        local action = [ action-class ] ;
+        local a = [ class.new $(action) $(sources) : $(self.rule-name) : $(property-set) ] ;
+		local out-dir = [ path.native [ $(property-set).get <omniidl-out-dir> ] ] ;
+
+        # Create generated target for each target type.
+        local targets ;
+        local pre = $(self.name-prefix) ;
+        local post = $(self.name-postfix) ;
+
+        for local t in $(self.target-types)
+        {
+            local generated-name = $(pre[1])$(name:BS)$(post[1]) ;
+            generated-name = $(generated-name:R=$(name:D)) ;
+            pre = $(pre[2-]) ;
+            post = $(post[2-]) ;
+            targets += [ class.new file-target $(generated-name) : $(t) : $(project) : $(a) : $(out-dir) ] ;
+        }
+
+        return [ sequence.transform virtual-target.register : $(targets) ] ;
+    }
+
+    rule generated-targets-for-special-idl ( sources + : property-set : project name ? )
+	{
+		local special-idl = [ $(sources[0]).name ] ;
+		property-set = [ property-set.create [ $(property-set).raw ] <omniidl-options>$(self.$(special-idl).options) ] ;
+
+        # Assign an action for each target.
+        local action = [ action-class ] ;
+        local a = [ class.new $(action) $(sources) : $(self.rule-name) : $(property-set) ] ;
+		local out-dir = [ path.native [ $(property-set).get <omniidl-out-dir> ] ] ;
+
+        # Create generated target for each target type.
+        local targets ;
+        local pre = $(self.$(special-idl).name-prefix) ;
+        local post = $(self.$(special-idl).name-postfix) ;
+
+        for local t in $(self.$(special-idl).target-types)
+        {
+            local generated-name = $(pre[1])$(name:BS)$(post[1]) ;
+            generated-name = $(generated-name:R=$(name:D)) ;
+            pre = $(pre[2-]) ;
+            post = $(post[2-]) ;
+            targets += [ class.new file-target $(generated-name) : $(t) : $(project) : $(a) : $(out-dir) ] ;
+        }
+
+        return [ sequence.transform virtual-target.register : $(targets) ] ;
+	}
+
+	rule set-special-idl ( special-idl : options : target-types + )
+	{
+		self.$(special-idl) = $(special-idl) ;
+		self.$(special-idl).options = $(options) ;
+
+		for local e in $(target-types)
+        {
+            local m = [ MATCH "([^\\(]*)(\\((.*)%(.*)\\))?" : $(e) ] ;
+            self.$(special-idl).target-types += $(m[1]) ;
+            self.$(special-idl).name-prefix += $(m[3]:E="") ;
+            self.$(special-idl).name-postfix += $(m[4]:E="") ;
+        }
+	}
+
+	rule is-special-idl ( special-idl )
+	{
+		if $(self.$(special-idl))
+		{
+			return true ;
+		}
+	}
+}
+
+actions compile.idl
+{
+	$(.omniidl) $(OMNIIDL_OPTIONS:E=$(.options)) -I$(.include) -I$(OMNIIDL_INCLUDE) -C$(OMNIIDL_OUT_DIR)/src $(>)
+}
+#	ECHO $(.omniidl) $(OMNIIDL_OPTIONS:E=$(.options)) -I$(.include) -I$(OMNIIDL_INCLUDE) -C$(OMNIIDL_OUT_DIR) $(>)
+
+local rule id ( )
+{
+	return omniidl.compile.idl ;
+}
+
+rule instance ( )
+{
+	.instance ?= [ new omniidl-generator [ id ] : IDL : CPP(%_skel) CPP H ] ;
+	return $(.instance) ;
+}
+
+rule set-special-idl ( special-idl : options : target-types + )
+{
+	local g = [ instance ] ;
+	$(g).set-special-idl $(special-idl) : $(options) : $(target-types) ;
+}
+
+feature.feature omniidl-options : : free incidental ;
+flags [ id ] OMNIIDL_OPTIONS <omniidl-options> ;
+
+feature.feature omniidl-include : : free path incidental ;
+flags [ id ] OMNIIDL_INCLUDE <omniidl-include> ;
+
+feature.feature omniidl-out-dir : : free path incidental ;
+flags [ id ] OMNIIDL_OUT_DIR <omniidl-out-dir> ;
+
+generators-helper.unregister midl.compile.idl msvc.compile.idl ;
+generators.register [ instance ] ;

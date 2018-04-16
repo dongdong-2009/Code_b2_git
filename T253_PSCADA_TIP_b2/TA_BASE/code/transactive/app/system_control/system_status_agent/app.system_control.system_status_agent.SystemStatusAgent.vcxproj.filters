@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{61699637-c7c3-413e-b910-ddc0ce696087}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\PingDriver">
+      <UniqueIdentifier>{1317a03e-aaac-4639-bc38-5b864dd4fabd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ThreadedDriver">
+      <UniqueIdentifier>{eba1054a-5c8c-4fbc-ab2d-66d1b8b3a8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\taComponentsDriver">
+      <UniqueIdentifier>{c5794f62-aea7-4a07-87b9-f82060b8069e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataPointDriverHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IDataPointDriver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemStatusAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemStatusAgentConfigException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingDriver\ConsecutiveNetworkFailureAlarmPolicy.cpp">
+      <Filter>src\PingDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingDriver\PercentageNetworkFailureAlarmPolicy.cpp">
+      <Filter>src\PingDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingDriver\PingableDataPointDriver.cpp">
+      <Filter>src\PingDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingDriver\PingablePoint.cpp">
+      <Filter>src\PingDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pingDriver\SocketFailedException.cpp">
+      <Filter>src\PingDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\threadedDriver\AbstractThreadedDriver.cpp">
+      <Filter>src\ThreadedDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\AbstractPingDependentPoint.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\ControlStationPoint.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\DbServerPoint.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\DpUpdateThread.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\SystemControllerPoint.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+    <ClCompile Include="src\taComponentsDriver\TaComponentsDriver.cpp">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataPointDriverHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataPointDriver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPointContainer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\reporting.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemStatusAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemStatusAgentConfigException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\ConsecutiveNetworkFailureAlarmPolicy.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\INetworkFailureAlarmPolicy.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\PercentageNetworkFailureAlarmPolicy.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\PingableDataPointDriver.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\PingablePoint.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\pingDriver\SocketFailedException.h">
+      <Filter>src\PingDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threadedDriver\AbstractThreadedDriver.h">
+      <Filter>src\ThreadedDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\AbstractPingDependentPoint.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\ControlStationPoint.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\DbServerPoint.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\DpUpdateThread.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\ISelfResolvingPointContainer.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\SystemControllerPoint.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+    <ClInclude Include="src\taComponentsDriver\TaComponentsDriver.h">
+      <Filter>src\taComponentsDriver</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

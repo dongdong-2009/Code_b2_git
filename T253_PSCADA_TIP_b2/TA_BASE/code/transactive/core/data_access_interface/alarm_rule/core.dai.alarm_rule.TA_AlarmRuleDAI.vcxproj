@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.dai.alarm_rule</ProjectName>
+    <ProjectGuid>{2A8E51D7-1A08-4AB2-B46F-16CEE6450E2C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_AlarmRuleDAI_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmRuleAccessFactory.cpp" />
+    <ClCompile Include="src\AlarmRuleActionParameterHelper.cpp" />
+    <ClCompile Include="src\AlarmRuleData.cpp" />
+    <ClCompile Include="src\AlarmRuleHelper.cpp" />
+    <ClCompile Include="src\AutomaticAcknowledgementRuleHelper.cpp" />
+    <ClCompile Include="src\AutomaticAcknowlegementRuleData.cpp" />
+    <ClCompile Include="src\AvalancheSuppressionRuleData.cpp" />
+    <ClCompile Include="src\AvalancheSuppressionRuleHelper.cpp" />
+    <ClCompile Include="src\CCTVRuleData.cpp" />
+    <ClCompile Include="src\CCTVRuleHelper.cpp" />
+    <ClCompile Include="src\IAlarmRuleData.cpp" />
+    <ClCompile Include="src\MMSRuleData.cpp" />
+    <ClCompile Include="src\MMSRuleHelper.cpp" />
+    <ClCompile Include="src\PlanExecutionRuleData.cpp" />
+    <ClCompile Include="src\PlanExecutionRuleHelper.cpp" />
+    <ClCompile Include="src\SuppressionByDescriptionRuleData.cpp" />
+    <ClCompile Include="src\SuppressionRuleData.cpp" />
+    <ClCompile Include="src\SuppressionRuleHelper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmRuleAccessFactory.h" />
+    <ClInclude Include="src\AlarmRuleActionParameterHelper.h" />
+    <ClInclude Include="src\AlarmRuleData.h" />
+    <ClInclude Include="src\AlarmRuleHelper.h" />
+    <ClInclude Include="src\AutomaticAcknowledgementRuleData.h" />
+    <ClInclude Include="src\AutomaticAcknowledgementRuleHelper.h" />
+    <ClInclude Include="src\AvalancheSuppressionRuleData.h" />
+    <ClInclude Include="src\AvalancheSuppressionRuleHelper.h" />
+    <ClInclude Include="src\CCTVRuleData.h" />
+    <ClInclude Include="src\CCTVRuleHelper.h" />
+    <ClInclude Include="src\IAlarmRuleActionParameterData.h" />
+    <ClInclude Include="src\IAlarmRuleData.h" />
+    <ClInclude Include="src\MMSRuleData.h" />
+    <ClInclude Include="src\MMSRuleHelper.h" />
+    <ClInclude Include="src\PlanExecutionRuleData.h" />
+    <ClInclude Include="src\PlanExecutionRuleHelper.h" />
+    <ClInclude Include="src\SuppressionByDescriptionRuleData.h" />
+    <ClInclude Include="src\SuppressionRuleData.h" />
+    <ClInclude Include="src\SuppressionRuleHelper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

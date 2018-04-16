@@ -1,0 +1,5 @@
+
+ta-lib TA_RadioDAI
+	: [ glob src/*.cpp : src/RAGroupMembers.* src/RAPatchMembers.* src/RASubscribersHelper.* ]
+	: <dependency>/core/data_access_interface/src
+	;

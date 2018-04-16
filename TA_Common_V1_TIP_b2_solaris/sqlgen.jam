@@ -1,0 +1,29 @@
+import "class" : new ;
+import toolset : flags ;
+import virtual-target path property-set feature common ;
+
+rule init ( sqlgen )
+{
+	.sqlgen = [ path.native $(sqlgen) ] ;
+}
+
+rule sql-generating-rule ( project name : property-set : sources * )
+{
+    local result ;
+	local sql-out-path = [ path.parent [ $(sources[0]).name ] ] ;
+	property-set = [ property-set.create [ $(property-set).raw ] <sql-out-path>$(sql-out-path) ] ;	
+	local a = [ new action $(sources[0]) : sqlgen.sql-generating-action : $(property-set) ] ;
+	result += [ new file-target $(sql-out-path)/sqlmacrodef.h	exact : : $(project) : $(a) : ] ;
+	result += [ new file-target $(sql-out-path)/sql.h			exact : : $(project) : $(a) : ] ;
+    return $(result) ;
+}
+
+RM = [ common.rm-command ] ;
+actions sql-generating-action
+{
+	$(RM) $(<)
+	$(.sqlgen) --Inputfile=$(>) --Outpath=$(SQL_OUT_PATH)
+}
+
+feature.feature sql-out-path : : free path incidental ;
+flags sqlgen.sql-generating-action SQL_OUT_PATH <sql-out-path> ;

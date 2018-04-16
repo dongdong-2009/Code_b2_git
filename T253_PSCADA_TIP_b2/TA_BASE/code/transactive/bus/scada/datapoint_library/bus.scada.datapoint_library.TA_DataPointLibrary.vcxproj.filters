@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9a465474-a16e-45b9-b87f-6ad2d167ff71}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="makefile">
+      <UniqueIdentifier>{0237def9-0db4-4278-9efd-ca857001212d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmAckStateProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnalogueDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AnswerBackErrorUser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BooleanDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CalculatedExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedOutputDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommonContext.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAlarmDetailsFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointStateChangeEvent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointStateUpdateSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointStateUpdateServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DerivedDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DerivedState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnumDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventDetailsFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FALSEAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GeneralAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HIAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HIHIAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputAssociation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LaunchingConditionCheck.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LFThreadPoolSingleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LOAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LOLOAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MeteredDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultiBitDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotifyEventProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OverScaleHiAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OverScaleLoAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PersistProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SafetyOutputDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SingletonAnswerBackErrorUtil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextDataPoint.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TRUEAlarmDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmAckStateProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnalogueAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnalogueDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AnswerBackErrorUser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CalculatedExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedOutputDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonContext.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAlarmDetailsFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateChangeEvent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateUpdate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateUpdateSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateUpdateServant.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointWriteQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointWriteRequest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DerivedDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DerivedState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnumDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventDetailsFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FALSEAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeneralAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HIAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HIHIAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmAckStateUser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAnswerBackErrorNotification.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataPointObserverNotification.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IExpressionNodeNotification.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputAssociation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LaunchingConditionCheck.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LFThreadPoolSingleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LOAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LOLOAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MeteredDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultiBitDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotifyEventProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotifyEventQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotifyEventRequest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OverScaleHiAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OverScaleLoAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PersistProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PersistQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PersistRequest.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SafetyOutputDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SingletonAnswerBackErrorUtil.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TextDataPoint.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TRUEAlarmDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile">
+      <Filter>makefile</Filter>
+    </None>
+  </ItemGroup>
+</Project>

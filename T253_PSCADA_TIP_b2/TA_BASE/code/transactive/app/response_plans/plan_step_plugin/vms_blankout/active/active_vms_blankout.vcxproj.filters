@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{29c9c497-8e23-4def-8b8e-4682c6382f86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="active_src\ActiveVmsBlankoutStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\VmsBlankoutStepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="active_src\DllActiveInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="active_src\ActiveVmsBlankoutStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="active_src\VmsBlankoutStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

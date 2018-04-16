@@ -1,0 +1,29 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/PRIV_3001/TA_BASE/transactive/bus/radio/RadioAgentCorbaDef_4669/idl/src/IRadioDirectoryCorbaDef.idl $
+// @author:  Andy Parker
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2018/03/14 13:51:20 $
+// Last modified by:  $Author: lim.cy $
+//
+// Radio Subscriber Directory IDL interface.
+//
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_Base_Bus
+{
+
+	interface IRadioDirectoryCorbaDef
+	{
+		// Get the time and date of the last directory synchronisation
+		long getLastDirectorySynchronisationTime()
+			raises (TA_Base_Core::OperationModeException);//limin
+
+	}; // IRadioDirectoryCorbaDef
+}; // TA_Base_Bus
+

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ActiveStep.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StepComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActiveStep.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IActivePlan.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IActiveStepMessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMessageSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StepComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{389ec4f3-2f41-43cc-bc6e-c3fdb2309369}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,61 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3002_TIP/3002/transactive/bus/ats/ats_agent/IDL/src/IAtsBasCorbaDef.idl $
+// @author:  
+// @version: $Revision: # $
+//
+// Last modification: $DateTime:  $
+// Last modified by:  $Author:  $
+//
+// IAtsBasCorbaDef interface definition for the ATS/BAS interfacing.  
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsBasCorbaDef
+	{
+		struct CongestionInfo
+		{
+			boolean 			isInCongestionMode;			
+			StationIdType			stationId;			
+		}; // CongestionInformation
+		
+		
+		struct AtsBasMessageCorbaDef   
+		{
+			PhysicalTrainNumberType		trainId;
+			CongestionInfo  congestionInformation;
+		};
+		
+		//
+		// A sequence of AtsBasMessageCorbaDef defined for getBasInformationList
+		typedef sequence<AtsBasMessageCorbaDef>	BasInfoList;
+		
+		/** getBasInformationList
+		*
+		* This method is used to access the full list of Bas information
+		* and will typlically used to synchronise at startup of the client
+		* application
+		*
+		* @return A sequence of AtsBasMessageCorbaDef for all trains known
+		*			to the ATS agent.
+		**/
+		BasInfoList getBasInformationList() raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+		
+		/**
+		* processOccBasUpdate
+		*
+		* This method is used to allow the OCC ATS Agent to pass on Bas	
+		* information
+		*
+		* @param	basUpdate	A sequence of AtsBasMessageCorbaDef for updates  
+		* to trains for the sector
+		*/ 
+		void processOccBasUpdate(in BasInfoList basUpdate) raises (TA_Base_Core::OperationModeException);				
+
+	};
+};

@@ -1,0 +1,93 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/4677_TIP/4677/transactive/bus/trains/train_agent/idl/src/ITrainInformationCorbaDef.idl $
+  * @author:  Adam Radics
+  * @version: $Revision: #2 $
+  *
+  * Last modification: $DateTime: 2009/12/15 19:31:45 $
+  * Last modified by:  $Author: grace.koh $
+  *
+  * The train information train agent interface
+  * Used to get train locations etc.
+  */
+
+//#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_IRS_Bus_4677
+{
+	interface ITrainInformationCorbaDef
+	{
+
+
+		/**
+		 * This exception is thrown when the specified train is unknown to the system.
+		 */
+		exception InvalidTrain
+		{
+		    string  details;
+		};
+
+		/**
+		 * Indicates a train was removed, and the train that was removed
+		 */
+		struct TrainRemovalInformation
+		{
+			octet trainId;
+		};
+
+		/**
+		 * Represents the track a train is on, up track or down track.
+		 */
+		enum ETrack
+		{
+			UpTrack,
+			DownTrack,
+			NoDirection
+		};
+
+		enum ELine
+		{
+			Depot,		// Represent the Depot Line number
+			RedLine,	// Represent the Red Line number
+			OrangeLine	// Represent the Orange Line number
+		};
+
+		/**
+		 * Contains all information about a train received by the signalling and radio
+		 * systems
+		 */
+		struct TrainInformation
+		{
+			octet trainId;					// The logical train Id
+			unsigned short serviceNumber;	// This is the train service/serial number.
+			unsigned long currentLocation;	// The location key of the train.
+			string elementName;				// The name of the element that the train is currently on
+			ELine currentLine;				// The line the train is on.
+			ETrack track;					// This is the track the train is on.
+			unsigned short crewNumber;		// The crew number
+			string leadingCarRadioNumber;	// The radio number of the leading car (Used with Radio Agent)
+			string trailingCarRadioNumber;	// The radio number of the trailing car(Used with Radio Agent)
+		};
+
+		typedef sequence<TrainInformation> TrainInformationList;
+
+		/**
+		 * Gets all train information structures. All structures known by this system.
+		 */
+		TrainInformationList getTrainList();
+
+		/**
+		 * Gets the train information for a specific train.
+		 * 
+		 * @param trainId
+		 *
+		 * @throws InvalidTrainException for an unknown train
+		 */
+		TrainInformation getTrainInformation( in octet trainId )
+			raises( InvalidTrain );
+
+	}; // ITrainInformationCorbaDef
+}; // TA_IRS_Bus

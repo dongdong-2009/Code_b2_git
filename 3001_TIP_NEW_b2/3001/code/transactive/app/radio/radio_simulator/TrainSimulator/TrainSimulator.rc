@@ -1,0 +1,422 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENE)\r\n"
+    "LANGUAGE 9, 18\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\TrainSimulator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\TrainSimulator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TrainSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TrainSimulator Version 2.0",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_TRAINSIMULATOR_DIALOG DIALOGEX 0, 0, 585, 374
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TrainSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Information",IDC_STATIC,7,7,327,33
+    LTEXT           "Server IP :",IDC_STATIC,17,20,39,8
+    LTEXT           "Port:",IDC_STATIC,123,21,17,8
+    EDITTEXT        IDC_EDIT_PORT,141,21,59,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    PUSHBUTTON      "Start Server",IDC_BUTTON_STARTSERVER,207,19,57,14
+    CONTROL         "",IDC_LIST_LOGS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,21,57,313,112
+    PUSHBUTTON      "Clear",IDC_BUTTON_CLEAR,270,19,54,14
+    EDITTEXT        IDC_EDIT_SERVER,56,20,61,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    GROUPBOX        "Logs",IDC_STATIC,14,192,550,169
+    GROUPBOX        "Status Information",IDC_STATIC,7,47,332,128
+    EDITTEXT        IDC_EDIT_LOGS,19,204,535,151,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL,WS_EX_LEFTSCROLLBAR
+    LTEXT           "Status :",IDC_STATIC,358,117,26,8
+    PUSHBUTTON      "Send Status",IDC_BUTTON_SEND_STATUS,395,132,60,14
+    COMBOBOX        IDC_COMBO_STATUS,388,114,86,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "TrainID:",IDC_STATIC,356,96,27,8
+    COMBOBOX        IDC_COMBO_TRAIN_ID,388,95,32,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Configuration",IDC_STATIC,339,7,228,32
+    PUSHBUTTON      "Train HeartBeat",IDC_BUTTON_TRAIN_HEARTBETAT,347,18,62,14
+    GROUPBOX        "TIMS Command",IDC_STATIC,343,41,224,115
+    LTEXT           "Command:",IDC_STATIC,355,60,35,8
+    COMBOBOX        IDC_COMBO_TIMS_COMMAND,392,58,88,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Single Train",IDC_RADIO_SINGLE_TRAIN,"Button",BS_AUTORADIOBUTTON,358,77,50,10
+    CONTROL         "Multiple Trains",IDC_RADIO_MULTIPLE_TRAINS,"Button",BS_AUTORADIOBUTTON,414,78,61,10
+    LTEXT           "TO  TrainID:",IDC_STATIC_TO_TRAINID,426,97,40,8
+    COMBOBOX        IDC_COMBO_TRAIN_MULTIPLE,469,95,33,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Train Status",IDC_BUTTON_STATUS_CONFIG,411,18,71,15,WS_DISABLED
+    PUSHBUTTON      "Sending Response",IDC_BUTTON2,487,17,70,15
+    LTEXT           "Use Train Tsi for all train:",IDC_STATIC,357,172,85,10
+    COMBOBOX        IDC_COMBO_TSI,445,169,91,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Radio id Setup",IDC_STATIC,343,156,223,35
+END
+
+IDD_DIALOG_TRAIN_HEART_BEAT DIALOGEX 0, 0, 621, 293
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Train HeartBeat Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Train HeartBeat Information",IDC_STATIC,7,7,298,274
+    CONTROL         "",IDC_LIST_HEARTBEAT_INFO,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,15,18,274,228
+    PUSHBUTTON      "Add Train",IDC_BUTTON_ADD_TRAIN,15,258,50,14
+    PUSHBUTTON      "Run Train",IDC_BUTTON_TRAIN_STATUS,71,258,57,14
+    PUSHBUTTON      "Remove Train",IDC_BUTTON_KILL_TRAIN,132,258,59,14
+    GROUPBOX        "Command Response Strategy",IDC_STATIC,321,7,278,275
+    CONTROL         "",IDC_LIST_RESPONSE_STRATEGY,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,329,17,262,230
+    PUSHBUTTON      "Add Response Strategy",IDC_BUTTON_ADD_STRATEGY,196,258,89,14
+    PUSHBUTTON      "Remove Train Strategy",IDC_BUTTON_REMOVE_TRAIN_STRATEGY,331,256,88,14
+END
+
+IDD_DIALOG_ADD_TRAIN DIALOGEX 0, 0, 149, 96
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Train HeartBeat"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,26,69,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,68,50,14
+    GROUPBOX        "Train HeartBeat",IDC_STATIC,7,7,135,82
+    LTEXT           "Train ID :",IDC_STATIC,18,23,31,8
+    EDITTEXT        IDC_EDIT_TRAIN_ID_HEARTBEAT,79,20,35,14,ES_AUTOHSCROLL
+    LTEXT           "Delay In Second :",IDC_STATIC,19,44,58,8
+    EDITTEXT        IDC_EDIT_DELAY_HEARTBEAT,79,41,35,14,ES_AUTOHSCROLL
+END
+
+IDD_DIALOG_COMMAND_RESPONSE DIALOGEX 0, 0, 247, 151
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Train Command Respose Strategy "
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Train ID:",IDC_STATIC,17,26,29,8
+    EDITTEXT        IDC_EDIT_TRAIN_ID_RESPONSE,49,24,29,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Train Response Information",IDC_STATIC,7,7,226,133
+    GROUPBOX        "Timer Response Strategy",IDC_STATIC,7,46,95,64
+    CONTROL         "Timer Send ",IDC_RADIO_TIMER_SEND,"Button",BS_AUTORADIOBUTTON | WS_GROUP,22,61,53,10
+    CONTROL         "Timer Timeout",IDC_RADIO_TIMER_TIMEOUT,"Button",BS_AUTORADIOBUTTON,21,76,61,10
+    GROUPBOX        "Timer Set",IDC_STATIC,111,46,114,63
+    LTEXT           "Set Timer :",IDC_STATIC,117,70,36,8
+    EDITTEXT        IDC_EDIT_SET_TIMER,155,68,33,14,ES_AUTOHSCROLL
+    LTEXT           "ms",IDC_STATIC,192,71,25,8
+    PUSHBUTTON      "Ok",IDC_BUTTON_OK_TRAIN_RESPONSE,72,118,50,14
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCEL_TRAIN_RESPONSE,125,118,50,14
+END
+
+IDD_DIALOG_TRAIN_STATUS_CONFIG DIALOGEX 0, 0, 401, 290
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Train Status Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Status 1",IDC_STATIC,14,15,112,248
+    GROUPBOX        "Status 5",IDC_STATIC,135,14,121,248
+    CONTROL         "",IDC_LIST_STATUS5,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,140,25,109,233
+    CONTROL         "",IDC_LIST_STATUS1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,19,24,102,235
+    PUSHBUTTON      "Add Train Status5",IDC_BUTTON_ADDSTATUS5,159,263,68,14
+    PUSHBUTTON      "Add Train Status1",IDC_BUTTON_ADDSTATUS1,33,263,68,14
+    GROUPBOX        "Status 6",IDC_STATIC,263,14,120,248
+    CONTROL         "",IDC_LIST_STATUS6,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,269,25,110,233
+    PUSHBUTTON      "Add Train Status6",IDC_BUTTON_ADDSTATUS6,291,264,70,14
+END
+
+IDD_DIALOG_ADD_TRAIN_STATUS DIALOGEX 0, 0, 148, 107
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Train Status"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Train Status Information",IDC_STATIC,3,6,135,91
+    LTEXT           "TrainID :",IDC_STATIC,24,27,29,8
+    LTEXT           "Staus :",IDC_STATIC,23,46,24,8
+    COMBOBOX        IDC_COMBO_TRAINID_ADDSTATUS,60,25,50,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_STATUS_ADD,60,44,49,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Ok",IDC_BUTTON_ADDTRAIN,26,73,50,14
+    PUSHBUTTON      "Cancel",IDC_BUTTON_CANCELL_STATUS,77,73,50,14
+END
+
+IDD_DIALOG_AUTOSENDCONF DIALOGEX 0, 0, 410, 417
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Response Auto Sending Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,267,396,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,321,396,50,14
+    GROUPBOX        "PEC Auto Sending Config",IDC_STATIC,16,15,383,74
+    CONTROL         "Auto Send PEC Response - PEC Reset",IDC_CHECK_PECRESET,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,71,152,13
+    CONTROL         "Auto Send PEC Response - PEC Hold",IDC_CHECK_PECHOLD,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,31,49,152,13
+    CONTROL         "Auto Send PEC Response - PEC Answer",IDC_CHECK_PECANSWER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,32,28,152,13
+    GROUPBOX        "PA Auto Sending Config",IDC_STATIC,16,91,383,135
+    CONTROL         "Auto Send PA Response - Pre-Recorded",IDC_CHECK_PAPRERECORDED,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,117,144,13
+    CONTROL         "Auto Send PA Response - PA Live",IDC_CHECK_PALIVE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,186,129,16
+    CONTROL         "Auto Send PA Response - PA Live Reset",IDC_CHECK_PALIVERESET,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,173,142,13
+    CONTROL         "Auto Send PA Response - PA PreRecorded Rest",IDC_CHECK_PAPRERECORDEDRESET,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,159,168,13
+    CONTROL         "Auto Send PA Response - PA Continue",IDC_CHECK_PACONTINUE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,143,149,13
+    GROUPBOX        "Send State Change To Subscriber",IDC_STATIC,15,330,348,49
+    PUSHBUTTON      "Release Location",IDC_BTN_SENDSTATE,29,348,100,18
+    PUSHBUTTON      "Cotrol Location",IDC_BTN_SENDSTATE2,134,348,100,18
+    GROUPBOX        "TTIS Auto Sending Config",IDC_STATIC,16,229,376,48
+    CONTROL         "Auto Send TTIS Response - Lib Download",IDC_CHECK_TTISLIB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,30,241,152,13
+    CONTROL         "Auto Send PA Response - Pre-Recorded Complete",IDC_CHK_PRE_COMP,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,26,130,175,13
+    GROUPBOX        "Tims Command",IDC_STATIC,15,284,346,34
+    CONTROL         "Change-over Failure due to ACSU",IDC_Chk_ChangeOver,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,24,300,157,8
+    CONTROL         "Return ChangeOver During TTIS Download SDS Request",IDC_CHECK_TTIS_CHANGEOVER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,192,242,194,10
+    CONTROL         "Return ChangeOver During PALive SDS Request",IDC_CHECK_PALIVE_CHANGEOVER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,208,119,167,10
+    CONTROL         "Return ChangeOver During PAPreRecorded SDS Request",IDC_CHECK_PAPREREC_CHANGEOVER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,208,133,167,10
+    CONTROL         "Return ChangeOver During PEC Ans SDS Request",IDC_CHECK_PECANS_CHANGEOVER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,187,30,185,10
+    CONTROL         "Return ChangeOver During TTIS Update SDS Request",IDC_CHECK_TTISUPGRADDE_CHANGEOVER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,192,258,189,10
+    CONTROL         "Command Recived Failed for TTIS",IDC_CHK_TTIS_CMD_RCV_FAIL,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,30,258,143,8
+    GROUPBOX        "PA Live AutoSending Options",IDC_STATIC,203,157,187,52
+    GROUPBOX        "PA Changeover Options",IDC_STATIC,203,106,188,50
+    GROUPBOX        "PA Auto Sending ",IDC_STATIC,20,106,180,115
+    COMBOBOX        IDC_CMB_TrainPACount,282,173,95,84,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "# of Trains affected",IDC_STATIC,211,174,67,10
+    PUSHBUTTON      "Reset Library Train Counter",IDC_BUTTON2,281,191,95,12
+    CONTROL         "Auto Send PA Response - PA PreRec Emergency",IDC_CHECK_PAPREEMERGENCY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,27,199,170,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "TrainSimulator.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "TrainSimulator.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_TRAINSIMULATOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 578
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 367
+    END
+
+    IDD_DIALOG_TRAIN_HEART_BEAT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 614
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 286
+    END
+
+    IDD_DIALOG_ADD_TRAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 142
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 89
+    END
+
+    IDD_DIALOG_COMMAND_RESPONSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 240
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+    END
+
+    IDD_DIALOG_TRAIN_STATUS_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 282
+    END
+
+    IDD_DIALOG_ADD_TRAIN_STATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 141
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 100
+    END
+
+    IDD_DIALOG_AUTOSENDCONF, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 403
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 410
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_AUTOSENDCONF DLGINIT
+BEGIN
+    IDC_CMB_TrainPACount, 0x403, 3, 0
+0x2222, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About TrainSimulator..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENE)
+LANGUAGE 9, 18
+#pragma code_page(1252)
+#include "res\TrainSimulator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,83 @@
+
+insert into entitytype(pkey, name, description) Values (190, 'GenaConfig', 'Gena Configuration');
+
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7001, 'GenaServerName', 'Gena Server Name', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7002, 'GenaServerIP', 'Gena Server IP Address', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7003, 'GenaServerPort', 'Gena Server Port', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7004, 'GenaHTTPKeepAlive', 'ena Http Keep Alive', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7005, 'GenaHTTPTimeOut', 'Gena Http Timeout', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7006, 'GenaSubscriptionTO', 'Gena Subscribtion Timeout', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7007, 'GenaClientTargetServer', 'Gena Client Target Server', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7008, 'GenaResubscriptionTO', 'Gena Resubsciption Timeout', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7009, 'GenaCallbackServerName', 'Gena Client Callback Server Name', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7010, 'GenaCallbackServerIP', 'Gena Client Callback Server IP Address', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7011, 'GenaCallbackServerPort', 'Gena Client Callback Server Port', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7012, 'GenaCallbackHTTPKeepAlive', 'Gena Client Callback Http Keep Alive', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7013, 'GenaCallbackHTTPTimeOut', 'Gena Client Callback Http Timeout', 190, 10, 0, 'N', 1);
+insert into entityparameter (pkey, name, description, typekey, order_seq, driverTypeKey, ep_mandatory, ep_default_dataType) VALUES (7014, 'GenaObjectType', 'Client,Server,Bridge', 190, 10, 0, 'N', 1);
+
+
+-- Gena Client Entity
+Insert into entity(pkey, name, address, description, subsystemkey, locationkey, seregi_id, typekey, parentkey, agentkey, deleted) VALUES (999200138, 'Dt17GenaClient', 'Unused', 'Dt17 Gena Client Configuration', 0, 1, 1, 190, 10012617, 10012617, 0);
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090101, 999200138, 7008, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090102, 999200138, 7009, 'http://localhost:7060');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090103, 999200138, 7010, 'localhost');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090104, 999200138, 7011, '7060');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090105, 999200138, 7012, '1');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090106, 999200138, 7013, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090107, 999200138, 7014, 'GenaClient');
+
+-- Gena Server Entity
+Insert into entity(pkey, name, address, description, subsystemkey, locationkey, seregi_id, typekey, parentkey, agentkey, deleted) VALUES (999200139, 'Dt17GenaServer', 'Unused', 'Dt17 Gena Server Configuration', 0, 1, 1, 190, 10012617, 10012617, 0);
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090109, 999200139, 7001, 'localhost:7080');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090110, 999200139, 7002, 'localhost');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090111, 999200139, 7003, '7080');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090112, 999200139, 7004, '1');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090113, 999200139, 7005, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090114, 999200139, 7006, '60000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090115, 999200139, 7014, 'GenaServer');
+
+
+-- Gena Bridge Entity
+Insert into entity(pkey, name, address, description, subsystemkey, locationkey, seregi_id, typekey, parentkey, agentkey, deleted) VALUES (999200140, 'Dt17GenaBridge', 'Unused', 'Dt17 Gena Bridge Configuration', 0, 1, 1, 190, 10012617, 10012617, 0);
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090116, 999200140, 7008, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090117, 999200140, 7009, 'http://localhost:7070');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090118, 999200140, 7010, 'localhost');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090119, 999200140, 7011, '7070');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090120, 999200140, 7012, '1');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090121, 999200140, 7013, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090123, 999200140, 7001, 'localhost:7090');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090124, 999200140, 7002, 'localhost');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090125, 999200140, 7003, '7090');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090126, 999200140, 7004, '1');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090127, 999200140, 7005, '20000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090128, 999200140, 7006, '60000');
+Insert into entityparametervalue(pkey, entitykey, parameterkey, value) values (55090129, 999200140, 7014, 'GenaBridge');
+
+
+
+insert into Gena_Client_Source (pkey, entitykey, serverURL, maxretry, timeout, keepAlive) VALUES (1003, 999200138, 'http://localhost:8080', 3, 60000, 1);
+insert into Gena_Client_Source (pkey, entitykey, serverURL, maxretry, timeout, keepAlive) VALUES (1004, 999200138, 'http://localhost:7080', 3, 60000, 1);
+insert into Gena_Client_Source (pkey, entitykey, serverURL, maxretry, timeout, keepAlive) VALUES (1005, 999200140, 'http://localhost:7080', 3, 60000, 1);
+
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (120, 999200138, 'Train', '/Train');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (121, 999200138, 'Switch', '/Switch');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (122, 999200138, 'Signal', '/Signal');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (123, 999200138, 'Block', '/Block');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (124, 999200138, 'Platform', '/Platform');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (125, 999200138, 'PESB', '/PESB');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (126, 999200138, 'Time', '/Time');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (127, 999200138, 'Floodgate', '/Floodgate');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (128, 999200138, 'PIS', '/PIS');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (129, 999200138, 'PlatformDoor', '/PlatformDoor');
+
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (130, 999200140, 'Train', '/Train');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (131, 999200140, 'Switch', '/Switch');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (132, 999200140, 'Signal', '/Signal');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (133, 999200140, 'Block', '/Block');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (134, 999200140, 'Platform', '/Platform');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (135, 999200140, 'PESB', '/PESB');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (136, 999200140, 'Time', '/Time');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (137, 999200140, 'Floodgate', '/Floodgate');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (138, 999200140, 'PIS', '/PIS');
+insert into Gena_Client_Topic (pkey, entitykey, topic, subscribeURL) VALUES (139, 999200140, 'PlatformDoor', '/PlatformDoor');

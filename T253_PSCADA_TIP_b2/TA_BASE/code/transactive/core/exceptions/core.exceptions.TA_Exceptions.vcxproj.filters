@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="core">
+      <UniqueIdentifier>{25ebe6ba-fce4-43c1-a866-f1efc0e14b26}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="database">
+      <UniqueIdentifier>{e5d163f3-27fd-48aa-87cd-f224f13951a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{29cbb5df-2234-435c-91e1-a11824f24f40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="obsolete">
+      <UniqueIdentifier>{f5be0efd-5b5a-47a7-9c0a-30d924a2656b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="alarm">
+      <UniqueIdentifier>{54612282-cc9f-4721-ae36-ff1422b2df2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="4669">
+      <UniqueIdentifier>{d5155641-a2de-4ff9-82fc-d8e14b8c0942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system control">
+      <UniqueIdentifier>{e4aa81a9-5b3a-4be6-a5a9-cecfd73fb8bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="security">
+      <UniqueIdentifier>{946a61cc-f46f-4e9c-9dab-d0f93323c160}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AssertException.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CorbaException.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ObjectResolutionException.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransactiveException.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UtilitiesException.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseException.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbConnectionFailed.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbConnectionNoFile.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbUniqueConstraintViolated.cpp">
+      <Filter>database</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BannerFrameworkException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaRuntimeEntityParameterNotFoundException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataConfigurationException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataUserSettingException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityTypeException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GraphWorxException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InterlockingException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MathematicalEvaluationException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageResourceException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NoAlarmAgentException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepDetailException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReportManagerException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaCommonException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaProxyException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingManagerException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SocketException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundPlayerException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TcpSocketException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrendViewerException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UserCancelException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UserSettingsException.cpp">
+      <Filter>misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CCTVException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewerException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FailoverException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericApplicationException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NameNotFoundException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanControllerException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanEditorException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundInitException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadException.cpp">
+      <Filter>obsolete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmActionException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAgentException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmCacheCapacityExceededException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmListCtrlException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStoreException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmViewerException.cpp">
+      <Filter>alarm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsAgentException.cpp">
+      <Filter>4669</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IncidentException.cpp">
+      <Filter>4669</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSwitchAgentInternalException.cpp">
+      <Filter>4669</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApplicationException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CannotUseSysControllerException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FatalConfigurationException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericAgentException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericGUIException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InvalidCommandLineException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ManagedProcessException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessAlreadyRunningException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerException.cpp">
+      <Filter>system control</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenticationAgentException.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenticationSecurityException.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentException.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PolicyDecisionPointException.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsException.cpp">
+      <Filter>security</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AssertException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CorbaException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DebugMsgConstructionException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ObjectResolutionException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransactiveException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UtilitiesException.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseException.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbConnectionFailed.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbConnectionNoFile.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbUniqueConstraintViolated.h">
+      <Filter>database</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BannerFrameworkException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaRuntimeEntityParameterNotFoundException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaScadaExceptions.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataConfigurationException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataUserSettingException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityTypeException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphWorxException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HistoryInitialisationException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InterlockingException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MathematicalEvaluationException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageResourceException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NoAlarmAgentException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepDetailException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ReportManagerException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaCommonException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaProxyException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingManagerException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SocketException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundPlayerException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpSocketException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrendViewerException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UserCancelException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UserSettingsException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ValueNotSetException.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CCTVException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManagerException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewerException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FailoverException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericApplicationException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NameNotFoundException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanControllerException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanEditorException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundInitException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadException.h">
+      <Filter>obsolete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmActionException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAgentException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmCacheCapacityExceededException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmListCtrlException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmViewerException.h">
+      <Filter>alarm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsAgentException.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataRecordingAgentException.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSAgentExceptions.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IncidentException.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PasExceptions.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSwitchAgentInternalException.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WILDAgentExceptions.h">
+      <Filter>4669</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApplicationException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CannotUseSysControllerException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FatalConfigurationException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericAgentException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericGUIException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidCommandLineException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedProcessException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessAlreadyRunningException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerException.h">
+      <Filter>system control</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenticationAgentException.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenticationSecurityException.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentException.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PolicyDecisionPointException.h">
+      <Filter>security</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsException.h">
+      <Filter>security</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,6 @@
+
+ta-lib TA_SFTP
+	: requirements
+		<toolset>msvc:<define>CURL_STATICLIB
+		<toolset>msvc:<define>_WIN32_WINNT=0x400
+	;

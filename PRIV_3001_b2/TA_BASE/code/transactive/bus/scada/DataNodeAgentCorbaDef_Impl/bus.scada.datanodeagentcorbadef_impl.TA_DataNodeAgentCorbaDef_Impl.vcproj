@@ -1,0 +1,106 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.scada.datanodeagentcorbadef_impl" ProjectGUID="{F2894EFE-2A1C-4D08-9590-DEE4F2F1F8A6}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/scada/datanodeagentcorbadef_impl" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories=".\src,..\..\..\,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\build\win32_n\transactive\core\exceptions\IDL\src,..\..\..\..\..\build\win32_n\transactive\core\message\IDL\src,..\..\..\..\..\build\win32_n\transactive\core\alarm\IDL\src,..\..\..\..\..\build\win32_n\transactive\bus\scada\common_library\IDL\src,..\..\..\..\cots\omniORB\omniORB_4.1.6\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,..\..\..\..\cots\boost\boost_1_39_0,..\..\..\..\..\build\win32_n\transactive\core\process_management\IDL\src\" PreprocessorDefinitions="WIN32;_DEBUG;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/bus/scada/datanodeagentcorbadef_impl/bus.scada.datanodeagentcorbadef_impl.TA_DataNodeAgentCorbaDef_Impl.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/scada/datanodeagentcorbadef_impl/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/scada/datanodeagentcorbadef_impl/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/scada/datanodeagentcorbadef_impl/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_DataNodeAgentCorbaDef_Impl_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.scada.datanodeagentcorbadef_impl.TA_DataNodeAgentCorbaDef_Impl.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/scada/datanodeagentcorbadef_impl" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories=".\src,..\..\..\,..\..\..\..\..\build\win32_n\transactive,..\..\..\..\..\build\win32_n\transactive\core\exceptions\IDL\src,..\..\..\..\..\build\win32_n\transactive\core\message\IDL\src,..\..\..\..\..\build\win32_n\transactive\core\alarm\IDL\src,..\..\..\..\..\build\win32_n\transactive\bus\scada\common_library\IDL\src,..\..\..\..\cots\omniORB\omniORB_4.1.6\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,..\..\..\..\cots\boost\boost_1_39_0,..\..\..\..\..\build\win32_n\transactive\core\process_management\IDL\src\" PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/bus/scada/datanodeagentcorbadef_impl/bus.scada.datanodeagentcorbadef_impl.TA_DataNodeAgentCorbaDef_Impl.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/scada/datanodeagentcorbadef_impl/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/scada/datanodeagentcorbadef_impl/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/scada/datanodeagentcorbadef_impl/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_DataNodeAgentCorbaDef_Impl.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.scada.datanodeagentcorbadef_impl.TA_DataNodeAgentCorbaDef_Impl.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src">
+			<File RelativePath="src\DataNodeAccessCorbaDef_Impl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeAccessCorbaDef_Impl.h">
+			</File>
+			<File RelativePath="src\DataNodeAgentCorbaDef_Impl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeAgentCorbaDef_Impl.h">
+			</File>
+			<File RelativePath="src\DataNodeAgentSynHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeAgentSynHandler.h">
+			</File>
+			<File RelativePath="src\DataNodeDisplayClient.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeDisplayClient.h">
+			</File>
+			<File RelativePath="src\DataNodeObserver.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeObserver.h">
+			</File>
+			<File RelativePath="src\DataNodeStateContainer.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataNodeStateContainer.h">
+			</File>
+			<File RelativePath="src\IDataNodeAgent.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

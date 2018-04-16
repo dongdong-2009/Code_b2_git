@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D5416048-B7DC-4845-86DE-413ED4C3CA2D}</ProjectGuid>
+    <RootNamespace>app.response_plans.plan_step_plugin.common</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_PlanStepCommon_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>TA_PlanStepCommon</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;__x86__;__WIN32__;_DEBUG;_USRDLL;_USE_32BIT_TIME_T;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MOCKUPSTEP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BaseStepParameter.cpp" />
+    <ClCompile Include="src\BasicCompareRule.cpp" />
+    <ClCompile Include="src\BasicParameter.cpp" />
+    <ClCompile Include="src\BoolParamWrapper.cpp" />
+    <ClCompile Include="src\ContainerCompareRule.cpp" />
+    <ClCompile Include="src\GridParamWrapper.cpp" />
+    <ClCompile Include="src\InteractiveParameter.cpp" />
+    <ClCompile Include="src\ListParamWrapper.cpp" />
+    <ClCompile Include="src\SerializableParameter.cpp" />
+    <ClCompile Include="src\StringParamWrapper.cpp" />
+    <ClCompile Include="src\TreeParamWrapper.cpp" />
+    <ClCompile Include="src\VectorParamWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BaseStepParameter.h" />
+    <ClInclude Include="src\BasicCompareRule.h" />
+    <ClInclude Include="src\BasicParameter.h" />
+    <ClInclude Include="src\BoolParamWrapper.h" />
+    <ClInclude Include="src\CompareMethod.h" />
+    <ClInclude Include="src\ContainerCompareRule.h" />
+    <ClInclude Include="src\DataPointEnum.h" />
+    <ClInclude Include="src\EmptyEditorParamter.h" />
+    <ClInclude Include="src\ExportDef.h" />
+    <ClInclude Include="src\GridParamWrapper.h" />
+    <ClInclude Include="src\ICompareRule.h" />
+    <ClInclude Include="src\InteractiveParameter.h" />
+    <ClInclude Include="src\IParameterWrapper.h" />
+    <ClInclude Include="src\ListParamWrapper.h" />
+    <ClInclude Include="src\ParameterType.h" />
+    <ClInclude Include="src\SerializableParameter.h" />
+    <ClInclude Include="src\StringParamWrapper.h" />
+    <ClInclude Include="src\TreeParamWrapper.h" />
+    <ClInclude Include="src\VectorParamWrapper.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

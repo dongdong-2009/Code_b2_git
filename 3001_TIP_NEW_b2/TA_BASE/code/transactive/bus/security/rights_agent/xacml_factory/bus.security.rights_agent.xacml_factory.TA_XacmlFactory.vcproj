@@ -1,0 +1,249 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.security.rights_agent.xacml_factory" ProjectGUID="{61822ACE-E53C-4C71-B40F-76B3CEEAB56C}" RootNamespace="bus.security.rights_agent.xacml_factory" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..;../../../../../../build/win32_n/transactive;../../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;../../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../cots/omniORB/omniORB_4.1.6/include;../../../../../cots/ACE/6_0_4/ACE_wrappers;..\..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/bus.security.rights_agent.xacml_factory.TA_XacmlFactory.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/" ObjectFile=".\../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/bus/security/rights_agent/xacml_factory/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_XacmlFactory_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/bus.security.rights_agent.xacml_factory.TA_XacmlFactory.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/bus/security/rights_agent/xacml_factory" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../..;../../../../../../build/win32_n/transactive;../../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;../../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../cots/omniORB/omniORB_4.1.6/include;../../../../../cots/ACE/6_0_4/ACE_wrappers;..\..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/bus/security/rights_agent/xacml_factory/bus.security.rights_agent.xacml_factory.TA_XacmlFactory.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/bus/security/rights_agent/xacml_factory/" ObjectFile=".\../../../../../../build/win32_nr/transactive/bus/security/rights_agent/xacml_factory/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/bus/security/rights_agent/xacml_factory/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_XacmlFactory.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/bus.security.rights_agent.xacml_factory.TA_XacmlFactory.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ContextOnlineUpdatable.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ContextOnlineUpdatable.h">
+			</File>
+			<File RelativePath="src\ContextSubDutyMsgSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ContextSubDutyMsgSubscriber.h">
+			</File>
+			<File RelativePath="src\LocSubSesProf.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\LocSubSesProf.h">
+			</File>
+			<File RelativePath=".\src\RightsAgentInfo.h">
+			</File>
+			<File RelativePath="src\XacmlContextFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\XacmlContextFactory.h">
+			</File>
+			<File RelativePath="src\XacmlFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\XacmlFactory.h">
+			</File>
+			<File RelativePath="src\XacmlFactoryInternal.h">
+			</File>
+			<File RelativePath="src\XacmlPolicyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\XacmlPolicyFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="tests">
+			<File RelativePath=".\tests\DutyAgentState_For_XacmlFactory.h">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\tests\SimpleGetDutyConverter.h">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCustomBuildTool"/>
+				</FileConfiguration></File>
+			<Filter Name="autogenerated">
+				<Filter Name="src">
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_ContextOnlineUpdatable_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_ContextSubDutyMsgSubscriber_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_LocSubSesProf_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_XacmlContextFactory_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_XacmlFactory_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_XacmlPolicyFactory_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\src\TestSuite_XacmlPolicyFactory_h.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+			</Filter>
+		</Filter>
+		<Filter Name="stubs">
+			<File RelativePath=".\stubs\Stub_ActionGroupAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_Context.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_EntityAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_IAction.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_IDutyAgentQueryCorbaDef.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_IEntityData.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_IItem.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_IProfile.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_XacmlContextFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\stubs\Stub_XacmlPolicyFactory.cpp">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCCLCompilerTool"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

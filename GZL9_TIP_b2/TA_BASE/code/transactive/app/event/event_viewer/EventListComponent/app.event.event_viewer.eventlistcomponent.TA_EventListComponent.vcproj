@@ -1,0 +1,114 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.event.event_viewer.eventlistcomponent" ProjectGUID="{361615C5-A1E7-4C38-9FF9-C39A5CB9F79B}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/event/event_viewer/eventlistcomponent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\..\tools\build\VCPropSheet\commonDebug.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..;../../../../../../build/win32_n/transactive;../../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;..\..\..\..\..\cots\omniORB\$(OMNI_VERSION)\include;../../../../../cots/boost/boost_1_56_0;../../../../../../build/win32_n/transactive/core/event/IDL/src" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;_NT_;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/event/event_viewer/eventlistcomponent/app.event.event_viewer.eventlistcomponent.TA_EventListComponent.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/event/event_viewer/eventlistcomponent/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/event/event_viewer/eventlistcomponent/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/event/event_viewer/eventlistcomponent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="1033" AdditionalIncludeDirectories="../../../../bus/resources;../../../.."/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../sdk/win32_nd/TA_EventListComponent_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../bin/win32_nd/app.event.event_viewer.eventlistcomponent.TA_EventListComponent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/event/event_viewer/eventlistcomponent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\..\tools\build\VCPropSheet\commonRelease.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..;../../../../../../build/win32_n/transactive;../../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;..\..\..\..\..\cots\omniORB\$(OMNI_VERSION)\include;../../../../../cots/boost/boost_1_56_0;../../../../../../build/win32_n/transactive/core/event/IDL/src" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;_NT_;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/app/event/event_viewer/eventlistcomponent/app.event.event_viewer.eventlistcomponent.TA_EventListComponent.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/event/event_viewer/eventlistcomponent/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/event/event_viewer/eventlistcomponent/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/event/event_viewer/eventlistcomponent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="1033" AdditionalIncludeDirectories="../../../../bus/resources;../../../.."/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../sdk/win32_nr/TA_EventListComponent.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../bin/win32_nr/app.event.event_viewer.eventlistcomponent.TA_EventListComponent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ActionThread.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActionThread.h">
+			</File>
+			<File RelativePath="src\DisplayItem.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DisplayItem.h">
+			</File>
+			<File RelativePath="src\DutyAdapter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyAdapter.h">
+			</File>
+			<File RelativePath="src\EventListComponent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EventListComponent.h">
+			</File>
+			<File RelativePath="src\EventListComponent.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EventListComponent_rc.h">
+			</File>
+			<File RelativePath="src\Filter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Filter.h">
+			</File>
+			<File RelativePath="src\IEventAction.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files">
+			<File RelativePath="res\down.bmp">
+			</File>
+			<File RelativePath="res\up.bmp">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

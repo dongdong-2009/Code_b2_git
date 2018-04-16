@@ -1,0 +1,268 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.ats.ats_agent.CommonATS" ProjectGUID="{08668BB4-4172-4FA9-BB16-569D9D3028E7}" RootNamespace="CommonATSData" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/bus/ats/ats_agent/CommonATSData" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..;../../../../../../sdk/include/transactive;..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include;../../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../../build/win32_n/transactive" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" WarningLevel="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_CommonATS_d.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/bus/ats/ats_agent/CommonATSData" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../..;../../../../../../sdk/include/transactive;..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include;../../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../../sdk/include/cots/boost/boost_1_56_0;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../../build/win32_n/transactive" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" WarningLevel="3" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_CommonATS.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="CommonATSData" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\AtsBasData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsBasData.h">
+			</File>
+			<File RelativePath=".\src\AtsCctvData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsCctvData.h">
+			</File>
+			<File RelativePath=".\src\AtsDssData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsDssData.h">
+			</File>
+			<File RelativePath=".\src\AtsEcsData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsEcsData.h">
+			</File>
+			<File RelativePath=".\src\AtsPasData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsPasData.h">
+			</File>
+			<File RelativePath=".\src\AtsPidsData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsPidsData.h">
+			</File>
+			<File RelativePath=".\src\AtsPsdData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsPsdData.h">
+			</File>
+			<File RelativePath=".\src\AtsTisData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsTisData.h">
+			</File>
+			<File RelativePath=".\src\AtsTrainData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsTrainData.h">
+			</File>
+			<File RelativePath=".\src\AtsTwpData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsTwpData.h">
+			</File>
+			<File RelativePath=".\src\AtsWildData.cpp">
+			</File>
+			<File RelativePath=".\src\AtsWildData.h">
+			</File>
+			<File RelativePath=".\src\CctvBooleanContext.cpp">
+			</File>
+			<File RelativePath=".\src\CctvBooleanContext.h">
+			</File>
+			<File RelativePath=".\src\CctvRealNumberContext.cpp">
+			</File>
+			<File RelativePath=".\src\CctvRealNumberContext.h">
+			</File>
+			<File RelativePath=".\src\IAtsStatusObserver.h">
+			</File>
+			<File RelativePath=".\src\IPIDSAgentInterface.h">
+			</File>
+			<File RelativePath=".\src\IPowerStatusUpdate.h">
+			</File>
+			<File RelativePath=".\src\PIDSAgentInterface.cpp">
+			</File>
+			<File RelativePath=".\src\PIDSAgentInterface.h">
+			</File>
+			<File RelativePath=".\src\PowerData.cpp">
+			</File>
+			<File RelativePath=".\src\PowerData.h">
+			</File>
+			<File RelativePath=".\src\RawTable.cpp">
+			</File>
+			<File RelativePath=".\src\RawTable.h">
+			</File>
+			<File RelativePath=".\src\SectorData.cpp">
+			</File>
+			<File RelativePath=".\src\SectorData.h">
+			</File>
+			<File RelativePath=".\src\TrainCctvCamera.cpp">
+			</File>
+			<File RelativePath=".\src\TrainCctvCamera.h">
+			</File>
+			<File RelativePath=".\src\TrainDataLocation.cpp">
+			</File>
+			<File RelativePath=".\src\TrainDataLocation.h">
+			</File>
+			<File RelativePath=".\src\TrainPisData.cpp">
+			</File>
+			<File RelativePath=".\src\TrainPisData.h">
+			</File>
+			<File RelativePath=".\src\WatchDogData.cpp">
+			</File>
+			<File RelativePath=".\src\WatchDogData.h">
+			</File>
+		</Filter>
+		<Filter Name="Helper &amp; Utility classes">
+			<File RelativePath=".\src\AddressUtil.cpp">
+			</File>
+			<File RelativePath=".\src\AddressUtil.h">
+			</File>
+			<File RelativePath=".\src\AgentOperationMode.cpp">
+			</File>
+			<File RelativePath=".\src\AgentOperationMode.h">
+			</File>
+			<File RelativePath=".\src\AtsHelper.cpp">
+			</File>
+			<File RelativePath=".\src\AtsHelper.h">
+			</File>
+			<File RelativePath=".\src\AtsTrainDataTimer.cpp">
+			</File>
+			<File RelativePath=".\src\AtsTrainDataTimer.h">
+			</File>
+			<File RelativePath=".\src\DataPointHelper.cpp">
+			</File>
+			<File RelativePath=".\src\DataPointHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="Common Interface">
+			<File RelativePath=".\src\ATSDefinitions.h">
+			</File>
+			<File RelativePath=".\src\AtsManager.cpp">
+			</File>
+			<File RelativePath=".\src\AtsManager.h">
+			</File>
+			<File RelativePath=".\src\DataCache.cpp">
+			</File>
+			<File RelativePath=".\src\DataCache.h">
+			</File>
+			<File RelativePath=".\src\IDataDispatcher.h">
+			</File>
+			<File RelativePath=".\src\IDataUpdate.h">
+			</File>
+			<File RelativePath=".\src\IProtocolManager.h">
+			</File>
+			<File RelativePath=".\src\IProtocolParser.h">
+			</File>
+		</Filter>
+		<Filter Name="Data Processing &amp; Notification">
+			<Filter Name="Data Dispatch">
+				<File RelativePath=".\src\PADispatcher.cpp">
+				</File>
+				<File RelativePath=".\src\PADispatcher.h">
+				</File>
+				<File RelativePath=".\src\PIDSDispatcher.cpp">
+				</File>
+				<File RelativePath=".\src\PIDSDispatcher.h">
+				</File>
+			</Filter>
+			<Filter Name="Notification">
+				<File RelativePath=".\src\AtsDataNotificationManager.cpp">
+				</File>
+				<File RelativePath=".\src\AtsDataNotificationManager.h">
+				</File>
+				<File RelativePath=".\src\DataNotification.cpp">
+				</File>
+				<File RelativePath=".\src\DataNotification.h">
+				</File>
+				<File RelativePath=".\src\DataProcessorManager.cpp">
+				</File>
+				<File RelativePath=".\src\DataProcessorManager.h">
+				</File>
+				<File RelativePath=".\src\DataProcessorThread.cpp">
+				</File>
+				<File RelativePath=".\src\DataProcessorThread.h">
+				</File>
+				<File RelativePath=".\src\IAtsDataNotification.h">
+				</File>
+				<File RelativePath=".\src\IDataProcessor.h">
+				</File>
+				<File RelativePath=".\src\PADataNotification.cpp">
+				</File>
+				<File RelativePath=".\src\PADataNotification.h">
+				</File>
+				<File RelativePath=".\src\PADataProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\PADataProcessor.h">
+				</File>
+				<File RelativePath=".\src\PIDSDataNotification.cpp">
+				</File>
+				<File RelativePath=".\src\PIDSDataNotification.h">
+				</File>
+				<File RelativePath=".\src\PIDSDataProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\PIDSDataProcessor.h">
+				</File>
+				<File RelativePath=".\src\TrainDataNotification.cpp">
+				</File>
+				<File RelativePath=".\src\TrainDataNotification.h">
+				</File>
+				<File RelativePath=".\src\TrainDataProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\TrainDataProcessor.h">
+				</File>
+				<File RelativePath=".\src\TrainPISDataNotification.cpp">
+				</File>
+				<File RelativePath=".\src\TrainPISDataNotification.h">
+				</File>
+				<File RelativePath=".\src\TrainPISDataProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\TrainPISDataProcessor.h">
+				</File>
+			</Filter>
+			<Filter Name="ATS Sychronization">
+				<File RelativePath=".\src\DataSynch.cpp">
+				</File>
+				<File RelativePath=".\src\DataSynch.h">
+				</File>
+				<File RelativePath=".\src\IDataSync.h">
+				</File>
+				<File RelativePath=".\src\OccUpdateProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\OccUpdateProcessor.h">
+				</File>
+				<File RelativePath=".\src\PADataSynch.cpp">
+				</File>
+				<File RelativePath=".\src\PADataSynch.h">
+				</File>
+				<File RelativePath=".\src\StationOccUpdateProcessor.cpp">
+				</File>
+				<File RelativePath=".\src\StationOccUpdateProcessor.h">
+				</File>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.utilities</ProjectName>
+    <ProjectGuid>{9E805AE6-0EA9-452E-9952-E0B3CE8B1146}</ProjectGuid>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_Utilities_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmClock.cpp" />
+    <ClCompile Include="src\CodeConverter.cpp" />
+    <ClCompile Include="src\DataConversion.cpp" />
+    <ClCompile Include="src\DateFormat.cpp" />
+    <ClCompile Include="src\DebugSETranslator.cpp" />
+    <ClCompile Include="src\DebugUtil.cpp" />
+    <ClCompile Include="src\DebugUtilInit.cpp" />
+    <ClCompile Include="src\DllHandler.cpp" />
+    <ClCompile Include="src\FunctionEntry.cpp" />
+    <ClCompile Include="src\GenericLogType.cpp" />
+    <ClCompile Include="src\Hostname.cpp" />
+    <ClCompile Include="src\ILogType.cpp" />
+    <ClCompile Include="src\Logger.cpp" />
+    <ClCompile Include="src\MatrixException.cpp" />
+    <ClCompile Include="src\PreformattedLogType.cpp" />
+    <ClCompile Include="src\RunParams.cpp" />
+    <ClCompile Include="src\StdPubUtility.cpp" />
+    <ClCompile Include="src\TAAssert.cpp" />
+    <ClCompile Include="src\TA_String.cpp" />
+    <ClCompile Include="src\ThreasdafeScreenOutput.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmClock.h" />
+    <ClInclude Include="src\CodeConverter.h" />
+    <ClInclude Include="src\DataConversion.h" />
+    <ClInclude Include="src\DateFormat.h" />
+    <ClInclude Include="src\DebugSETranslator.h" />
+    <ClInclude Include="src\DebugUtil.h" />
+    <ClInclude Include="src\DebugUtilInit.h" />
+    <ClInclude Include="src\DebugUtilMacros.h" />
+    <ClInclude Include="src\DllHandler.h" />
+    <ClInclude Include="src\FunctionEntry.h" />
+    <ClInclude Include="src\GenericLogType.h" />
+    <ClInclude Include="src\Hostname.h" />
+    <ClInclude Include="src\IAlarmClockHelper.h" />
+    <ClInclude Include="src\IDllHandler.h" />
+    <ClInclude Include="src\ILogType.h" />
+    <ClInclude Include="src\Logger.h" />
+    <ClInclude Include="src\Matrix.h" />
+    <ClInclude Include="src\MatrixException.h" />
+    <ClInclude Include="src\PreformattedLogType.h" />
+    <ClInclude Include="src\RunParams.h" />
+    <ClInclude Include="src\StdPubUtility.h" />
+    <ClInclude Include="src\TAAssert.h" />
+    <ClInclude Include="src\TA_String.h" />
+    <ClInclude Include="src\ThreasdafeScreenOutput.h" />
+    <ClInclude Include="src\Timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Matrix.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

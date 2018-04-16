@@ -1,0 +1,170 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="MAQLib" ProjectGUID="{85579A13-65D0-4AF8-9ADD-4AFD1B27B8BC}" RootNamespace="MAQLib" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS\boost\boost_1_39_0\boost;..\..\..\..\COTS\boost\boost_1_39_0;..\..\..\..\COTS\mcl\1.1.0;..\..\..\..\COTS\oracle\10.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src" PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=5;_WIN32_WINNT=0x500" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" WarningLevel="3" DebugInformationFormat="4" DisableSpecificWarnings="4996;4251"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="..\..\..\..\..\build\win32_nd\TA_MAQ_d.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\;..\..\..\..\COTS\boost\boost_1_39_0\boost;..\..\..\..\COTS\boost\boost_1_39_0;..\..\..\..\COTS\mcl\1.1.0;..\..\..\..\COTS\oracle\10.2.0\winnt\inc;..\..\..\..\COTS\ocilib\3.9.3\src" PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE;__WIN32__;__x86__;__NT__;__OSVERSION__=5;_WIN32_WINNT=0x500" RuntimeLibrary="2" WarningLevel="3" DebugInformationFormat="3" DisableSpecificWarnings="4996;4251" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="..\..\..\..\..\build\win32_nr\TA_MAQ.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="DBFacade" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\CMysqlEnv.cpp">
+			</File>
+			<File RelativePath=".\src\CMysqlEnv.h">
+			</File>
+			<File RelativePath=".\src\COracleEnv.cpp">
+			</File>
+			<File RelativePath=".\src\COracleEnv.h">
+			</File>
+			<File RelativePath=".\src\DatabaseImpl.cpp">
+			</File>
+			<File RelativePath=".\src\DatabaseImpl.h">
+			</File>
+			<File RelativePath=".\src\DbCommonData.h">
+			</File>
+			<File RelativePath=".\src\DbDataImpl.cpp">
+			</File>
+			<File RelativePath=".\src\DbDataImpl.h">
+			</File>
+			<File RelativePath=".\src\DBException.cpp">
+			</File>
+			<File RelativePath=".\src\DBException.h">
+			</File>
+			<File RelativePath=".\src\IDatabase.h">
+			</File>
+			<File RelativePath=".\src\IDbConnection.h">
+			</File>
+			<File RelativePath=".\src\IDbData.h">
+			</File>
+			<File RelativePath=".\src\IQueryAdapter.h">
+			</File>
+			<File RelativePath=".\src\MAQCmd.cpp">
+			</File>
+			<File RelativePath=".\src\MAQCmd.h">
+			</File>
+			<File RelativePath=".\src\MysqlConnection.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlConnection.h">
+			</File>
+			<File RelativePath=".\src\MysqlQueryAdapter.cpp">
+			</File>
+			<File RelativePath=".\src\MysqlQueryAdapter.h">
+			</File>
+			<File RelativePath=".\src\OracleConnection.cpp">
+			</File>
+			<File RelativePath=".\src\OracleConnection.h">
+			</File>
+			<File RelativePath=".\src\OracleQueryAdapter.cpp">
+			</File>
+			<File RelativePath=".\src\OracleQueryAdapter.h">
+			</File>
+			<Filter Name="SQLHelper">
+				<File RelativePath=".\src\sql.h">
+				</File>
+				<File RelativePath=".\src\SQLCode.cpp">
+				</File>
+				<File RelativePath=".\src\SQLCode.h">
+				</File>
+				<File RelativePath=".\src\sqlcode.txt">
+				</File>
+				<File RelativePath=".\src\SQLCodeHelper.cpp">
+				</File>
+				<File RelativePath=".\src\SQLCodeHelper.h">
+				</File>
+				<File RelativePath=".\src\sqldef.h">
+				</File>
+				<File RelativePath=".\src\sqlmacrodef.h">
+				</File>
+				<File RelativePath=".\src\SQLTypeAdapter.cpp">
+				</File>
+				<File RelativePath=".\src\SQLTypeAdapter.h">
+				</File>
+				<File RelativePath=".\src\SQLVarParms.cpp">
+				</File>
+				<File RelativePath=".\src\SQLVarParms.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="Common">
+			<File RelativePath=".\src\AQCommonData.h">
+			</File>
+			<File RelativePath=".\src\AQCommonDef.h">
+			</File>
+			<File RelativePath=".\src\UtilityFun.cpp">
+			</File>
+			<File RelativePath=".\src\UtilityFun.h">
+			</File>
+		</Filter>
+		<Filter Name="AQFacade">
+			<File RelativePath=".\src\Agent.cpp">
+			</File>
+			<File RelativePath=".\src\Agent.h">
+			</File>
+			<File RelativePath=".\src\Consumer.cpp">
+			</File>
+			<File RelativePath=".\src\Consumer.h">
+			</File>
+			<File RelativePath=".\src\ConsumerImpl.cpp">
+			</File>
+			<File RelativePath=".\src\ConsumerImpl.h">
+			</File>
+			<File RelativePath=".\src\Listener.cpp">
+			</File>
+			<File RelativePath=".\src\Listener.h">
+			</File>
+			<File RelativePath=".\src\Message.cpp">
+			</File>
+			<File RelativePath=".\src\Message.h">
+			</File>
+			<File RelativePath=".\src\MessageImpl.cpp">
+			</File>
+			<File RelativePath=".\src\MessageImpl.h">
+			</File>
+			<File RelativePath=".\src\Producer.cpp">
+			</File>
+			<File RelativePath=".\src\Producer.h">
+			</File>
+			<File RelativePath=".\src\ProducerImpl.cpp">
+			</File>
+			<File RelativePath=".\src\ProducerImpl.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

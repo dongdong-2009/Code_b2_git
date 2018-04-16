@@ -1,0 +1,443 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "电话管理应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "电话管理器\0"
+            VALUE "LegalCopyright", "版权 (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TelephoneManager.EXE\0"
+            VALUE "ProductName", "电话管理应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TELEPHONE_MANAGER_DIALOG DIALOGEX 0, 0, 257, 363
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | 
+    WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "电话管理器"
+MENU IDR_MENU1
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "电话目录设施",IDC_TAB_GROUP,8,18,241,
+                    280,0,WS_EX_TRANSPARENT
+    CONTROL         "Tab1",IDC_TELEPHONE_FACILITIES,"SysTabControl32",NOT 
+                    WS_VISIBLE,17,30,223,263
+    GROUPBOX        "当前选中设施",IDC_STATIC,8,303,241,49
+    LTEXT           "名称",IDC_STATIC,17,317,18,9
+    EDITTEXT        IDC_SELECTED_NAME,45,315,88,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "号码",IDC_STATIC,17,336,26,9
+    EDITTEXT        IDC_SELECTED_NUMBER,45,334,88,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "目录",IDC_STATIC,149,316,30,9
+    EDITTEXT        IDC_SELECTED_DIRECTORY,186,315,54,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "位置",IDC_STATIC,150,335,29,9
+    EDITTEXT        IDC_SELECTED_LOCATION,186,334,54,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+END
+
+IDD_DIRECT_LINE DIALOG DISCARDABLE  0, 0, 222, 243
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "直接线路"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "热线",-1,3,5,214,51
+    PUSHBUTTON      "警察",IDC_HOT_BUTTON1,11,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "消防",IDC_HOT_BUTTON2,63,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON3,114,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON4,166,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON5,11,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON6,63,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON7,114,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON8,166,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_1,9,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_2,43,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_3,77,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_4,111,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_5,145,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_6,179,81,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_7,9,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_8,43,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_9,77,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_10,111,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_11,145,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_12,179,103,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_13,9,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_14,43,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_15,77,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_16,111,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_17,145,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_18,179,124,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_19,9,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_20,43,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_21,77,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_22,111,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_23,145,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_24,179,146,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_25,9,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_26,43,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_27,77,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_28,111,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_29,145,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_30,179,169,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_31,9,191,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_32,43,191,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_33,77,191,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_34,111,191,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_35,145,191,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_36,179,191,29,16,BS_MULTILINE
+    CONTROL         "Tab1",IDC_DIRECT_LINE_TAB,"SysTabControl32",0x0,3,62,
+                    214,152
+END
+
+IDD_FACILITY_SEARCH DIALOG DISCARDABLE  0, 0, 224, 242
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "搜索"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "目录",IDC_STATIC,3,5,214,75
+    CONTROL         "Tree1",IDC_DIRECTORY,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,8,17,204,43
+    LTEXT           "要搜索的文本:",IDC_STATIC,9,66,58,9
+    EDITTEXT        IDC_SEARCH_ITEM,71,63,107,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "搜索",IDC_SEARCH_BTN,181,63,31,14,WS_DISABLED
+    GROUPBOX        "符合的联系人",IDC_STATIC_BORDERS,3,85,214,142
+    CONTROL         "List1",IDC_SEARCH_LISTING,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,95,205,125
+END
+
+IDD_FACILITY_CONFIG_LINES DIALOG DISCARDABLE  0, 0, 220, 231
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "设置线路"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "热线",IDC_STATIC,5,5,215,47
+    PUSHBUTTON      "",IDC_HOT_BUTTON1,11,15,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON2,63,15,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON3,114,15,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON4,166,15,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON5,11,33,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON6,63,33,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON7,114,33,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON8,166,33,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_1,12,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_2,46,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_3,80,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_4,114,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_5,148,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_6,182,70,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_7,12,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_8,46,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_9,80,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_10,114,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_11,148,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_12,182,91,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_13,12,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_14,46,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_15,80,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_16,114,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_17,148,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_18,182,112,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_19,12,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_20,46,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_21,80,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_22,114,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_23,148,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_24,182,133,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_25,12,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_26,46,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_27,80,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_28,114,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_29,148,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_30,182,154,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_31,12,175,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_32,46,175,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_33,80,175,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_34,114,175,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_35,148,175,29,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_36,182,175,29,16,BS_MULTILINE
+    CONTROL         "Tab1",IDC_DIRECT_LINE_TAB,"SysTabControl32",0x0,5,54,
+                    215,141
+    GROUPBOX        "更新按钮",IDC_STATIC,5,198,215,29
+    LTEXT           "标签",IDC_STATIC,10,210,23,10
+    EDITTEXT        IDC_LABEL_EDIT,35,209,42,12,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "号码",IDC_STATIC,87,210,30,10
+    EDITTEXT        IDC_NUMBER_EDIT,122,209,60,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    PUSHBUTTON      "设置",IDC_SET_BTN,185,208,29,15
+END
+
+IDD_FACILITY_CONFIG_DIRECTORY DIALOG DISCARDABLE  0, 0, 217, 226
+STYLE WS_CHILD | WS_CAPTION
+CAPTION "设置目录"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,6,6,203,178
+    GROUPBOX        "更新",IDC_STATIC,4,187,206,35
+    PUSHBUTTON      "新建",IDC_NEW_BTN,12,201,43,14,WS_DISABLED
+    PUSHBUTTON      "更新",IDC_UPDATE_BTN,80,201,43,14
+    PUSHBUTTON      "删除",IDC_DELETE_BTN,150,201,43,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TELEPHONE_MANAGER_DIALOG, DIALOG
+    BEGIN
+        VERTGUIDE, 8
+        VERTGUIDE, 17
+        VERTGUIDE, 240
+        VERTGUIDE, 249
+        BOTTOMMARGIN, 354
+    END
+
+    IDD_DIRECT_LINE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_FACILITY_SEARCH, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 241
+    END
+
+    IDD_FACILITY_CONFIG_LINES, DIALOG
+    BEGIN
+        VERTGUIDE, 12
+        VERTGUIDE, 55
+        BOTTOMMARGIN, 230
+    END
+
+    IDD_FACILITY_CONFIG_DIRECTORY, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 225
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\Telephone_Manager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\Telephone_Manager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "文件"
+    BEGIN
+        MENUITEM "更新目录",            ID_FILE_UPLOADDIRECTORY
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        IDCANCEL
+    END
+    POPUP "显示"
+    BEGIN
+        MENUITEM "工具拦",                     ID_VIEW_TOOLBAR, CHECKED
+        MENUITEM "状态拦",                  ID_VIEW_STATUSBAR, CHECKED
+    END
+    POPUP "帮助"
+    BEGIN
+        MENUITEM "电话管理器 帮助",      ID_HELP_TELEPHONECONTROLLERHELP
+
+        MENUITEM "关于 电话管理器 ...",  ID_HELP_ABOUTTELEPHONECONTROLLER
+
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      ID_HELP_TELEPHONECONTROLLERHELP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR             BITMAP  DISCARDABLE     "res\\helpIcon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "显示工具拦"
+    ID_VIEW_STATUS_BAR      "显示状态栏"
+    IDS_UPLOAD_DIR_ERROR    "在上传目录时发生错误"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_HELPBUTTON          "帮助\n显示帮助细节"
+    IDD_DIRECT_LINE         "直接线路"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_STATUS               "状态拦"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\Telephone_Manager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{eeb325b8-80e5-419f-98f0-3797ac3e62ee}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\WFDefs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WFGlobalInhibitionManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WFGlobalInhibitState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WFInhibit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WFErrorManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\WFGlobalInhibitionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WFGlobalInhibitState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WFInhibit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WFErrorManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+</Project>

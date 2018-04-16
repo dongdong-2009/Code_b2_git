@@ -1,0 +1,1659 @@
+<project name="CODE_3001" default="build" basedir="D:\TIP_NEW_W7\C955_Build\3001">
+    <taskdef name="BuildFile" classname="buildsystem.tasks.BuildFileTask"/>
+    <taskdef name="version" classname="buildsystem.tasks.VersionTask"/>
+    <taskdef name="LeveledEcho" classname="buildsystem.tasks.LeveledEcho"/>
+    <taskdef name="Installer" classname="buildsystem.tasks.Installer"/>
+    <taskdef name="FileSetExecute" classname="buildsystem.tasks.FileSetExecute"/>
+    <taskdef name="TestResultXSLT" classname="buildsystem.tasks.TestResultXSLT"/>
+  
+    <target name="init">
+        <!-- Load Configuration. -->
+        <loadproperties srcFile="${basedir}\..\config.ini"/>
+    </target>
+
+    <target name="generateTargets"
+            depends="init"
+			description="--> Creates the Build files that will build all the targets.">
+        <BuildFile
+            basedir="${basedir}"
+            buildFileName="BuildCore.xml"
+            buildConfiguration="${Build.Configuration}">
+            <fileset dir="${basedir}">
+                <include name="code/tools/build/tools.build.Build_IRS_Core.dsw"/>
+            </fileset>
+        </BuildFile>
+
+        <BuildFile
+            basedir="${basedir}"
+            buildFileName="BuildBus.xml"
+            buildConfiguration="${Build.Configuration}">
+            <fileset dir="${basedir}">
+                <include name="code/tools/build/tools.build.Build_IRS_Bus.dsw"/>
+            </fileset>
+        </BuildFile>
+
+        <BuildFile
+            basedir="${basedir}"
+            buildFileName="BuildApp.xml"
+            buildConfiguration="${Build.Configuration}">
+            <fileset dir="${basedir}">
+                <include name="code/tools/build/tools.build.Build_IRS_App.dsw"/>
+            </fileset>
+        </BuildFile>
+
+        <BuildFile
+            basedir="${basedir}"
+            buildFileName="BuildSimulators.xml"
+            buildConfiguration="${Build.Configuration}">
+            <fileset dir="${basedir}">
+                <include name="code/tools/build/tools.build.Build_IRS_Simulators.dsw"/>
+            </fileset>
+        </BuildFile>
+    </target>
+
+    <target name="version"
+            depends="init,changeAttributes4VersionGen,changeAttributes4RcFiles"
+            description="--> Updates all VersionGen.cpp files to contain the correct version symbols.">
+		<exec dir="${basedir}" executable="cmd.exe">
+			<arg line="/c perl ${Root.Dir}\Versioning.pl ${basedir} ${Version} ${Version.ProjectName}"/>
+		</exec>
+		<exec dir="${basedir}" executable="cmd.exe">
+			<arg line="/c perl ${Root.Dir}\VersioningDll.pl ${basedir}/code/transactive ${Version.Mode} ${Version.Phase} ${Version.Major} ${Version.Minor}"/>
+		</exec>
+    </target>
+
+    <target name="clean_inter"
+            depends="init"
+            description="--> Cleans all intermediate files.">
+        <delete dir="${basedir}\build" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="clean"
+            depends="clean_inter"
+            description="--> Cleans all build artifacts.">
+        <delete dir="${basedir}\bin" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${3001.Dir.Staging}" includeEmptyDirs="true" quiet="true"/>
+		<delete dir="${3001.Dir.Staging-new}" includeEmptyDirs="true" quiet="true"/>
+		<delete dir="${3001.Dir.Package}" includeEmptyDirs="true" quiet="true"/>
+	</target>
+
+    <target name="clean_config"
+            depends="init"
+            description="--> Cleans all config_9999 and config_3001 folders.">
+		<delete dir="${basedir}\config" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="clean_sdk"
+            depends="init"
+            description="--> Delete the sdk folder.">
+        <delete dir="${basedir}\sdk" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="copySdk"
+            depends="clean_sdk"
+            description="--> copy the Base sdk to local folder.">
+		<copy todir="${basedir}\sdk">
+			<fileset dir="${Base.Dir.Staging}\sdk"/>
+		</copy>
+    </target>
+
+    <target name="clean_all"
+            depends="clean,
+					 clean_config,
+					 clean_sdk"
+            description="--> Cleans everything.">
+        <delete dir="${basedir}\code\cots" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${basedir}\code\tools" includeEmptyDirs="true" quiet="true"/>
+        <delete dir="${basedir}\code\transactive" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+    <target name="build"
+            depends="init,
+					 generateTargets"
+            description="--> Does the actual compilation and linking of the 3001 code.">
+		<ant antfile="${basedir}/BuildCore.xml" inheritAll="false"/>
+        <ant antfile="${basedir}/BuildBus.xml" inheritAll="false"/>
+        <ant antfile="${basedir}/BuildApp.xml" inheritAll="false"/>
+        <ant antfile="${basedir}/BuildSimulators.xml" inheritAll="false"/>
+    </target>
+
+
+	<target name="build_Net2008"
+		depends="init"
+			description=" Does the actual compilation and linking of the code for .NET 2008.">
+		<exec dir="${basedir}" executable="cmd.exe">
+			<arg line="/c devenv /build ${Build.Configuration}
+				${3001.Dir}\code\tools\build\tools.build.Build_IRS_Core.sln /projectconfig ${Build.Configuration} /out ${3001.Dir}\Build_IRS_Core.txt"/>
+		</exec>
+		<exec dir="${basedir}" executable="cmd.exe">
+			<arg line="/c devenv /build ${Build.Configuration}
+				${3001.Dir}\code\tools\build\tools.build.Build_IRS_Bus.sln /projectconfig ${Build.Configuration} /out ${3001.Dir}\Build_IRS_Bus.txt"/>
+		</exec>
+		<exec dir="${basedir}" executable="cmd.exe">
+			<arg line="/c devenv /build ${Build.Configuration}
+				${3001.Dir}\code\tools\build\tools.build.Build_IRS_App.sln /projectconfig ${Build.Configuration} /out ${3001.Dir}\Build_IRS_App.txt"/>
+		</exec>
+	</target>
+    <target name="stage" 
+			depends="stageMFTs,
+			         stageMFTs_new,
+					 stageWinServers,
+					 stageATSPlaceHolders,
+					 stageSimulators,
+					 stageODS"
+            description="--> Copies all the appropriate 3001 files to the staging area.">
+		<!-- Does nothing but invoke its dependencies -->
+    </target>
+
+
+	
+
+    <target name="stageMFTs"
+            depends="init"
+            description="--> Copies all the stuff neeed for an MFT installer.">
+
+        <!-- staging/mft/bin -->
+        <copy toDir="${3001.Dir.Staging}/mft/bin"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- 3001 Binaries -->
+            <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*.exe" />
+                <exclude name="**/*Agent.*" />
+                <exclude name="**/*Simulator.*" />
+            </fileset>
+
+            <!-- Base Binaries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\bin">
+                <include name="**/*.exe" />
+                <exclude name="**/RegionManager.*" />
+                <exclude name="**/ConsoleManager.*" />
+                <exclude name="**/*Agent.*" />
+                <exclude name="**/*SystemController.*" />
+                <exclude name="**/*Simulator.*" />
+            </fileset>
+
+            <!-- Little transActive animation -->
+			<fileset casesensitive="false" dir="${basedir}\config\intro">
+                <include name="**/transactiveintro.avi" />
+            </fileset>
+
+            <!-- Type libraries -->
+            <fileset casesensitive="false" dir="${basedir}\build">
+                <include name="win32*/*.tlb" />
+            </fileset>
+
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\lib">
+                <include name="**/*.tlb" />
+            </fileset>
+        </copy>
+
+        <!-- staging\mft\help -->
+        <copy toDir="${3001.Dir.Staging}\mft\help"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <fileset casesensitive="false" dir="config\G-GUI\G00-GENERIC\G0002-Help\Runtime\Help">
+                <include name="**/*.chm" />
+            </fileset>
+
+            <fileset casesensitive="false" dir="config\G-GUI\G00-GENERIC\G0002-Help\Runtime">
+                <include name="**/*.chm" />
+            </fileset>
+
+            <fileset casesensitive="false" dir="${basedir}\code\cots\ssce">
+                <include name="**/Ssce.hlp" />
+            </fileset>
+        </copy>
+
+        <!-- staging\mft\lib -->
+        <copy toDir="${3001.Dir.Staging}\mft\lib"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- 3001 Libraries -->
+            <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*.dll" />
+            </fileset>
+
+            <!-- Base Libraries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\lib">
+                <include name="**/*.dll" />
+            </fileset>
+
+            <!-- Spell checker and dictionaries -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\ssce">
+                <include name="**/ssce5432.dll" />
+                <include name="**/*.reg" />
+                <include name="**/*.tlx" />
+                <include name="**/*.clx" />
+            </fileset>
+
+<!-- ACE -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\ACE\6_0_4\ACE_wrappers\lib">
+                <include name="ACEd.dll" />
+				<include name="ACEMFCd.dll" />
+				<include name="ACEXMLd.dll" />
+            </fileset>
+
+            <!-- Teechart -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\TeeChart">
+                <include name="TeeChart7.ocx" />
+            </fileset>
+
+            <!-- BCG Time Control -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\BCG">
+                <include name="BCGDurationCtrl.ocx" />
+                <include name="BCGDurationCtrl.lic" />
+            </fileset>
+
+            <!-- Crystal Reports -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\CrystalReports">
+                <include name="**/*.dll" />
+                <include name="**/*.reg" />
+            </fileset>
+
+            <!-- MFC and OPC dlls -->
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.dll" />
+            </fileset>
+        </copy>
+
+        <!-- staging\mft\sound -->
+        <copy toDir="${3001.Dir.Staging}\mft\sounds"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.wav" />
+            </fileset>
+        </copy>
+        
+        <!-- staging\mft\config -->
+        <copy toDir="${3001.Dir.Staging}\mft\config\G-gui\G01-GWX_Runtime"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="config\G-gui\G01-GWX_Runtime">
+                <exclude name="**/CVS" />
+            </fileset>
+        </copy>
+        
+        <copy toDir="${3001.Dir.Staging}\mft\config\G-gui\G01-GWX_Runtime\G0104-Displays"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\sdk\include\transactive\bus\security\access_control\actions\src">
+                <include name="AccessControlledActions.bas" />
+            </fileset>
+        </copy>
+
+        <!--  staging\mft\config -->
+        <copy toDir="${3001.Dir.Staging}\mft\config\G-GUI\G00-Generic\G0002-Help\Runtime"
+              overwrite="true"
+              failonerror="false" >
+
+            <fileset casesensitive="false" dir="config\G-GUI\G00-Generic\G0002-Help\Runtime">
+                <exclude name="**/CVS" />
+                <exclude name="**/*.chm" />
+            </fileset>
+
+            <fileset casesensitive="false" dir="config\G-GUI\G00-Generic\G0002-Help\Runtime">
+                <exclude name="**/CVS" />
+                <exclude name="**/*.chm" />
+            </fileset>
+        </copy>
+
+        <!--  staging\mft\config -->
+        <copy toDir="${3001.Dir.Staging}\mft\config\G-GUI\G00-Generic\G0004-Plan_Flows"
+              flatten="false"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="config\G-GUI\G00-Generic\G0004-Plan_Flows">
+                <exclude name="**/CVS" />
+            </fileset>
+        </copy>
+
+		<!--  staging\mft\report  -->
+        <copy toDir="${3001.Dir.Staging}\mft\reports\R-Report"
+              flatten="false"
+              overwrite="true"
+              failonerror="false" >
+            <fileset casesensitive="false" dir="config\R-Report">
+                <include name="**/*.rpt" />
+                <exclude name="**/CVS" />
+            </fileset>
+            <fileset casesensitive="false" dir="config\R-Report">
+                <include name="**/*.rpt" />
+                <exclude name="**/CVS" />
+            </fileset>
+        </copy>
+
+		<!-- staging\mft\archive -->
+		<copy toDir="${3001.Dir.Staging}/mft/archive/manual"                      
+			flatten="true" 
+			overwrite="true" 
+			failonerror="false" >
+			<fileset casesensitive="false" dir="${basedir}\code\tools\integration">
+				<include name="PLACEHOLDER.txt" />
+			</fileset>
+		</copy>
+      
+		<!-- staging\mft\logs -->
+		<copy toDir="${3001.Dir.Staging}/mft/logs"                      
+			flatten="true" 
+			overwrite="true" 
+			failonerror="false" >
+			<fileset casesensitive="false" dir="${basedir}\code\tools\integration">
+				<include name="PLACEHOLDER.txt" />
+			</fileset>
+		</copy>
+
+		<!-- staging\mft\config\database -->
+		<copy toDir="${3001.Dir.Staging}/mft/config/database"
+			flatten="true"
+			overwrite="true"
+			failonerror="false" >
+			<fileset casesensitive="false" dir="${basedir}\code\tools\database">
+				<include name="*.csv" />
+				<include name="CSV_Version_Description.txt"/>
+			</fileset>
+		</copy>
+
+		<!-- staging\mft\config\scripts -->
+		<copy toDir="${3001.Dir.Staging}/mft/config/scripts"
+            flatten="true"
+            overwrite="true"
+			failonerror="false" >	
+			<fileset casesensitive="false" dir="${Base.Dir.Staging}\bin">
+				<include name="*.reg" />
+				<include name="*.bat" />
+				<include name="reg.exe" />
+			</fileset>
+		</copy>
+
+		<!-- staging\mft\config\scripts\kerio -->
+		<copy toDir="${3001.Dir.Staging}/mft/config/scripts"
+            flatten="true"
+            overwrite="true"
+			failonerror="false" >	
+			<fileset casesensitive="false" dir="${basedir}\code\tools\deployment_scripts\kerio" />
+		</copy>
+	</target>
+
+	<!-- staging\ats_placeholders -->
+	<target name="stageATSPlaceHolders" 
+			depends="init"
+			description="unzip the ats placeholder files for packaging" >
+		<unzip src="config\G-GUI\G03-ATS_Mimic_Placeholders\ATS_GUI.zip" 
+			dest="${3001.Dir.Staging}\ats_placeholders"/>	
+	</target>
+
+    <!-- staging\simulator -->
+    <target name="stageSimulators"
+            depends="init"
+            description="--> Copies all the stuff neeed for the SImulator PC installer.">
+
+        <!-- Radio Simulator -->
+        <copy toDir="${3001.Dir.Staging}/simulators/simulators/radio"
+            flatten="false"
+            overwrite="true"
+            failonerror="false" >
+			<fileset casesensitive="false" file="${basedir}/bin/${Bin.Folder}/RadioSimulator.exe" />
+			<fileset casesensitive="false" dir="${basedir}/code/transactive/app/radio/radio_simulator/config" />
+		</copy>
+
+        <!-- ATS Simulator -->
+        <copy toDir="${3001.Dir.Staging}/simulators/simulators/ats"
+            flatten="false"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" file="${basedir}/bin/${Bin.Folder}/AtsSimulator.exe" />
+            <fileset casesensitive="false" dir="${basedir}/code/transactive/app/simulator/ats/config" />
+        </copy>
+
+        <!-- STIS Simulator -->
+        <copy toDir="${3001.Dir.Staging}/simulators/simulators/stis"
+			flatten="true"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" file="${basedir}/bin/${Bin.Folder}/STISSimulator.exe" />
+
+			<fileset casesensitive="false" dir="${basedir}/code/transactive/app/signs/tis_agent/stis_simulator">
+                <include name="Library*.txt" />
+                <include name="**/config/*.bat" />
+                <include name="**/config/*.txt" />
+            </fileset>
+        </copy>
+
+        <!-- VideoSwitch Simulator -->
+        <copy toDir="${3001.Dir.Staging}/simulators/simulators/videoSwitch"
+            flatten="true"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" file="${basedir}/bin/${Bin.Folder}/VideoSwitchSimulator.exe" />
+            <fileset casesensitive="false" dir="${basedir}/code/transactive/app">
+                <include name="**/cctv/video_switch_simulator/config/*.ini" />
+                <include name="**/cctv/video_switch_simulator/config/*.bat" />
+            </fileset>
+        </copy>
+
+        <!-- PA Simulator -->
+        <copy toDir="${3001.Dir.Staging}/simulators/simulators/pa"
+            flatten="true"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" file="${basedir}/code/cots/Optimus/PAFESimulator/App_SMP250v2FE.exe" />
+        </copy>
+
+        <!-- staging\simulators\lib -->
+        <copy toDir="${3001.Dir.Staging}/simulators/lib"
+			flatten="true"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" dir="${basedir}/code">
+                <include name="**/*.dll" />
+                <exclude name="**/*ConfigPlugin.dll" />
+                <exclude name="**/cots/**" />
+                <exclude name="**/tools/**" />
+                <exclude name="**/CVS" />
+            </fileset>
+
+			<fileset casesensitive="false" dir="${Base.Dir.Staging}/lib">
+              <include name="BooleanDatapointEntityDll_d.dll" />
+            </fileset>
+
+            <!-- omniORB dlls to lib -->
+			<fileset casesensitive="false" dir="${Base.Dir.Staging}/sdk/omniORB/omniORB_4.1.6/bin/x86_win32">
+                <include name="**/AttNotification*.dll" />
+                <include name="**/COS*.dll" />
+                <include name="**/omni*.dll" />
+            </fileset>
+
+            <!-- ACE dlls to lib -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}/sdk/lib">
+                <include name="**/ace*.dll" />
+            </fileset>
+
+            <!-- MFC and OPC dlls from config -->
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.dll" />
+            </fileset>
+
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\lib">
+                <include name="**/TA_InterlockingConfig_d.dll" />
+            </fileset>
+    	</copy>
+    </target>
+
+
+<target name="stageMFTs_new"
+            depends="init"
+            description="--> Copies all the stuff neeed for an MFT installer.">
+
+        <!-- staging/mft/bin -->
+        <copy toDir="${3001.Dir.Staging-new}/mft/bin"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- 3001 Binaries -->
+            <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*.exe" />
+                <exclude name="**/*Agent.*" />
+                <exclude name="**/*Simulator.*" />
+            </fileset>
+
+            <!-- Base Binaries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\bin">
+                <include name="**/*.exe" />
+                <exclude name="**/RegionManager.*" />
+                <exclude name="**/ConsoleManager.*" />
+                <exclude name="**/*Agent.*" />
+                <exclude name="**/*SystemController.*" />
+                <exclude name="**/*Simulator.*" />
+            </fileset>
+        </copy>
+
+        <!-- staging\mft\lib -->
+        <copy toDir="${3001.Dir.Staging-new}\mft\lib"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- 3001 Libraries -->
+            <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*.dll" />
+            </fileset>
+
+            <!-- Base Libraries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\lib">
+                <include name="**/*.dll" />
+            </fileset>
+
+            <!-- Spell checker and dictionaries -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\ssce">
+                <include name="**/ssce5432.dll" />
+                <include name="**/*.reg" />
+                <include name="**/*.tlx" />
+                <include name="**/*.clx" />
+            </fileset>
+
+			<!-- ACE -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\ACE\6_0_4\ACE_wrappers\lib">
+                <include name="ACEd.dll" />
+				<include name="ACEMFCd.dll" />
+				<include name="ACEXMLd.dll" />
+            </fileset>
+
+            <!-- Teechart -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\TeeChart">
+                <include name="TeeChart7.ocx" />
+            </fileset>
+
+            <!-- BCG Time Control -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\BCG">
+                <include name="BCGDurationCtrl.ocx" />
+                <include name="BCGDurationCtrl.lic" />
+            </fileset>
+
+            <!-- Crystal Reports -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\CrystalReports">
+                <include name="**/*.dll" />
+                <include name="**/*.reg" />
+            </fileset>
+
+            <!-- MFC and OPC dlls -->
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.dll" />
+            </fileset>
+        </copy>
+    </target>
+
+    
+    <target name="stageODS"
+            depends="init"
+            description="--> Copies all the stuff neeed for an MFT installer.">
+
+        <!-- staging\ODS_MFT\bin -->
+        <copy toDir="${3001.Dir.Staging}/ODS_MFT/bin"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- Base Binaries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\bin">
+                <include name="**/ControlStation.exe" />
+                <include name="**/TA_OpcBridgeService.exe" />
+            </fileset>
+        </copy>
+
+        <!-- staging\ODS_MFT\lib -->
+        <copy toDir="${3001.Dir.Staging}\ODS_MFT\lib"
+            flatten="true"
+            overwrite="true"
+            failonerror="false" >
+
+            <!-- 3001 Libraries -->
+            <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*.dll" />
+            </fileset>
+
+            <!-- Base Libraries -->
+            <fileset casesensitive="false" dir="${Base.Dir.Staging}\lib">
+                <include name="**/*.dll" />
+            </fileset>
+
+            <!-- Spell checker and dictionaries -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\ssce">
+                <include name="**/ssce5432.dll" />
+                <include name="**/*.reg" />
+                <include name="**/*.tlx" />
+                <include name="**/*.clx" />
+            </fileset>
+
+			<!-- ACE -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\ACE\6_0_4\ACE_wrappers\lib">
+                <include name="ACEd.dll" />
+				<include name="ACEMFCd.dll" />
+				<include name="ACEXMLd.dll" />
+            </fileset>
+
+            <!-- Teechart -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\TeeChart">
+                <include name="TeeChart7.ocx" />
+            </fileset>
+
+            <!-- BCG Time Control -->
+            <fileset casesensitive="false" dir="${basedir}\code\cots\BCG">
+                <include name="BCGDurationCtrl.ocx" />
+                <include name="BCGDurationCtrl.lic" />
+            </fileset>
+
+            <!-- Crystal Reports -->
+            <fileset casesensitive="false" dir="${Base.Dir}\code\cots\CrystalReports">
+                <include name="**/*.dll" />
+                <include name="**/*.reg" />
+            </fileset>
+
+            <!-- MFC and OPC dlls -->
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.dll" />
+            </fileset>
+        </copy>
+        
+        <!-- staging\ODS_MFT\config -->
+        <copy toDir="${3001.Dir.Staging}\ODS_MFT\config\G-gui\G01-GWX_Runtime\G0104-Displays\ODS"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" dir="config\G-gui\G01-GWX_Runtime\G0104-Displays\ODS">
+                <exclude name="**/CVS" />
+            </fileset>
+        </copy>
+        
+        <!-- staging\ODS_MFT\config -->
+        <copy toDir="${3001.Dir.Staging}\ODS_MFT\config\G-gui\G01-GWX_Runtime\G0104-Displays"
+            overwrite="true"
+            failonerror="false" >
+            <fileset casesensitive="false" dir="config\G-gui\G01-GWX_Runtime\G0104-Displays">
+                <include name="ODSNavigator.gdf" />
+				<include name="ODSSplash.gdf" />
+            </fileset>
+        </copy>
+
+		<!-- staging\ODS_MFT\archive\manual -->
+		<copy toDir="${3001.Dir.Staging}/ODS_MFT/archive/manual"                      
+			  flatten="true" 
+			  overwrite="true" 
+			  failonerror="false" >
+			  <fileset casesensitive="false" dir="${basedir}\code\tools\integration">
+				  <include name="PLACEHOLDER.txt" />
+			  </fileset>
+		</copy>
+      
+		<!-- staging\ODS_MFT\logs -->
+		<copy toDir="${3001.Dir.Staging}/ODS_MFT/logs"                      
+			  flatten="true" 
+			  overwrite="true" 
+			  failonerror="false" >
+			  <fileset casesensitive="false" dir="${basedir}\code\tools\integration">
+				  <include name="PLACEHOLDER.txt" />
+			  </fileset>
+		</copy>
+
+		<!-- staging\ODS_MFT\config\database -->
+		<copy toDir="${3001.Dir.Staging}/ODS_MFT/config/database"
+			flatten="true"
+			overwrite="true"
+			failonerror="false" >
+			<fileset casesensitive="false" dir="${basedir}\code\tools\database">
+				<include name="*.csv" />
+				<include name="CSV_Version_Description.txt"/>
+			</fileset>
+		</copy>
+
+		<!-- staging\ODS_MFT\config\scripts  -->
+		<copy toDir="${3001.Dir.Staging}/ODS_MFT/config/scripts"
+			flatten="true"
+			overwrite="true"
+			failonerror="false" >	
+			<fileset casesensitive="false" dir="${Base.Dir.Staging}\bin">
+				<include name="*.reg" />
+				<include name="*.bat" />
+				<include name="reg.exe" />
+			</fileset>
+		</copy>
+
+		<!-- staging\ODS_MFT\config\scripts\kerio -->
+		<copy toDir="${3001.Dir.Staging}/ODS_MFT/config/scripts"
+            flatten="true"
+            overwrite="true"
+			failonerror="false" >	
+			<fileset casesensitive="false" dir="${basedir}\code\tools\deployment_scripts\kerio"/>
+		</copy>
+    </target>
+
+	<target name="package" 
+		depends="package-MFT,
+			     package-MFT_new,
+				 package-windows-server,
+				 package-simulators,
+				 package-ats-placeholders,
+				 package-database,
+				 packageStatPc,
+				 packageODSControlStation,
+				 package-patchscript"
+		description="Create packaging" >
+	</target>
+		
+
+	 
+
+	<target name="package-database"
+		depends="init"
+        description="--> zip up the D-Database folder as part of the delivery.">
+		<zip destfile="${3001.Dir.Package}/D-Database-${Version.Compile.Mode}${Version}.zip" 
+			basedir="${basedir}/config/D-Database" excludes="**/CVS" />
+	</target>
+
+	<target name="package-patchscript"
+        depends="init"
+        description="--> Copy the patch script as part of the delivery.">
+		<copy file="${basedir}/config/D-Database/D05-Scripts/D0507-Patch_Scripts/CONFIG_3001_T${Version.Iteration}_CTRL.SQL" 
+		tofile="${3001.Dir.Package}/CONFIG_3001_T${Version.Iteration}_CTRL.SQL"/>
+
+		<copy file="${basedir}/config/D-Database/D05-Scripts/D0507-Patch_Scripts/CONFIG_3001_T${Version.Iteration}_STN.SQL" 
+		tofile="${3001.Dir.Package}/CONFIG_3001_T${Version.Iteration}_STN.SQL"/>
+
+		<copy file="${basedir}/config/D-Database/D05-Scripts/D0507-Patch_Scripts/CONFIG_3001_T${Version.Iteration}_STE.SQL" 
+		tofile="${3001.Dir.Package}/CONFIG_3001_T${Version.Iteration}_STE.SQL"/>
+	</target>
+
+    <!--winserver-->
+    <target name="stageWinServers"
+            depends="init"
+	    description="--> Copies all the stuff neeed for the SImulator PC installer.">
+
+        <!--  The necessary binaries  -->
+	<copy toDir="${3001.Dir.Staging}/win_server/bin"
+              flatten="true"
+              overwrite="true"
+              failonerror="false" >
+
+            <!-- 3001 Agents -->
+	    <fileset casesensitive="false" dir="${basedir}\bin">
+                <include name="win32*/*Agent*" />
+	    </fileset>
+
+            <!-- Base Agents & System Controller -->
+	    <fileset casesensitive="false" dir="${Base.Dir.Staging}/bin"> 
+                <include name="**/*Agent*" />
+                <include name="**/*SystemController*" />
+            </fileset>
+        </copy>
+	
+        <!--  All the necessary libraries  -->
+        <copy toDir="${3001.Dir.Staging}/win_server\lib"
+              flatten="true"
+              overwrite="true"
+	      failonerror="false" >
+
+            <!-- MFC and OPC dlls -->
+            <fileset casesensitive="false" dir="config\H-Hardware_Install">
+                <include name="**/*.dll" />
+            </fileset>
+	    
+	    <!-- ACE Libraries -->
+            <fileset dir="${Base.Dir}/code/cots/ACE/6_0_4/ACE_wrappers/bin/" casesensitive="false" >
+                <include name="*.dll" />
+                <exclude name="CVS" />
+            </fileset>
+            
+	    <!-- OmniOrb Libraries -->
+	    <fileset dir="${Base.Dir}/code/cots/omniORB/omniORB_4.1.6/bin/x86_win32" casesensitive="false" >
+                <include name="*.dll" />
+                <exclude name="CVS" />
+            </fileset>
+        </copy>
+
+        <!--  Create the log directory,using the same fudge..  -->
+	<copy toDir="${3001.Dir.Staging}/win_server/logs"                      
+	      flatten="true" overwrite="true" failonerror="false" >
+	      <fileset casesensitive="false" dir="${basedir}\code\tools\integration">
+		      <include name="PLACEHOLDER.txt" />
+              </fileset>
+	</copy>
+      
+    
+    </target>
+
+
+    <target name="package-MFT"
+		depends="init"
+        description="--> Creates an installation package for MFT installation.">
+
+        <property name="MFTFiles" value="${3001.Dir.Staging}\mft" />
+        <property name="transActiveBase" value="c:\transActive"/>
+		<property environment="env"/>
+
+        <Installer destination="${transActiveBase}"
+			compiler="c:\program files\nsis\makensis.exe"
+            scriptFileName="MFT-install.nsi">
+
+            <FileSet dir="${MFTFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileRegistration>
+                <FileName name="${transActiveBase}\lib\AtsComBridge.dll"/>
+                <FileName name="${transActiveBase}\lib\opccomn_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\opcproxy.dll"/>
+                <FileName name="${transActiveBase}\lib\opc_aeps.dll"/>
+                <FileName name="${transActiveBase}\lib\opchda_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\BCGDurationCtrl.ocx"/>
+                <FileName name="${transActiveBase}\lib\TeeChart7.ocx"/>
+                <FileName name="${transActiveBase}\lib\craxdrt9.dll"/>
+                <FileName name="${transActiveBase}\lib\crqe.dll"/>
+                <FileName name="${transActiveBase}\lib\crtslv.dll"/>
+                <FileName name="${transActiveBase}\lib\crviewer9.dll"/>
+                <FileName name="${transActiveBase}\lib\ExportModeller.dll"/>
+                <FileName name="c:\windows\system32\actxprxy.dll"/>
+            </FileRegistration>
+
+            <page name="TransActive MFT Installer" file="MFT_Installer_UI.ini">
+                <Check Root="HKLM"
+					SubKey="SOFTWARE\ORACLE"
+                    KeyName="inst_loc"
+                    ErrorMsg="Oracle not installed" />
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ICONICS\Common"
+                    KeyName="path"
+                    ErrorMsg="GraphWorx not installed" />
+
+                <field variable="PRIMARY" name="Field 3" silentSwitch="primaryserver"/>
+                <field variable="SECONDARY" name="Field 5" silentSwitch="secondaryserver"/>
+                <field variable="DEBUG_LEVEL" name="Field 8" silentSwitch="debuglevel"/>
+				<field variable="LOCATION_NAME" name="Field 11" silentSwitch="locationname" />
+				<field variable="DBCONNECTIONSTRING" name="Field 14" silentSwitch="dbconnectionstring" />
+            </page>
+
+            <Environment path="${transActiveBase}\bin;${transActiveBase}\lib"/>
+
+            <Shortcuts>
+				<!-- create ControlStation shortcut at the Desktop -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=ControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Desktop"
+					username="operator" />
+
+				<!-- create ControlStation shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+                    args="--entity-name=ControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini" 
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create ConfigurationEditor shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ConfigurationEditor"
+                    target="${transActiveBase}\bin\ConfigurationEditor.exe"
+                    args="--entity-name=ConfigurationEditor --debug-file=${transActiveBase}\logs\Log_ConfigurationEditor.log --debug-level=$DEBUG_LEVEL --db-connection-file=${transActiveBase}\config\database\ConfigConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create SystemManager shortcut at the Quick Launch -->
+                <Shortcut
+                    name="SystemManager"
+                    target="${transActiveBase}\bin\SystemManager.exe"
+                    args="--entity-name=SystemManager --host-name=$PRIMARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create EventExtractor shortcut at the Quick Launch -->
+                <Shortcut
+                    name="EventExtractor"
+                    target="${transActiveBase}\bin\EventExtractor.exe"                    args="--db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+            </Shortcuts>
+
+            <PostInstallCommands>
+                <command install="${transActiveBase}\bin\ControlStation --install"
+                         uninstall="${transActiveBase}\bin\ControlStation --remove"/>
+
+                <command install="${transActiveBase}\bin\banner --install"
+                         uninstall="${transActiveBase}\bin\banner --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_RightsService --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --install"
+                         uninstall="${transActiveBase}\bin\TA_RightsService --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_SoundManager --regserver --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                         uninstall="${transActiveBase}\bin\TA_SoundManager -unregserver"/>
+
+                <command install="${transActiveBase}\bin\TA_AlarmStoreService --entity-name=AlarmStore --operation-mode=Control --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --debug-file=${transActiveBase}\logs\Log_AlarmStoreService.log -install"
+                         uninstall="${transActiveBase}\bin\TA_AlarmStoreService -remove"/>
+
+                <command install="${transActiveBase}\bin\TA_OpcBridgeService --entity-name=OPCBridge --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --precreate-opctag=1 --debug-file=${transActiveBase}\logs\Log_OpcBridge.log -install"
+		  				uninstall="${transActiveBase}\bin\TA_OPCBridgeService -remove"/>
+
+				<!-- delete the PLACEHOLDER.txt files -->
+				<command install="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\archive\manual\PLACEHOLDER.txt" />     
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\logs\PLACEHOLDER.txt" />	
+
+				<!-- create the start.ini file -->
+				<command install="${env.windir}\system32\cmd.exe /c echo --debug-level=$DEBUG_LEVEL >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --help-file=c:\transActive\help\Control_Station_Help.chm >> ${transActiveBase}\start.ini " />
+				
+				<command install="${env.windir}\system32\cmd.exe /c echo --debug-file=c:\transActive\logs\ControlStation.log  >> ${transActiveBase}\start.ini" />
+
+           		<command install="${env.windir}\system32\cmd.exe /c echo --db-connection=$DBCONNECTIONSTRING >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --db-connection-file=c:\transactive\config\database\$LOCATION_NAMEConnectionStrings.csv >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --host-names=$PRIMARY,$SECONDARY >> ${transActiveBase}\start.ini" />
+	
+				<!-- copy csv files -->
+				<!--command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\*.csv"/>	
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}\bin" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\bin\*.csv" />	
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* c:\windows\system32" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del c:\windows\system32\*.csv"/-->	
+
+				<command uninstall="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\start.ini" />	
+ 
+            </PostInstallCommands>
+
+            <Services>
+                <service name="Alarm Store Service"/>
+                <service name="OPC Bridge"/>
+                <service name="RippleRights"/>
+            </Services>
+
+            <RegistrySettings>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\HKLMssce.reg"/>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\CR9Deploy.reg"/>
+            </RegistrySettings>
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\install-MFT-${Version.Compile.Mode}${Version.Iteration}.exe"/>
+    </target>
+
+
+    <target name="package-MFT_bin-lib"
+			depends="init"
+            description="--> copy the bin and lib  to local folder.">
+		<copy todir="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib\bin">
+			<fileset dir="${basedir}\staging-new\${Version.Iteration}\mft\bin"/>
+	    </copy>
+
+		<copy todir="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib\lib">
+			<fileset dir="${basedir}\staging-new\${Version.Iteration}\mft\lib"/>
+	    </copy>
+
+        <!-- Compress the package -->
+		<zip destfile="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib.zip">    
+	        <zipfileset dir="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib\bin" prefix="MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib/bin"/>
+	        <zipfileset dir="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib\lib" prefix="MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib/lib"/>
+        </zip>
+
+	    <!-- Clean up the bin-lib folder -->
+		<delete dir="${basedir}\package-new\MFT-${Version.Compile.Mode}${Version.Iteration}_bin-lib" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+
+	<target name="package-MFT_new"
+		depends="init"
+        description="--> Creates an installation package for MFT installation.">
+
+        <property name="MFTFiles" value="${3001.Dir.Staging-new}\mft" />
+        <property name="transActiveBase" value="c:\transActive"/>
+		<property environment="env"/>
+
+        <Installer destination="${transActiveBase}"
+			compiler="c:\program files\nsis\makensis.exe"
+            scriptFileName="MFT-install.nsi">
+
+            <FileSet dir="${MFTFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileRegistration>
+                <FileName name="${transActiveBase}\lib\AtsComBridge.dll"/>
+                <FileName name="${transActiveBase}\lib\opccomn_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\opcproxy.dll"/>
+                <FileName name="${transActiveBase}\lib\opc_aeps.dll"/>
+                <FileName name="${transActiveBase}\lib\opchda_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\BCGDurationCtrl.ocx"/>
+                <FileName name="${transActiveBase}\lib\TeeChart7.ocx"/>
+                <FileName name="${transActiveBase}\lib\craxdrt9.dll"/>
+                <FileName name="${transActiveBase}\lib\crqe.dll"/>
+                <FileName name="${transActiveBase}\lib\crtslv.dll"/>
+                <FileName name="${transActiveBase}\lib\crviewer9.dll"/>
+                <FileName name="${transActiveBase}\lib\ExportModeller.dll"/>
+                <FileName name="c:\windows\system32\actxprxy.dll"/>
+            </FileRegistration>
+
+            <page name="TransActive MFT Installer" file="MFT_Installer_UI.ini">
+                <Check Root="HKLM"
+					SubKey="SOFTWARE\ORACLE"
+                    KeyName="inst_loc"
+                    ErrorMsg="Oracle not installed" />
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ICONICS\Common"
+                    KeyName="path"
+                    ErrorMsg="GraphWorx not installed" />
+
+                <field variable="PRIMARY" name="Field 3" silentSwitch="primaryserver"/>
+                <field variable="SECONDARY" name="Field 5" silentSwitch="secondaryserver"/>
+                <field variable="DEBUG_LEVEL" name="Field 8" silentSwitch="debuglevel"/>
+				<field variable="LOCATION_NAME" name="Field 11" silentSwitch="locationname" />
+				<field variable="DBCONNECTIONSTRING" name="Field 14" silentSwitch="dbconnectionstring" />
+            </page>
+
+            <Environment path="${transActiveBase}\bin;${transActiveBase}\lib"/>
+
+            <Shortcuts>
+				<!-- create ControlStation shortcut at the Desktop -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=ControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Desktop"
+					username="operator" />
+
+				<!-- create ControlStation shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+                    args="--entity-name=ControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini" 
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create ConfigurationEditor shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ConfigurationEditor"
+                    target="${transActiveBase}\bin\ConfigurationEditor.exe"
+                    args="--entity-name=ConfigurationEditor --debug-file=${transActiveBase}\logs\Log_ConfigurationEditor.log --debug-level=$DEBUG_LEVEL --db-connection-file=${transActiveBase}\config\database\ConfigConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create SystemManager shortcut at the Quick Launch -->
+                <Shortcut
+                    name="SystemManager"
+                    target="${transActiveBase}\bin\SystemManager.exe"
+                    args="--entity-name=SystemManager --host-name=$PRIMARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create EventExtractor shortcut at the Quick Launch -->
+                <Shortcut
+                    name="EventExtractor"
+                    target="${transActiveBase}\bin\EventExtractor.exe"                    args="--db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+            </Shortcuts>
+
+            <PostInstallCommands>
+                <command install="${transActiveBase}\bin\ControlStation --install"
+                         uninstall="${transActiveBase}\bin\ControlStation --remove"/>
+
+                <command install="${transActiveBase}\bin\banner --install"
+                         uninstall="${transActiveBase}\bin\banner --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_RightsService --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --install"
+                         uninstall="${transActiveBase}\bin\TA_RightsService --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_SoundManager --regserver --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                         uninstall="${transActiveBase}\bin\TA_SoundManager -unregserver"/>
+
+                <command install="${transActiveBase}\bin\TA_AlarmStoreService --entity-name=AlarmStore --operation-mode=Control --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --debug-file=${transActiveBase}\logs\Log_AlarmStoreService.log -install"
+                         uninstall="${transActiveBase}\bin\TA_AlarmStoreService -remove"/>
+
+                <command install="${transActiveBase}\bin\TA_OpcBridgeService --entity-name=OPCBridge --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --precreate-opctag=1 --debug-file=${transActiveBase}\logs\Log_OpcBridge.log -install"
+		  				uninstall="${transActiveBase}\bin\TA_OPCBridgeService -remove"/>
+
+				<!-- delete the PLACEHOLDER.txt files -->
+				<command install="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\archive\manual\PLACEHOLDER.txt" />     
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\logs\PLACEHOLDER.txt" />	
+
+				<!-- create the start.ini file -->
+				<command install="${env.windir}\system32\cmd.exe /c echo --debug-level=$DEBUG_LEVEL >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --help-file=c:\transActive\help\Control_Station_Help.chm >> ${transActiveBase}\start.ini " />
+				
+				<command install="${env.windir}\system32\cmd.exe /c echo --debug-file=c:\transActive\logs\ControlStation.log  >> ${transActiveBase}\start.ini" />
+
+           		<command install="${env.windir}\system32\cmd.exe /c echo --db-connection=$DBCONNECTIONSTRING >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --db-connection-file=c:\transactive\config\database\$LOCATION_NAMEConnectionStrings.csv >> ${transActiveBase}\start.ini" />
+
+				<command install="${env.windir}\system32\cmd.exe /c echo --host-names=$PRIMARY,$SECONDARY >> ${transActiveBase}\start.ini" />
+	
+				<!-- copy csv files -->
+				<!--command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\*.csv"/>	
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}\bin" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\bin\*.csv" />	
+
+				<command install="${env.windir}\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* c:\windows\system32" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del c:\windows\system32\*.csv"/-->	
+
+				<command uninstall="${env.windir}\system32\cmd.exe cmd /c del ${transActiveBase}\start.ini" />	
+ 
+            </PostInstallCommands>
+
+            <Services>
+                <service name="Alarm Store Service"/>
+                <service name="OPC Bridge"/>
+                <service name="RippleRights"/>
+            </Services>
+
+            <RegistrySettings>
+                <RegistrySetting file="${3001.Dir.Staging-new}\mft\lib\HKLMssce.reg"/>
+                <RegistrySetting file="${3001.Dir.Staging-new}\mft\lib\CR9Deploy.reg"/>
+            </RegistrySettings>
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package-new}\install-MFT-${Version.Compile.Mode}${Version}.exe"/>
+    </target>
+
+
+    <target name="packageStatPc"
+		depends="init"
+        description="--> Creates an installation package for the 3001 StatPC binaries.">
+
+        <property name="StatPCFiles" value="${3001.Dir.Staging}\mft" />
+        <property name="transActiveBase" value="c:\transActive"/>
+
+        <Installer destination="${transActiveBase}"
+			compiler="c:\program files\nsis\makensis.exe"
+            scriptFileName="statpc-install.nsi">
+
+            <FileSet dir="${StatPCFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileRegistration>
+                <FileName name="${transActiveBase}\lib\AtsComBridge.dll"/>
+                <FileName name="${transActiveBase}\lib\opccomn_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\opcproxy.dll"/>
+                <FileName name="${transActiveBase}\lib\opc_aeps.dll"/>
+                <FileName name="${transActiveBase}\lib\opchda_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\BCGDurationCtrl.ocx"/>
+                <FileName name="${transActiveBase}\lib\TeeChart7.ocx"/>
+                <FileName name="${transActiveBase}\lib\craxdrt9.dll"/>
+                <FileName name="${transActiveBase}\lib\crqe.dll"/>
+                <FileName name="${transActiveBase}\lib\crtslv.dll"/>
+                <FileName name="${transActiveBase}\lib\crviewer9.dll"/>
+                <FileName name="${transActiveBase}\lib\ExportModeller.dll"/>
+                <FileName name="c:\windows\system32\actxprxy.dll"/>
+            </FileRegistration>
+
+            <page name="TransActive Statistical PC INstaller" file="MFT_Installer_UI.ini">
+                <Check Root="HKLM"
+                       SubKey="SOFTWARE\ORACLE"
+                       KeyName="oracle_home"
+                       ErrorMsg="Oracle not installed" />
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ICONICS\Common"
+                    KeyName="path"
+                    ErrorMsg="GraphWorx not installed" />
+
+                <field variable="PRIMARY" name="Field 3" silentSwitch="primaryserver"/>
+                <field variable="SECONDARY" name="Field 5" silentSwitch="secondaryserver"/>
+                <field variable="DEBUG_LEVEL" name="Field 8" silentSwitch="debuglevel"/>
+				<field variable="LOCATION_NAME" name="Field 11" silentSwitch="locationname" />
+				<field variable="DBCONNECTIONSTRING" name="Field 14" silentSwitch="dbconnectionstring" />
+            </page>
+
+            <Environment path="${transActiveBase}\bin;${transActiveBase}\lib"/>
+
+            <Shortcuts>
+				<!-- create ControlStation shortcut at the Desktop -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=StatisticalControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Desktop"
+                    username="operator" />
+				
+				<!-- create ControlStation shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=StatisticalControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Quick Launch"
+                    username="operator" />
+				
+				<!-- create ConfigurationEditor shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ConfigurationEditor"
+                    target="${transActiveBase}\bin\ConfigurationEditor.exe"
+                    args="--entity-name=ConfigurationEditor --debug-file=${transActiveBase}\logs\Log_ConfigurationEditor.log --debug-level=$DEBUG_LEVEL --db-connection-file=${transActiveBase}\config\database\ConfigConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+
+				<!-- create SystemManager shortcut at the Quick Launch -->
+                <Shortcut
+                    name="SystemManager"
+                    target="${transActiveBase}\bin\SystemManager.exe"
+                    args="--entity-name=SystemManager --host-name=$PRIMARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                    location="Quick Launch"
+                    username="operator" />
+            </Shortcuts>
+
+            <PostInstallCommands>
+                <command install="${transActiveBase}\bin\ControlStation --install"
+                         uninstall="${transActiveBase}\bin\ControlStation --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_RightsService --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --install"
+                         uninstall="${transActiveBase}\bin\TA_RightsService --remove"/>
+
+                <command install="${transActiveBase}\bin\TA_SoundManager --regserver --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv"
+                         uninstall="${transActiveBase}\bin\TA_SoundManager -unregserver"/>
+
+                <command install="${transActiveBase}\bin\TA_AlarmStoreService --entity-name=AlarmStore --operation-mode=Control --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --debug-file=${transActiveBase}\logs\Log_AlarmStoreService.log -install"
+                         uninstall="${transActiveBase}\bin\TA_AlarmStoreService -remove"/>
+
+                <command install="${transActiveBase}\bin\TA_OpcBridgeService --entity-name=OPCBridge --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --precreate-opctag=1 --debug-file=${transActiveBase}\logs\Log_OpcBridge.log -install"
+		  				uninstall="${transActiveBase}\bin\TA_OPCBridgeService -remove"/>
+
+				<!-- delete the PLACEHOLDER.txt files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\archive\manual\PLACEHOLDER.txt" />     
+
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\logs\PLACEHOLDER.txt" />	
+
+				<!-- create the start.ini file -->
+				<command install="c:\windows\system32\cmd.exe /c echo --debug-level=$DEBUG_LEVEL >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --help-file=c:\transActive\help\Control_Station_Help.chm >> ${transActiveBase}\start.ini " />			
+
+				<command install="c:\windows\system32\cmd.exe /c echo --debug-file=c:\transActive\logs\ControlStation.log  >> ${transActiveBase}\start.ini" />
+
+           		<command install="c:\windows\system32\cmd.exe /c echo --db-connection=$DBCONNECTIONSTRING >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --db-connection-file=c:\transactive\config\database\$LOCATION_NAMEConnectionStrings.csv >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --host-names=$PRIMARY,$SECONDARY >> ${transActiveBase}\start.ini" />
+	
+				<!-- copy csv files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\database\* ${transActiveBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\*.csv"/>	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\database\* ${transActiveBase}\bin" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\bin\*.csv" />	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\database\* c:\windows\system32" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del c:\windows\system32\*.csv"/>	
+
+				<command uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\${transActiveBase}\start.ini" />	
+			</PostInstallCommands>
+
+            <Services>
+                <service name="Alarm Store Service"/>
+                <service name="OPC Bridge"/>
+                <service name="RippleRights"/>
+            </Services>
+
+            <RegistrySettings>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\HKLMssce.reg"/>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\CR9Deploy.reg"/>
+            </RegistrySettings>
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\install-StatisticalPc-${Version.Compile.Mode}${Version}.exe"/>
+    </target>
+
+    <target name="packageODSControlStation"
+            depends="init"
+            description="--> Creates an installation package for the 3001 binaries.">
+        <property name="ODSStationFiles" value="${3001.Dir.Staging}\ODS_MFT" />
+        <property name="transActiveBase" value="c:\transActive"/>
+
+        <Installer destination="${transActiveBase}"
+			compiler="c:\program files\nsis\makensis.exe"
+            scriptFileName="ODSControlStation-install.nsi">
+
+            <FileSet dir="${ODSStationFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+
+            <FileRegistration>
+                <FileName name="${transActiveBase}\lib\AtsComBridge.dll"/>
+                <FileName name="${transActiveBase}\lib\opccomn_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\opcproxy.dll"/>
+                <FileName name="${transActiveBase}\lib\opc_aeps.dll"/>
+                <FileName name="${transActiveBase}\lib\opchda_ps.dll"/>
+                <FileName name="${transActiveBase}\lib\BCGDurationCtrl.ocx"/>
+                <FileName name="c:\windows\system32\actxprxy.dll"/>
+            </FileRegistration>
+
+            <page name="TransActive ODS Control Station Installer" file="MFT_Installer_UI.ini">
+                <Check Root="HKLM"
+                       SubKey="SOFTWARE\ORACLE"
+                       KeyName="oracle_home"
+                       ErrorMsg="Oracle not installed" />
+                <Check
+                    Root="HKLM"
+                    SubKey="SOFTWARE\ICONICS\Common"
+                    KeyName="path"
+                    ErrorMsg="GraphWorx not installed" />
+
+                <field variable="PRIMARY" name="Field 3" silentSwitch="primaryserver"/>
+                <field variable="SECONDARY" name="Field 5" silentSwitch="secondaryserver"/>
+                <field variable="DEBUG_LEVEL" name="Field 8" silentSwitch="debuglevel"/>
+				<field variable="LOCATION_NAME" name="Field 11" silentSwitch="locationname" />
+				<field variable="DBCONNECTIONSTRING" name="Field 14" silentSwitch="dbconnectionstring" />
+			</page>
+
+            <Environment path="${transActiveBase}\bin;${transActiveBase}\lib"/>
+
+            <Shortcuts>
+				<!-- create ControlStation shortcut at the Desktop -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=ODSControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Desktop"
+                    username="operator" />
+
+				<!-- create ControlStation shortcut at the Quick Launch -->
+                <Shortcut
+                    name="ControlStation"
+                    target="${transActiveBase}\bin\ControlStation.exe"
+					args="--entity-name=ODSControlStation --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --run-param-file=${transActiveBase}\start.ini"
+                    location="Quick Launch"
+                    username="operator" />
+            </Shortcuts>
+
+            <PostInstallCommands>
+                <command install="${transActiveBase}\bin\ControlStation --install"
+                         uninstall="${transActiveBase}\bin\ControlStation --remove"/>
+
+				<command install="${transActiveBase}\bin\TA_OpcBridgeService --entity-name=OPCBridge --host-names=$PRIMARY,$SECONDARY --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-level=$DEBUG_LEVEL --precreate-opctag=1 --debug-file=${transActiveBase}\logs\Log_OpcBridge.log -install"
+		  				uninstall="${transActiveBase}\bin\TA_OPCBridgeService -remove"/>
+						
+				<!-- delete the PLACEHOLDER.txt files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\archive\manual\PLACEHOLDER.txt" />     
+
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\logs\PLACEHOLDER.txt" />	
+
+				<!-- create the start.ini file -->
+				<command install="c:\windows\system32\cmd.exe /c echo --debug-level=$DEBUG_LEVEL >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --help-file=c:\transActive\help\Control_Station_Help.chm >> ${transActiveBase}\start.ini " />
+				
+				<command install="c:\windows\system32\cmd.exe /c echo --debug-file=c:\transActive\logs\ControlStation.log  >> ${transActiveBase}\start.ini" />
+
+           		<command install="c:\windows\system32\cmd.exe /c echo --db-connection=$DBCONNECTIONSTRING >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --db-connection-file=c:\transactive\config\database\$LOCATION_NAMEConnectionStrings.csv >> ${transActiveBase}\start.ini" />
+
+				<command install="c:\windows\system32\cmd.exe /c echo --host-names=$PRIMARY,$SECONDARY >> ${transActiveBase}\start.ini" />
+	
+				<!-- copy csv files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\*.csv"/>	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* ${transActiveBase}\bin" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\bin\*.csv" />	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${transActiveBase}\config\database\* c:\windows\system32" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del c:\windows\system32\*.csv"/>	
+
+				<command uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\${transActiveBase}\start.ini" />
+            </PostInstallCommands>
+
+            <Services>
+                <service name="OPC Bridge"/>
+            </Services>
+
+            <RegistrySettings>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\HKLMssce.reg"/>
+                <RegistrySetting file="${3001.Dir.Staging}\mft\lib\CR9Deploy.reg"/>
+            </RegistrySettings>
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\install-ODS-MFT-${Version.Compile.Mode}${Version}.exe"/>
+    </target>
+
+    <target name="package-ats-placeholders"
+        depends="init"
+		description="--> Creates a simple installation package for Alstom Mimic Placeholders.">
+
+	    <property name="atsPlaceholderFiles" value="${3001.Dir.Staging}/ats_placeholders/ATS_GUI" />
+        <property name="atsPlaceholderFilesBase" value="c:\ATS_GUI"/>
+
+        <Installer destination="${atsPlaceholderFilesBase}"
+                   compiler="c:\program files\nsis\makensis.exe"
+                   scriptFileName="ATS_Placeholders-install.nsi">
+
+            <FileSet dir="${atsPlaceholderFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+    	</Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\install-ats-placeholders-${Version.Compile.Mode}${Version}.exe"/>
+    </target>
+
+    <target name="package-simulators"
+		depends="init"
+        description="--> Creates an installation package for the 3001 simulators." >
+
+        <property name="simulatorFiles" value="${3001.Dir.Staging}\simulators" />
+        <property name="simulatorBase" value="c:\transActive\simulators" />
+
+        <Installer destination="${simulatorBase}"
+                   compiler="c:\program files\nsis\makensis.exe"
+                   scriptFileName="simulator-install.nsi">
+             <FileSet dir="${simulatorFiles}">
+                <include name="**/*" />
+            </FileSet>
+
+            <Environment path="${simulatorBase}\lib" />
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\install-simulators-${Version.Compile.Mode}${Version}.exe" />
+    </target>
+
+    <target name="package-windows-server"
+		depends="init"
+        description="--> Creates an installation package for the Windows server.">
+
+        <property name="serverFiles" value="${3001.Dir.Staging}\win_server" />
+        <property name="serverBase" value="c:\transActive"/>
+
+        <Installer destination="${serverBase}"
+			compiler="c:\program files\nsis\makensis.exe"
+            scriptFileName="Server-install.nsi">
+
+            <FileSet dir="${serverFiles}">
+                <include name="**"/>
+                <include name="**/*"/>
+            </FileSet>
+
+            <page name="TransActive Windows Server Installer" file="Server_Installer_UI.ini">
+                <field variable="DBCONNECTIONSTRING" name="Field 3" silentSwitch="dbconnectionstring"/>
+                <field variable="DEBUG_LEVEL" name="Field 6" silentSwitch="debuglevel"/>
+				<field variable="LOCATION_NAME" name="Field 9" silentSwitch="locationname" />
+            </page>
+
+            <Environment path="${serverBase}\bin;${serverBase}\lib"/>
+
+            <Shortcuts>
+				<!-- create System Controller shortcut at the Desktop -->
+                <Shortcut
+                    name="System Controller"
+                    target="${serverBase}\bin\SystemController.exe"
+					args="--startup-time=20000 --debug-level=$DEBUG_LEVEL --db-connection=$DBCONNECTIONSTRING --db-connection-file=${transActiveBase}\config\database\$LOCATION_NAMEConnectionStrings.csv --debug-file=${serverBase}\logs\SystemController.log --notify-hosts=occa:6668,occb:6668 --entity-name=SystemController"
+                    location="Desktop"
+                    username="operator" />
+            </Shortcuts>
+	    
+		    <PostInstallCommands>		 
+				<!-- delete the PLACEHOLDER.txt files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\archive\manual\PLACEHOLDER.txt" />     
+
+				<command install="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\logs\PLACEHOLDER.txt" />	
+	
+				<!-- copy csv files -->
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${serverBase}\config\database\* ${transActiveBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${serverBase}\*.csv"/>	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${serverBase}\config\database\* ${transActiveBase}\bin" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${transActiveBase}\bin\*.csv" />	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${serverBase}\config\database\* c:\windows\system32" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del c:\windows\system32\*.csv"/>	
+
+				<command uninstall="c:\windows\system32\cmd.exe cmd /c del ${serverBase}\start.ini" />	
+
+				<command install="c:\windows\system32\cmd.exe cmd /c copy ${serverBase}\bin\omni_notification.cfg ${serverBase}" 
+				uninstall="c:\windows\system32\cmd.exe cmd /c del ${serverBase}"/>	
+
+            </PostInstallCommands>
+        </Installer>
+
+        <move file="install.exe" tofile="${3001.Dir.Package}\installWinServer-${Version.Compile.Mode}${Version}.exe"/>
+    </target>
+
+    <!-- Tags the existing code base to the working tag ${3001.Code.WorkingTag} -->
+    <target name="tagCode" 
+			depends="tagTools,
+					 tagTransactive,
+					 tagCots">
+		<!-- Does nothing but invoke its dependencies -->
+    </target>
+
+    <target name="tagCots" depends="init">
+        <cvs cvsRoot=":pserver:${CVS.User.Name}@${CVS.Server.Name}:${CVS.Code.Repository}"
+             package="code/cots"
+             command="tag -F ${3001.Code.WorkingTag}" />
+    </target>
+
+    <target name="tagTools" depends="init">
+        <cvs cvsRoot=":pserver:${CVS.User.Name}@${CVS.Server.Name}:${CVS.Code.Repository}"
+             package="code/tools"
+             command="tag -F ${3001.Code.WorkingTag}" />
+    </target>
+
+    <target name="tagTransactive" depends="init">
+        <cvs cvsRoot=":pserver:${CVS.User.Name}@${CVS.Server.Name}:${CVS.Code.Repository}"
+             package="code/transactive"
+             command="tag -F ${3001.Code.WorkingTag}" />
+    </target>
+
+    <target name="tagConfig"
+            depends="init"
+            description="--> Tags all 3001 and 9999 config to the specified tags.">
+        <parallel threadCount='2'>
+            <cvs cvsRoot=":pserver:${CVS.User.Name}@${CVS.Server.Name}:${CVS.9999.Config.Repository}"
+                 package="config"
+                 command="tag -c -F ${3001.Config.WorkingTag}"
+                 quiet="true"
+                 dest="config_9999"/>
+            <cvs cvsRoot=":pserver:${CVS.User.Name}@${CVS.Server.Name}:${CVS.3001.Config.Repository}"
+                 package="config"
+                 command="tag -c -F ${3001.Config.WorkingTag}"
+                 quiet="true"
+                 dest="config_3001"/>
+        </parallel>
+    </target>
+     
+    <!-- checkout from Perforce -->	
+    <!-- Checkout the code base, ${3001.Code.CheckoutTag} -->
+    <target name="p4checkoutCode" 
+			depends="p4checkoutCots,
+					 p4checkoutTools, 
+					 p4checkoutTransactive">
+		<!-- Does nothing but invoke its dependencies -->
+    </target>
+    
+    <target name="p4checkoutCots" 
+			depends="p4checkoutBCG, 
+					 p4checkoutOptimus, 
+					 p4checkoutSSCE, 
+					 p4checkoutTAO, 
+					 p4checkoutMmsApi, 
+					 p4checkoutmotorola_sdk,
+					 p4checkoutBEAMessageQlibs, 
+					 p4checkoutBEAMessageQInclude">
+    <!-- Does nothing but invoke its dependencies -->
+    </target>
+
+	<target name="clean_DirectSound"
+            depends="init"
+            description="--> Delete the DirectSound folder.">
+        <delete dir="${basedir}\code\cots\DirectSound" includeEmptyDirs="true" quiet="true"/>
+    </target>
+
+   <target name="copyDirectSound"
+            depends="clean_DirectSound"
+            description="--> copy the Base DirectSound to local folder.">
+		<copy todir="${basedir}\code\cots\DirectSound">
+			<fileset dir="${Base.Dir}\code\cots\DirectSound"/>
+		</copy>
+    </target>
+
+    <target name="p4checkoutBCG" depends="init">
+		<p4sync view="${P4.View.COTS}/BCG/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutmotorola_sdk" depends="init">
+		<p4sync view="${P4.View.COTS}/motorola_sdk/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutOptimus" depends="init">
+		<p4sync view="${P4.View.COTS}/Optimus/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutSSCE" depends="init">
+		<p4sync view="${P4.View.COTS}/ssce/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutTAO" depends="init">
+		<p4sync view="${P4.View.COTS}/TAO/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutMmsApi" depends="init">
+		<p4sync view="${P4.View.COTS}/MmsApi/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutBEAMessageQlibs" depends="init">
+		<p4sync view="${P4.View.COTS}/BEAMessageQ/lib/..." force="yes"/>
+    </target>
+
+    <target name="p4checkoutBEAMessageQInclude" depends="init">
+		<p4sync view="${P4.View.COTS}/BEAMessageQ/include/..." force="yes"/>
+    </target>
+
+    <!-- checkout tools from Perforce -->
+    <target name="p4checkoutTools" depends="init">
+		<p4sync view="${P4.View.CODE_3001}/tools/..." force="yes"/>
+    </target>
+
+    <!-- checkout transactive from Perforce -->
+    <target name="p4checkoutTransactive" depends="init">
+		<p4sync view="${P4.View.CODE_3001}/transactive/..." force="yes"/>
+    </target>
+
+	<!-- checkout config from Perforce -->
+    <target name="p4checkoutConfig"
+            depends="init"
+            description="--> Checks out the config.">
+		<p4sync view="${P4.View.CONFIG_3001}" force="yes"/>
+    </target>
+
+    <target name="changeAttributes4VersionGen" depends="init">
+		<attrib readonly="false">
+		  <fileset dir="${basedir}\code\transactive" includes="**/VersionGen.cpp"/>
+		</attrib>
+    </target>
+
+    <target name="changeAttributes4RcFiles" depends="init">
+		<attrib readonly="false">
+		  <fileset dir="${basedir}\code\transactive" includes="**/*.rc"/>
+		</attrib>
+    </target>
+</project>
+

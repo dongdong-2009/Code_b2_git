@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{dcd5993d-3435-4152-a2f4-1f0d80521388}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{dd274c32-728b-4ff9-8d6f-c32e6863a9fb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DllInstance.cpp" />
+    <ClCompile Include="src\MftStationTisStepComponent.cpp" />
+    <ClCompile Include="src\PlanStepEditStationTisPage.cpp" />
+    <ClCompile Include="src\PlanStepParameterTisMessageEditDlg.cpp" />
+    <ClCompile Include="src\PlanStepParameterTisPidListEditDlg.cpp" />
+    <ClCompile Include="src\StationTisStep.cpp" />
+    <ClCompile Include="src\StationTisStepEditorParameter.cpp" />
+    <ClCompile Include="src\TaskStationTis.cpp" />
+    <ClCompile Include="src\TisConfigAccess.cpp" />
+    <ClCompile Include="src\TisMessageStepParameter.cpp" />
+    <ClCompile Include="src\TisPidEditorHelper.cpp" />
+    <ClCompile Include="src\TisPidListStepParameter.cpp" />
+    <ClCompile Include="src\TisPriorityStepParameter.cpp" />
+    <ClCompile Include="src\TisStationEditorHelper.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MftStationTisStepComponent.h" />
+    <ClInclude Include="src\PlanStepEditStationTisPage.h" />
+    <ClInclude Include="src\PlanStepParameterTisMessageEditDlg.h" />
+    <ClInclude Include="src\PlanStepParameterTisPidListEditDlg.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\StationTisStep.h" />
+    <ClInclude Include="src\StationTisStepEditorParameter.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\TaskStationTis.h" />
+    <ClInclude Include="src\TisConfigAccess.h" />
+    <ClInclude Include="src\TisMessageStepParameter.h" />
+    <ClInclude Include="src\TisPidEditorHelper.h" />
+    <ClInclude Include="src\TisPidListStepParameter.h" />
+    <ClInclude Include="src\TisPriorityStepParameter.h" />
+    <ClInclude Include="src\TisStationEditorHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\step_plugin.station_tis_step.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityStationTis.bmp">
+      <Filter>res</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

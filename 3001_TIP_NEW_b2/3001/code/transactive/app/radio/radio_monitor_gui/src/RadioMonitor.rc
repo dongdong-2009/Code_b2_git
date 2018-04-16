@@ -1,0 +1,281 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RADIOMONITOR_DIALOG DIALOGEX 0, 0, 636, 382
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Radio Monitor"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Help",IDC_HELP_BUTTON,7,361,50,14
+    PUSHBUTTON      "Close",IDC_CLOSE_BTN,579,361,50,14
+    GROUPBOX        "Subscribers",IDC_STATIC,7,7,356,347
+    GROUPBOX        "Monitored Call Stack",IDC_STATIC,372,7,257,192
+    GROUPBOX        "Selected Groups/Users/Trains",IDC_STATIC,231,18,122,326
+    CONTROL         "List4",IDC_MONITOR_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    WS_BORDER | WS_TABSTOP,382,28,235,148
+    LTEXT           "Status: One Shot",IDC_TEXT_MONITORSTACK,451,17,117,8
+    PUSHBUTTON      "<<Remove",IDC_REMOVE_BUTTON,238,232,38,12
+    PUSHBUTTON      "One Shot",IDC_ONE_SHOT_BUTTON,271,274,38,12
+    PUSHBUTTON      "Start",IDC_START_MONITORING_BUTTON,271,292,38,12
+    PUSHBUTTON      "Stop",IDC_STOP_MONITORING_BUTTON,271,310,38,12,
+                    WS_DISABLED
+    GROUPBOX        "Monitoring",IDC_STATIC,238,252,107,84
+    PUSHBUTTON      "End call",IDC_END_CALL_BUTTON_M,519,181,38,12,
+                    WS_DISABLED
+    PUSHBUTTON      "Start Listening",IDC_START_LISTENING_BUTTON,391,181,51,
+                    12,WS_DISABLED
+    PUSHBUTTON      "Join",IDC_JOIN_CALL_BUTTON_M,570,181,38,12,WS_DISABLED
+    DEFPUSHBUTTON   "About",IDC_ABOUTBUTTON,69,361,50,14
+    CONTROL         "List4",IDC_LISTEN_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,382,219,235,112
+    CONTROL         "List1",IDC_SELECTED_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SORTASCENDING | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,238,33,107,194
+    LTEXT           "This is the search panel marker",IDC_SEARCH_PANEL,13,18,
+                    212,334
+    GROUPBOX        "Listening Call Stack",IDC_STATIC,372,205,257,149
+    PUSHBUTTON      "End call",IDC_END_CALL_BUTTON_L,519,336,38,12
+    PUSHBUTTON      "Join",IDC_JOIN_CALL_BUTTON_L,570,336,38,12
+    PUSHBUTTON      "Stop Listening",IDC_STOP_LISTENING_BUTTON,391,336,51,12
+END
+
+IDD_RADIO_MONITOR_FACILITYSEARCH DIALOG DISCARDABLE  0, 0, 212, 329
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Directories (Last updated 11:03 22/08/03)",
+                    IDC_DIRECTORY_BOX,4,0,204,135
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_TABSTOP,
+                    12,17,188,90
+    LTEXT           "String To Search:",IDC_STATIC,13,117,59,9
+    EDITTEXT        IDC_EDIT1,76,114,87,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Search",IDC_SUBSCRIBERSEARCH,169,114,31,14
+    GROUPBOX        "Matching Users / Groups",IDC_STATIC,4,142,203,184
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,12,154,188,142
+    PUSHBUTTON      "Display Group Details",IDC_BUTTON2,12,303,84,14
+    PUSHBUTTON      "Add",IDC_ADD_MONITOR,116,303,84,14
+    PUSHBUTTON      "not_use Add To Dynamic Group>>",IDC_BUTTON3,82,303,50,
+                    14,NOT WS_VISIBLE | WS_DISABLED
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "RadioMonitor MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "RadioMonitor\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "RadioMonitor.EXE\0"
+            VALUE "ProductName", "RadioMonitor Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_RADIOMONITOR_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 629
+        VERTGUIDE, 225
+        VERTGUIDE, 353
+        VERTGUIDE, 363
+        VERTGUIDE, 372
+        VERTGUIDE, 382
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 375
+        HORZGUIDE, 354
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+//IDR_MAINFRAME           ICON    DISCARDABLE     "..\\..\\..\\..\\..\\..\\sdk\\include\\transactive\\bus\\resources\\icons\\RadioMonitor.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DLG_INITPROGRESS DIALOG DISCARDABLE  0, 0, 243, 24
+STYLE DS_CENTER | WS_POPUP | WS_BORDER
+FONT 9, "Arial Unicode MS"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,69,7,167,9
+    LTEXT           "Static",IDC_STATIC_TEXT1,7,8,229,8
+    LTEXT           "Static",IDC_STATIC_TEXT2,72,13,53,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT3,8,13,27,8,NOT WS_VISIBLE
+    PUSHBUTTON      "&Cancel",IDCANCEL,85,13,40,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DLG_INITPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\RadioMonitor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\RadioMonitor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

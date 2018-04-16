@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Predefined message library">
+      <UniqueIdentifier>{bc50c546-fa35-4bfe-aae7-9c7774f7a8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PidStation">
+      <UniqueIdentifier>{f4a5fadf-e088-4fd2-9b14-b4ab283988b8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConfigPredefinedMessageLibraryData.cpp">
+      <Filter>Predefined message library</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PredefinedMessageLibraryAccessFactory.cpp">
+      <Filter>Predefined message library</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PredefinedMessageLibraryData.cpp">
+      <Filter>Predefined message library</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PredefinedMessageLibraryHelper.cpp">
+      <Filter>Predefined message library</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PidStationIdAccessFactory.cpp">
+      <Filter>PidStation</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConfigPredefinedMessageLibraryData.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPredefinedMessageLibrary.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPredefinedMessageLibrary.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PredefinedMessageLibraryAccessFactory.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PredefinedMessageLibraryData.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PredefinedMessageLibraryHelper.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PredefinedMessageLibraryTable.h">
+      <Filter>Predefined message library</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PidStationIdAccessFactory.h">
+      <Filter>PidStation</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

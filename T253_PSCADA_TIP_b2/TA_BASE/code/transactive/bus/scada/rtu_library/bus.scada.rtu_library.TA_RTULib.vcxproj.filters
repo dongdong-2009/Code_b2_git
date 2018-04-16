@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{38c3cd85-bc4c-4a73-bf59-19b3d9877c02}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BaseRTUManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommonDpProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HeartBeatWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusDpProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusPollingScheduler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NumberConversionUtil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTU.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUCommandWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUDownloadWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUOutputWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUPollingWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTURedundancyWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUStatusWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StandardRTU.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StandardRTUManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationSystemOutputWriter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\STDModbusPollingWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteRTU.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteRTUDpProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteRTUManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SteRTUStatusWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimerWorker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BaseRTUManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonDpProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataBlockInterface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HeartBeatWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusDpProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusPollingScheduler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NumberConversionUtil.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTU.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUCommandWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUDownloadWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUOutputWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUPollingWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTURedundancyWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUStatusTableConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUStatusWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StandardRTU.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StandardRTUManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationSystemOutputWriter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\STDModbusPollingWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteRTU.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteRTUDpProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteRTUManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SteRTUStatusWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimerWorker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+</Project>

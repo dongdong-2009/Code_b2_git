@@ -1,0 +1,185 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_ALL_TIP/4677/transactive/bus/radio/radio_agent/IDL/src/RadioMFTAgentCommandIDL.idl $
+// @author:  zou chunzhong
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2010/08/12 10:00:53 $
+// Last modified by:  $	$
+//
+// Radio Agents IDL interface.
+//
+
+#ifndef INTERFACE_RADIO_MFT_AGENT_COMMAND_IDL
+#define INTERFACE_RADIO_MFT_AGENT_COMMAND_IDL
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+#include "bus/radio/radio_agent/IDL/src/RadioCommonExceptionsIDL.idl"
+
+#include "bus/radio/radio_agent/IDL/src/CommonRadioAgentIDL.idl"
+
+#include "bus/radio/radio_agent/IDL/src/RadioMFTAgentCallbackIDL.idl"
+
+
+module TA_IRS_Bus
+{
+	interface RadioMFTAgentCommandIDL
+	{
+
+		void registerRadioMFTAgentCallback( in RadioMFTAgentCallbackIDL pCallback )
+			raises(TA_Base_Core::OperationModeException);
+
+
+		Radio::RadioResourceCollection getResourceCollection( in Radio::ERadioResourceType type )
+			raises(TA_Base_Core::OperationModeException);
+
+		void assignAndSelectResource( in string session,in Radio::RadioResource resource, in short buttonRef )
+			raises ( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void deassignAndDeselectResource( in string session,in Radio::RadioResource resource )
+			raises ( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void assignResource( in string session,in Radio::RadioResource resource, in short buttonRef )
+			raises ( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+
+		void deassignResource( in string session,in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		void selectResource( in string session,in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		
+
+		void deselectResource( in string session,in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		void changeVolume( in string session,in Radio::RadioResource resource, in Radio::ESpeakerState speaker, in unsigned short volume )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		void connectGroup( in string session,in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void releaseGroup( in string session,in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+						   
+
+		void makePrivateCall( in string session,in Radio::RadioResource resource, in boolean bEmergencyMode )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		void makeAmbienceListeningCall( in string session,in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		void answerPrivateCall(in string session, in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+	 
+		void endCall( in string session,in Radio::RadioResource resource,in boolean bEmergencyMode )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+// AZ++: TD 14314
+		void beginEmergency(in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+		void acknowledgeEmergency(in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void knockdownEmergency(in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+// ++AZ: TD14314
+
+		void assignSelectSpeaker( in Radio::RadioResource resource )
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+
+		Radio::EPrivateCallState isPrivateCallResourceInUse(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		Radio::EGroupConnectionState isResourceGroupConnected(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		boolean isResourceActive(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		boolean isResourceInAmbienceListeningCall(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		boolean isResourceBeingMonitored(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		boolean isResourceSelected(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		boolean isResourceAssigned(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		Radio::EmergencyModeState isResourceInEmergencyMode(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		unsigned short getResourceVolume(in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void getResourceMembers(in Radio::RadioResource resource, out Radio::RadioResourceCollection members)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void getResourceBySSI(in unsigned long ssi, out Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void getResourceByID(in unsigned long rid, in Radio::ERadioResourceType type, out Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void getResourceByAlias(in string alias, in Radio::ERadioResourceType type, out Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void createPatchGroup(in Radio::RadioResource resource, in boolean bIsDLTSPatch)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void releasePatchGroup(in boolean bIsDLTSPatch)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		Radio::RadioResource getDGTalkgroup(in string session,in Radio::RadioResource resource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		//TD18785
+		void addSelectSpeakerResource(in Radio::RadioResource resource);
+
+		void deleteSelectSpeakerResource(in unsigned long rid);
+
+		void addActiveResource(in Radio::RadioResource resource);
+
+		void deleteActiveResource(in unsigned long rid);
+//TD18785
+
+		void addRadioResource(in Radio::RadioResource resource, in Radio::RadioResourceCollection members, in unsigned long memberSize, in unsigned long id);
+
+		void restartConnection();
+
+		void getRadioResourceCount(in Radio::RadioResource resource, out short count);
+
+		void updateResource(in Radio::RadioResource oldResource, in Radio::RadioResource newResource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void addNewResource(in Radio::RadioResource newResource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void deleteResource(in Radio::RadioResource oldResource)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+
+		void setPrivateCallState (in Radio::RadioResource resource, in Radio::EPrivateCallState callState)
+			raises( RadioCommonExceptionsIDL::CommandFailureException ,TA_Base_Core::OperationModeException);
+	};
+
+};
+#endif
+

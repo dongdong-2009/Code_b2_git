@@ -1,0 +1,85 @@
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_Base_Bus
+{
+    module DataCacheCorbaDef
+    {
+        exception NotFoundException
+        {
+            string reason;
+        };
+
+        typedef sequence<string> KeySeq;
+
+        //
+        // Key-value
+        //
+
+        struct KeyValue
+        {
+            string key;
+            string value;
+        };
+
+        typedef sequence<KeyValue> KeyValueSeq;
+
+        //
+        // sorted-list
+        //
+
+        struct HighLow
+        {
+            unsigned long high;
+            unsigned long low;
+        };
+
+        struct SortedListItem
+        {
+            HighLow score;
+            string value;
+        };
+
+        typedef sequence<SortedListItem> SortedListItemSeq;
+
+        struct SortedList
+        {
+            string key;
+            SortedListItemSeq items;
+        };
+
+        typedef sequence<SortedList> SortedListSeq;
+
+        struct SortedListFilter
+        {
+            string key;
+            HighLow minScore;
+            HighLow maxScore;
+        };
+
+        typedef sequence<SortedListFilter> SortedListFilterSeq;
+
+        interface IStructuredDataCacheCorbaDef
+        {
+            // key-value
+            string get(in string key) raises(NotFoundException);
+            KeyValueSeq gets(in KeySeq keys);
+            KeyValueSeq getAll();
+            void set(in string key, in string value, in unsigned long timeToLive);
+            void sets(in KeyValueSeq keyValues, in unsigned long timeToLive);
+            void remove(in string key);
+            void removes(in KeySeq keys);
+
+            // sorted-list
+            void setSortedListItem(in string key, in SortedListItem item, in unsigned long timeToLive);
+            void setSortedList(in SortedList list, in unsigned long timeToLive);
+            void setSortedLists(in SortedListSeq lists, in unsigned long timeToLive);
+            SortedListItemSeq getSortedList(in string key);
+            SortedListSeq getSortedLists(in KeySeq keys);
+            SortedListItemSeq getSortedListByFilter(in SortedListFilter filter);
+            SortedListSeq getSortedListsByFilter(in SortedListFilterSeq filters);
+            SortedListSeq getAllSortedList();
+            void removeSortedList(in string key);
+            void removeSortedLists(in KeySeq keys);
+        };
+    };
+};

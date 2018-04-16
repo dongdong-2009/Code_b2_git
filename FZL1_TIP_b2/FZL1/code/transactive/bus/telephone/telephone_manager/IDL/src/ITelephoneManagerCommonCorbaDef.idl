@@ -1,0 +1,47 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/GZL6_TIP/3002/transactive/bus/telephone/telephone_manager/IDL/src/ITelephoneManagerCommonCorbaDef.idl $
+// @author:  Raymond Pau
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2012/06/12 13:35:44 $
+// Last modified by:  $Author: builder $
+//
+
+module TA_IRS_Bus
+{
+	enum EEventType
+	{
+		NEW_ITEM,
+		UPDATE_ITEM,
+		DELETE_ITEM
+	};
+
+	struct DirectoryEntryEvent
+	{
+		unsigned long		ID;
+		string		number;
+		string		fullName;
+		string		location;
+		string		directoryDataName;
+		EEventType	type;
+	};
+
+	struct DirectoryEvent
+	{
+		unsigned long		ID;
+		string		name;
+		EEventType	type;
+	};
+	
+	struct DirectLineEvent
+	{
+		string		SetName;
+		short		buttonPosition;
+		string		telephoneNumber;
+		string		label;
+	};
+};

@@ -1,0 +1,623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="specific_messages">
+      <UniqueIdentifier>{b92b9c0d-9e75-42b9-9dd4-24ae1102294e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="specific_messages\backwards_compatibility">
+      <UniqueIdentifier>{7269e480-3d29-4a06-b9e7-579f3e32953a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="specific_messages\senders">
+      <UniqueIdentifier>{dc9e221a-5f3d-4ce4-95d3-c930e1ec3174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generic_common">
+      <UniqueIdentifier>{27439e8f-f2c1-4485-8e58-8351c0895635}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generic_send">
+      <UniqueIdentifier>{4533d57c-b3b6-43e5-b902-776c2cca1a90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="generic_recv">
+      <UniqueIdentifier>{63b92e40-3df0-4fe9-81ea-a562c95fb01b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="message_types">
+      <UniqueIdentifier>{289e2307-dcdd-4f6b-90a5-f92d8dad722a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditEvent.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaAuditing.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageConfig.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessagePublicationManager.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageTypes.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransactiveMessageSubscription.cpp">
+      <Filter>specific_messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BackwardsCompatibility.cpp">
+      <Filter>specific_messages\backwards_compatibility</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuditMessageSender.cpp">
+      <Filter>specific_messages\senders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BindingRequestMessageSender.cpp">
+      <Filter>specific_messages\senders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommsMessageSender.cpp">
+      <Filter>specific_messages\senders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigUpdateMessageSender.cpp">
+      <Filter>specific_messages\senders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateMessageSender.cpp">
+      <Filter>specific_messages\senders</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConnectionChecker.cpp">
+      <Filter>generic_common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConnectionThread.cpp">
+      <Filter>generic_common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventChannelUser.cpp">
+      <Filter>generic_common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_CosNotifyChannel.cpp">
+      <Filter>generic_common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_CosUtility.cpp">
+      <Filter>generic_common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PublicationManager.cpp">
+      <Filter>generic_send</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StructuredEventSupplier.cpp">
+      <Filter>generic_send</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StructuredEventConsumer.cpp">
+      <Filter>generic_recv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StructuredEventConsumerDispatchers.cpp">
+      <Filter>generic_recv</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubscriptionManager.cpp">
+      <Filter>generic_recv</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AuditEvent.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaAuditing.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageConfig.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageConstants.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageFilters.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessagePublicationManager.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="types\MessageTypes.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NameValuePair.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransactiveMessageSubscription.h">
+      <Filter>specific_messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractMessageSubscriber.h">
+      <Filter>specific_messages\backwards_compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BackwardsCompatibility.h">
+      <Filter>specific_messages\backwards_compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageSubscriptionManager.h">
+      <Filter>specific_messages\backwards_compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpecialisedMessageSubscriber.h">
+      <Filter>specific_messages\backwards_compatibility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuditMessageSender.h">
+      <Filter>specific_messages\senders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BindingRequestMessageSender.h">
+      <Filter>specific_messages\senders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommsMessageSender.h">
+      <Filter>specific_messages\senders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigUpdateMessageSender.h">
+      <Filter>specific_messages\senders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateMessageSender.h">
+      <Filter>specific_messages\senders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConnectionChecker.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConnectionThread.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DispatchingQueue.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventChannelUser.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TA_CosNotifyChannel.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TA_CosNotifyInterfaces.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TA_CosUtility.h">
+      <Filter>generic_common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PublicationManager.h">
+      <Filter>generic_send</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StructuredEventSupplier.h">
+      <Filter>generic_send</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMessageSubscriber.h">
+      <Filter>generic_recv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StructuredEventConsumer.h">
+      <Filter>generic_recv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StructuredEventConsumerDispatchers.h">
+      <Filter>generic_recv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubscriptionManager.h">
+      <Filter>generic_recv</Filter>
+    </ClInclude>
+    <ClInclude Include="types\Alarm_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmAgentAlarm_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmAgentSynch_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmNotUsed_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AlarmUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ApplicationStatusAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ArchiveAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AtsAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ATSAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\Audit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AuthenticationAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AuthenticationAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\AuthenticationAgentStateUpdateBroadcast_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CCTVAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CCTVAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CCTVComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CCTVStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ConfigUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\Configuration_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CongestionAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\CongestionComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ControlStationAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ControlStationComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DatabaseStatusComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataLogStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataNodeAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataNodeAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataNodeAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataNodeStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataPointAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataPointAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataPointStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataRecordingAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataRecordingAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DataRecordingAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DutyAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DutyAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DutyAgentBroadcastComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DutyAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\DutyStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ECSAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ESVAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\EventLoggingAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\GenericAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\GenericDataPointStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\HistoryComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\HistoryStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IasAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IasAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentDetectionAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentLogSheetAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentManagerBroadcastComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\IncidentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\InspectorPanelAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\InterlockingConfigAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\LessAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\LivePropertyServerData_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\MFTComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\MmsAlarm_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\MmsAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\MMSComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ModbusStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\NameRebindStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\NamingService_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\NetworkStatusStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\OnlinePrintingAgentAlarm_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\OnlinePrintingAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\OperatorAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\OsssAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\OsssAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PAManagerAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PIDSAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PIDSAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PIDSComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PlanAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PlanAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PlanAgentBroadcastComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PlanAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PlanAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PMSAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PMSAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PMSAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\PMSAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\RadioAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\RadioAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\RadioComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\RadioTetraAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\ReportsAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SchedulingAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SchedulingAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SchedulingComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SchedulingStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SignallingAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SignallingAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SystemAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SystemControlAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SystemControllerComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\SystemStatusAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TelephoneManagerAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TelephoneManagerDirectoryBroadcastMessage_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TelephoneManagerSpeedDialBroadcastMessage_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TelephonyComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TEST_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TESTALARM_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TESTAUDIT_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TISAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TISAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TISBroadcastComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TISComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainAgentBroadcastComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainAgentComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\TrainCctvCameraAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\UserInteractionAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VideoWallAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VideoWallAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VideoWallComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VideoWallStateUpdates_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VisualAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VisualAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VisualComms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\VisualStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\WILDAgentAlarms_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\WILDAgentAudit_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\WILDAgentStateUpdate_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+    <ClInclude Include="types\WILDAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>message_types</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="core.message.TA_Message.dsp" />
+    <None Include="Makefile" />
+  </ItemGroup>
+</Project>

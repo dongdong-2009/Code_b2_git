@@ -1,0 +1,143 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/IAtsTrainCorbaDef.idl $
+// @author:  Andy Parker
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// IAtsTrainCorbaDef interface definition for the ATS/Train Agent interfacing. 
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{
+	interface IAtsTrainCorbaDef
+	{
+		struct LocalisationData   
+		{		
+			boolean					localisationValid;
+
+			string					physicalTrainService;	// Physical Train Number/service e.g. 45/123
+
+			StationIdType			currentLocation;		// Station or depot entity key
+			StationIdType			lastLocation;			// Station or depot entity key
+			CctvZoneIdType			currentCctvZone;		// CCTV Zone ID
+			boolean					upDirection;				// direction of train travel
+			ETrack					track;					// Track - innerbound or outerbound
+
+			boolean					isMute;					// isTalkative flag from ATS
+		};
+
+		//
+		// This structure is used to provide notifications of change to the Train Agent 
+		// through the 'any messageState' member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsTrainMessageCorbaDef   
+		{
+			PhysicalTrainNumberType	physicalTrainNumber;	// Physical Train number
+
+			boolean					trainValid;				// Validity of the data - train does not exist
+															//						  if this is false
+		
+			LocalisationData		localisation;			// Localisation data - may or may not be valid
+		};
+
+		//
+		// A sequence of AtsTrainMessageCorbaDef defined for getTrainInformationList
+		//
+		typedef sequence<AtsTrainMessageCorbaDef>	TrainInfoList;
+
+		//
+		// An unbounded octet sequence
+		// Used in sendOa1TableToAts and sendAtcAlarmTableToAts
+		//
+		typedef sequence<octet>						OctetSequence;
+
+		/**
+          * getTrainInformationList
+          *
+          * This method is used to access the full list of Train information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsTrainMessageCorbaDef for all platforms known
+		  *			to the ATS agent.
+          */
+		TrainInfoList getTrainInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccTrainUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on Train
+		  * information
+          *
+		  * @param	trainUpdate	A sequence of AtsTrainMessageCorbaDef for updates  
+		  *						to trains for the sector
+          */
+		void processOccTrainUpdate(in TrainInfoList trainUpdate)
+			raises (TA_Base_Core::OperationModeException);
+
+		/**
+          * sendOa1TableToAts
+          *
+          * This method is used to send OA1 tables to ATS
+          *
+		  * @param physicalTrainNumber	The identifier of the train that
+		  *								originated the OA1 table
+		  * @param oa1					A 24 byte OA1 table to send to ATS
+          */
+		void sendOa1TableToAts( in PhysicalTrainNumberType physicalTrainNumber, 
+								in OctetSequence oa1)
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::BadParameterException,
+					TA_Base_Core::NotAvailableException);
+
+		/**
+          * sendAtcTrainStatusReportToAts
+          *
+          * This method is used to send Atc Alarm tables to ATS
+          *
+		  * @param physicalTrainNumber		The identifier of the train that
+		  *									originated the OA1 table
+		  *	@param atcTrainStatusCodeHeader	A code header for the Atc data
+		  * @param atcTrainStatus			A 22 byte Atc data table to send to ATS
+          */
+		void sendAtcTrainStatusReportToAts( in PhysicalTrainNumberType physicalTrainNumber, 
+											in OctetSequence atcTrainStatus)
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::BadParameterException,
+					TA_Base_Core::NotAvailableException);
+
+		/**
+          * inOccDoubleAtsFailure
+          *
+          * This method is used to retrieve the double ATS failure state of the agent
+          *
+          */
+		boolean inOccDoubleAtsFailure()
+			raises (TA_Base_Core::OperationModeException);
+
+		/**
+          * radioInFallback
+          *
+          * This method is used to send Radio Fallback state to ATS
+          *
+		  * @param radioFallback			True if radio is in fallback, false otherwise
+          */
+		void radioInFallback(in boolean radioFallback)
+			raises (TA_Base_Core::OperationModeException);
+
+		/**
+          * resetAts
+          *
+          * This method is used to reset ATS after some form of degraded mode
+          *
+          */
+		void resetAts()
+			raises (TA_Base_Core::OperationModeException);
+	}; // IAtsTrainCorbaDef
+}; // TA_Bus

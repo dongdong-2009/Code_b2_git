@@ -1,0 +1,164 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ecs/ecs_agent/IDL/src/IMasterEcsAgentCorbaDef.idl $
+// @author:  Sean Liew
+// @version: $Revision: #3 $
+//
+// Last modification: $DateTime: 2017/06/23 14:36:37 $
+// Last modified by:  $Author: dhanshri $
+//
+// PA Agent IDL interface.
+//
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+#include "bus/ecs/ecs_agent/IDL/src/IStationEcsAgentCorbaDef.idl"
+
+module TA_IRS_Bus
+{    
+    interface IMasterEcsAgentCorbaDef
+    {
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Master ECS Agent exceptions
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+		exception EmergencyMasterModeInProgress
+        {
+            long masterMode;
+            string what;
+        };
+
+		exception EmergencyMasterModeActive
+        {
+            long masterMode;
+            string what;
+        };
+
+        exception MasterModeInProgress
+        {
+            long masterMode;
+            string what;
+        };
+        
+        exception MasterModeActive
+        {
+            long masterMode;
+            string what;
+        };
+        
+        exception StationsInLocalMode
+        {
+            sequence<long> locations;
+            string what;
+        };
+
+        exception NormalMasterModeFailure
+        {
+            sequence<long> zonesInEmergency;
+            sequence<long> zonesInCongestion;
+            string what;
+        };
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Message structures
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+        enum EProposedModeType
+        {
+            MODE_STATION,
+            MODE_MASTER,
+            MODE_OVERRIDING_STATION
+        };
+
+        struct ProposedMode
+        {
+            long                                    mode;
+            unsigned long                           locationKey;
+			unsigned long							locationKeyOfCongestionPair;
+            EProposedModeType                       modeType;
+        };
+        typedef sequence<ProposedMode>              ProposedModes; 
+        typedef ProposedModes                       EcsProposedModesUpdateData;
+
+        typedef sequence<long>                      LocationIndex; 
+
+        typedef sequence<IStationEcsAgentCorbaDef::EcsStationModeExecutionUpdateData> 
+            StationModeExecutionUpdateDatas;
+
+        struct EcsMasterModeExecutionUpdateData
+        {
+            long                                    fromMasterMode;
+            long                                    toMasterMode;
+            LocationIndex                           locations;
+            string                                  sessionId;
+            StationModeExecutionUpdateDatas         stationUpdateDatas;
+
+            EEcsExecutionState                      executionState;
+            EEcsExecutionError                      executionError;
+
+            string                                  additionalInfo;
+        };
+
+
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Master ECS Agent methods
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+
+        void login
+            ( in long zoneId, in string sessionId )
+            raises (TA_Base_Core::AccessDeniedException,
+			TA_Base_Core::OperationModeException);
+
+        void logout
+            ( in string sessionId )
+            raises (TA_Base_Core::OperationModeException);
+
+        void executeMasterMode
+            ( in long masterMode,
+              in boolean canOverrideMasterModeInProgress,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    MasterModeInProgress,
+                    MasterModeActive,
+                    StationsInLocalMode,
+                    NormalMasterModeFailure,
+					TA_Base_Core::OperationModeException);
+
+		//liuyu++ change to asyncronous call implement no wait corba call
+        /*void selectMasterMode
+            ( in long masterMode,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException);*/
+		void selectMasterMode
+            ( in long masterMode,
+              in string sessionId )
+	      raises (TA_Base_Core::BadParameterException,
+            TA_Base_Core::AccessDeniedException,
+            EmergencyMasterModeInProgress,
+			EmergencyMasterModeActive,
+            NormalMasterModeFailure,
+			TA_Base_Core::OperationModeException);
+
+
+        ProposedModes getAllProposedModes()
+            raises (TA_Base_Core::OperationModeException);
+
+	unsigned short getFlexibleTimeOutValue()
+            raises (TA_Base_Core::OperationModeException);
+
+    }; // IMasterEcsAgentCorbaDef
+
+}; // TA_Bus
+

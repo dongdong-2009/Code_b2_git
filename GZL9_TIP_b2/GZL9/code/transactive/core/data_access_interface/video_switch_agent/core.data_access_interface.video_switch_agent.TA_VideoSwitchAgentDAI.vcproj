@@ -1,0 +1,262 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.data_access_interface.video_switch_agent" ProjectGUID="{58B44322-6E82-41D8-9301-E9338F6109DE}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/video_switch_agent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/video_switch_agent/core.data_access_interface.video_switch_agent.TA_VideoSwitchAgentDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/video_switch_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/video_switch_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/video_switch_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_VideoSwitchAgentDAI_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.data_access_interface.video_switch_agent.TA_VideoSwitchAgentDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/video_switch_agent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\sdk\include\cots\boost\boost_1_56_0" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/video_switch_agent/core.data_access_interface.video_switch_agent.TA_VideoSwitchAgentDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/video_switch_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/video_switch_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/video_switch_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_VideoSwitchAgentDAI.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.data_access_interface.video_switch_agent.TA_VideoSwitchAgentDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="VideoOutputGroup">
+			<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+				<File RelativePath="src\ConfigVideoOutputGroup.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\DAIVideoOutputGroup.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoOutputGroupAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoOutputGroupHelper.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+			</Filter>
+			<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+				<File RelativePath="src\CameraPresetsTable.h">
+				</File>
+				<File RelativePath="src\ConfigVideoOutputGroup.h">
+				</File>
+				<File RelativePath="src\DAIVideoOutputGroup.h">
+				</File>
+				<File RelativePath="src\IConfigVideoOutputGroup.h">
+				</File>
+				<File RelativePath="src\IVideoOutputGroup.h">
+				</File>
+				<File RelativePath="src\VideoOutputGroupAccessFactory.h">
+				</File>
+				<File RelativePath="src\VideoOutputGroupHelper.h">
+				</File>
+				<File RelativePath="src\VideoOutputGroupTable.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="CameraPresets">
+			<Filter Name="Source Files No. 1">
+				<File RelativePath="src\CameraPresetsAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\CameraPresetsData.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+			</Filter>
+			<Filter Name="Header Files No. 1">
+				<File RelativePath="src\CameraPresetsAccessFactory.h">
+				</File>
+				<File RelativePath="src\CameraPresetsData.h">
+				</File>
+				<File RelativePath="src\ICameraPresets.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="Sequences">
+			<Filter Name="Header Files No. 2" Filter=".h">
+				<File RelativePath="src\IConfigSequence.h">
+				</File>
+				<File RelativePath="src\ISequence.h">
+				</File>
+				<File RelativePath="src\Sequence.h">
+				</File>
+				<File RelativePath="src\SequenceAccessFactory.h">
+				</File>
+				<File RelativePath="src\SequenceHelper.h">
+				</File>
+				<File RelativePath="src\SequenceTable.h">
+				</File>
+			</Filter>
+			<Filter Name="Source Files No. 2" Filter=".cpp">
+				<File RelativePath="src\ConfigSequence.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\Sequence.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\SequenceAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\SequenceHelper.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+			</Filter>
+		</Filter>
+		<Filter Name="StationId">
+			<Filter Name="Source Files No. 3" Filter=".cpp">
+				<File RelativePath="src\ConfigVideoStationId.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoStationId.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoStationIdAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoStationIdHelper.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+			</Filter>
+			<Filter Name="Header Files No. 3" Filter=".h">
+				<File RelativePath="src\ConfigVideoStationId.h">
+				</File>
+				<File RelativePath="src\IConfigVideoStationId.h">
+				</File>
+				<File RelativePath="src\IVideoStationId.h">
+				</File>
+				<File RelativePath="src\VideoStationId.h">
+				</File>
+				<File RelativePath="src\VideoStationIdAccessFactory.h">
+				</File>
+				<File RelativePath="src\VideoStationIdHelper.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="TriggeringEvents">
+			<Filter Name="Source Files No. 4">
+				<File RelativePath="src\ConfigVideoTriggeringEvent.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoTriggeringEvent.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoTriggeringEventAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\VideoTriggeringEventHelper.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+			</Filter>
+			<Filter Name="Header Files No. 4">
+				<File RelativePath="src\ConfigVideoTriggeringEvent.h">
+				</File>
+				<File RelativePath="src\IConfigVideoTriggeringEvent.h">
+				</File>
+				<File RelativePath="src\IVideoTriggeringEvent.h">
+				</File>
+				<File RelativePath="src\VideoTriggeringEvent.h">
+				</File>
+				<File RelativePath="src\VideoTriggeringEventAccessFactory.h">
+				</File>
+				<File RelativePath="src\VideoTriggeringEventHelper.h">
+				</File>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

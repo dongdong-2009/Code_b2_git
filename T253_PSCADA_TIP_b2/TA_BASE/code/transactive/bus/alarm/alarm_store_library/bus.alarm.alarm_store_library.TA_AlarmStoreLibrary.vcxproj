@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.alarm.alarm_store_library</ProjectName>
+    <ProjectGuid>{DBBAD18F-88DF-494A-9DBF-F4361D74D9B5}</ProjectGuid>
+    <RootNamespace>bus.alarm.alarm_store_library</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_AlarmStoreLibrary_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_AlarmStoreLibrary</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmAccessAdaptor.cpp" />
+    <ClCompile Include="src\AlarmAgentInterface.cpp" />
+    <ClCompile Include="src\AlarmAgentInterfaceManager.cpp" />
+    <ClCompile Include="src\AlarmFilterByAssetName.cpp" />
+    <ClCompile Include="src\AlarmFilterByAssociatedEntityKey.cpp" />
+    <ClCompile Include="src\AlarmFilterByAssociatedEntityName.cpp" />
+    <ClCompile Include="src\AlarmFilterByDate.cpp" />
+    <ClCompile Include="src\AlarmFilterByDescription.cpp" />
+    <ClCompile Include="src\AlarmFilterByLocation.cpp" />
+    <ClCompile Include="src\AlarmFilterByOMType.cpp" />
+    <ClCompile Include="src\AlarmFilterByOperator.cpp" />
+    <ClCompile Include="src\AlarmFilterByProfile.cpp" />
+    <ClCompile Include="src\AlarmFilterBySeverity.cpp" />
+    <ClCompile Include="src\AlarmFilterByState.cpp" />
+    <ClCompile Include="src\AlarmFilterBySubSystem.cpp" />
+    <ClCompile Include="src\AlarmFilterBySubsystemType.cpp" />
+    <ClCompile Include="src\AlarmFilterBySystemDisplay.cpp" />
+    <ClCompile Include="src\AlarmFilterBySystemType.cpp" />
+    <ClCompile Include="src\AlarmFilterByType.cpp" />
+    <ClCompile Include="src\AlarmFilterSet.cpp" />
+    <ClCompile Include="src\AlarmStoreManager.cpp" />
+    <ClCompile Include="src\AlarmStoreMonitor.cpp" />
+    <ClCompile Include="src\AlarmStoreServant.cpp" />
+    <ClCompile Include="src\ATSAlarmObserver.cpp" />
+    <ClCompile Include="src\DutyAlarmManager.cpp" />
+    <ClCompile Include="src\IWatchObject.cpp" />
+    <ClCompile Include="src\SharedAlarmAccessFactory.cpp" />
+    <ClCompile Include="src\SubsytemDataCache.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmAccessAdaptor.h" />
+    <ClInclude Include="src\AlarmAgentInterface.h" />
+    <ClInclude Include="src\AlarmAgentInterfaceManager.h" />
+    <ClInclude Include="src\AlarmFilterByAssetName.h" />
+    <ClInclude Include="src\AlarmFilterByAssociatedEntityKey.h" />
+    <ClInclude Include="src\AlarmFilterByAssociatedEntityName.h" />
+    <ClInclude Include="src\AlarmFilterByDate.h" />
+    <ClInclude Include="src\AlarmFilterByDescription.h" />
+    <ClInclude Include="src\AlarmFilterByLocation.h" />
+    <ClInclude Include="src\AlarmFilterByOMType.h" />
+    <ClInclude Include="src\AlarmFilterByOperator.h" />
+    <ClInclude Include="src\AlarmFilterByProfile.h" />
+    <ClInclude Include="src\AlarmFilterBySeverity.h" />
+    <ClInclude Include="src\AlarmFilterByState.h" />
+    <ClInclude Include="src\AlarmFilterBySubSystem.h" />
+    <ClInclude Include="src\AlarmFilterBySubsystemType.h" />
+    <ClInclude Include="src\AlarmFilterBySystemDisplay.h" />
+    <ClInclude Include="src\AlarmFilterBySystemType.h" />
+    <ClInclude Include="src\AlarmFilterByType.h" />
+    <ClInclude Include="src\AlarmStoreException.h" />
+    <ClInclude Include="src\AlarmStoreManager.h" />
+    <ClInclude Include="src\AlarmStoreMonitor.h" />
+    <ClInclude Include="src\AlarmStoreServant.h" />
+    <ClInclude Include="src\AlarmStoreUpdateListener.h" />
+    <ClInclude Include="src\ATSAlarmObserver.h" />
+    <ClInclude Include="src\DutyAlarmManager.h" />
+    <ClInclude Include="src\IAlarmFilter.h" />
+    <ClInclude Include="src\IAlarmUpdate.h" />
+    <ClInclude Include="src\IWatchObject.h" />
+    <ClInclude Include="src\SharedAlarmAccessFactory.h" />
+    <ClInclude Include="src\SortIndex.h" />
+    <ClInclude Include="src\SubsytemDataCache.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

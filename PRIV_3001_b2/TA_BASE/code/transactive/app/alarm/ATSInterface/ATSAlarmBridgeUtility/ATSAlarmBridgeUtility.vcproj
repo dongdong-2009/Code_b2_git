@@ -1,0 +1,155 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.alarm.ATSInterface.ATSAlarmBridgeUtility" ProjectGUID="{2CEEFA6C-B8D4-4F42-A1AB-71DCC931CB64}" RootNamespace="ATSAlarmBridgeUtility" Keyword="AtlProj" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../bin/win32_nd/" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/alarm/AlarmBridgeUtility/" ConfigurationType="2" UseOfATL="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" TargetEnvironment="1" GenerateStublessProxies="true" TypeLibraryName=".\../../../../../../sdk/win32_nd/ATSAlarmBridgeUtility.tlb" HeaderFileName="ATSAlarmBridgeUtility_i.h" DLLDataFileName="" InterfaceIdentifierFileName="ATSAlarmBridgeUtility_i.c" ProxyFileName="ATSAlarmBridgeUtility_p.c" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories=".\../../../../;.\../../../../../COTS/IATSAlarmEvent/Include;.\../../../../../../sdk/win32_nd/" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="2" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/ATSAlarmBridgeUtility.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/vc90.pdb" WarningLevel="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;.\../../../../../../sdk/win32_nd/"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" RegisterOutput="false" IgnoreImportLibrary="true" AdditionalDependencies="ISCSAlarmActionBridge.lib RelatedIP_API.lib RelatedSchematic_API.lib" OutputFile=".\../../../../../../bin/win32_nd/ATSAlarmBridgeUtility.dll" LinkIncremental="2" AdditionalLibraryDirectories=".\../../../../../../bin/win32_nd/;.\../../../../../COTS/IATSAlarmEvent/lib" ModuleDefinitionFile=".\ATSAlarmBridgeUtility.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../../bin/win32_nd/ATSAlarmBridgeUtility.pdb" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="DebugLOG4CXX|Win32" OutputDirectory=".\../../../../../../bin/win32_nd/" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/alarm/AlarmBridgeUtility" ConfigurationType="2" UseOfATL="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" TargetEnvironment="1" GenerateStublessProxies="true" TypeLibraryName=".\../../../../../../sdk/win32_nd/ATSAlarmBridgeUtility.tlb" HeaderFileName="ATSAlarmBridgeUtility_i.h" DLLDataFileName="" InterfaceIdentifierFileName="ATSAlarmBridgeUtility_i.c" ProxyFileName="ATSAlarmBridgeUtility_p.c" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories=".\../../../../;.\../../../../../COTS/IATSAlarmEvent/Include;.\../../../../../../sdk/win32_nd/;.\../../../../../COTS\log4cxx\0.10.0\src\main\include" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USRDLL;LOG4CXX_STATIC;ENABLE_LOG4CXX" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="2" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/ATSAlarmBridgeUtility.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmBridgeUtility/vc90.pdb" WarningLevel="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir);.\../../../../../../sdk/win32_nd/"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" RegisterOutput="true" IgnoreImportLibrary="true" AdditionalDependencies="ISCSAlarmActionBridge.lib RelatedIP_API.lib RelatedSchematic_API.lib log4cxx.lib mswsock.lib ws2_32.lib shell32.lib apr.lib aprutil.lib xml.lib" OutputFile=".\../../../../../../bin/win32_nd/ATSAlarmBridgeUtility.dll" LinkIncremental="2" AdditionalLibraryDirectories=".\../../../../../../bin/win32_nd/;&quot;.\../../../../../COTS\log4cxx\0.10.0\msvc9-proj\Debug_Static&quot;;.\../../../../../COTS/IATSAlarmEvent/lib" GenerateManifest="true" ModuleDefinitionFile=".\ATSAlarmBridgeUtility.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../../bin/win32_nd/ATSAlarmBridgeUtility.pdb" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool" EmbedManifest="true"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../bin/win32_nr/" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/alarm/AlarmBridgeUtility/" ConfigurationType="2" UseOfATL="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false" TargetEnvironment="1" GenerateStublessProxies="true" TypeLibraryName=".\../../../../../../sdk/win32_nr/ATSAlarmBridgeUtility.tlb" HeaderFileName="ATSAlarmBridgeUtility_i.h" DLLDataFileName="" InterfaceIdentifierFileName="ATSAlarmBridgeUtility_i.c" ProxyFileName="ATSAlarmBridgeUtility_p.c" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories=".\../../../../;.\../../../../../COTS/IATSAlarmEvent/Include;.\../../../../../../sdk/win32_nr/" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USRDLL" RuntimeLibrary="2" UsePrecompiledHeader="2" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmBridgeUtility/ATSAlarmBridgeUtility.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmBridgeUtility/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmBridgeUtility/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmBridgeUtility/vc90.pdb" WarningLevel="3" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;.\../../../../../../sdk/win32_nr/"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" RegisterOutput="false" IgnoreImportLibrary="true" AdditionalDependencies="ISCSAlarmActionBridge.lib RelatedIP_API.lib RelatedSchematic_API.lib" OutputFile=".\../../../../../../bin/win32_nr/ATSAlarmBridgeUtility.dll" LinkIncremental="1" AdditionalLibraryDirectories=".\../../../../../../bin/win32_nr/;.\../../../../../COTS/IATSAlarmEvent/lib" ModuleDefinitionFile=".\ATSAlarmBridgeUtility.def" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../../bin/win32_nr/ATSAlarmBridgeUtility.pdb" SubSystem="2" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\ATSAlarmActionManager.cpp">
+			</File>
+			<File RelativePath=".\ATSAlarmBridgeUtility.cpp">
+			</File>
+			<File RelativePath=".\ATSAlarmBridgeUtility.def">
+			</File>
+			<File RelativePath=".\ATSAlarmBridgeUtility.idl">
+			</File>
+			<File RelativePath=".\DebugUtil.cpp">
+			</File>
+			<File RelativePath=".\dllmain.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration>
+				<FileConfiguration Name="DebugLOG4CXX|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\NonReEntrantThreadLockable.cpp">
+			</File>
+			<File RelativePath=".\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="DebugLOG4CXX|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\ThreadGuard.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\_IATSAlarmActionManagerEvents_CP.h">
+			</File>
+			<File RelativePath=".\ATSAlarmActionManager.h">
+			</File>
+			<File RelativePath=".\DebugUtil.h">
+			</File>
+			<File RelativePath=".\DebugUtilMacros.h">
+			</File>
+			<File RelativePath=".\dllmain.h">
+			</File>
+			<File RelativePath=".\IThreadLockable.h">
+			</File>
+			<File RelativePath=".\NonReEntrantThreadLockable.h">
+			</File>
+			<File RelativePath=".\Resource.h">
+			</File>
+			<File RelativePath=".\stdafx.h">
+			</File>
+			<File RelativePath=".\targetver.h">
+			</File>
+			<File RelativePath=".\ThreadGuard.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\ATSAlarmActionManager.rgs">
+			</File>
+			<File RelativePath=".\ATSAlarmBridgeUtility.rc">
+			</File>
+			<File RelativePath=".\ATSAlarmBridgeUtility.rgs">
+			</File>
+		</Filter>
+		<Filter Name="Generated Files" SourceControlFiles="false">
+			<File RelativePath=".\ATSAlarmBridgeUtility_i.c">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration>
+				<FileConfiguration Name="DebugLOG4CXX|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="0" CompileAsManaged="0"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\ATSAlarmBridgeUtility_i.h">
+			</File>
+		</Filter>
+		<File RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

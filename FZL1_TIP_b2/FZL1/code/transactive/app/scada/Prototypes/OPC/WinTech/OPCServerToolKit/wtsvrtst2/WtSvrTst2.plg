@@ -1,0 +1,40 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: WtSvrTst2 - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\TEMP\RSP13.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/WtSvrTst2.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Projects32\Toolkits\WTOPCsvr\WtSvrTst2\WtSvrTst2View.cpp"
+]
+Creating command line "cl.exe @C:\TEMP\RSP13.tmp" 
+Creating temporary file "C:\TEMP\RSP14.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/WtSvrTst2.pdb" /machine:I386 /out:"Release/WtSvrTst2.exe" 
+.\Release\DelimitDlg.obj
+.\Release\MainFrm.obj
+.\Release\StdAfx.obj
+.\Release\TagListDlg.obj
+.\Release\WtSvrTst2.obj
+.\Release\WtSvrTst2Doc.obj
+.\Release\WtSvrTst2View.obj
+.\Release\WtSvrTst2.res
+.\WtOPCSvr.lib
+]
+Creating command line "link.exe @C:\TEMP\RSP14.tmp"
+<h3>Output Window</h3>
+Compiling...
+WtSvrTst2View.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+WtSvrTst2.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

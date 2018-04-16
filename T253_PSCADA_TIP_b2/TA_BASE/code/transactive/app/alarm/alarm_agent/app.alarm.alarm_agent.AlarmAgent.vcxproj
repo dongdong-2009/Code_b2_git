@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.alarm.alarm_agent</ProjectName>
+    <ProjectGuid>{7596BCFC-B623-408D-8C9F-C77C9F9D42EB}</ProjectGuid>
+    <RootNamespace>app.alarm.alarm_agent</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>AlarmAgent</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.alarm.alarm_agent.AlarmAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\data_access_interface\planagent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\maintenance_management\mmscorbadef\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\response_plans\plan_manager\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Rpcrt4.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.alarm.alarm_agent.AlarmAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\data_access_interface\planagent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\process_management\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\maintenance_management\mmscorbadef\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\response_plans\plan_manager\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;Rpcrt4.lib;TA_Base_Core.lib;TA_Base_Bus.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\core\exceptions\src\AlarmAgentException.cpp" />
+    <ClCompile Include="..\..\..\core\exceptions\src\AlarmCacheCapacityExceededException.cpp" />
+    <ClCompile Include="src\AbstractRule.cpp" />
+    <ClCompile Include="src\AlarmAgent.cpp" />
+    <ClCompile Include="src\AlarmAgentImpl.cpp" />
+    <ClCompile Include="src\AlarmCache.cpp" />
+    <ClCompile Include="src\AlarmHistoricalQueue.cpp" />
+    <ClCompile Include="src\AlarmMMSSubmitter.cpp" />
+    <ClCompile Include="src\AlarmQueue.cpp" />
+    <ClCompile Include="src\AlarmQueueWrapper.cpp" />
+    <ClCompile Include="src\AutoAcknowledgeRule.cpp" />
+    <ClCompile Include="src\AvalancheSuppressionRule.cpp" />
+    <ClCompile Include="src\CCTVRule.cpp" />
+    <ClCompile Include="src\DatabaseLoader.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MMSRule.cpp" />
+    <ClCompile Include="src\PlanExecutionRule.cpp" />
+    <ClCompile Include="src\RuleRepository.cpp" />
+    <ClCompile Include="src\RuleTimer.cpp" />
+    <ClCompile Include="src\SuppressionRule.cpp" />
+    <ClCompile Include="src\TransactionQueue.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\bus\security\access_control\alarm_actions\src\AlarmActions.h" />
+    <ClInclude Include="..\..\..\core\exceptions\src\AlarmAgentException.h" />
+    <ClInclude Include="..\..\..\core\exceptions\src\AlarmCacheCapacityExceededException.h" />
+    <ClInclude Include="..\..\..\core\message\types\AlarmAudit_MessageTypes.h" />
+    <ClInclude Include="src\AbstractRule.h" />
+    <ClInclude Include="src\AlarmAgent.h" />
+    <ClInclude Include="src\AlarmAgentImpl.h" />
+    <ClInclude Include="src\AlarmCache.h" />
+    <ClInclude Include="src\AlarmHistoricalQueue.h" />
+    <ClInclude Include="src\AlarmMMSSubmitter.h" />
+    <ClInclude Include="src\AlarmQueue.h" />
+    <ClInclude Include="src\AlarmQueueWrapper.h" />
+    <ClInclude Include="src\AutoAcknowledgeRule.h" />
+    <ClInclude Include="src\AvalancheSuppressionChild.h" />
+    <ClInclude Include="src\AvalancheSuppressionRule.h" />
+    <ClInclude Include="src\CCTVRule.h" />
+    <ClInclude Include="src\DatabaseLoader.h" />
+    <ClInclude Include="src\IDataLoader.h" />
+    <ClInclude Include="src\LocalRunParamDefinitions.h" />
+    <ClInclude Include="src\MMSRule.h" />
+    <ClInclude Include="src\PlanExecutionRule.h" />
+    <ClInclude Include="src\RuleRepository.h" />
+    <ClInclude Include="src\RuleTimer.h" />
+    <ClInclude Include="src\SuppressionRule.h" />
+    <ClInclude Include="src\TransactionQueue.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

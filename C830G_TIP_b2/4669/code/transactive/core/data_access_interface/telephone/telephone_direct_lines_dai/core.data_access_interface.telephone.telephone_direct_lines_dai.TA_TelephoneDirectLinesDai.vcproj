@@ -1,0 +1,107 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.data_access_interface.telephone.telephone_direct_lines" ProjectGUID="{A9F9DB32-BA2F-46ED-9B69-5272CDD3C9BB}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/core/data_access_interface/telephone/telephone_direct_lines" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src,../../../../,../../../../../../sdk/include/transactive" PreprocessorDefinitions="WIN32;_DEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_LIB;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/core/data_access_interface/telephone/telephone_direct_lines/core.data_access_interface.telephone.telephone_direct_lines_dai.TA_TelephoneDirectLinesDai.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/core/data_access_interface/telephone/telephone_direct_lines/" ObjectFile=".\../../../../../../build/win32_nd/transactive/core/data_access_interface/telephone/telephone_direct_lines/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/core/data_access_interface/telephone/telephone_direct_lines/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_TelephoneDirectLinesDai.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/core.data_access_interface.telephone.telephone_direct_lines_dai.TA_TelephoneDirectLinesDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/core/data_access_interface/telephone/telephone_direct_lines" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src,../../../../,../../../../../../sdk/include/transactive" PreprocessorDefinitions="WIN32;NDEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_LIB;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/core/data_access_interface/telephone/telephone_direct_lines/core.data_access_interface.telephone.telephone_direct_lines_dai.TA_TelephoneDirectLinesDai.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/core/data_access_interface/telephone/telephone_direct_lines/" ObjectFile=".\../../../../../../build/win32_nr/transactive/core/data_access_interface/telephone/telephone_direct_lines/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/core/data_access_interface/telephone/telephone_direct_lines/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_TelephoneDirectLinesDai.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/core.data_access_interface.telephone.telephone_direct_lines_dai.TA_TelephoneDirectLinesDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ConfigTelephoneDirectLine.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DatabaseQueryHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TelephoneDirectLine.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TelephoneDirectLineAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TelephoneDirectLineHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\ConfigTelephoneDirectLine.h">
+			</File>
+			<File RelativePath="src\DatabaseQueryHelper.h">
+			</File>
+			<File RelativePath="src\GenericDaiHelper.h">
+			</File>
+			<File RelativePath="src\GenericDaiHelper.inl">
+			</File>
+			<File RelativePath="src\IConfigTelephoneDirectLine.h">
+			</File>
+			<File RelativePath="src\ITelephoneDirectLine.h">
+			</File>
+			<File RelativePath="src\ITelephoneDirectory.h">
+			</File>
+			<File RelativePath="src\TelephoneDirectLine.h">
+			</File>
+			<File RelativePath="src\TelephoneDirectLineAccessFactory.h">
+			</File>
+			<File RelativePath="src\TelephoneDirectLineHelper.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

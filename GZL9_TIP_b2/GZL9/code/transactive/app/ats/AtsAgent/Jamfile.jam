@@ -1,0 +1,6 @@
+
+ta-exe AtsAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/ats/AtsAgent/TimetableManager//TA_TimetableManager
+	  /proj/app/ats/AtsAgent/GenaProtocolHandler//TA_GenaProtocolHandler
+	;

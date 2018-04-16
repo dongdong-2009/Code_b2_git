@@ -1,0 +1,98 @@
+<project name="BuildTasks" default="build" basedir=".">
+
+    <!-- The task to set up initial properties/parameters
+    Once a property is set for a build it cannot be changed -->
+    <target name="init">
+        <property name="srcdir" value="${basedir}/src"/>
+        <property name="classdir" value="${basedir}/build"/>
+        <property name="antlibs" value="${basedir}/../apache-ant/lib"/>
+        <property name="jarfile" value="dist/RippleBuildSystem.jar"/>
+        <property name="docdir" value="${basedir}/doc"/>
+    </target>
+
+    <target name="build" depends="init" description="--> Builds all the checked out files.">
+        <mkdir dir="${classdir}"/>
+        <javac destdir="${classdir}" debug="true" classpath="${antlibs}" listfiles="true" verbose="false">
+            <src path="${srcdir}"/>
+        </javac>
+    </target>
+    
+    <target name="buildVersion" depends="init" if="version">
+        <cvs cvsRoot=":pserver:tabuild@cvs:/cvs/1TS-9999-T"
+             package="code/tools/NewBuildSystem/RippleBuildSystem/src"
+             command="checkout"
+             tag="${version}"
+             quiet="true"/>
+        <delete dir="src"/>
+        <move toDir="src">
+            <fileset dir="code/tools/NewBuildSystem/RippleBuildSystem/src"/>
+        </move>
+        <delete dir="code"/>
+        <antcall target="fullClean"/>
+        <antcall target="build"/>
+        <antcall target="package"/>
+        <move file="${jarfile}" toFile="dist/RippleBuildSystem-${version}.jar"/>
+    </target>
+
+    <target name="package" depends="build" description="--> Packages all the classes into a jar file.">
+        <mkdir dir="dist"/>
+        <copy file="src/unittest/unittest.xsl"
+              tofile="${classdir}/buildsystem/tasks/unittest.xsl"
+              failonerror="false"/>
+        <jar destfile="${jarfile}">
+            <fileset dir="${classdir}"/>
+        </jar>
+    </target>
+    
+    <target name="clean" depends="init" description="--> Cleans all compiled files.">
+        <delete dir="${classdir}"/>
+    </target>
+    
+    <!-- Remove the deployed jar file -->
+    <target name="cleanJar" depends="init" description="--> Deletes the generated jarfile.">
+        <delete file="${jarfile}"/>
+    </target>
+    
+    <!-- Remove the compiled class files and the deployed jar file -->
+    <target name="fullClean" depends="clean,cleanJar" description="--> Fully cleans.">
+    </target>
+    
+    <!-- Generate Javadocs for the custom buildsystem classes
+    leaving them in $docdir -->
+    <target name="javadoc" depends="init" description="--> Generates the javadocs.">
+        <javadoc destdir="${docdir}" Version="yes" Author="yes">
+            <fileset dir="${srcdir}"/>
+        </javadoc>
+    </target>
+    
+    <!-- Remove the generated java docs -->
+    <target name="cleanJavaDoc" depends="init" description="--> Cleans the generated javadoc.">
+        <delete dir="${docdir}"/>
+    </target>
+    
+    <!-- compile and run the unittests. -->
+    <target name="unittest" description="--> Compiles and executes the unittests.">
+        <mkdir dir="reports"/>
+        <mkdir dir="build"/>
+        <javac destdir="build/" debug="true" classpath="${antlibs}" listfiles="true">
+            <classpath>
+                <pathelement location="build"/>
+                <pathelement location="src/classes"/>
+            </classpath>
+            <src path="test"/>
+        </javac>
+        <junit printsummary="yes">
+            <classpath>
+                <pathelement location="build"/>
+                <pathelement location="src/classes"/>
+            </classpath>
+
+            <formatter type="xml"/>
+            <batchtest todir="reports">
+                <fileset dir="test/">
+                    <include name="**/*UnitTest.java"/>
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+</project>

@@ -1,0 +1,47 @@
+!*****************************************************************************!
+! MMS possible return code for getPendingMsg function					!
+! created on 14-03-2000							!
+!*****************************************************************************!
+!    Return Code		          Description 	
+!    ***********			    ***********
+! -62	(MMS__BADPROCNUM)		Queue number out of range. 	
+! -254(MMS__BADNAME) 		Invalid name string was specified. 	
+! -288(MMS__BADQTYPE) 		Invalid queue type. 	
+! -106(MMS__DECLARED) 		The queue number is already attached to another application 
+!					or process. 	
+! -276(MMS__NETERROR) 		Network error resulted in a communications link abort. 	
+! -302(MMS__NOACCESS) 		No access to the resource. The address of the specified name 
+!					is invalid. 	
+! -300(MMS__NOACL)		The queue access control file could not be found. 	
+! -166(MMS__NOOBJECT) 		No such queue name. For a global queue reference, this error 
+!					can be caused by a bad default pathname in the MMS configuration 
+!					file. 	
+! -266(MMS__NOTPRIMARYQ)	Queue name or number is not a primary queue. 	
+! -276(MMS__NETERROR) 		Network error resulted in a communications link abort. 	
+! -70 (MMS__NOTDCL) 		Process is not attached to MessageQ. 	
+! -246(MMS__RESRCFAIL) 		Insufficient resources to complete operation. 	
+! -138(MMS__MMSDOWN) 		The specified Message Queue is not running. 	
+! -294(MMS__PREVCALLBUSY) 	Previous call not been completed. 	
+!********************END OF LIST OF RETURN CODE **********************************************
+!
+!********************************************************************************************
+!	LEGEND		Description
+!	******		***********
+!<return value>		The 1(TRUE) or 0(FALSE) value to be return to the calling program.
+!
+!<return Code>		If the <return value> is 0(FALSE), you must specify the return code. 
+!				For the list of return code, please see the top page of this text file.
+!				If the <return value> is 1(TRUE), this column is to be filled with '-'. 
+!
+!<Number of Pending Message> 	If the <return value> is 1(TRUE), this column is to be filled 
+!					with positive integer.
+!					If the <return value> is 0(FALSE), this column is to be filled 
+!					with '-'.
+!******************* END OF LEGEND ***********************************************************
+!
+!<return value>	<return Code>	<Number of Pending Message>	
+	1		-			4
+	1		-			3
+	1		-			2
+	1		-			1
+	1		-			0	

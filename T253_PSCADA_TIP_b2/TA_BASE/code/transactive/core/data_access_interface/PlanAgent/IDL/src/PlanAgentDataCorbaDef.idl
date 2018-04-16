@@ -1,0 +1,671 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/T253_PSCADA_TIP/TA_BASE/transactive/core/data_access_interface/PlanAgent/IDL/src/PlanAgentDataCorbaDef.idl $
+// @author:  Gregg Kirkpatrick
+// @version: $Revision: #5 $
+//
+// Last modification: $DateTime: 2018/02/13 15:02:56 $
+// Last modified by:  $Author: hoa.le $
+//
+// Plan Agent data.
+//
+
+module TA_Base_Core
+{
+        // Basic types
+		typedef unsigned long ParameterNumber;
+        typedef unsigned long StepNumber;
+        typedef unsigned long StepId;
+        typedef unsigned long Seconds;
+        typedef unsigned long Minutes;
+        typedef unsigned long UpdateId;
+        typedef string SessionId;
+
+        typedef unsigned long NodeId;
+        typedef sequence <NodeId> NodeIds;
+                    
+        // Step parameter types
+        typedef string NodePath;
+        typedef sequence<string> StepNames;
+        typedef sequence<string> ParameterNames;
+    typedef sequence<string> StepParameters;
+
+        // Constants
+        const NodeId ROOT_NODE_ID = 1;
+        const unsigned long MAX_UPDATE_ID = 0xFFFFFFFF;
+        const unsigned long MIN_UPDATE_ID = 1;
+        const unsigned short TIS_UNDEFINED_MESSAGE_ID = 0xFFFF;
+        // enums
+        enum ENode
+        { 
+            PLAN_NODE     ,
+            CATEGORY_NODE ,
+			WORKFLOW_NODE,
+			PLANTEMPLATE_NODE,
+			PLANTEMPLATE_INSTANCE_NODE,
+            UNDEFINED_NODE
+        };
+        
+        enum EApprovalState
+        {
+            APPROVED_APPROVAL_STATE  ,
+            UNAPPROVED_APPROVAL_STATE,
+            UNDEFINED_APPROVAL_STATE
+        };
+        
+        enum EPlanType
+        {
+            UNDEFINED_TYPE,
+            VISIBLE_TYPE,
+            INVISIBLE_TYPE
+        };
+
+    enum EActivePlanState
+    {
+        EXECUTING_ACTIVE_PLAN_STATE,
+        PAUSED_ACTIVE_PLAN_STATE,
+        STOPPED_ACTIVE_PLAN_STATE,
+        COMPLETED_ACTIVE_PLAN_STATE,
+        PENDING_ACTIVE_PLAN_STATE,
+        UNDEFINED_ACTIVE_PLAN_STATE,
+        EXPIRED_ACTIVE_PLAN_STATE
+    };
+
+        enum EActiveStepState
+        {
+            EXECUTED_ACTIVE_STEP_STATE  ,
+            SKIPPED_ACTIVE_STEP_STATE   ,
+            UNEXECUTED_ACTIVE_STEP_STATE,
+            FAILED_ACTIVE_STEP_STATE    ,
+            LOADED_ACTIVE_STEP_STATE    ,
+            PAUSED_ACTIVE_STEP_STATE    ,
+            DELAYED_ACTIVE_STEP_STATE    ,
+        WAITING_ACTIVE_STEP_STATE,
+        UNDEFINED_ACTIVE_STEP_STATE
+    };
+
+        enum EPlanStepCompletionStatus
+        {
+            PSCS_FAILURE        ,
+            PSCS_SUCCESS        ,
+            PSCS_TIMEOUT        ,
+            PSCS_ACKNOWLEDGEMENT,
+            PSCS_YES_RESPONSE   ,
+            PSCS_NO_RESPONSE    ,
+            PSCS_PAUSE_RESPONSE , // DP changes
+            PSCS_ABORT_RESPONSE ,
+            PSCS_RETRY_RESPONSE ,
+            PSCS_IGNORE_RESPONSE,
+            PSCS_OK_RESPONSE    ,
+            PSCS_CANCEL_RESPONSE,
+            PSCS_UNDEFINED
+        };
+
+        //enum for Plan Config Update Message Types
+        enum EPlanConfigUpdateType
+        {
+            PCUT_APPROVAL_STATE,
+            PCUT_UPDATE_CATEGORY,
+            PCUT_INSERT_CATEGORY,
+            PCUT_INSERT_CATEGORY_INTO_ROOT,
+            PCUT_DELETE_CATEGORY,
+            PCUT_UPDATE_PLAN,
+            PCUT_INSERT_PLAN,
+            PCUT_INSERT_PLAN_INTO_ROOT,
+            PCUT_DELETE_PLANS,
+            PCUT_MOVE_PLAN,
+            PCUT_COPY_PLAN,
+            PCUT_COPY_PLAN_TO_ROOT,
+            PCUT_MOVE_PLAN_TO_ROOT,
+            PCUT_MOVE_PLAN_FROM_ROOT,
+            PCUT_DELETE_CATEGORY_FROM_ROOT,
+            PCUT_DELETE_PLANS_FROM_ROOT,
+            PCUT_PLAN_TYPE
+        };
+
+        //enum for PlanAgent State Updtae Message Types
+        enum EPlanAgentStateUpdateType
+        {
+            PASUT_PLAN_EXECUTION_HISTORY,
+            PASUT_PLAN_CUSTOMISATION_HISTORY,
+            PASUT_RUN_PLAN,
+            PASUT_TAKE_CONTROL,
+            PASUT_PAUSE_PLAN,
+            PASUT_RESUME_PLAN,
+            PASUT_STOP_PLAN,
+            PASUT_CUSTOMISE_STEP,
+        PASUT_EXECUTE_STEP,
+            PASUT_GET_EDIT_PLAN_LOCK,
+            PASUT_RELEASE_EDIT_PLAN_LOCK,
+            PASUT_ACTIVE_PLAN_UPDATE,
+            PASUT_UPDATE_ID,
+        PASUT_ACTIVE_PLAN_SHARE_DATA,
+            PASUT_MAX
+        };
+
+        // Possible types of errors in step details
+        enum EPlanStepDetailError
+        {
+            PSDE_UNSPECIFIED,
+            PSDE_INVALID
+        };
+        // Plan Agent errors 
+        enum EPlanAgentError
+        {
+            PAE_EDIT_LOCKED_BY_OPERATOR,
+            PAE_CANNOT_RELEASE_EDIT_LOCK,
+            PAE_NO_PLAN_NAME,
+			PAE_INVALID_PLAN_NAME,
+            PAE_NAME_NOT_UNIQUE,
+            PAE_CANNOT_SAVE_APPROVED_PLAN,
+            PAE_CANNOT_DELETE_APPROVED_PLAN,
+            PAE_CANNOT_OVERWRITE_APPROVED_PLAN,
+            PAE_CANNOT_OVERWRITE_EDITED_PLAN,
+            PAE_CANNOT_OVERWRITE_CATEGORY,
+            PAE_NOT_APPROVED,
+            PAE_CANNOT_SKIP_UNSKIPPABLE,
+            PAE_NOT_PLAN,
+            PAE_NOT_CATEGORY,
+            PAE_PARENT_NOT_CATEGORY,
+            PAE_EXCEED_MAX_CATAGORY_LEVEL,
+            PAE_CANNOT_DELETE_NON_EMPTY_CATAGORY,
+            PAE_PLAN_HAS_ACTIVE_INSTANCE,
+            PAE_CANNOT_CREATE_PLAN,
+            PAE_CANNOT_DELETE_REFERENCED_PLAN,
+            PAE_DATABASE_ERROR,
+            PAE_DATA_ERROR,
+            PAE_WRONG_STATE_TO_CUSTOMISE_ACTIVE_PLAN, 
+            PAE_INITIALISATION_FAILURE,
+            PAE_NO_RESOURCE, 
+            PAE_STEP_TYPE_AND_PARAMETER_MISMATCH,
+            PAE_UNKNOWN_ERROR,
+            PAE_EXCEEDED_RUNNING_PLANS_FOR_ENTITY,
+            PAE_PLAN_PAUSE_ERROR, 
+            PAE_PLAN_RESUME_ERROR, 
+            PAE_PLAN_STOP_ERROR, 
+            PAE_PLAN_UNAPPROVE_ERROR,
+            PAE_PLAN_EXEC_ERROR,
+            PAE_PLAN_APPROVE_ERROR
+        };
+        // Possible causes of PlanNotFound exception
+        enum EPlanNotFoundError
+        {
+            PNFE_FAIL_FETCH_ACTIVE_LIST_STEP,
+            PNFE_INSTANCE_NOT_IN_BULLETIN_BOARD,
+            PNFE_INSTANCE_NOT_FOUND,
+            PNFE_MESSAGE_FOR_UNKNOWN_PLAN_DISCARDED,
+            PNFE_NODE_NOT_EXIST
+        };
+
+        // Handle nodes (they can be plans or categories)
+        struct NodeSummary
+        {
+            NodeId         node;
+            NodeId           parent;
+            string         name;
+            ENode          type;
+            EApprovalState approvalState;
+            boolean        hasChildren;
+            boolean        hasApprovedDescendant;
+            boolean        hasUnapprovedDescendant;
+        };
+
+        struct PlanDetail
+        {
+            NodeId parent;
+            NodeId plan;
+        ENode  nodeType;
+            string name;
+            string description;
+            EApprovalState approvalState;
+            string modifiedBy;
+            string modifiedTime;
+            string approvalChangedBy;
+            string approvalChangedTime;
+        };
+
+        struct CategoryDetail
+        {
+            NodeId parent;
+            NodeId category;
+            string name;
+            string description;
+        };
+
+        union NodeDetail switch (ENode)
+        {
+            case PLAN_NODE:
+    case WORKFLOW_NODE:
+                PlanDetail plan;
+
+            case CATEGORY_NODE:
+                CategoryDetail category;
+        };
+
+        typedef sequence<NodeSummary> SiblingNodes;
+
+    struct ActivePlanId
+    {
+        unsigned long plan;
+        unsigned long instance;
+        unsigned long location;
+    };
+        struct ActiveStepDetail
+        {
+        unsigned long id;
+        unsigned long pos;
+            EActiveStepState state;
+            string name;
+            string remark;
+        string alarmId;
+        };
+
+        typedef sequence<ActiveStepDetail> ActiveStepDetails;
+
+        struct ExecutionHistory
+        {
+            UpdateId activeUpdateId;
+            ActiveStepDetails details;
+        };
+
+        struct StepCustomisableDetail
+        {
+        StepNumber id;
+            boolean    skip;
+            boolean    ignoreFailure;
+            Seconds    delay;
+        };
+
+        typedef sequence<StepCustomisableDetail> StepCustomisableDetails;
+
+        struct CustomisationHistory
+        {
+            UpdateId customUpdateId;
+            StepCustomisableDetails details;
+        };
+
+        struct StepDetail
+        {
+            StepNumber position;
+        StepNumber id;
+        StepId pkey;
+            string     name;
+            string     description;
+        string graph;
+        long type;
+            boolean    skip;
+            boolean    skippable;
+            boolean    ignoreFailure;
+			boolean    nowait;
+            Seconds    delay;
+        };
+
+        typedef sequence<StepDetail> StepDetails; 
+        typedef sequence<StepNumber> StepNumbers;
+        typedef sequence<StepNumber> StepIds;
+
+    struct SequenceFlow
+    {
+        unsigned long pkey;
+        unsigned long id;
+        unsigned long planKey;
+        unsigned long incomingStep;
+        unsigned long outgoingStep;
+        string condition;
+        string graph;
+    };
+
+    typedef sequence<SequenceFlow> SequenceFlows;
+
+    struct PlanCustomisationUpdate
+    {
+        ActivePlanId plan;
+        UpdateId customUpdateId;
+        StepCustomisableDetail detail;
+    };
+
+    struct PlanExecutionUpdate
+    {
+        ActivePlanId plan;
+        UpdateId activeUpdateId;
+        ActiveStepDetail detail;
+    };
+
+    struct ActivePlanDetail
+    {
+        ActivePlanId plan;
+        NodePath path;
+        EActivePlanState activePlanState;
+        UpdateId activeUpdateId;
+        boolean manuallyExecuted;
+        unsigned long triggerEntity;
+        unsigned long timer;
+        unsigned long lastStateTransitionTime;
+        unsigned long instantiationTime;
+        string owner;
+        string session;
+        string remark;
+        string assocAlarmId;
+    };
+
+    typedef sequence<ActivePlanDetail> ActivePlanDetails;
+
+    struct ActivePlanStepsDetail
+    {
+        ActivePlanDetail plan;
+        ActiveStepDetails steps;
+    };
+
+    ////////////////////////////////////////////////////
+    //to support import/export of Plans
+    typedef sequence<ActivePlanStepsDetail> ActivePlanStepsDetails;
+
+    struct KeyValue
+    {
+        string key;
+        string value;
+    };
+
+    typedef sequence<KeyValue> KeyValueSeq;
+
+    struct ActivePlanSharedData
+    {
+        ActivePlanId plan;
+        KeyValueSeq sharedData;
+    };
+
+    typedef sequence<ActivePlanSharedData> ActivePlanSharedDataSeq;
+
+    struct AuxStepParam
+    {
+        ParameterNumber position;
+        string value;
+    };
+
+    typedef sequence<AuxStepParam> AuxStepParameters;
+
+    struct AuxStepDetail
+    {
+        long type;
+        string name;
+        string description;
+        string graph;
+        StepNumber position;
+        StepNumber id;
+        boolean skip;
+        boolean skippable;
+        boolean ignoreFailure;
+        Seconds delay;
+        AuxStepParameters stepParams;
+    };
+
+    typedef sequence<AuxStepDetail> AuxSteps;
+
+    struct AuxSequenceFlow
+    {
+        unsigned long id;
+        unsigned long incomingStep;
+        unsigned long outgoingStep;
+        string graph;
+        string condition;
+    };
+
+    typedef sequence<AuxSequenceFlow> AuxSequenceFlows;
+
+    struct AuxPlanDetail
+    {
+        string name;
+        string description;
+        AuxSteps steps;
+        AuxSequenceFlows sequenceFlows;
+    };
+
+    /////////////////////////////////////////////////
+
+    // Steps
+
+    struct Step
+    {
+        StepDetail detail;
+        StepParameters parameters;
+    };
+
+    typedef sequence<Step> Steps;
+
+    struct Plan
+    {
+        PlanDetail detail;
+        Steps stepseq;
+        SequenceFlows flowseq;
+    };
+
+    //PlanConfigUpdate Structures
+
+
+    //Struct for Update Plan Detail Message
+
+    struct TransferNodeUpdate
+    {
+        NodeId oldParent;
+        NodeSummary summary;
+    };
+
+    struct DeleteNodeUpdate
+    {
+        NodeId parent;
+        NodeIds nodes;
+    };
+
+    struct ApprovalStateUpdate
+    {
+        NodeId plan;
+        EApprovalState approvalState;
+    };
+
+    struct PlanTypeUpdate
+    {
+        NodeId plan;
+        EPlanType planType;
+    };
+
+    typedef sequence<PlanTypeUpdate> PlanTypeUpdates;
+
+    union PlanConfigUpdate switch ( EPlanConfigUpdateType )
+    {
+
+    case PCUT_APPROVAL_STATE:
+        ApprovalStateUpdate approvalState;
+
+    case PCUT_PLAN_TYPE:
+        PlanTypeUpdate planType;
+
+    case PCUT_UPDATE_CATEGORY:
+        NodeSummary updateCategory;
+
+    case PCUT_INSERT_CATEGORY:
+        NodeSummary insertCategory;
+
+    case PCUT_INSERT_CATEGORY_INTO_ROOT:
+        NodeSummary insertCategoryIntoRoot;
+
+    case PCUT_DELETE_CATEGORY:
+        DeleteNodeUpdate deleteCategory;
+
+    case PCUT_UPDATE_PLAN:
+        NodeSummary updatePlan;
+
+    case PCUT_INSERT_PLAN:
+        NodeSummary insertPlan;
+
+    case PCUT_INSERT_PLAN_INTO_ROOT:
+        NodeSummary insertPlanIntoRoot;
+
+    case PCUT_DELETE_PLANS:
+        DeleteNodeUpdate deletePlans;
+
+    case PCUT_MOVE_PLAN:
+        TransferNodeUpdate movePlan;
+
+    case PCUT_COPY_PLAN:
+        NodeSummary copyPlan;
+
+    case PCUT_COPY_PLAN_TO_ROOT:
+        NodeSummary copyPlanToRoot;
+
+    case PCUT_MOVE_PLAN_TO_ROOT:
+        TransferNodeUpdate movePlanToRoot;
+
+    case PCUT_MOVE_PLAN_FROM_ROOT:
+        TransferNodeUpdate movePlanFromRoot;
+
+    case PCUT_DELETE_CATEGORY_FROM_ROOT:
+        NodeId deleteCategoryFromRoot;
+
+    case PCUT_DELETE_PLANS_FROM_ROOT:
+        NodeIds deletePlansFromRoot;
+    };
+
+    struct PlanConfigUpdateData
+    {
+        SessionId session;
+        PlanConfigUpdate configUpdate;
+    };
+
+    //Additional Update for PlanAgent State Update for Agent Synchronisation
+    struct ExecutionHistoryUpdate
+    {
+        ActivePlanId plan;
+        ExecutionHistory history;
+    };
+
+    struct CustomisationHistoryUpdate
+    {
+        ActivePlanId plan;
+        CustomisationHistory history;
+    };
+
+    struct PlanStateUpdate
+    {
+        SessionId session;
+        ActivePlanId plan;
+        string remark;
+        boolean manuExec;
+    };
+
+    struct PlanExecuteStepUpdate
+    {
+        ActivePlanId plan;
+        ActiveStepDetail detail;
+    };
+
+    struct PlanCustomiseStepUpdate
+    {
+        ActivePlanId plan;
+        StepCustomisableDetail detail;
+    };
+
+    struct EditLockUpdate
+    {
+        SessionId session;
+        NodeId plan;
+    };
+
+    union PASUpdate switch ( EPlanAgentStateUpdateType )
+    {
+    case PASUT_RUN_PLAN:
+        PlanStateUpdate runPlanUpdate;
+
+    case PASUT_TAKE_CONTROL:
+        PlanStateUpdate takeControl;
+
+    case PASUT_PAUSE_PLAN:
+        PlanStateUpdate pausePlan;
+
+    case PASUT_RESUME_PLAN:
+        PlanStateUpdate resumePlan;
+
+    case PASUT_STOP_PLAN:
+        PlanStateUpdate stopPlan;
+
+    case PASUT_CUSTOMISE_STEP:
+        PlanCustomiseStepUpdate customisedStep;
+
+    case PASUT_EXECUTE_STEP:
+        PlanExecuteStepUpdate executedStep;
+
+    case PASUT_GET_EDIT_PLAN_LOCK:
+        EditLockUpdate getLockUpdate;
+
+    case PASUT_RELEASE_EDIT_PLAN_LOCK:
+        EditLockUpdate releaseLockUpdate;
+
+    case PASUT_ACTIVE_PLAN_UPDATE:
+        ActivePlanDetail planDetail;
+
+    case PASUT_PLAN_EXECUTION_HISTORY:
+        ExecutionHistoryUpdate executionHistory;
+
+    case PASUT_PLAN_CUSTOMISATION_HISTORY:
+        CustomisationHistoryUpdate customisationHistory;
+
+    case PASUT_UPDATE_ID:
+        UpdateId activeUpdateId;
+
+    case PASUT_ACTIVE_PLAN_SHARE_DATA:
+        ActivePlanSharedData sharedData;
+    };
+
+    struct PASUpdateData
+    {
+        UpdateId pasUpdateId;
+        PASUpdate update;
+    };
+
+    typedef sequence<PASUpdateData> PASUpdateDataSeq;
+
+    struct PASUpdateRequest
+    {
+        UpdateId pasRequestId;
+        string entityName;
+    };
+
+    // Structures
+    struct InteractiveStepData
+    {
+        long type;
+        unsigned long id;
+        StepParameters parameters;
+    };
+
+    struct RpcRequest
+    {
+        long type;
+        unsigned long id;
+        unsigned long requestor; // location of plan
+        unsigned long plan; // plan ID 
+        unsigned long instance; // instance of plan
+        unsigned long step; // interactive step number
+        unsigned long handler; // Id of client
+        unsigned long location; // location id of client
+        StepParameters parameters;
+    };
+
+    struct RpcAck
+    {
+        unsigned long id; // Id of request
+        unsigned long location; // location of plan
+    };
+
+	// IPlanManagerCorbaDef depends on this struct and other agents on IPlanManagerCorbaDef
+	struct CurrentPlanStepDetail
+	{
+		TA_Base_Core::ActivePlanId activePlan; // ID and instance of plan executing the interactive step
+		TA_Base_Core::StepNumber   step;       // interactive step number
+		InteractiveStepData        data;       // additional step-specific info needed to execute the step
+	};
+
+}; // TA_Base_Core
+

@@ -1,0 +1,25 @@
+#!/usr/bin/bash
+
+# Default to the transactive.station script.
+TA_EXEC="transactive.station"
+
+# Determine if the transactive script should be used.
+if [ "occa" = "`hostname`" ]||[ "occb" = "`hostname`" ]
+then
+    TA_EXEC="transactive"
+fi
+
+# Perform the required operation.
+case "$1" in
+    'start')
+       # Start the transactive agents
+       su  transactive -c "source /u01/transactive/.profile; /u01/transactive/bin/$TA_EXEC start nowatson" 2>&1
+       ;;
+    'stop')
+       # Stop the its agents
+       su  transactive -c "source /u01/transactive/.profile; /u01/transactive/bin/$TA_EXEC stop nowatson" 2>&1
+       ;;
+    *)
+        echo "usage: /etc/init.d/transact {start|stop}"
+esac
+

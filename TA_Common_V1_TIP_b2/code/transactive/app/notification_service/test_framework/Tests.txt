@@ -1,0 +1,33 @@
+Change HOST column to SIMULATORHOST and add NOTIFICATIONHOST column.  Need to update NST_Simulator to use these.
+
+
+9 consumers - all combinations of
+TestCommsContext1, TestCommsContext2, *
+999997,999998,*
+
+1 supplier
+TestCommsContext1, 999997
+
+
+SQL query - 
+all messages sent were received by relevant consumers - need to query both NST_MESSAGESSENT and NST_MESSAGESRECEIVED
+all messages received have srcseqnum == expectedseqnum
+
+
+Then add 2nd supplier
+TestCommsContext1, 999998
+
+
+Running 1 notification service on a separate host to the simulator
+
+add additional suppliers - no consumers will receive messages from these suppliers
+Entity Key != 1
+Location Key != 1
+
+
+
+
+TODO but later:
+need to use STAF to start/stop notification services & console mgr 
+rather than sql query use some sort of application that also checks other message fields
+

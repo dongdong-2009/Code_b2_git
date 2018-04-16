@@ -1,0 +1,288 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.RadioTetraAgent.RadioMethodProtocol" ProjectGUID="{16B23F39-0620-458E-9197-A66C4B11F94A}" RootNamespace="app.radio.RadioTetraAgent.RadioMethodProtoc" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/RadioMethodProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..;../../../../../../sdk/include/transactive;../../../../../../sdk/include/cots/boost/boost_1_39_0" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="false" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib stracelib.lib TA_Base_Core_d.lib" OutputFile="../../../../../../build/win32_nd/TA_RadioMethodProtocol_d.lib" AdditionalLibraryDirectories="../../../../../../sdk/lib;../../../../../../sdk/win32_nd;../../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/RadioMethodProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../..;../../../../../../sdk/include/transactive;../../../../../../sdk/include/cots/boost/boost_1_39_0" RuntimeLibrary="2" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="false" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib stracelib.lib TA_Base_Core.lib" OutputFile="../../../../../../build/win32_nr/TA_RadioMethodProtocol.lib" AdditionalLibraryDirectories="../../../../../../sdk/lib;../../../../../../sdk/win32_nr;../../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\src\ITcpEvent.cpp">
+			</File>
+			<File RelativePath=".\src\ITcpMethod.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEvent.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventCallFowardRequest.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventCancelCallForwarding.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventDynamicGroup.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventProfileRequest.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventProfileUpdate.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventQueryCallForwarding.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventReader.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventSubscriberMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\RadioEventSystemStatus.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethod.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodCallForwardRequest.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodCancelCallForwarding.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodDynamicGroup.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodProfileRequest.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodProfileUpdate.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodQueryCallForwarding.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodSubscriberMonitor.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMethodSystemStatus.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\ITcpEvent.h">
+			</File>
+			<File RelativePath=".\src\ITcpMethod.h">
+			</File>
+			<File RelativePath=".\src\RadioDataFramingProtocol.h">
+			</File>
+			<File RelativePath=".\src\RadioEvent.h">
+			</File>
+			<File RelativePath=".\src\RadioEventCallFowardRequest.h">
+			</File>
+			<File RelativePath=".\src\RadioEventCancelCallForwarding.h">
+			</File>
+			<File RelativePath=".\src\RadioEventDynamicGroup.h">
+			</File>
+			<File RelativePath=".\src\RadioEventProfileRequest.h">
+			</File>
+			<File RelativePath=".\src\RadioEventProfileUpdate.h">
+			</File>
+			<File RelativePath=".\src\RadioEventQueryCallForwarding.h">
+			</File>
+			<File RelativePath=".\src\RadioEventReader.h">
+			</File>
+			<File RelativePath=".\src\RadioEventSubscriberMonitor.h">
+			</File>
+			<File RelativePath=".\src\RadioEventSystemStatus.h">
+			</File>
+			<File RelativePath=".\src\RadioMethod.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodCallForwardRequest.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodCancelCallForwarding.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodDynamicGroup.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodProfileRequest.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodProfileUpdate.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodQueryCallForwarding.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodSubscriberMonitor.h">
+			</File>
+			<File RelativePath=".\src\RadioMethodSystemStatus.h">
+			</File>
+			<File RelativePath=".\src\RadioProtocol.h">
+			</File>
+		</Filter>
+		<Filter Name="tests">
+			<Filter Name="autogenerated">
+				<Filter Name="Source Files">
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEvent_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventCallFowardRequest_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventCancelCallForwarding_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventDynamicGroup_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventProfileRequest_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventProfileUpdate_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventQueryCallForwarding_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventReader_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventSubscriberMonitor_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioEventSystemStatus_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethod_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodCallForwardRequest_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodCancelCallForwarding_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodDynamicGroup_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodProfileRequest_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodProfileUpdate_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodQueryCallForwarding_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodSubscriberMonitor_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+					<File RelativePath=".\tests\autogenerated\Source Files\TestSuite_RadioMethodSystemStatus_cpp.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+				<Filter Name="Header Files">
+					<File RelativePath=".\tests\autogenerated\Header Files\TestSuite_RadioEventReader_h.cpp">
+						<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration>
+						<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+							<Tool Name="VCCLCompilerTool"/>
+						</FileConfiguration></File>
+				</Filter>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

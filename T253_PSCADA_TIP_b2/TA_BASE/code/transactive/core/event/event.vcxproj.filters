@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{dec222b1-54a5-46d4-b4a4-bf12a326fae8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EventDeSerialize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventHelperException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventSerialize.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventUtilities.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventZlibDeflate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventZlibInflate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EventDeSerialize.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventHelperException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventSerialize.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventSerializeHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventUtilities.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventZlibDeflate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventZlibInflate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventSubscriber.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

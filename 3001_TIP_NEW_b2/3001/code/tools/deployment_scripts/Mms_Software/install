@@ -1,0 +1,563 @@
+#!/bin/ksh
+
+bin_mod=555
+so_mod=555
+include_mod=444
+udataobj_mod=444
+locale_mod=444
+
+# On HP-UX, the .sl files need to be executable
+sl_mod=555
+
+bin_files=" TMQFORWARD_BMQ_64 TMQFORWARD_BMQ_65 TMQUEUE_BMQ_64 TMQUEUE_BMQ_65 dmqcls dmqgcp dmqjourn dmqld dmqloader dmqqe dmqsbs"
+
+lib_files=""
+
+shlib_files=" libcore.so libdmq.so libdmqcl.so libio.so"
+
+udataobj_files=" mqpatchlev patchnotes.txt"
+
+locale_files=""
+
+MB_files=""
+
+include_files=" p_msg.h p_symbol.h"
+
+MQ_RELEASE=V5.0
+PRODUCT=MessageQ
+PLATFORM=solaris
+PATCH=31
+prename=_pre-$PATCH
+origname=_orig-31
+####################### End of generated section ###################
+
+
+#ident	"@(#)install.static	1.11"
+#****************************************************************
+# Execute the command passed. If it fails, stop the 
+# uninstall and return all files to their original state.
+#
+executeCommand() {
+        #
+        # Execute the command passed.
+        #
+        eval $1
+
+        if [ "$?" -ne 0 ]; then
+                echo "\nERROR: ${1} failed!\n"
+		putItBack
+        fi
+}
+
+#****************************************************************
+# We want to make sure that the machine the customer is installing
+# the patch on matches the machine type where the patch was built
+# and packaged.
+get_os() {
+	OS=`uname -s 2>/dev/null`
+	case "$OS" in
+        Linux)
+		ARCH='rh61'
+		;;
+	OSF1)
+		ARCH="Alpha"
+		;;
+	SunOS)
+		VERSION=`uname -r 2>/dev/null`
+		case "$VERSION" in
+		1*|2*|3*|4*)
+			ARCH="sun4"
+			;;
+		*)
+			ARCH="solaris"
+			;;
+		esac
+		;;
+	
+	HP-UX)
+		if /bin/hp9000s300
+		then
+			ARCH="hp9000s300"
+		else
+			if [ -x /bin/hp-pa -a /bin/hp-pa ]
+			then
+				ARCH="hp9000s700"
+			else
+				ARCH="hp"
+			fi
+		fi
+		;;
+	AIX)
+		ARCH="rs6000"
+		;;
+	UNIX_SV|UNIX_SVR5|UnixWare)
+		ARCH="sco_uw"
+		;;
+	SCO_SV)
+		ARCH="sco"
+		;;
+	*)
+		MACH=`uname -m 2>/dev/null`
+		case "$MACH" in
+		3*)
+			ARCH="sysvx86"
+			;;
+		i386)
+			ARCH="sco_uw"
+			;;
+		esac
+		;;
+	esac
+	echo $ARCH
+}
+
+#****************************************************************
+# If the os we are installing on doesn't match the os on which 
+# the patch was built and packaged on, it is a fatal error.
+#
+checkOS() {
+
+	os=`get_os`
+	platform=`echo $PLATFORM | sed -e 's/\/.*//'`
+
+	if [ "${os}" != ${platform} ]
+	then
+
+		echo "*** Error: Wrong install script for this system - ${os}."
+		echo "           This install script is written for ${platform}."
+		exit
+	fi
+}
+
+#****************************************************************
+# Function to make sure the appropriate directory structure is
+# present, and the necessary environment variables are set.
+#
+checkEnv() {
+
+	if [ -z "$BEADIR" ]
+	then
+		echo "*** Error: BEADIR is not defined"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR" ]
+	then
+		echo "*** Error: Directory BEADIR='$BEADIR' does not exist"
+		exit
+	fi
+
+	if [ -n "$bin_files" -a ! -d "$BEADIR/bin" ]
+	then
+		echo "*** Error: Invalid BEADIR; Directory '$BEADIR/bin' does not exist"
+		exit
+	fi
+
+	if [ -n "$lib_files" -a ! -d "$BEADIR/lib" ]
+	then
+		echo "*** Error: Invalid BEADIR; Directory '$BEADIR/lib' does not exist"
+		exit
+	fi
+
+	if [ -n "$shlib_files" -a ! -d "$BEADIR/lib" ]
+	then
+		echo "*** Error: Invalid BEADIR; Directory '$BEADIR/lib' does not exist"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR" ]
+	then
+		echo "*** Error: Invalid BEADIR; $BEADIR is not a directory"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/bin" ]
+	then
+		echo "*** Error: Invalid BEADIR; '$BEADIR/bin' is not a directory"
+		exit
+	fi
+	if [ ! -f "$BEADIR/bin/dmqgcp" ]
+	then
+		echo "*** Error: Invalid BEADIR; '$BEADIR/bin/dmqgcp' does not exist"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/lib" ]
+	then
+		echo "*** Error: Invalid BEADIR; '$BEADIR/lib' is not a directory"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/udataobj" ]
+	then
+		mkdir $BEADIR/udataobj
+	fi
+} 
+
+
+#****************************************************************
+# Function used on interrupt to stop the install and restore all
+# files touched thus far to their original state.
+#
+putItBack() {
+
+	echo "Rolling back install..."
+	
+	for thisfile in $bin_done 
+	do
+		mv -f $BEADIR/bin/$thisfile$prename $BEADIR/bin/$thisfile
+	done
+
+	for thisfile in $lib_done 
+	do
+		mv -f $BEADIR/lib/$thisfile$prename $BEADIR/lib/$thisfile
+	done
+
+	for thisfile in $ex_done 
+	do
+		mv -f $BEADIR/examples/$thisfile$prename $BEADIR/examples/$thisfile
+	done
+
+	for thisfile in $include_done 
+	do
+		mv -f $BEADIR/include/$thisfile$prename $BEADIR/include/$thisfile
+	done
+
+	for thisfile in $udataobj_done 
+	do
+		mv -f $BEADIR/udataobj/$thisfile$prename $BEADIR/udataobj/$thisfile
+	done
+
+	exit 1
+}
+
+#****************************************************************
+# Move in the patched files, backing up the originals first.
+#
+install_patch() {
+
+	# 
+	# BIN files.
+	#
+	for thisfile in $bin_files
+	do
+		# Check to see if there is an existing copy of the file.  If 
+		# there is not, we do not want to move a new copy in.
+		case "$thisfile" in
+		*_64)
+			v64=1
+			v65=0
+			;;
+		*_65)
+			v64=0
+			v65=1
+			;;
+		*)
+			v64=0
+			v65=0
+			;;
+		esac
+		file=$thisfile
+		thisfile=`echo $file | sed -e 's/_6[45]$//'`
+		if [ $v64 = 1 ]
+		then
+			if [ ! -f "$BEADIR/bin/$thisfile" ]
+			then
+				continue
+			fi
+			if [ "`what $BEADIR/lib/libgp.* | grep 'Release 6\.4'`" = "" ]
+			then
+				continue
+			fi
+		fi
+		if [ $v65 = 1 ]
+		then
+			if [ ! -f "$BEADIR/bin/$thisfile" ]
+			then
+				continue
+			fi
+			if [ "`what $BEADIR/lib/libgp.* | grep 'M3 System'`" = "" ]
+			then
+				continue
+			fi
+		fi
+
+		if [ -f "$BEADIR/bin/$thisfile" ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the install, or wishes to uninstall.
+			#
+			executeCommand "mv -f $BEADIR/bin/$thisfile $BEADIR/bin/$thisfile$prename"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			bin_done="$bin_done $thisfile"
+			#
+			# Move in the patched file.
+			#
+			executeCommand "cp bin/$file $BEADIR/bin/$thisfile"
+			executeCommand "chmod $bin_mod $BEADIR/bin/$thisfile"
+			executeCommand "chgrp $group $BEADIR/bin/$thisfile"
+			if [ "$PLATFORM" != sun4 -o "$id" = root ]
+			then
+			executeCommand "chown $owner $BEADIR/bin/$thisfile"
+			fi
+		else
+			echo "\nWARN: File $BEADIR/bin/$thisfile is missing; not installed."
+		fi
+	done
+	for thisfile in $ex_files
+	do
+		# Check to see if there is an existing copy of the file.  If 
+		# there is not, we do not want to move a new copy in.
+		if [ -f "$BEADIR/examples/$thisfile" ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the install, or wishes to uninstall.
+			#
+			executeCommand "mv -f $BEADIR/examples/$thisfile $BEADIR/examples/$thisfile$prename"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			ex_done="$ex_done $thisfile"
+			#
+			# Move in the patched file.
+			#
+			executeCommand "cp examples/$thisfile $BEADIR/examples"
+			executeCommand "chmod $ex_mod $BEADIR/examples/$thisfile"
+			executeCommand "chgrp $group $BEADIR/examples/$thisfile"
+			if [ "$PLATFORM" != sun4 -o "$id" = root ]
+			then
+			executeCommand "chown $owner $BEADIR/examples/$thisfile"
+			fi
+		else
+			echo "\nWARN: File $BEADIR/examples/$thisfile is missing; not installed."
+		fi
+	done
+
+	# 
+	# LIB files.
+	#
+	for thisfile in $lib_files
+	do
+		# Check to see if there is an existing copy of the file.  If 
+		# there is not, we do not want to move a new copy in.
+		if [ -f "$BEADIR/lib/$thisfile" ]
+		then
+			#
+			# Make a backup of the original file in case the user 
+			# wants to uninstall.
+			#
+			executeCommand "mv -f $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$prename"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			lib_done="$lib_done $thisfile"
+			#
+			# Figure out the mode for the file in lib (HP needs
+			# libraries to be executable).
+			#
+			ext=`echo $thisfile | cut -d. -f 2-2`
+			if [ "$os" = "HP-UX" -a "$ext" = "sl" ]
+			then
+				lib_mod=$sl_mod
+			else
+				lib_mod=$so_mod
+			fi
+
+			#
+			# Move in the patched file.
+			#
+			executeCommand "cp lib/$thisfile $BEADIR/lib"
+			executeCommand "chmod $lib_mod $BEADIR/lib/$thisfile"
+			executeCommand "chgrp $group $BEADIR/lib/$thisfile"
+			if [ "$PLATFORM" != sun4 -o "$id" = root ]
+			then
+			executeCommand "chown $owner $BEADIR/lib/$thisfile"
+			fi
+		else
+			echo "\nWARN: File $BEADIR/lib/$thisfile is missing; not installed."
+		fi
+	done
+	# 
+	# SHLIB files.
+	#
+	for thisfile in $shlib_files
+	do
+		# Check to see if there is an existing copy of the file.
+		# Since libdmqcl.* is new, fake it
+		if [ ! -f "$BEADIR/lib/$thisfile" ]
+		then
+			> "$BEADIR/lib/$thisfile"
+		fi
+		#
+		# Make a backup of the original file in case the user 
+		# wants to uninstall.
+		#
+		executeCommand "mv -f $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$prename"
+		#
+		# Add this file to the list of originals that have been
+		# moved thus far.
+		#
+		lib_done="$lib_done $thisfile"
+		#
+		# Figure out the mode for the file in lib (HP needs
+		# libraries to be executable).
+		#
+		ext=`echo $thisfile | cut -d. -f 2-2`
+		if [ "$os" = "HP-UX" -a "$ext" = "sl" ]
+		then
+			lib_mod=$sl_mod
+		else
+			lib_mod=$so_mod
+		fi
+
+		#
+		# Move in the patched file.
+		#
+		executeCommand "cp lib/$thisfile $BEADIR/lib"
+		executeCommand "chmod $lib_mod $BEADIR/lib/$thisfile"
+		executeCommand "chgrp $group $BEADIR/lib/$thisfile"
+		if [ "$PLATFORM" != sun4 -o "$id" = root ]
+		then
+			executeCommand "chown $owner $BEADIR/lib/$thisfile"
+		fi
+	done
+
+	# 
+	# INCLUDE files.
+	#
+	# We only need to worry about this directory if we are installing on top 
+	for thisfile in $include_files
+	do
+		if [ -f "$BEADIR/include/$thisfile" ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/include/$thisfile $BEADIR/include/$thisfile$prename"
+
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			include_done="$include_done $thisfile"
+	
+			#
+			# Move in the patched file.
+			#
+			executeCommand "cp include/$thisfile $BEADIR/include"
+			executeCommand "chmod $include_mod $BEADIR/include/$thisfile"
+			executeCommand "chgrp $group $BEADIR/include/$thisfile"
+			if [ "$PLATFORM" != sun4 -o "$id" = root ]
+			then
+			executeCommand "chown $owner $BEADIR/include/$thisfile"
+			fi
+		else
+			echo "\nWARN: File $BEADIR/include/$thisfile is missing; not installed."
+		fi
+
+	done
+
+	#
+	# UDATAOBJ files.
+	#
+	for thisfile in $udataobj_files
+	do
+		#
+		# The only files we are prepared to move into udataobj
+		# are patchlev and binfiles. If this is the first time
+		# the customer is installing a patch, these files will
+		# not already exist, so don't worry about backing them up.
+		#
+		if [ -s ${BEADIR}/udataobj/$thisfile ]; then
+
+			#
+			# Move the original to a backup in case the user
+			# interrupts the install.
+			#
+			executeCommand "mv -f $BEADIR/udataobj/$thisfile $BEADIR/udataobj/$thisfile$prename"
+
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			udataobj_done="$udataobj_done $thisfile"
+
+		fi
+
+		#
+		# Move in the patched file.
+		#
+		executeCommand "cp udataobj/$thisfile $BEADIR/udataobj"
+		executeCommand "chmod $udataobj_mod $BEADIR/udataobj/$thisfile"
+		executeCommand "chgrp $group $BEADIR/udataobj/$thisfile"
+		if [ "$PLATFORM" != sun4 -o "$id" = root ]
+		then
+		executeCommand "chown $owner $BEADIR/udataobj/$thisfile"
+		fi
+
+	done
+
+}
+
+getOwner() {
+
+	echo "Enter owner for patch files: "
+	read owner
+	if [ -z "$owner" ]
+	then
+		echo "*** Error: No owner specified"
+		exit
+	fi
+
+	echo "Enter group for patch files: "
+	read group
+	if [ -z "$group" ]
+	then
+		echo "*** Error: No group specified"
+		exit
+	fi
+
+}
+
+#********** MAIN ***************
+
+export BEADIR
+
+checkOS
+checkEnv
+getOwner
+
+if [ "$PLATFORM" = sun4 ]
+then
+	id=`id | sed -e 's/).*//' -e 's/.*(//'`
+	export id
+else
+	#doesn't matter
+	id=root
+fi
+
+#
+# The algorithm will be to backup a file, then move the patched
+# file in. If the backup or move fails, put everything back to
+# the initial state. The install is all or none.
+#
+bin_done=""
+lib_done=""
+include_done=""
+udataobj_done=""
+locale_done=""
+ex_done=""
+#
+# Set up an interrupt routine.
+#
+trap "putItBack" 1 2 3 15
+install_patch
+exit 0

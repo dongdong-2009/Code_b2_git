@@ -1,0 +1,42 @@
+
+// 1. to test adding subscribers
+
+clearsim
+loadsim RadioSimulator_RAD0003_add.ini
+loadsim RadioSimulator.ini
+loadsim TrainCoreFunctions.ini
+loadsim TrainCctv.ini
+loadsim TrainOccCalls.ini
+loadsim TrainDriverCalls.ini
+loadsim TrainPec.ini
+loadsim TrainPa.ini
+loadsim TrainTis.ini
+loadsim TrainMpuChangeover.ini
+
+loadsim RadioMonitorSimulator.ini
+loadsim RadioSubscriberSupport.ini
+loadsim IncomingCallSupport.ini
+loadsim OutgoingCall_Single2Billy.ini
+loadsim CatchAll.ini
+showsim
+
+// 2. to test deleting subscribers
+
+clearsim
+loadsim RadioSimulator_RAD0003_del.ini
+loadsim RadioSimulator.ini
+loadsim TrainCoreFunctions.ini
+loadsim TrainCctv.ini
+loadsim TrainOccCalls.ini
+loadsim TrainDriverCalls.ini
+loadsim TrainPec.ini
+loadsim TrainPa.ini
+loadsim TrainTis.ini
+loadsim TrainMpuChangeover.ini
+
+loadsim RadioMonitorSimulator.ini
+loadsim RadioSubscriberSupport.ini
+loadsim IncomingCallSupport.ini
+loadsim OutgoingCall_Single2Billy.ini
+loadsim CatchAll.ini
+showsim

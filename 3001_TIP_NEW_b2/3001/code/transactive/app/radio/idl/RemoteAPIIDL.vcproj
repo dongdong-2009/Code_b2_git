@@ -1,0 +1,35 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.RemoteAPIIDL" ProjectGUID="{F11E2B63-FECA-1BAD-81A2-CAD276CE83C9}" RootNamespace="RemoteAPIIDL" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\output" IntermediateDirectory=".\output\Debug" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="0">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" AdditionalOptions="" AdditionalIncludeDirectories="" TypeLibraryName="$(InputName).tlb" HeaderFileName="$(InputName).h" InterfaceIdentifierFileName="$(InputName)_i.c" ProxyFileName="$(InputName)_p.c"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\output" IntermediateDirectory=".\output\Release" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="0">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" AdditionalOptions="" AdditionalIncludeDirectories="" TypeLibraryName="$(InputName).tlb" HeaderFileName="$(InputName).h" InterfaceIdentifierFileName="$(InputName)_i.c" ProxyFileName="$(InputName)_p.c"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Idl Files" Filter="idl">
+			<File RelativePath=".\RemoteAPI.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=S.cpp -C../radio_mft_agent\src RemoteAPI.idl&#13;&#10;" Outputs="../radio_mft_agent\src/$(InputName).cpp;../radio_mft_agent\src/$(InputName).h;../radio_mft_agent\src/$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\bin\x86_win32\omniidl -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=S.cpp -C../radio_mft_agent\src RemoteAPI.idl&#13;&#10;" Outputs="../radio_mft_agent\src/$(InputName).cpp;../radio_mft_agent\src/$(InputName).h;../radio_mft_agent\src/$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

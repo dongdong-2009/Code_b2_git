@@ -1,0 +1,23 @@
+HKCR
+{
+	AtsComBridge.AtsSoundManager.1 = s 'AtsSoundManager Class'
+	{
+		CLSID = s '{45DC4630-A275-4D48-A255-782C2FF672C9}'
+	}
+	AtsComBridge.AtsSoundManager = s 'AtsSoundManager Class'
+	{
+		CLSID = s '{45DC4630-A275-4D48-A255-782C2FF672C9}'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {45DC4630-A275-4D48-A255-782C2FF672C9} = s 'AtsSoundManager Class'
+		{
+			ProgID = s 'AtsComBridge.AtsSoundManager.1'
+			VersionIndependentProgID = s 'AtsComBridge.AtsSoundManager'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'both'
+			}
+		}
+	}
+}

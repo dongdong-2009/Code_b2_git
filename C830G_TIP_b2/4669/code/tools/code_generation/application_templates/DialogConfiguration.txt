@@ -1,0 +1,23 @@
+[LOCATION]
+# the new project location
+ProjectLocation=app/test-dir/AppName
+# the template project's location, relative to the code directory
+TemplateProject=bus/generic_gui/templates/Dialog
+
+[REPLACE]
+# replace this in filenames and in files
+# eg TemplateDialog.dsw=AppName.dsw will rename the file,
+# and wont watch anything within the file
+
+# these will match both files and patterns within files
+TemplateDialog=AppName
+TEMPLATEDIALOG=APPNAME
+
+# This appears as the window title
+Template Dialog=Application Name
+
+# fix location of 'code' from the new project location
+..\..\..\..=..\..\..
+../../../..=../../..
+
+

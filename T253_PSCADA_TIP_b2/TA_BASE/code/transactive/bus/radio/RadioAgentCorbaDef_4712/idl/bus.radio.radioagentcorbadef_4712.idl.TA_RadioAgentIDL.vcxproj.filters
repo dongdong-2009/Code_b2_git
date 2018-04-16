@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{7c77c641-cc19-41f6-86ab-11e04c42f082}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\IRadioCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IRadioDirectoryCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IRadioSessionCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IRadioStateSynchronisationCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,170 @@
+# The source code in this file is the property of
+# Ripple Systems and is not for redistribution
+# in any form.
+#
+# Source:  $File: $ 
+# Author:  Grace Koh
+# Version: $Revision: $
+#
+# Last modification: $DateTime: $
+# Last modified by:  $Author: $
+
+#=============================== APP ===============================
+
+# dll
+Deploy (
+    Search	    		=> "code/app",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# tlb
+Deploy (
+    Search	    		=> "code/app/",
+    FileNameContains            => "\/.*\.tlb\$/ || \/.*\.TLB\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# exe
+Deploy (
+    Search	    		=> "code/app",
+    FileNameContains            => "\/.*\.exe\$/ || \/.*\.EXE\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "bin",
+);
+
+#=============================== BUS ===============================
+
+# dll
+Deploy (
+    Search	    		=> "code/bus",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# tlb
+Deploy (
+    Search	    		=> "code/bus/",
+    FileNameContains            => "\/.*\.tlb\$/ || \/.*\.TLB\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# exe
+Deploy (
+    Search	    		=> "code/bus",
+    FileNameContains            => "\/.*\.exe\$/ || \/.*\.EXE\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "bin",
+);
+
+#=============================== CORE ==============================
+
+# dll
+Deploy (
+    Search	    		=> "code/core",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# tlb
+Deploy (
+    Search	    		=> "code/core/",
+    FileNameContains            => "\/.*\.tlb\$/ || \/.*\.TLB\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# exe
+Deploy (
+    Search	    		=> "code/core",
+    FileNameContains         	=> "\/.*\.exe\$/ || \/.*\.EXE\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "bin",
+);
+
+#=============================== COTS ==============================
+
+# omniORB dlls
+Deploy (
+    Search	    		=> "code/cots/omniORB/omniORB_4.0.1",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# ACE dlls
+Deploy (
+    Search	    		=> "code/cots/ACE/5_3/ACE_wrappers/bin",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# MFC and OPC DLLS
+Deploy (
+    Search	    		=> "config_9999/H-Hardware_Install",
+    FileNameContains        	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# Teechart
+fileCopy("code/cots/TeeChart/TeeChart5.ocx","lib/");
+
+# Control station video
+fileCopy("code/app/system_control/control_station/res/TransActive.avi","lib/");
+fileCopy("code/app/system_control/control_station/res/transactiveintro1.avi","lib/");
+
+# BCG
+fileCopy("code/cots/BCG/BCGDurationCtrl.ocx","lib/");
+fileCopy("code/cots/BCG/BCGDurationCtrl.lic","lib/");
+
+#============================= CONFIG ==============================
+
+# dlls in config
+Deploy (
+    Search	    		=> "config_9999",
+    FileNameContains      	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+Deploy (
+    Search	    		=> "config_4669",
+    FileNameContains      	=> "\/.*\.dll\$/ || \/.*\.DLL\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "lib",
+);
+
+# sounds
+Deploy (
+    Search	    		=> "config_9999",
+    FileNameContains        	=> "\/.*\.wav\$/ || \/.*\.WAV\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "sounds",
+);
+Deploy (
+    Search	    		=> "config_4669",
+    FileNameContains        	=> "\/.*\.wav\$/ || \/.*\.WAV\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "sounds",
+);
+
+# Graphworx runtime
+fileCopy("config_4669/G-gui/G01-GWX_Runtime","config/G-gui/");
+
+# help files, and ATS pages
+fileCopy("config_9999/G-GUI/G00-Generic/G0002-Help/Runtime/\*","config/G-GUI/G00-Generic/G0002-Help/Runtime/");
+fileCopy("config_4669/G-GUI/G00-Generic/G0002-Help/Runtime/\*","config/G-GUI/G00-Generic/G0002-Help/Runtime/");
+
+# installation and configuration scripts
+Deploy (
+    Search	    		=> "config_9999/H-Hardware_Install/H01-Windows/H0104-Configuration_scripts/",
+    FileNameContains      	=> "\/.*\.bat\$/ || \/.*\.BAT\$\/",
+    DirectoryNameContains 	=> ".",
+    CopyTo          		=> "bin",
+);

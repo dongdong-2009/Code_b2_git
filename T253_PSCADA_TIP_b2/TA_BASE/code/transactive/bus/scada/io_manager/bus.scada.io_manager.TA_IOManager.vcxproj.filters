@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{487f3e6c-4ada-470c-b485-00a66005ba0d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataPointQueueProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IOManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OutputCommandSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolDevice.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolIOBase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolUpdater.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataPointQueueProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataPointProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDeviceCommand.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDeviceData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IIOManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IOManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProtocolDevice.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProtocolIOBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProtocolManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OutputCommandSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolDevice.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolIOBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolUpdater.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+</Project>

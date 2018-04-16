@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.security.duty_monitor_framework</ProjectName>
+    <ProjectGuid>{9545B769-3F73-4144-9FFE-6012610F241D}</ProjectGuid>
+    <RootNamespace>bus.security.duty_monitor_framework</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_DutyMonitorFramework_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/Zm300  %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\duty_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\security\authentication_agent\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataCache.cpp" />
+    <ClCompile Include="src\DefaultRegionAssignmentMatrix.cpp" />
+    <ClCompile Include="src\DutyAgentAccess.cpp" />
+    <ClCompile Include="src\DutyAgentAccessSingleton.cpp" />
+    <ClCompile Include="src\DutyDataStore.cpp" />
+    <ClCompile Include="src\DutyDataStoreSingleton.cpp" />
+    <ClCompile Include="src\DutyMonitorFrameworkException.cpp" />
+    <ClCompile Include="src\DutyRights.cpp" />
+    <ClCompile Include="src\DutyRightsSingleton.cpp" />
+    <ClCompile Include="src\IConfigDataObserver.cpp" />
+    <ClCompile Include="src\IRegionDutyObserver.cpp" />
+    <ClCompile Include="src\ISessionObserver.cpp" />
+    <ClCompile Include="src\ISubsystemDutyObserver.cpp" />
+    <ClCompile Include="src\RegionDutyMatrix.cpp" />
+    <ClCompile Include="src\RegionDutyMatrixElement.cpp" />
+    <ClCompile Include="src\RegionDutyMatrixUpdater.cpp" />
+    <ClCompile Include="src\RegionMatrixDutyUpdateMO.cpp" />
+    <ClCompile Include="src\RegionMatrixSessionUpdateMO.cpp" />
+    <ClCompile Include="src\RemoveLocationDutyMO.cpp" />
+    <ClCompile Include="src\SessionCache.cpp" />
+    <ClCompile Include="src\SubsystemDutyMatrix.cpp" />
+    <ClCompile Include="src\SubsystemDutyMatrixElement.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataCache.h" />
+    <ClInclude Include="src\DbCacheLookupEx.h" />
+    <ClInclude Include="src\DefaultRegionAssignmentMatrix.h" />
+    <ClInclude Include="src\DMFTypeDefs.h" />
+    <ClInclude Include="src\DutyAgentAccess.h" />
+    <ClInclude Include="src\DutyAgentAccessSingleton.h" />
+    <ClInclude Include="src\DutyDataStore.h" />
+    <ClInclude Include="src\DutyDataStoreSingleton.h" />
+    <ClInclude Include="src\DutyMonitorFramework.h" />
+    <ClInclude Include="src\DutyMonitorFrameworkException.h" />
+    <ClInclude Include="src\DutyRights.h" />
+    <ClInclude Include="src\DutyRightsSingleton.h" />
+    <ClInclude Include="src\IConfigDataObserver.h" />
+    <ClInclude Include="src\IRegionDutyObserver.h" />
+    <ClInclude Include="src\ISessionObserver.h" />
+    <ClInclude Include="src\ISubsystemDutyObserver.h" />
+    <ClInclude Include="src\RegionDutyMatrix.h" />
+    <ClInclude Include="src\RegionDutyMatrixElement.h" />
+    <ClInclude Include="src\RegionDutyMatrixUpdater.h" />
+    <ClInclude Include="src\RegionMatrixDutyUpdateMO.h" />
+    <ClInclude Include="src\RegionMatrixSessionUpdateMO.h" />
+    <ClInclude Include="src\SessionCache.h" />
+    <ClInclude Include="src\SubsystemDutyMatrix.h" />
+    <ClInclude Include="src\SubsystemDutyMatrixElement.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\DbCacheLookupEx.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

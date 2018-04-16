@@ -1,0 +1,14 @@
+import sequence common path option param set print ;
+import sync-jamfiles ;
+using msvc ;
+
+path-constant	TOP : . ;
+
+project
+	: build-dir C:/Temp
+	;
+
+if [ option.get "sync" ]
+{
+	sync-jamfiles [ option.get "sync" ] ;
+}

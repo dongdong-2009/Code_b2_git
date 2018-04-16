@@ -1,0 +1,1126 @@
+#########
+# Train 1
+#########
+set train number 1 physical=1 service=101 schedule=1001
+
+# ATC Train Number
+set table AtsTrain 1 2=0x0080
+
+# Location
+set train location 1 1.1.1.0 0 0
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 1 17=0x01
+# TalkativeStatus
+set table AtsTrain 1 18=0x01
+# HoldStatus
+set table AtsTrain 1 19=0x01
+# PlatformAreaId
+set table AtsTrain 1 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 1 22=0x08
+# StalledStatus
+set table AtsTrain 1 23=0x00
+# EvacuationStatus
+set table AtsTrain 1 24=0x00
+# EBStatus
+set table AtsTrain 1 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 1 27=0x01
+# TetraMobileStatus (=AllNormal)
+set table AtsTrain 1 28=0x01
+# PECUStatus Car 1
+set table AtsTrain 1 29=0x55
+# PECUStatus Car 2
+set table AtsTrain 1 30=0x55
+# PECUStatus Car 3
+set table AtsTrain 1 31=0x55
+# CCTVCameraStatus
+set table AtsTrain 1 32=0x01
+# CctvEquipStatus
+set table AtsTrain 1 33=0x01
+# PAStatus
+set table AtsTrain 1 35=0x01
+# Car 1
+# UnderSeat
+set table AtsTrain 1 36=0x01
+# UnderFrame
+set table AtsTrain 1 37=0x01
+# InteriorSmoke
+set table AtsTrain 1 38=0x01
+# ExteriorSmoke
+set table AtsTrain 1 39=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 1 40=0x01
+# UnderFrame
+set table AtsTrain 1 41=0x01
+# InteriorSmoke
+set table AtsTrain 1 42=0x01
+# ExteriorSmoke
+set table AtsTrain 1 43=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 1 44=0x01
+# UnderFrame
+set table AtsTrain 1 45=0x01
+# InteriorSmoke
+set table AtsTrain 1 46=0x01
+# ExteriorSmoke
+set table AtsTrain 1 47=0x01
+# ExternalTemperature
+set table AtsTrain 1 49=0x1b
+# Extinguisher Car 1
+set table AtsTrain 1 50=0x01
+# Extinguisher Car 2
+set table AtsTrain 1 51=0x01
+# Extinguisher Car 3
+set table AtsTrain 1 52=0x01
+# EHS Status Car 1
+set table AtsTrain 1 54=0x5555
+# EHS Status Car 2
+set table AtsTrain 1 56=0x5555
+# EHS Status Car 3
+set table AtsTrain 1 58=0x5555
+# Detrainment Door Car 1
+set table AtsTrain 1 60=0x01
+# Detrainment Door Car 3
+set table AtsTrain 1 61=0x01
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 1 63=0x01
+# DriverConsoleCover Car 1
+set table AtsTrain 1 64=0x01
+# DriverConsoleCover Car 3
+set table AtsTrain 1 65=0x01
+# TrainDoor Status Car 1 A
+set table AtsTrain 1 66=0x1111
+# TrainDoor Status Car 1 B
+set table AtsTrain 1 68=0x1111
+# TrainDoor Status Car 2 A
+set table AtsTrain 1 70=0x1111
+# TrainDoor Status Car 2 B
+set table AtsTrain 1 72=0x1111
+# TrainDoor Status Car 3 A
+set table AtsTrain 1 74=0x1111
+# TrainDoor Status Car 3 B
+set table AtsTrain 1 76=0x1111
+# Emergency Handle Cover Status Car 1
+set table AtsTrain 1 78=0x01
+# Emergency Handle Cover Status Car 2
+set table AtsTrain 1 79=0x01
+# Emergency Handle Cover Status Car 3
+set table AtsTrain 1 80=0x01
+# TTIS Status Car 1
+set table AtsTrain 1 81=0x03
+# TTIS Status Car 2
+set table AtsTrain 1 82=0x03
+# TTIS Status Car 3
+set table AtsTrain 1 83=0x03
+# TimeStamp
+# Year
+set table AtsTrain 1 84=0x07d5
+# Month
+set table AtsTrain 1 86=0x0005
+# Day
+set table AtsTrain 1 88=0x0013
+# Hour
+set table AtsTrain 1 90=0x000b
+# Minute
+set table AtsTrain 1 92=0x002a
+# Second
+set table AtsTrain 1 94=0x0022
+
+
+#########
+# Train 2
+#########
+set train number 2 physical=2 service=102 schedule=1002
+
+# ATC Train Number
+set table AtsTrain 2 2=0x0081
+
+# Location
+set train location 2 1.1.1.0 0 10
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 2 17=0x01
+# TalkativeStatus
+set table AtsTrain 2 18=0x01
+# HoldStatus
+set table AtsTrain 2 19=0x01
+# PlatformAreaId
+set table AtsTrain 2 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 2 22=0x08
+# StalledStatus
+set table AtsTrain 2 23=0x00
+# EvacuationStatus
+set table AtsTrain 2 24=0x00
+# EBStatus
+set table AtsTrain 2 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 2 27=0x01
+# TetraMobileStatus (=AllNormal)
+set table AtsTrain 2 28=0x01
+# PECUStatus Car 1
+set table AtsTrain 2 29=0x55
+# PECUStatus Car 2
+set table AtsTrain 2 30=0x55
+# PECUStatus Car 3
+set table AtsTrain 2 31=0x55
+# CCTVCameraStatus
+set table AtsTrain 2 32=0x01
+# CctvEquipStatus
+set table AtsTrain 2 33=0x01
+# PAStatus
+set table AtsTrain 2 35=0x01
+# Car 1
+# UnderSeat
+set table AtsTrain 2 36=0x01
+# UnderFrame
+set table AtsTrain 2 37=0x01
+# InteriorSmoke
+set table AtsTrain 2 38=0x01
+# ExteriorSmoke
+set table AtsTrain 2 39=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 2 40=0x01
+# UnderFrame
+set table AtsTrain 2 41=0x01
+# InteriorSmoke
+set table AtsTrain 2 42=0x01
+# ExteriorSmoke
+set table AtsTrain 2 43=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 2 44=0x01
+# UnderFrame
+set table AtsTrain 2 45=0x01
+# InteriorSmoke
+set table AtsTrain 2 46=0x01
+# ExteriorSmoke
+set table AtsTrain 2 47=0x01
+# ExternalTemperature
+set table AtsTrain 2 49=0x1b
+# Extinguisher Car 1
+set table AtsTrain 2 50=0x01
+# Extinguisher Car 2
+set table AtsTrain 2 51=0x01
+# Extinguisher Car 3
+set table AtsTrain 2 52=0x01
+# EHS Status Car 1
+set table AtsTrain 2 54=0x5555
+# EHS Status Car 2
+set table AtsTrain 2 56=0x5555
+# EHS Status Car 3
+set table AtsTrain 2 58=0x5555
+# Detrainment Door Car 1
+set table AtsTrain 2 60=0x01
+# Detrainment Door Car 3
+set table AtsTrain 2 61=0x01
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 2 63=0x01
+# DriverConsoleCover Car 1
+set table AtsTrain 2 64=0x01
+# DriverConsoleCover Car 3
+set table AtsTrain 2 65=0x01
+# TrainDoor Status Car 1 A
+set table AtsTrain 2 66=0x1111
+# TrainDoor Status Car 1 B
+set table AtsTrain 2 68=0x1111
+# TrainDoor Status Car 2 A
+set table AtsTrain 2 70=0x1111
+# TrainDoor Status Car 2 B
+set table AtsTrain 2 72=0x1111
+# TrainDoor Status Car 3 A
+set table AtsTrain 2 74=0x1111
+# TrainDoor Status Car 3 B
+set table AtsTrain 2 76=0x1111
+# Emergency Handle Cover Status Car 1
+set table AtsTrain 2 78=0x01
+# Emergency Handle Cover Status Car 2
+set table AtsTrain 2 79=0x01
+# Emergency Handle Cover Status Car 3
+set table AtsTrain 2 80=0x01
+# TTIS Status Car 1
+set table AtsTrain 2 81=0x03
+# TTIS Status Car 2
+set table AtsTrain 2 82=0x03
+# TTIS Status Car 3
+set table AtsTrain 2 83=0x03
+# TimeStamp
+# Year
+set table AtsTrain 2 84=0x07d5
+# Month
+set table AtsTrain 2 86=0x0005
+# Day
+set table AtsTrain 2 88=0x0013
+# Hour
+set table AtsTrain 2 90=0x000b
+# Minute
+set table AtsTrain 2 92=0x002a
+# Second
+set table AtsTrain 2 94=0x0022
+
+
+#
+# Train 3
+#
+set train number 3 physical=3 service=103 schedule=1003
+
+# ATC Train Number
+set table AtsTrain 3 2=0x0082
+
+# Location
+set train location 3 1.7.1.0 0 20
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 3 17=0x01
+# TalkativeStatus
+set table AtsTrain 3 18=0x01
+# HoldStatus
+set table AtsTrain 3 19=0x01
+# PlatformAreaId
+set table AtsTrain 3 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 3 22=0x08
+# StalledStatus
+set table AtsTrain 3 23=0x00
+# EvacuationStatus
+set table AtsTrain 3 24=0x00
+# EBStatus
+set table AtsTrain 3 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 3 27=0x01
+# TetraMobileStatus (=AllNormal)
+set table AtsTrain 3 28=0x01
+# PECUStatus Car 1
+set table AtsTrain 3 29=0x55
+# PECUStatus Car 2
+set table AtsTrain 3 30=0x55
+# PECUStatus Car 3
+set table AtsTrain 3 31=0x55
+# CCTVCameraStatus
+set table AtsTrain 3 32=0x01
+# CctvEquipStatus
+set table AtsTrain 3 33=0x01
+# PAStatus
+set table AtsTrain 3 35=0x01
+# Car 1
+# UnderSeat
+set table AtsTrain 3 36=0x01
+# UnderFrame
+set table AtsTrain 3 37=0x01
+# InteriorSmoke
+set table AtsTrain 3 38=0x01
+# ExteriorSmoke
+set table AtsTrain 3 39=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 3 40=0x01
+# UnderFrame
+set table AtsTrain 3 41=0x01
+# InteriorSmoke
+set table AtsTrain 3 42=0x01
+# ExteriorSmoke
+set table AtsTrain 3 43=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 3 44=0x01
+# UnderFrame
+set table AtsTrain 3 45=0x01
+# InteriorSmoke
+set table AtsTrain 3 46=0x01
+# ExteriorSmoke
+set table AtsTrain 3 47=0x01
+# ExternalTemperature
+set table AtsTrain 3 49=0x1b
+# Extinguisher Car 1
+set table AtsTrain 3 50=0x01
+# Extinguisher Car 2
+set table AtsTrain 3 51=0x01
+# Extinguisher Car 3
+set table AtsTrain 3 52=0x01
+# EHS Status Car 1
+set table AtsTrain 3 54=0x5555
+# EHS Status Car 2
+set table AtsTrain 3 56=0x5555
+# EHS Status Car 3
+set table AtsTrain 3 58=0x5555
+# Detrainment Door Car 1
+set table AtsTrain 3 60=0x01
+# Detrainment Door Car 3
+set table AtsTrain 3 61=0x01
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 3 63=0x01
+# DriverConsoleCover Car 1
+set table AtsTrain 3 64=0x01
+# DriverConsoleCover Car 3
+set table AtsTrain 3 65=0x01
+# TrainDoor Status Car 1 A
+set table AtsTrain 3 66=0x1111
+# TrainDoor Status Car 1 B
+set table AtsTrain 3 68=0x1111
+# TrainDoor Status Car 2 A
+set table AtsTrain 3 70=0x1111
+# TrainDoor Status Car 2 B
+set table AtsTrain 3 72=0x1111
+# TrainDoor Status Car 3 A
+set table AtsTrain 3 74=0x1111
+# TrainDoor Status Car 3 B
+set table AtsTrain 3 76=0x1111
+# Emergency Handle Cover Status Car 1
+set table AtsTrain 3 78=0x01
+# Emergency Handle Cover Status Car 2
+set table AtsTrain 3 79=0x01
+# Emergency Handle Cover Status Car 3
+set table AtsTrain 3 80=0x01
+# TTIS Status Car 1
+set table AtsTrain 3 81=0x03
+# TTIS Status Car 2
+set table AtsTrain 3 82=0x03
+# TTIS Status Car 3
+set table AtsTrain 3 83=0x03
+# TimeStamp
+# Year
+set table AtsTrain 3 84=0x07d5
+# Month
+set table AtsTrain 3 86=0x0005
+# Day
+set table AtsTrain 3 88=0x0013
+# Hour
+set table AtsTrain 3 90=0x000b
+# Minute
+set table AtsTrain 3 92=0x002a
+# Second
+set table AtsTrain 3 94=0x0022
+
+#
+# Train 4
+#
+set train number 4 physical=4 service=104 schedule=1004
+
+# ATC Train Number
+set table AtsTrain 4 2=0x0083
+
+# Location
+set train location 4 1.7.1.0 0 30
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 4 17=0x01
+# TalkativeStatus
+set table AtsTrain 4 18=0x00
+# HoldStatus
+set table AtsTrain 4 19=0x01
+# PlatformAreaId
+set table AtsTrain 4 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 4 22=0x08
+# StalledStatus
+set table AtsTrain 4 23=0x00
+# EvacuationStatus
+set table AtsTrain 4 24=0x00
+# EBStatus
+set table AtsTrain 4 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 4 27=0x01
+# TetraMobileStatus (=AllNormal)
+set table AtsTrain 4 28=0x01
+# PECUStatus Car 1
+set table AtsTrain 4 29=0x55
+# PECUStatus Car 2
+set table AtsTrain 4 30=0x55
+# PECUStatus Car 3
+set table AtsTrain 4 31=0x55
+# CCTVCameraStatus
+set table AtsTrain 4 32=0x01
+# CctvEquipStatus
+set table AtsTrain 4 33=0x01
+# PAStatus
+set table AtsTrain 4 35=0x01
+# Car 1
+# UnderSeat
+set table AtsTrain 4 36=0x01
+# UnderFrame
+set table AtsTrain 4 37=0x01
+# InteriorSmoke
+set table AtsTrain 4 38=0x01
+# ExteriorSmoke
+set table AtsTrain 4 39=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 4 40=0x01
+# UnderFrame
+set table AtsTrain 4 41=0x01
+# InteriorSmoke
+set table AtsTrain 4 42=0x01
+# ExteriorSmoke
+set table AtsTrain 4 43=0x01
+# Car 2
+# UnderSeat
+set table AtsTrain 4 44=0x01
+# UnderFrame
+set table AtsTrain 4 45=0x01
+# InteriorSmoke
+set table AtsTrain 4 46=0x01
+# ExteriorSmoke
+set table AtsTrain 4 47=0x01
+# ExternalTemperature
+set table AtsTrain 4 49=0x1b
+# Extinguisher Car 1
+set table AtsTrain 4 50=0x01
+# Extinguisher Car 2
+set table AtsTrain 4 51=0x01
+# Extinguisher Car 3
+set table AtsTrain 4 52=0x01
+# EHS Status Car 1
+set table AtsTrain 4 54=0x5555
+# EHS Status Car 2
+set table AtsTrain 4 56=0x5555
+# EHS Status Car 3
+set table AtsTrain 4 58=0x5555
+# Detrainment Door Car 1
+set table AtsTrain 4 60=0x01
+# Detrainment Door Car 3
+set table AtsTrain 4 61=0x01
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 4 63=0x01
+# DriverConsoleCover Car 1
+set table AtsTrain 4 64=0x01
+# DriverConsoleCover Car 3
+set table AtsTrain 4 65=0x01
+# TrainDoor Status Car 1 A
+set table AtsTrain 4 66=0x1111
+# TrainDoor Status Car 1 B
+set table AtsTrain 4 68=0x1111
+# TrainDoor Status Car 2 A
+set table AtsTrain 4 70=0x1111
+# TrainDoor Status Car 2 B
+set table AtsTrain 4 72=0x1111
+# TrainDoor Status Car 3 A
+set table AtsTrain 4 74=0x1111
+# TrainDoor Status Car 3 B
+set table AtsTrain 4 76=0x1111
+# Emergency Handle Cover Status Car 1
+set table AtsTrain 4 78=0x01
+# Emergency Handle Cover Status Car 2
+set table AtsTrain 4 79=0x01
+# Emergency Handle Cover Status Car 3
+set table AtsTrain 4 80=0x01
+# TTIS Status Car 1
+set table AtsTrain 4 81=0x03
+# TTIS Status Car 2
+set table AtsTrain 4 82=0x03
+# TTIS Status Car 3
+set table AtsTrain 4 83=0x03
+# TimeStamp
+# Year
+set table AtsTrain 4 84=0x07d5
+# Month
+set table AtsTrain 4 86=0x0005
+# Day
+set table AtsTrain 4 88=0x0013
+# Hour
+set table AtsTrain 4 90=0x000b
+# Minute
+set table AtsTrain 4 92=0x002a
+# Second
+set table AtsTrain 4 94=0x0022
+
+
+
+#########
+# Train 5
+#########
+set train number 5 physical=5 service=105 schedule=1005
+
+# ATC Train Number
+set table AtsTrain 5 2=0x0084
+
+# Location
+set train location 5 1.7.0.0 0 40
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 5 17=0x01
+# TalkativeStatus
+set table AtsTrain 5 18=0x01
+# HoldStatus
+set table AtsTrain 5 19=0x01
+# PlatformAreaId
+set table AtsTrain 5 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 5 22=0x08
+# StalledStatus
+set table AtsTrain 5 23=0x00
+# EvacuationStatus
+set table AtsTrain 5 24=0x00
+# EBStatus
+set table AtsTrain 5 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 5 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 5 63=0x00
+
+#########
+# Train 6
+#########
+set train number 6 physical=6 service=106 schedule=1006
+
+# ATC Train Number
+set table AtsTrain 6 2=0x0085
+
+# Location
+set train location 6 1.7.0.0 0 50
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 6 17=0x01
+# TalkativeStatus
+set table AtsTrain 6 18=0x00
+# HoldStatus
+set table AtsTrain 6 19=0x01
+# PlatformAreaId
+set table AtsTrain 6 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 6 22=0x08
+# StalledStatus
+set table AtsTrain 6 23=0x00
+# EvacuationStatus
+set table AtsTrain 6 24=0x00
+# EBStatus
+set table AtsTrain 6 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 6 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 6 63=0x00
+
+#########
+# Train 7
+#########
+set train number 7 physical=7 service=107 schedule=1007
+
+# ATC Train Number
+set table AtsTrain 7 2=0x0086
+
+# Location
+set train location 7 1.3.2.0 0 60
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 7 17=0x01
+# TalkativeStatus
+set table AtsTrain 7 18=0x01
+# HoldStatus
+set table AtsTrain 7 19=0x01
+# PlatformAreaId
+set table AtsTrain 7 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 7 22=0x08
+# StalledStatus
+set table AtsTrain 7 23=0x00
+# EvacuationStatus
+set table AtsTrain 7 24=0x00
+# EBStatus
+set table AtsTrain 7 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 7 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 7 63=0x00
+
+#########
+# Train 8
+#########
+set train number 8 physical=8 service=108 schedule=1008
+
+# ATC Train Number
+set table AtsTrain 8 2=0x0087
+
+# Location
+set train location 8 1.3.2.0 0 70
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 8 17=0x01
+# TalkativeStatus
+set table AtsTrain 8 18=0x00
+# HoldStatus
+set table AtsTrain 8 19=0x01
+# PlatformAreaId
+set table AtsTrain 8 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 8 22=0x08
+# StalledStatus
+set table AtsTrain 8 23=0x00
+# EvacuationStatus
+set table AtsTrain 8 24=0x00
+# EBStatus
+set table AtsTrain 8 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 8 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 8 63=0x00
+
+#########
+# Train 9
+#########
+set train number 9 physical=9 service=109 schedule=1009
+
+# ATC Train Number
+set table AtsTrain 9 2=0x0088
+
+# Location
+set train location 9 1.9.2.0 0 80
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 9 17=0x01
+# TalkativeStatus
+set table AtsTrain 9 18=0x01
+# HoldStatus
+set table AtsTrain 9 19=0x01
+# PlatformAreaId
+set table AtsTrain 9 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 9 22=0x08
+# StalledStatus
+set table AtsTrain 9 23=0x00
+# EvacuationStatus
+set table AtsTrain 9 24=0x00
+# EBStatus
+set table AtsTrain 9 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 9 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 9 63=0x00
+
+##########
+# Train 10
+##########
+set train number 10 physical=10 service=110 schedule=1010
+
+# ATC Train Number
+set table AtsTrain 10 2=0x0089
+
+# Location
+set train location 10 1.9.2.0 0 90
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 10 17=0x01
+# TalkativeStatus
+set table AtsTrain 10 18=0x00
+# HoldStatus
+set table AtsTrain 10 19=0x01
+# PlatformAreaId
+set table AtsTrain 10 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 10 22=0x08
+# StalledStatus
+set table AtsTrain 10 23=0x00
+# EvacuationStatus
+set table AtsTrain 10 24=0x00
+# EBStatus
+set table AtsTrain 10 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 10 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 10 63=0x00
+
+##########
+# Train 11
+##########
+set train number 11 physical=11 service=111 schedule=1011
+
+# ATC Train Number
+set table AtsTrain 11 2=0x008a
+
+# Location
+set train location 11 1.5.0.0 0 0
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 11 17=0x01
+# TalkativeStatus
+set table AtsTrain 11 18=0x01
+# HoldStatus
+set table AtsTrain 11 19=0x01
+# PlatformAreaId
+set table AtsTrain 11 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 11 22=0x08
+# StalledStatus
+set table AtsTrain 11 23=0x00
+# EvacuationStatus
+set table AtsTrain 11 24=0x00
+# EBStatus
+set table AtsTrain 11 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 11 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 11 63=0x00
+
+##########
+# Train 12
+##########
+set train number 12 physical=12 service=112 schedule=1012
+
+# ATC Train Number
+set table AtsTrain 12 2=0x008b
+
+# Location
+set train location 12 1.5.0.0 0 10
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 12 17=0x01
+# TalkativeStatus
+set table AtsTrain 12 18=0x00
+# HoldStatus
+set table AtsTrain 12 19=0x01
+# PlatformAreaId
+set table AtsTrain 12 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 12 22=0x08
+# StalledStatus
+set table AtsTrain 12 23=0x00
+# EvacuationStatus
+set table AtsTrain 12 24=0x00
+# EBStatus
+set table AtsTrain 12 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 12 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 12 63=0x00
+
+##########
+# Train 13
+##########
+set train number 13 physical=13 service=113 schedule=1013
+
+# ATC Train Number
+set table AtsTrain 13 2=0x008c
+
+# Location
+set train location 13 1.5.1.0 0 20
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 13 17=0x01
+# TalkativeStatus
+set table AtsTrain 13 18=0x01
+# HoldStatus
+set table AtsTrain 13 19=0x01
+# PlatformAreaId
+set table AtsTrain 13 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 13 22=0x08
+# StalledStatus
+set table AtsTrain 13 23=0x00
+# EvacuationStatus
+set table AtsTrain 13 24=0x00
+# EBStatus
+set table AtsTrain 13 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 13 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 13 63=0x00
+
+##########
+# Train 14
+##########
+set train number 14 physical=14 service=114 schedule=1014
+
+# ATC Train Number
+set table AtsTrain 14 2=0x008d
+
+# Location
+set train location 14 1.5.1.0 0 30
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 14 17=0x01
+# TalkativeStatus
+set table AtsTrain 14 18=0x00
+# HoldStatus
+set table AtsTrain 14 19=0x01
+# PlatformAreaId
+set table AtsTrain 14 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 14 22=0x08
+# StalledStatus
+set table AtsTrain 14 23=0x00
+# EvacuationStatus
+set table AtsTrain 14 24=0x00
+# EBStatus
+set table AtsTrain 14 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 14 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 14 63=0x00
+
+##########
+# Train 15
+##########
+set train number 15 physical=15 service=115 schedule=1015
+
+# ATC Train Number
+set table AtsTrain 15 2=0x008e
+
+# Location
+set train location 15 1.11.2.0 0 40
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 15 17=0x01
+# TalkativeStatus
+set table AtsTrain 15 18=0x01
+# HoldStatus
+set table AtsTrain 15 19=0x01
+# PlatformAreaId
+set table AtsTrain 15 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 15 22=0x08
+# StalledStatus
+set table AtsTrain 15 23=0x00
+# EvacuationStatus
+set table AtsTrain 15 24=0x00
+# EBStatus
+set table AtsTrain 15 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 15 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 15 63=0x00
+
+
+##########
+# Train 16
+##########
+set train number 16 physical=16 service=116 schedule=1016
+
+# ATC Train Number
+set table AtsTrain 16 2=0x008f
+
+# Location
+set train location 16 1.11.2.0 0 50
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 16 17=0x01
+# TalkativeStatus
+set table AtsTrain 16 18=0x00
+# HoldStatus
+set table AtsTrain 16 19=0x01
+# PlatformAreaId
+set table AtsTrain 16 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 16 22=0x08
+# StalledStatus
+set table AtsTrain 16 23=0x00
+# EvacuationStatus
+set table AtsTrain 16 24=0x00
+# EBStatus
+set table AtsTrain 16 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 16 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 16 63=0x00
+
+
+##########
+# Train 17
+##########
+set train number 17 physical=17 service=117 schedule=1017
+
+# ATC Train Number
+set table AtsTrain 17 2=0x0090
+
+# Location
+set train location 17 1.5.2.0 0 60
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 17 17=0x01
+# TalkativeStatus
+set table AtsTrain 17 18=0x01
+# HoldStatus
+set table AtsTrain 17 19=0x01
+# PlatformAreaId
+set table AtsTrain 17 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 17 22=0x08
+# StalledStatus
+set table AtsTrain 17 23=0x00
+# EvacuationStatus
+set table AtsTrain 17 24=0x00
+# EBStatus
+set table AtsTrain 17 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 17 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 17 63=0x00
+
+
+##########
+# Train 18
+##########
+set train number 18 physical=18 service=118 schedule=1018
+
+# ATC Train Number
+set table AtsTrain 18 2=0x0091
+
+# Location
+set train location 18 1.11.1.0 0 70
+
+# HeadCabDirection (=1 =DownDirection)
+set table AtsTrain 18 17=0x01
+# TalkativeStatus
+set table AtsTrain 18 18=0x00
+# HoldStatus
+set table AtsTrain 18 19=0x01
+# PlatformAreaId
+set table AtsTrain 18 20=0x0000
+# TrainReadinessMode (=AM_Normal-Mainline Off Service)
+set table AtsTrain 18 22=0x08
+# StalledStatus
+set table AtsTrain 18 23=0x00
+# EvacuationStatus
+set table AtsTrain 18 24=0x00
+# EBStatus
+set table AtsTrain 18 25=0x00
+
+#
+# OA1 Subset
+#
+# OA1 Validity
+set table AtsTrain 18 27=0x00
+
+#
+# OA2 Subset
+#
+# Validity
+set table AtsTrain 18 63=0x00

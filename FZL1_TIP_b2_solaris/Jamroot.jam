@@ -1,0 +1,406 @@
+import "class" : new ;
+import os path string assert print sequence option path project param modules errors common ;
+import ta-path ta-project ta-version ;
+
+path-constant	TOP							: . ;
+path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
+constant 		USE-PCH						: true ;
+constant		TA_Path						: [ new ta-path ] ;
+
+include $(TOP)/config.jam ;
+
+if $(config.p4.sync) = true
+{
+	local force-sync-option = "" ;
+	if $(config.p4.force-sync) = true
+	{
+		force-sync-option = -f ;
+	}
+	local branch = [ $(TA_Path).branch ] ;
+	local cmd = [ sequence.join "$(config.p4.command)"
+								"-p $(config.p4.port)"
+								"-u $(config.p4.user)"
+								"-P $(config.p4.password)"
+								"-c $(config.p4.client)"
+								"sync $(force-sync-option) //depot/$(branch)/..."
+								: " " ] ;
+
+	local result = [ SHELL "$(cmd) 2>&1" ] ;
+	echo $(result) ;
+	local m = [ MATCH ("^//depot/$(branch)/... - file\\(s\\) up-to-date.") : $(result) ] ;
+
+	if ! $(m)
+	{
+		SHELL [ sequence.join [ common.rm-command ] $(Project_Dependency_File) : " " ] ;
+	}
+}
+
+import cots ;
+cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) ;
+constant Cots : [ cots.create $(config.cots) ] ;
+
+import sqlgen ;
+sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
+
+rule jamfiles ( )
+{
+	if ! $(.jamfiles)
+	{
+		.jamfiles = [ path.glob-tree [ $(TA_Path).transactive base proj ] : Jamfile.jam ] ;
+		.jamfiles += [ path.glob [ $(TA_Path).paths base : proj : code base proj ] : Jamfile.jam ] ;
+	}
+	return $(.jamfiles) ;
+}
+
+constant TA_Projects : [ ta-project.create [ jamfiles ] : $(Project_Dependency_File) ] ;
+
+if [ os.on-unix ]
+{
+	constant OPERATING_SYSTEM	: [ os.name ] ;
+	constant OS_VERSION			: __OSVERSION__=5 ;
+	constant OP_SYS_VERSION 	: [ string.words [ SHELL "uname -r" ] ] ;
+	constant ARCHITECTURE		: [ string.words [ SHELL "arch" ] ] ;
+	switch [ string.words [ SHELL "uname -p | tr A-Z a-z" ] ]
+	{
+		case sparc		: constant PROCESSOR : __sparc__ ;
+		case i[356]86	: constant PROCESSOR : __x86__ ;
+		case unknown	: constant PROCESSOR : __x86__ ;
+	}
+
+	constant gcc-version	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	local options = ;
+	local preprocessor-definitions = STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS $(PROCESSOR) $(OPERATING_SYSTEM) $(OS_VERSION) ;
+	if [ os.name ] = SOLARIS
+	{
+		preprocessor-definitions += __sunos__ ;
+	}
+	options += -D$(preprocessor-definitions) ;
+
+	local force-includes = typeinfo string memory cstdlib climits string.h stdio.h stdint.h ;
+	if $(USE-PCH) = true
+	{
+		force-includes = pch.hpp ;
+	}
+	options += "-include $(force-includes)" ;
+
+	options += -fpermissive ;
+	if [ ta-version.ge $(gcc-version) : 4.0.0 ]
+	{
+		options += -pthread ;
+	}
+	else
+	{
+		options += -pthreads ;
+	}
+
+	if $(gcc-version) = 3.4.3
+	{
+		using gcc : 3.4.3 : /usr/sfw/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
+	}
+	else
+	{
+		using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
+	}
+}
+else
+{
+	constant msvc-version 	: $(config.msvc-version) ; # 9.0 12.0 14.1
+	local options = ;
+	local preprocessor-definitions = _USE_32BIT_TIME_T __OSVERSION__=4 __WIN32__ __x86__ __NT__ WIN32 _AFXDLL ;
+	options += -D$(preprocessor-definitions) ;
+	if $(USE-PCH)
+	{
+		options += "/FI pch.hpp" ;
+	}
+	if [ ta-version.ge $(msvc-version) : 14.1 ]
+	{
+		options += /FS ;
+	}
+	using msvc : $(msvc-version) : : <cxxflags>$(options) ;
+
+	# use boost
+	local boost-version = [ $(Cots).get boost : version-numbers ] ;
+	boost-version = $(boost-version:J=_) ;
+	local include-path = [ path.native [ $(Cots).get boost : include-path ] ] ;
+	local library-path = [ path.native [ $(Cots).get boost : library-path ] ] ;
+	using boost : $(boost-version) : <include>$(include-path) <library>$(library-path) ;
+	import boost ;
+	boost.use-project $(boost-version) ;
+}
+
+import omniidl ; # must after 'using msvc'
+omniidl.init [ $(Cots).get omniorb : omniidl ] : [ $(Cots).get omniorb : omniidl-options ] : [ $(TA_Path).transactive base proj ] ;
+
+rule current-ta-project.get ( function + )
+{
+	local proj = [ project.current ] ;
+	return [ ta-project.transform [ $(TA_Projects).find [ $(proj).get location ] ] : $(function) ] ;
+}
+
+rule ta-install ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	install $(name)
+		: [ current-ta-project.get location-based-target-id ]
+		: $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule ta-install-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	local debug-installation-path = [ current-ta-project.get installation-path debug ] ;
+	local release-installation-path = [ current-ta-project.get installation-path release ] ;
+	ta-install $(name)
+		: $(sources)
+		: <install-type>LIB
+		  <variant>debug:<location>$(debug-installation-path)
+		  <variant>release:<location>$(release-installation-path)
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule ta-install-exe ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	local debug-installation-path = [ current-ta-project.get installation-path debug ] ;
+	local release-installation-path = [ current-ta-project.get installation-path release ] ;
+	ta-install $(name)
+		: $(sources)
+		: <install-type>EXE
+		  <variant>debug:<location>$(debug-installation-path)
+		  <variant>release:<location>$(release-installation-path)
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule talib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	lib $(name)
+		: $(sources)
+		: [ get-transactive-includes ]
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+	ta-install-lib library : $(name) : $(requirements) : $(default-build) : $(usage-requirements) ;
+}
+
+rule idl-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	local idl-skeleton-path = [ path.native [ current-ta-project.get idl-skeleton-path ] ] ;
+	if ! $(sources)
+	{
+		local src-path = [ current-ta-project.get src-path ] ;
+		sources = [ path.glob $(src-path) : *.idl ] ;
+		sources = src/$(sources:BS) ;
+	}
+	talib $(name)
+		: $(sources)
+		: <link>static <omniidl-out-dir>$(idl-skeleton-path)
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule ta-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	if ! $(sources) # TODO: search .cpp .c
+	{
+		local src-path = [ current-ta-project.get src-path ] ;
+		sources = [ path.glob $(src-path) : *.cpp ] ;
+		sources = src/$(sources:BS) ;
+	}
+	if [ os.on-windows ] && ( $(USE-PCH) = true ) # TODO: shared pch
+	{
+		cpp-pch pch : $(TOP)/pch.hpp : $(requirements) <link>static ;
+		sources += pch ;
+	}
+	talib $(name)
+		: $(sources)
+		: <link>static
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule ta-dlib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	talib $(name)
+		: $(sources)
+		: <link>shared <toolset>gcc:<cflags>-fPIC
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+}
+
+rule ta-exe ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params sources requirements default-build usage-requirements ;
+	if ! $(sources)
+	{
+		src-path = [ current-ta-project.get src-path ] ;
+		sources = [ path.glob $(src-path) : *.cpp ] ;
+		sources = src/$(sources:BS) ;
+	}
+	if [ os.on-windows ] && ( $(USE-PCH) = true )
+	{
+		cpp-pch pch : $(TOP)/pch.hpp ;
+		sources += pch ;
+	}
+
+	local project-level-libraries = ;
+	if [ current-ta-project.get is-project-level ]
+	{
+		project-level-libraries = TA_IRS_Bus TA_IRS_Core ;
+	}
+
+	local ta-libraries = [ ta-project.transform [ $(TA_Projects).find $(project-level-libraries) TA_Base_Bus TA_Base_Core ] : target-id ] ;
+	local boost-libraries = [ $(Cots).get boost : library-names ] ;
+	exe $(name)
+		: $(sources)
+		  $(ta-libraries)
+		  [ $(Cots).get-libraries ]
+		: <toolset>msvc:<library>/boost//$(boost-libraries)/<link>static
+		  [ get-transactive-includes ]
+		  $(requirements) : $(default-build) : $(usage-requirements)
+		;
+	ta-install-exe executables : $(name) : $(requirements) : $(default-build) : $(usage-requirements) ;
+}
+
+rule get-transactive-includes ( )
+{
+	local includes = [ sequence.transform path.native : [ $(TA_Path).includes ] ] ;
+	return <include>$(includes) ;
+}
+
+rule get-project-requirements ( )
+{
+	.project-requirements ?=
+		<warnings>off
+		<runtime-link>shared
+		[ $(Cots).get-includes ] <include>$(TOP)
+	;
+	return $(.project-requirements) ;
+}
+
+if [ os.on-unix ] && ( $(USE-PCH) = true )
+{
+	cpp-pch pch
+		: $(TOP)/pch.hpp
+		: [ get-project-requirements ] <link>static
+		;
+	project : requirements <dependency>pch ;
+}
+
+for ta-project in [ $(TA_Projects).projects ]
+{
+	use-project [ $(ta-project).id ] : [ $(ta-project).path ] ;
+	use-project [ $(ta-project).id2 ] : [ $(ta-project).path ] ;
+}
+
+project
+	: requirements [ get-project-requirements ]
+	;
+
+###############
+#
+# DEBUG RULES
+#
+###############
+
+rule show-cots ( )
+{
+	$(Cots).__debug__ ;
+}
+
+rule show-branch ( )
+{
+	print.lines branch [ $(TA_Path).branch ] : "\t" ;
+}
+
+rule show-config ( )
+{
+	print.lines "config" ;
+	local proj = [ project.current ] ;
+
+	for local config in [ MATCH "(config.*)" : [ VARNAMES [ $(proj).project-module ] ] ]
+	{
+		print.lines [ sequence.join [ PAD $(config) : 28 ] ": " "$($(config):J= )" ] : "\t" "\t" ;
+	}
+}
+
+rule show-projects ( )
+{
+	$(TA_Projects).__debug__ ;
+	$(TA_Projects).transform : __debug__ ;
+}
+
+rule show-project-ids ( )
+{
+	for local tp in [ $(TA_Projects).projects ]
+	{
+		print.lines [ sequence.join [ $(tp).id ] " => " [ path.native [ $(tp).path ] ] ] : "\t" "\t" ;
+	}
+}
+
+rule show-dependency ( )
+{
+	local by = [ option.get "by" : "target-name" : "target-name" ] ;
+
+	if ! $(by) in id target-id target-name
+	{
+		errors.error "'$(by)' is not a valid option. avaliable options are : id target-id target-name(default)" ;
+		exit ;
+	}
+
+	for local tp in [ $(TA_Projects).select is-library ]
+	{
+		print.lines [ $(tp).$(by) ] ;
+		for dep-tp in [ $(TA_Projects).find [ $(tp).dependency ] ]
+		{
+			print.lines [ $(dep-tp).$(by) ] : "\t" "\t" ;
+		}
+	}
+}
+
+rule show-path ( )
+{
+	$(TA_Path).__debug__ ;
+}
+
+rule show-env ( )
+{
+	for local e in [ VARNAMES ]
+	{
+		echo $(e) => [ os.environ $(e) ] $($(e)) ;
+	}
+}
+
+rule show-help ( all-show-rules + )
+{
+	print.lines "usage:" "--show-$(all-show-rules)" : "\t" ;
+}
+
+rule __debug__ ( )
+{
+	local proj = [ project.current ] ;
+	local ruls = [ RULENAMES [ $(proj).project-module ] ] ;
+	local show-rules = [ MATCH "^show-(.*)" : $(ruls) ] ;
+	local show-arg = [ MATCH "--(show.*)" : [ modules.peek : ARGV ] ] ;
+
+	if $(show-arg)
+	{
+		local what = [ MATCH "show-(.*)" : $(show-arg) ] ;
+
+		if $(what) && ( $(what) in $(show-rules) )
+		{
+			show-$(what) ;
+		}
+		else
+		{
+			show-help $(show-rules) ;
+		}
+
+		exit ;
+	}
+} __debug__ ;

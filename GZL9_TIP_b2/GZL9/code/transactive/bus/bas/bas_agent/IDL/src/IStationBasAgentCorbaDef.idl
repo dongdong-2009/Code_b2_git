@@ -1,0 +1,108 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/FZL1_Review/FZL1/transactive/bus/bas/bas_agent/IDL/src/IStationBasAgentCorbaDef.idl $
+// @author:  
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2015/02/27 17:12:34 $
+// Last modified by:  $Author: CM $
+//
+// BAS Agent IDL interface.
+//
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+
+module TA_IRS_Bus
+{
+
+    interface IStationBasAgentCorbaDef
+    {
+
+		//////////////////////////////////////////////////////////////////////
+		// for CORBA message
+		//////////////////////////////////////////////////////////////////////
+		enum StationFireStatus
+		{
+			StationFire_Normal,
+			StationFire_Fire
+		};
+
+		struct StationFireNotifyEvent
+		{
+			unsigned long locationKey;
+			unsigned long modeValue;
+			StationFireStatus status;
+		};
+
+		struct StationFireNotifyACKEvent
+		{
+			unsigned long locationKey;
+			unsigned long modeValue;
+		};
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Station BAS Agent exceptions
+        //
+        ///////////////////////////////////////////////////////////////////////
+        exception StationInLocalMode
+        {
+            string what;
+        };
+
+        exception StationModeInProgress
+        {
+            long stationMode;
+            string what;
+        };
+
+		exception StationModeInTimeTable
+		{
+			string what;
+		};
+
+		exception StationWriteDataPointError
+		{
+			string what;
+		};
+        ///////////////////////////////////////////////////////////////////////
+        //
+        //     Station BAS Agent methods
+        //
+        ///////////////////////////////////////////////////////////////////////
+
+		enum ETimeTableType
+		{
+			ETimeTableType_Today,
+			ETimeTableType_NextDay
+		};
+
+        void executeStationMode
+            ( in long subsystemKey,
+			  in long stationMode,
+              in boolean canOverrideStationModeInProgress,
+              in string sessionId )
+            raises (TA_Base_Core::BadParameterException,
+                    TA_Base_Core::AccessDeniedException,
+                    StationModeInProgress,
+                    StationModeInTimeTable,
+                    StationInLocalMode,
+		    TA_Base_Core::OperationModeException,
+                    TA_Base_Core::NotAvailableException);
+
+		void executeTimeTable(in ETimeTableType timeTableType, in long tableKey, in string sessionId)
+				raises (TA_Base_Core::AccessDeniedException,
+						StationWriteDataPointError,
+						TA_Base_Core::OperationModeException,
+						TA_Base_Core::NotAvailableException);
+
+		//AllStationFireModes getAllStationFireModes();
+
+    }; // IStationBasAgentCorbaDef
+
+}; // TA_IRS_Bus
+

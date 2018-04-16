@@ -1,0 +1,49 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.ecs.ecs_agent.IDL" ProjectGUID="{CFCE69C1-A2D9-4FF6-99DD-701BE8268223}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="IDL" Filter="idl">
+			<File RelativePath="src\CommonEcsAgentCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IMasterEcsAgentCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IStationEcsAgentCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\..\sdk\omniORB\omniorb_4.1.6\bin\x86_win32\omniidl -Csrc -bcxx -Wbkeep_inc_path -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I../../../../ -I../../../../../../sdk/idl/transactive -C../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src $(InputPath)&#13;&#10;" Outputs="../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).cpp;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName).h;../../../../../../build/win32_n/transactive/bus/ecs/ecs_agent/IDL/src/$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

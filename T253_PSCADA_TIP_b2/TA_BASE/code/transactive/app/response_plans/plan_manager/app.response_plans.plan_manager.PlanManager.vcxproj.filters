@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Main View">
+      <UniqueIdentifier>{dace9fe3-ee1d-44fe-8a50-98aee7e7f5ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Node">
+      <UniqueIdentifier>{74b69c72-880c-4590-8510-59d666c8a19b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Instance">
+      <UniqueIdentifier>{b7f67761-1460-4c37-8681-b388cf6d0b5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step">
+      <UniqueIdentifier>{7a147584-56a0-4548-ac9a-26dfa024f2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Editor">
+      <UniqueIdentifier>{5291b61a-86c6-4c2c-a560-39786707849c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Controller">
+      <UniqueIdentifier>{8c721971-ea23-4593-bc46-87d45322477f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Agent">
+      <UniqueIdentifier>{d0b7d1f6-22bc-4c75-8fbb-f6633c0485ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{ddda5945-481b-4503-9993-ed7bc4f7e327}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{fa7f2acc-b550-4850-93b7-610cbdcb83c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8a318bf3-1da4-4035-a7d3-c4a05a1630e7}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Plan Step\ExclusiveGateway">
+      <UniqueIdentifier>{ea92137c-9504-477b-b99f-16ce9badd5ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\InclusiveGateway">
+      <UniqueIdentifier>{4d414517-09de-4e59-9c0f-c143f14f400a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\ParallelGateway">
+      <UniqueIdentifier>{d2352055-7bfd-4a2e-acc3-9d1444edcb2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\EndEvent">
+      <UniqueIdentifier>{17348673-47e2-4b2a-95f6-5e8e88523b6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\StartEvent">
+      <UniqueIdentifier>{ff3188ad-fb65-4bfb-8442-40c707204fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\RunPlan">
+      <UniqueIdentifier>{5b7fa6ad-2cf2-4d1b-a752-30f00bf65156}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\TerminatePlan">
+      <UniqueIdentifier>{e5e8bf3d-bc38-4dc6-8790-0ff0a06af41a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plan Step\AbortEvent">
+      <UniqueIdentifier>{7141df08-08c0-48d7-a5b5-bed4c078a283}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractToolBarManager.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanListView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AllPlanDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AllPlanTreeFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AllPlanTreeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApprovedPlanDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApprovedPlanTreeFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApprovedPlanTreeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BlankView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CategoryListCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CategoryNodeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExtStatusControlBar.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FloatingDocTemplate.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FloatingWindowThread.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FloatingWindowThreadRegister.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainToolBarManager.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OperatorRights.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanBrowserDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanBrowserFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDetailPage.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanFlowchartPage.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanGeneralDetailPage.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstanceComboBox.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstanceFilter.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstanceListCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanManager.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanManagerGUI.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanNodeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepDetailPage.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepListCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepListHeaderCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepParameterListCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanTreeDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanTreeFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanTreeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SinglePlanInstanceListCtrl.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnapprovedPlanDoc.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnapprovedPlanTreeFrame.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnapprovedPlanTreeView.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\YSplitterWnd.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CategoryNode.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanNode.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RootNode.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequenceFlow.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequenceFlowMap.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TreeNode.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TreeNodeFactory.cpp">
+      <Filter>Tree Node</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstance.cpp">
+      <Filter>Plan Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstanceMap.cpp">
+      <Filter>Plan Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInstanceNone.cpp">
+      <Filter>Plan Instance</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftStepImplementationFactory.cpp">
+      <Filter>Plan Step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepMap.cpp">
+      <Filter>Plan Step</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndStep.cpp">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftEndStepComponent.cpp">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbortStep.cpp">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftAbortStepComponent.cpp">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExclusiveGatewayStep.cpp">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftExclusiveGatewayStepComponent.cpp">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditExclusiveGatewayPage.cpp">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InclusiveGatewayStep.cpp">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftInclusiveGatewayStepComponent.cpp">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditInclusiveGatewayPage.cpp">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftRunPlanStepComponent.cpp">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditRunPlanPage.cpp">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunPlanStep.cpp">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftTerminatePlanStepComponent.cpp">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditTerminatePlanPage.cpp">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TerminatePlanStep.cpp">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeImportPlanName.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NewPlanStepDlg.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanEditorDoc.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanEditorFrame.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanEditorThread.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanEditorToolBarManager.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditorDetailsPage.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditorDlg.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditorPropertySheet.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditorTabCtrl.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepPastePositionDlg.cpp">
+      <Filter>Plan Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanControllerDoc.cpp">
+      <Filter>Plan Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanControllerFrame.cpp">
+      <Filter>Plan Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanControllerThread.cpp">
+      <Filter>Plan Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanControllerToolBarManager.cpp">
+      <Filter>Plan Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentAccess.cpp">
+      <Filter>Plan Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentUpdateProcessor.cpp">
+      <Filter>Plan Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentAccessException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\plan_agent\src\PlanNotFoundException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\PlanStepDetailException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\PlanStepException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LabelMaker.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utilities.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanManagerException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExclusiveGatewayEditorParameter.cpp">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InclusiveGatewayEditorParameter.cpp">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunPlanStepEditorParameter.cpp">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TerminatePlanEditorParameter.cpp">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TaskRunPlan.cpp">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TaskTerminatePlan.cpp">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftStartStepComponent.cpp">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StartStep.cpp">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MftParallelGatewayStepComponent.cpp">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParallelGatewayStep.cpp">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParallelGatewayStepEditorParameter.cpp">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanStepEditParallelGatewayPage.cpp">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventStart.cpp">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventEnd.cpp">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GatewayParallel.cpp">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GatewayInclusive.cpp">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GatewayExclusive.cpp">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventAbort.cpp">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlPlanThread.cpp">
+      <Filter>Main View</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractToolBarManager.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanListView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllPlanDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllPlanTreeFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllPlanTreeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApprovedPlanDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApprovedPlanTreeFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApprovedPlanTreeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BlankView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CategoryListCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CategoryNodeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\extstatuscontrolbar.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FloatingDocTemplate.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FloatingWindowThread.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FloatingWindowThreadRegister.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainToolBarManager.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OperatorRights.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanBrowserDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanBrowserFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDetailPage.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanFlowchartPage.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanGeneralDetailPage.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstanceComboBox.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstanceFilter.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstanceListCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanManager.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanManagerCommonDefs.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanManagerGUI.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanNodeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepDetailPage.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepListCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepListHeaderCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepParameterListCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanTreeDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanTreeFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanTreeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SinglePlanInstanceListCtrl.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnapprovedPlanDoc.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnapprovedPlanTreeFrame.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnapprovedPlanTreeView.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ViewUpdate.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\YSplitterWnd.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CategoryNode.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITreeNodeFilter.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanNode.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RootNode.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequenceFlow.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequenceFlowMap.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TreeNode.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TreeNodeFactory.h">
+      <Filter>Tree Node</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstance.h">
+      <Filter>Plan Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstanceMap.h">
+      <Filter>Plan Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInstanceNone.h">
+      <Filter>Plan Instance</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftStepImplementationFactory.h">
+      <Filter>Plan Step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepMap.h">
+      <Filter>Plan Step</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EndStep.h">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftEndStepComponent.h">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbortStep.h">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftAbortStepComponent.h">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExclusiveGatewayStep.h">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftExclusiveGatewayStepComponent.h">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditExclusiveGatewayPage.h">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InclusiveGatewayStep.h">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftInclusiveGatewayStepComponent.h">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditInclusiveGatewayPage.h">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftRunPlanStepComponent.h">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditRunPlanPage.h">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunPlanStep.h">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftTerminatePlanStepComponent.h">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditTerminatePlanPage.h">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TerminatePlanStep.h">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeImportPlanName.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NewPlanStepDlg.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanEditorDoc.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanEditorFrame.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanEditorThread.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanEditorToolBarManager.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditorDetailsPage.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditorDlg.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditorPropertySheet.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditorTabCtrl.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepPastePositionDlg.h">
+      <Filter>Plan Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanControllerDoc.h">
+      <Filter>Plan Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanControllerFrame.h">
+      <Filter>Plan Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanControllerThread.h">
+      <Filter>Plan Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanControllerToolBarManager.h">
+      <Filter>Plan Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanConfigObserver.h">
+      <Filter>Plan Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanCustomisationObserver.h">
+      <Filter>Plan Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentAccess.h">
+      <Filter>Plan Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentUpdateProcessor.h">
+      <Filter>Plan Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentAccessException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\PlanStepException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITimerSubscriber.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LabelMaker.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SynchronisedMap.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SynchronisedQueue.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SynchronisedVector.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Timer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utilities.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanManagerException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExclusiveGatewayEditorParameter.h">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InclusiveGatewayEditorParameter.h">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunPlanStepEditorParameter.h">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TerminatePlanEditorParameter.h">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TaskRunPlan.h">
+      <Filter>Plan Step\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TaskTerminatePlan.h">
+      <Filter>Plan Step\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftStartStepComponent.h">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StartStep.h">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MftParallelGatewayStepComponent.h">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParallelGatewayStep.h">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParallelGatewayStepEditorParameter.h">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanStepEditParallelGatewayPage.h">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventStart.h">
+      <Filter>Plan Step\StartEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventEnd.h">
+      <Filter>Plan Step\EndEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GatewayParallel.h">
+      <Filter>Plan Step\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GatewayInclusive.h">
+      <Filter>Plan Step\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GatewayExclusive.h">
+      <Filter>Plan Step\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventAbort.h">
+      <Filter>Plan Step\AbortEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlPlanThread.h">
+      <Filter>Main View</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PlanManager.rc">
+      <Filter>Main View</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ViewUpdate.inl">
+      <Filter>Main View</Filter>
+    </None>
+    <None Include="src\SynchronisedMap.inl">
+      <Filter>Utilities</Filter>
+    </None>
+    <None Include="src\SynchronisedQueue.inl">
+      <Filter>Utilities</Filter>
+    </None>
+    <None Include="src\SynchronisedVector.inl">
+      <Filter>Utilities</Filter>
+    </None>
+    <None Include="..\..\..\bus\resources\icons\PlanManager.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ApprovedPlanNode.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\CategoryNodeToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ClosedCategoryNode.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\OpenCategoryNode.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanController.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanControllerFlowchartToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanControllerGeneralToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanControllerStepsToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanEditor.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanEditorFlowchartToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanEditorGeneralToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanEditorStepsToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanManager.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\PlanNodeToolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\plan_nod.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepExecStateImageList.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepExecuted.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepFailed.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepNext.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepNextPaused.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepNotExecuted.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\StepSkipped.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\TreeNodeImageList.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\UnapprovedPlanNode.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\PlanActivityIconAbort.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconEnd.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconExclusiveGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconInclusiveGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconParallelGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconRunPlan.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconStart.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconTerminatePlan.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityAbort.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityEnd.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityExclusiveGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityInclusiveGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityParallelGateway.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityRunPlan.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityStart.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityTerminatePlan.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+import os ;
+
+if [ os.name ] != NT
+{
+	source = [ glob src/*.cpp : src/orawinmonitor.cpp ] ;
+}
+
+ta-lib TA_ocl : $(source) ;

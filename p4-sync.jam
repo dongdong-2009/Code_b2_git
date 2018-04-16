@@ -1,0 +1,69 @@
+import path sequence os ;
+
+TOP				= [ path.pwd ] ;
+p4.command		= p4 ;
+p4.user			= limin.zhu ;
+p4.port			= "192.168.253.15:1666" ;
+p4.client		= limin.zhu_solaris10_verify_build ; if [ os.on-windows ] { p4.client = limin.zhu_windows_verify_build ; }
+p4.password		= Coreteam ;
+Branchs			= PRIV_3001
+				  TA_Common_V1_TIP
+				  T253_PSCADA_TIP
+				  C830G_TIP
+				  3001_TIP_NEW
+				  ;
+
+rule p4-sync ( )
+{
+	local force-sync-option = "" ;
+
+	if [ option.get "force" : : true ]
+	{
+		force-sync-option = -f ;
+	}
+
+	for local branch in $(Branchs)
+	{
+		local cmd = [ sequence.join "$(p4.command)"
+									"-p $(p4.port)"
+									"-u $(p4.user)"
+									"-P $(p4.password)"
+									"-c $(p4.client)"
+									"sync $(force-sync-option) //depot/$(branch)/..."
+									: " " ] ;
+
+		echo [ SHELL "$(cmd)" ] ;
+	}
+}
+
+rule soft-link-cots ( COTS )
+{
+	local top-levels = code TA_BASE 1001 4677 4712 4669 3001 3002 FZL1 GZL9 GZL13 T252 ;
+
+	for branch in $(Branchs)
+	{
+		for local code-parent-path in $(TOP)/$(branch) $(TOP)/$(branch)/$(top-levels)
+		{
+			local code-path = [ path.native $(code-parent-path)/code ] ;
+
+			if [ path.exists $(code-path) ]
+			{
+				local cots-path = [ path.native $(code-path)/cots ] ;
+
+				if ! [ path.exists $(cots-path) ]
+				{
+					if [ os.on-windows ]
+					{
+						SHELL "junction -q $(cots-path) $(COTS)" ;
+					}
+					else
+					{
+						SHELL "ln -s $(COTS) $(cots-path)" ;
+					}
+				}
+			}
+		}
+	}
+}
+
+IMPORT $(__name__) : [ RULENAMES $(__name__) ] : : [ RULENAMES $(__name__) ] ;

@@ -1,0 +1,21 @@
+import os ;
+path-constant HERE : . ;
+
+if [ os.on-windows ]
+{
+	lib imos_sdk xp_frame : : <search>$(HERE)/../imos_sdk_win/lib ;
+	sdk = imos_sdk xp_frame ;
+}
+else
+{
+	if [ os.name ] = SOLARIS
+	{
+		requir = <define>sparc ;
+	}
+}
+
+ta-lib TA_IMOSSwitchAgent
+	: [ glob src/*.cpp ]
+	  $(sdk)
+	: $(requir)
+	;

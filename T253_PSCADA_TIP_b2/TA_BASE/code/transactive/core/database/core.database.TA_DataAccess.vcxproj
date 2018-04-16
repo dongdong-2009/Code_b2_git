@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.database</ProjectName>
+    <ProjectGuid>{4D1A6AF1-A4DE-4DDE-84CD-3745E68E6CCB}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_DataAccess_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CommonType.h" />
+    <ClInclude Include="src\ConnectionReaper.h" />
+    <ClInclude Include="src\DBException.h" />
+    <ClInclude Include="src\DbServerLocator.h" />
+    <ClInclude Include="src\IDbConnection.h" />
+    <ClInclude Include="src\IQueryAdapter.h" />
+    <ClInclude Include="src\MysqlConnection.h" />
+    <ClInclude Include="src\MysqlQueryAdapter.h" />
+    <ClInclude Include="src\OCIAccessStatusMonitor.h" />
+    <ClInclude Include="src\OCIConnection.h" />
+    <ClInclude Include="src\OCIConnectionStatusMonitor.h" />
+    <ClInclude Include="src\OCIOTLConnection.h" />
+    <ClInclude Include="src\OCIOTLQueryAdapter.h" />
+    <ClInclude Include="src\OCIQueryAdapter.h" />
+    <ClInclude Include="src\ODBCOTLConnection.h" />
+    <ClInclude Include="src\ODBCOTLQueryAdapter.h" />
+    <ClInclude Include="src\SimpleDb.h" />
+    <ClInclude Include="src\SimpleDbStatusMonitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConnectionReaper.cpp" />
+    <ClCompile Include="src\DBException.cpp" />
+    <ClCompile Include="src\DbServerLocator.cpp" />
+    <ClCompile Include="src\MysqlConnection.cpp" />
+    <ClCompile Include="src\MysqlQueryAdapter.cpp" />
+    <ClCompile Include="src\OCIAccessStatusMonitor.cpp" />
+    <ClCompile Include="src\OCIConnection.cpp" />
+    <ClCompile Include="src\OCIConnectionStatusMonitor.cpp" />
+    <ClCompile Include="src\OCIOTLConnection.cpp" />
+    <ClCompile Include="src\OCIOTLQueryAdapter.cpp" />
+    <ClCompile Include="src\OCIQueryAdapter.cpp" />
+    <ClCompile Include="src\ODBCOTLConnection.cpp" />
+    <ClCompile Include="src\ODBCOTLQueryAdapter.cpp" />
+    <ClCompile Include="src\SimpleDb.cpp" />
+    <ClCompile Include="src\SimpleDbStatusMonitor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ocl\core.ocl.TA_ocl.vcxproj">
+      <Project>{ebf17666-e6d5-41c0-8c73-3d3ab01bacff}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,331 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.cctv.video_switch_agent" ProjectGUID="{C8DB5785-A227-4A16-AF2A-2743F60155E7}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nd/app.cctv.video_switch_agent.video_switch_agent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 " Optimization="0" AdditionalIncludeDirectories="./src,../../../,../../../../../build/win32_n/transactive/app/ats/AtsComBridge/IDL/src,../../../../../sdk/include/transactive/bus/cctv/video_switch_agent/IDL/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/process_management/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="WIN32;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_DEBUG;_CONSOLE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent/app.cctv.video_switch_agent.video_switch_agent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nd/transactive/app/cctv/video_switch_agent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rtd.lib omniDynamic405_rtd.lib omnithread30_rtd.lib COS405_rtd.lib aced.lib TA_COESwitchAgent_d.lib TA_VideoSwitchAgentDAI_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Bus_d.lib TA_IRS_Core_d.lib oci.lib Rpcrt4.lib Ws2_32.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/VideoSwitchAgent.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd,../../../../../sdk/win32_nd,../../../../../sdk/lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/VideoSwitchAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../bin/win32_nd/video_switch_agent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nr/app.cctv.video_switch_agent.video_switch_agent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm300 " Optimization="2" AdditionalIncludeDirectories="./src,../../../,../../../../../build/win32_n/transactive/app/ats/AtsComBridge/IDL/src,../../../../../sdk/include/transactive/bus/cctv/video_switch_agent/IDL/src,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/process_management/IDL/src,../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0,../../../../../sdk/include/transactive/core/alarm/IDL/src,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="WIN32;__WIN32__;__x86__;__NT__;__OSVERSION__=4;NDEBUG;_CONSOLE;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent/app.cctv.video_switch_agent.video_switch_agent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nr/transactive/app/cctv/video_switch_agent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rt.lib omniDynamic405_rt.lib omnithread30_rt.lib COS405_rt.lib ace.lib TA_COESwitchAgent.lib TA_VideoSwitchAgentDAI.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Bus.lib TA_IRS_Core.lib oci.lib Rpcrt4.lib Ws2_32.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/VideoSwitchAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr,../../../../../sdk/win32_nr,../../../../../sdk/lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/VideoSwitchAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../bin/win32_nr/video_switch_agent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AddressHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AddressHelper.h">
+			</File>
+			<File RelativePath="src\AgentModeMonitor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AgentModeMonitor.h">
+			</File>
+			<File RelativePath="src\AllSupportedFeatures.h">
+			</File>
+			<File RelativePath="src\BVSStage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\BVSStage.h">
+			</File>
+			<File RelativePath="src\Camera.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Camera.h">
+			</File>
+			<File RelativePath="src\CommunicationsHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CommunicationsHandler.h">
+			</File>
+			<File RelativePath="src\ConfigUpdateBroadcaster.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConfigUpdateBroadcaster.h">
+			</File>
+			<File RelativePath="src\EntityCreationFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EntityCreationFactory.h">
+			</File>
+			<File RelativePath="src\EntityTypeConstants.h">
+			</File>
+			<File RelativePath="src\FocusIrisControl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\FocusIrisControl.h">
+			</File>
+			<File RelativePath="src\main.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MovementControl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MovementControl.h">
+			</File>
+			<File RelativePath="src\Quad.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Quad.h">
+			</File>
+			<File RelativePath="src\RecordingUnit.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RecordingUnit.h">
+			</File>
+			<File RelativePath="src\Sequence.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Sequence.h">
+			</File>
+			<File RelativePath="src\StateUpdateBroadcaster.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StateUpdateBroadcaster.h">
+			</File>
+			<File RelativePath="src\StateUpdateSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StateUpdateSubscriber.h">
+			</File>
+			<File RelativePath="src\SuperimposedTextControl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SuperimposedTextControl.h">
+			</File>
+			<File RelativePath="src\SwitchManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SwitchManager.h">
+			</File>
+			<File RelativePath="src\UserPrivilegeVerifier.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\UserPrivilegeVerifier.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoInput.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoInput.h">
+			</File>
+			<File RelativePath="src\VideoMonitor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoMonitor.h">
+			</File>
+			<File RelativePath="src\VideoOutput.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoOutput.h">
+			</File>
+			<File RelativePath="src\VideoOutputGroup.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoOutputGroup.h">
+			</File>
+			<File RelativePath="src\VideoSwitchAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoSwitchAgent.h">
+			</File>
+			<File RelativePath="src\VideoSwitchResource.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoSwitchResource.h">
+			</File>
+			<File RelativePath="src\VisualAuditMessageSender.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VisualAuditMessageSender.h">
+			</File>
+			<File RelativePath="..\..\..\core\message\types\VisualComms_MessageTypes.h">
+			</File>
+			<File RelativePath="..\..\..\core\message\types\VisualStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="src\WashWipeControl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\WashWipeControl.h">
+			</File>
+		</Filter>
+		<Filter Name="Protocol Dependent Interfaces" Filter=".h">
+			<File RelativePath="protocols\src\IPDAlarmInterface.h">
+			</File>
+			<File RelativePath="protocols\src\IPDBVSStage.h">
+			</File>
+			<File RelativePath="protocols\src\IPDCamera.h">
+			</File>
+			<File RelativePath="protocols\src\IPDCommunicationsHandler.h">
+			</File>
+			<File RelativePath="protocols\src\IPDFocusIrisControl.h">
+			</File>
+			<File RelativePath="protocols\src\IPDMovementControl.h">
+			</File>
+			<File RelativePath="protocols\src\IPDQuad.h">
+			</File>
+			<File RelativePath="protocols\src\IPDRecordingUnit.h">
+			</File>
+			<File RelativePath="protocols\src\IPDSequence.h">
+			</File>
+			<File RelativePath="protocols\src\IPDSuperimposedTextControl.h">
+			</File>
+			<File RelativePath="protocols\src\IPDVideoInput.h">
+			</File>
+			<File RelativePath="protocols\src\IPDVideoOutput.h">
+			</File>
+			<File RelativePath="protocols\src\IPDWashWipeControl.h">
+			</File>
+			<File RelativePath="protocols\src\PDInterfaceFactory.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

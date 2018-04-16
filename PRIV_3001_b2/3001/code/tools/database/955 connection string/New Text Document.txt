@@ -1,0 +1,11 @@
+The development  of C955 MMS subsystem has been finished.  Please help to prepare release and testing.
+
+JobID:  DTL-MMSInitRelease
+Changelist:  35939, 35941, 35944,  35945, 35946, 35951
+Application to release:   AlarmAgent,  MMSAgent,  JobRequestManager.exe, MMSController.exe, DB Patch, CSV files.
+
+Note: the MMSAgent depends on  two data points ¡°OCC.BMF.MMS.MMS¡± and ¡°OCC.BMF.MMS.MMS.diiMMSL-GlobalInhibitNoYes¡±; if MMS Agent cannot find the two data points, it  cannot startup.
+
+Four files copied from 830- 13.96 base line
+
+Updated with MMS information

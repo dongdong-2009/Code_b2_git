@@ -1,0 +1,4 @@
+
+ta-exe PidsAgent
+	: [ glob src/*.cpp : src/TrainAgentSubscriber.cpp  ]
+	;

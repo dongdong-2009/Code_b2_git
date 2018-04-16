@@ -1,0 +1,40 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/IAtsCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// ATS IDL interface.
+//
+// This IDL is used to aggregate all the IDL to be implemented by the ATS agent.
+// This should not be used by clients and will be moved to the AtsAgent directory 
+// when the include paths for the IDL compiler are sorted out.
+//
+#include "bus/ats/ats_agent/IDL/src/IAtsEcsCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsWildCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsTrainCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsPasCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsTisCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsCctvCorbaDef.idl"
+#include "bus/ats/ats_agent/IDL/src/IAtsPsdCorbaDef.idl"
+
+module TA_IRS_Bus
+{
+
+	interface IAtsCorbaDef : IAtsEcsCorbaDef,
+	                         IAtsWildCorbaDef,
+	                         IAtsTrainCorbaDef,
+	                         IAtsPasCorbaDef,
+	                         IAtsTisCorbaDef,
+							 IAtsCctvCorbaDef,
+							 IAtsPsdCorbaDef
+	{
+
+	}; // IAtsCorbaDef
+}; // TA_Bus

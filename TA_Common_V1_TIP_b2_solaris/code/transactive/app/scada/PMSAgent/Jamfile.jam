@@ -1,0 +1,4 @@
+
+ta-exe PMSAgent
+	: [ glob src/*.cpp : src/ModbusPointThread.cpp ]
+	;

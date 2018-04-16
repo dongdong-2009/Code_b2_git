@@ -1,0 +1,281 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""..\\res\\WorkflowEditor.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_ICON                ICON                    "..\\res\\WorkflowEditor.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_ARROW        BITMAP                  "..\\res\\Arrow.bmp"
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_DELETE       BITMAP                  "..\\res\\delete.bmp"
+IDB_BITMAP_ADD          BITMAP                  "..\\res\\add.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WORKFLOWEDITOR_DIALOG DIALOGEX 0, 0, 888, 351
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 700, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TREE_ACTIVITY,"SysTreeView32",TVS_SINGLEEXPAND | WS_BORDER | WS_HSCROLL | WS_TABSTOP,0,0,150,350,WS_EX_STATICEDGE
+    CONTROL         "",IDC_LIST_ATTRIBUTES,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,692,167,195,183
+    CONTROL         "",IDC_LIST_BASIC_ATTRIBUTES,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,692,22,195,122
+    LTEXT           "General:",IDC_STATIC_GENERAL,692,4,195,14
+    LTEXT           "Parameters:",IDC_STATIC_PARAMETERS,692,152,195,14
+END
+
+IDD_SINGLE_LIST_DIALOG DIALOGEX 0, 0, 291, 327
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,54,304,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,167,304,50,14
+    LISTBOX         IDC_LIST_SOURCE_POOL,7,7,276,288,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_MULTIPLE_LIST_DIALOG DIALOGEX 0, 0, 449, 307
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,131,281,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,251,281,50,14
+    LISTBOX         IDC_LIST_SOURCE_POOL,21,20,159,223,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST_SELECTION_POOL,263,20,162,223,LBS_NOINTEGRALHEIGHT | LBS_EXTENDEDSEL | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "==>",IDC_BTN_SELECT,199,81,50,14
+    PUSHBUTTON      "<==",IDC_BTN_DESELECT,199,150,50,14
+    CONTROL         "Select All",IDC_BTN_SRC_SEL_ALL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,72,251,50,14
+    CONTROL         "Select All",IDC_BTN_DES_SEL_ALL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,324,251,50,14
+END
+
+IDD_TEXT_DIALOG DIALOGEX 0, 0, 449, 300
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Text Editor"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,167,278,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,241,278,50,14
+    EDITTEXT        IDC_EDIT_TEXT,7,7,434,263,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN
+END
+
+IDD_SINGLE_TREE_DIALOG DIALOGEX 0, 0, 291, 329
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,91,305,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,145,305,50,14
+    CONTROL         "",IDC_TREE_SOURCE_POOL,"SysTreeView32",TVS_HASBUTTONS | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | TVS_FULLROWSELECT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,5,5,280,293
+END
+
+IDD_MULTIPLE_TREE_DIALOG DIALOGEX 0, 0, 405, 307
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,80,277,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,274,277,50,14
+    LISTBOX         IDC_LIST_SELECTION_POOL,216,38,162,223,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Select All",IDC_BTN_SRC_SEL_ALL,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,76,13,50,14
+    CONTROL         "",IDC_TREE_SOURCE_POOL,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | WS_BORDER | WS_HSCROLL | WS_TABSTOP,25,38,160,222
+    LTEXT           "Selected:",IDC_STATIC,277,17,38,11
+END
+
+IDD_GRID_EDITOR_DIALOG DIALOGEX 0, 0, 353, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,208,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,181,208,50,14
+END
+
+IDD_GRID_EDITOR_FORM DIALOGEX 0, 0, 353, 230
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,123,208,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,181,208,50,14
+    CONTROL         "",IDC_GRID_DETAILS,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,33,9,311,190
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "WorkflowEditor.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "WorkflowEditor.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_WORKFLOWEDITOR_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 887
+        BOTTOMMARGIN, 350
+    END
+
+    IDD_MULTIPLE_LIST_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 306
+    END
+
+    IDD_TEXT_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 309
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_MULTIPLE_TREE_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 306
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "..\res\WorkflowEditor.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

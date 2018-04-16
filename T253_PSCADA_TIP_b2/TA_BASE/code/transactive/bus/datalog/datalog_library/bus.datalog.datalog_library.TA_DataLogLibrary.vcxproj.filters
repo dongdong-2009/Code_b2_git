@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ea343d1e-2980-4eca-80ea-0699ce996b19}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\ScadaProxy">
+      <UniqueIdentifier>{e08eae7c-fe46-4f26-b44f-c26f0aa17153}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataLogAgentImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogCategory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogDPItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogValue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaDataProxy.cpp">
+      <Filter>src\ScadaProxy</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataLogAgentImpl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogCategory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogDPItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogValue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocalRunParamDefinitions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaDataProxy.h">
+      <Filter>src\ScadaProxy</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

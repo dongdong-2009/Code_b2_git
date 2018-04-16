@@ -1,0 +1,106 @@
+--------------------------------
+--------------------------------
+Report Manager Installation Note
+--------------------------------
+--------------------------------
+
+Version:     1.03
+Build Date:  24 February 2004
+
+Release History
+---------------
+V1.03:
+- Address issue TD1703.
+Corrected problem where the message 'The table 'alarm_qry' could not be loaded' was 
+displayed when attempting to display report Alarm.rpt that had a group tree on the 
+left after having displayed a report that didn't have a group tree.
+
+V1.02:
+- Source code compiled whilst referencing craxdrt9.dll located in the 
+cots\CrystalReports\dlls subdirectory instead of the local dlls subdirectory.
+
+V1.01:
+- Compiled source code now includes VersionGen.cpp.
+- The --db-connection string now does not need to be supplied on the command line
+  when launched via the Control Station. However, if it is, then the values supplied
+  via the command line will override those supplied via the Control Station.
+- Application window size and position is persistent between subsequent launching of 
+  the application.
+- This build contains the latest version of crv_dlls.zip which contains an updated 
+  version of crdb_oracle.dll. This version fixes the problem where live on demand 
+  data was not being displayed on the report out.
+
+V1.00:
+- First release.
+
+
+Installation Procedure
+----------------------
+1. Extract the contents of the crv_dlls.zip file to C:\ and ensure that the 
+   Use Folder Names checkbox is checked. This will create a directory called
+   C:\Program Files\Common Files\Crystal Decisions\2.0\bin that contains all
+   of the DLLs that are required by this application.
+
+2. Run the Register DLLs batch file (RegisterDLLs.bat) and press OK or Yes to 
+   each confirmation message box that is presented.
+
+
+Running the Report Manager via the Console Manager
+--------------------------------------------------
+1. Create a shortcut to ConsoleManager.exe and add the following command line
+   parameters via properties:
+
+   --mgr-port=5555 --notify-hosts=angstram:7575 --db-connection=transact:tra6:tra6
+
+   Note that these parameters can be modified as required.
+
+2. Run the Console Manager shortcut.
+
+3. Create a shortcut the ReportManager.exe and add the following command line
+   parameters via properties:
+
+   --entity-name=ReportManager --mgr-port=5555 --db-connection=dev_4661:tra6:tra6
+
+   Note that these parameters can be modified as required.
+
+4. Run the Report Manager shortcut.
+
+
+Running the Report Manager via the Control Station
+--------------------------------------------------
+1. Install the suite of TransActive applications if it hasn't already
+   been done.
+
+2. Copy the ReportManager.exe to the TransActive bin directory. Typically
+   this is located at c:\transactive\bin.
+
+3. Create a shortcut to ControlStation.exe and add the following command line
+   parameters via properties:
+
+   --entity-name=ControlStation --host-names=micron 
+   --debug-file=C:\transactive\logs\ControlStation.log --debug-level=DEBUG
+
+4. Run the Console Station shortcut and verify that a Report Manager icon button 
+   appears in the TransActive Control Panel.
+
+5. Press the Report Manager icon button to start the application.
+
+
+Running the Report Manager without TransActive
+----------------------------------------------
+1. Create a shortcut the ReportManager.exe file in the NonTransActive subdirectory 
+   and add the following command line parameters via properties:
+
+   -servername dev_4661 -databasename Dev_4661 -userid tra6 -password tra6
+
+   Note that these parameters can be modified as required.
+
+2. Run the Report Manager shortcut.
+
+
+Dependencies:
+------------
+The Report Manager requires a Oracle Client installation to be present
+on the PC on which it runs.
+
+

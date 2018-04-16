@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.response_plans.plan_step_plugin.common_editor</ProjectName>
+    <ProjectGuid>{2760CEE0-CF38-4A05-9C48-8D13B0211FF8}</ProjectGuid>
+    <RootNamespace>common_editor</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_PlanEditorStep_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_PlanEditorStep</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;__x86__;__WIN32__;_WINDOWS;__NT__;_WIN32_WINNT=0x0700;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;__x86__;__WIN32__;_WINDOWS;__NT__;_WIN32_WINNT=0x0700;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActivePlanStep.cpp" />
+    <ClCompile Include="src\DataPointConfigAccess.cpp" />
+    <ClCompile Include="src\DataPointEditorHelper.cpp" />
+    <ClCompile Include="src\DataPointValueTypeEditorHelper.cpp" />
+    <ClCompile Include="src\EditorStepComponent.cpp" />
+    <ClCompile Include="src\InteractiveStep.cpp" />
+    <ClCompile Include="src\MftPlanAgentAccessFactory.cpp" />
+    <ClCompile Include="src\PlanAgentAccessFactory.cpp" />
+    <ClCompile Include="src\PlanNodeEditorHelper.cpp" />
+    <ClCompile Include="src\PlanStep.cpp" />
+    <ClCompile Include="src\PlanStepEditorHelper.cpp" />
+    <ClCompile Include="src\ProfileConfigAccess.cpp" />
+    <ClCompile Include="src\RightsManager.cpp" />
+    <ClCompile Include="src\TrainGroupEditorHelper.cpp" />
+    <ClCompile Include="src\TrainIDEditorHelper.cpp" />
+    <ClCompile Include="src\UniqueListItemCache.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActivePlanStep.h" />
+    <ClInclude Include="src\DataPointConfigAccess.h" />
+    <ClInclude Include="src\DataPointEditorHelper.h" />
+    <ClInclude Include="src\DataPointValueTypeEditorHelper.h" />
+    <ClInclude Include="src\EditorStepComponent.h" />
+    <ClInclude Include="src\IEditorStepComponent.h" />
+    <ClInclude Include="src\IMftPlanAgentAccess.h" />
+    <ClInclude Include="src\InteractiveStep.h" />
+    <ClInclude Include="src\IPlanAgentAccess.h" />
+    <ClInclude Include="src\IPlanNode.h" />
+    <ClInclude Include="src\MftPlanAgentAccessFactory.h" />
+    <ClInclude Include="src\PlanAgentAccessFactory.h" />
+    <ClInclude Include="src\PlanNodeEditorHelper.h" />
+    <ClInclude Include="src\PlanStep.h" />
+    <ClInclude Include="src\PlanStepEditorHelper.h" />
+    <ClInclude Include="src\PlanStepParameter.h" />
+    <ClInclude Include="src\ProfileConfigAccess.h" />
+    <ClInclude Include="src\RightsManager.h" />
+    <ClInclude Include="src\TimeConvertHelper.h" />
+    <ClInclude Include="src\TrainGroupEditorHelper.h" />
+    <ClInclude Include="src\TrainIDEditorHelper.h" />
+    <ClInclude Include="src\TreeItemCache.h" />
+    <ClInclude Include="src\UniqueListItemCache.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\PlanStepParameter.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

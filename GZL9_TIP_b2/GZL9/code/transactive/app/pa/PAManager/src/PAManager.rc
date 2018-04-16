@@ -1,0 +1,585 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 189, 56
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 广播管理器"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,12,17,20,20
+    LTEXT           "广播管理器 版本 1.0",IDC_STATIC,40,17,63,8,SS_NOPREFIX
+    LTEXT           "版权 (C) 2010",IDC_STATIC,40,32,44,8
+    DEFPUSHBUTTON   "确认",IDOK,122,25,50,14,WS_GROUP
+END
+
+IDD_DLG_PA_MAIN_WND DIALOGEX 0, 0, 617, 322
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "s"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_TAB_DVA_MSG,"SysTabControl32",WS_GROUP,418,14,196,162
+    GROUPBOX        "后备钥匙",IDC_STATIC,7,91,38,33
+    GROUPBOX        "   当日计划播放",IDC_STATIC,478,269,80,27
+    GROUPBOX        "预存广播信息",IDC_STATIC,415,5,200,173
+    GROUPBOX        "常用预存广播内容",IDC_STATIC,4,152,409,166
+    GROUPBOX        "   循环播放",IDC_STATIC,415,269,62,27
+    GROUPBOX        "广播区域组群",IDC_STATIC,317,5,96,146
+    GROUPBOX        "广播区域",IDC_STATIC,3,3,312,148
+    GROUPBOX        "",IDC_STATIC,415,294,200,24
+    CONTROL         "自动广播",IDC_CHECK_DVA_BROADCAST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,19,38,15
+    CONTROL         "人工广播",IDC_CHECK_LIVE_BROADCAST,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,44,37,15
+    CONTROL         "外接广播",IDC_CHECK_BACKGROUND_MUSIC,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,7,68,37,15
+    PUSHBUTTON      "广播播放",IDC_BTN_BROADCAST_START,420,301,44,15,WS_DISABLED
+    PUSHBUTTON      "停止广播",IDC_BTN_BROADCAST_STOP,468,301,46,15
+    PUSHBUTTON      "试听广播",IDC_BTN_TASTE_DVA,549,132,44,13,NOT WS_VISIBLE
+    PUSHBUTTON      "常用1",IDC_BTN_BROADCAST_A,9,161,196,11
+    PUSHBUTTON      "常用2",IDC_BTN_BROADCAST_B,9,173,196,11
+    PUSHBUTTON      "常用3",IDC_BTN_BROADCAST_C,9,185,196,11
+    PUSHBUTTON      "常用4",IDC_BTN_BROADCAST_D,9,197,196,11
+    PUSHBUTTON      "常用5",IDC_BTN_BROADCAST_E,9,209,196,11
+    PUSHBUTTON      "常用6",IDC_BTN_BROADCAST_F,9,221,196,11
+    PUSHBUTTON      "常用7",IDC_BTN_BROADCAST_G,9,233,196,11
+    PUSHBUTTON      "常用8",IDC_BTN_BROADCAST_H,9,245,196,11
+    PUSHBUTTON      "常用9",IDC_BTN_BROADCAST_I,9,257,196,11
+    PUSHBUTTON      "常用10",IDC_BTN_BROADCAST_J,9,269,196,11
+    PUSHBUTTON      "常用11",IDC_BTN_BROADCAST_K,9,281,196,11
+    PUSHBUTTON      "常用12",IDC_BTN_BROADCAST_L,9,293,196,11
+    PUSHBUTTON      "常用13",IDC_BTN_BROADCAST_M,9,305,196,11
+    PUSHBUTTON      "常用14",IDC_BTN_BROADCAST_N,210,161,199,11
+    PUSHBUTTON      "常用15",IDC_BTN_BROADCAST_O,210,173,199,11
+    PUSHBUTTON      "常用16",IDC_BTN_BROADCAST_P,210,185,199,11
+    PUSHBUTTON      "常用17",IDC_BTN_BROADCAST_Q,210,197,199,11
+    PUSHBUTTON      "常用18",IDC_BTN_BROADCAST_R,210,209,199,11
+    PUSHBUTTON      "常用19",IDC_BTN_BROADCAST_S,210,221,199,11
+    PUSHBUTTON      "常用20",IDC_BTN_BROADCAST_T,210,233,199,11
+    PUSHBUTTON      "常用21",IDC_BTN_BROADCAST_U,210,245,199,11
+    PUSHBUTTON      "常用22",IDC_BTN_BROADCAST_V,210,257,199,11
+    PUSHBUTTON      "常用23",IDC_BTN_BROADCAST_W,210,269,199,11
+    PUSHBUTTON      "常用24",IDC_BTN_BROADCAST_X,210,281,199,11
+    PUSHBUTTON      "常用25",IDC_BTN_BROADCAST_Y,210,293,199,11
+    PUSHBUTTON      "常用26",IDC_BTN_BROADCAST_Z,210,305,199,11
+    COMBOBOX        IDC_COMBO_GROUP,321,119,88,35,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "保存",IDC_BTN_GROUP_SAVE,321,133,41,14
+    PUSHBUTTON      "删除",IDC_BTN_GROUP_DELETE,370,133,40,14
+    CONTROL         "",IDC_CHECK_CYCLE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,418,268,8,10
+    CONTROL         "",IDC_CHECK_SCHEDULE_IN_DAY,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,481,268,8,10
+    EDITTEXT        IDC_EDIT_CYCLE_TIMES,443,281,16,12,ES_NUMBER
+    CONTROL         "",IDC_TIME_START_IN_DAY,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_DISABLED | WS_TABSTOP | 0x8,481,281,47,12
+    PUSHBUTTON      "时间表",IDC_BTN_SCHEDULE,568,279,43,15
+    PUSHBUTTON      "帮助",IDC_BTN_HELP,8,130,35,12
+    PUSHBUTTON      "退出",IDC_BTN_EXIT,455,134,36,12,NOT WS_VISIBLE
+    LTEXT           "",IDC_BROADCASTINFO_TABMARKER,539,17,8,8,NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_CUR_BROADCAST_NAME,451,149,129,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    LTEXT           "",IDC_ZONE_AREA_MARKER,49,11,262,136,NOT WS_GROUP,WS_EX_CLIENTEDGE
+    LISTBOX         IDC_LIST_SELED_ZONES,321,16,88,100,NOT LBS_NOTIFY | LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL
+    LTEXT           "循环",IDC_STATIC,426,283,16,8
+    LTEXT           "次",IDC_STATIC,460,283,9,8
+    ICON            "",IDC_PIC_BACKUP_STATUS,15,100,20,20
+    CONTROL         "管理",IDC_BTN_SCHEDULE_MANAGER,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_GROUP | WS_TABSTOP,532,279,25,15
+    PUSHBUTTON      "监听广播",IDC_BTN_MONITOR_START,519,301,44,15
+    PUSHBUTTON      "停止监听",IDC_BTN_MONITOR_STOP,568,301,43,15
+    CONTROL         "",IDC_LIST_SELECTED_DVA_MESSAGES,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,419,189,193,64
+    GROUPBOX        "广播信息",IDC_STATIC,415,180,200,88
+    PUSHBUTTON      "上移",IDC_BTN_MESSAGE_UP,532,255,25,11
+    PUSHBUTTON      "下移",IDC_BTN_MESSAGE_DOWN,560,255,25,11
+    PUSHBUTTON      "删除",IDC_BTN_MESSAGE_DELETE,588,255,25,11
+    EDITTEXT        IDC_EDIT_INTERVAL_TIMES,455,255,16,12,ES_NUMBER
+    LTEXT           "广播间隔",IDC_STATIC,421,257,34,8
+    LTEXT           "秒",IDC_STATIC,472,257,9,8
+    GROUPBOX        "时间表播放",IDC_STATIC,561,269,54,27
+END
+
+IDD_DLG_SCHEDULE_IN_DAY DIALOGEX 0, 0, 124, 322
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "当日计划广播"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_SCHEDULE_IN_DAY,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER,7,9,111,174
+    EDITTEXT        IDC_EDIT_SCHEDULE_DVA_MSG,39,190,80,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SCHEDULE_CYCLIC_TIMES,39,206,80,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LISTBOX         IDC_LIST_SCHEDULE_ZONES,10,233,108,57,LBS_SORT | LBS_NOINTEGRALHEIGHT | LBS_NOSEL | WS_VSCROLL
+    LTEXT           "广播消息",IDC_STATIC,6,192,33,8
+    LTEXT           "广播区域",IDC_STATIC,10,222,33,8
+    PUSHBUTTON      "删除计划",IDC_BTN_DELETE_SCHEDULE_IN_DAY,7,303,50,14,WS_DISABLED
+    PUSHBUTTON      "关闭",IDC_BTN_HIDE,70,303,50,14
+    GROUPBOX        "",IDC_STATIC,3,0,119,298
+    LTEXT           "循环次数",IDC_STATIC,6,208,33,8
+END
+
+IDD_PROPPAGE_EMERGENCY DIALOGEX 0, 0, 193, 151
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "关键字筛选",IDC_STATIC,2,5,40,8
+    EDITTEXT        IDC_EDIT_SEARCH_KEYWORD_E,44,4,107,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "全部",IDC_BTN_LIST_ALL_E,153,4,37,13
+    CONTROL         "",IDC_LIST_EMERGENCY_BROADCAST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,2,18,188,89
+    LTEXT           "广播描述",IDC_STATIC,3,111,40,8
+    EDITTEXT        IDC_EDIT_BROADCAST_DES_E,2,121,188,25,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "编辑",IDC_BTN_EMERGENCY_DES_EDIT,154,108,36,13
+END
+
+IDD_PROPPAGE_NORMAL DIALOGEX 0, 0, 193, 151
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "关键字筛选",IDC_STATIC,2,5,40,8
+    EDITTEXT        IDC_EDIT_SEARCH_KEYWORD_N,44,4,107,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "全部",IDC_BTN_LIST_ALL_N,154,3,37,13
+    CONTROL         "",IDC_LIST_NORMAL_BROADCAST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,2,18,188,89
+    LTEXT           "广播描述",IDC_STATIC,3,111,40,8
+    EDITTEXT        IDC_EDIT_BROADCAST_DES_N,2,121,188,25,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "编辑",IDC_BTN_NORMAL_DES_EDIT,154,108,36,13
+END
+
+IDD_PROPPAGE_OTHER DIALOGEX 0, 0, 193, 151
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "关键字筛选",IDC_STATIC,2,5,40,8
+    EDITTEXT        IDC_EDIT_SEARCH_KEYWORD_O,44,4,107,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "全部",IDC_BTN_LIST_ALL_O,154,3,37,13
+    CONTROL         "",IDC_LIST_OTHER_BROADCAST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,2,18,188,89
+    LTEXT           "广播描述",IDC_STATIC,3,111,40,8
+    EDITTEXT        IDC_EDIT_BROADCAST_DES_O,2,121,188,25,ES_MULTILINE | ES_READONLY | WS_VSCROLL
+    PUSHBUTTON      "编辑",IDC_BTN_OTHER_DES_EDIT,154,108,36,13
+END
+
+IDD_DLG_BROADCAST_DES_EDIT DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "修改信息描述"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,25,73,50,14
+    PUSHBUTTON      "取消",IDCANCEL,100,73,50,14
+    LTEXT           "请输入新的信息描述",IDC_STATIC,13,9,92,8
+    EDITTEXT        IDC_EDIT_BROADCAST_DES,19,22,145,45,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+END
+
+IDD_DLG_GROUP_EDIT DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "广播组群编辑"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确认",IDOK,28,69,50,14
+    PUSHBUTTON      "取消",IDCANCEL,99,69,50,14
+    LTEXT           "请输入新的广播组群名",IDC_STATIC,14,10,92,8
+    EDITTEXT        IDC_EDIT_GROUP_NAME,21,24,136,38,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+END
+
+IDD_DLG_PROGRESS_STATUS DIALOGEX 0, 0, 187, 44
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Arial", 400, 0, 0x0
+BEGIN
+    LTEXT           "等待服务器响应...",IDC_STATIC_STATUS,37,16,115,8
+END
+
+IDD_DLG_SCHEDULE_BROADCAST DIALOGEX 0, 0, 379, 252
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "计划时间表"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "确认",IDC_BTN_CONFIRM,238,12,50,14,WS_DISABLED
+    PUSHBUTTON      "取消",IDC_BTN_CANCEL,305,12,50,14,WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,6,1,368,32
+    LTEXT           "计划名称",IDC_STATIC,24,17,33,8
+    EDITTEXT        IDC_EDIT_SCHEDULE_NAME,62,14,113,12,ES_AUTOHSCROLL | WS_DISABLED
+    CONTROL         "",IDC_LIST_BROADCAST_SCHEDULE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,16,49,349,138
+    LTEXT           "广播消息",IDC_STATIC,28,195,33,8
+    LTEXT           "广播区域",IDC_STATIC,28,211,33,8
+    EDITTEXT        IDC_EDIT_BROADCAST_MSG,76,193,116,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT_BROADCAST_ZONES,76,210,255,12,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "删除计划",IDC_BTN_DELETE_SCHEDULE,243,232,50,14,WS_DISABLED
+    GROUPBOX        "",IDC_STATIC,6,38,369,190
+    PUSHBUTTON      "退出",IDC_BTN_EXIT,318,232,50,14
+    PUSHBUTTON      "启用计划",IDC_BTN_ENABLE_SCHEDULE,91,232,50,14,WS_DISABLED
+    PUSHBUTTON      "禁用计划",IDC_BTN_DISABLE_SCHEDULE,167,232,50,14,WS_DISABLED
+    LTEXT           "重复次数",IDC_STATIC,241,195,33,8
+    PUSHBUTTON      "修改名称",IDC_BTN_MODIFY_NAME,16,232,50,14,WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 99,99,99,99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "FileDescription", "PA管理器 MFC 应用程序"
+            VALUE "FileVersion", "99, 99, 99, 99"
+            VALUE "InternalName", "PA管理器"
+            VALUE "LegalCopyright", "版权 (C) 2017"
+            VALUE "OriginalFilename", "PAManager.EXE"
+            VALUE "ProductName", "PA管理器 应用程序"
+            VALUE "ProductVersion", "99, 99, 99, 99"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_ABOUTBOX DLGINIT
+BEGIN
+    128, 0x377, 2564, 0
+0x0000, 0x0000, 0xcfd0, 0xe011, 0xb1a1, 0xe11a, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x003e, 0x0003, 0xfffe, 0x0009, 
+0x0006, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 0x0001, 
+0x0000, 0x0000, 0x0000, 0x1000, 0x0000, 0x0002, 0x0000, 0x0001, 0x0000, 
+0xfffe, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xfffd, 0xffff, 0xfffe, 
+0xffff, 0xfffe, 0xffff, 0xfffe, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0x0052, 0x006f, 0x006f, 0x0074, 0x0020, 0x0045, 0x006e, 0x0074, 
+0x0072, 0x0079, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0016, 0x0005, 0xffff, 
+0xffff, 0xffff, 0xffff, 0x0002, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x4a90, 0x235c, 0xd563, 0x01ca, 0x0003, 0x0000, 0x00c0, 0x0000, 
+0x0000, 0x0000, 0x0066, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 0x0002, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x002a, 
+0x0000, 0x0000, 0x0000, 0x006f, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0004, 
+0x0102, 0x0001, 0x0000, 0x0003, 0x0000, 0xffff, 0xffff, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0xfffe, 0xffff, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0043, 0x006f, 0x006d, 0x0070, 
+0x004f, 0x0062, 0x006a, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0012, 0x0002, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0x0062, 0x0000, 0x0000, 0x0000, 0xfffe, 0xffff, 0x0002, 0x0000, 
+0xfffe, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 
+0x0400, 0x001c, 0x0c00, 0x0802, 0x0003, 0x0000, 0x7d00, 0x0000, 0x2496, 
+0x0000, 0x0918, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0xfffe, 0x0a03, 0x0000, 
+0xffff, 0xffff, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x001a, 0x0000, 0x694d, 0x7263, 0x736f, 0x666f, 0x2074, 0x6f46, 
+0x6d72, 0x2073, 0x2e32, 0x2030, 0x7246, 0x6d61, 0x0065, 0x0010, 0x0000, 
+0x6d45, 0x6562, 0x6464, 0x6465, 0x4f20, 0x6a62, 0x6365, 0x0074, 0x0000, 
+0x0000, 0x39f4, 0x71b2, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PAManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_PA_MAIN_WND, DIALOG
+    BEGIN
+        RIGHTMARGIN, 616
+        BOTTOMMARGIN, 321
+    END
+
+    IDD_PROPPAGE_EMERGENCY, DIALOG
+    BEGIN
+        RIGHTMARGIN, 191
+        BOTTOMMARGIN, 147
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_DVA_MSG_SHORTCUT_CONFIG MENU 
+BEGIN
+    POPUP "设置为快捷"
+    BEGIN
+        POPUP "设置为常用预存广播消息"
+        BEGIN
+            MENUITEM "常用1",                         ID_DVA_SHORTCUT_A
+            MENUITEM "常用2",                         ID_DVA_SHORTCUT_B
+            MENUITEM "常用3",                         ID_DVA_SHORTCUT_C
+            MENUITEM "常用4",                         ID_DVA_SHORTCUT_D
+            MENUITEM "常用5",                         ID_DVA_SHORTCUT_E
+            MENUITEM "常用6",                         ID_DVA_SHORTCUT_F
+            MENUITEM "常用7",                         ID_DVA_SHORTCUT_G
+            MENUITEM "常用8",                         ID_DVA_SHORTCUT_H
+            MENUITEM "常用9",                         ID_DVA_SHORTCUT_I
+            MENUITEM "常用10",                        ID_DVA_SHORTCUT_J
+            MENUITEM "常用11",                        ID_DVA_SHORTCUT_K
+            MENUITEM "常用12",                        ID_DVA_SHORTCUT_L
+            MENUITEM "常用13",                        ID_DVA_SHORTCUT_M
+            MENUITEM "常用14",                        ID_DVA_SHORTCUT_N
+            MENUITEM "常用15",                        ID_DVA_SHORTCUT_O
+            MENUITEM "常用16",                        ID_DVA_SHORTCUT_P
+            MENUITEM "常用17",                        ID_DVA_SHORTCUT_Q
+            MENUITEM "常用18",                        ID_DVA_SHORTCUT_R
+            MENUITEM "常用19",                        ID_DVA_SHORTCUT_S
+            MENUITEM "常用20",                        ID_DVA_SHORTCUT_T
+            MENUITEM "常用21",                        ID_DVA_SHORTCUT_U
+            MENUITEM "常用22",                        ID_DVA_SHORTCUT_V
+            MENUITEM "常用23",                        ID_DVA_SHORTCUT_W
+            MENUITEM "常用24",                        ID_DVA_SHORTCUT_X
+            MENUITEM "常用25",                        ID_DVA_SHORTCUT_Y
+            MENUITEM "常用26",                        ID_DVA_SHORTCUT_Z
+        END
+        MENUITEM "加入待播放广播",                     ID_DVA_INSERT_BROADCAST_LIST
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 PAManager(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\PAManager.ico"
+IDB_UNLOCKMODE          ICON                    "..\\res\\UnlockMode.ico"
+IDB_LOCKMODE            ICON                    "..\\res\\LockMode.ico"
+IDB_UNKNOWNLOCKMODE     ICON                    "..\\res\\BackupKeyUnknown.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PAManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

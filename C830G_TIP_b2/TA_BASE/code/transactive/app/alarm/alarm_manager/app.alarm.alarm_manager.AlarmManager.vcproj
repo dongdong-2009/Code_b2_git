@@ -1,0 +1,274 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.alarm.alarm_manager" ProjectGUID="{D25CAD44-7C37-4BBA-9234-0452F6BD7110}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.alarm.alarm_manager.AlarmManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../cots/boost/boost_1_39_0,../../../../cots/ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;__OSVERSION__=4" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/app.alarm.alarm_manager.AlarmManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nd/transactive/app/alarm/alarm_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081" AdditionalIncludeDirectories=".\alarm_list_component\res;..\..\..\bus\resources\"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib omnithread30_rtd.lib oci.lib orasql10.LIB htmlhelp.lib Rpcrt4.lib ws2_32.lib acemfcd.lib TA_AlarmListCtrl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib SharedAlarm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/AlarmManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\HTMLHelp\lib;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;../../../../../build/win32_nd;E:\perforce\Base\code\transactive\bus\alarm\shared_alarm\Debug;..\..\..\..\cots\WinStackTrace\build\Debug" IgnoreDefaultLibraryNames="msvcrt.lib" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/AlarmManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.alarm.alarm_manager.AlarmManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.alarm.alarm_manager.AlarmManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../cots/boost/boost_1_39_0,../../../../cots/ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG;_WINDOWS;WIN32;_MBCS_MBCS;__WIN32__;__x86__;__NT__;__OSVERSION__=4" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/app.alarm.alarm_manager.AlarmManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/" BrowseInformation="2" BrowseInformationFile=".\../../../../../build/win32_nr/transactive/app/alarm/alarm_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081" AdditionalIncludeDirectories=".\alarm_list_component\res;..\..\..\bus\resources\"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib omnithread30_rt.lib oci.lib orasql10.LIB htmlhelp.lib Rpcrt4.lib ws2_32.lib acemfc.lib TA_AlarmListCtrl.lib TA_Base_Core.lib TA_Base_Bus.lib SharedAlarm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/AlarmManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7;..\..\..\..\cots\oracle\10.2.0\winnt\lib;..\..\..\..\cots\HTMLHelp\lib;..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_39_0\stage\lib;../../../../../build/win32_nr;E:\perforce\Base\code\transactive\bus\alarm\shared_alarm\Release;..\..\..\..\cots\WinStackTrace\build\Release" IgnoreDefaultLibraryNames="LIBC" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/AlarmManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.alarm.alarm_manager.AlarmManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AlarmFilterDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmFilterDlg.h">
+			</File>
+			<File RelativePath="src\AlarmsGui.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmsGui.h">
+			</File>
+			<File RelativePath="src\AlarmsGui.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmsGuiDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmsGuiDlg.h">
+			</File>
+			<File RelativePath="src\AlarmViewerGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AlarmViewerGUI.h">
+			</File>
+			<File RelativePath="src\ColourCheckListBox.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ColourCheckListBox.h">
+			</File>
+			<File RelativePath="src\ExportAlarms.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ExportAlarms.h">
+			</File>
+			<File RelativePath="src\globals.h">
+			</File>
+			<File RelativePath="src\MultipleSelectionDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MultipleSelectionDlg.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\SuppressionRulesDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SuppressionRulesDialog.h">
+			</File>
+			<File RelativePath="res\TransActiveResources.rc">
+				<FileConfiguration Name="Debug|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="res"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32" ExcludedFromBuild="true">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="res"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\ack.ico">
+			</File>
+			<File RelativePath="res\ackhot.ico">
+			</File>
+			<File RelativePath="res\acknowle.ico">
+			</File>
+			<File RelativePath="res\alarm_comment.bmp">
+			</File>
+			<File RelativePath="res\AlarmsGui.ico">
+			</File>
+			<File RelativePath="res\AlarmsGui.rc2">
+			</File>
+			<File RelativePath="res\appfilt.ico">
+			</File>
+			<File RelativePath="res\appfltht.ico">
+			</File>
+			<File RelativePath="res\bitmap3.bmp">
+			</File>
+			<File RelativePath="res\closed_padlock.ico">
+			</File>
+			<File RelativePath="res\comment.bmp">
+			</File>
+			<File RelativePath="res\comment.ico">
+			</File>
+			<File RelativePath="res\comment_.ico">
+			</File>
+			<File RelativePath="res\commenthot.ico">
+			</File>
+			<File RelativePath="res\commentsGrey.bmp">
+			</File>
+			<File RelativePath="res\del.ico">
+			</File>
+			<File RelativePath="res\Delete.bmp">
+			</File>
+			<File RelativePath="res\delete.ico">
+			</File>
+			<File RelativePath="res\delhot.ico">
+			</File>
+			<File RelativePath="res\det.ico">
+			</File>
+			<File RelativePath="res\dethot.ico">
+			</File>
+			<File RelativePath="res\down.bmp">
+			</File>
+			<File RelativePath="res\EventViewer_cold.ico">
+			</File>
+			<File RelativePath="res\EventViewer_hot.ico">
+			</File>
+			<File RelativePath="res\icon1.ico">
+			</File>
+			<File RelativePath="res\manualClose.ico">
+			</File>
+			<File RelativePath="res\manualClose_hot.ico">
+			</File>
+			<File RelativePath="res\mute.ico">
+			</File>
+			<File RelativePath="res\mutehot.ico">
+			</File>
+			<File RelativePath="res\open_padlock.ico">
+			</File>
+			<File RelativePath="res\Plan.ico">
+			</File>
+			<File RelativePath="res\Planhot.ico">
+			</File>
+			<File RelativePath="res\print.ico">
+			</File>
+			<File RelativePath="res\printhot.ico">
+			</File>
+			<File RelativePath="res\refresh.ico">
+			</File>
+			<File RelativePath="res\refreshot.ico">
+			</File>
+			<File RelativePath="res\save.ico">
+			</File>
+			<File RelativePath="res\savehot.ico">
+			</File>
+			<File RelativePath="res\show_fil.ico">
+			</File>
+			<File RelativePath="res\showruls.ico">
+			</File>
+			<File RelativePath="res\shwfilt.ico">
+			</File>
+			<File RelativePath="res\shwfltht.ico">
+			</File>
+			<File RelativePath="res\shwrlsht.ico">
+			</File>
+			<File RelativePath="res\sm_bell.ico">
+			</File>
+			<File RelativePath="res\Sort.ico">
+			</File>
+			<File RelativePath="res\sort_hot.ico">
+			</File>
+			<File RelativePath="res\Spelling.bmp">
+			</File>
+			<File RelativePath="res\suphot.ico">
+			</File>
+			<File RelativePath="res\suppress.ico">
+			</File>
+			<File RelativePath="res\tbar.ico">
+			</File>
+			<File RelativePath="res\tbar_hot.ico">
+			</File>
+			<File RelativePath="res\up.bmp">
+			</File>
+			<File RelativePath="res\up1.bmp">
+			</File>
+			<File RelativePath="res\viewcam.ico">
+			</File>
+			<File RelativePath="res\views.ico">
+			</File>
+			<File RelativePath="res\vwcamhot.ico">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

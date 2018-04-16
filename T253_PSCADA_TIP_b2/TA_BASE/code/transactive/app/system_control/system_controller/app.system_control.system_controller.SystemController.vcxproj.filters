@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="System Controller Comm">
+      <UniqueIdentifier>{ec2654ef-608e-4db9-a7c7-ffcc020e085a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System Controller Comm\src">
+      <UniqueIdentifier>{0e624aad-97d3-4e65-aab8-5af0ebc33f51}</UniqueIdentifier>
+      <Extensions>.cpp</Extensions>
+    </Filter>
+    <Filter Include="System Controller Comm\inc">
+      <UniqueIdentifier>{1f59c94e-df94-411d-9a40-bbe6a702bb3f}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+    <Filter Include="Process Comm">
+      <UniqueIdentifier>{f7ba7023-ef0e-41bf-89c5-340e7c13e5f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Process Comm\src No. 2">
+      <UniqueIdentifier>{042926b8-57aa-44d9-b724-532990236eec}</UniqueIdentifier>
+      <Extensions>cpp</Extensions>
+    </Filter>
+    <Filter Include="Process Comm\inc No. 2">
+      <UniqueIdentifier>{2b436c1f-9872-452a-a4b6-026ce5ede288}</UniqueIdentifier>
+      <Extensions>h</Extensions>
+    </Filter>
+    <Filter Include="System Manager Comm">
+      <UniqueIdentifier>{af1fde81-4122-4f51-a8f7-95c80d4d4c03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src No. 1">
+      <UniqueIdentifier>{ed50d4f2-1a80-4b0b-aa4b-42510f5358f4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GroupMonitor.cpp">
+      <Filter>System Controller Comm\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeerSCInfo.cpp">
+      <Filter>System Controller Comm\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeersMonitor.cpp">
+      <Filter>System Controller Comm\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerMonitor.cpp">
+      <Filter>System Controller Comm\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ManagedProcessInfo.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeerProcessManager.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessInfo.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessManager.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessUtilities.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SignalEventHandler.cpp">
+      <Filter>Process Comm\src No. 2</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerAdmin.cpp">
+      <Filter>System Manager Comm</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShutdownExecutor.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemController.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\SystemControllerException.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WindowsService.cpp">
+      <Filter>src No. 1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GroupMonitor.h">
+      <Filter>System Controller Comm\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeerSCInfo.h">
+      <Filter>System Controller Comm\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeersMonitor.h">
+      <Filter>System Controller Comm\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerMonitor.h">
+      <Filter>System Controller Comm\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedProcessInfo.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeerProcessManager.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessInfo.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessManager.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessUtilities.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SignalEventHandler.h">
+      <Filter>Process Comm\inc No. 2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerAdmin.h">
+      <Filter>System Manager Comm</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShutdownExecutor.h">
+      <Filter>src No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemController.h">
+      <Filter>src No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\SystemControllerException.h">
+      <Filter>src No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WindowsService.h">
+      <Filter>src No. 1</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+
+ta-lib TA_DataAccess
+	: [ glob src/*.cpp : src/OCIAccess.cpp src/QueryAdapter.cpp ]
+	: <dependency>/core/event/idl
+	;

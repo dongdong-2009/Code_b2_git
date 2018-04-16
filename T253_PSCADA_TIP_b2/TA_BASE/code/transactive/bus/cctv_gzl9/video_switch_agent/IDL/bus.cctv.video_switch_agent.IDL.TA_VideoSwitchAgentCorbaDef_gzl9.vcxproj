@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CF0BBA74-5C37-46E2-BD0A-51ECF854EBC2}</ProjectGuid>
+    <RootNamespace>bus.cctv.video_switch_agent.IDL.TA_VideoSwitchAgentCorbaDef_gzl9</RootNamespace>
+    <ProjectName>bus.cctv_gzl9.video_switch_agent.corbadef</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_VideoSwitchAgentCorbaDef_gzl9_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_VideoSwitchAgentCorbaDef_gzl9</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\BVSStageCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\BVSStageCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\CameraCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\CameraCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\ExceptionsCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\ExceptionsCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\FocusIrisControlCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\FocusIrisControlCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\MovementControlCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\MovementControlCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\QuadCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\QuadCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\RecordingUnitCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\RecordingUnitCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SequenceCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SequenceCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SuperimposedTextControlCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SuperimposedTextControlCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SwitchManagerCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SwitchManagerCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoInputCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoInputCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoMonitorCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoMonitorCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputGroupCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputGroupCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoSwitchResourceCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoSwitchResourceCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\WashWipeControlCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\WashWipeControlCorbaDef_skel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\BVSStageCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\CameraCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\ExceptionsCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\FocusIrisControlCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\MovementControlCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\QuadCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\RecordingUnitCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SequenceCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SuperimposedTextControlCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\SwitchManagerCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoInputCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoMonitorCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoOutputGroupCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\VideoSwitchResourceCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv_gzl9\video_switch_agent\IDL\src\WashWipeControlCorbaDef.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

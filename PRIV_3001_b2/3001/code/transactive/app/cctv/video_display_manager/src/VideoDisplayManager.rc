@@ -1,0 +1,871 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_PSC DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2005,IDC_VD_PSC_CONSOLE_MON_1,"Static",SS_BITMAP,446,88,73,56
+    CTEXT           "",IDC_VD_PSC_CONSOLE_MON_TEXT_1,455,105,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,454,147,63,8
+    CONTROL         2005,IDC_VD_PSC_CONSOLE_MON_2,"Static",SS_BITMAP,446,178,73,56
+    CTEXT           "",IDC_VD_PSC_CONSOLE_MON_TEXT_2,455,195,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 2",IDC_STATIC,454,237,65,8
+    GROUPBOX        "Console",IDC_STATIC,410,4,147,379
+    CONTROL         2005,IDC_VD_PSC_CONSOLE_MON_3,"Static",SS_BITMAP,446,266,73,56
+    CTEXT           "",IDC_VD_PSC_CONSOLE_MON_TEXT_3,455,283,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 3",IDC_STATIC,454,325,65,8
+    LTEXT           "Static",IDC_VD_PSC_TAB_VIDEOINPUT,8,4,382,379
+    EDITTEXT        IDC_VD_PSC_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_OCC DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_1,"Static",SS_BITMAP,10,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_2,"Static",SS_BITMAP,72,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_3,"Static",SS_BITMAP,134,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_4,"Static",SS_BITMAP,196,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_5,"Static",SS_BITMAP,258,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_6,"Static",SS_BITMAP,320,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_7,"Static",SS_BITMAP,382,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_8,"Static",SS_BITMAP,444,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_9,"Static",SS_BITMAP,506,25,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_10,"Static",SS_BITMAP,10,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_11,"Static",SS_BITMAP,72,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_12,"Static",SS_BITMAP,134,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_13,"Static",SS_BITMAP,196,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_14,"Static",SS_BITMAP,258,93,50,36,0x800000L
+	CONTROL         2007,IDC_VD_OCC_WALL_MON_15,"Static",SS_BITMAP,320,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_16,"Static",SS_BITMAP,382,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_17,"Static",SS_BITMAP,444,93,50,36,0x800000L
+    CONTROL         2007,IDC_VD_OCC_WALL_MON_18,"Static",SS_BITMAP,506,93,50,36,0x800000L
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_1,13,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_2,75,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_3,137,33,46,23,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_4,199,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_5,261,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_6,323,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_7,385,33,46,23,0,WS_EX_TRANSPARENT
+	CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_8,447,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_9,509,33,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_10,13,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_11,75,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_12,137,101,46,23,0,WS_EX_TRANSPARENT
+    LTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_13,199,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_14,261,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_15,323,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_16,385,101,46,23,0,WS_EX_TRANSPARENT
+	CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_17,447,101,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_OCC_WALL_MON_TEXT_18,509,101,46,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Wall Monitor 1",IDC_STATIC,12,66,50,8
+    LTEXT           "Wall Monitor 2",IDC_STATIC,74,66,50,8
+    LTEXT           "Wall Monitor 3",IDC_STATIC,136,66,50,8
+    LTEXT           "Wall Monitor 4",IDC_STATIC,198,66,50,8
+    LTEXT           "Wall Monitor 5",IDC_STATIC,260,66,50,8
+    LTEXT           "Wall Monitor 6",IDC_STATIC,322,66,50,8
+    LTEXT           "Wall Monitor 7",IDC_STATIC,384,66,50,8
+    LTEXT           "Wall Monitor 8",IDC_STATIC,446,66,50,8
+    LTEXT           "Wall Monitor 9",IDC_STATIC,508,66,50,8
+    LTEXT           "Wall Monitor 10",IDC_STATIC,12,134,50,8
+    LTEXT           "Wall Monitor 11",IDC_STATIC,74,134,50,8
+    LTEXT           "Wall Monitor 12",IDC_STATIC,136,134,50,8
+    LTEXT           "Wall Monitor 13",IDC_STATIC,198,134,50,8
+    LTEXT           "Wall Monitor 14",IDC_STATIC,260,134,50,8
+    LTEXT           "Wall Monitor 15",IDC_STATIC,322,134,50,8
+    LTEXT           "Wall Monitor 16",IDC_STATIC,384,134,50,8
+    LTEXT           "Wall Monitor 17",IDC_STATIC,446,134,50,8
+    LTEXT           "Wall Monitor 18",IDC_STATIC,508,134,50,8
+    CONTROL         2001,IDC_VD_OCC_OVERALL_MON_1,"Static",SS_BITMAP,231,166,114,58,0x800000L
+    CTEXT           "",IDC_VD_OCC_OVERALL_MON_TEXT_1,243,179,91,33,0,WS_EX_TRANSPARENT
+    LTEXT           "Overall Display System",IDC_STATIC,253,227,85,8
+    CONTROL         2005,IDC_VD_OCC_CONSOLE_MON_1,"Static",SS_BITMAP,450,287,73,56,0x800000L
+    CTEXT           "",IDC_VD_OCC_CONSOLE_MON_TEXT_1,461,308,52,14,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,460,349,59,8
+    GROUPBOX        "Common",IDC_STATIC,3,4,560,245
+    EDITTEXT        IDC_VD_OCC_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+    LTEXT           "Static",IDC_VD_OCC_TAB_VIDEOINPUT,3,253,419,130
+    GROUPBOX        "Console",IDC_STATIC,433,253,130,130
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_KOCC DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2003,IDC_VD_KOCC_WALL_MON_1,"Static",SS_BITMAP,80,29,53,38
+    CONTROL         2003,IDC_VD_KOCC_WALL_MON_2,"Static",SS_BITMAP,80,106,53,38
+    CTEXT           "",IDC_VD_KOCC_WALL_MON_TEXT_1,84,37,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_KOCC_WALL_MON_TEXT_2,84,114,46,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Wall Monitor 1",IDC_STATIC,85,70,49,8
+    LTEXT           "Wall Monitor 2",IDC_STATIC,85,147,49,8
+    CONTROL         2001,IDC_VD_KOCC_OVERALL_MON_1,"Static",SS_BITMAP,181,50,114,58
+    CTEXT           "",IDC_VD_KOCC_OVERALL_MON_TEXT_1,186,68,105,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Overall Display System",IDC_STATIC,203,111,85,8
+    CONTROL         2005,IDC_VD_KOCC_CONSOLE_MON_1,"Static",SS_BITMAP,446,263,73,56
+    CTEXT           "",IDC_VD_KOCC_CONSOLE_MON_TEXT_1,458,281,49,21,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,455,322,58,8
+    CONTROL         2003,IDC_VD_KOCC_WALL_MON_3,"Static",SS_BITMAP,356,29,53,38
+    CONTROL         2003,IDC_VD_KOCC_WALL_MON_4,"Static",SS_BITMAP,356,106,53,38
+    CTEXT           "",IDC_VD_KOCC_WALL_MON_TEXT_3,360,37,46,23,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_VD_KOCC_WALL_MON_TEXT_4,360,114,46,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Wall Monitor 3",IDC_STATIC,360,70,49,8
+    LTEXT           "Wall Monitor 4",IDC_STATIC,360,147,49,8
+    GROUPBOX        "Common",IDC_STATIC,4,4,558,172
+    EDITTEXT        IDC_VD_KOCC_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+    GROUPBOX        "Console",IDC_STATIC,405,182,157,201
+    LTEXT           "Static",IDC_VD_KOCC_TAB_VIDEOINPUT,4,182,390,201
+END
+
+IDD_DLG_ALARM_TEST DIALOGEX 0, 0, 181, 191
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alarm Test"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_ALARMTEST_ED_ALARMKEY,53,12,100,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALARMTEST_ED_STATIONID,53,33,100,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALARMTEST_ED_EVENTID,53,55,100,14,ES_AUTOHSCROLL
+    LTEXT           "Alarm Key",IDC_STATIC,12,14,33,8
+    LTEXT           "Station Id",IDC_STATIC,12,36,32,8
+    LTEXT           "Event Id",IDC_STATIC,12,57,28,8
+    PUSHBUTTON      "Acknowledge Alarm",IDC_ALARMTEST_BU_ACKNOWLDGE_ALARM,27,79,67,14
+    PUSHBUTTON      "Close Alarm",IDC_ALARMTEST_BU_CLOSE_ALARM,100,79,58,14
+    EDITTEXT        IDC_ALARMTEST_ED_RUNPARAM_NAME,52,98,100,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ALARMTEST_ED_RUNPARAM_VALUE,52,119,100,14,ES_AUTOHSCROLL
+    LTEXT           "Name",IDC_STATIC,10,100,19,8
+    LTEXT           "Value",IDC_STATIC,10,122,18,8
+    PUSHBUTTON      "RunParam Change",IDC_ALARMTEST_BU_RUNPARAM_CHANGE,23,138,67,14
+    EDITTEXT        IDC_ALARMTEST_ED_TRIGGERING_ALARMLIST,32,157,141,14,ES_AUTOHSCROLL
+    LTEXT           "Name",IDC_STATIC,8,160,19,8
+    PUSHBUTTON      "Process Triggering Alarm",IDC_ALARMTEST_BU_PROCESS_TRIGGERING_ALARM,22,173,83,14
+    CONTROL         "Open",IDC_ALARMTEST_CH_OPEN_TRIGGERINGALARM,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,175,33,10
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_TMF DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2005,IDC_VD_TMF_CONSOLE_MON_1,"Static",SS_BITMAP,442,120,73,56
+    CTEXT           "",IDC_VD_TMF_CONSOLE_MON_TEXT_1,451,137,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,452,179,63,8
+    CONTROL         2005,IDC_VD_TMF_CONSOLE_MON_2,"Static",SS_BITMAP,442,205,73,56
+    CTEXT           "",IDC_VD_TMF_CONSOLE_MON_TEXT_2,451,222,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 2",IDC_STATIC,452,264,65,8
+    GROUPBOX        "Console",IDC_STATIC,410,4,147,379
+    LTEXT           "Static",IDC_VD_TMF_TAB_VIDEOINPUT,10,4,381,379
+    EDITTEXT        IDC_VD_TMF_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_GBD DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2005,IDC_VD_GBD_CONSOLE_MON_1,"Static",SS_BITMAP,419,124,73,56
+    CTEXT           "",IDC_VD_GBD_CONSOLE_MON_TEXT_1,428,141,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,427,183,63,8
+    CONTROL         2005,IDC_VD_GBD_CONSOLE_MON_2,"Static",SS_BITMAP,419,213,73,56
+    CTEXT           "",IDC_VD_GBD_CONSOLE_MON_TEXT_2,428,230,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 2",IDC_STATIC,427,272,65,8
+    GROUPBOX        "Console",IDC_STATIC,353,4,208,379
+    LTEXT           "Static",IDC_VD_GBD_TAB_VIDEOINPUT,7,220,331,163
+    EDITTEXT        IDC_VD_GBD_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+    CONTROL         2001,IDC_VD_GBD_OVERALL_MON_1,"Static",SS_BITMAP,101,89,114,58
+    CTEXT           "",IDC_VD_GBD_OVERALL_MON_TEXT_1,106,107,105,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Overall Display System",IDC_STATIC,123,150,85,8
+    GROUPBOX        "Common",IDC_STATIC,7,4,331,211
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG_TDS DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         2005,IDC_VD_TDS_CONSOLE_MON_1,"Static",SS_BITMAP,447,159,73,56
+    CTEXT           "",IDC_VD_TDS_CONSOLE_MON_TEXT_1,456,176,55,23,0,WS_EX_TRANSPARENT
+    LTEXT           "Console Monitor 1",IDC_STATIC,455,218,63,8
+    GROUPBOX        "Console",IDC_STATIC,410,4,147,379
+    LTEXT           "Static",IDC_VD_TDS_TAB_VIDEOINPUT,10,4,379,379
+    EDITTEXT        IDC_VD_TDS_DETAILS_EDIT,586,20,231,353,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_STATIC,576,4,252,379
+END
+
+IDD_QUADS DIALOG  0, 0, 411, 138
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Quads"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Tree1",IDC_QUADTREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,4,7,403,124
+END
+
+IDD_SEQUENCES DIALOGEX 0, 0, 225, 133
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Sequences"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "Tree1",IDC_SEQUENCETREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,0,0,225,132
+END
+
+IDD_SEQUENCEEDITOR_DIALOG DIALOGEX 0, 0, 721, 182
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sequence Editor"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CTEXT           "SEQUENCE_ID",IDC_SE_SEQUENCE_LABEL,108,8,92,8
+    LTEXT           "Description:",IDC_SE_DESCRIPTION_LABEL,9,20,41,8
+    EDITTEXT        IDC_SE_DESCRIPTION_EDIT_BOX,50,19,155,12,ES_AUTOHSCROLL
+    LTEXT           "Dwell time:",IDC_SE_DWELLTIME_LABEL,214,20,37,8
+    EDITTEXT        IDC_SE_DWELLTIME_EDIT_BOX,253,19,11,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Spin1",IDC_DWELLTIME_SPIN,"msctls_updown32",UDS_SETBUDDYINT | UDS_ARROWKEYS,263,18,10,14
+    LTEXT           "seconds",IDC_SE_SECONDS_LABEL,273,20,28,8
+    LTEXT           "Available Cameras:",ID_SE_AVAILABLECAMERAS_LABEL,9,41,65,8
+    CONTROL         "Tree1",IDC_SE_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,7,53,324,98
+    LTEXT           "Cameras in Sequence (20 max):",IDC_SE_SOURCES_INSEQUENCE_LABEL,367,41,105,8
+    LISTBOX         IDC_SE_SEQUENCES_LIST,366,53,324,98,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "&Save Sequence",IDC_SE_SAVE_BUTTON,362,159,61,14
+    PUSHBUTTON      "&Close",IDCANCEL,432,159,61,14
+    PUSHBUTTON      "Add",IDC_SE_ADD_BUTTON,343,81,17,14,BS_ICON
+    PUSHBUTTON      "Remove",IDC_SE_REMOVE_BUTTON,343,105,17,14,BS_ICON
+    PUSHBUTTON      "Top",IDC_SE_TOP_BUTTON,697,75,17,14,BS_ICON
+    PUSHBUTTON      "Up",IDC_SE_UP_BUTTON,697,89,17,14,BS_ICON
+    PUSHBUTTON      "Down",IDC_SE_DOWN_BUTTON,697,103,17,14,BS_ICON
+    PUSHBUTTON      "Bottom",IDC_SE_BOTTOM_BUTTON,697,117,17,14,BS_ICON
+END
+
+IDD_CAMERAS DIALOGEX 0, 0, 178, 142
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Cameras"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "Tree1",IDC_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,0,0,178,142
+END
+
+IDD_TRAINS DIALOG  0, 0, 411, 147
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Trains"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_TRAINSLIST_IB,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,3,20,200,120
+    CONTROL         "List1",IDC_TRAINSLIST_OB,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,208,20,199,120
+    LTEXT           "Inner Track",IDC_STATIC,3,5,40,8
+    LTEXT           "Outer Track",IDC_STATIC,208,5,42,8
+END
+
+IDD_TRAINBORNECONTROLLER DIALOG  0, 0, 306, 177
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Trainborne CCTV Controller"
+FONT 10, "Arial Bold"
+BEGIN
+    CTEXT           "TRAIN_ID",IDC_TC_TRAIN_LABEL,127,7,52,8
+    GROUPBOX        "Car 1",IDC_TRAINCAR1,32,21,80,58,BS_CENTER
+    GROUPBOX        "Car 2",IDC_TRAINCAR2,113,21,80,58,BS_CENTER
+    GROUPBOX        "Car 3",IDC_TRAINCAR3,194,21,80,58,BS_CENTER
+    CONTROL         "Quad",IDC_QUADRADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,28,91,27,10
+    CONTROL         "Single",IDC_SINGLERADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,112,91,30,10
+    CONTROL         "Sequence",IDC_SEQUENCERADIO,"Button",BS_AUTORADIOBUTTON | WS_GROUP,197,91,42,10
+    COMBOBOX        IDC_SEQUENCECOMBO,197,105,102,55,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         182,IDC_TRAINSINGLEMON,"Static",SS_BITMAP,111,105,63,47
+    CONTROL         183,IDC_TRAINQUADMON1,"Static",SS_BITMAP,26,105,32,24
+    CONTROL         183,IDC_TRAINQUADMON2,"Static",SS_BITMAP,57,105,32,24
+    CONTROL         183,IDC_TRAINQUADMON3,"Static",SS_BITMAP,26,128,32,24
+    CONTROL         183,IDC_TRAINQUADMON4,"Static",SS_BITMAP,57,128,32,24
+    PUSHBUTTON      "&Apply",IDC_TC_APPLY_BUTTON,193,156,48,14
+    PUSHBUTTON      "&Close",IDCANCEL,250,156,48,14
+    CONTROL         130,IDC_TRAINCAM1,"Static",SS_BITMAP,10,31,20,20
+    CONTROL         129,IDC_TRAINCAM2,"Static",SS_BITMAP,35,31,20,20
+    CONTROL         130,IDC_TRAINCAM3,"Static",SS_BITMAP,89,31,20,20
+    CONTROL         129,IDC_TRAINCAM4,"Static",SS_BITMAP,116,31,20,20
+    CONTROL         130,IDC_TRAINCAM5,"Static",SS_BITMAP,170,31,20,20
+    CONTROL         129,IDC_TRAINCAM6,"Static",SS_BITMAP,197,31,20,20
+    CONTROL         130,IDC_TRAINCAM7,"Static",SS_BITMAP,251,31,20,20
+    CONTROL         129,IDC_TRAINCAM8,"Static",SS_BITMAP,276,31,20,20
+    LTEXT           "Cam 1",IDC_CAM1_LABEL,9,52,22,8
+    LTEXT           "Cam 2",IDC_CAM2_LABEL,36,52,22,8
+    LTEXT           "Cam 3",IDC_CAM3_LABEL,89,52,22,8
+    LTEXT           "Cam 4",IDC_CAM4_LABEL,116,52,22,8
+    LTEXT           "Cam 5",IDC_CAM5_LABEL,169,52,22,8
+    LTEXT           "Cam 6",IDC_CAM6_LABEL,197,52,22,8
+    LTEXT           "Cam 7",IDC_CAM7_LABEL,251,52,22,8
+    LTEXT           "Cam 8",IDC_CAM8_LABEL,277,52,22,8
+    CTEXT           "",IDC_QUAD1_TEXT,31,113,22,8
+    CTEXT           "",IDC_QUAD2_TEXT,62,113,22,8
+    CTEXT           "",IDC_QUAD3_TEXT,31,135,22,8
+    CTEXT           "",IDC_QUAD4_TEXT,62,135,22,8
+    CTEXT           "",IDC_SINGLEMON_TEXT,131,123,22,8
+END
+
+IDD_DLG_INITPROGRESS DIALOG  0, 0, 212, 52
+STYLE DS_SETFONT | WS_POPUP | WS_BORDER
+FONT 10, "System"
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,76,38,50,14,NOT WS_VISIBLE
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",PBS_SMOOTH | WS_BORDER,7,19,198,16
+    LTEXT           "Static",IDC_STATIC_TEXT1,7,7,198,10
+    LTEXT           "Static",IDC_STATIC_TEXT2,7,38,29,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT3,163,37,24,8,NOT WS_VISIBLE
+END
+
+IDD_VIDEODISPLAYMANAGER_DIALOG DIALOGEX 0, 0, 636, 366
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "VSS Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         144,IDC_WALL_MONITOR_1,"Static",SS_BITMAP,33,9,70,48
+    CONTROL         144,IDC_WALL_MONITOR_2,"Static",SS_BITMAP,33,73,70,48
+    CONTROL         144,IDC_WALL_MONITOR_3,"Static",SS_BITMAP,33,132,70,48
+    CONTROL         144,IDC_WALL_MONITOR_4,"Static",SS_BITMAP,380,14,70,48
+    CONTROL         144,IDC_WALL_MONITOR_5,"Static",SS_BITMAP,380,73,70,48
+    CONTROL         144,IDC_WALL_MONITOR_6,"Static",SS_BITMAP,380,132,70,48
+    CONTROL         146,IDC_OVERVIEW_DISPLAY,"Static",SS_BITMAP,130,40,223,80
+    GROUPBOX        "Common",IDC_COMMON_BOX,7,4,470,189
+    CONTROL         134,IDC_CONSOLE_MONITOR_1,"Static",SS_BITMAP,396,210,73,56
+    CONTROL         134,IDC_CONSOLE_MONITOR_2,"Static",SS_BITMAP,396,210,73,56
+    GROUPBOX        "Console",IDC_CONSOLE_BOX,387,195,91,165
+    CTEXT           "Wall Monitor 1",IDC_LABEL_WALL_MONITOR_1,15,63,107,8
+    CTEXT           "Wall Monitor 2",IDC_LABEL_WALL_MONITOR_2,14,122,107,8
+    CTEXT           "Wall Monitor 3",IDC_LABEL_WALL_MONITOR_3,14,181,107,8
+    CTEXT           "Wall Monitor 4",IDC_LABEL_WALL_MONITOR_4,362,63,107,8
+    CTEXT           "Wall Monitor 5",IDC_LABEL_WALL_MONITOR_5,362,122,107,8
+    CTEXT           "Wall Monitor 6",IDC_LABEL_WALL_MONITOR_6,362,181,107,8
+    CTEXT           "Console Monitor 1",IDC_LABEL_CONSOLE_MONITOR_1,392,270,80,21
+    CTEXT           "Console Monitor 2",IDC_LABEL_CONSOLE_MONITOR_2,392,271,80,21
+    CTEXT           "Overview Display System",IDC_LABEL_OVERVIEW_DISPLAY,130,122,223,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_1,39,35,57,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_2,39,93,57,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_3,39,151,57,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_4,386,35,57,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_5,386,94,57,8
+    CTEXT           "",IDC_TEXT_WALL_MONITOR_6,386,152,57,8
+    CTEXT           "",IDC_TEXT_OVERVIEW_DISPLAY,212,76,57,8
+    CTEXT           "",IDC_TEXT_CONSOLE_MONITOR_2,404,234,57,8
+    CTEXT           "",IDC_TEXT_CONSOLE_MONITOR_1,403,234,57,8
+    LTEXT           "",IDC_TABMARKER,7,199,376,161,NOT WS_VISIBLE | WS_DISABLED,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_MENU_LINE,"Static",SS_ETCHEDHORZ,0,0,637,1
+    EDITTEXT        IDC_DETAILS_EDIT,487,15,136,339,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    GROUPBOX        "Details",IDC_DETAILS_BOX,481,4,148,356
+    CONTROL         "Rewind",IDC_COMMON_PREVIOUSELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,199,150,17,14
+    CONTROL         "Play",IDC_COMMON_PLAY_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,216,150,32,14
+    CONTROL         "Fast Forward",IDC_COMMON_NEXTELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,248,150,17,14
+    CONTROL         "Pause",IDC_COMMON_PAUSE_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,265,150,17,14
+    CONTROL         "Rewind",IDC_CONSOLE_PREVIOUSELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,391,305,17,14
+    CONTROL         "Play",IDC_CONSOLE_PLAY_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,408,305,32,14
+    CONTROL         "Fast Forward",IDC_CONSOLE_NEXTELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,440,305,17,14
+    CONTROL         "Pause",IDC_CONSOLE_PAUSE_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,457,305,17,14
+    LTEXT           "Sequence Playback",IDC_COMMON_PLAYBACK_LABEL,209,166,66,8,WS_DISABLED
+    LTEXT           "Sequence Playback",IDC_CONSOLE_PLAYBACK_LABEL,399,321,66,8,WS_DISABLED
+    CTEXT           "",IDC_TEXT_CONSOLE_MONITOR_3,404,234,57,8
+    CONTROL         134,IDC_CONSOLE_MONITOR_3,"Static",SS_BITMAP,396,210,73,56
+    CTEXT           "Console Monitor 3",IDC_LABEL_CONSOLE_MONITOR_3,392,270,80,21
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DLG_ALARM_TEST, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 187
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VD_WALL_H           BITMAP                  "..\\res\\SingleVmonForTrainHighLite.bmp"
+IDB_VD_WALL             BITMAP                  "..\\res\\SingleVmonForTrain.bmp"
+IDB_VD_WALL_SMALL_H     BITMAP                  "..\\res\\SingleVmonForTrainSmallHighLite.bmp"
+IDB_VD_WALL_SMALL       BITMAP                  "..\\res\\SingleVmonForTrainSmall.bmp"
+IDB_VD_OVERALL_H        BITMAP                  "..\\res\\ODSHighLite.bmp"
+IDB_VD_OVERALL          BITMAP                  "..\\res\\ODS.bmp"
+IDB_VD_CONSOLE_H        BITMAP                  "..\\res\\VmonHighLite.bmp"
+IDB_VD_CONSOLE          BITMAP                  "..\\res\\Vmon.bmp"
+IDB_QUADVMON_HILITE     BITMAP                  "..\\res\\QuadVmonHighLite.bmp"
+IDB_QUADVMON_DISABLED   BITMAP                  "..\\res\\QuadVmonDisabled.bmp"
+IDB_QUADVMON            BITMAP                  "..\\res\\QuadVmon.bmp"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\VideoDisplayManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,27,13,50
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "VideoDisplayManager MFC Application"
+            VALUE "FileVersion", "01, 27, 13, 50"
+            VALUE "InternalName", "VideoDisplayManager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "VideoDisplayManager.EXE"
+            VALUE "ProductName", "VideoDisplayManager Application"
+            VALUE "ProductVersion", "01, 27, 13, 50"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\VideoDisplayManager.ico"
+IDI_CAMERA              ICON                    "..\\res\\camera.ico"
+IDI_CLOSEDFOLDER        ICON                    "..\\res\\closedfolder.ico"
+IDI_OPENFOLDER          ICON                    "..\\res\\openfolder.ico"
+IDI_SEQUENCE            ICON                    "..\\res\\sequence.ico"
+IDI_QUAD                ICON                    "..\\res\\quad.ico"
+IDI_ADD                 ICON                    "..\\res\\add.ico"
+IDI_REMOVE              ICON                    "..\\res\\remove.ico"
+IDI_TOP                 ICON                    "..\\res\\top.ico"
+IDI_UP                  ICON                    "..\\res\\up.ico"
+IDI_DOWN                ICON                    "..\\res\\down.ico"
+IDI_BOTTOM              ICON                    "..\\res\\bottom.ico"
+IDI_TRAIN               ICON                    "..\\res\\train.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_DRAG_CURSOR         CURSOR                  "..\\res\\Dragmove.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MONCAMCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Clear Monitor",              ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONSEQCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Sequence Editor",       ID_NEW_EDIT_SEQUENCE
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear Monitor",              ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONQUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Quad Controller",       ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear Monitor",              ID_CLEAR_MONITOR
+    END
+END
+
+IDR_MONTRAINCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Trainborne CCTV Controller", ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "&Clear Monitor",              ID_CLEAR_MONITOR
+        MENUITEM SEPARATOR
+        MENUITEM "&Deactivate Train Video",     ID_DEACTIVATE_TRAIN
+    END
+END
+
+IDR_PAGEQUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Quad Controller",       ID_LOAD_CONTROLLER
+    END
+END
+
+IDR_PAGETRAINCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Trainborne CCTV Controller", ID_LOAD_CONTROLLER
+        MENUITEM SEPARATOR
+        MENUITEM "&Deactivate Train Video",     ID_DEACTIVATE_TRAIN
+    END
+END
+
+IDR_PAGESEQCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Load Sequence Editor",       ID_NEW_EDIT_SEQUENCE
+    END
+END
+
+IDR_VCRCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Time-lapse Recording",       ID_TIMELAPSE_MODE
+        MENUITEM "&Real-time Recording",        ID_REALTIME_MODE
+    END
+END
+
+IDR_QUADCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "&Clear Segment",              ID_CLEAR_MONITOR
+    END
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RECORDINGUNIT_DIALOG DIALOG  0, 0, 131, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Recording Unit Controller"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_RU_RECORDINGUNIT_EDIT,7,13,117,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_RU_MONITOR_EDIT,7,36,117,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Stop",IDC_RU_STOP_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,7,55,17,14
+    CONTROL         "Record",IDC_RU_RECORD_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,24,55,17,14
+    CONTROL         "Rewind",IDC_RU_REWIND_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,41,55,17,14
+    CONTROL         "Play",IDC_RU_PLAY_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,58,55,32,14
+    CONTROL         "Fast Forward",IDC_RU_FAST_FORWARD_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,90,55,17,14
+    CONTROL         "Pause",IDC_RU_PAUSE_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,107,55,17,14
+    LTEXT           "Recording Unit:",IDC_STATIC,9,4,87,8
+    LTEXT           "Monitor:",IDC_STATIC,9,27,87,8
+END
+
+IDD_SEQUENCECONTROLLER_DIALOG DIALOG  0, 0, 131, 76
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sequence Playback Controller"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_SC_SEQNAMEDESCRIPTION_EDIT,7,13,117,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_SC_MONITOR_EDIT,7,36,117,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Rewind",IDC_SC_PREVIOUSELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,24,55,17,14
+    CONTROL         "Play",IDC_SC_PLAY_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,41,55,32,14
+    CONTROL         "Fast Forward",IDC_SC_NEXTELEMENT_BUTTON,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,73,55,17,14
+    CONTROL         "Pause",IDC_SC_PAUSE_CHECK,"Button",BS_AUTOCHECKBOX | BS_ICON | BS_PUSHLIKE | WS_TABSTOP,90,55,17,14
+    LTEXT           "Sequence:",IDC_STATIC,9,4,87,8
+    LTEXT           "Monitor:",IDC_STATIC,9,27,87,8
+END
+
+IDD_QUADCONTROLLER_DIALOG DIALOGEX 0, 0, 489, 151
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Quad Controller"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_QC_CAMERATREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_HSCROLL | WS_TABSTOP,8,29,329,105
+    PUSHBUTTON      "&Apply",IDC_QC_APPLY_BUTTON,354,119,48,14
+    PUSHBUTTON      "&Close",IDCANCEL,412,119,48,14
+    CONTROL         2003,IDC_QUADSEG1,"Static",SS_BITMAP,354,30,53,38
+    CONTROL         2003,IDC_QUADSEG2,"Static",SS_BITMAP,406,30,53,38
+    CONTROL         2003,IDC_QUADSEG3,"Static",SS_BITMAP,354,67,53,38
+    CONTROL         2003,IDC_QUADSEG4,"Static",SS_BITMAP,406,67,53,38
+    LTEXT           "Available Cameras:",ID_QC_AVAILABLECAMERAS_LABEL,8,18,65,8
+    CTEXT           "",IDC_TEXT_QUADSEG_1,356,45,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_3,356,82,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_4,409,82,48,8
+    CTEXT           "",IDC_TEXT_QUADSEG_2,409,45,48,8
+    EDITTEXT        IDC_SEQUENCENAMEDESC_EDIT,41,7,208,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+END
+
+IDD_SAVEAS_DIALOG DIALOG  0, 0, 242, 156
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Save Sequence As"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Save",IDOK,124,135,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,185,135,50,14
+    CONTROL         "Tree1",IDC_SAVEAS_SEQUENCETREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_NOTOOLTIPS | WS_BORDER | WS_TABSTOP,7,7,228,122
+END
+
+IDD_LOCATION_SELECTION DIALOG  0, 0, 115, 46
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Train Location"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,26,43,13
+    PUSHBUTTON      "Cancel",IDCANCEL,64,26,43,13
+    LTEXT           "Location:",IDC_STATIC,7,9,31,8
+    COMBOBOX        IDC_LOCSEL_COMBOBOX_LOCATIONS,45,7,63,146,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RECORDINGUNIT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 124
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_SEQUENCECONTROLLER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 124
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_QUADCONTROLLER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+    END
+
+    IDD_SAVEAS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+
+    IDD_LOCATION_SELECTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 108
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 39
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_QUADSEG_HILITE      BITMAP                  "..\\res\\QuadSegmentHighLite.bmp"
+IDB_QUADSEG             BITMAP                  "..\\res\\QuadSegment.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PLAY_ICON           ICON                    "..\\res\\play.ico"
+IDI_HALT_ICON           ICON                    "..\\res\\halt.ico"
+IDI_PAUSE_ICON          ICON                    "..\\res\\pause.ico"
+IDI_NEXTELEMENT_FF_ICON ICON                    "..\\res\\nextElement_FF.ico"
+IDI_RECORD_ICON         ICON                    "..\\res\\record.ico"
+IDI_PREVIOUSELEMENT_RW_ICON ICON                    "..\\res\\previousElement_RW.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "VSS Manager &Help",           ID_APP_HELP, HELP
+        MENUITEM "&About VSS Manager",          ID_APP_ABOUT
+    END
+END
+
+IDR_MONALARMCONTEXT_MENU MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        POPUP "Clear Train Alarm Images"
+        BEGIN
+            MENUITEM SEPARATOR
+        END
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display version information for the Display Manager Application"
+    IDS_UE010016_CANNOT_LOAD_DATA 
+                            "The %s failed to retrieve the %s from the database."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_HELP             "Get help on the Display Manager topics"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "Property Sheet"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\VideoDisplayManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

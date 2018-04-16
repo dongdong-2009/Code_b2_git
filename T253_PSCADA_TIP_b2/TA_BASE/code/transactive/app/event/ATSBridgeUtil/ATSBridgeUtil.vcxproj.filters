@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{c237bd76-9ed4-4f14-a45e-738b73e3e9a2}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Src">
+      <UniqueIdentifier>{7fd71e9c-9971-4e05-a25e-03220c00fda0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ATSBridgeUtil_i.c">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSBridgeUtil.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSBridgeUtility.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSDateTime.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSEvent.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSEventList.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSEventSubscription.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSEventSystem.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSEventSystemList.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSFilterCriteria.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSIntList.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSStringList.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CallbackHandler.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Convert.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dllmain.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonReEntrantThreadLockable.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Semaphore.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Thread.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadGuard.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ATSBridgeUtil_i.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_IATSEventSubscriptionEvents_CP.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSBridgeUtility.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSDateTime.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSEvent.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSEventList.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSEventSubscription.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSEventSystem.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSEventSystemList.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSFilterCriteria.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSIntList.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSStringList.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CallbackHandler.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Convert.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dllmain.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IThreadLockable.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\logger.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonReEntrantThreadLockable.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Semaphore.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\stdafx.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targetver.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Thread.h">
+      <Filter>Src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ATSBridgeUtil.def">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSBridgeUtil.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSBridgeUtility.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSDateTime.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSEvent.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSEventList.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSEventSubscription.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSEventSystem.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSEventSystemList.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSFilterCriteria.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSIntList.rgs">
+      <Filter>Src</Filter>
+    </None>
+    <None Include="src\ATSStringList.rgs">
+      <Filter>Src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="src\ATSBridgeUtil.idl">
+      <Filter>Src</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\ATSBridgeUtil.rc">
+      <Filter>Src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

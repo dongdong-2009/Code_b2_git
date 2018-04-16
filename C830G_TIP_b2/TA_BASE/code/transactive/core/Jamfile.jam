@@ -1,0 +1,23 @@
+alias TA_Base_Core
+	: [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels base core
+			: is-library
+		]
+	;
+ta-install-lib library : TA_Base_Core ;
+
+if [ option.get test : : true ]
+{
+	import option path print ;
+	if [ current-ta-project.get path ] = [ path.pwd ]
+	{
+		current-ta-project.get __debug__ ;
+		print.lines [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels base core
+			: is-library
+		] : "\t" "\t" ;
+		exit ;
+	}
+}

@@ -1,0 +1,88 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.RadioTetraAgent.RadioTCPCommunication" ProjectGUID="{BE9E7F24-32E2-4C47-9A8E-8259502E0C3D}" RootNamespace="app.radio.RadioTetraAgent.RadioTCPCommunic" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/RadioTCPCommunication" ConfigurationType="4" UseOfMFC="0" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\..;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../sdk/include/transactive;../../../../../../build/win32_n/transactive;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" BrowseInformation="0" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="false" OutputFile="../../../../../../build/win32_nd/TA_RadioTCPCommunication_d.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/RadioTCPCommunication" ConfigurationType="4" UseOfMFC="0" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\..;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../sdk/include/transactive;../../../../../../build/win32_n/transactive;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" RuntimeLibrary="2" BrowseInformation="0" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="false" OutputFile="../../../../../../build/win32_nr/TA_RadioTCPCommunication.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\src\BaseTcpServer.cpp">
+			</File>
+			<File RelativePath=".\src\ObservedSocket.cpp">
+			</File>
+			<File RelativePath=".\src\TCPConnection.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionException.cpp">
+			</File>
+			<File RelativePath=".\src\TcpConnectionManager.cpp">
+			</File>
+			<File RelativePath=".\src\TcpException.cpp">
+			</File>
+			<File RelativePath=".\src\TcpMethodTimeoutException.cpp">
+			</File>
+			<File RelativePath=".\src\TcpTransactionManager.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\BaseTcpServer.h">
+			</File>
+			<File RelativePath=".\src\ISocketObserver.h">
+			</File>
+			<File RelativePath=".\src\ITcpConnectionStatusObserver.h">
+			</File>
+			<File RelativePath=".\src\ObservedSocket.h">
+			</File>
+			<File RelativePath=".\src\TCPConnection.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionException.h">
+			</File>
+			<File RelativePath=".\src\TcpConnectionManager.h">
+			</File>
+			<File RelativePath=".\src\TcpException.h">
+			</File>
+			<File RelativePath=".\src\TcpMethodTimeoutException.h">
+			</File>
+			<File RelativePath=".\src\TcpTransactionManager.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

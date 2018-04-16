@@ -1,0 +1,6 @@
+
+ta-exe AtsAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/ats/AtsAgent/AtsMethod//TA_AtsMethod
+	  /proj/app/ats/AtsAgent/AtsTCPCommunication//TA_AtsTCPCommunication
+	;

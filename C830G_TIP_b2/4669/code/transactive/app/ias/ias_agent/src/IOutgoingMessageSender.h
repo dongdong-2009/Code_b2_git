@@ -1,0 +1,43 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/4669_T01271350/4669/transactive/app/ias/ias_agent/src/IOutgoingMessageSender.h $
+  * @author:  Ripple
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2008/11/28 16:26:01 $
+  * Last modified by:  $Author: builder $
+  *
+  */
+///////////////////////////////////////////////////////////
+//  IOutgoingMessageSender.h
+//  Implementation of the Interface IOutgoingMessageSender
+//  Created on:      04-Mar-2005 08:24:12 AM
+//  Original author: Sean Liew
+///////////////////////////////////////////////////////////
+
+#if !defined(IOutgoingMessageSender_31F40A2F_FD5A_497d_A99A_18F035874535__INCLUDED_)
+#define IOutgoingMessageSender_31F40A2F_FD5A_497d_A99A_18F035874535__INCLUDED_
+
+/**
+ * Simple interface to split dependencies between business logic classes and
+ * protocol classes.
+ * @author Sean Liew
+ * @version 1.0
+ * @created 04-Mar-2005 08:24:12 AM
+ */
+class IOutgoingMessageSender
+{
+
+public:
+	/**
+	 * Notify the class to send an AbstractOutgoingIasMessage packet.
+	 * @param outgoingMessage
+	 * 
+	 */
+	virtual void sendMessage(AbstractOutgoingIasMessage& outgoingMessage) =0;
+
+};
+#endif // !defined(IOutgoingMessageSender_31F40A2F_FD5A_497d_A99A_18F035874535__INCLUDED_)

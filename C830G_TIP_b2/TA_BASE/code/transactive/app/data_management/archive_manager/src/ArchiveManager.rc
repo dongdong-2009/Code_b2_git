@@ -1,0 +1,724 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Singapore) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ZHI)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SINGAPORE
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_SORT_DESC           BITMAP  DISCARDABLE     "..\\res\\sort_descending.bmp"
+IDB_SORT_ASC            BITMAP  DISCARDABLE     "..\\res\\sort_ascending.bmp"
+#endif    // Chinese (Singapore) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ARCHIVEMANAGER_DIALOG DIALOGEX 0, 0, 293, 170
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Archive Manager"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Scheduled Archive",IDC_BUTTON_SCHEDULE,17,15,120,20,
+                    WS_DISABLED
+    PUSHBUTTON      "Manual Archive",IDC_BUTTON_MANUAL,17,48,120,20,
+                    WS_DISABLED
+    PUSHBUTTON      "Restore Archives",IDC_BUTTON_RESTORE,17,81,120,20,
+                    WS_DISABLED
+    PUSHBUTTON      "Restored Data",IDC_BUTTON_DISPLAY,17,114,120,20,
+                    WS_DISABLED
+    PUSHBUTTON      "Close",IDOK,216,149,50,14
+    LTEXT           "Transfer automatically created archive files to removable media.",
+                    IDC_STATIC,152,15,124,20
+    LTEXT           "Create archive files for specified dates and transfer them to removable media.",
+                    IDC_STATIC,152,48,124,20
+    LTEXT           "Restore selected archives from removable media.",
+                    IDC_STATIC,152,81,124,20
+    LTEXT           "Display a list of restored archives, and remove selected restored data.",
+                    IDC_STATIC,152,114,124,20
+END
+
+IDD_WRITE_ARCHIVE_DIALOG DIALOGEX 0, 0, 191, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Insert Archive Media"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,37,209,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,103,209,50,14
+    CONTROL         "List1",IDC_FILE_LIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER,7,34,174,148
+    LTEXT           "Please insert a blank CD and press OK to continue.",
+                    IDC_STATIC_INSERT_CDDVD,7,191,174,12
+    LTEXT           "? CD(s) will be required to complete the transfer.\nThe following files will be transferred:",
+                    IDC_NUM_CDS_STATIC,7,7,174,23
+END
+
+IDD_RESTORE_ARCHIVE_DIALOG DIALOGEX 0, 0, 191, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "View Restored Archive"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "The selected drive contains archives for the following dates. Please select the dates to restore.",
+                    IDC_STATIC,7,7,174,20
+    LTEXT           "Selected Drive",IDC_STATIC,45,33,48,8
+    COMBOBOX        IDC_DRIVE_COMBO,99,31,46,42,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List1",IDC_ARCHIVE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,53,174,146
+    PUSHBUTTON      "Select All",IDC_BUTTON_SELECT_ALL,10,209,50,14
+    PUSHBUTTON      "Restore",ID_BUTTON_RESTORE,70,209,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,130,209,50,14
+    PUSHBUTTON      "Close",IDOK,70,209,50,14,NOT WS_VISIBLE | WS_DISABLED | 
+                    NOT WS_TABSTOP
+END
+
+IDD_DELETE_ARCHIVE_DIALOG DIALOGEX 0, 0, 290, 184
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Restored Archives"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Close",IDOK,120,163,50,14,NOT WS_VISIBLE | WS_DISABLED
+    CONTROL         "List1",IDC_ARCHIVE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,36,273,117
+    PUSHBUTTON      "Remove Data",IDC_BUTTON_REMOVE_DATA,120,163,50,14,
+                    WS_DISABLED
+    LTEXT           "The inventory contains the following restored data.\nPlease select the restored data to delete.",
+                    IDC_STATIC,7,7,168,22
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,186,163,50,14
+    PUSHBUTTON      "Change Date",IDC_MODIFY_BUTTON,54,163,50,14,WS_DISABLED
+END
+
+IDD_DATE_RANGE_DIALOG DIALOGEX 0, 0, 178, 84
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Select Archive Data Range"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,18,54,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,102,53,50,14
+    LTEXT           "Please select the date range to archive:",IDC_STATIC,7,
+                    7,161,12
+    CONTROL         "DateTimePicker2",IDC_DATETIMEPICKER_FROM,
+                    "SysDateTimePick32",DTS_RIGHTALIGN,32,27,50,12
+    CONTROL         "DateTimePicker2",IDC_DATETIMEPICKER_TO,
+                    "SysDateTimePick32",DTS_RIGHTALIGN,118,27,50,12
+    LTEXT           "From:",IDC_STATIC,7,26,20,15,SS_CENTERIMAGE
+    LTEXT           "To:",IDC_STATIC,97,26,11,15,SS_CENTERIMAGE
+END
+
+IDD_RETRIEVING_DATA_DIALOG DIALOGEX 0, 0, 184, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Retrieving Data"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Stop",IDSTOP,67,45,50,14
+    LTEXT           "Archiving data from ?? to ??",IDC_RANGE_STATIC,7,7,167,
+                    12
+    LTEXT           "Retrieving data for date:",-1,7,26,78,8
+    LTEXT           "",IDC_DATE_STATIC,88,26,86,8
+END
+
+IDD_SELECT_DATE_DIALOG DIALOGEX 0, 0, 170, 75
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Select Deletion Date"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,27,54,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,93,54,50,14
+    LTEXT           "Please select the date on which the ticked restored data sets should be deleted.",
+                    IDC_STATIC,7,7,153,21
+    CONTROL         "DateTimePicker2",IDC_DATEPICKER,"SysDateTimePick32",
+                    DTS_RIGHTALIGN,72,31,50,12
+    LTEXT           "Deletion Due Date:",IDC_STATIC,7,33,61,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,27,13,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "ArchiveManager MFC Application\0"
+            VALUE "FileVersion", "00, 27, 13, 01\0"
+            VALUE "InternalName", "ArchiveManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ArchiveManager.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "ArchiveManager Application\0"
+            VALUE "ProductVersion", "00, 27, 13, 01\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ARCHIVEMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        VERTGUIDE, 127
+        VERTGUIDE, 142
+        VERTGUIDE, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 143
+    END
+
+    IDD_WRITE_ARCHIVE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_RESTORE_ARCHIVE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 181
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_DELETE_ARCHIVE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 177
+    END
+
+    IDD_DATE_RANGE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 77
+    END
+
+    IDD_RETRIEVING_DATA_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 174
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_SELECT_DATE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 160
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 68
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BURN_CD_DIALOG DIALOGEX 0, 0, 205, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Writing To Media"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "Write Progress :",IDC_STATIC,7,7,52,8
+    CONTROL         "Progress1",IDC_WRITE_PROGRESS,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,17,191,15
+    LTEXT           "Stage :",IDC_STATIC,7,39,24,8
+    CTEXT           "",IDC_STAGE_STATIC,7,49,191,17,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Cancelling may cause corrupt and unreadable media.",
+                    IDC_STATIC,14,170,177,18,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Cancel",IDCANCEL,78,193,50,14
+    EDITTEXT        IDC_LOG_EDIT,7,84,191,80,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY
+    LTEXT           "Log:",IDC_STATIC,7,73,15,8
+END
+
+IDD_RETRIEVE_COMPLETE_DIALOG DIALOG DISCARDABLE  0, 0, 259, 182
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Retrieve Complete"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Yes",IDYES,71,161,50,14
+    LTEXT           "Errors and/or warnings occurred while retrieving the data from the database.\nThe log files have been saved and it is your responsibility to delete them once the errors have been analysed.",
+                    IDC_STATIC,7,7,245,28
+    PUSHBUTTON      "No",IDNO,137,161,50,14
+    CONTROL         "Tree1",IDC_ERROR_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_BORDER | 
+                    WS_TABSTOP,7,40,245,98
+    LTEXT           "Do you want to continue?",IDC_STATIC,7,147,82,8
+END
+
+IDD_RESTORE_COMPLETE_DIALOG DIALOG DISCARDABLE  0, 0, 259, 169
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Restore Complete"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,104,148,50,14
+    LTEXT           "Errors and/or warnings occurred while restoring data into the database.\nThe log files have been saved and it is your responsibility to delete them once the errors have been analysed.",
+                    -1,7,7,245,28
+    CONTROL         "Tree1",IDC_ERROR_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_LINESATROOT | TVS_DISABLEDRAGDROP | WS_BORDER | 
+                    WS_TABSTOP,7,40,245,98
+END
+
+IDD_BURN_DVD_DIALOG DIALOGEX 0, 0, 205, 214
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Writing To Media"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "Write Progress :",IDC_STATIC,7,7,52,8
+    CONTROL         "Progress1",IDC_WRITE_PROGRESS,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,17,191,15
+    LTEXT           "Stage :",IDC_STATIC,7,39,24,8
+    CTEXT           "",IDC_STAGE_STATIC,7,49,191,17,SS_CENTERIMAGE | 
+                    SS_SUNKEN
+    LTEXT           "Cancelling may cause corrupt and unreadable media.",
+                    IDC_STATIC,14,170,177,18,SS_CENTERIMAGE,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Cancel",IDCANCEL,78,193,50,14
+    EDITTEXT        IDC_LOG_EDIT,7,84,191,80,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_READONLY
+    LTEXT           "Log:",IDC_STATIC,7,73,15,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_BURN_CD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    IDD_RETRIEVE_COMPLETE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 175
+    END
+
+    IDD_RESTORE_COMPLETE_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_BURN_DVD_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\ArchiveManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\..\\..\\..\\bus\\resources\\icons\\archivemanager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ARCHIVEMANAGER      "Archive Manager"
+    UI050023_DELETE_ABORTED "Operator %1 on workstation %2 has cancelled the deletion of restored data."
+    UI050030_WRITE_ABORTED  "Operator %1 on workstation %2 has cancelled the transfer of archive files to removable media."
+    UI050045_RESTORE_ABORTED 
+                            "Operator %1 on workstation %2 has cancelled the restoration of archived data."
+    UI050046_LABEL_CD       "Write complete for this CD.\nPlease label the CD: CD %1"
+    UI050048_INSERT_MEDIA   "Insert blank CD-R and click OK or click Cancel to abort writing the CD-R."
+    UI050049_NO_TABLES      "There are no tables specified in the %1 database table to archive."
+    UI050050_DELETE_IN_PROG "Data is currently being deleted.  The deletion process will be cancelled once the data for this date have been completely removed. This will prevent data corruption. Please wait..."
+    UI050051_SELECT_DATE    "Please select the date(s) to restore."
+    UI050052_RESTORE_IN_PROG 
+                            "Data is currently being imported. The restoration process will be cancelled once the archives for this date have been fully restored. This will prevent data corruption. Please wait..."
+    UI050053_RETRIEVE_IN_PROG 
+                            "Data is currently being retrieved from the database.  The process will be stopped once all the data for this date has been retrieved. This will prevent data corruption. Please wait..."
+    UI050054_NO_MORE_FILES  "There are no more files to write to CD."
+    UI050055_WRITE_IN_PROG  "The write process is in progress. The process will be cancelled once it is safe to do so. Please wait..."
+    UI050057_CHANGE_DATE_ABORTED 
+                            "Operator %1 on workstation %2 has cancelled the change restored data deletion date process."
+    UI050059_EARLIEST_DATE  "Tomorrow's date is the earliest date that may be selected for the deletion due date.\nPlease select another date."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UI050060_TRANSFER_ABORTED 
+                            "The current operator on this workstation has cancelled the transfer of archive files to removable media."
+    UI050061_DELETE_ABORTED "The current operator on this workstation has cancelled the the deletion of restored archive data."
+    UI050062_RESTORE_ABORTED 
+                            "The current operator on this workstation has cancelled the restoration of archived data."
+    UW050001_NO_VALID_FILENAMES 
+                            "There are no files in the format AYYYY_MM_DD_filepostfix_V2.dmp or MYYYY_MM_DD_filepostfix_V2.dmp on the removable media."
+    UW050002_DELETE_FILES_FAILED 
+                            "Failed to delete the following archive file(s) for the given reason(s):\n%1\nPlease delete these files manually."
+    UW050003_SERVER_DOWN    "The server has gone down. Functionality will be disabled until services return."
+    UW050004_ADD_DIR_FAILED "Failed to add the directory %1 to the list of files to be written to removable media due to the following error:\n%2"
+    UW050004_REASON_INVALID_DIR 
+                            "The directory is invalid.  Please check that it exists and is accessible."
+    UW050004_UW050016_REASON_MEMORY 
+                            "Memory error: Failed to create NERO ISO item."
+    UW050009_INVALID_DATE   "Yesterday is the latest date available for archive."
+    UW050010_INVALID_RANGE  "Invalid date range.  The From date must be before or the same as the To date."
+    UW050011_DATE_NOT_FOUND "Unable to restore data for %1 because the date was not found in list."
+    UW050012_DATA_NOT_FOUND "No restored data found in the database inventory table: %1.\nNote: Data that is marked as being deleted is not displayed."
+    UW050013_NO_MAN_ARCHIVES 
+	"There are no manual archive files in the archive directory %1 matching the required criteria:\n1. The files must be in the format MYYYY_MM_DD_filepostfix[_V2].dmp.\n2. The archive date for the files must be in the date range %2 to %3."
+    UW050014_NO_AUTO_ARCHIVES 
+	"There are no archive files in the archive directory %1 matching the criteria:\n1. The files must be in the format AYYYY_MM_DD_filepostfix[_V2].dmp."
+    UW050015_DELETE_LOG_FILES_FAILED 
+                            "Failed to delete the following log file(s) for the given reason(s):\n%1\nPlease delete these files manually."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UW050016_ADD_FILE_FAILED 
+                            "Failed to add the file %1 to the list of files to be written to removable media due to the following error:\n%2"
+    UW050016_REASON_INVALID_FILE 
+                            "The file is invalid.  Please check that it exists and is accessible."
+    UW050017_SAVE_SETTINGS  "Failed to save the user settings for operator %1 due to the following error:\n%2"
+    UE050021_INSUF_PRIV_MAN_ARCHIVE 
+                            "Operator %1 on workstation %2 has insufficient privileges to perform a manual archive."
+    UE050034_INSUF_PRIV_RESTORE 
+                            "Operator %1 on workstation %2 has insufficient privileges to restore archived data."
+    UE050052_INSUF_PRIV_REMOVE 
+                            "Operator %1 on workstation %2 has insufficient privilege to remove restored data from the database."
+    UE050054_REMOVE_FAILED  "Unable to remove restored data for %1 from database for the following reason:\n%2"
+    UE050054_REASON_FIND_FAILED 
+                            "Failed to find the data for the selected item."
+    UE050055_RETRIEVE_LIST_FAILED 
+                            "Unable to retrieve archive list from the database for the following reason:\n%1"
+    UE050055_REASON_INV_ACCESS_FAILED "Archive Inventory access failed."
+    UE050079_INSUF_PRIV_TRANSFER 
+                            "Operator %1 on workstation %2 has insufficient privileges to transfer archives to removable media."
+    UE050087_UNKNOWN_RIGHTS "Failed to determine the rights of the current operator due to the following error:\n%1"
+    UE050087_REASON_RL_ACCESS_FAILURE 
+                            "The RightsLibrary could not be accessed."
+    UE050087_REASON_UNKNOWN_RESOURCE 
+                            "The resource identifier could not be determined."
+    UE050090_WRITE_FAILED   "Failed to write the archive files for %1 to removable media due to the following error:\n%2"
+    UE050090_REASON_DLL_OPEN_FAILED 
+                            "Cannot open NeroAPI.DLL. Please check this library exists."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UE050090_REASON_INVALID_ARGS 
+                            "Nero initialisation failed - The arguments are not valid."
+    UE050090_REASON_INVALID_SER_NO 
+                            "Nero initialisation failed - The Serial Number is not valid."
+    UE050090_REASON_EXPIRED "Nero initialisation failed - This demo version of Nero has expired."
+    UE050090_REASON_RUNNING "Nero initialisation failed - Nero has already been started by another program."
+    UE050090_REASON_UNLOCKABLE 
+                            "Nero initialisation failed - Unable to lock Nero for our use."
+    UE050090_REASON_UNKNOWN "Nero initialisation failed - An unknown error (%1) has occurred."
+    UE050090_REASON_NO_DRIVES "There are no %1 drives present."
+    UE050090_REASON_OPEN_FAILED "Failed to open drive: %1"
+    UE050090_REASON_NO_FILES 
+                            "There are no archive files to be written to removable media."
+    UE050090_REASON_UNKNOWN_CD_FORMAT "Unknown media format"
+    UE050090_REASON_INVALID_DRIVE "Invalid drive"
+    UE050090_REASON_WRITE_FAILED "Write failed"
+    UE050090_REASON_FN_NOT_ALLOWED "Function not allowed"
+    UE050090_REASON_DRIVES_NOT_ALLOWED "Drive not allowed"
+    UE050090_REASON_UNKNOWN_ERROR "Unknown error"
+    UE050093_RESTORE_FAILED "Failed to restore the data for %1 due to the following error:\n%2"
+
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UE050094_UPDATE_FAILED  "Failed to update the %1 table in the database due to the following error:\n%2."
+    UE050094_REASON_AO_FAILED "Archive Online access failed."
+    UE050094_REASON_INV_FAILED "Archive Inventory access failed."
+    UE050095_IMP_CMD_LOAD_FAILED 
+                            "Unable to load the import command due to the following error:\n%1"
+    UE050095_REASON_ENTITY_DATA 
+                            "Failed to get the GUI entity data for the Archive Manager."
+    UE050095_REASON_CAST_FAILED 
+                            "The entity data could not be cast to ArchiveManagerEntityData."
+	UE050090_REASON_NO_MEDIA "No Media Inserted"
+    UE050095_REASON_INVALID_IMP "The import program (%1) could not be found."
+    UE050095_REASON_INVALID_DB "Invalid database connection string:\n%1"
+    UE050096_UNKNOWN_MEDIA_LOC 
+                            "Unable to determine the path of the removable media location due to the following error:\n%1"
+    UE050096_REASON_ENTITY_DATA 
+                            "Failed to get the GUI entity data for the Archive Manager."
+    UE050096_REASON_CAST_FAILED 
+                            "The entity data could not be cast to ArchiveManagerEntityData."
+    UE050096_REASON_MED_LOC_EMPTY 
+                            "The MediaLocation parameter for the Archive Manager is not set in the database."
+    UE050096_REASON_INVALID_IMP 
+                            "The location (%1) specified by the MediaLocation parameter for the Archive Manager is not a valid directory."
+    UE050098_UNKNOWN_STATUS "Unable to determine the status of the archives for date %1 due to the following error:\n%2"
+    UE050100_RETRIEVE_FAILED 
+                            "Failed to retrieve the data for %1 due to the following error:\n%2"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UE050101_EXP_LOAD_FAILED 
+                            "Unable to load the export command due to the following error:\n%1"
+    UE050101_REASON_ENTITY_DATA 
+                            "Failed to get the GUI entity data for the Archive Manager."
+    UE050101_REASON_CAST_FAILED 
+                            "The entity data could not be cast to ArchiveManagerEntityData."
+    UE050101_REASON_ORACLE_HOME_UNKNOWN 
+                            "The Oracle home directory could not be retrieved."
+    UE050101_REASON_INVALID_EXP "The export program (%1) could not be found."
+    UE050101_REASON_INVALID_DB "Invalid database connection string:\n%1"
+    UE050102_FILE_TOO_BIG   "The file %1 is too big (%2 MB) to fit on a single %3.\nPlease see the System Administrator to resolve the issue."
+    UE050104_PATH_ERROR     "Unable to determine the path of the archive directory due to the following error:\n%1"
+    UE050104_REASON_ENTITY_DATA 
+                            "Failed to get the GUI entity data for the Archive Manager."
+    UE050104_REASON_CAST_FAILED 
+                            "The entity data could not be cast to ArchiveManagerEntityData."
+    UE050104_REASON_MAN_PARAM_NOT_SET 
+                            "The ManualArchiveDirectory parameter for the Archive Manager is not set in the database."
+    UE050104_REASON_AUTO_PARAM_NOT_SET 
+                            "The AutoArchiveDirectory parameter for the Archive Manager is not set in the database."
+    UE050104_REASON_INVALID_MAN_DIR 
+                            "The directory specified by the ManualArchiveDirectory parameter for the Archive Manager is not a valid directory:\n%1"
+    UE050104_REASON_INVALID_AUTO_DIR 
+                            "The directory specified by the AutoArchiveDirectory parameter for the Archive Manager is not a valid directory:\n%1"
+    UE050108_MULTI_INSTANCE "The %1 cannot be launched due to the following error:\n%2"
+    UE050108_REASON_DB_FAILED 
+                            "It could not be determined from the database if an instance of the %1 is already running on the system."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UE050108_REASON_RUNNING "An instance of the %1 is already running on workstation %2. "
+    UE050109_INSUF_PRIV_CHANGE_DATE 
+                            "Operator %1 on workstation %2 has insufficient privileges to change the deletion due date for restored data."
+    UE050110_INVALID_FILENAME_FORMAT 
+	"The filename %1 is not in the format AYYYY_MM_DD_filepostfix[_V2].dmp or MYYYY_MM_DD_filepostfix[_V2].dmp."
+    UE050111_OPERATOR_NAME  "Failed to determine the operator name from the session id due to the following error:\n%1"
+    UE050111_REASON_OP_FAILED 
+                            "Operator data could not be determined from the database."
+    UE050112_WRKSTN_NAME    "Failed to determine the workstation name from the session id due to the following error:\n%1"
+    UE050113_AUDIT_MSG      "Failed to determine the entity key required for the audit message for this action due to the following error:\n%1"
+    UE050113_REASON_ENT_FAILED 
+                            "Archive Manager data could not be determined from the database."
+    UE050114_MSG_SENDER     "Failed to get an AuditMessageSender to send an audit message for this action."
+    UE050115_AUDIT_MSG_FAILED 
+                            "Failed to send the audit message due to the following error:\n%1"
+    UE050115_REASON_UNKNOWN "Unknown error occurred."
+    UE050116_CHECK_LOG_FAILED 
+                            "Failed to check for errors in the log file\n%1\ndue to the following error:\n%2"
+    UE050116_REASON_INVALID_FILE 
+                            "The log file is invalid.\nPlease check that the file exists and is accessible."
+    UE050116_REASON_OPEN_FAILED 
+                            "The log file could not be opened for reading."
+    UE050117_SELECT_FAILED  "Unable to get the selected deletion due date due to the following error:\n%1"
+    UE050118_UPDATE_FAILED  "Unable to update the archive inventory for the following reason:\n%1\nNo further items will be processed."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    UE050118_REASON_INV_ACCESS_FAILED "Archive Inventory access failed."
+    UE050119_INSUF_PRIV_REMOVE 
+                            "The current operator has insufficient privileges to remove restored archive data."
+    UE050120_INSUF_PRIV_CHANGE_DATE 
+                            "The current operator has insufficient privileges to change the restored archive data deletion due date."
+    UE050121_DELETE_INV_ITEM_FAILED 
+                            "Failed to delete the inventory item for the date %1 due to the following error:\n%2"
+    UE050122_INSUF_PRIV_RESTORE 
+                            "The current operator has insufficient privileges to restore archived data."
+    UE050123_INSUF_PRIV_TRANSFER 
+                            "The current operator has insufficient privileges to write archives to removable media."
+    UE050124_INSUF_PRIV_MAN_ARCHIVE 
+                            "The current operator has insufficient privileges to perform a manual archive."
+    UE050125_INVALID_ENTITY "The Archive Manager entity passed in was not of type '%1'."
+    UE050136_DATABASE_ERROR "Unable to retrieve configuration information."
+    ID_UW_05001             "The supplied archive media does not contain archived data"
+    UE050090_REASON_MEDIA_NOT_BLANK "Media is not empty"
+    UE050090_REASON_MEDIA_WRITE_PROTECTED "Media is write protected"
+    UE050090_REASON_MEDIA_OUT_OF_MEMORY 
+                            "Not enough space available in the media"
+    UE050090_REASON_MEDIA_INCOMPATIBLE "Media is incompatiable"
+    UE050090_REASON_WRITE_CANCELLED "Write operation has been cancelled"
+    UE050090_REASON_WRITE_SUCCESSFUL "Write completed successfully"
+END
+
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\ArchiveManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

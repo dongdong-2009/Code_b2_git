@@ -1,0 +1,849 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RADIO_FACILITYSEARCH DIALOG DISCARDABLE  0, 0, 224, 236
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Directories (Last updated:)",IDC_DIRECTORY_BOX,3,5,214,
+                    75
+    CONTROL         "Tree1",IDC_TREE1,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | 
+                    WS_BORDER | WS_TABSTOP,8,17,204,43
+    LTEXT           "String To Search:",IDC_STATIC,9,66,59,9
+    EDITTEXT        IDC_EDIT1,72,63,106,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Search",IDC_SUBSCRIBERSEARCH,181,63,31,14
+    GROUPBOX        "Matching Users / Groups",IDC_STATIC,3,81,214,140
+    CONTROL         "List1",IDC_LIST1,"SysListView32",LVS_REPORT | WS_BORDER | 
+                    WS_TABSTOP,3,90,204,106
+    PUSHBUTTON      "Display Group Details",IDC_BUTTON2,44,204,81,14
+    PUSHBUTTON      "Add To Dynamic Group>>",IDC_BUTTON3,127,204,84,14
+    PUSHBUTTON      "Add",IDC_ADD_MONITOR,3,204,47,14,NOT WS_VISIBLE | 
+                    WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_RADIO_FACILITYSEARCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 233
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RADIO_MANAGER_DIALOG DIALOGEX 0, 0, 635, 340
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Radio Manager"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Radio Facilities",IDC_RADIO_FACILITIES,7,0,248,250,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Tab1",IDC_RADIO_FACILITIES_TAB,"SysTabControl32",0x0,14,
+                    9,226,238
+    GROUPBOX        "Radio Call Stack",IDC_RADIO_CALL_STACK,257,0,373,250,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         "Tab1",IDC_CALL_STACK_TAB,"SysTabControl32",0x0,264,10,
+                    359,237
+    GROUPBOX        "Selected",IDC_STATIC,7,253,249,43
+    LTEXT           "ID:",IDC_STATIC,16,266,10,9
+    LTEXT           "TSI",IDC_STATIC,141,268,29,9
+    LTEXT           "Location:",IDC_STATIC,16,278,30,9
+    COMBOBOX        IDC_TEXTMESSAGE,10,299,136,62,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Call Type",IDC_STATIC,151,301,30,9
+    COMBOBOX        IDC_CALLTYPE,182,299,71,47,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Emergency Mode",IDC_EMERGENCYMODE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,151,316,64,11
+    GROUPBOX        "",IDC_STATIC,148,291,108,42
+    PUSHBUTTON      "Call",IDC_CALL,217,317,37,14
+    GROUPBOX        "Current Radio Communication",IDC_STATIC,258,253,372,80
+    PUSHBUTTON      "End Call",IDC_RELEASE,503,316,38,13,WS_DISABLED
+    PUSHBUTTON      "Hold",IDC_HOLD,544,316,38,13,WS_DISABLED
+    PUSHBUTTON      "Include",IDC_INCLUDE,586,316,38,13,WS_DISABLED
+    LTEXT           "",IDC_SA_ID,48,266,85,10
+    LTEXT           "",IDC_SA_LOCATION,48,278,70,10
+    COMBOBOX        IDC_SA_TETRAID,173,266,64,105,CBS_DROPDOWN | 
+                    CBS_DISABLENOSCROLL | WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_GRAYFRAME | SS_SUNKEN,12,263,
+                    229,29
+    GROUPBOX        "",IDC_STATIC,7,291,142,42
+    PUSHBUTTON      "Send Text",IDC_SEND_TEXT,108,317,38,14
+    PUSHBUTTON      "Edit Text",IDC_EDIT_TEXT,10,317,38,14
+    CONTROL         "List1",IDC_CURRENTCALLLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,263,263,344,
+                    52
+    LTEXT           "PTT REQUIRED TO TALK",IDC_PTT_REQUIRED_TEXT,264,321,84,
+                    9,NOT WS_VISIBLE
+    CONTROL         "",IDC_PTT_TALKING_RECTANGLE,"Static",SS_BLACKFRAME,352,
+                    318,67,12
+    CONTROL         "",IDC_PTT_LISTENING_RECTANGLE,"Static",SS_BLACKFRAME,
+                    424,318,69,12
+    LTEXT           "Operator Talking",IDC_PTT_TALKING_TEXT,357,320,55,9,
+                    WS_DISABLED
+    LTEXT           "Operator Listening",IDC_PTT_LISTENING_TEXT,427,320,64,9
+    PUSHBUTTON      "Vol   +",IDC_VOLUME_UP,609,264,16,20,BS_CENTER | 
+                    BS_VCENTER | BS_MULTILINE | WS_DISABLED
+    PUSHBUTTON      "Vol   -",IDC_VOLUME_DOWN,609,294,16,20,BS_CENTER | 
+                    BS_VCENTER | BS_MULTILINE | WS_DISABLED
+END
+
+IDD_CALLSTACK_CURRENT DIALOGEX 0, 0, 357, 238
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Held Call Stack",IDC_STATIC,0,149,352,74
+    CONTROL         "List1",IDC_CALLLIST_IN,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,12,299,132
+    CONTROL         "List1",IDC_CALLLIST_HOLD,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,4,161,301,57
+    PUSHBUTTON      "Answer",IDC_ACCEPT,306,13,43,13,WS_DISABLED
+    GROUPBOX        "Incoming Call Stack",IDC_STATIC,0,1,352,148
+    PUSHBUTTON      "Re-establish",IDC_RECALL,307,163,42,14,WS_DISABLED
+    CONTROL         "",IDC_RICHEDIT_TIP,"RICHEDIT",ES_MULTILINE | 
+                    ES_READONLY | WS_DISABLED | WS_TABSTOP,306,106,43,34,
+                    WS_EX_TRANSPARENT
+END
+
+IDD_CALLSTACK_OTHER DIALOG DISCARDABLE  0, 0, 358, 236
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Other Call Stacks",IDC_STATIC,1,2,347,221
+    CONTROL         "List1",IDC_OTHERCALLLIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,6,12,298,203
+    PUSHBUTTON      "End Call",IDC_KILL,308,15,38,14
+END
+
+IDD_CALLSTACK_HISTORY DIALOG DISCARDABLE  0, 0, 358, 239
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "History Call Stack",IDC_STATIC,1,2,351,226
+    CONTROL         "List1",IDC_HISTORYCALLLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSORTHEADER | 
+                    WS_BORDER | WS_TABSTOP,3,12,343,157
+    GROUPBOX        "Filters/Actions",IDC_STATIC,1,171,338,51
+    CONTROL         "IN",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,
+                    192,23,8
+    CONTROL         "OUT",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    46,192,24,8
+    CONTROL         "CONFERENCE",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,82,192,62,8
+    LTEXT           "Location",IDC_STATIC,156,191,30,9
+    COMBOBOX        IDC_COMBO1,190,189,98,49,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Redial Selected",IDC_BUTTON1,10,204,70,13
+    PUSHBUTTON      "Redial Last Outgoing",IDC_BUTTON2,118,204,70,13
+    PUSHBUTTON      "Redial Last Incoming",IDC_BUTTON4,218,204,70,13
+    GROUPBOX        "Origin",IDC_STATIC,12,180,63,23
+END
+
+IDD_DYNAMIC_GROUP DIALOG DISCARDABLE  0, 0, 358, 234
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_TRAINLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,5,122,143,67
+    CONTROL         "List1",IDC_TRAINLIST2,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,154,122,143,
+                    67
+    PUSHBUTTON      "Add",IDC_ADD,302,122,45,14
+    PUSHBUTTON      "All Trains",IDC_ALL_TRAINS,302,158,45,14
+    PUSHBUTTON      "Clear All",IDC_CLEAR_ALL,302,174,45,14
+    PUSHBUTTON      "All Inner Track",IDC_ALL_INBOUND,5,190,50,14
+    PUSHBUTTON      "All Outer Track",IDC_ALL_OUTBOUND,155,189,50,14
+    PUSHBUTTON      "Save Selection",IDC_SAVETRAINSELECTION,5,206,55,13
+    COMBOBOX        IDC_COMBO1,63,207,99,56,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Delete Selection",IDC_DELETETRAINSELECTION2,164,206,55,
+                    13
+    LTEXT           "Inner Track",IDC_INBOUND_LABEL,6,113,39,8
+    LTEXT           "Outer Track",IDC_OUTBOUND_LABEL,154,113,39,8
+    CONTROL         "Tab1",IDC_LOCATION_TAB,"SysTabControl32",0x0,2,101,351,
+                    121
+    CONTROL         "List2",IDC_GROUPLIST,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,5,12,291,82
+    PUSHBUTTON      "Remove",IDC_REMOVE,301,14,45,14
+    PUSHBUTTON      "Reset",IDC_RESET,302,32,45,14
+    GROUPBOX        "Edit Dynamic Group",IDC_STATIC,1,2,352,98
+END
+
+IDD_FACILITYLINESv2 DIALOG DISCARDABLE  0, 0, 227, 238
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Hot Lines",-1,3,5,214,51
+    PUSHBUTTON      "",IDC_HOT_BUTTON1,11,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON2,63,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON3,114,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON4,166,16,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON5,11,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON6,63,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON7,114,36,44,16,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON8,166,36,44,16,BS_MULTILINE
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32",0x0,3,61,214,152
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_1,8,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_2,42,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_3,76,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_4,110,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_5,144,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_6,178,80,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_7,8,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_8,42,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_9,76,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_10,110,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_11,144,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_12,178,102,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_13,8,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_14,42,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_15,76,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_16,110,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_17,144,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_18,178,123,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_19,8,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_20,42,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_21,76,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_22,110,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_23,144,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_24,178,145,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_25,8,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_26,42,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_27,76,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_28,110,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_29,144,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_30,178,168,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_31,8,190,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_32,42,190,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_33,76,190,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_34,110,190,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_35,144,190,32,20,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_36,178,190,32,20,BS_MULTILINE
+    CONTROL         "Automatically call",IDC_AUTOMATIC_CALL,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,215,71,9
+END
+
+IDD_FACILITYCONFIG DIALOG DISCARDABLE  0, 0, 220, 236
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Hot Lines",IDC_STATIC,7,3,213,45
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32",0x0,3,51,213,134
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_1,11,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_2,45,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_3,79,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_4,113,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_5,147,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_6,181,67,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_7,11,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_8,45,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_9,79,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_10,113,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_11,147,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_12,181,87,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_13,11,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_14,45,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_15,79,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_16,113,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_17,147,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_18,181,107,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_19,11,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_20,45,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_21,79,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_22,113,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_23,147,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_24,181,127,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_25,11,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_26,45,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_27,79,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_28,113,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_29,147,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_30,181,147,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_31,11,167,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_32,45,167,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_33,79,167,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_34,113,167,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_35,147,167,29,15,BS_MULTILINE
+    PUSHBUTTON      "",IDC_DIRECT_LINE_BUTTON_36,181,167,29,15,BS_MULTILINE
+    GROUPBOX        "Update Button",IDC_STATIC,3,185,213,38
+    LTEXT           "Label",IDC_STATIC,6,196,25,10
+    EDITTEXT        IDC_EDITLABEL,41,193,96,12,ES_AUTOHSCROLL
+    LTEXT           "TSI",IDC_STATIC,6,209,29,10
+    EDITTEXT        IDC_EDITTETRAID,41,207,123,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Set",IDC_SETBUTTON,169,207,46,13
+    PUSHBUTTON      "",IDC_HOT_BUTTON1,11,13,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON2,63,13,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON3,114,13,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON4,166,13,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON5,11,31,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON6,63,31,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON7,114,31,44,14,BS_MULTILINE
+    PUSHBUTTON      "",IDC_HOT_BUTTON8,166,31,44,14,BS_MULTILINE
+END
+
+IDD_FACILITYGROUPPATCH DIALOG DISCARDABLE  0, 0, 219, 235
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Available Groups",-1,2,5,214,100
+    GROUPBOX        "Current Patches",-1,2,100,214,124
+    CONTROL         "List1",IDC_GROUPLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,10,16,196,66
+    PUSHBUTTON      "Patch",IDC_PATCH,165,87,45,14,WS_DISABLED
+    PUSHBUTTON      "Remove",IDC_BUTTON3,164,205,43,14,WS_DISABLED
+    CONTROL         "List1",IDC_PATCHLIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,9,119,197,82
+END
+
+IDD_VIEW_TEXT_MESSAGE DIALOG DISCARDABLE  0, 0, 230, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Radio Message"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,53,74,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,127,74,50,14
+    GROUPBOX        "Text Message",IDC_STATIC,7,7,216,61
+    EDITTEXT        IDC_TEXT_MESSAGE,12,20,206,42,ES_MULTILINE | ES_READONLY | 
+                    NOT WS_BORDER
+END
+
+IDD_CONFIRM_TEXT_SEND DIALOG DISCARDABLE  0, 0, 230, 108
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm text message"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,87,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,173,87,50,14
+    GROUPBOX        "Text Message",IDC_STATIC,7,7,216,61
+    EDITTEXT        IDC_TEXT_MESSAGE,12,20,206,42,ES_MULTILINE | ES_READONLY | 
+                    NOT WS_BORDER
+    LTEXT           "Please confirm this message is to be sent.",IDC_STATIC,
+                    7,73,216,11
+END
+
+IDD_DLG_INITPROGRESS DIALOG DISCARDABLE  0, 0, 243, 24
+STYLE DS_CENTER | WS_POPUP | WS_BORDER
+FONT 9, "Arial Unicode MS"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,69,7,167,9
+    LTEXT           "Static",IDC_STATIC_TEXT1,7,8,229,8
+    LTEXT           "Static",IDC_STATIC_TEXT2,72,13,53,8,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT3,8,13,27,8,NOT WS_VISIBLE
+    PUSHBUTTON      "&Cancel",IDCANCEL,85,13,40,8
+END
+
+IDD_RADIOFORWARD DIALOG DISCARDABLE  0, 0, 206, 142
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Radio Forwarding"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Forward radio calls",IDC_RADIO_BUTTON_GROUP,5,6,195,112,
+                    WS_GROUP | WS_TABSTOP
+    CONTROL         "Immediate forward to extension",IDC_RADIO1,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,21,20,132,9
+    CONTROL         "Forward to extension when not Reachable",IDC_RADIO2,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,21,
+                    33,159,9
+    CONTROL         "Never Forward",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,21,46,108,9
+    GROUPBOX        "Extension",IDC_STATIC,11,63,183,45
+    LTEXT           "TSI",IDC_STATIC,20,76,29,10
+    COMBOBOX        IDC_TSI_COMBO,56,73,131,67,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "ID",IDC_STATIC,21,91,31,10
+    COMBOBOX        IDC_ID_COMBO,56,90,131,53,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Help",ID_HELPBUTTON,6,123,50,14
+    DEFPUSHBUTTON   "Apply",IDOK,92,123,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,147,123,50,14
+END
+
+IDD_SELECTTEXTMESSAGE DIALOG DISCARDABLE  0, 0, 359, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Radio Message"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,7,165,114
+    GROUPBOX        "",IDC_STATIC,180,7,172,114
+    LTEXT           "Defined Messages",IDC_STATIC,16,14,104,10
+    LISTBOX         IDC_MESSAGELIST,16,25,148,63,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Text (up to 140 characters)",IDC_STATIC,188,14,123,10
+    EDITTEXT        IDC_MESSAGETEXT,188,25,156,63,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | 
+                    WS_VSCROLL
+    CONTROL         "Edit Text",IDC_FREETEXT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,97,74,10
+    DEFPUSHBUTTON   "Help",ID_HELPBUTTON,7,129,50,14,WS_DISABLED
+    DEFPUSHBUTTON   "Apply",IDOK,238,129,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,294,129,50,14
+    PUSHBUTTON      "New",IDC_NEW_TEXT,16,97,29,13
+    PUSHBUTTON      "Delete",IDC_DELETE_TEXT,75,97,29,13
+    PUSHBUTTON      "Update",IDC_UPDATE_TEXT,135,97,29,13
+END
+
+IDD_CONFIRM_HOTLINE_CALL DIALOG DISCARDABLE  0, 0, 186, 57
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm Hotline Call"
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Are you sure you want to connect to the 'Police' hotline number?",
+                    IDC_STATIC,11,11,160,21
+    DEFPUSHBUTTON   "Yes",IDOK,25,34,50,14
+    PUSHBUTTON      "No",IDCANCEL,97,34,50,14
+END
+
+IDD_NEW_TEXT_MESSAGE DIALOG DISCARDABLE  0, 0, 207, 71
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "New Text Message"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDIT1,47,19,143,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,134,50,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,22,51,50,14
+    GROUPBOX        "Enter new text message name ",IDC_STATIC,8,5,192,41
+    LTEXT           "Name",IDC_STATIC,15,22,24,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_RADIO_MANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 628
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 333
+    END
+
+    IDD_CALLSTACK_CURRENT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 352
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_CALLSTACK_OTHER, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 352
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_CALLSTACK_HISTORY, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 351
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_DYNAMIC_GROUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 1
+        RIGHTMARGIN, 353
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 228
+    END
+
+    IDD_FACILITYLINESv2, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 217
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 232
+    END
+
+    IDD_FACILITYCONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 216
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_FACILITYGROUPPATCH, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 216
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 230
+    END
+
+    IDD_VIEW_TEXT_MESSAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        VERTGUIDE, 12
+        VERTGUIDE, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_CONFIRM_TEXT_SEND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\RadioSearchPage.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\RadioManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""RadioCallStackListCtrl.rc""     // \r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "RadioManager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "RadioManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "RadioManager.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "RadioManager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_RADIO_MANAGER_DIALOG DLGINIT
+BEGIN
+    IDC_TEXTMESSAGE, 0x403, 12, 0
+0x5355, 0x5245, 0x4520, 0x4944, 0x4554, 0x0044, 
+    IDC_TEXTMESSAGE, 0x403, 9, 0
+0x4143, 0x4c4c, 0x4f20, 0x4343, "\000" 
+    IDC_TEXTMESSAGE, 0x403, 14, 0
+0x4553, 0x444e, 0x4c20, 0x434f, 0x5441, 0x4f49, 0x004e, 
+    IDC_CALLTYPE, 0x403, 7, 0
+0x6953, 0x676e, 0x656c, "\000" 
+    IDC_CALLTYPE, 0x403, 13, 0
+0x6341, 0x6e6b, 0x776f, 0x656c, 0x6764, 0x6465, "\000" 
+    IDC_CALLTYPE, 0x403, 17, 0
+0x6f4e, 0x2074, 0x6341, 0x6e6b, 0x776f, 0x656c, 0x6764, 0x6465, "\000" 
+    IDC_CALLTYPE, 0x403, 10, 0
+0x7242, 0x616f, 0x6364, 0x7361, 0x0074, 
+    IDC_CALLTYPE, 0x403, 1, 0
+"\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\RadioManager.ico"
+IDI_CALL_CONFERENCE     ICON    DISCARDABLE     "..\\res\\group.ico"
+IDI_CALL_SDS            ICON    DISCARDABLE     "..\\res\\Text.ico"
+IDI_CALL_VOICE          ICON    DISCARDABLE     "..\\res\\voice.ico"
+IDI_CALL_DRIVER         ICON    DISCARDABLE     "..\\res\\train.ico"
+IDI_EMERG_CALL_VOICE    ICON    DISCARDABLE     "..\\res\\call_voi.ico"
+IDI_EMERG_CALL_SDS      ICON    DISCARDABLE     "..\\res\\call_sds.ico"
+IDI_EMERG_CALL_DRIVER   ICON    DISCARDABLE     "..\\res\\call_dri.ico"
+IDI_EMERG_CALL_CONFERENCE ICON    DISCARDABLE     "..\\res\\call_con.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINTOOLBAR         BITMAP  DISCARDABLE     "..\\res\\toolbar1.bmp"
+IDB_CALLICONS           BITMAP  DISCARDABLE     "..\\res\\bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINTOOLBAR TOOLBAR DISCARDABLE  16, 16
+BEGIN
+    BUTTON      IDC_LINEFORWARD
+    BUTTON      IDC_HELPBUTTON
+    SEPARATOR
+    BUTTON      IDC_CALL
+    BUTTON      IDC_ACCEPT
+    BUTTON      IDC_RELEASE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Line Forward...",             IDC_LINEFORWARD
+    END
+    POPUP "View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR, CHECKED
+        MENUITEM "&Status bar",                 ID_VIEW_STATUSBAR, CHECKED
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Radio Manager Help",          ID_HELP_RADIOMANAGERHELP
+        , HELP
+        MENUITEM SEPARATOR
+        MENUITEM "&About Radio Manager...",     ID_HELP_ABOUTRADIOMANAGER
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROPSHT_CAPTION     "Property Sheet"
+    IDS_PROPSHT_CAPTION1    "Property Sheet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_LINE_FORWARD_MODE    "LINE FORWARDED 8888-888-88888"
+    ID_LINEFORWARD          "Line forwarding options"
+    ID_FREECALL             "Enter a number to call"
+    ID_HELP_RADIOMANAGERHELP "Get help on the radio manager topics"
+    ID_HELP_ABOUTRADIOMANAGER 
+                            "Display version information for the Radio Manager Application"
+    ID_VIEW_STATUSBAR       "Enable status bar display"
+    ID_BUTTON32782          "Accept current call"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_LINEFORWARD         "Forward\nSet line forward attributes"
+    IDC_FREECALL            "Enter a direct line number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Enable the toolbar display"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_CALL                "Call\nCall the selected number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_HELPBUTTON          "Help\nDisplay radio controller help"
+    IDC_RELEASE             "Release\nRelease current call"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDC_ACCEPT              "Accept\nAccept incoming call"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\RadioSearchPage.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

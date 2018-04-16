@@ -1,0 +1,114 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.data_access_interface.ecs" ProjectGUID="{512F3D9C-813A-4707-8BC1-81BC62074026}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/ecs" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src,../../..,../../../../../sdk/include/transactive" PreprocessorDefinitions="WIN32;_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_LIB;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/ecs/core.data_access_interface.ecs.TA_EcsDai.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/ecs/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/ecs/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/ecs/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_EcsDai_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.data_access_interface.ecs.TA_EcsDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/ecs" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src,../../..,../../../../../sdk/include/transactive" PreprocessorDefinitions="WIN32;NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;_LIB;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/ecs/core.data_access_interface.ecs.TA_EcsDai.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/ecs/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/ecs/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/ecs/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_EcsDai.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.data_access_interface.ecs.TA_EcsDai.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="EC_ZONE">
+			<File RelativePath="src\ConfigECSZone.cpp">
+			</File>
+			<File RelativePath="src\ConfigECSZone.h">
+			</File>
+			<File RelativePath="src\ECSZone.cpp">
+			</File>
+			<File RelativePath="src\ECSZone.h">
+			</File>
+			<File RelativePath="src\ECSZoneAccessFactory.cpp">
+			</File>
+			<File RelativePath="src\ECSZoneAccessFactory.h">
+			</File>
+			<File RelativePath="src\ECSZoneHelper.cpp">
+			</File>
+			<File RelativePath="src\ECSZoneHelper.h">
+			</File>
+			<File RelativePath="src\IConfigECSZone.h">
+			</File>
+			<File RelativePath="src\IECSZone.h">
+			</File>
+		</Filter>
+		<Filter Name="EC_STATION_MODE">
+			<File RelativePath="src\ConfigECSStationMode.cpp">
+			</File>
+			<File RelativePath="src\ConfigECSStationMode.h">
+			</File>
+			<File RelativePath="src\ECSStationMode.cpp">
+			</File>
+			<File RelativePath="src\ECSStationMode.h">
+			</File>
+			<File RelativePath="src\ECSStationModeAccessFactory.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModeAccessFactory.h">
+			</File>
+			<File RelativePath="src\ECSStationModeHelper.cpp">
+			</File>
+			<File RelativePath="src\ECSStationModeHelper.h">
+			</File>
+			<File RelativePath="src\IConfigECSStationMode.h">
+			</File>
+			<File RelativePath="src\IECSStationMode.h">
+			</File>
+		</Filter>
+		<Filter Name="EC_MASTER_MODE">
+			<File RelativePath="src\ConfigECSMasterMode.cpp">
+			</File>
+			<File RelativePath="src\ConfigECSMasterMode.h">
+			</File>
+			<File RelativePath="src\ECSMasterMode.cpp">
+			</File>
+			<File RelativePath="src\ECSMasterMode.h">
+			</File>
+			<File RelativePath="src\ECSMasterModeAccessFactory.cpp">
+			</File>
+			<File RelativePath="src\ECSMasterModeAccessFactory.h">
+			</File>
+			<File RelativePath="src\ECSMasterModeHelper.cpp">
+			</File>
+			<File RelativePath="src\ECSMasterModeHelper.h">
+			</File>
+			<File RelativePath="src\IConfigECSMasterMode.h">
+			</File>
+			<File RelativePath="src\IECSMasterMode.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

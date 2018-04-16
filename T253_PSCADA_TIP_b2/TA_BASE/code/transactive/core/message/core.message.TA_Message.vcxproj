@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.message</ProjectName>
+    <ProjectGuid>{2A3DC5FF-7E79-4364-94E1-7FF194419655}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_Message_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\idl\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\message\idl\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AuditEvent.cpp" />
+    <ClCompile Include="src\AuditMessageSender.cpp" />
+    <ClCompile Include="src\BackwardsCompatibility.cpp" />
+    <ClCompile Include="src\BindingRequestMessageSender.cpp" />
+    <ClCompile Include="src\CommsMessageSender.cpp" />
+    <ClCompile Include="src\ConfigUpdateMessageSender.cpp" />
+    <ClCompile Include="src\ConnectionChecker.cpp" />
+    <ClCompile Include="src\ConnectionThread.cpp" />
+    <ClCompile Include="src\CtaAuditing.cpp" />
+    <ClCompile Include="src\EventChannelUser.cpp" />
+    <ClCompile Include="src\MessageConfig.cpp" />
+    <ClCompile Include="src\MessagePublicationManager.cpp" />
+    <ClCompile Include="src\MessageTypes.cpp" />
+    <ClCompile Include="src\PublicationManager.cpp" />
+    <ClCompile Include="src\StateUpdateMessageSender.cpp" />
+    <ClCompile Include="src\StructuredEventConsumer.cpp" />
+    <ClCompile Include="src\StructuredEventConsumerDispatchers.cpp" />
+    <ClCompile Include="src\StructuredEventSupplier.cpp" />
+    <ClCompile Include="src\SubscriptionManager.cpp" />
+    <ClCompile Include="src\TA_CosNotifyChannel.cpp" />
+    <ClCompile Include="src\TA_CosUtility.cpp" />
+    <ClCompile Include="src\TransactiveMessageSubscription.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractMessageSubscriber.h" />
+    <ClInclude Include="src\AuditEvent.h" />
+    <ClInclude Include="src\AuditMessageSender.h" />
+    <ClInclude Include="src\BackwardsCompatibility.h" />
+    <ClInclude Include="src\BindingRequestMessageSender.h" />
+    <ClInclude Include="src\CommsMessageSender.h" />
+    <ClInclude Include="src\ConfigUpdateMessageSender.h" />
+    <ClInclude Include="src\ConnectionChecker.h" />
+    <ClInclude Include="src\ConnectionThread.h" />
+    <ClInclude Include="src\CtaAuditing.h" />
+    <ClInclude Include="src\DispatchingQueue.h" />
+    <ClInclude Include="src\EventChannelUser.h" />
+    <ClInclude Include="src\IMessageSubscriber.h" />
+    <ClInclude Include="src\MessageConfig.h" />
+    <ClInclude Include="src\MessageConstants.h" />
+    <ClInclude Include="src\MessageFilters.h" />
+    <ClInclude Include="src\MessagePublicationManager.h" />
+    <ClInclude Include="src\MessageSubscriptionManager.h" />
+    <ClInclude Include="src\NameValuePair.h" />
+    <ClInclude Include="src\PublicationManager.h" />
+    <ClInclude Include="src\SpecialisedMessageSubscriber.h" />
+    <ClInclude Include="src\StateUpdateMessageSender.h" />
+    <ClInclude Include="src\StructuredEventConsumer.h" />
+    <ClInclude Include="src\StructuredEventConsumerDispatchers.h" />
+    <ClInclude Include="src\StructuredEventSupplier.h" />
+    <ClInclude Include="src\SubscriptionManager.h" />
+    <ClInclude Include="src\TA_CosNotifyChannel.h" />
+    <ClInclude Include="src\TA_CosNotifyInterfaces.h" />
+    <ClInclude Include="src\TA_CosUtility.h" />
+    <ClInclude Include="src\TransactiveMessageSubscription.h" />
+    <ClInclude Include="types\AlarmAgentAlarm_MessageTypes.h" />
+    <ClInclude Include="types\AlarmAgentSynch_MessageTypes.h" />
+    <ClInclude Include="types\AlarmAudit_MessageTypes.h" />
+    <ClInclude Include="types\AlarmNotUsed_MessageTypes.h" />
+    <ClInclude Include="types\AlarmStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\AlarmUpdate_MessageTypes.h" />
+    <ClInclude Include="types\Alarm_MessageTypes.h" />
+    <ClInclude Include="types\ApplicationStatusAudit_MessageTypes.h" />
+    <ClInclude Include="types\ArchiveAudit_MessageTypes.h" />
+    <ClInclude Include="types\AtsAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\ATSAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\Audit_MessageTypes.h" />
+    <ClInclude Include="types\AuthenticationAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\AuthenticationAgentStateUpdateBroadcast_MessageTypes.h" />
+    <ClInclude Include="types\AuthenticationAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\CCTVAlarms_MessageTypes.h" />
+    <ClInclude Include="types\CCTVAudit_MessageTypes.h" />
+    <ClInclude Include="types\CCTVComms_MessageTypes.h" />
+    <ClInclude Include="types\CCTVStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\ConfigUpdate_MessageTypes.h" />
+    <ClInclude Include="types\Configuration_MessageTypes.h" />
+    <ClInclude Include="types\CongestionAlarms_MessageTypes.h" />
+    <ClInclude Include="types\CongestionComms_MessageTypes.h" />
+    <ClInclude Include="types\ControlStationAudit_MessageTypes.h" />
+    <ClInclude Include="types\ControlStationComms_MessageTypes.h" />
+    <ClInclude Include="types\DatabaseStatusComms_MessageTypes.h" />
+    <ClInclude Include="types\DataLogStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\DataNodeAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\DataNodeAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\DataNodeAudit_MessageTypes.h" />
+    <ClInclude Include="types\DataNodeStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\DataPointAlarms_MessageTypes.h" />
+    <ClInclude Include="types\DataPointAudit_MessageTypes.h" />
+    <ClInclude Include="types\DataPointStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\DataRecordingAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\DataRecordingAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\DataRecordingAlarms_MessageTypes.h" />
+    <ClInclude Include="types\DutyAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\DutyAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\DutyAgentBroadcastComms_MessageTypes.h" />
+    <ClInclude Include="types\DutyAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\DutyStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\ECSAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\ECSAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\ECSAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\ECSAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\ECSAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\ECSAudit_MessageTypes.h" />
+    <ClInclude Include="types\ESVAudit_MessageTypes.h" />
+    <ClInclude Include="types\EventLoggingAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\GenericAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\GenericDataPointStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\HistoryComms_MessageTypes.h" />
+    <ClInclude Include="types\HistoryStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\IasAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\IasAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\IncidentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\IncidentAudit_MessageTypes.h" />
+    <ClInclude Include="types\IncidentComms_MessageTypes.h" />
+    <ClInclude Include="types\IncidentDetectionAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\IncidentLogSheetAudit_MessageTypes.h" />
+    <ClInclude Include="types\IncidentManagerBroadcastComms_MessageTypes.h" />
+    <ClInclude Include="types\IncidentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\InspectorPanelAudit_MessageTypes.h" />
+    <ClInclude Include="types\InterlockingConfigAudit_MessageTypes.h" />
+    <ClInclude Include="types\LessAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\LivePropertyServerData_MessageTypes.h" />
+    <ClInclude Include="types\MessageTypes.h" />
+    <ClInclude Include="types\MFTComms_MessageTypes.h" />
+    <ClInclude Include="types\MmsAlarm_MessageTypes.h" />
+    <ClInclude Include="types\MmsAudit_MessageTypes.h" />
+    <ClInclude Include="types\MMSComms_MessageTypes.h" />
+    <ClInclude Include="types\ModbusStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\NameRebindStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\NamingService_MessageTypes.h" />
+    <ClInclude Include="types\NetworkStatusStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\OnlinePrintingAgentAlarm_MessageTypes.h" />
+    <ClInclude Include="types\OnlinePrintingAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\OperatorAudit_MessageTypes.h" />
+    <ClInclude Include="types\OsssAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\OsssAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\PAAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\PAAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\PAAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\PAAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\PAAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\PAManagerAudit_MessageTypes.h" />
+    <ClInclude Include="types\PIDSAlarms_MessageTypes.h" />
+    <ClInclude Include="types\PIDSAudit_MessageTypes.h" />
+    <ClInclude Include="types\PIDSComms_MessageTypes.h" />
+    <ClInclude Include="types\PlanAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\PlanAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\PlanAgentBroadcastComms_MessageTypes.h" />
+    <ClInclude Include="types\PlanAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\PlanAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\PMSAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\PMSAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\PMSAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\PMSAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\RadioAlarms_MessageTypes.h" />
+    <ClInclude Include="types\RadioAudit_MessageTypes.h" />
+    <ClInclude Include="types\RadioComms_MessageTypes.h" />
+    <ClInclude Include="types\RadioTetraAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\ReportsAudit_MessageTypes.h" />
+    <ClInclude Include="types\SchedulingAlarms_MessageTypes.h" />
+    <ClInclude Include="types\SchedulingAudit_MessageTypes.h" />
+    <ClInclude Include="types\SchedulingComms_MessageTypes.h" />
+    <ClInclude Include="types\SchedulingStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\SignallingAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\SignallingAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\SystemAlarms_MessageTypes.h" />
+    <ClInclude Include="types\SystemControlAudit_MessageTypes.h" />
+    <ClInclude Include="types\SystemControllerComms_MessageTypes.h" />
+    <ClInclude Include="types\SystemStatusAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\TelephoneManagerAudit_MessageTypes.h" />
+    <ClInclude Include="types\TelephoneManagerDirectoryBroadcastMessage_MessageTypes.h" />
+    <ClInclude Include="types\TelephoneManagerSpeedDialBroadcastMessage_MessageTypes.h" />
+    <ClInclude Include="types\TelephonyComms_MessageTypes.h" />
+    <ClInclude Include="types\TESTALARM_MessageTypes.h" />
+    <ClInclude Include="types\TESTAUDIT_MessageTypes.h" />
+    <ClInclude Include="types\TEST_MessageTypes.h" />
+    <ClInclude Include="types\TISAlarms_MessageTypes.h" />
+    <ClInclude Include="types\TISAudit_MessageTypes.h" />
+    <ClInclude Include="types\TISBroadcastComms_MessageTypes.h" />
+    <ClInclude Include="types\TISComms_MessageTypes.h" />
+    <ClInclude Include="types\TrainAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\TrainAgentBroadcastComms_MessageTypes.h" />
+    <ClInclude Include="types\TrainAgentComms_MessageTypes.h" />
+    <ClInclude Include="types\TrainAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\TrainAudit_MessageTypes.h" />
+    <ClInclude Include="types\TrainCctvCameraAlarms_MessageTypes.h" />
+    <ClInclude Include="types\UserInteractionAudit_MessageTypes.h" />
+    <ClInclude Include="types\VideoWallAlarms_MessageTypes.h" />
+    <ClInclude Include="types\VideoWallAudit_MessageTypes.h" />
+    <ClInclude Include="types\VideoWallComms_MessageTypes.h" />
+    <ClInclude Include="types\VideoWallStateUpdates_MessageTypes.h" />
+    <ClInclude Include="types\VisualAlarms_MessageTypes.h" />
+    <ClInclude Include="types\VisualAudit_MessageTypes.h" />
+    <ClInclude Include="types\VisualComms_MessageTypes.h" />
+    <ClInclude Include="types\VisualStateUpdate_MessageTypes.h" />
+    <ClInclude Include="types\WILDAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="types\WILDAgentAudit_MessageTypes.h" />
+    <ClInclude Include="types\WILDAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="types\WILDAgentStateUpdate_MessageTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="core.message.TA_Message.dsp" />
+    <None Include="Makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\corba\IDL\core.corba.idl.TA_IDL.vcxproj">
+      <Project>{bd262114-29cb-425d-aa7f-c18a63aafa68}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="IDL\core.message.idl.TA_MessageIDL.vcxproj">
+      <Project>{90f02999-b013-441e-8e32-a7fefd58786b}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

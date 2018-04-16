@@ -1,0 +1,241 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\TimeTableManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\TimeTableManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OCC_TIMETABLEMANAGER_DIALOG DIALOGEX 0, 0, 547, 319
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_VISIBLE
+EXSTYLE WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "车站",IDC_STATIC_STATIONS,7,7,105,40
+    COMBOBOX        IDC_COMBO_STATIONS,14,22,91,215,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "时间表设定",IDC_STATIC_SCHEDULE_CONFIG,123,7,417,40
+    LTEXT           "当日时间表",IDC_STATIC_CURRENT_SHEDULE,131,26,47,8
+    COMBOBOX        IDC_COMBO_CURRENT_SCHEDULE,179,22,90,59,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "下载",IDC_BUTTON_DOWNLOAD_TODAY,272,22,50,14
+    LTEXT           "明日时间表",IDC_STATIC_TOMORROW_SHEDULE,342,26,41,8
+    COMBOBOX        IDC_COMBO_TOMORROW_SCHEDULE,387,22,90,58,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "下载",IDC_BUTTON_DOWNLOAD_TOMORROW,481,22,50,14
+    GROUPBOX        "编辑",IDC_STATIC_CONFIGS,7,55,533,257
+    GROUPBOX        "编辑时间表",IDC_STATIC_SHEDULE,14,68,98,168
+    RADIOBUTTON     "工作日",IDC_RADIO_WORKDAYS,27,81,40,10,WS_GROUP
+    RADIOBUTTON     "星期五",IDC_RADIO_FRIDAY,27,96,40,10
+    RADIOBUTTON     "星期六",IDC_RADIO_SATURDAY,27,111,40,10
+    RADIOBUTTON     "星期日",IDC_RADIO_SUNDAY,27,126,40,10
+    RADIOBUTTON     "节假日",IDC_RADIO_HOLIDAY,27,141,40,10
+    RADIOBUTTON     "特殊事件一",IDC_RADIO_SPECIAL_1,27,156,56,10
+    RADIOBUTTON     "特殊事件二",IDC_RADIO_SPECIAL_2,27,171,56,10
+    RADIOBUTTON     "特殊事件三",IDC_RADIO_SPECIAL_3,27,186,56,10
+    RADIOBUTTON     "特殊事件四",IDC_RADIO_SPECIAL_4,27,201,56,10
+    RADIOBUTTON     "特殊事件五",IDC_RADIO_SPECIAL_5,27,216,56,10
+    RADIOBUTTON     "当日时间表",IDC_RADIO_CURRENT_SCHEDULE,27,258,56,10
+    RADIOBUTTON     "明日时间表",IDC_RADIO_TOMORROW_SCHEDULE,27,270,56,10
+    GROUPBOX        "读取服务器时间表",IDC_STATIC_READ_SHEDULE,13,244,99,44
+    CONTROL         "",IDC_LIST_OCC_TIMETABLE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,123,68,407,220
+    PUSHBUTTON      "复原时间表",IDC_BUTTON_RECOVER_TIMETABLE,366,298,50,14
+    PUSHBUTTON      "本地存储",IDC_BUTTON_LOCAL_STORE,423,298,50,14
+    PUSHBUTTON      "退出",IDC_BUTTON_CANCEL,481,298,50,14
+    DEFPUSHBUTTON   "DefaultButton",IDC_BUTTON_INVISIBLE_DEFAULT,27,288,50,14,NOT WS_VISIBLE
+END
+
+IDD_STATION_TIMETABLEMANAGER_DIALOG DIALOGEX 0, 0, 412, 247
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 10, "宋体", 400, 0, 0x86
+BEGIN
+    LTEXT           "车站名称",IDC_STATIC_STATION_NAME,19,11,35,8
+    LTEXT           "Set Station Name...",IDC_STATION_NAME,60,11,248,8
+    RADIOBUTTON     "当日时间表",IDC_RADIO_STATION_CURRENT_SCHEDULE,19,23,56,10,WS_GROUP
+    RADIOBUTTON     "明日时间表",IDC_RADIO_STATION_TOMORROW_SCHEDULE,108,23,56,10
+    CONTROL         "",IDC_LIST_STATION_TIMETABLE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,41,398,199
+    DEFPUSHBUTTON   "DefaultButton",IDC_BUTTON_INVISIBLE_DEFAULT,175,19,50,14,NOT WS_VISIBLE
+END
+
+IDD_TIMETABLEMANAGER_MAIN_DIALOG DIALOGEX 0, 0, 446, 265
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "TimeTableManager.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "TimeTableManager.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OCC_TIMETABLEMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 540
+        VERTGUIDE, 14
+        VERTGUIDE, 27
+        VERTGUIDE, 105
+        VERTGUIDE, 112
+        VERTGUIDE, 123
+        VERTGUIDE, 531
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 312
+        HORZGUIDE, 34
+        HORZGUIDE, 47
+        HORZGUIDE, 68
+        HORZGUIDE, 288
+    END
+
+    IDD_STATION_TIMETABLEMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 405
+        VERTGUIDE, 19
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+        HORZGUIDE, 19
+        HORZGUIDE, 33
+        HORZGUIDE, 41
+    END
+
+    IDD_TIMETABLEMANAGER_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 439
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 258
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\TimeTableManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

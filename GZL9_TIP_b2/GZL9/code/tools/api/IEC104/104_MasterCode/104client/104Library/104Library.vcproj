@@ -1,0 +1,118 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="104Library" ProjectGUID="{7F3D06A3-9919-4D5C-AD1C-42DB1F872594}">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D &quot;_x86_&quot;" Optimization="0" PreprocessorDefinitions="WIN32;_DEBUG;_LIB" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="1" PrecompiledHeaderFile=".\Debug/104Library.pch" AssemblerListingLocation=".\Debug/" ObjectFile=".\Debug/" ProgramDataBaseFileName=".\Debug/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="2052"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="..\lib\104Library.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Debug/104Library.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/D &quot;_x86_&quot;" Optimization="2" PreprocessorDefinitions="WIN32;NDEBUG;_LIB" RuntimeLibrary="2" PrecompiledHeaderFile=".\Release/104Library.pch" AssemblerListingLocation=".\Release/" ObjectFile=".\Release/" ProgramDataBaseFileName=".\Release/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="2052"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="..\lib\104Library.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\Release/104Library.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="..\..\Adaptee.cpp">
+			</File>
+			<File RelativePath="..\..\Bexception.cpp">
+			</File>
+			<File RelativePath="..\..\Bf.cpp">
+			</File>
+			<File RelativePath="..\..\Command.cpp">
+			</File>
+			<File RelativePath="..\..\ConnectThread.cpp">
+			</File>
+			<File RelativePath="..\..\FepDataStruct.cpp">
+			</File>
+			<File RelativePath="..\..\FtpException.cpp">
+			</File>
+			<File RelativePath="..\..\Iec104.cpp">
+			</File>
+			<File RelativePath="..\..\Iec104Api.cpp">
+			</File>
+			<File RelativePath="..\..\Iec104Event.cpp">
+			</File>
+			<File RelativePath="..\..\IecSocket.cpp">
+			</File>
+			<File RelativePath="..\..\Object.cpp">
+			</File>
+			<File RelativePath="..\..\Profile.cpp">
+			</File>
+			<File RelativePath="..\..\ProtocolBase.cpp">
+			</File>
+			<File RelativePath="..\..\ReadConfig.cpp">
+			</File>
+			<File RelativePath="..\..\Threads.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="..\..\Adaptee.h">
+			</File>
+			<File RelativePath="..\..\Bexception.h">
+			</File>
+			<File RelativePath="..\..\Btype.h">
+			</File>
+			<File RelativePath="..\..\Command.h">
+			</File>
+			<File RelativePath="..\..\ConnectThread.h">
+			</File>
+			<File RelativePath="..\..\FepDataStruct.h">
+			</File>
+			<File RelativePath="..\..\FtpException.h">
+			</File>
+			<File RelativePath="..\..\Iec104.h">
+			</File>
+			<File RelativePath="..\..\Iec104Api.h">
+			</File>
+			<File RelativePath="..\..\Iec104Def.h">
+			</File>
+			<File RelativePath="..\..\Iec104Event.h">
+			</File>
+			<File RelativePath="..\..\IecSocket.h">
+			</File>
+			<File RelativePath="..\..\Object.h">
+			</File>
+			<File RelativePath="..\..\Profile.h">
+			</File>
+			<File RelativePath="..\..\ProtocolBase.h">
+			</File>
+			<File RelativePath="..\..\ReadConfig.h">
+			</File>
+			<File RelativePath="..\..\Threads.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

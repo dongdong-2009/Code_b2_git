@@ -1,0 +1,673 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TISManager"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "TISManager Version 1.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2003",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_TISMANAGER_DIALOG DIALOGEX 0, 0, 636, 369
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TTIS Manager"
+MENU IDR_MENU1
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Tab1",IDC_MAIN_TAB,"SysTabControl32",0x0,6,4,624,346
+    PUSHBUTTON      "Help",IDC_HELP_BUTTON,6,353,49,12
+    PUSHBUTTON      "Close",IDC_CLOSE,574,353,49,12
+END
+
+IDD_TRAIN_SELECT_FREETEXT DIALOG DISCARDABLE  0, 0, 269, 240
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_TRAIN_FREE_TEXT,12,17,244,62,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_NOHIDESEL | ES_WANTRETURN
+    PUSHBUTTON      "Spell Check",IDC_SPELL_CHECK,73,83,58,15
+    PUSHBUTTON      "Save",IDC_SAVE_FREETEXT,138,83,58,15
+    LISTBOX         IDC_FREETEXT_LIST,12,119,101,51,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_GROUP | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_DISPLAY_MODE,159,132,94,119,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JUSTIFICATION,159,157,94,104,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_INTENSITY,159,182,94,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_FONT_SIZE,159,207,94,46,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Display Mode",IDC_STATIC,159,120,47,10
+    LTEXT           "Justification",IDC_STATIC,159,146,41,9
+    LTEXT           "Intensity",IDC_STATIC,159,171,31,9
+    GROUPBOX        "Display Attributes",IDC_STATIC,150,107,112,124
+    LTEXT           "Font Size",IDC_STATIC,159,196,33,9
+    GROUPBOX        "Message Content",IDC_STATIC,6,5,256,98
+    GROUPBOX        "Saved Messages",IDC_SAVED_LABEL,6,107,114,72
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_TISMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 630
+        BOTTOMMARGIN, 365
+        HORZGUIDE, 353
+    END
+
+    IDD_TRAIN_SELECT_FREETEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        VERTGUIDE, 262
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "TISManager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "TISManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TISManager.EXE\0"
+            VALUE "ProductName", "TISManager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DISPLAY_REQUEST DIALOG DISCARDABLE  0, 0, 211, 194
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "System"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,81,172,50,14
+    CONTROL         "List1",IDC_REQUEST_STATUS_LIST,"SysListView32",
+                    LVS_REPORT | WS_BORDER,7,7,196,156
+END
+
+IDD_TRAIN_DISPLAY DIALOGEX 0, 0, 618, 336
+STYLE WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Entire Train",IDC_ENTIRE_TRAIN,21,19,60,16
+    PUSHBUTTON      "Clear All",IDC_CLEAR_PID_SELECTION,21,38,60,16
+    CONTROL         "PID1",IDC_CAR1PID1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,98,25,20,17
+    CONTROL         "PID2",IDC_CAR1PID2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,120,25,20,17
+    CONTROL         "PID3",IDC_CAR1PID3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,142,25,20,17
+    CONTROL         "PID4",IDC_CAR1PID4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,164,25,20,17
+    PUSHBUTTON      "All Car 1",IDC_ALL_CAR1,120,49,39,12
+    CONTROL         "PID1",IDC_CAR2PID1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,217,25,20,17
+    CONTROL         "PID2",IDC_CAR2PID2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,239,25,20,17
+    CONTROL         "PID3",IDC_CAR2PID3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,262,25,20,17
+    CONTROL         "PID4",IDC_CAR2PID4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,285,25,20,17
+    PUSHBUTTON      "All Car 2",IDC_ALL_CAR2,243,49,39,12
+    CONTROL         "PID1",IDC_CAR3PID1,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,405,25,20,17
+    CONTROL         "PID2",IDC_CAR3PID2,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,382,25,20,17
+    CONTROL         "PID3",IDC_CAR3PID3,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,359,25,20,17
+    CONTROL         "PID4",IDC_CAR3PID4,"Button",BS_AUTOCHECKBOX | 
+                    BS_PUSHLIKE | WS_TABSTOP,336,25,20,17
+    PUSHBUTTON      "All Car 3",IDC_ALL_CAR3,361,49,39,12
+    PUSHBUTTON      "Clear All",IDC_CLEAR_ALL_MESSAGES,467,19,66,16,
+                    WS_DISABLED
+    PUSHBUTTON      "Clear Priority 6",IDC_CLEAR_PRIORITY6_MESSAGES,539,19,
+                    66,16,WS_DISABLED
+    PUSHBUTTON      "Clear Normal",IDC_CLEAR_NORMAL_MESSAGES,467,40,66,16,
+                    WS_DISABLED
+    PUSHBUTTON      "Clear Emergency",IDC_CLEAR_EMERGENCY_MESSAGES,539,40,66,
+                    16,WS_DISABLED
+    CONTROL         "List1",IDC_INBOUND_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,19,113,95,117
+    CONTROL         "List1",IDC_OUTBOUND_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,118,113,95,
+                    117
+    PUSHBUTTON      "All Inner Track",IDC_ALL_INBOUND,29,243,54,12
+    PUSHBUTTON      "All Trains",IDC_ALL_TRAINS,90,243,49,12
+    PUSHBUTTON      "Clear All",IDC_CLEAR_ALL_TRAINS,90,257,49,12
+    PUSHBUTTON      "All Outer Track",IDC_ALL_OUTBOUND,146,243,54,12
+    COMBOBOX        IDC_GROUP_SELECTION,25,280,182,111,CBS_DROPDOWN | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save Selection",IDC_SAVE_TRAIN_GROUP,39,296,66,13
+    PUSHBUTTON      "Delete Selection",IDC_DELETE_TRAIN_GROUP,125,296,66,13
+    CONTROL         "Tab1",IDC_TRAIN_DISPLAY_TAB,"SysTabControl32",0x0,236,
+                    74,274,255
+    CONTROL         "Cyclic",IDC_TIME_TYPE_CYCLIC,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP,525,93,35,10
+    CONTROL         "DateTimePicker1",IDC_START_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,565,107,
+                    40,15,WS_EX_RIGHT
+    CONTROL         "DateTimePicker1",IDC_END_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,565,124,
+                    40,15,WS_EX_RIGHT
+    CONTROL         "DateTimePicker1",IDC_REPEAT_INTERVAL,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,565,141,
+                    40,15
+    CONTROL         "Continuous",IDC_TIME_TYPE_CONTINUOUS,"Button",
+                    BS_AUTORADIOBUTTON,525,166,52,10
+    COMBOBOX        IDC_PRIORITY,530,209,72,126,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_TABSTOP
+    PUSHBUTTON      "Display",IDDISPLAY,523,273,78,27
+    GROUPBOX        "Train Selection",IDC_STATIC,7,70,219,259,0,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "Train PID selection",IDC_STATIC,8,3,441,63
+    GROUPBOX        "",IDC_STATIC,93,9,96,38,BS_FLAT
+    LTEXT           "Car 1",IDC_STATIC,131,15,23,8
+    GROUPBOX        "",IDC_STATIC,213,9,96,38,BS_FLAT
+    LTEXT           "Car 2",IDC_STATIC,251,15,23,8
+    GROUPBOX        "",IDC_STATIC,333,9,96,38,BS_FLAT
+    LTEXT           "Car 3",IDC_STATIC,372,15,23,8
+    GROUPBOX        "Time",IDC_STATIC,521,82,90,100
+    LTEXT           "Start Time",IDC_LABEL_START,525,110,37,11
+    LTEXT           "End Time",IDC_LABEL_END,525,127,37,11
+    LTEXT           "Repeat Interval",IDC_LABEL_REPEAT,525,141,26,15
+    GROUPBOX        "Message Clearing",IDC_STATIC,460,3,151,63
+    GROUPBOX        "Priority",IDC_STATIC,521,192,90,41
+    LTEXT           "Inner Track",IDC_INBOUND_LABEL,47,102,37,9
+    LTEXT           "Outer Track",IDC_OUTBOUND_LABEL,145,102,39,9
+    GROUPBOX        "Groups",IDC_STATIC,20,269,193,46
+    CONTROL         "Tab1",IDC_TRAIN_SELECTION_TAB,"SysTabControl32",0x0,13,
+                    81,207,241
+END
+
+IDD_TRAIN_TIME_SCHEDULE DIALOGEX 0, 0, 618, 337
+STYLE WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List5",IDC_SCHEDULE_LIBRARY,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,301,17,238,75
+    PUSHBUTTON      "Edit Schedule",IDC_EDIT_SCHEDULE,544,18,62,16
+    PUSHBUTTON      "Delete Schedule",IDC_DELETE_SCHEDULE,544,37,62,16
+    PUSHBUTTON      "Copy Schedule",IDC_COPY_SCHEDULE,544,56,62,16
+    PUSHBUTTON      "New Schedule",IDC_NEW_SCHEDULE,544,75,62,16
+    EDITTEXT        IDC_SCHEDULE_NAME,70,7,191,12
+    CONTROL         "List1",IDC_FREE_TEXT,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOSCROLL | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,14,46,120,54
+    CONTROL         "List4",IDC_SCH_PREDEFINED_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,142,46,114,205
+    PUSHBUTTON      "Edit",IDC_EDIT_FREE_TEXT,55,106,38,15
+    EDITTEXT        IDC_MESSAGE_CONTENT,14,134,120,132,ES_MULTILINE | 
+                    ES_READONLY
+    EDITTEXT        IDC_SEARCH_NORMAL,164,254,92,12,ES_AUTOHSCROLL
+    CONTROL         "DateTimePicker2",IDC_START_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,69,284,52,
+                    14,WS_EX_RIGHT
+    CONTROL         "DateTimePicker2",IDC_END_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,69,302,52,
+                    14,WS_EX_RIGHT
+    CONTROL         "DateTimePicker2",IDC_REPEAT_INTERVAL,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,167,284,
+                    52,14,WS_EX_RIGHT
+    COMBOBOX        IDC_SCH_PRIORITY,167,303,52,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add Entry",IDC_ADD_ENTRY,269,189,25,25,BS_ICON
+    CONTROL         "List3",IDC_SCHEDULE,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER,306,107,
+                    300,197
+    PUSHBUTTON      "Remove Entry",IDC_SCH_REMOVE_ENTRY,306,308,68,17
+    PUSHBUTTON      "Remove All Entries",IDC_SCH_REMOVE_ALL_ENTRIES,383,308,
+                    68,17
+    PUSHBUTTON      "Save Schedule",IDC_SCH_SAVE,538,308,68,17
+    GROUPBOX        "Schedule Entry",IDC_MESSAGE_SELECTION,8,23,254,307
+    LTEXT           "Ad Hoc",IDC_STATIC,61,35,25,8
+    LTEXT           "Normal Priority Pre-Defined",IDC_STATIC,155,35,88,8
+    GROUPBOX        "Time Schedule",IDC_STATIC,301,95,310,235
+    LTEXT           "Priority",IDC_PRIORITY_LABEL,135,305,26,8
+    LTEXT           "Message Content",IDC_STATIC,15,124,66,8
+    LTEXT           "Start",IDC_START_LABEL,47,287,18,8
+    LTEXT           "End",IDC_END_LABEL,48,305,18,8
+    LTEXT           "Repeat Interval",IDC_REPEAT_LABEL,135,283,26,16
+    GROUPBOX        "Time",IDC_STATIC,40,271,189,52
+    LTEXT           "Time Schedules",IDC_STATIC,301,7,55,9
+    LTEXT           "Schedule Name",IDC_STATIC,12,9,53,9
+    LTEXT           "Filter",IDC_STATIC,142,256,17,9
+    LTEXT           "Add Entry",IDC_STATIC,272,170,18,17
+END
+
+IDD_TRAIN_DOWNLOAD DIALOG DISCARDABLE  0, 0, 618, 339
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Tab1",IDC_TRAIN_DOWNLOAD_TAB,"SysTabControl32",0x0,7,5,
+                    604,325
+END
+
+IDD_LIBRARY_DOWNLOAD DIALOG DISCARDABLE  0, 0, 599, 311
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_LIBRARY_VERSION_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    14,59,212,217
+    PUSHBUTTON      "Download Next",IDC_DOWNLOAD_NEXT,232,143,77,25
+    PUSHBUTTON      "Upgrade to Next",IDC_UPGRADE_NEXT,232,173,77,25
+    PUSHBUTTON      "Upgrade ISCS Version",IDC_UPGRADE_ISCS,232,215,77,25,
+                    BS_CENTER
+    PUSHBUTTON      "Select All",IDC_ALL_TRAINS,58,282,50,16
+    PUSHBUTTON      "Deselect All",IDC_CLEAR_SELECTION,127,282,50,16
+    CONTROL         "List2",IDC_DOWNLOAD_STATUS,"SysListView32",LVS_REPORT | 
+                    LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,331,16,254,
+                    260
+    PUSHBUTTON      "Select All",IDC_SEL_ALL_DOWNLOAD,331,281,48,17
+    PUSHBUTTON      "Deselect All",IDC_CLEAR_SEL_DOWNLOAD,384,281,48,17
+    PUSHBUTTON      "Stop Auto Retry",IDC_CANCEL_RETRY,437,281,63,17
+    PUSHBUTTON      "Clear Completed",IDC_CLEAR_COMPLETED,522,281,63,17
+    GROUPBOX        "TIS Library Information",IDC_STATIC,7,5,309,299
+    LTEXT           "Current ISCS TTIS Version",IDC_STATIC,17,28,84,10
+    EDITTEXT        IDC_ISCS_CURRENT_VERSION,110,27,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Train Download/Upgrade Status",IDC_STATIC,324,5,268,299
+    CONTROL         "Auto Retry",IDC_RETRY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,236,199,69,15
+    LTEXT           "Percentage of Trains Downloaded with next version against total Trains in Mainline and Depot",
+                    IDC_PERCENT_NEXT,236,58,69,43
+    EDITTEXT        IDC_VERSION_PROGRESS,236,103,23,13,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    LTEXT           "Next ISCS TTIS Version",IDC_STATIC,152,28,75,10
+    EDITTEXT        IDC_ISCS_NEXT_VERSION,236,27,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "Tab1",IDC_STATION_TRAIN_TAB,"SysTabControl32",0x0,12,45,
+                    214,231
+    CONTROL         "List1",IDC_STATION_VERSION_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    14,59,212,217
+    LTEXT           "OCCDB Versions",IDC_PERCENT_NEXT2,120,14,90,11
+END
+
+IDD_SCHEDULE_DOWNLOAD DIALOG DISCARDABLE  0, 0, 599, 311
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_SCHEDULE_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    LVS_NOLABELWRAP | LVS_NOCOLUMNHEADER | WS_BORDER | 
+                    WS_TABSTOP,14,19,138,60
+    PUSHBUTTON      "Set As Current",IDC_SET_CURRENT_SCHEDULE,158,65,67,14
+    EDITTEXT        IDC_ISCS_CURRENT_VERSION,158,44,152,15,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    CONTROL         "List1",IDC_TRAIN_VERSION_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | LVS_NOLABELWRAP | 
+                    WS_BORDER | WS_TABSTOP,14,98,223,177
+    CONTROL         "Auto Retry",IDC_RETRY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,244,246,66,15
+    PUSHBUTTON      "Download Current",IDC_DOWNLOAD_CURRENT,244,180,66,25
+    PUSHBUTTON      "Upgrade to Current",IDC_UPGRADE,244,214,66,25
+    PUSHBUTTON      "Select All",IDC_ALL_TRAINS,69,281,47,17
+    PUSHBUTTON      "Deselect All",IDC_CLEAR_SELECTION,139,281,47,17
+    CONTROL         "List2",IDC_DOWNLOAD_STATUS_LIST,"SysListView32",
+                    LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,
+                    331,16,253,260
+    PUSHBUTTON      "Select All",IDC_SEL_ALL_DOWNLOAD,331,281,48,17
+    PUSHBUTTON      "Deselect All",IDC_CLEAR_SEL_DOWNLOAD,384,281,48,17
+    PUSHBUTTON      "Stop Auto Retry",IDC_CANCEL_RETRY,437,281,63,17
+    PUSHBUTTON      "Clear Completed",IDC_CLEAR_COMPLETED,521,281,63,17
+    GROUPBOX        "TIS Schedule Information",IDC_STATIC,7,5,310,299
+    LTEXT           "Current Version",IDC_STATIC,158,32,55,8
+    LTEXT           "Train Version",IDC_STATIC,103,85,44,8
+    GROUPBOX        "Train Download/Upgrade Status",IDC_STATIC,324,5,268,299
+    LTEXT           "Percentage of Trains Downloaded with next version against total Trains in Mainline and Depot",
+                    IDC_STATIC,244,101,70,41
+    EDITTEXT        IDC_VERSION_PROGRESS,244,149,25,15,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+END
+
+IDD_TRAIN_SELECT_PREDEFINED DIALOG DISCARDABLE  0, 0, 269, 240
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_TRAIN_NORMAL_PREDEFINED,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,7,13,123,134
+    CONTROL         "List1",IDC_EMERGENCY_PREDEFINED,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,139,13,123,134
+    EDITTEXT        IDC_SEARCH_NORMAL,27,151,103,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SEARCH_EMERGENCY,159,151,103,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TRAIN_PREDEFINED_CONTENT,7,183,255,51,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY
+    CTEXT           "Normal",IDC_STATIC,44,3,47,8,SS_CENTERIMAGE
+    CTEXT           "Emergency",IDC_STATIC,179,3,43,8,SS_CENTERIMAGE
+    LTEXT           "Message Content",IDC_STATIC,7,174,71,8,SS_CENTERIMAGE
+    LTEXT           "Filter",IDC_STATIC,7,152,17,9
+    LTEXT           "Filter",IDC_STATIC,139,152,16,9
+    CTEXT           "Available Languages",IDC_STATIC,119,167,71,12,
+                    SS_CENTERIMAGE
+    EDITTEXT        IDC_LANGUAGES,191,167,71,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_EDIT_FREE_TEXT DIALOG DISCARDABLE  0, 0, 187, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Edit Ad Hoc Schedule Message"
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_NAME,13,22,161,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CONTENT,13,55,161,61,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_NOHIDESEL | ES_WANTRETURN
+    PUSHBUTTON      "Save",IDOK,26,146,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,106,146,50,14
+    PUSHBUTTON      "Spell Check",IDC_SPELL_CHECK,68,121,50,15
+    GROUPBOX        "",IDC_STATIC,7,4,173,138
+    LTEXT           "Name",IDC_STATIC,10,11,23,8
+    LTEXT           "Content",IDC_STATIC,10,44,28,8
+END
+
+IDD_DLG_INITPROGRESS DIALOG DISCARDABLE  0, 0, 212, 52
+STYLE WS_POPUP | WS_BORDER
+FONT 10, "System"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,13,17,184,16
+    LTEXT           "Static",IDC_STATIC_TEXT1,16,8,189,8
+    LTEXT           "Static",IDC_STATIC_TEXT3,13,35,26,10,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT2,59,26,40,19,NOT WS_VISIBLE
+    PUSHBUTTON      "&Cancel",IDCANCEL,71,34,67,17
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_DISPLAY_REQUEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 203
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 186
+    END
+
+    IDD_TRAIN_DISPLAY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 611
+        VERTGUIDE, 381
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 329
+    END
+
+    IDD_TRAIN_TIME_SCHEDULE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 611
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 330
+    END
+
+    IDD_TRAIN_DOWNLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 611
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 330
+    END
+
+    IDD_LIBRARY_DOWNLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 592
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_SCHEDULE_DOWNLOAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 592
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 304
+    END
+
+    IDD_TRAIN_SELECT_PREDEFINED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 3
+        BOTTOMMARGIN, 234
+    END
+
+    IDD_EDIT_FREE_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 180
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 160
+    END
+
+    IDD_DLG_INITPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 45
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TTISManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""..\\..\\..\\..\\bus\\resources\\TransActiveResources.rc"" // Standard Transactive Resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\..\\..\\..\\..\\..\\sdk\\include\\transactive\\bus\\resources\\icons\\SignViewer.ico"
+IDI_ICON1               ICON    DISCARDABLE     "..\\res\\rightarrow.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "TTIS Manager Help",           ID_HELP_TTISMANAGERHELP
+        MENUITEM "About TTIS Manager",          ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_BUTTON32772
+    BUTTON      ID_BUTTON32773
+    BUTTON      ID_BUTTON32774
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP  DISCARDABLE     "..\\res\\toolbar1.bmp"
+IDB_RIGHT_ARROW         BITMAP  DISCARDABLE     "..\\res\\bitmap1.bmp"
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TTISManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "../../../../../sdk/include/transactive/bus/resources/TransActiveResources.rc" // Standard Transactive Resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

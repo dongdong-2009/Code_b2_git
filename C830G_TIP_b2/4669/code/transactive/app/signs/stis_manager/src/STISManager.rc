@@ -1,0 +1,479 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STISMANAGER_DIALOG DIALOGEX 0, 0, 636, 358
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "STIS Manager"
+MENU IDR_MENU1
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_MAINPAGE_TAB,"SysTabControl32",0x0,6,1,626,
+                    329
+    PUSHBUTTON      "Help",IDC_HELP_BUTTON,6,333,49,19
+    PUSHBUTTON      "Close",IDC_CLOSE,576,333,49,19
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "STISManager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "STIS Manager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "STISManager.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "STISManager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_STISMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 632
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 356
+        HORZGUIDE, 334
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PREDEFINED DIALOG DISCARDABLE  0, 0, 322, 288
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Message Content",IDC_CONTENT_LABEL,7,227,70,8
+    EDITTEXT        IDC_PREDEFINED_CONTENT,7,238,231,36,ES_MULTILINE | 
+                    ES_READONLY | WS_VSCROLL
+    LTEXT           "Filter",IDC_LABEL_SEARCH1,7,214,17,10
+    EDITTEXT        IDC_SEARCH_NORMAL,27,213,129,12
+    LTEXT           "Normal",IDC_NORMAL_LABEL,69,5,23,8
+    LTEXT           "Emergency",IDC_EMERGENCY_LABEL,221,5,37,8
+    LTEXT           "Filter",IDC_LABEL_SEARCH2,165,214,18,9
+    EDITTEXT        IDC_SEARCH_EMERGENCY,186,213,129,12
+    LTEXT           "Available Languages",IDC_LANGUAGES_LABEL,244,229,71,8
+    EDITTEXT        IDC_LANGUAGES,244,238,71,12,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "List1",IDC_EMERGENCY_PREDEFINED,"SysListView32",
+                    LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,165,16,150,
+                    193
+    CONTROL         "List1",IDC_NORMAL_PREDEFINED,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | 
+                    WS_BORDER | WS_TABSTOP,7,16,150,193
+END
+
+IDD_FREE_TEXT DIALOGEX 0, 0, 322, 275
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_STATION_FREE_TEXT,99,11,207,87,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_NOHIDESEL | WS_GROUP
+    GROUPBOX        "All Displays",IDC_LABEL11,15,138,89,116,0,
+                    WS_EX_TRANSPARENT
+    PUSHBUTTON      "Spell Check",IDC_SPELL_CHECK,147,103,55,14
+    LTEXT           "Display Mode",IDC_LABEL12,24,147,59,9
+    LTEXT           "Scroll Speed",IDC_SCROLLSPEED_LABEL,23,196,57,9
+    LTEXT           "Justification",IDC_JUSTIFICATION_LABEL,23,225,52,9
+    COMBOBOX        IDC_DISPLAY_MODE,24,158,72,111,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JUSTIFICATION,23,239,72,116,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SCROLL_SPEED,23,207,72,115,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Plasma",IDC_PLASMA_FRAME,116,135,89,107
+    GROUPBOX        "LED",IDC_LED_FRAME,217,135,89,79
+    LTEXT           "Font Size",IDC_LABEL1,225,147,41,8
+    COMBOBOX        IDC_LED_FONT_SIZE,225,158,72,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font Size",IDC_LABEL2,126,177,41,8
+    LTEXT           "Font Colour",IDC_LABEL3,126,147,66,10
+    COMBOBOX        IDC_PLASMA_FONT_SIZE,126,188,72,108,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_PLASMA_FOREGROUND_COLOUR,126,158,72,108,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Message Content",IDC_MESSAGE_CONTENT_FRAME,7,0,308,121
+    GROUPBOX        "Display Attributes",IDC_DISPLAY_ATTRIBUTES_FRAME,7,118,
+                    308,138
+    LTEXT           "Display Time (m:s)",IDC_DISPLAYTIME_LABEL,21,175,35,17
+    LISTBOX         IDC_FREETEXT_LIST,15,28,73,51,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_GROUP | 
+                    WS_TABSTOP
+    LTEXT           "Saved Messages",IDC_RECENT_MESSAGES,18,18,57,8
+    LTEXT           "Background Colour",IDC_LABEL4,126,207,66,8
+    COMBOBOX        IDC_PLASMA_BACKGROUND_COLOUR,126,218,72,108,
+                    CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_SAVE,205,103,55,14
+    CONTROL         "DateTimePicker1",IDC_DISPLAY_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,57,175,38,
+                    15
+    LTEXT           "Font Color",IDC_LABEL5,225,180,41,8
+    COMBOBOX        IDC_LED_FONT_COLOR,225,188,72,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_RATIS DIALOG DISCARDABLE  0, 0, 322, 277
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    COMBOBOX        IDC_RATIS_TAG,39,47,68,129,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_RATIS_DEST,39,100,68,129,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_RATIS_CONTENT,25,146,272,84,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Spell Check",IDC_SPELL_CHECK,133,236,55,14
+    CONTROL         "New/Update",IDC_RADIO_NEW,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,160,47,50,13
+    CONTROL         "Clear",IDC_RADIO_CLEAR,"Button",BS_AUTORADIOBUTTON,222,
+                    47,30,13
+    GROUPBOX        "Message Content",IDC_RATIS_CONTENT_FRAME,15,132,292,123
+    GROUPBOX        "RATIS Tag",IDC_RATIS_TAG_FRAME,27,31,90,40
+    GROUPBOX        "Message Type",IDC_MESSAGE_TYPE_FRAME,149,31,110,40
+    GROUPBOX        "Destination",IDC_DESTINATION_FRAME,27,85,90,36
+    GROUPBOX        "",IDC_STATIC,15,16,270,114
+    CONTROL         "Override Enable",IDC_CHB_OVERRIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,88,64,10
+    CONTROL         "Vetting Enable",IDC_CHB_VETTING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,156,108,68,10
+END
+
+IDD_DISPLAY_PAGE DIALOG DISCARDABLE  0, 0, 617, 335
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Display",IDC_DISPLAY,515,276,87,28
+    GROUPBOX        "Time",IDC_LABEL1,511,4,99,132
+    CONTROL         "Cyclic",IDC_RADIO_TIMED,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,519,19,36,12
+    CONTROL         "Continuous",IDC_RADIO_CONTINUOUS,"Button",
+                    BS_AUTORADIOBUTTON,519,119,51,12
+    LTEXT           "Start Time",IDC_START_TIME_LABEL,522,39,18,18
+    LTEXT           "End Time",IDC_END_TIME_LABEL,522,69,15,15
+    CONTROL         "DateTimePicker1",IDC_START_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,551,48,52,
+                    12
+    CONTROL         "DateTimePicker1",IDC_END_TIME,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,551,78,52,
+                    12
+    LTEXT           "Repeat Interval",IDC_REPEAT_LABEL,522,93,25,18
+    CONTROL         "Tab1",IDC_MESSAGE_TYPE_TAB,"SysTabControl32",0x0,168,14,
+                    328,292
+    GROUPBOX        "Priority",IDC_LABEL15,511,147,99,43
+    COMBOBOX        IDC_PRIORITY,530,165,63,90,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP
+    CONTROL         "List1",IDC_PID_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | 
+                    WS_BORDER | WS_TABSTOP,13,15,135,202
+    GROUPBOX        "Selected PIDs",IDC_STATIC,7,4,147,257
+    GROUPBOX        "Message Content",IDC_STATIC,161,4,342,306
+    PUSHBUTTON      "Clear All",IDC_CLEAR_ALL,13,289,64,17
+    PUSHBUTTON      "Clear Emergency",IDC_CLEAR_EMERGENCY,13,267,64,17
+    PUSHBUTTON      "Clear Normal",IDC_CLEAR_NORMAL,83,267,64,17
+    GROUPBOX        "PID Message Clearing",IDC_STATIC,7,256,147,54
+    PUSHBUTTON      "Clear Priority 6",IDC_CLEAR_PRIORITY6,83,289,64,17
+    COMBOBOX        IDC_STN_PID_GROUP_COMBO,13,220,135,51,CBS_DROPDOWNLIST | 
+                    CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_HASSTRINGS | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_SAVE_GROUP,13,236,60,15
+    PUSHBUTTON      "Delete",IDC_DELETE_GROUP,88,236,60,15
+    CONTROL         "DateTimePicker1",IDC_REPEAT_INTERVAL,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,551,95,52,
+                    12
+    CONTROL         "DateTimePicker1",IDC_START_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,551,35,52,12
+    CONTROL         "DateTimePicker1",IDC_END_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,551,65,52,12
+END
+
+IDD_VERSION_PAGE DIALOG DISCARDABLE  0, 0, 617, 333
+STYLE WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Upgrade ISCS Version",IDC_UPGRADE_ISCS,487,96,77,25,
+                    BS_CENTER
+    CONTROL         "List1",IDC_STATION_VERSION_LIST,"SysListView32",
+                    LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,7,25,421,
+                    299
+    LTEXT           "Current ISCS STIS Version",IDC_STATIC,447,42,100,10
+    EDITTEXT        IDC_ISCS_CURRENT_VERSION,561,41,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Next ISCS STIS Version",IDC_STATIC,447,64,89,10
+    EDITTEXT        IDC_ISCS_NEXT_VERSION,561,63,33,12,ES_CENTER | 
+                    ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "List2",IDC_VERSION_LIST_MAIN_HEADER,"SysListView32",
+                    LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,7,7,421,9
+    CONTROL         "List3",IDC_VERSION_LIST_SUBHEADER,"SysListView32",
+                    LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,7,16,421,9
+    LTEXT           "OCCDB Versions",IDC_STATIC,494,22,59,11
+END
+
+IDD_PID_GROUP_NAME DIALOG DISCARDABLE  0, 0, 186, 66
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "STIS Manager"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,45,50,14
+    PUSHBUTTON      "Cancel",ID_CLOSE,129,45,50,14
+    EDITTEXT        IDC_EDITNAME,7,26,172,12,ES_AUTOHSCROLL
+    CTEXT           "",IDC_STATICTEXT,7,12,172,9
+END
+
+IDD_DLG_INITPROGRESS DIALOG DISCARDABLE  0, 0, 243, 51
+STYLE DS_SETFOREGROUND | WS_POPUP | WS_BORDER
+FONT 9, "Arial Unicode MS"
+BEGIN
+    CONTROL         "Progress1",IDC_PROGRESS_CTRL,"msctls_progress32",
+                    PBS_SMOOTH | WS_BORDER,7,21,229,14
+    LTEXT           "Static",IDC_STATIC_TEXT1,7,8,229,11
+    LTEXT           "Static",IDC_STATIC_TEXT2,72,29,53,16,NOT WS_VISIBLE
+    LTEXT           "Static",IDC_STATIC_TEXT3,8,32,27,16,NOT WS_VISIBLE
+    PUSHBUTTON      "&Cancel",IDCANCEL,85,35,70,13
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_PREDEFINED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 282
+    END
+
+    IDD_FREE_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 271
+    END
+
+    IDD_RATIS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 273
+    END
+
+    IDD_DISPLAY_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 610
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 324
+    END
+
+    IDD_VERSION_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 610
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 326
+    END
+
+    IDD_PID_GROUP_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 59
+    END
+
+    IDD_DLG_INITPROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\STISManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\STISManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU DISCARDABLE 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "STIS Manager Help",           ID_HELP_STISMANAGERHELP
+        MENUITEM "About STIS Manager",          ID_HELP_ABOUTSTISMANAGER
+    END
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\STISManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,82 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.datalog.datalog_library" ProjectGUID="{9B120EED-3B13-4BE8-9694-4DB5048D30A5}" RootNamespace="bus.datalog.datalog_library" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/bus/datalog/datalog_library" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../..;../../../..;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/process_management/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/datalog/IDL/src;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;..\..\..\..\cots\boost\boost_1_39_0;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers;../../../../../build/win32_n/transactive/bus/scada/common_library/IDL/src" PreprocessorDefinitions="WIN32;_DEBUG;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x400;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile="" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/bus/datalog/datalog_library/" ObjectFile=".\../../../../../build/win32_nd/transactive/bus/datalog/datalog_library/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/bus/datalog/datalog_library/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_DataLogLibrary_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/bus.datalog.datalog_library.TA_DataLogLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/bus/datalog/datalog_library" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../..;../../../..;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/process_management/IDL/src;../../../../../build/win32_n/transactive/core/alarm/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/datalog/IDL/src;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;..\..\..\..\cots\boost\boost_1_39_0;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers;../../../../../build/win32_n/transactive/bus/scada/common_library/IDL/src" PreprocessorDefinitions="WIN32;NDEBUG;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x400;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile="" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/bus/datalog/datalog_library/" ObjectFile=".\../../../../../build/win32_nr/transactive/bus/datalog/datalog_library/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/bus/datalog/datalog_library/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_DataLogLibrary.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/bus.datalog.datalog_library.TA_DataLogLibrary.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath=".\src\DataLogAgentImpl.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogAgentImpl.h">
+			</File>
+			<File RelativePath=".\src\DataLogCategory.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogCategory.h">
+			</File>
+			<File RelativePath=".\src\DataLogDPItem.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogDPItem.h">
+			</File>
+			<File RelativePath=".\src\DataLogManager.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogManager.h">
+			</File>
+			<File RelativePath=".\src\DataLogQueue.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogQueue.h">
+			</File>
+			<File RelativePath=".\src\DataLogValue.cpp">
+			</File>
+			<File RelativePath=".\src\DataLogValue.h">
+			</File>
+			<File RelativePath=".\src\LocalRunParamDefinitions.h">
+			</File>
+			<Filter Name="ScadaProxy">
+				<File RelativePath=".\src\ScadaDataProxy.cpp">
+				</File>
+				<File RelativePath=".\src\ScadaDataProxy.h">
+				</File>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

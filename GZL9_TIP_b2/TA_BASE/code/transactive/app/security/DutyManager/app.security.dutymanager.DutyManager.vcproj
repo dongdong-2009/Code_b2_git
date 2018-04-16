@@ -1,0 +1,219 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.security.dutymanager" ProjectGUID="{61E62813-55E3-47F7-B1CE-EC1A85FF5D92}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/security/dutymanager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\tools\build\VCPropSheet\commonDebug.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.security.dutymanager.DutyManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm1000 " Optimization="0" AdditionalIncludeDirectories="..\..\..;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\include;..\..\..\..\cots\boost\boost_1_56_0;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;WIN32;_DEBUG;_WINDOWS;WIN32COMMON;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/security/dutymanager/app.security.dutymanager.DutyManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/security/dutymanager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/security/dutymanager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/security/dutymanager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="oci.lib oraSQL11.lib libmysql.lib   $(OMNI_LIB_D)  Rpcrt4.lib htmlhelp.lib acemfcd.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/DutyManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;../../../../cots/ace/6_0_4/ace_wrappers/lib;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\lib\x86_win32;../../../../cots/HTMLhelp/lib;../../../../cots/oracle/11.2.0/winnt/lib;..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_56_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Debug;../../../../cots/mysql\5.5.15\winnt\lib;..\..\..\..\cots\mcl\1.1.1\lib\winnt_mysql.5.5.15_boost1.56.0" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/DutyManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.security.dutymanager.DutyManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/security/dutymanager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\tools\build\VCPropSheet\commonRelease.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.security.dutymanager.DutyManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" AdditionalOptions="/Zm1000 " Optimization="0" AdditionalIncludeDirectories="..\..\..;../../../../../build/win32_n/transactive;../../../../../build/win32_n/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/bus/security/duty_agent/IDL/src;../../../../../build/win32_n/transactive/bus/security/authentication_agent/IDL/src;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\include;..\..\..\..\cots\boost\boost_1_56_0;..\..\..\..\cots\ACE\6_0_4\ACE_wrappers" PreprocessorDefinitions="TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;WIN32;NDEBUG;_WINDOWS;WIN32COMMON;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/security/dutymanager/app.security.dutymanager.DutyManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/security/dutymanager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/security/dutymanager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/security/dutymanager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="oci.lib oraSQL11.lib libmysql.lib   $(OMNI_LIB)  Rpcrt4.lib htmlhelp.lib acemfc.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/DutyManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;../../../../cots/ace/6_0_4/ace_wrappers/lib;..\..\..\..\cots\omniORB\$(OMNI_VERSION)\lib\x86_win32;../../../../cots/HTMLhelp/lib;../../../../cots/oracle/11.2.0/winnt/lib;..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\cots\boost\boost_1_56_0\stage\lib;..\..\..\..\cots\WinStackTrace\build\Release;../../../../cots/mysql\5.5.15\winnt\lib;..\..\..\..\cots\mcl\1.1.1\lib\winnt_mysql.5.5.15_boost1.56.0" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/DutyManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.security.dutymanager.DutyManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\DutyManager.h">
+			</File>
+			<File RelativePath="src\DutyManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerApp.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerApp.h">
+			</File>
+			<File RelativePath="src\DutyManagerBridge.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerBridge.h">
+			</File>
+			<File RelativePath="src\DutyManagerConstants.h">
+			</File>
+			<File RelativePath="src\DutyManagerDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerDlg.h">
+			</File>
+			<File RelativePath="src\DutyManagerGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerGUI.h">
+			</File>
+			<File RelativePath="src\DutyManagerPropertySheet.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyManagerPropertySheet.h">
+			</File>
+			<File RelativePath="src\GridAssistant.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GridAssistant.h">
+			</File>
+			<File RelativePath="src\MessageBox.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MessageBox.h">
+			</File>
+			<File RelativePath="src\RegionDutyPropertyPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RegionDutyPropertyPage.h">
+			</File>
+			<File RelativePath="src\RegionDutyTransferDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RegionDutyTransferDlg.h">
+			</File>
+			<File RelativePath="src\RegionSelectionDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RegionSelectionDlg.h">
+			</File>
+			<File RelativePath="src\resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath=".\src\SubsystemDutyDlg.cpp">
+			</File>
+			<File RelativePath=".\src\SubsystemDutyDlg.h">
+			</File>
+			<File RelativePath="src\SubsystemDutyPropertyPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SubsystemDutyPropertyPage.h">
+			</File>
+			<File RelativePath="src\SubsystemDutyTransferDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SubsystemDutyTransferDlg.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\dutymana.ico">
+			</File>
+			<File RelativePath="..\..\..\bus\resources\icons\DutyManager.ico">
+			</File>
+			<File RelativePath="res\DutyManager.ico">
+			</File>
+			<File RelativePath="res\DutyManager.rc2">
+			</File>
+			<File RelativePath="res\grid_images.bmp">
+			</File>
+			<File RelativePath="res\ico00001.ico">
+			</File>
+			<File RelativePath="res\ico00002.ico">
+			</File>
+			<File RelativePath="res\ico00003.ico">
+			</File>
+			<File RelativePath="res\ico00004.ico">
+			</File>
+			<File RelativePath="res\icon1.ico">
+			</File>
+			<File RelativePath="res\occ1.ico">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

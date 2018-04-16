@@ -1,0 +1,2872 @@
+/**
+  * The source code in this file is the property of 
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source: $File: //depot/4669_Review_Branch/TA_BASE/transactive/core/data_access_interface/entity_access/src/EntityAccessFactory.cpp $
+  * @author Nick Jardine
+  * @version $Revision: #5 $
+  * Last modification: $DateTime: 2011/06/17 11:59:27 $
+  * Last modified by: $Author: yong.liu $
+  * 
+  * EntityAccessFactory is a singleton class that is used to retrieve entities, and entity strings
+  * from the database. Entities are returned as IEntityData objects, while entity strings are
+  * contian the CORBA IOR for locating the entity in the naming service.
+  */
+
+#include <set>
+
+#include "core/data_access_interface/entity_access/src/EntityAccessFactory.h"
+#include "core/exceptions/src/DataException.h"
+#include "core/utilities/src/DebugUtil.h"
+
+#include "core/data_access_interface/entity_access/src/ConfigEntity.h"
+#include "core/data_access_interface/entity_access/src/DefaultEntity.h"
+// include the header files for each entity type
+#include "core/data_access_interface/entity_access/src/Camera.h"
+#include "core/data_access_interface/entity_access/src/PlanAgentData.h"
+#include "core/data_access_interface/entity_access/src/PlanManagerEntityData.h"
+#include "core/data_access_interface/entity_access/src/AlarmAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/HistoryViewerData.h"
+#include "core/data_access_interface/entity_access/src/ScadaHistoryAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/ScadaHistoryConfigData.h"
+#include "core/data_access_interface/entity_access/src/NotificationAgentData.h"
+#include "core/data_access_interface/entity_access/src/System.h"
+#include "core/data_access_interface/entity_access/src/Process.h"
+#include "core/data_access_interface/entity_access/src/ControlStation.h"
+#include "core/data_access_interface/entity_access/src/AlarmGUI.h"
+#include "core/data_access_interface/entity_access/src/PMSAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/VirtualDataPointAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationECSAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/MasterECSAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/RTUEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationSystemEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationSubSystemEntityData.h"
+#include "core/data_access_interface/entity_access/src/EquipmentEntityData.h"
+#include "core/data_access_interface/entity_access/src/DataPointEntityData.h"
+#include "core/data_access_interface/entity_access/src/AlarmVolumeTestEntityType.h"
+#include "core/data_access_interface/entity_access/src/Banner.h"
+#include "core/data_access_interface/entity_access/src/RightsAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/DutyAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/DataNodeEntityData.h"
+#include "core/data_access_interface/entity_access/src/VideoMonitor.h"
+#include "core/data_access_interface/entity_access/src/VideoOutputGroup.h"
+#include "core/data_access_interface/entity_access/src/Sequence.h"
+#include "core/data_access_interface/entity_access/src/Quad.h"
+#include "core/data_access_interface/entity_access/src/BVSStage.h"
+#include "core/data_access_interface/entity_access/src/RecordingUnit.h"
+#include "core/data_access_interface/entity_access/src/VideoSwitchAgent.h"
+#include "core/data_access_interface/entity_access/src/EventViewer.h"
+#include "core/data_access_interface/entity_access/src/DataNodeAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/ConfigurationEditor.h"
+#include "core/data_access_interface/entity_access/src/ECSManager.h"
+#include "core/data_access_interface/entity_access/src/RadioEntityData.h"
+#include "core/data_access_interface/entity_access/src/RadioSessionEntityData.h"
+#include "core/data_access_interface/entity_access/src/TISAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/STISEntityData.h"
+#include "core/data_access_interface/entity_access/src/SchedulingAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/StationPAAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/MasterPAAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/WILDAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/AlarmStoreEntityData.h"
+#include "core/data_access_interface/entity_access/src/SystemStatusAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/AtsAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/RadioDirectoryEntityData.h"
+#include "core/data_access_interface/entity_access/src/AuthenticationAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/TrainAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/TrainSettingsEntityData.h"
+#include "core/data_access_interface/entity_access/src/ArchiveManagerEntityData.h"
+#include "core/data_access_interface/entity_access/src/IEntityData.h"
+#include "core/data_access_interface/entity_access/src/MmsAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/MmsAlarmSubmitterEntityData.h"
+#include "core/data_access_interface/entity_access/src/MmsJobRequestSubmitterEntityData.h"
+#include "core/data_access_interface/entity_access/src/MmsPeriodicEntityData.h"
+#include "core/data_access_interface/entity_access/src/MmsConnectiontEntityData.h"
+#include "core/data_access_interface/entity_access/src/DisplayManagerEntityData.h"
+#include "core/data_access_interface/entity_access/src/RegionManagerEntityData.h"
+#include "core/data_access_interface/entity_access/src/DutyManagerEntityData.h"
+#include "core/data_access_interface/entity_access/src/TisLogViewerEntityData.h"
+#include "core/data_access_interface/entity_access/src/OnlinePrintingAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/TrainCctvCameraEntityData.h"
+#include "core/data_access_interface/entity_access/src/CallBannerPage.h"
+#include "core/data_access_interface/entity_access/src/LessAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/RadioStateSynchronisationEntityData.h"
+#include "core/data_access_interface/entity_access/src/EquipmentStatusViewerEntityData.h"
+#include "core/data_access_interface/entity_access/src/RadioProfileEntityData.h"
+#include "core/data_access_interface/entity_access/src/TelephoneManagerProfileEntityData.h"
+#include "core/data_access_interface/entity_access/src/PidLogViewerEntityData.h"
+#include "core/data_access_interface/entity_access/src/TTISManagerEntityData.h"
+// wenching++ (TD12997)
+#include "core/data_access_interface/entity_access/src/InspectorPanelEntityData.h"
+#include "core/data_access_interface/entity_access/src/PowerDemandEditorEntityData.h" //TD14000
+// ++wenching (TD12997)
+// Raymond Pau++ (TD13367)
+#include "core/data_access_interface/entity_access/src/ScadaRootEntityData.h"
+// ++Raymond Pau (TD13367)
+#include "core/data_access_interface/entity_access/src/ServerEntityData.h"
+
+#include "core/data_access_interface/entity_access/src/AtsTwpEntityData.h"     //TD15213
+#include "core/data_access_interface/entity_access/src/AtsPsdEntityData.h"     //TD15213
+
+//TD15918 (Mintao++)
+#include "core/data_access_interface/entity_access/src/MisAgentEntityData.h"
+#include "core/data_access_interface/entity_access/src/MisAlarmSubmitterEntityData.h"
+#include "core/data_access_interface/entity_access/src/MisConnectiontEntityData.h"
+#include "core/data_access_interface/entity_access/src/MisJobRequestSubmitterEntityData.h"
+#include "core/data_access_interface/entity_access/src/MisPeriodicEntityData.h"
+//lizettejl++ (TD14697)
+#include "core/data_access_interface/entity_access/src/HierarchicalAlarmViewEntityData.h"
+//++lizettejl
+//TD17997 marc++
+#include "core/data_access_interface/entity_access/src/RadioGlobalEntityData.h"
+// +marc
+
+using TA_Base_Core::DebugUtil;
+
+namespace TA_Base_Core
+{
+
+    EntityAccessFactory& EntityAccessFactory::getInstance()
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "In EntityAccessFactory::getInstance");
+        static EntityAccessFactory factory;
+        LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::getInstance" );
+        return factory;
+    }
+
+
+    EntityAccessFactory::~EntityAccessFactory()
+    {
+		m_entityParameterCache.clear();
+        m_entityTypesCache.clear();
+    }
+
+	EntityAccessFactory::EntityAccessFactory()
+	{
+		setUpMap();
+		m_entityParameterCache.clear();
+        m_entityTypesCache.clear();
+	}
+
+
+    IEntityData* EntityAccessFactory::getEntity(const std::string& name, const bool readWrite /* = false */)
+    {
+        FUNCTION_ENTRY( "getEntity(name)" );
+
+        // create the SQL string to retrieve the entity parameters pkey, and typeName
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // note: upper() is used for case insensitivity.
+
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME,";
+		sql << " e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS') as DATE_CREATED,";
+		sql << " TO_CHAR(e.DATE_MODIFIED,'YYYYMMDDHH24MISS') as DATE_MODIFIED,";
+		sql << " e.pkey, et.name FROM entity_v e, entitytype et where upper(e.name) = upper('";
+		sql <<  databaseConnection->escapeQueryString(name) << "') and et.pkey = e.typekey and e.deleted = 0";
+		
+		IEntityDataList entities;
+		
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+						 << "from entityparametervalue_v "
+						 << "where entitykey in (select pkey FROM entity_v where upper(name) = upper('"
+						 << databaseConnection->escapeQueryString(name) << "') and deleted = 0 )";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+		
+		// Check to see if there were any values returned
+		if ( entities.size() == 0 )
+		{
+            std::string message = "No data found for " + name;
+            TA_THROW( DataException( message.c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity names are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == entities.size(), "Entity name unique constraint violated");
+	
+		FUNCTION_EXIT;
+		return entities[0];
+    }
+
+
+    IEntityData* EntityAccessFactory::getEntity(const unsigned long key, const bool readWrite /* = false */)
+    {
+		FUNCTION_ENTRY( "getEntity(key)" );
+	
+        // create the SQL string to retrieve the entity parameters and typeName
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'), ";
+		sql << " e.pkey, et.name FROM entity_v e, entitytype et WHERE e.pkey = ";
+		sql <<  key << " and et.pkey = e.typekey";
+		
+		IEntityDataList entities;
+
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where pkey = " 
+				<< key 
+				<< " and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+		// Check to see if there were any values returned
+		if ( entities.size() == 0 )
+		{
+            std::ostringstream message;
+			message << "No data found for entity with key " << key;
+            TA_THROW( DataException( message.str().c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity keys are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == entities.size(), "Entity key unique constraint violated");
+
+		FUNCTION_EXIT;
+		return entities[0];
+    }
+
+
+	CorbaName EntityAccessFactory::getCorbaNameOfEntity( const std::string& name, const bool isAgentName )
+    {        
+        FUNCTION_ENTRY( "getCorbaNameOfEntity(name)" );    
+
+        // create the SQL string to retrieve the type and sybsystem of the entity
+        // this also doubles as a check to ensure an entity with the specified
+        // NAME actually exists.
+
+        // note: upper() is used for case insensitivity.
+		// get a connection to the database
+        IDatabase* databaseConnection = 
+            TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a where upper(e.name) = upper('";
+		sql << databaseConnection->escapeQueryString(name) << "') and a.pkey = e.agentkey and e.deleted = 0 and a.deleted = 0";
+
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+		// Check to see if there were any values returned
+		if ( corbaNames.size() == 0 )
+		{
+            std::string message = "No data found for CorbaName of " + name;
+            TA_THROW( DataException( message.c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity names are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == corbaNames.size(), "Entity name unique constraint violated");
+
+        FUNCTION_EXIT;
+        return corbaNames[0];
+    }
+
+
+    CorbaName EntityAccessFactory::getCorbaNameOfEntity( const unsigned long key, const bool isAgentKey )
+    {       
+        FUNCTION_ENTRY( "getCorbaNameOfEntity(key)" );    
+
+        // create the SQL string to retrieve the type and sybsystem of the entity
+        // this also doubles as a check to ensure an entity with the specified
+        // key actually exists.
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a where e.PKEY = ";
+		sql << key << " and a.pkey = e.agentkey";
+        
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+		// Check to see if there were any values returned
+		if ( corbaNames.size() == 0 )
+		{
+            std::ostringstream message;
+			message << "No data found for CorbaName of  entity with key " << key;
+            TA_THROW( DataException( message.str().c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity keys are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == corbaNames.size(), "Entity key unique constraint violated");
+
+        FUNCTION_EXIT;
+
+        return corbaNames[0];
+    }
+
+	IEntityDataList EntityAccessFactory::getTTISLibraryVersionEntityFromNamelike( const std::string& entiyName )
+	{
+		FUNCTION_ENTRY( "getTTISLibraryVersionEntityFromNamelike" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+			TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.name like '%";
+		sql << databaseConnection->escapeQueryString( entiyName ) << "' and et.pkey = e.typekey and e.deleted = 0";
+
+		//set up the columns
+		std::string typeColumn = "TYPEKEY";
+        std::string nameColumn = "NAME";
+        std::string addressColumn = "ADDRESS";
+        std::string descriptionColumn = "DESCRIPTION";
+        std::string subsystemColumn = "SUBSYSTEMKEY";
+        std::string subsystemNameColumn = "SUBSYSTEMNAME";
+        std::string physicalSubsystemColumn = "PHYSICAL_SUBSYSTEM_KEY";
+        std::string physicalSubsystemNameColumn = "PHYSICAL_SUBSYSTEM_NAME";
+        std::string locationColumn = "LOCATIONKEY";
+        std::string locationNameColumn = "LOCATIONNAME";
+		std::string regionColumn = "SEREGI_ID";
+        std::string regionNameColumn = "SEREGINAME";
+        std::string parentColumn = "PARENTKEY";
+        std::string parentNameColumn = "PARENTNAME";
+		std::string agentColumn = "AGENTKEY";
+		std::string agentNameColumn = "AGENTNAME";
+        std::string dateCreatedColumn = "DATECREATED";
+        std::string dateModifiedColumn = "DATEMODIFIED";
+		std::string keyColumn = "PKEY";
+		std::string typeNameColumn = "TYPENAME";
+        std::vector<std::string> columnNames;
+        columnNames.push_back(typeColumn);
+        columnNames.push_back(nameColumn);
+        columnNames.push_back(addressColumn);
+        columnNames.push_back(descriptionColumn);
+        columnNames.push_back(subsystemColumn);
+        columnNames.push_back(subsystemNameColumn);
+        columnNames.push_back(physicalSubsystemColumn);
+        columnNames.push_back(physicalSubsystemNameColumn);
+        columnNames.push_back(locationColumn);
+        columnNames.push_back(locationNameColumn);
+		columnNames.push_back(regionColumn);
+        columnNames.push_back(regionNameColumn);
+        columnNames.push_back(parentColumn);
+        columnNames.push_back(parentNameColumn);
+		columnNames.push_back(agentColumn);
+		columnNames.push_back(agentNameColumn);
+        columnNames.push_back(dateCreatedColumn);
+        columnNames.push_back(dateModifiedColumn);
+        columnNames.push_back(keyColumn);
+		columnNames.push_back(typeNameColumn);
+
+		// Execute the query. The method can throw a DatabaseException.
+        // We are responsible for deleting the returned IData object when we're done with it
+        // We use this call direct, as we *want* multiple values returned
+        // get a connection to the database
+		
+        IData* data = databaseConnection->executeQuery( sql.str(), columnNames );
+
+		IEntityDataList entities;
+		
+		unsigned long entityKey = 0;
+        do
+        {
+            for (unsigned long i = 0; i < data->getNumRows() ; i++ )
+            {
+				IEntityData* iEntity;
+				
+				entityKey = data->getUnsignedLongData( i, keyColumn );
+				
+				iEntity = createEntityFromType( data->getStringData( i, typeNameColumn),
+					entityKey);
+				
+				// Cast to an entity data and assign the value
+				EntityData* entity = dynamic_cast< EntityData* >( iEntity );
+				
+				// If the cast succeeds, assign the data
+				if ( NULL != entity )
+				{
+					entity->assignDefaultData( data, i );
+					//entityDataMap.insert( EntityKeyToEntityMap::value_type(entityKey, entity) );
+				}
+				
+                //T temp(iEntity);
+                entities.push_back( iEntity );
+            }
+			
+            delete data;
+            data = NULL;
+        }
+        while( databaseConnection->moreData(data) );
+
+		FUNCTION_EXIT;
+		return entities;
+	}
+
+
+    IEntityDataList EntityAccessFactory::getEntitiesOfType(const std::string& type, const bool readWrite /* = false */, const bool loadParam /* = true */, const bool isOnly/*false*/)
+    {
+        FUNCTION_ENTRY( "getEntitiesOfType" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+			TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.deleted = 0";
+		
+		IEntityDataList entities;
+		if(false == readWrite && true == loadParam)
+		{
+			std::ostringstream parameterSQL;
+
+			if ( false == isOnly )
+			{
+				//parameterSQL << "SELECT entitykey, parametername, value "
+				//	<< "from entityparametervalue_v "
+				//	<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				//	<< "(select pkey from entitytype where name = '"
+				//	<< databaseConnection->escapeQueryString(type) << "') "
+				//	<< " and deleted = 0)";
+				std::ostringstream entitytypeSQL,entitySQL;
+				std::string stemp0,stemp1,temp;
+				std::vector<std::string> columnNames,columns;
+				std::string pkey = "PKEY";
+				
+				columnNames.push_back(pkey);
+				entitytypeSQL<< "select pkey from entitytype where name = '"<<databaseConnection->escapeQueryString(type) << "'";
+				IData* data = databaseConnection->executeQuery( entitytypeSQL.str(), columnNames );
+				stemp0 = data->getStringData( 0, "PKEY" );
+				delete data;
+				data = NULL;
+				
+				columns.push_back(pkey);
+				entitySQL<<"select pkey FROM entity_v where typekey = "<<stemp0.c_str()<< " and deleted = 0";
+				IData* data1 = databaseConnection->executeQuery( entitySQL.str(), columns );
+				stemp1 = "(";
+				for ( int i = 0; i < data1->getNumRows() ; i++ )
+				{
+					temp = data1->getStringData( i, "PKEY" );
+					stemp1.append(temp);
+					stemp1.append(",");
+				}
+				stemp1.erase(stemp1.size()-1,1);
+				stemp1.append(")");
+				delete data1;
+				data1 = NULL;
+				
+				parameterSQL << "SELECT entitykey, parametername, value from entityparametervalue_v where entitykey in "<<stemp1.c_str();
+				//MMS=>author:jiangshengguang 2008-08-26
+			}
+			else
+			{
+				parameterSQL << "SELECT entitykey, parametername, value "
+					<< "from entityparametervalue_v "
+					<< "where entitykey in (select pkey FROM entity_v where typekey = "
+					<< "(select pkey from entitytype where name = '"
+					<< databaseConnection->escapeQueryString(type) << "') "
+					<< " and deleted = 0)";
+			}
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+				
+		
+		FUNCTION_EXIT;
+        return entities;
+    }
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfType(const std::string& type, const bool readWrite, const bool loadParam, const std::vector<std::string>& parameterNames)
+	{
+		FUNCTION_ENTRY( "getEntitiesOfType" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+			TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.deleted = 0";
+		
+		IEntityDataList entities;
+		if(false == readWrite && true == loadParam)
+		{
+			std::ostringstream parametersClause;
+			if (!parameterNames.empty())
+			{
+				parametersClause << " and ( ";
+				for (int i = 0; i < parameterNames.size(); ++ i)
+				{
+					// If this isn't the first element then it needs an OR added first..
+					if (i != 0)
+					{
+						parametersClause << " OR ";
+					}
+					parametersClause << " PARAMETERNAME='" << parameterNames[i] << "' ";
+				}
+				parametersClause << ")";
+			}
+
+			std::ostringstream parameterSQL;
+			
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< " and deleted = 0)"
+				<< " "
+				<< parametersClause.str();
+				
+				getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+		
+		
+        FUNCTION_EXIT;
+        return entities;
+		
+	}
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocationWithNameLikeToken(const std::string& type, 
+		const unsigned long locationKey, const std::string& token)
+	{
+		FUNCTION_ENTRY( "getEntitiesOfTypeAtLocationWithNameLikeToken" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.locationKey = " << locationKey;
+		sql << " and upper(e.name) LIKE upper('" << databaseConnection->escapeQueryString(token) << "')";
+
+		IEntityDataList entities;
+		
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity_v where typekey = "
+			<< "(select pkey from entitytype where name = '"
+			<< databaseConnection->escapeQueryString(type) << "') "
+			<< "and locationKey = " << locationKey << " "
+			<< "and upper(name) LIKE upper('" << databaseConnection->escapeQueryString(token) << "') "
+			<< "and deleted = 0)";
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+	
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeWithCustomToken(const std::string& type, 
+		const std::string& customToken, const bool loadParam /* = true */)
+	{
+		FUNCTION_ENTRY( "getEntitiesOfTypeWithCustomToken" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		IEntityDataList entities;
+
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey ";
+		sql << databaseConnection->escapeQueryString(customToken);
+
+		if (true == loadParam)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< databaseConnection->escapeQueryString(customToken) << " "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, false);
+		}
+	
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+	//Mintao++ TD16762
+    IEntityDataList EntityAccessFactory::getAllChildEntitiesOfType(const std::string& type, const bool readWrite /*=false*/)
+    {
+        FUNCTION_ENTRY( "getEntitiesOfTypeWithTheChildEntities" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'), ";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'), ";
+		sql << "e.pkey, ec.name ";
+		sql << "FROM entity_v e, entity_v p, entitytype et, entitytype ec WHERE e.deleted = 0 and e.PARENTKEY = p.pkey ";
+        sql << "and ec.PKEY = e.TYPEKEY ";
+        sql << "and (p.deleted=0 and p.typekey = et.pkey and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "')";
+
+		IEntityDataList entities;
+		getEntityData( sql.str(), entities, readWrite );
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+	//Mintao++ TD16762
+
+	SharedIEntityDataList EntityAccessFactory::getAllChildEntitiesOfAgentDataNode(const unsigned long agentKey, bool excludeAgentEntities)
+	{
+        FUNCTION_ENTRY( "getEntitiesOfTypeWithTheChildEntities" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+			TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'), ";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'), ";
+		sql << "e.pkey, et.name ";
+		sql << "from entity_v e, entitytype et WHERE e.deleted = 0 and ";
+        if (true == excludeAgentEntities)
+        {
+            sql << "e.agentkey != " << agentKey << " and ";
+        }
+        sql << "e.agentkey != 0 and ";
+		sql << "e.PARENTKEY in (select pkey from entity where agentkey = ";
+		sql << agentKey;
+		sql << " and typekey = (select pkey from entitytype where name = '";
+		sql << DataNodeEntityData::getStaticType();
+		sql << "' ) and deleted =0 ) and e.typekey = et.pkey";
+		
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity where "
+			<< "deleted = 0 and "
+            << "agentkey != 0 and ";
+        if (true == excludeAgentEntities)
+        {
+            parameterSQL << "agentkey != " << agentKey << " and ";
+        }
+        parameterSQL << "PARENTKEY in (select pkey from entity where agentkey = "
+			<< agentKey 
+			<< " and typekey = (select pkey from entitytype where name = '"
+			<< DataNodeEntityData::getStaticType()
+			<< "' ) and deleted =0 ) )";
+
+        SharedIEntityDataList entities;
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+    IEntityDataList EntityAccessFactory::getEntitiesOfTypeWithNameLikeToken(const std::string& type, const std::string& token, const bool readWrite /* = false */)
+    {
+        FUNCTION_ENTRY( "getEntitiesOfTypeWithNameLikeToken" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+        // note: upper() is used for case insensitivity.
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and upper(e.name) LIKE upper('%" << databaseConnection->escapeQueryString(token) << "%')";
+
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			/////////////////////////////////////////////////////////////////////
+			//Launch Manager modified by: zhangjunsheng 2008/09/11 11:00:00
+			
+			/*parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< "and upper(name) LIKE upper('%" << databaseConnection->escapeQueryString(token) << "%') "
+				<< "and deleted = 0)";*/
+
+			std::ostringstream entitytypeSQL,entitySQL;
+			std::string stemp0,stemp1,stemp2;
+			std::vector<std::string> columnNames,columns;
+			std::string pkey = "PKEY";
+			
+			columnNames.push_back(pkey);
+			entitytypeSQL<< "select pkey from entitytype where name = '"<<databaseConnection->escapeQueryString(type) << "'";
+			IData* data0 = databaseConnection->executeQuery( entitytypeSQL.str(), columnNames );
+			stemp0 = data0->getStringData( 0, "PKEY" );
+			delete data0;
+			data0 = NULL;
+			
+			columns.push_back(pkey);
+			entitySQL<<"select pkey FROM entity_v where typekey = "<<stemp0.c_str()<< " and upper(name) LIKE upper('%" << databaseConnection->escapeQueryString(token) << "%') "<<"and deleted = 0";
+			IData* data1 = databaseConnection->executeQuery( entitySQL.str(), columns );
+			stemp1 = "(";
+			for ( int i = 0; i < data1->getNumRows(); i++ )
+			{
+				stemp2 = data1->getStringData( i, "PKEY" );
+				stemp1.append(stemp2);
+				stemp1.append(",");
+			}
+			stemp1.erase(stemp1.size()-1,1);
+			stemp1.append(")");
+			delete data1;
+			data1 = NULL;
+			
+			parameterSQL << "SELECT entitykey, parametername, value from entityparametervalue_v where entitykey in "<<stemp1.c_str();			
+			
+			//Launch Manager/////////////////////////////////////////////////////
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+    IEntityDataList EntityAccessFactory::getEntitiesOfTypeWithAddressLikeToken(const std::string& type, const std::string& token, const bool readWrite /*=false*/)
+    {
+        FUNCTION_ENTRY( "getEntitiesOfTypeWithAddressLikeToken" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+        // note: upper() is used for case insensitivity.
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS') as DATE_CREATED,";
+		sql << "TO_CHAR(nvl(e.DATE_MODIFIED, TO_DATE('12:00:00 01/01/1990', 'hh:mi:ss dd/mm/yyyy')),'YYYYMMDDHH24MISS') as DATE_MODIFIED,";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and upper(e.address) LIKE upper('" << databaseConnection->escapeQueryString(token) << "')";
+
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< "and upper(address) LIKE upper('%" << databaseConnection->escapeQueryString(token) << "%') "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfType( const std::string& type, const bool isAgentType )
+    {
+        FUNCTION_ENTRY( "getCorbaNamesOfType( type )" );
+	
+		CorbaNameList corbaNames;
+
+		corbaNames = getCorbaNamesOfTypeAtAllLocation(type, isAgentType);
+
+		FUNCTION_EXIT;
+        return corbaNames;
+    }
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeWithNameLikeToken(const std::string& type, const std::string& token, const bool isAgentType)
+    {
+        FUNCTION_ENTRY( "getCorbaNamesOfTypeWithNameLikeToken" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and a.PKEY = e.agentkey and upper(e.name) LIKE upper('" << databaseConnection->escapeQueryString(token) << "')";
+       
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+		FUNCTION_EXIT;
+        return corbaNames;
+    }
+
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocation( const std::string& type, unsigned long locationKey, const bool loadParam /* = true */)
+	{
+        FUNCTION_ENTRY( "getEntitiesOfTypeAtLocation( type, key )" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection =  TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		IEntityDataList entities;
+
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.locationKey = " << locationKey;
+
+		if (true == loadParam)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< "and locationKey = " << locationKey << " "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, false);
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocation( const std::string& type, unsigned long locationKey, const bool loadParam, const std::vector<std::string>& parameterNames)
+	{
+		FUNCTION_ENTRY( "getEntitiesOfTypeAtLocation( type, key, parameterNames )" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection =  TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		IEntityDataList entities;
+		
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.locationKey = " << locationKey;
+		
+		if (true == loadParam)
+		{
+			std::ostringstream parametersClause;
+			if (!parameterNames.empty())
+			{
+				parametersClause << " and ( ";
+				for (int i = 0; i < parameterNames.size(); ++ i)
+				{
+					// If this isn't the first element then it needs an OR added first..
+					if (i != 0)
+					{
+						parametersClause << " OR ";
+					}
+					parametersClause << " PARAMETERNAME='" << parameterNames[i] << "' ";
+				}
+				parametersClause << ")";
+			}
+
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< "and locationKey = " << locationKey << " "
+				<< "and deleted = 0)"
+				<< " "
+				<< parametersClause.str();
+
+			//second load parametervalue
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, false);
+		}
+		
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocation( const std::string& type, std::vector<unsigned long> locationKeys, const bool loadParam /* = true */)
+	{
+        FUNCTION_ENTRY( "getEntitiesOfTypeAtLocation( type, key )" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection =  TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		IEntityDataList entities;
+
+		std::ostringstream locationClause;
+		if (!locationKeys.empty())
+		{
+			locationClause << " and ( ";
+			for (int i = 0; i < locationKeys.size(); ++ i)
+			{
+				// If this isn't the first element then it needs an OR added first..
+				if (i != 0)
+				{
+					locationClause << " OR ";
+				}
+				locationClause << " locationKey=" << locationKeys[i] << " ";
+			}
+			locationClause << ")";
+		}
+
+
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey " << databaseConnection->escapeQueryString(locationClause.str());
+
+		if (true == loadParam)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< " " << databaseConnection->escapeQueryString(locationClause.str()) << " "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, false);
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocation( const std::string& type, const std::vector<unsigned long>& locationKeys, const bool loadParam, const std::vector<std::string>& parameterNames)
+	{
+        FUNCTION_ENTRY( "getEntitiesOfTypeAtLocation" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection =  TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		IEntityDataList entities;
+		
+		std::ostringstream locationClause;
+		if (!locationKeys.empty())
+		{
+			locationClause << " and ( ";
+			for (int i = 0; i < locationKeys.size(); ++ i)
+			{
+				// If this isn't the first element then it needs an OR added first..
+				if (i != 0)
+				{
+					locationClause << " OR ";
+				}
+				locationClause << " locationKey=" << locationKeys[i] << " ";
+			}
+			locationClause << ")";
+		}
+		
+		
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey " << databaseConnection->escapeQueryString(locationClause.str());
+		
+		if (true == loadParam)
+		{
+			std::ostringstream parametersClause;
+			if (!parameterNames.empty())
+			{
+				parametersClause << " and ( ";
+				for (int i = 0; i < parameterNames.size(); ++ i)
+				{
+					// If this isn't the first element then it needs an OR added first..
+					if (i != 0)
+					{
+						parametersClause << " OR ";
+					}
+					parametersClause << " PARAMETERNAME='" << parameterNames[i] << "' ";
+				}
+				parametersClause << ")";
+			}
+
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< " " << databaseConnection->escapeQueryString(locationClause.str()) << " "
+				<< "and deleted = 0)"
+				<< " "
+				<< parametersClause.str();
+
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, false);
+		}
+		
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+	IEntityDataList EntityAccessFactory::getEntitiesOfTypeAtLocation( const std::string& type, const std::string& locationName)
+	{
+        FUNCTION_ENTRY( "getEntitiesOfTypeAtLocation( type, name )" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et, location l WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey and e.locationKey = l.pkey and l.name = '" << databaseConnection->escapeQueryString(locationName) << "'";
+
+		IEntityDataList entities;
+
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity_v where typekey = "
+			<< "(select pkey from entitytype where name = '"
+			<< databaseConnection->escapeQueryString(type) << "') "
+			<< "and locationKey = (select pkey from location where name = '" 
+			<< databaseConnection->escapeQueryString(locationName) << "') "
+			<< "and deleted = 0)";
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+
+    //TD16609 Mintao++
+    //only those datanodes that has datapoints are considered as equipment with entitytype as 'DataNode' 
+	IEntityDataList EntityAccessFactory::getEquipmentsAtLocation( const unsigned long locationKey )
+	{
+        FUNCTION_ENTRY( "getEquipmentsAtLocation( key )" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "PHYSICAL_SUBSYSTEM_KEY, PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'), ";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'), ";
+		sql << "e.pkey, 'DataNode' ";
+        sql << "FROM entity_v e WHERE e.deleted = 0 and e.locationKey = " << locationKey;
+        sql << " ";
+        sql << "and e.pkey in (select parentkey from entity where typekey = (select pkey from entitytype where name='DataPoint'))";
+
+		IEntityDataList entities;
+		
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity_v where typekey = "
+			<< "(select pkey from entitytype where name = 'DataNode') "
+			<< "and locationKey = " << locationKey << " "
+			<< "and deleted = 0)";
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities );
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+    //TD16609 Mintao++
+
+    //TD16889 Mintao 
+    //current assumption is that the datanode with only datapoints as children is equipment datanode
+    bool EntityAccessFactory::isEquipmentDataNode( unsigned long entitykey)
+    {
+        FUNCTION_ENTRY( "getEquipmentCorbaNamesOfTypeAtLocation( type, key )" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+
+        sql << "select count(c.pkey) from entity c, entity p ";
+        sql << "where c.deleted = 0 and p.deleted = 0 and c.parentkey = p.pkey and c.typekey = (select pkey from entitytype where name = 'DataPoint') and ";
+        sql << "p.pkey = " << entitykey;
+        std::string countColumn = "NumberofDP";
+        std::vector<std::string> columnNames;
+        columnNames.push_back( countColumn );
+     
+        // Execute the query. The method can throw a DatabaseException.
+        // This is documented in the comment of this method.
+        // We are responsible for deleting the returned IData object when we're done with it
+        // We use this call direct, as we *want* multiple values returned
+        IData* data = databaseConnection->executeQuery( sql.str(), columnNames);
+
+        bool toreturn = false;
+
+        if (data->getNumRows() == 1)
+        {
+            unsigned long numberofDn = data->getUnsignedLongData(0, countColumn);
+            if (numberofDn > 0)
+            {
+                toreturn = true;
+            }
+        }
+        delete data;
+        data = NULL;
+
+        return toreturn;
+
+    }
+    //TD16889 Mintao 
+    
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeAtLocation( const std::string& type,
+													const unsigned long locationKey, const bool isAgentType )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfTypeAtLocation( type, key )" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and e.locationkey = ";
+		sql << locationKey << " and a.PKEY = e.agentkey";
+        
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+	}
+
+	
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeAtAllLocation( const std::string& type, const bool isAgentType)
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfTypeAtLocation( type, key )" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and a.PKEY = e.agentkey";
+        
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+	}
+
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeAtLocation( const std::string& type,
+		const std::string& locationName, const bool isAgentType )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfTypeAtLocation( type, name )" );
+
+        // get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		// create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et, location l where e.deleted = 0 and a.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and e.locationkey = l.pkey and l.name = '";
+		sql << databaseConnection->escapeQueryString(locationName) << "' and a.PKEY = e.agentkey";
+        
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+	}
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeAtLocationWithNameLikeToken
+        (const std::string& type, 
+         const unsigned long locationKey,
+         const std::string& token,
+		 const bool isAgentType)
+    {
+        FUNCTION_ENTRY( "getCorbaNamesOfTypeWithNameLikeToken" );
+
+        // get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		// create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey "
+            << "from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and "
+            << "et.name = '" << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and a.PKEY = e.agentkey "
+            << "and e.locationkey =" << locationKey << " "
+            << "and upper(e.name) LIKE upper('" << databaseConnection->escapeQueryString(token) << "')";
+       
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+		FUNCTION_EXIT;
+        return corbaNames;
+    }
+
+    IEntityDataList EntityAccessFactory::getEntitiesOfTypeInPhysicalSubsystem( const std::string& type, 
+		unsigned long physicalSubsystemKey, const bool readWrite /* = false  */)
+	{
+		FUNCTION_ENTRY( "getEntitiesOfTypeInPhysicalSubsystem" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the entity data of the specified entity type
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, ";
+		sql << "TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and et.pkey = e.typekey ";
+		sql << "and e.physical_subsystem_key = " << physicalSubsystemKey;
+
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where typekey = "
+				<< "(select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') "
+				<< "and physical_subsystem_key = " << physicalSubsystemKey << " "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+	}	
+	
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfTypeInPhysicalSubsystem
+		(const std::string& type,
+		 unsigned long physicalSubsystemKey, const bool isAgentType)
+	{
+		FUNCTION_ENTRY( "getCorbaNamesOfTypeInPhysicalSubsystem" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity type
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey and a.PKEY = e.agentkey ";	
+		sql << "and e.physical_subsystem_key = " << physicalSubsystemKey;
+       
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+		FUNCTION_EXIT;
+        return corbaNames;
+	}
+
+    IEntityDataList EntityAccessFactory::getChildEntitiesOf(const std::string& name, const bool readWrite /* = false */)
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "EntityAccessFactory::getChildEntitiesOf(name)" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        // create the SQL string to retrieve the pkey of the specified entity
+		// Formulate the query
+        // note: upper() is used for case insensitivity.
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << " e.pkey, et.name FROM entity_v e, entity_v p, entitytype et WHERE e.deleted = 0 and p.deleted = 0 and upper(p.name) = upper('";
+		sql <<  databaseConnection->escapeQueryString(name) << "') and e.PARENTKEY = p.pkey and et.pkey = e.typekey";
+
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where "
+				<< "parentkey in (select pkey from entity_v where name = '" 
+				<< databaseConnection->escapeQueryString(name) << "')"
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+        LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::getChildEntitiesOf(name)" );
+        return entities;
+    }
+
+
+    IEntityDataList EntityAccessFactory::getChildEntitiesOf(const unsigned long key, const bool readWrite /* = false */)
+    {
+        FUNCTION_ENTRY( "getChildEntitiesOf(key)" );
+        
+        // create the SQL string to retrieve the pkey of the specified entity
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << " e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and e.PARENTKEY = ";
+		sql << key << " and et.pkey = e.typekey";
+
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where "
+				<< "parentkey = " << key << " "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfChildren( const std::string& name )
+	{
+		FUNCTION_ENTRY( "getCorbaNamesOfChildren( name )" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v p where e.deleted = 0 and a.deleted = 0 and p.deleted = 0 and e.parentkey = p.pkey and upper(p.name) = upper('";
+		sql << databaseConnection->escapeQueryString(name) << "') and a.pkey = e.agentkey";
+       
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+    }
+
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfChildren( const unsigned long key )
+    {
+        FUNCTION_ENTRY( "getCorbaNamesOfChildren( key )" );
+
+        // create the SQL string to retrieve the pkey of the specified entity
+        // This will act as a check that the parent entity is unique
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a where e.deleted = 0 and a.deleted = 0 and e.parentkey = ";
+		sql << key << " and a.pkey = e.agentkey";	
+
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+    }    
+
+
+    IEntityDataList EntityAccessFactory::getChildEntitiesOfType(const std::string& type, const bool readWrite /* = false */)
+    {
+        FUNCTION_ENTRY( "getChildEntitiesOfType" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkeys of the entity type        
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entitytype et WHERE e.deleted = 0 and et.PKEY = e.typekey ";
+		sql << "and e.parentkey in (select e.pkey from ENTITY_V e, ENTITYTYPE et where e.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and e.typekey = et.pkey)";
+        
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where "
+				<< "parentkey in (select pkey from ENTITY_V where typekey = (select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') and deleted = 0) "
+				<< "and deleted = 0)";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}		
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+
+	CorbaName EntityAccessFactory::getCorbaNameOfParent( const std::string& name )
+	{
+		FUNCTION_ENTRY( "getCorbaNamesOfChildren( name )" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v c where e.deleted = 0 and a.deleted = 0 and c.deleted = 0 and c.parentkey = e.pkey and upper(c.name) = upper('";
+		sql << databaseConnection->escapeQueryString(name) << "') and a.pkey = e.agentkey";
+       
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        // Check to see if there were any values returned
+		if ( corbaNames.size() == 0 )
+		{
+            std::string message = "No data found for parent of CorbaName of " + name;
+            TA_THROW( DataException( message.c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity names are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == corbaNames.size(), "Entity name unique constraint violated");
+
+        FUNCTION_EXIT;
+        return corbaNames[0];
+    }
+
+	CorbaName EntityAccessFactory::getCorbaNameOfParent( const unsigned long key )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfChildren( key )" );
+
+        // create the SQL string to retrieve the pkey of the specified entity
+        // This will act as a check that the parent entity is unique
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v c where c.parentkey = e.pkey and c.pkey = ";
+		sql << key << " and a.pkey = e.agentkey and e.deleted = 0 and a.deleted = 0 and c.deleted = 0 ";	
+
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        // Check to see if there were any values returned
+		if ( corbaNames.size() == 0 )
+		{
+            std::ostringstream message;
+			message << "No data found for CorbaName of  entity with key " << key;
+            TA_THROW( DataException( message.str().c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+
+        // entity keys are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        TA_ASSERT(1 == corbaNames.size(), "Entity key unique constraint violated");
+
+        FUNCTION_EXIT;
+
+        return corbaNames[0];
+    }  
+
+
+    CorbaNameList EntityAccessFactory::getCorbaNamesOfChildrenOfType( const std::string& type )
+    {
+        FUNCTION_ENTRY( "getCorbaNamesOfChildrenOfType" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkeys of the entity type        
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v p, entitytype et where e.deleted = 0 and a.deleted = 0 and p.deleted = 0 and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and p.typekey = et.pkey and e.parentkey = p.pkey and a.PKEY = e.agentkey";	
+        
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+    }
+
+
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfChildrenOfTypeAtLocation( const std::string& type,
+		unsigned long locationKey )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfChildrenOfTypeAtLocation" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        // create the SQL string to retrieve the pkeys of the entity type        
+		std::ostringstream sql;
+    	sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v p, entitytype et where et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "' and p.typekey = et.pkey and e.parentkey = p.pkey and e.locationkey = ";
+		sql << locationKey << " and a.PKEY = e.agentkey and e.deleted = 0 and a.deleted = 0 and p.deleted = 0 ";
+	
+		CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+        return corbaNames;
+	}
+
+
+	IEntityDataList EntityAccessFactory::getChildEntitiesOfEntityOfType( const std::string& name, const std::string& type, bool readWrite /* = false */)
+	{
+        FUNCTION_ENTRY( "getChildEntitiesOfEntityOfType" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkeys of the entity type        
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << "e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << "TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << "e.pkey, et.name FROM entity_v e, entity_v p, entitytype et WHERE e.deleted = 0 and p.deleted = 0 and upper(p.name) = upper('";
+		sql << databaseConnection->escapeQueryString(name) << "') and e.PARENTKEY = p.pkey and et.pkey = e.typekey and e.typekey = et.pkey and et.name = '";
+		sql << databaseConnection->escapeQueryString(type) << "'";
+        
+		IEntityDataList entities;
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where "
+				<< "parentkey in (select pkey from ENTITY_V where upper(name) = upper('"
+				<< databaseConnection->escapeQueryString(name) << "') and deleted = 0 ) "
+				<< "and typekey = (select pkey from entitytype where name = '"
+				<< databaseConnection->escapeQueryString(type) << "') and deleted = 0 )";
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			getEntityData( sql.str(), entities, readWrite );
+		}		
+
+        FUNCTION_EXIT;
+        return entities;
+	}
+
+
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfChildrenOfEntityOfType( const std::string& name, const std::string& type )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfChildrenOfEntityOfType" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+		std::ostringstream sql;
+		sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entity_v p, entitytype et where e.deleted = 0 and a.deleted = 0 and p.deleted = 0 and ";
+		sql << "e.parentkey = p.pkey and upper(p.name) = upper('" << databaseConnection->escapeQueryString(name) << "') and a.pkey = e.agentkey and ";
+		sql << "et.pkey = e.typekey and e.typekey = et.pkey and et.name = '" << databaseConnection->escapeQueryString(type) << "'";
+
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+
+        FUNCTION_EXIT;
+		return corbaNames;
+	}
+
+
+	SharedIEntityDataList EntityAccessFactory::getDescendantsOfAgent( const unsigned long key )
+	{
+		FUNCTION_ENTRY( "getDescendantsOfAgent( key )" );
+
+		// get a connection to the database
+		IDatabase* databaseConnection = TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << " e.pkey, et.name FROM entity_v e, entity_v a, entitytype et WHERE e.deleted = 0 and a.deleted = 0 and a.pkey = ";
+		sql <<  key << " and e.agentkey = a.pkey and e.pkey <> a.pkey and et.pkey = e.typekey";
+
+		SharedIEntityDataList childEntities;
+		IEntityDataList entities;
+
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity_v where "
+			<< "agentkey in (select pkey from ENTITY_V where pkey = "
+			<< key << " and deleted = 0) and pkey <> agentkey "
+			<< "and deleted = 0)";
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+
+		// Sort the descendants
+		IEntityDataList::iterator it;
+		std::set< unsigned long > entityMap;
+        std::set< unsigned long > allEntityKeys;
+
+        // Build a set of all entity keys
+        for ( it = entities.begin(); it != entities.end(); ++it )
+        {
+            allEntityKeys.insert( (*it)->getKey() );
+        }
+
+        entityMap.insert( key );
+
+        // Find entity whose parent aren't in entities list
+        for(it = entities.begin(); it != entities.end();)
+        {
+            if(allEntityKeys.find((*it)->getParent()) == allEntityKeys.end())
+            {
+                entityMap.insert((*it)->getKey());
+                childEntities.push_back(SharedIEntityDataList::value_type(*it));
+                it = entities.erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+        do
+        {
+            for(it = entities.begin(); it != entities.end();)
+            {
+                // see if the parent exists
+                if(entityMap.find((*it)->getParent()) != entityMap.end())
+                {
+                    entityMap.insert((*it)->getKey());
+                    childEntities.push_back(SharedIEntityDataList::value_type(*it));
+                    it = entities.erase(it);
+                }
+                else
+                {
+                    ++it;
+                }
+            }
+        }
+		while ( false == entities.empty() );
+
+        FUNCTION_EXIT;
+		return childEntities;
+	}
+
+	SharedIEntityDataList EntityAccessFactory::getDescendantsOfAgent( const std::string& agentName )
+	{
+		FUNCTION_ENTRY( "getDescendantsOfAgent( agentName )" );
+		
+		/*
+		* TD5055 - The agent entity is put into an auto pointer to ensure
+		*          that it is destroyed when no longer needed.
+		*/
+		std::auto_ptr< IEntityData > agent( getEntity( agentName ) );
+
+        FUNCTION_EXIT;
+		return getDescendantsOfAgent(agent->getKey());
+	}
+
+
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfDescendantsOfAgent( const std::string& agentName )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfDescendantsOfAgent" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a where e.deleted = 0 and a.deleted = 0 and upper(a.name) = upper('";
+		sql << databaseConnection->escapeQueryString(agentName);
+		sql << "') and e.agentkey = a.pkey and e.pkey <> a.pkey";
+
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+			
+        FUNCTION_EXIT;
+		return corbaNames;
+	}
+
+
+	IEntityDataList EntityAccessFactory::getDescendantsOfAgentOfType( const std::string& agentName, const std::string& typeName)
+	{
+        FUNCTION_ENTRY( "getDescendantsOfAgentOfType" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // create the SQL string to retrieve the pkey of the specified entity
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME, ";
+        sql << "e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+		sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED, 'YYYYMMDDHH24MISS'),";
+		sql << " e.pkey, et.name FROM entity_v e, entity_v a, entitytype et WHERE e.deleted = 0 and a.deleted = 0 and UPPER(a.name) = UPPER('";
+		sql << databaseConnection->escapeQueryString(agentName) << "') and et.name = '";
+		sql << databaseConnection->escapeQueryString(typeName) << "' and e.agentkey = a.pkey and e.pkey <> a.pkey and et.pkey = e.typekey";
+	
+		IEntityDataList entities;
+		
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+			<< "from entityparametervalue_v "
+			<< "where entitykey in (select pkey FROM entity_v where "
+			<< "agentkey in (select pkey from ENTITY_V where upper(name) = upper('"
+			<< databaseConnection->escapeQueryString(agentName) << "') "
+			<< "and deleted = 0) "
+			<< "and typekey in (select pkey from entitytype where name = '"
+			<< databaseConnection->escapeQueryString(typeName)
+			<< "') "
+			<< "and pkey <> agentkey "
+			<< "and deleted = 0)";
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+	
+        FUNCTION_EXIT;
+		return entities;
+	}
+
+
+	CorbaNameList EntityAccessFactory::getCorbaNamesOfDescendantsOfAgentOfType( const std::string& agentName, 
+			const std::string& typeName )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfDescendantsOfAgentOfType" );
+		
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "select e.pkey, e.name, a.name, e.locationkey from entity_v e, entity_v a, entitytype et where e.deleted = 0 and a.deleted = 0 and upper(a.name) = upper('";
+		sql << databaseConnection->escapeQueryString(agentName) << "') and et.NAME = '" << databaseConnection->escapeQueryString(typeName);
+		sql << "' and e.agentkey = a.pkey and e.pkey <> a.pkey and e.typekey = et.pkey";
+			
+        CorbaNameList corbaNames;
+		getCorbaNames( sql.str(), corbaNames );
+			
+        FUNCTION_EXIT;
+		return corbaNames;
+	}
+
+	std::string EntityAccessFactory::getTypeOf(const std::string& name)
+	{
+		FUNCTION_ENTRY( "getTypeOf" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		std::string nameColumn = "NAME";
+        std::vector<std::string> columnNames;
+        columnNames.push_back( nameColumn );
+
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "SELECT et.name FROM entity_v e, ENTITYTYPE et WHERE e.deleted = 0 and upper(e.name) = upper('";
+		sql << databaseConnection->escapeQueryString(name) << "') AND e.typekey = et.pkey";
+
+		IData* data = getSingularData(sql.str(), columnNames, "type of entity");
+
+		std::string type = "";
+
+		if (data != NULL)
+		{
+			type = data->getStringData( 0, nameColumn );
+
+			delete data;
+		}
+
+		if (type == "")
+		{
+			std::string message = "No data found for type of entity";
+            TA_THROW(DataException(message.c_str(),DataException::NO_VALUE,sql.str()));
+		}
+
+		return type;
+	}
+
+
+	IData* EntityAccessFactory::getParameter( const std::string& entityName, const std::string& parameterName )
+	{
+        FUNCTION_ENTRY( "getCorbaNamesOfDescendantsOfAgentOfType" );
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		std::string valueColumn = "VALUE";
+        std::vector<std::string> columnNames;
+        columnNames.push_back( valueColumn );
+
+		// Formulate the query
+		std::ostringstream sql;
+		sql << "select epv.value from entity_v e, entityparameter ep, entityparametervalue epv where e.deleted = 0 and upper(e.name) = upper('";
+		sql << databaseConnection->escapeQueryString(entityName) << "') and ep.NAME = '" << databaseConnection->escapeQueryString(parameterName) << "' and epv.parameterkey ";
+		sql << "= ep.pkey and epv.ENTITYKEY = e.pkey";
+
+        // Execute the query. The method can throw a DatabaseException.
+        // This is documented in the comment of this method.
+        // This data pointer is returned, so it is not deleted unless an exception is thrown.
+        IData* data = databaseConnection->executeQuery( sql.str(), columnNames );
+
+		FUNCTION_EXIT;
+		return data;		
+	}
+
+
+    IConfigEntity* EntityAccessFactory::createEntity(std::string type)
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "EntityAccessFactory::createEntity" );
+        LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::createEntity" );
+        return new ConfigEntity(type);
+    }
+
+    
+    IConfigEntity* EntityAccessFactory::copyEntity(const IConfigEntity* entityToCopy)
+    {
+        FUNCTION_ENTRY("copyEntity");
+
+        TA_ASSERT(entityToCopy !=  NULL, "The entity to copy was NULL");
+        
+        const ConfigEntity* cast = dynamic_cast<const ConfigEntity*>(entityToCopy);
+
+        TA_ASSERT(cast != NULL, "Entity passed could not be converted into a ConfigEntity");
+
+        FUNCTION_EXIT;
+        return new ConfigEntity(*cast);
+    }
+
+    
+    void EntityAccessFactory::setUpMap()
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "EntityAccessFactory::setUpMap" );
+
+		// VideoMonitor entity
+		m_entityTypes.insert(EntityTypeMap::value_type( VideoMonitor::getStaticType(), VideoMonitor::clone ) );
+
+		// Camera entity
+		m_entityTypes.insert(EntityTypeMap::value_type( Camera::getStaticType(), Camera::clone ));
+
+		// Sequence entity
+		m_entityTypes.insert(EntityTypeMap::value_type( Sequence::getStaticType(), Sequence::clone ));
+
+		// RecordingUnit entity
+		m_entityTypes.insert(EntityTypeMap::value_type( RecordingUnit::getStaticType(), RecordingUnit::clone ));
+
+		// Quad entity
+		m_entityTypes.insert(EntityTypeMap::value_type( Quad::getStaticType(), Quad::clone ));
+
+		// BVSStage entity
+		m_entityTypes.insert(EntityTypeMap::value_type( BVSStage::getStaticType(), BVSStage::clone ));
+        
+        // VideoOutputGroup entity
+		m_entityTypes.insert(EntityTypeMap::value_type( VideoOutputGroup::getStaticType(), VideoOutputGroup::clone ) );
+        
+        // VideoSwitchAgent entity
+		m_entityTypes.insert(EntityTypeMap::value_type( VideoSwitchAgent::getStaticType(), VideoSwitchAgent::clone ) );
+     
+    	// Plan Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type( PlanAgentData::getStaticType(), PlanAgentData::clone ));
+
+    	// Plan Manager entity
+		m_entityTypes.insert(EntityTypeMap::value_type( PlanManagerEntityData::getStaticType(), PlanManagerEntityData::clone ));
+
+        // Alarm Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type( AlarmAgentEntityData::getStaticType(), AlarmAgentEntityData::clone ));
+
+        // History Viewer entity
+		m_entityTypes.insert(EntityTypeMap::value_type( HistoryViewerData::getStaticType(), HistoryViewerData::clone ));
+
+        // ScadaHistory Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type( ScadaHistoryAgentEntityData::getStaticType(), ScadaHistoryAgentEntityData::clone ));
+
+        // ScadaHistory Config data
+		m_entityTypes.insert(EntityTypeMap::value_type( ScadaHistoryConfigData::getStaticType(), ScadaHistoryConfigData::clone ));
+
+        // NotificationAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( NotificationAgentData::getStaticType(), NotificationAgentData::clone ));
+
+        m_entityTypes.insert(EntityTypeMap::value_type( System::getStaticType(), System::clone ));
+        
+        m_entityTypes.insert(EntityTypeMap::value_type( Process::getStaticType(), Process::clone ));
+
+        // Control Station entity
+        m_entityTypes.insert(EntityTypeMap::value_type( ControlStation::getStaticType(), ControlStation::clone ));
+
+    	// Alarm Viewer entity
+        m_entityTypes.insert(EntityTypeMap::value_type( AlarmGUI::getStaticType(), AlarmGUI::clone ));
+
+    	// PMSAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( PMSAgentEntityData::getStaticType(), PMSAgentEntityData::clone ) );
+
+    	// VirtualDataPointAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( VirtualDataPointAgentEntityData::getStaticType(), VirtualDataPointAgentEntityData::clone ) );
+
+    	// StationECSAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( StationECSAgentEntityData::getStaticType(), StationECSAgentEntityData::clone ) );
+
+    	// MasterECSAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( MasterECSAgentEntityData::getStaticType(), MasterECSAgentEntityData::clone ) );
+
+        // RTU entity
+        m_entityTypes.insert(EntityTypeMap::value_type( RTUEntityData::getStaticType(), RTUEntityData::clone ) );
+
+    	// Station entity
+        m_entityTypes.insert(EntityTypeMap::value_type( StationEntityData::getStaticType(), StationEntityData::clone ) );
+
+    	// StationSystem entity
+        m_entityTypes.insert(EntityTypeMap::value_type( StationSystemEntityData::getStaticType(), StationSystemEntityData::clone ) );
+
+    	// StationSubSystem entity
+        m_entityTypes.insert(EntityTypeMap::value_type( StationSubSystemEntityData::getStaticType(), StationSubSystemEntityData::clone ) );
+
+    	// Equipment entity
+        m_entityTypes.insert(EntityTypeMap::value_type( EquipmentEntityData::getStaticType(), EquipmentEntityData::clone ) );
+
+    	// DataPoint entity
+        m_entityTypes.insert(EntityTypeMap::value_type( DataPointEntityData::getStaticType(), DataPointEntityData::clone ) );
+
+        // AlarmVolumeTestEntityType
+        m_entityTypes.insert(EntityTypeMap::value_type( AlarmVolumeTestEntityType::getStaticType(), AlarmVolumeTestEntityType::clone ) );
+
+        // Banner entity type
+        m_entityTypes.insert(EntityTypeMap::value_type( Banner::getStaticType(), Banner::clone ) );
+
+		// Rights Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type(RightsAgentEntityData::getStaticType(), RightsAgentEntityData::clone) );
+
+		// Duty Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type(DutyAgentEntityData::getStaticType(), DutyAgentEntityData::clone) );
+		
+		// DataNode entity
+		m_entityTypes.insert(EntityTypeMap::value_type(DataNodeEntityData::getStaticType(), DataNodeEntityData::clone) );
+
+        // EventViewer entity
+        m_entityTypes.insert(EntityTypeMap::value_type(EventViewer::getStaticType(), EventViewer::clone) );
+
+        // DataNodeAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type(DataNodeAgentEntityData::getStaticType(), DataNodeAgentEntityData::clone) );
+
+        // Configuration Editor entity
+        m_entityTypes.insert(EntityTypeMap::value_type(ConfigurationEditor::getStaticType(), ConfigurationEditor::clone) );
+
+		// ECSManager Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(ECSManager::getStaticType(), ECSManager::clone) );
+
+		// Radio Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(RadioEntityData::getStaticType(), RadioEntityData::clone) );
+
+		// Radio Session Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(RadioSessionEntityData::getStaticType(), RadioSessionEntityData::clone) );
+
+        // Radio State Synchronisation Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(RadioStateSynchronisationEntityData::getStaticType(), RadioStateSynchronisationEntityData::clone) );
+
+		// TIS Agent Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(TISAgentEntityData::getStaticType(), TISAgentEntityData::clone) );
+
+		// STIS Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(STISEntityData::getStaticType(), STISEntityData::clone) );
+
+		// STIS Entity
+        m_entityTypes.insert(EntityTypeMap::value_type(SchedulingAgentEntityData::getStaticType(), SchedulingAgentEntityData::clone) );
+
+    	// StationPAAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( StationPAAgentEntityData::getStaticType(), StationPAAgentEntityData::clone ) );
+
+    	// MasterPAAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( MasterPAAgentEntityData::getStaticType(), MasterPAAgentEntityData::clone ) );
+
+		// WILDAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type( WILDAgentEntityData::getStaticType(), WILDAgentEntityData::clone ) );
+		
+		// AlarmStore entity
+        m_entityTypes.insert(EntityTypeMap::value_type( AlarmStoreEntityData::getStaticType(), AlarmStoreEntityData::clone ) );
+
+		// System Status entity
+        m_entityTypes.insert(EntityTypeMap::value_type( SystemStatusAgentEntityData::getStaticType(), SystemStatusAgentEntityData::clone ) );
+
+		// AtsAgent entity
+        m_entityTypes.insert(EntityTypeMap::value_type(AtsAgentEntityData::getStaticType(), AtsAgentEntityData::clone) );
+
+		// Radio Directory entity
+        m_entityTypes.insert(EntityTypeMap::value_type(RadioDirectoryEntityData::getStaticType(), RadioDirectoryEntityData::clone) );
+
+        // Authentication Agent entity
+        m_entityTypes.insert(EntityTypeMap::value_type(AuthenticationAgentEntityData::getStaticType(), AuthenticationAgentEntityData::clone) );
+
+        // Train Agent entity
+        m_entityTypes.insert(EntityTypeMap::value_type(TrainAgentEntityData::getStaticType(), TrainAgentEntityData::clone) );
+	
+        // Train Settings entity
+        m_entityTypes.insert(EntityTypeMap::value_type(TrainSettingsEntityData::getStaticType(), TrainSettingsEntityData::clone) );
+
+        // Archive Manager entity
+        m_entityTypes.insert(EntityTypeMap::value_type(ArchiveManagerEntityData::getStaticType(), ArchiveManagerEntityData::clone) );
+
+        // Various MMS data objects:
+        m_entityTypes.insert(EntityTypeMap::value_type(MmsAgentEntityData::getStaticType(), MmsAgentEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MmsAlarmSubmitterEntityData::getStaticType(), MmsAlarmSubmitterEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MmsJobRequestSubmitterEntityData::getStaticType(), MmsJobRequestSubmitterEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MmsPeriodicEntityData::getStaticType(), MmsPeriodicEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MmsConnectiontEntityData::getStaticType(), MmsConnectiontEntityData::clone) );
+
+        // Display Manager entity
+        m_entityTypes.insert(EntityTypeMap::value_type(DisplayManagerEntityData::getStaticType(), DisplayManagerEntityData::clone) );
+
+    	// Region Manager entity
+		m_entityTypes.insert(EntityTypeMap::value_type(RegionManagerEntityData::getStaticType(), RegionManagerEntityData::clone));
+
+    	// Duty Manager entity
+		m_entityTypes.insert(EntityTypeMap::value_type(DutyManagerEntityData::getStaticType(), DutyManagerEntityData::clone));
+
+        // TIS Log Viewer entity
+		m_entityTypes.insert(EntityTypeMap::value_type(TisLogViewerEntityData::getStaticType(), TisLogViewerEntityData::clone));
+
+        // Online Printing Agent entity
+		m_entityTypes.insert(EntityTypeMap::value_type(OnlinePrintingAgentEntityData::getStaticType(), OnlinePrintingAgentEntityData::clone));
+
+        // Train CCTV Camera entity
+		m_entityTypes.insert(EntityTypeMap::value_type(TrainCctvCameraEntityData::getStaticType(), TrainCctvCameraEntityData::clone));
+
+        // Call Banner Page entity
+		m_entityTypes.insert(EntityTypeMap::value_type(CallBannerPage::getStaticType(), CallBannerPage::clone));
+
+		// Less Agent Entity
+		m_entityTypes.insert(EntityTypeMap::value_type(LessAgentEntityData::getStaticType(), LessAgentEntityData::clone));
+
+        // Equipment Status Viewer entity
+        m_entityTypes.insert(EntityTypeMap::value_type(EquipmentStatusViewerEntityData::getStaticType(), EquipmentStatusViewerEntityData::clone) );
+
+        // Radio Manager/MFT
+		m_entityTypes.insert(EntityTypeMap::value_type(RadioProfileEntityData::getStaticType(), RadioProfileEntityData::clone) );
+
+		// Telephone Manager Profile entity
+        m_entityTypes.insert(EntityTypeMap::value_type(TelephoneManagerProfileEntityData::getStaticType(), TelephoneManagerProfileEntityData::clone) );
+
+        // PID Log Viewer entity
+		m_entityTypes.insert(EntityTypeMap::value_type(PidLogViewerEntityData::getStaticType(), PidLogViewerEntityData::clone));
+
+		// wenching++ (TD12997)
+		// Inspector Panel entity
+		m_entityTypes.insert(EntityTypeMap::value_type( InspectorPanelEntityData::getStaticType(), InspectorPanelEntityData::clone ));
+		// ++wenching (TD12997)
+
+		// wenching++ (TD14000)
+		// Power Demand Editor entity
+		m_entityTypes.insert(EntityTypeMap::value_type( PowerDemandEditorEntityData::getStaticType(), PowerDemandEditorEntityData::clone ));
+		// ++wenching (TD14000)
+
+
+        // Raymond Pau++ (TD13367)
+		// Scada Root entity
+		m_entityTypes.insert(EntityTypeMap::value_type( ScadaRootEntityData::getStaticType(), ScadaRootEntityData::clone ));
+		// ++Raymond Pau(TD13367)
+        
+		m_entityTypes.insert(EntityTypeMap::value_type( ServerEntityData::getStaticType(), ServerEntityData::clone ));
+
+		//TD15213: add AtsTwp and AtsPsd entity      
+        m_entityTypes.insert(EntityTypeMap::value_type(AtsTwpEntityData::getStaticType(), AtsTwpEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(AtsPsdEntityData::getStaticType(), AtsPsdEntityData::clone) );
+
+        //TD15918 (Mintao++)
+        m_entityTypes.insert(EntityTypeMap::value_type(MisAgentEntityData::getStaticType(), MisAgentEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MisAlarmSubmitterEntityData::getStaticType(), MisAlarmSubmitterEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MisJobRequestSubmitterEntityData::getStaticType(), MisJobRequestSubmitterEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MisPeriodicEntityData::getStaticType(), MisPeriodicEntityData::clone) );
+        m_entityTypes.insert(EntityTypeMap::value_type(MisConnectiontEntityData::getStaticType(), MisConnectiontEntityData::clone) );
+		//lizettejl++ (TD14697)
+		m_entityTypes.insert(EntityTypeMap::value_type(HierarchicalAlarmViewEntityData::getStaticType(), HierarchicalAlarmViewEntityData::clone));
+		//TD17997 marc
+		//Support for Radio Global entity
+		m_entityTypes.insert(EntityTypeMap::value_type(RadioGlobalEntityData::getStaticType(), RadioGlobalEntityData::clone));
+
+		// add TTIS and STIS entity (lichao++)
+		m_entityTypes.insert(EntityTypeMap::value_type(TTISManagerEntityData::getStaticType(), TTISManagerEntityData::clone) );
+			
+		LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::setUpMap" );
+    }
+
+
+    IEntityData* EntityAccessFactory::createEntityFromType(std::string type, unsigned long key)
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "EntityAccessFactory::createEntityFromType" );
+        EntityTypeMap::iterator iter (m_entityTypes.find(type));
+        
+    	if (iter == m_entityTypes.end()) // The type is not known to the system
+    	{			
+            return new DefaultEntity(key,type);
+    	}
+    	else
+        {
+            LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::createEntityFromType" );
+            return iter->second(key);
+        }
+    }
+
+
+    IData* EntityAccessFactory::getSingularData(std::string sql, std::vector<std::string> columnNames,
+        std::string itemSpecification)
+    {
+        LOG ( SourceInfo, DebugUtil::FunctionEntry, "EntityAccessFactory::getSingularData" );
+        // get a connection to the database
+        IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        // Execute the query. The method can throw a DatabaseException.
+        // This is documented in the comment of this method.
+        // This data pointer is returned, so it is not deleted unless an exception is thrown.
+        IData* data = databaseConnection->executeQuery(sql,columnNames);
+
+        // Need to bring in the DataException
+        using TA_Base_Core::DataException;
+
+        if (0 == data->getNumRows()) // No entry found with the specified name
+        {
+            // clean up the pointer
+            delete data;
+            data = NULL;
+                    
+            std::string message = "No data found for " + itemSpecification;
+            TA_THROW(DataException(message.c_str(),DataException::NO_VALUE,sql));
+        }
+        else if (1 < data->getNumRows()) // More than one entry found for the name
+        {
+            // clean up the pointer
+            delete data;
+            data = NULL;
+    
+            std::string message = "More than one entry found for " + itemSpecification;
+            TA_THROW(DataException(message.c_str(),DataException::NOT_UNIQUE,sql));
+        }
+        LOG ( SourceInfo, DebugUtil::FunctionExit, "EntityAccessFactory::getSingularData" );
+        return data;
+    }
+
+
+	void EntityAccessFactory::getCorbaNames( const std::string& sql, CorbaNameList& corbaNames )
+	{
+		// Set up the columnNames vector to be passed to executeQuery()
+        std::string entityKeyColumn = "ENTITYKEY";
+        std::string entityNameColumn = "ENTITYNAME";
+        std::string agentNameColumn = "AGENTNAME";
+		std::string locationKeyColumn = "LOCATIONKEY";
+        std::vector<std::string> columnNames;
+        columnNames.push_back( entityKeyColumn );
+        columnNames.push_back( entityNameColumn );
+        columnNames.push_back( agentNameColumn );
+        columnNames.push_back( locationKeyColumn );
+     
+        // get a connection to the database
+        IDatabase* databaseConnection = 
+            TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        // Execute the query. The method can throw a DatabaseException.
+        // This is documented in the comment of this method.
+        // We are responsible for deleting the returned IData object when we're done with it
+        // We use this call direct, as we *want* multiple values returned
+        IData* data = databaseConnection->executeQuery( sql, columnNames);
+
+        do
+        {
+            for (unsigned long i = 0; i < data->getNumRows() ; i++ )
+            {
+				// Add the returned CorbaNames to the list to return
+                corbaNames.push_back( 
+					CorbaName( data->getUnsignedLongData( i, entityKeyColumn ),
+					data->getStringData( i, agentNameColumn ),
+						data->getStringData( i, entityNameColumn ),
+						data->getUnsignedLongData( i, locationKeyColumn ) ) );
+            }
+
+            delete data;
+            data = NULL;
+        }
+        while( databaseConnection->moreData(data) );
+	}
+
+    
+    void EntityAccessFactory::getEntityData( const std::string& sql, IEntityDataList& entityData, bool readWrite /*= false*/)
+    {
+		// Set up the columns
+		std::string typeColumn = "TYPEKEY";
+        std::string nameColumn = "NAME";
+        std::string addressColumn = "ADDRESS";
+        std::string descriptionColumn = "DESCRIPTION";
+        std::string subsystemColumn = "SUBSYSTEMKEY";
+        std::string subsystemNameColumn = "SUBSYSTEMNAME";
+        std::string physicalSubsystemColumn = "PHYSICAL_SUBSYSTEM_KEY";
+        std::string physicalSubsystemNameColumn = "PHYSICAL_SUBSYSTEM_NAME";
+        std::string locationColumn = "LOCATIONKEY";
+        std::string locationNameColumn = "LOCATIONNAME";
+		std::string regionColumn = "SEREGI_ID";
+        std::string regionNameColumn = "SEREGINAME";
+        std::string parentColumn = "PARENTKEY";
+        std::string parentNameColumn = "PARENTNAME";
+		std::string agentColumn = "AGENTKEY";
+		std::string agentNameColumn = "AGENTNAME";
+        std::string dateCreatedColumn = "DATECREATED";
+        std::string dateModifiedColumn = "DATEMODIFIED";
+		std::string keyColumn = "PKEY";
+		std::string typeNameColumn = "TYPENAME";
+        std::vector<std::string> columnNames;
+        columnNames.push_back(typeColumn);
+        columnNames.push_back(nameColumn);
+        columnNames.push_back(addressColumn);
+        columnNames.push_back(descriptionColumn);
+        columnNames.push_back(subsystemColumn);
+        columnNames.push_back(subsystemNameColumn);
+        columnNames.push_back(physicalSubsystemColumn);
+        columnNames.push_back(physicalSubsystemNameColumn);
+        columnNames.push_back(locationColumn);
+        columnNames.push_back(locationNameColumn);
+		columnNames.push_back(regionColumn);
+        columnNames.push_back(regionNameColumn);
+        columnNames.push_back(parentColumn);
+        columnNames.push_back(parentNameColumn);
+		columnNames.push_back(agentColumn);
+		columnNames.push_back(agentNameColumn);
+        columnNames.push_back(dateCreatedColumn);
+        columnNames.push_back(dateModifiedColumn);
+        columnNames.push_back(keyColumn);
+		columnNames.push_back(typeNameColumn);
+
+        // Execute the query. The method can throw a DatabaseException.
+        // We are responsible for deleting the returned IData object when we're done with it
+        // We use this call direct, as we *want* multiple values returned
+        // get a connection to the database
+        IDatabase* databaseConnection = 
+            TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        IData* data = databaseConnection->executeQuery( sql, columnNames );
+
+		// Create the entities
+		IEntityDataList entityPointerVector;
+        do
+        {
+            for (unsigned long i = 0; i < data->getNumRows() ; i++ )
+            {
+				IEntityData* iEntity;
+				if ( ! readWrite )
+				{
+					iEntity = createEntityFromType( data->getStringData( i, typeNameColumn),
+						data->getUnsignedLongData( i, keyColumn ) );
+
+					// Cast to an entity data and assign the value
+					EntityData* entity = dynamic_cast< EntityData* >( iEntity );
+
+					// If the cast succeeds, assign the data
+					if ( NULL != entity )
+					{
+						entity->assignDefaultData( data, i );
+					}
+				}
+				else // ConfigEntity
+				{
+					iEntity =  new ConfigEntity( data->getUnsignedLongData( i, keyColumn ),	
+						data->getStringData( i, typeNameColumn) );
+
+					// Cast to a Config Entity data and assign the value
+					ConfigEntity* configEntity = dynamic_cast< ConfigEntity* >( iEntity );
+
+					// If the cast succeeds, assign the data
+					if ( NULL != configEntity )
+					{
+						configEntity->assignDefaultData( data, i );
+					}
+				}
+				
+				entityData.push_back( iEntity );
+            }
+
+            delete data;
+            data = NULL;
+        }
+        while( databaseConnection->moreData(data) );
+    }
+
+
+    std::map<unsigned long, std::string> EntityAccessFactory::getEntityTypes()
+    {
+        FUNCTION_ENTRY("getEntityTypes");
+
+        TA_Base_Core::ThreadGuard guard(m_entityTypesCacheLock);
+
+        if (!m_entityTypesCache.empty())
+        {
+            return m_entityTypesCache;
+        }
+
+        IDatabase* databaseConnection = TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        std::string sql("select pkey,name from entitytype where pkey <> 0");
+
+        std::vector<std::string> columnNames;
+        columnNames.push_back("key");
+        columnNames.push_back("name");
+
+        IData* data = databaseConnection->executeQuery( sql, columnNames );
+
+        do
+        {
+            for ( int i = 0; i < data->getNumRows(); ++i)
+            {
+                m_entityTypesCache.insert( std::map<unsigned long, std::string>::value_type( data->getUnsignedLongData(i,"key"),
+                                                                                      data->getStringData(i,"name") ) );
+            }
+
+            delete data;
+            data = NULL;
+        }while ( databaseConnection->moreData(data) );
+
+
+        return m_entityTypesCache;
+
+        FUNCTION_EXIT;
+    }
+
+
+    std::map<unsigned long, std::string> EntityAccessFactory::getChildTypesOf(const std::string& entityType)
+    {
+        FUNCTION_ENTRY("getChildTypesOf");
+
+        IDatabase* databaseConnection = TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        std::string sql("select p.et_key, t.name from entitytypeparent p, entitytype t where ");
+        sql += "p.et_parentkey = (select pkey from entitytype where name = '";
+        sql += databaseConnection->escapeQueryString(entityType);
+        sql += "') and p.et_key = t.pkey";
+
+        std::vector<std::string> columnNames;
+        columnNames.push_back("key");
+        columnNames.push_back("name");
+
+        IData* data = databaseConnection->executeQuery( sql, columnNames );
+
+        std::map<unsigned long, std::string> entityTypes;
+
+        do
+        {
+            for ( int i = 0; i < data->getNumRows(); ++i)
+            {
+                entityTypes.insert( std::map<unsigned long, std::string>::value_type( data->getUnsignedLongData(i,"key"),
+                                                                                      data->getStringData(i,"name") ) );
+            }
+
+            delete data;
+            data = NULL;
+        }while ( databaseConnection->moreData(data) );
+
+        return entityTypes;
+  
+        FUNCTION_EXIT;
+    }
+
+    template<typename T>
+    void EntityAccessFactory::getEntityDataWithParameterValues( const std::string& sql, const std::string& parameterSQL,
+																std::vector<T>& entityData)
+	{
+		FUNCTION_ENTRY("EntityAccessFactory::getEntityDataWithParameterValues");
+
+		EntityKeyToEntityMap entityDataMap;
+		EntityKeyToEntityMapIter entityDataMapIter;
+        //for those entities that don't have any parameter values
+        EntityKeyToEntityMap entityDataMapWithoutEPV;
+        EntityKeyToEntityMapIter entityDataMapWithoutEPVIter;
+
+		// Set up the columns
+		std::string typeColumn = "TYPEKEY";
+        std::string nameColumn = "NAME";
+        std::string addressColumn = "ADDRESS";
+        std::string descriptionColumn = "DESCRIPTION";
+        std::string subsystemColumn = "SUBSYSTEMKEY";
+        std::string subsystemNameColumn = "SUBSYSTEMNAME";
+        std::string physicalSubsystemColumn = "PHYSICAL_SUBSYSTEM_KEY";
+        std::string physicalSubsystemNameColumn = "PHYSICAL_SUBSYSTEM_NAME";
+        std::string locationColumn = "LOCATIONKEY";
+        std::string locationNameColumn = "LOCATIONNAME";
+		std::string regionColumn = "SEREGI_ID";
+        std::string regionNameColumn = "SEREGINAME";
+        std::string parentColumn = "PARENTKEY";
+        std::string parentNameColumn = "PARENTNAME";
+		std::string agentColumn = "AGENTKEY";
+		std::string agentNameColumn = "AGENTNAME";
+        std::string dateCreatedColumn = "DATECREATED";
+        std::string dateModifiedColumn = "DATEMODIFIED";
+		std::string keyColumn = "PKEY";
+		std::string typeNameColumn = "TYPENAME";
+        std::vector<std::string> columnNames;
+        columnNames.push_back(typeColumn);
+        columnNames.push_back(nameColumn);
+        columnNames.push_back(addressColumn);
+        columnNames.push_back(descriptionColumn);
+        columnNames.push_back(subsystemColumn);
+        columnNames.push_back(subsystemNameColumn);
+        columnNames.push_back(physicalSubsystemColumn);
+        columnNames.push_back(physicalSubsystemNameColumn);
+        columnNames.push_back(locationColumn);
+        columnNames.push_back(locationNameColumn);
+		columnNames.push_back(regionColumn);
+        columnNames.push_back(regionNameColumn);
+        columnNames.push_back(parentColumn);
+        columnNames.push_back(parentNameColumn);
+		columnNames.push_back(agentColumn);
+		columnNames.push_back(agentNameColumn);
+        columnNames.push_back(dateCreatedColumn);
+        columnNames.push_back(dateModifiedColumn);
+        columnNames.push_back(keyColumn);
+		columnNames.push_back(typeNameColumn);
+		
+        // Execute the query. The method can throw a DatabaseException.
+        // We are responsible for deleting the returned IData object when we're done with it
+        // We use this call direct, as we *want* multiple values returned
+        // get a connection to the database
+        IDatabase* databaseConnection = 
+            TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+		
+        IData* data = databaseConnection->executeQuery( sql, columnNames );
+		
+		unsigned long entityKey = 0;
+        do
+        {
+            for (unsigned long i = 0; i < data->getNumRows() ; i++ )
+            {
+				IEntityData* iEntity;
+			
+				entityKey = data->getUnsignedLongData( i, keyColumn );
+				
+				iEntity = createEntityFromType( data->getStringData( i, typeNameColumn),
+												entityKey);
+				
+				// Cast to an entity data and assign the value
+				EntityData* entity = dynamic_cast< EntityData* >( iEntity );
+				
+				// If the cast succeeds, assign the data
+				if ( NULL != entity )
+				{
+					entity->assignDefaultData( data, i );
+					entityDataMap.insert( EntityKeyToEntityMap::value_type(entityKey, entity) );
+                    entityDataMapWithoutEPV.insert( EntityKeyToEntityMap::value_type(entityKey, entity) );
+				}
+	
+                T temp(iEntity);
+                entityData.push_back( temp );
+            }
+			
+            delete data;
+            data = NULL;
+        }
+        while( databaseConnection->moreData(data) );
+
+		if(entityData.size() != 0)
+		{
+			//get the entity parameter value
+			std::string entityKeyColumn = "ENTITYKEY";
+			std::string parameterNameColumn = "PARAMETERNAME";
+			std::string parameterValueColumn = "VALUE";
+
+			columnNames.clear();
+			columnNames.push_back(entityKeyColumn);
+			columnNames.push_back(parameterNameColumn);
+			columnNames.push_back(parameterValueColumn);
+
+			data = databaseConnection->executeQuery( parameterSQL, columnNames );
+			
+			entityKey = 0;
+			entityDataMapIter = entityDataMap.begin();
+			do
+			{
+				for (unsigned long i = 0; i < data->getNumRows() ; i++ )
+				{
+					entityKey = data->getUnsignedLongData( i, entityKeyColumn );
+					
+					//in most time the data with same entity key is together. following 
+					//process just want to reduce some of the searching map time.
+					if( (entityDataMapIter->second)->getKey() == entityKey)
+					{
+						(entityDataMapIter->second)->assignDefaultParameterValueData(data, i);
+					}
+					else
+					{
+						entityDataMapIter = entityDataMap.find(entityKey);
+						if(entityDataMapIter != entityDataMap.end())
+						{
+							(entityDataMapIter->second)->assignDefaultParameterValueData(data, i);
+						}
+						else
+						{
+							entityDataMapIter = entityDataMap.begin();
+						}
+					}
+                    entityDataMapWithoutEPVIter = entityDataMapWithoutEPV.find(entityKey);
+                    if (entityDataMapWithoutEPVIter != entityDataMapWithoutEPV.end())
+                    {
+                        entityDataMapWithoutEPV.erase(entityDataMapWithoutEPVIter);
+                    }
+				}
+				
+				delete data;
+				data = NULL;
+			}
+			while( databaseConnection->moreData(data) );
+
+            // for those entities that don't have any parametervalues,
+            // need to assign default data to avoid loading from database.
+            for (entityDataMapWithoutEPVIter = entityDataMapWithoutEPV.begin();
+                    entityDataMapWithoutEPVIter != entityDataMapWithoutEPV.end();
+                    ++entityDataMapWithoutEPVIter)
+            {
+                // to assign a dummy parameter so that all parameters will be using default values instead of loading from db again.
+                (entityDataMapWithoutEPVIter->second)->assignDefaultParameterValueData("DUMMY", "DEFAULT");
+            }
+		}
+
+		FUNCTION_EXIT;
+	}
+
+
+	std::string EntityAccessFactory::getParameterDefaultValue(const std::string& name, unsigned long typeKey)
+	{
+		FUNCTION_ENTRY("getParameterDefaultValue");
+		if (m_entityParameterCache.empty())
+		{
+			createParameterCache();
+		}
+
+		std::string ret("");
+
+		std::multimap< std::string, EntityParameter >::iterator lowerIter;
+		std::multimap< std::string, EntityParameter >::iterator upperIter;
+		lowerIter = m_entityParameterCache.lower_bound(name);
+		upperIter = m_entityParameterCache.upper_bound(name);
+
+		for(; lowerIter != upperIter; ++lowerIter)
+		{
+			if(lowerIter->second.typeKey = typeKey)
+			{
+				ret = lowerIter->second.defaultValue;
+			}
+		}
+
+		FUNCTION_EXIT;
+		return ret;
+	}
+
+	void EntityAccessFactory::createParameterCache()
+	{
+		FUNCTION_ENTRY("getParameterDefaultValue");
+		
+		TA_Base_Core::ThreadGuard guard(m_parameterLock);
+
+		if(m_entityParameterCache.empty())
+		{
+			IDatabase* databaseConnection = TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+			
+			std::string sql("SELECT NAME, TYPEKEY, EP_DEFAULT FROM ENTITYPARAMETER");
+			
+			std::string parameterName("NAME");
+			std::string typeKey("TYPEKEY");
+			std::string defaultVaule("EP_DEFAULT");
+
+
+			std::vector<std::string> columnNames;
+			columnNames.push_back(parameterName);
+			columnNames.push_back(typeKey);
+			columnNames.push_back(defaultVaule);
+			
+			IData* data = databaseConnection->executeQuery( sql, columnNames );
+			EntityParameter temp;
+			do
+			{
+				for ( int i = 0; i < data->getNumRows(); ++i)
+				{
+					temp.typeKey = data->getUnsignedLongData(i, typeKey);
+					temp.defaultValue = data->getStringData(i, defaultVaule);
+					
+					m_entityParameterCache.insert( std::make_pair(data->getStringData(i, parameterName), temp) );
+				}
+				
+				delete data;
+				data = NULL;
+			}
+			while ( databaseConnection->moreData(data) );	
+			
+		}
+
+		FUNCTION_EXIT;
+	}
+
+	IEntityDataList EntityAccessFactory::getEntities(const std::vector< std::string >& entityNameSet)
+	{
+		FUNCTION_ENTRY("getEntities");
+
+		IEntityDataList entities;
+		if (!entityNameSet.empty()) 
+		{		
+			// create the SQL string to retrieve the entity parameters pkey, and typeName
+			// get a connection to the database
+			IDatabase* databaseConnection = 
+				TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+			// note: upper() is used for case insensitivity.
+						
+			std::ostringstream sql;
+			std::ostringstream parameterSQL;
+
+			sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME,";
+			sql << " e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+			sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+			sql << " TO_CHAR(e.DATE_MODIFIED,'YYYYMMDDHH24MISS'),";
+			sql << " e.pkey, et.name FROM entity_v e, entitytype et where e.name in (";
+
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity where name in (";
+			
+			
+
+			std::vector< std::string >::const_iterator it = entityNameSet.begin();
+			
+			sql << " '" << *it << "' ";
+			parameterSQL << " '" << *it << "' ";
+			++it;
+
+			for(; it!=entityNameSet.end(); ++it)
+			{
+				sql << ", " << " '" << *it << "' ";
+				parameterSQL << ", " << " '" << *it << "' ";
+			}
+
+			sql << ") and et.pkey = e.typekey and e.deleted = 0";
+			parameterSQL << ") and deleted = 0)";
+			
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		FUNCTION_EXIT;
+		return entities;
+	}
+
+
+    SharedIEntityDataList EntityAccessFactory::getEntitiesByName(const std::vector<std::string>& entityNameList)
+    {
+        FUNCTION_ENTRY( "getEntitiesByName" );
+
+        IDatabase* databaseConnection = 
+        TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+
+        SharedIEntityDataList entities;
+
+        if (entityNameList.empty())
+        {
+            FUNCTION_EXIT;
+            return entities;
+        }
+
+        // now SQL in () can only handle 256 entries
+        // so lets be smart, and make multiple in () clauses if we need to
+        // YUCK!
+        
+        std::stringstream nameClauseString;
+        std::vector<std::string>::const_iterator iter = entityNameList.begin();
+        int i = 0;
+
+        nameClauseString << " ( upper(e.name) in ( ";
+
+        while( iter != entityNameList.end() )
+        {
+            // add the entity name
+            nameClauseString << "upper('" << databaseConnection->escapeQueryString(*iter) << "')";
+        
+            ++iter;
+            ++i;
+
+            // if 256 items are now inside the in ()
+            if (i >= 256)
+            {
+                // close it off and start a new one
+                nameClauseString << " ) OR upper(e.name) in ( ";
+                i = 0;
+            }
+            else if ( iter != entityNameList.end() )
+            {
+                // put a comma for the next
+                nameClauseString << ", ";
+            }
+        }
+
+        nameClauseString << " ) ) ";
+
+        std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME,";
+		sql << " e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS'),";
+		sql << " TO_CHAR(e.DATE_MODIFIED,'YYYYMMDDHH24MISS'),";
+		sql << " e.pkey, et.name FROM entity_v e, entitytype et where ";
+		sql <<  nameClauseString.str() << " and et.pkey = e.typekey and e.deleted = 0";
+		
+        // note the "entity_v e" so the same name sql can be used for both queries
+		std::ostringstream parameterSQL;
+		parameterSQL << "SELECT entitykey, parametername, value "
+					 << "from entityparametervalue_v "
+					 << "where entitykey in (select pkey FROM entity_v e where "
+					 << nameClauseString.str() << " and deleted = 0 )";
+
+        // NOTE, it is assumed that entities is not cleared in this function
+		getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+
+        FUNCTION_EXIT;
+        return entities;
+    }
+
+	//liqiang++
+	IEntityDataList EntityAccessFactory::getEntityWithNameInToken(const std::string& name, const bool readWrite /* = false */)
+	{
+        FUNCTION_ENTRY( "getEntityWithNameInToken" );
+		
+        // create the SQL string to retrieve the entity parameters pkey, and typeName
+		// get a connection to the database
+		IDatabase* databaseConnection = 
+			TA_Base_Core::DatabaseFactory::getInstance().getDatabase(OnlineUpdatable_Cd, Read);
+        // note: upper() is used for case insensitivity.
+		
+		std::ostringstream sql;
+		sql << "SELECT e.TYPEKEY, e.NAME, e.ADDRESS, e.DESCRIPTION, e.SUBSYSTEMKEY, e.SUBSYSTEMNAME,";
+		sql << " e.PHYSICAL_SUBSYSTEM_KEY, e.PHYSICAL_SUBSYSTEM_NAME, e.LOCATIONKEY, e.LOCATIONNAME, e.SEREGI_ID, e.SEREGINAME, ";
+        sql << " e.PARENTKEY, e.PARENTNAME, e.AGENTKEY, e.AGENTNAME, TO_CHAR(e.DATE_CREATED, 'YYYYMMDDHH24MISS') as DATE_CREATED,";
+		sql << " TO_CHAR(e.DATE_MODIFIED,'YYYYMMDDHH24MISS') as DATE_MODIFIED,";
+		sql << " e.pkey, et.name FROM entity_v e, entitytype et where upper(e.name) in (";
+		sql <<  name << ") and et.pkey = e.typekey and e.deleted = 0";
+		
+		try
+		{
+			TA_Base_Core::DebugUtil::getInstance().logLargeString(SourceInfo, DebugUtil::DebugDebug, sql.str());
+		}
+		catch (...)
+		{
+			LOG_EXCEPTION_CATCH(SourceInfo, "WRITELOG", "Error while write logLargeString() of EntityAccessFactory::getEntityWithNameInToken() ");
+		}
+		
+		
+		IEntityDataList entities;
+		
+		if(readWrite == false)
+		{
+			std::ostringstream parameterSQL;
+			parameterSQL << "SELECT entitykey, parametername, value "
+				<< "from entityparametervalue_v "
+				<< "where entitykey in (select pkey FROM entity_v where upper(name) in ("
+				<< name << ") and deleted = 0 )";
+			try
+			{
+				LOG_GENERIC(SourceInfo, DebugUtil::DebugDebug, "Follow string is the parameterSQL readWrite = false","");
+				TA_Base_Core::DebugUtil::getInstance().logLargeString(SourceInfo, DebugUtil::DebugDebug, parameterSQL.str());
+			}
+			catch (...)
+			{
+				LOG_EXCEPTION_CATCH(SourceInfo, "WRITELOG", "Error while write logLargeString() of EntityAccessFactory::getEntityWithNameInToken() ");
+			}
+			getEntityDataWithParameterValues(sql.str(), parameterSQL.str(), entities);
+		}
+		else
+		{
+			LOG_GENERIC(SourceInfo, DebugUtil::DebugDebug, " readWrite = true","");
+			getEntityData( sql.str(), entities, readWrite );
+		}
+		
+		// Check to see if there were any values returned
+		if ( entities.size() == 0 )
+		{
+            std::string message = "No data found for " + name;
+            TA_THROW( DataException( message.c_str(), DataException::NO_VALUE, sql.str() ) );
+		}
+		
+        // entity names are unique, therefore if we get to this point
+        // there should be one and only one element in the vector
+        //TA_ASSERT(1 == entities.size(), "Entity name unique constraint violated");
+		
+		FUNCTION_EXIT;
+		return entities;
+	}
+	//++liqiang
+
+} // closes TA_Base_Core
+
+
+

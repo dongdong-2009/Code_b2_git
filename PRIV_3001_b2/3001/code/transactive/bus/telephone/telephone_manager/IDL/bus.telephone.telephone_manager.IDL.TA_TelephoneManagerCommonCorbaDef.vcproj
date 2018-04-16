@@ -1,0 +1,66 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.telephone.telephone_manager.IDL" ProjectGUID="{333056C0-EF36-4435-8391-570EA7E6C9E3}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/bus/telephone/telephone_manager/IDL" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../../build/win32_n/transactive/bus/telephone/telephone_manager/IDL/src,../../../../../../sdk/include/transactive,../../../../../../sdk\omniORB\omniORB_4.1.6\include" PreprocessorDefinitions="WIN32;_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_LIB;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/bus/telephone/telephone_manager/IDL/bus.telephone.telephone_manager.IDL.TA_TelephoneManagerCommonCorbaDef.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/bus/telephone/telephone_manager/IDL/" ObjectFile=".\../../../../../../build/win32_nd/transactive/bus/telephone/telephone_manager/IDL/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/bus/telephone/telephone_manager/IDL/" BrowseInformation="1" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_TelephoneManagerCommonCorbaDef_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/bus.telephone.telephone_manager.IDL.TA_TelephoneManagerCommonCorbaDef.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/bus/telephone/telephone_manager/IDL" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../../build/win32_n/transactive/bus/telephone/telephone_manager/IDL/src,../../../../../../sdk/include/transactive,../../../../../../sdk\omniORB\omniORB_4.1.6\include" PreprocessorDefinitions="WIN32;NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_LIB;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/bus/telephone/telephone_manager/IDL/bus.telephone.telephone_manager.IDL.TA_TelephoneManagerCommonCorbaDef.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/bus/telephone/telephone_manager/IDL/" ObjectFile=".\../../../../../../build/win32_nr/transactive/bus/telephone/telephone_manager/IDL/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/bus/telephone/telephone_manager/IDL/" BrowseInformation="1" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_TelephoneManagerCommonCorbaDef.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/bus.telephone.telephone_manager.IDL.TA_TelephoneManagerCommonCorbaDef.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="..\..\..\..\..\..\build\win32_n\transactive\bus\telephone\telephone_manager\IDL\src\ITelephoneManagerCommonCorbaDef.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="..\..\..\..\..\..\build\win32_n\transactive\bus\telephone\telephone_manager\IDL\src\ITelephoneManagerCommonCorbaDef.h">
+			</File>
+			<File RelativePath="..\..\..\..\..\..\build\win32_n\transactive\bus\telephone\telephone_manager\IDL\src\ITelephoneManagerCommonCorbaDef_skel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

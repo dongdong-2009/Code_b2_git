@@ -1,0 +1,85 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_TIP/4677/transactive/bus/radio/radio_agent/IDL/src/RadioMFTAgentCallbackIDL.idl $
+// @author:  zou chunzhong
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2009/12/15 19:31:45 $
+// Last modified by:  $	$
+//
+// Radio Agents IDL interface.
+//
+
+#ifndef INTERFACE_RADIO_MFT_AGENT_CALLBACK_IDL
+#define INTERFACE_RADIO_MFT_AGENT_CALLBACK_IDL
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+#include "bus/radio/radio_agent/IDL/src/CommonRadioAgentIDL.idl"
+
+module TA_IRS_Bus
+{
+	interface RadioMFTAgentCallbackIDL
+	{
+		struct IncomingCallEvent
+		{
+			Radio::RadioResource caller;
+
+			Radio::EPrivateCallState status;
+
+			boolean isEmergencyMode;
+			
+			TA_Base_Core::DateTime timeOfCall;
+		};
+
+		struct CallTermination
+		{
+			Radio::RadioResource caller;
+		};
+
+		struct CallSetupFailed
+		{
+			boolean bFailed;
+		};
+	
+		oneway void applicationStateMessage(in Radio::EApplicationState state, in short percent);
+
+		oneway void applicationErrorMessage(in string message);
+
+		oneway void operationCancelMessage(in Radio::EApiState state, in Radio::RadioResource resource);
+
+		oneway void groupStateMessage( in Radio::RadioResource resource, in Radio::EGroupConnectionState state);
+
+		oneway void resourceAssignmentMessage( in Radio::RadioResource resource, in short buttonSet, in short buttonRef, in Radio::EAssignmentState status);
+
+		oneway void resourceSelectMessage( in Radio::RadioResource resource, in Radio::ESpeakerState status);
+
+		oneway void resourceVolumeMessage( in Radio::RadioResource resource, in Radio::ESpeakerState speaker, in short volume);
+
+		oneway void inboundCallMessage( in Radio::RadioResource caller, in Radio::EInboundCallState status);
+
+		oneway void privateCallMessage( in Radio::RadioResource caller, in Radio::EPrivateCallState status);
+
+		oneway void privateCallMessageRejected( in Radio::RadioResource caller);
+
+		oneway void resourceActivityMessage( in Radio::RadioResource resource, in Radio::EResourceActivityType status);
+
+		oneway void resourcePTTMessage( in Radio::RadioResource listener, in string srcAlias,in Radio::EPTTState status);
+
+		oneway void resourceEmergencyModeMessage( in Radio::RadioResource resource, in Radio::EmergencyModeState status, in Radio::RadioResource changedBy);
+
+		oneway void resourceAmbListeningMessage( in Radio::RadioResource resource, in Radio::EAmbienceListeningState status);
+
+		oneway void resourceChangeMessage( in Radio::RadioResource oldResource, in Radio::RadioResource newResource);
+
+		long sendErrorMessage(in long messageID); 
+	};
+
+};//End of TA_IRS_Bus;
+#endif
+

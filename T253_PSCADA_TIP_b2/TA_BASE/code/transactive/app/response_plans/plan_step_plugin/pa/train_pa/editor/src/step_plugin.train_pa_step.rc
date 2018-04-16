@@ -1,0 +1,132 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_PA_TRAIN_DLG DIALOGEX 0, 0, 353, 207
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_TRAINPA_PA_TRAIN_GROUPES_COMBO,21,30,144,159,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TRAINPA_PA_TRAINS_COMBO,188,30,144,159,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_TRAINPA_PA_TRAIN_MESSAGE_TXT,91,73,216,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER
+    PUSHBUTTON      "...",IDC_TRAINPA_PA_TRAIN_MSG_DLG_BTN,312,73,23,14
+    CONTROL         "DateTimePicker1",IDC_TRAINPA_DURATION_DTPICKER,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,91,116,84,16
+    CONTROL         "Cyclic Mode",IDC_TRAINPA_CYCLIC_CHECK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,268,120,67,12
+    LTEXT           "Duration :",IDC_STATIC,21,118,54,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        " Message options : ",IDC_STATIC,14,102,327,41
+    LTEXT           "Message:",IDC_STATIC,21,73,57,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        " Broadcast target : ",IDC_STATIC,14,11,326,45
+    GROUPBOX        "",IDC_STATIC,14,64,326,27
+    LTEXT           "hh:mm",IDC_STATIC,180,119,38,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+END
+
+IDD_TRAINPA_PA_STATION_MESSAGE_DLG DIALOGEX 0, 0, 425, 325
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Select message"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_TRAINPA_LIB_SECTION_TXT,104,34,92,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_TRAINPA_LIB_VERSION_TXT,321,34,92,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_TRAINPA_PARAMETER_NAME_TXT,104,10,92,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Parameter name :",IDC_STATIC,12,10,85,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    DEFPUSHBUTTON   "OK",IDOK,128,299,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,253,299,50,14
+    LTEXT           "Library section :",IDC_STATIC,12,34,85,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Library version :",IDC_STATIC,235,34,68,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Message list :",IDC_STATIC,12,58,85,14,SS_CENTERIMAGE
+    CONTROL         "List1",IDC_TRAINPA_MESSAGES_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,13,78,398,214
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TRAINPA_STEP_PARAMETER_PA_CYCLIC "Cyclic"
+    IDS_TRAINPA_STEP_PARAMETER_PA_MESSAGE "Message"
+    IDS_TRAINPA_STEP_PARAMETER_TRAIN "Train"
+    IDS_TRAINPA_STEP_PARAMETER_PA_DURATION "Duration"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

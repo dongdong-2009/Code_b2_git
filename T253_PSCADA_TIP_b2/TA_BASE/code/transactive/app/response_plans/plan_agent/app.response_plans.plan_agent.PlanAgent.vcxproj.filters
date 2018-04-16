@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Messages">
+      <UniqueIdentifier>{bb50a108-63bc-4f8d-81b7-a64ca886e0fc}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="ActivePlans">
+      <UniqueIdentifier>{58dc54ac-dbc7-4f6b-97c0-4988a55e6dac}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="DBGenericAgentCORBA">
+      <UniqueIdentifier>{a63f8881-7f12-499d-9a01-07d32797d33d}</UniqueIdentifier>
+      <Extensions>cpp;h</Extensions>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{d758f3cf-10ce-4bcb-ac90-3066364a4f9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DSS">
+      <UniqueIdentifier>{622d2a7b-882a-4908-9e36-abd2384ce075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps">
+      <UniqueIdentifier>{f3b76935-d32d-4227-a709-bde5ad872239}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\End">
+      <UniqueIdentifier>{eab51bb0-2b61-49b9-bb5c-576706300142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\Abort">
+      <UniqueIdentifier>{7de9357e-f2a3-4908-a341-3f5d5fddb160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\TerminatePlan">
+      <UniqueIdentifier>{0319a7c4-d2c6-43f0-83c6-a73275f9180c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\ExclusiveGateway">
+      <UniqueIdentifier>{0d947966-3451-4c60-9931-d08fecdf12df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\InclusiveGateway">
+      <UniqueIdentifier>{3eccdd08-6faa-49a5-9789-2f35851bc205}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\ParallelGateway">
+      <UniqueIdentifier>{2e65383c-7f1c-4143-8b9e-5e458e185dfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\RunPlan">
+      <UniqueIdentifier>{df374072-367c-4161-babe-0d5695e7c6c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PlanSteps\Start">
+      <UniqueIdentifier>{f801e083-a209-47c3-a22d-98609e2167a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActivePlanCompleteMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanCustomiseStepMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanDetailUpdateMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanExecuteStepMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanMessageBlock.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanMessageQueue.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanPauseMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanReassignMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanResumeMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanSharedDataMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanStepFailedMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanStepPausedMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanStepResponseMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanStopMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanUnassignMessage.cpp">
+      <Filter>Messages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlan.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanBulletinBoard.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDetail.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanExecutionEngine.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanExecutor.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanHouseKeepingMethodObject.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunPlanMethodObject.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SortablePlanId.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StepExecutionEngine.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StepExecutionTask.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadReleaseTask.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AAMessageSender.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAccessFactory.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgent.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentCorbaDefImpl.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentUser.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDataWriter.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanMessageException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveStepParamException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanNotFoundException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\PlanStepDetailException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThirdPartyLibException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatapointTriggerObserver.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssAbstractRule.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssDatapointRule.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssEngine.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssKnowledgeBase.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssManager.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssRuleProcessor.cpp">
+      <Filter>DSS</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BoolContextImpl.cpp">
+      <Filter>PlanSteps</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberContextImpl.cpp">
+      <Filter>PlanSteps</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StepImplementationFactory.cpp">
+      <Filter>PlanSteps</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringContextImpl.cpp">
+      <Filter>PlanSteps</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveEndStep.cpp">
+      <Filter>PlanSteps\End</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndStepComponent.cpp">
+      <Filter>PlanSteps\End</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbortStepComponent.cpp">
+      <Filter>PlanSteps\Abort</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveAbortStep.cpp">
+      <Filter>PlanSteps\Abort</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveTerminatePlanStep.cpp">
+      <Filter>PlanSteps\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TerminateStepComponent.cpp">
+      <Filter>PlanSteps\TerminatePlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveExclusiveGateway.cpp">
+      <Filter>PlanSteps\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExclusiveGatewayStepComponent.cpp">
+      <Filter>PlanSteps\ExclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveInclusiveGateway.cpp">
+      <Filter>PlanSteps\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InclusiveGatewayStepComponent.cpp">
+      <Filter>PlanSteps\InclusiveGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveParallelGateway.cpp">
+      <Filter>PlanSteps\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParallelGatewayStepComponent.cpp">
+      <Filter>PlanSteps\ParallelGateway</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActivePlanRunPlanStepMessage.cpp">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveRunPlanStep.cpp">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunPlanStepComponent.cpp">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActiveStartStep.cpp">
+      <Filter>PlanSteps\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StartStepComponent.cpp">
+      <Filter>PlanSteps\Start</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanInfoCache.cpp">
+      <Filter>ActivePlans</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActivePlanCompleteMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanCustomiseStepMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanDetailUpdateMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanExecuteStepMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanMessageBlock.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanMessageQueue.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanPauseMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanReassignMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanResumeMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanSharedDataMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanStepFailedMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanStepPausedMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanStepResponseMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanStopMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanUnassignMessage.h">
+      <Filter>Messages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlan.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanBulletinBoard.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDetail.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanExecutionEngine.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanExecutor.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanHouseKeepingMethodObject.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunPlanMethodObject.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SortablePlanId.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StepExecutionEngine.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StepExecutionTask.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadReleaseTask.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AAMessageSender.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveStepsHeader.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseConstants.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GlobalConstant.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAccessFactory.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgent.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentCorbaDefImpl.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentUser.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDataWriter.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\src\ProjectDefinition.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\src\StringConstants.h">
+      <Filter>DBGenericAgentCORBA</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanMessageException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveStepParamException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanNotFoundException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\PlanStepDetailException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThirdPartyLibException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatapointTriggerObserver.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssAbstractRule.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssDatapointRule.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssEngine.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssKnowledgeBase.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssManager.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssRuleProcessor.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDssEngine.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDssRule.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITriggerObserver.h">
+      <Filter>DSS</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoolContextImpl.h">
+      <Filter>PlanSteps</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberContextImpl.h">
+      <Filter>PlanSteps</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StepImplementationFactory.h">
+      <Filter>PlanSteps</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StringContextImpl.h">
+      <Filter>PlanSteps</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveEndStep.h">
+      <Filter>PlanSteps\End</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EndStepComponent.h">
+      <Filter>PlanSteps\End</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbortStepComponent.h">
+      <Filter>PlanSteps\Abort</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveAbortStep.h">
+      <Filter>PlanSteps\Abort</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveTerminatePlanStep.h">
+      <Filter>PlanSteps\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TerminateStepComponent.h">
+      <Filter>PlanSteps\TerminatePlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveExclusiveGateway.h">
+      <Filter>PlanSteps\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExclusiveGatewayStepComponent.h">
+      <Filter>PlanSteps\ExclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveInclusiveGateway.h">
+      <Filter>PlanSteps\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InclusiveGatewayStepComponent.h">
+      <Filter>PlanSteps\InclusiveGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveParallelGateway.h">
+      <Filter>PlanSteps\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParallelGatewayStepComponent.h">
+      <Filter>PlanSteps\ParallelGateway</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActivePlanRunPlanStepMessage.h">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveRunPlanStep.h">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunPlanStepComponent.h">
+      <Filter>PlanSteps\RunPlan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActiveStartStep.h">
+      <Filter>PlanSteps\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StartStepComponent.h">
+      <Filter>PlanSteps\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanInfoCache.h">
+      <Filter>ActivePlans</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

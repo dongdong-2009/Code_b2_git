@@ -1,0 +1,182 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="TCPSimulator" ProjectGUID="{3D4A995D-0475-4E7E-9060-A5A789BFF0C6}" RootNamespace="TCPSimulator" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" UseOfMFC="1" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" ValidateParameters="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="ConfigReaderLib;RadioGatewayConfigHandler" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="1" TreatWChar_tAsBuiltInType="false" UsePrecompiledHeader="2" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="ConfigReader.lib" LinkIncremental="2" AdditionalLibraryDirectories="lib" GenerateDebugInformation="true" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory="$(SolutionDir)$(ConfigurationName)" IntermediateDirectory="$(ConfigurationName)" ConfigurationType="1" UseOfMFC="1" CharacterSet="1">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false" ValidateParameters="false"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="ConfigReaderLib;RadioGatewayConfigHandler" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG" RuntimeLibrary="2" TreatWChar_tAsBuiltInType="false" UsePrecompiledHeader="2" WarningLevel="3" Detect64BitPortabilityProblems="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="ConfigReader.lib" LinkIncremental="1" AdditionalLibraryDirectories="lib" GenerateDebugInformation="true" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\ATSC95MessageHandler.cpp">
+			</File>
+			<File RelativePath=".\ATSMessagehandler.cpp">
+			</File>
+			<File RelativePath=".\CRCCalculator.cpp">
+			</File>
+			<File RelativePath=".\DlgWholeText.cpp">
+			</File>
+			<File RelativePath=".\HexStringHelper.cpp">
+			</File>
+			<File RelativePath=".\Messagehandler.cpp">
+			</File>
+			<File RelativePath=".\PointDataTable.cpp">
+			</File>
+			<File RelativePath=".\RadioMessageHandler.cpp">
+			</File>
+			<File RelativePath=".\SimulatorConfig.cpp">
+			</File>
+			<File RelativePath=".\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\TCPClient.cpp">
+			</File>
+			<File RelativePath=".\TCPServer.cpp">
+			</File>
+			<File RelativePath=".\TCPSimulator.cpp">
+			</File>
+			<File RelativePath=".\TCPSimulatorDlg.cpp">
+			</File>
+			<File RelativePath=".\TestMessageHandler.cpp">
+			</File>
+			<File RelativePath=".\TVSSMessageHandler.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\ATSC95Messagehandler.h">
+			</File>
+			<File RelativePath=".\ATSMessagehandler.h">
+			</File>
+			<File RelativePath=".\CRCCalculator.h">
+			</File>
+			<File RelativePath=".\DlgWholeText.h">
+			</File>
+			<File RelativePath=".\HexStringHelper.h">
+			</File>
+			<File RelativePath=".\MessageHandler.h">
+			</File>
+			<File RelativePath=".\PointDataTable.h">
+			</File>
+			<File RelativePath=".\RadioMessageHandler.h">
+			</File>
+			<File RelativePath=".\Resource.h">
+			</File>
+			<File RelativePath=".\SimulatorConfig.h">
+			</File>
+			<File RelativePath=".\stdafx.h">
+			</File>
+			<File RelativePath=".\TCPClient.h">
+			</File>
+			<File RelativePath=".\TCPServer.h">
+			</File>
+			<File RelativePath=".\TCPSimulator.h">
+			</File>
+			<File RelativePath=".\TCPSimulatorDlg.h">
+			</File>
+			<File RelativePath=".\TestMessageHandler.h">
+			</File>
+			<File RelativePath=".\TVSSMessageHandler.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\res\TCPSimulator.ico">
+			</File>
+			<File RelativePath=".\TCPSimulator.rc">
+			</File>
+			<File RelativePath=".\res\TCPSimulator.rc2">
+			</File>
+		</Filter>
+		<Filter Name="RadioGatewayConfHandler">
+			<File RelativePath=".\RadioGatewayConfigHandler\IRadioGatewayDataProvider.h">
+			</File>
+			<File RelativePath=".\RadioGatewayConfigHandler\RadioCommonTypes.cpp">
+			</File>
+			<File RelativePath=".\RadioGatewayConfigHandler\RadioCommonTypes.h">
+			</File>
+			<File RelativePath=".\RadioGatewayConfigHandler\RadioGatewayConfigHandler.cpp">
+			</File>
+			<File RelativePath=".\RadioGatewayConfigHandler\RadioGatewayConfigHandler.h">
+			</File>
+			<Filter Name="RadioOpetationStrategy">
+				<File RelativePath=".\RadioGatewayConfigHandler\IRadioOperationStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioDGNAStatusStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioDGNAStatusStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioMonitorProfileRequestStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioMonitorProfileRequestStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioProfileDBUpdateStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioProfileDBUpdateStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioQueryCallForwardingStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioQueryCallForwardingStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioStratFactory.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioStratFactory.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioSubscriberOperationStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioSubscriberOperationStrategy.h">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioSystemStatusStrategy.cpp">
+				</File>
+				<File RelativePath=".\RadioGatewayConfigHandler\RadioSystemStatusStrategy.h">
+				</File>
+			</Filter>
+		</Filter>
+		<File RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="TCPSimulator.rc"/>
+	</Globals>
+</VisualStudioProject>

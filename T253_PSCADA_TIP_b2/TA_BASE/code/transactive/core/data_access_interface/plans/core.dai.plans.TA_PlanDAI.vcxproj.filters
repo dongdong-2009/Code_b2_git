@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{6a30db76-1f1f-43f1-9df6-d36dac1c1086}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="AlarmPlanAssociation">
+      <UniqueIdentifier>{13cde5e7-3660-43b8-a00f-a09f02c82750}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EventPlanAssociation">
+      <UniqueIdentifier>{e4dc9c90-4efb-4612-b0ee-e986bb419d12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DssDpRule">
+      <UniqueIdentifier>{85013f8c-3b44-4f84-812a-a8026a4446c4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\IPlan.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDAI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmPlanAssocAccessFactory.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmPlanAssocData.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmPlanAssocHelper.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigAlarmPlanAssoc.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmPlanAssocData.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigAlarmPlanAssoc.h">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigEventPlanAssocData.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventPlanAssocAccessFactory.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventPlanAssocData.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventPlanAssocHelper.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigEventPlanAssocData.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventPlanAssocData.h">
+      <Filter>EventPlanAssociation</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigPlanDssDpRule.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPlanDssDpRule.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPlanDssDpRule.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDssDpRule.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDssDpRuleAccessFactory.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanDssDpRuleHelper.h">
+      <Filter>DssDpRule</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PlanAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDAI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmPlanAssocAccessFactory.cpp">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmPlanAssocData.cpp">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmPlanAssocHelper.cpp">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigAlarmPlanAssoc.cpp">
+      <Filter>AlarmPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigEventPlanAssocData.cpp">
+      <Filter>EventPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventPlanAssocAccessFactory.cpp">
+      <Filter>EventPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventPlanAssocData.cpp">
+      <Filter>EventPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventPlanAssocHelper.cpp">
+      <Filter>EventPlanAssociation</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigPlanDssDpRule.cpp">
+      <Filter>DssDpRule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDssDpRule.cpp">
+      <Filter>DssDpRule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDssDpRuleAccessFactory.cpp">
+      <Filter>DssDpRule</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanDssDpRuleHelper.cpp">
+      <Filter>DssDpRule</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

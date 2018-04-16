@@ -1,0 +1,164 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.RadioTetraAgent.RadioPDSProtocol" ProjectGUID="{E6FF150D-CCCD-431F-8F11-B2F720DBCAAE}" RootNamespace="RadioPDSProtocol" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/radio/RadioServerAgent/RadioPDSProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\..;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../sdk/include/transactive;../../../../../../build/win32_n/transactive;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" WarningLevel="1" Detect64BitPortabilityProblems="false" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nd/TA_RadioPDSProtocol_d.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/radio/RadioServerAgent/RadioPDSProtocol" ConfigurationType="4" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\..;../../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../../sdk/include/transactive;../../../../../../build/win32_n/transactive;../../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;_USE_32BIT_TIME_T" RuntimeLibrary="2" WarningLevel="1" Detect64BitPortabilityProblems="false" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../../build/win32_nr/TA_RadioPDSProtocol.lib"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\src\FrameCheckSequence.cpp">
+			</File>
+			<File RelativePath=".\src\PDSDatagramClient.cpp">
+			</File>
+			<File RelativePath=".\src\PDSDatagramServer.cpp">
+			</File>
+			<File RelativePath=".\src\PDSMessageCreator.cpp">
+			</File>
+			<File RelativePath=".\src\ProtocolTtisTypes.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSHandler.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSManager.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSSender.cpp">
+			</File>
+			<File RelativePath=".\src\TtdFrame.cpp">
+			</File>
+			<File RelativePath=".\src\TtisTypes.cpp">
+			</File>
+			<File RelativePath=".\src\UdpSocket.cpp">
+			</File>
+			<File RelativePath=".\src\UDPSocketManager.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\src\CommonDataTypes.h">
+			</File>
+			<File RelativePath=".\src\CommonTypes.h">
+			</File>
+			<File RelativePath=".\src\FrameCheckSequence.h">
+			</File>
+			<File RelativePath=".\src\IClientConnectionObserver.h">
+			</File>
+			<File RelativePath=".\src\IDataCall.h">
+			</File>
+			<File RelativePath=".\src\IEventRecordRemover.h">
+			</File>
+			<File RelativePath=".\src\ILibDownloadStatus.h">
+			</File>
+			<File RelativePath=".\src\IPDSClientConnectionObserver.h">
+			</File>
+			<File RelativePath=".\src\IPDSDatagramServer.h">
+			</File>
+			<File RelativePath=".\src\IPDSTTFObserver.h">
+			</File>
+			<File RelativePath=".\src\IRadioPDSReceiver.h">
+			</File>
+			<File RelativePath=".\src\IRadioPDSSender.h">
+			</File>
+			<File RelativePath=".\src\ISocket.h">
+			</File>
+			<File RelativePath=".\src\ISocketObserver.h">
+			</File>
+			<File RelativePath=".\src\PDSDatagramClient.h">
+			</File>
+			<File RelativePath=".\src\PDSDatagramServer.h">
+			</File>
+			<File RelativePath=".\src\PDSMessageCreator.h">
+			</File>
+			<File RelativePath=".\src\ProtocolTtisTypes.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSHandler.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSManager.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSSender.h">
+			</File>
+			<File RelativePath=".\src\TtdFrame.h">
+			</File>
+			<File RelativePath=".\src\TtisTypes.h">
+			</File>
+			<File RelativePath=".\src\UdpSocket.h">
+			</File>
+			<File RelativePath=".\src\UDPSocketManager.h">
+			</File>
+			<File RelativePath=".\src\Utility.h">
+			</File>
+		</Filter>
+		<Filter Name="PDSProtocol" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\src\IPDSEvent.cpp">
+			</File>
+			<File RelativePath=".\src\IPDSEvent.h">
+			</File>
+			<File RelativePath=".\src\IPDSMethod.h">
+			</File>
+			<File RelativePath=".\src\RadioPDEventReader.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSEvent.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSEvent.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSEventBegin.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSEventBegin.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSEventFrameRepeat.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSEventFrameRepeat.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSEventReader.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethod.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethod.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethodCancel.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethodCancel.h">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethodSendData.cpp">
+			</File>
+			<File RelativePath=".\src\RadioPDSMethodSendData.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

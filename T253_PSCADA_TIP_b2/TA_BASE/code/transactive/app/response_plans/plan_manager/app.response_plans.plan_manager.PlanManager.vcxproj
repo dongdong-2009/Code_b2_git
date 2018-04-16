@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.response_plans.plan_manager</ProjectName>
+    <ProjectGuid>{555C36AF-A038-4308-A2C0-D87A7EF8974E}</ProjectGuid>
+    <RootNamespace>app.response_plans.plan_manager</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.26919.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>PlanManager</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.response_plans.plan_manager.PlanManager.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nd/transactive/app/response_plans/plan_manager/app.response_plans.plan_manager.PlanManager.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nd/transactive/app/response_plans/plan_manager/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nd/transactive/app/response_plans/plan_manager/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nd/transactive/app/response_plans/plan_manager/</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+      <AdditionalIncludeDirectories>..\..\..\bus\response_plans\plan_tree\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_WorkflowDrawing_d.lib;TA_WorkflowElement_d.lib;rpcrt4.lib;TA_Base_Core_d.lib;TA_Base_Bus_d.lib;TA_WorkflowEditor_d.lib;TA_PlanStepCommon_d.lib;TA_PlanEditorStep_d.lib;TA_PlanStepDlgs_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\../../../../../bin/win32_nd/PlanManager.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nd/app.response_plans.plan_manager.PlanManager.bsc</OutputFile>
+    </Bscmake>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.response_plans.plan_manager.PlanManager.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/tis_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/process_management/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/data_access_interface/PlanAgent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/message/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/exceptions/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/response_plans/plan_manager/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/cctv/video_switch_agent/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/core/alarm/IDL/src;$(TA_BuildPath)\$(TA_Platform)\transactive/bus/scada/common_library/IDL/src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WINDOWS;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeaderOutputFile>.\../../../../../build/win32_nr/transactive/app/response_plans/plan_manager/app.response_plans.plan_manager.PlanManager.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>.\../../../../../build/win32_nr/transactive/app/response_plans/plan_manager/</AssemblerListingLocation>
+      <ObjectFileName>.\../../../../../build/win32_nr/transactive/app/response_plans/plan_manager/</ObjectFileName>
+      <ProgramDataBaseFileName>.\../../../../../build/win32_nr/transactive/app/response_plans/plan_manager/</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+      <AdditionalIncludeDirectories>..\..\..\bus\response_plans\plan_tree\res;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>TA_WorkflowDrawing.lib;TA_WorkflowElement.lib;rpcrt4.lib;TA_Base_Core.lib;TA_Base_Bus.lib;TA_WorkflowEditor.lib;TA_PlanStepCommon.lib;TA_PlanEditorStep.lib;TA_PlanStepDlgs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\../../../../../bin/win32_nr/app.response_plans.plan_manager.PlanManager.bsc</OutputFile>
+    </Bscmake>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\core\exceptions\src\PlanStepDetailException.cpp" />
+    <ClCompile Include="..\..\..\core\exceptions\src\PlanStepException.cpp" />
+    <ClCompile Include="..\plan_agent\src\PlanNotFoundException.cpp" />
+    <ClCompile Include="src\AbortStep.cpp" />
+    <ClCompile Include="src\AbstractToolBarManager.cpp" />
+    <ClCompile Include="src\ActivePlanDoc.cpp" />
+    <ClCompile Include="src\ActivePlanFrame.cpp" />
+    <ClCompile Include="src\ActivePlanListView.cpp" />
+    <ClCompile Include="src\AllPlanDoc.cpp" />
+    <ClCompile Include="src\AllPlanTreeFrame.cpp" />
+    <ClCompile Include="src\AllPlanTreeView.cpp" />
+    <ClCompile Include="src\ApprovedPlanDoc.cpp" />
+    <ClCompile Include="src\ApprovedPlanTreeFrame.cpp" />
+    <ClCompile Include="src\ApprovedPlanTreeView.cpp" />
+    <ClCompile Include="src\BlankView.cpp" />
+    <ClCompile Include="src\CategoryListCtrl.cpp" />
+    <ClCompile Include="src\CategoryNode.cpp" />
+    <ClCompile Include="src\CategoryNodeView.cpp" />
+    <ClCompile Include="src\ChangeImportPlanName.cpp" />
+    <ClCompile Include="src\ControlPlanThread.cpp" />
+    <ClCompile Include="src\EndStep.cpp" />
+    <ClCompile Include="src\EventAbort.cpp" />
+    <ClCompile Include="src\EventEnd.cpp" />
+    <ClCompile Include="src\EventStart.cpp" />
+    <ClCompile Include="src\ExclusiveGatewayEditorParameter.cpp" />
+    <ClCompile Include="src\ExclusiveGatewayStep.cpp" />
+    <ClCompile Include="src\ExtStatusControlBar.cpp" />
+    <ClCompile Include="src\FloatingDocTemplate.cpp" />
+    <ClCompile Include="src\FloatingWindowThread.cpp" />
+    <ClCompile Include="src\FloatingWindowThreadRegister.cpp" />
+    <ClCompile Include="src\GatewayExclusive.cpp" />
+    <ClCompile Include="src\GatewayInclusive.cpp" />
+    <ClCompile Include="src\GatewayParallel.cpp" />
+    <ClCompile Include="src\InclusiveGatewayEditorParameter.cpp" />
+    <ClCompile Include="src\InclusiveGatewayStep.cpp" />
+    <ClCompile Include="src\LabelMaker.cpp" />
+    <ClCompile Include="src\MainFrame.cpp" />
+    <ClCompile Include="src\MainToolBarManager.cpp" />
+    <ClCompile Include="src\MessageBox.cpp" />
+    <ClCompile Include="src\MftAbortStepComponent.cpp" />
+    <ClCompile Include="src\MftEndStepComponent.cpp" />
+    <ClCompile Include="src\MftExclusiveGatewayStepComponent.cpp" />
+    <ClCompile Include="src\MftInclusiveGatewayStepComponent.cpp" />
+    <ClCompile Include="src\MftParallelGatewayStepComponent.cpp" />
+    <ClCompile Include="src\MftRunPlanStepComponent.cpp" />
+    <ClCompile Include="src\MftStartStepComponent.cpp" />
+    <ClCompile Include="src\MftStepImplementationFactory.cpp" />
+    <ClCompile Include="src\MftTerminatePlanStepComponent.cpp" />
+    <ClCompile Include="src\NewPlanStepDlg.cpp" />
+    <ClCompile Include="src\OperatorRights.cpp" />
+    <ClCompile Include="src\ParallelGatewayStep.cpp" />
+    <ClCompile Include="src\ParallelGatewayStepEditorParameter.cpp" />
+    <ClCompile Include="src\PlanAgentAccess.cpp" />
+    <ClCompile Include="src\PlanAgentAccessException.cpp" />
+    <ClCompile Include="src\PlanAgentUpdateProcessor.cpp" />
+    <ClCompile Include="src\PlanBrowserDoc.cpp" />
+    <ClCompile Include="src\PlanBrowserFrame.cpp" />
+    <ClCompile Include="src\PlanControllerDoc.cpp" />
+    <ClCompile Include="src\PlanControllerFrame.cpp" />
+    <ClCompile Include="src\PlanControllerThread.cpp" />
+    <ClCompile Include="src\PlanControllerToolBarManager.cpp" />
+    <ClCompile Include="src\PlanDetailPage.cpp" />
+    <ClCompile Include="src\PlanEditorDoc.cpp" />
+    <ClCompile Include="src\PlanEditorFrame.cpp" />
+    <ClCompile Include="src\PlanEditorThread.cpp" />
+    <ClCompile Include="src\PlanEditorToolBarManager.cpp" />
+    <ClCompile Include="src\PlanFlowchartPage.cpp" />
+    <ClCompile Include="src\PlanGeneralDetailPage.cpp" />
+    <ClCompile Include="src\PlanInstance.cpp" />
+    <ClCompile Include="src\PlanInstanceComboBox.cpp" />
+    <ClCompile Include="src\PlanInstanceFilter.cpp" />
+    <ClCompile Include="src\PlanInstanceListCtrl.cpp" />
+    <ClCompile Include="src\PlanInstanceMap.cpp" />
+    <ClCompile Include="src\PlanInstanceNone.cpp" />
+    <ClCompile Include="src\PlanManager.cpp" />
+    <ClCompile Include="src\PlanManagerException.cpp" />
+    <ClCompile Include="src\PlanManagerGUI.cpp" />
+    <ClCompile Include="src\PlanNode.cpp" />
+    <ClCompile Include="src\PlanNodeView.cpp" />
+    <ClCompile Include="src\PlanStepDetailPage.cpp" />
+    <ClCompile Include="src\PlanStepEditExclusiveGatewayPage.cpp" />
+    <ClCompile Include="src\PlanStepEditInclusiveGatewayPage.cpp" />
+    <ClCompile Include="src\PlanStepEditorDetailsPage.cpp" />
+    <ClCompile Include="src\PlanStepEditorDlg.cpp" />
+    <ClCompile Include="src\PlanStepEditorPropertySheet.cpp" />
+    <ClCompile Include="src\PlanStepEditorTabCtrl.cpp" />
+    <ClCompile Include="src\PlanStepEditParallelGatewayPage.cpp" />
+    <ClCompile Include="src\PlanStepEditRunPlanPage.cpp" />
+    <ClCompile Include="src\PlanStepEditTerminatePlanPage.cpp" />
+    <ClCompile Include="src\PlanStepListCtrl.cpp" />
+    <ClCompile Include="src\PlanStepListHeaderCtrl.cpp" />
+    <ClCompile Include="src\PlanStepMap.cpp" />
+    <ClCompile Include="src\PlanStepParameterListCtrl.cpp" />
+    <ClCompile Include="src\PlanStepPastePositionDlg.cpp" />
+    <ClCompile Include="src\PlanTreeDoc.cpp" />
+    <ClCompile Include="src\PlanTreeFrame.cpp" />
+    <ClCompile Include="src\PlanTreeView.cpp" />
+    <ClCompile Include="src\RootNode.cpp" />
+    <ClCompile Include="src\RunPlanStep.cpp" />
+    <ClCompile Include="src\RunPlanStepEditorParameter.cpp" />
+    <ClCompile Include="src\SequenceFlow.cpp" />
+    <ClCompile Include="src\SequenceFlowMap.cpp" />
+    <ClCompile Include="src\SinglePlanInstanceListCtrl.cpp" />
+    <ClCompile Include="src\StartStep.cpp" />
+    <ClCompile Include="src\StdAfx.cpp" />
+    <ClCompile Include="src\TaskRunPlan.cpp" />
+    <ClCompile Include="src\TaskTerminatePlan.cpp" />
+    <ClCompile Include="src\TerminatePlanEditorParameter.cpp" />
+    <ClCompile Include="src\TerminatePlanStep.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\TreeNode.cpp" />
+    <ClCompile Include="src\TreeNodeFactory.cpp" />
+    <ClCompile Include="src\UnapprovedPlanDoc.cpp" />
+    <ClCompile Include="src\UnapprovedPlanTreeFrame.cpp" />
+    <ClCompile Include="src\UnapprovedPlanTreeView.cpp" />
+    <ClCompile Include="src\Utilities.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+    <ClCompile Include="src\YSplitterWnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\core\exceptions\src\PlanStepException.h" />
+    <ClInclude Include="src\AbortStep.h" />
+    <ClInclude Include="src\AbstractToolBarManager.h" />
+    <ClInclude Include="src\ActivePlanDoc.h" />
+    <ClInclude Include="src\ActivePlanFrame.h" />
+    <ClInclude Include="src\ActivePlanListView.h" />
+    <ClInclude Include="src\AllPlanDoc.h" />
+    <ClInclude Include="src\AllPlanTreeFrame.h" />
+    <ClInclude Include="src\AllPlanTreeView.h" />
+    <ClInclude Include="src\ApprovedPlanDoc.h" />
+    <ClInclude Include="src\ApprovedPlanTreeFrame.h" />
+    <ClInclude Include="src\ApprovedPlanTreeView.h" />
+    <ClInclude Include="src\BlankView.h" />
+    <ClInclude Include="src\CategoryListCtrl.h" />
+    <ClInclude Include="src\CategoryNode.h" />
+    <ClInclude Include="src\CategoryNodeView.h" />
+    <ClInclude Include="src\ChangeImportPlanName.h" />
+    <ClInclude Include="src\ControlPlanThread.h" />
+    <ClInclude Include="src\EndStep.h" />
+    <ClInclude Include="src\EventAbort.h" />
+    <ClInclude Include="src\EventEnd.h" />
+    <ClInclude Include="src\EventStart.h" />
+    <ClInclude Include="src\ExclusiveGatewayEditorParameter.h" />
+    <ClInclude Include="src\ExclusiveGatewayStep.h" />
+    <ClInclude Include="src\extstatuscontrolbar.h" />
+    <ClInclude Include="src\FloatingDocTemplate.h" />
+    <ClInclude Include="src\FloatingWindowThread.h" />
+    <ClInclude Include="src\FloatingWindowThreadRegister.h" />
+    <ClInclude Include="src\GatewayExclusive.h" />
+    <ClInclude Include="src\GatewayInclusive.h" />
+    <ClInclude Include="src\GatewayParallel.h" />
+    <ClInclude Include="src\InclusiveGatewayEditorParameter.h" />
+    <ClInclude Include="src\InclusiveGatewayStep.h" />
+    <ClInclude Include="src\IPlanConfigObserver.h" />
+    <ClInclude Include="src\IPlanCustomisationObserver.h" />
+    <ClInclude Include="src\ITimerSubscriber.h" />
+    <ClInclude Include="src\ITreeNodeFilter.h" />
+    <ClInclude Include="src\LabelMaker.h" />
+    <ClInclude Include="src\MainFrame.h" />
+    <ClInclude Include="src\MainToolBarManager.h" />
+    <ClInclude Include="src\MessageBox.h" />
+    <ClInclude Include="src\MftAbortStepComponent.h" />
+    <ClInclude Include="src\MftEndStepComponent.h" />
+    <ClInclude Include="src\MftExclusiveGatewayStepComponent.h" />
+    <ClInclude Include="src\MftInclusiveGatewayStepComponent.h" />
+    <ClInclude Include="src\MftParallelGatewayStepComponent.h" />
+    <ClInclude Include="src\MftRunPlanStepComponent.h" />
+    <ClInclude Include="src\MftStartStepComponent.h" />
+    <ClInclude Include="src\MftStepImplementationFactory.h" />
+    <ClInclude Include="src\MftTerminatePlanStepComponent.h" />
+    <ClInclude Include="src\NewPlanStepDlg.h" />
+    <ClInclude Include="src\OperatorRights.h" />
+    <ClInclude Include="src\ParallelGatewayStep.h" />
+    <ClInclude Include="src\ParallelGatewayStepEditorParameter.h" />
+    <ClInclude Include="src\PlanAgentAccess.h" />
+    <ClInclude Include="src\PlanAgentAccessException.h" />
+    <ClInclude Include="src\PlanAgentUpdateProcessor.h" />
+    <ClInclude Include="src\PlanBrowserDoc.h" />
+    <ClInclude Include="src\PlanBrowserFrame.h" />
+    <ClInclude Include="src\PlanControllerDoc.h" />
+    <ClInclude Include="src\PlanControllerFrame.h" />
+    <ClInclude Include="src\PlanControllerThread.h" />
+    <ClInclude Include="src\PlanControllerToolBarManager.h" />
+    <ClInclude Include="src\PlanDetailPage.h" />
+    <ClInclude Include="src\PlanEditorDoc.h" />
+    <ClInclude Include="src\PlanEditorFrame.h" />
+    <ClInclude Include="src\PlanEditorThread.h" />
+    <ClInclude Include="src\PlanEditorToolBarManager.h" />
+    <ClInclude Include="src\PlanFlowchartPage.h" />
+    <ClInclude Include="src\PlanGeneralDetailPage.h" />
+    <ClInclude Include="src\PlanInstance.h" />
+    <ClInclude Include="src\PlanInstanceComboBox.h" />
+    <ClInclude Include="src\PlanInstanceFilter.h" />
+    <ClInclude Include="src\PlanInstanceListCtrl.h" />
+    <ClInclude Include="src\PlanInstanceMap.h" />
+    <ClInclude Include="src\PlanInstanceNone.h" />
+    <ClInclude Include="src\PlanManager.h" />
+    <ClInclude Include="src\PlanManagerCommonDefs.h" />
+    <ClInclude Include="src\PlanManagerException.h" />
+    <ClInclude Include="src\PlanManagerGUI.h" />
+    <ClInclude Include="src\PlanNode.h" />
+    <ClInclude Include="src\PlanNodeView.h" />
+    <ClInclude Include="src\PlanStepDetailPage.h" />
+    <ClInclude Include="src\PlanStepEditExclusiveGatewayPage.h" />
+    <ClInclude Include="src\PlanStepEditInclusiveGatewayPage.h" />
+    <ClInclude Include="src\PlanStepEditorDetailsPage.h" />
+    <ClInclude Include="src\PlanStepEditorDlg.h" />
+    <ClInclude Include="src\PlanStepEditorPropertySheet.h" />
+    <ClInclude Include="src\PlanStepEditorTabCtrl.h" />
+    <ClInclude Include="src\PlanStepEditParallelGatewayPage.h" />
+    <ClInclude Include="src\PlanStepEditRunPlanPage.h" />
+    <ClInclude Include="src\PlanStepEditTerminatePlanPage.h" />
+    <ClInclude Include="src\PlanStepListCtrl.h" />
+    <ClInclude Include="src\PlanStepListHeaderCtrl.h" />
+    <ClInclude Include="src\PlanStepMap.h" />
+    <ClInclude Include="src\PlanStepParameterListCtrl.h" />
+    <ClInclude Include="src\PlanStepPastePositionDlg.h" />
+    <ClInclude Include="src\PlanTreeDoc.h" />
+    <ClInclude Include="src\PlanTreeFrame.h" />
+    <ClInclude Include="src\PlanTreeView.h" />
+    <ClInclude Include="src\Resource.h" />
+    <ClInclude Include="src\RootNode.h" />
+    <ClInclude Include="src\RunPlanStep.h" />
+    <ClInclude Include="src\RunPlanStepEditorParameter.h" />
+    <ClInclude Include="src\SequenceFlow.h" />
+    <ClInclude Include="src\SequenceFlowMap.h" />
+    <ClInclude Include="src\SinglePlanInstanceListCtrl.h" />
+    <ClInclude Include="src\StartStep.h" />
+    <ClInclude Include="src\StdAfx.h" />
+    <ClInclude Include="src\SynchronisedMap.h" />
+    <ClInclude Include="src\SynchronisedQueue.h" />
+    <ClInclude Include="src\SynchronisedVector.h" />
+    <ClInclude Include="src\TaskRunPlan.h" />
+    <ClInclude Include="src\TaskTerminatePlan.h" />
+    <ClInclude Include="src\TerminatePlanEditorParameter.h" />
+    <ClInclude Include="src\TerminatePlanStep.h" />
+    <ClInclude Include="src\Timer.h" />
+    <ClInclude Include="src\TreeNode.h" />
+    <ClInclude Include="src\TreeNodeFactory.h" />
+    <ClInclude Include="src\UnapprovedPlanDoc.h" />
+    <ClInclude Include="src\UnapprovedPlanTreeFrame.h" />
+    <ClInclude Include="src\UnapprovedPlanTreeView.h" />
+    <ClInclude Include="src\Utilities.h" />
+    <ClInclude Include="src\ViewUpdate.h" />
+    <ClInclude Include="src\YSplitterWnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PlanManager.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\bus\resources\icons\PlanManager.ico" />
+    <None Include="res\ApprovedPlanNode.ico" />
+    <None Include="res\CategoryNodeToolbar.bmp" />
+    <None Include="res\ClosedCategoryNode.ico" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\OpenCategoryNode.ico" />
+    <CustomBuild Include="res\PlanActivityAbort.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityAbort.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityAbort.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityAbort.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityAbort.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityEnd.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityEnd.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityEnd.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityEnd.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityEnd.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityExclusiveGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityExclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityExclusiveGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityExclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityExclusiveGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconAbort.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconAbort.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconAbort.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconAbort.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconAbort.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconEnd.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconEnd.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconEnd.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconEnd.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconEnd.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconExclusiveGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconExclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconExclusiveGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconExclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconExclusiveGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconInclusiveGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconInclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconInclusiveGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconInclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconInclusiveGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconParallelGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconParallelGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconParallelGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconParallelGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconParallelGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconRunPlan.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconRunPlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconRunPlan.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconRunPlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconRunPlan.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconStart.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconStart.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconStart.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconStart.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconStart.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityIconTerminatePlan.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityIconTerminatePlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconTerminatePlan.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityIconTerminatePlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityIconTerminatePlan.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityInclusiveGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityInclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityInclusiveGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityInclusiveGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityInclusiveGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityParallelGateway.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityParallelGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityParallelGateway.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityParallelGateway.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityParallelGateway.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityRunPlan.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityRunPlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityRunPlan.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityRunPlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityRunPlan.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityStart.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityStart.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityStart.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityStart.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityStart.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="res\PlanActivityTerminatePlan.bmp">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">xcopy /R /Y res\PlanActivityTerminatePlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityTerminatePlan.bmp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">xcopy /R /Y res\PlanActivityTerminatePlan.bmp ..\..\..\..\..\bin\win32_nd\res\*
+</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\bin\win32_nd\res\PlanActivityTerminatePlan.bmp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="res\PlanController.ico" />
+    <None Include="res\PlanControllerFlowchartToolbar.bmp" />
+    <None Include="res\PlanControllerGeneralToolbar.bmp" />
+    <None Include="res\PlanControllerStepsToolbar.bmp" />
+    <None Include="res\PlanEditor.ico" />
+    <None Include="res\PlanEditorFlowchartToolbar.bmp" />
+    <None Include="res\PlanEditorGeneralToolbar.bmp" />
+    <None Include="res\PlanEditorStepsToolbar.bmp" />
+    <None Include="res\PlanManager.ico" />
+    <None Include="res\PlanNodeToolbar.bmp" />
+    <None Include="res\plan_nod.bmp" />
+    <None Include="res\StepExecStateImageList.bmp" />
+    <None Include="res\StepExecuted.ico" />
+    <None Include="res\StepFailed.ico" />
+    <None Include="res\StepNext.ico" />
+    <None Include="res\StepNextPaused.ico" />
+    <None Include="res\StepNotExecuted.ico" />
+    <None Include="res\StepSkipped.ico" />
+    <None Include="res\TreeNodeImageList.bmp" />
+    <None Include="res\UnapprovedPlanNode.ico" />
+    <None Include="src\SynchronisedMap.inl" />
+    <None Include="src\SynchronisedQueue.inl" />
+    <None Include="src\SynchronisedVector.inl" />
+    <None Include="src\ViewUpdate.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\plan_editor_plugin\workflow_drawing\app.response_plans.workflow_drawing.vcxproj">
+      <Project>{eefa70d3-4465-47d9-bbb3-e90143839837}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\plan_editor_plugin\workflow_editor\app.response_plans.workflow_editor.vcxproj">
+      <Project>{abf01e93-6042-43f2-82a7-51655fdd6b5e}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\plan_editor_plugin\workflow_element\app.response_plans.workflow_element.vcxproj">
+      <Project>{e33bca44-a1a6-46a5-80f8-8bbd3718a586}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\plan_step_plugin\common\app.response_plans.plan_step_plugin.common.vcxproj">
+      <Project>{d5416048-b7dc-4845-86de-413ed4c3ca2d}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\plan_step_plugin\common_editor\plan_editor_step.vcxproj">
+      <Project>{2760cee0-cf38-4a05-9c48-8d13b0211ff8}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\plan_step_plugin\common_editor\plan_step_dlgs.vcxproj">
+      <Project>{60f76fe5-4fdb-4dd0-9c7f-0ee09764f272}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

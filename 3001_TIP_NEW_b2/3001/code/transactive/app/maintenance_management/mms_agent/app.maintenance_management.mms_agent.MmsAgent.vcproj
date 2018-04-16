@@ -1,0 +1,173 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.maintenance_management.mms_agent" ProjectGUID="{6CA71278-62DC-407F-862D-84E2DB082820}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nd/app.maintenance_management.mms_agent.MmsAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="./src/;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src;../../../../;../../../../../sdk/include/cots/boost/boost_1_39_0;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;&quot;..\..\..\..\..\sdk\include\cots\curl\curl-7.21.7-win32\include&quot;" PreprocessorDefinitions="_DEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;WINVER=0x0500;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/app.maintenance_management.mms_agent.MmsAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/maintenance_management/mms_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib omnithread34_rtd.lib oci.lib libmysql.lib Rpcrt4.lib WS2_32.lib aced.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_bus_d.lib TA_IRS_Core_d.lib TA_IRS_bus_d.lib winmm.lib stracelib.lib TA_SFTP_d.lib" OutputFile="../../../../../bin/win32_nd/MmsAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd;../../../../../build/win32_nd;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers/lib;../../../../../sdk/lib;../../../../../sdk/include/cots/WinStackTrace\build\Debug" IgnoreDefaultLibraryNames="msvcrt.lib" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/MmsAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.maintenance_management.mms_agent.MmsAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/maintenance_management/mms_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nr/app.maintenance_management.mms_agent.MmsAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="./src/;../../../;../../../../../sdk/include/transactive;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../../sdk/include/transactive/core/exceptions/src;../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../sdk/include/transactive/core/process_management/idl/src;../../../../../sdk/include/transactive/core/alarm/IDL/src;../../../../../sdk/include/transactive/core/exceptions/IDL/src;../../../../../sdk/include/transactive/bus/maintenance_management/mmscorbadef/IDL/src;../../../../;../../../../../sdk/include/cots/boost/boost_1_39_0;..\..\..\..\..\sdk\include\cots\ACE\6_0_4\ACE_wrappers;&quot;..\..\..\..\..\sdk\include\cots\curl\curl-7.21.7-win32\include&quot;" PreprocessorDefinitions="NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_CONSOLE;WINVER=0x0500;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/mms_agent/app.maintenance_management.mms_agent.MmsAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/maintenance_management/mms_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/maintenance_management/mms_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/maintenance_management/mms_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib omnithread34_rt.lib oci.lib libmysql.lib Rpcrt4.lib WS2_32.lib ace.lib TA_mcl.lib TA_Base_Core.lib TA_Base_bus.lib TA_IRS_Core.lib TA_IRS_bus.lib winmm.lib stracelib.lib TA_SFTP.lib" OutputFile="../../../../../bin/win32_nr/MmsAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr;../../../../../build/win32_nr;../../../../../sdk/omniORB/omniORB_4.1.6/lib/x86_win32;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers/lib;../../../../../sdk/lib;../../../../../sdk/include/cots/WinStackTrace\build\Release" IgnoreDefaultLibraryNames="LIBC" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/MmsAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.maintenance_management.mms_agent.MmsAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;h">
+			<File RelativePath="src\InvalidArgException.h">
+			</File>
+			<File RelativePath="src\main.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsAgent.h">
+			</File>
+			<File RelativePath="src\MmsAlarmSubmitter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsAlarmSubmitter.h">
+			</File>
+			<File RelativePath="src\MmsJobRequestSubmitter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsJobRequestSubmitter.h">
+			</File>
+			<File RelativePath="src\MmsMessageUtil.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsMessageUtil.h">
+			</File>
+			<File RelativePath="src\MmsServerState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MmsServerState.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<Filter Name="MMSAPIInterface">
+				<File RelativePath=".\src\MMSAPIImplDatabase.cpp">
+				</File>
+				<File RelativePath=".\src\MMSAPIImplDatabase.h">
+				</File>
+				<File RelativePath="src\MmsConnection.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\MmsConnection.h">
+				</File>
+				<File RelativePath="src\MmsConnectionException.h">
+				</File>
+				<File RelativePath="src\MmsConnectionTester.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\MmsConnectionTester.h">
+				</File>
+				<File RelativePath=".\src\SFTPSenderThread.cpp">
+				</File>
+				<File RelativePath=".\src\SFTPSenderThread.h">
+				</File>
+			</Filter>
+			<Filter Name="Scheduling">
+				<File RelativePath=".\src\DPScadaWorker.cpp">
+				</File>
+				<File RelativePath=".\src\DPScadaWorker.h">
+				</File>
+				<File RelativePath=".\src\MaintenanceDataWrapper.cpp">
+				</File>
+				<File RelativePath=".\src\MaintenanceDataWrapper.h">
+				</File>
+				<File RelativePath="src\MmsPeriodicSubmitter.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\MmsPeriodicSubmitter.h">
+				</File>
+				<File RelativePath="src\PeriodicThread.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\PeriodicThread.h">
+				</File>
+			</Filter>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,212 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.radio.radio_mft_agent_icdv4" ProjectGUID="{3264AFA2-BC8B-488F-9AE7-1FDA9F2AB6AC}" RootNamespace="app.radio.radio_mft_agent_icdv4" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/radio/RadioMFTAgent_icdv4" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../cots/motorola_sdk/Include;../../../../../build/win32_n/transactive;../../../;../../../../../sdk/include/transactive;../../../../;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/process_management/idl/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../cots/motorola_sdk/RemoteAPI/Include;../../../../../sdk/include/transactive/core/alarm/IDL/src" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T;_TAGLC_ID_DEFINED;_THREADLOCALEINFO" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioMFTAgent_icdv4/app.radio.radio_mft_agent_icdv4.RadioMFTAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/radio/RadioMFTAgent_icdv4/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/radio/RadioMFTAgent_icdv4/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/radio/RadioMFTAgent_icdv4/" BrowseInformation="1" WarningLevel="2" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="true" OutputFile="../../../../../build/win32_nd/RadioMFTAgent_icdv4_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.radio.radio_mft_agent_icdv4.RadioMFTAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/radio/RadioMFTAgent_icdv4" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../cots/motorola_sdk/Include;../../../../../build/win32_n/transactive;../../../;../../../../../sdk/include/transactive;../../../../;../../../../../sdk/include/transactive/core/message/IDL/src;../../../../../build/win32_n/transactive/core/exceptions/IDL/src;../../../../../build/win32_n/transactive/core/process_management/idl/src;../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers;../../../../../sdk/include/cots/boost/boost_1_39_0;../../../../../sdk/omniORB/omniORB_4.1.6/include;../../../../cots/motorola_sdk/RemoteAPI/Include;../../../../../sdk/include/transactive/core/alarm/IDL/src" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;_USE_32BIT_TIME_T;_TAGLC_ID_DEFINED;_THREADLOCALEINFO" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioMFTAgent_icdv4/app.radio.radio_mft_agent_icdv4.RadioMFTAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/radio/RadioMFTAgent_icdv4/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/radio/RadioMFTAgent_icdv4/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/radio/RadioMFTAgent_icdv4/" BrowseInformation="1" WarningLevel="2" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" LinkLibraryDependencies="true" OutputFile="../../../../../build/win32_nr/RadioMFTAgent_icdv4.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.radio.radio_mft_agent_icdv4.RadioMFTAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\EventToResultFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\FutureManager.cpp">
+			</File>
+			<File RelativePath=".\src\FutureResult.cpp">
+			</File>
+			<File RelativePath=".\src\RadioAgentDAIImpl.cpp">
+			</File>
+			<File RelativePath="src\RadioApplicationStateManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioEventDispatcher.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentCallbackAdapter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentCommandServant.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentFramework.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RadioMFTAgentRemoteAPICommandImpl.cpp">
+			</File>
+			<File RelativePath=".\src\RadioMFTAgentRemoteApiEventImpl.cpp">
+			</File>
+			<File RelativePath="src\RadioMFTAgentStatusManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioMFTAgentSummary.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RadioResourceConfigFacade.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath=".\src\RemoteAPI.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteAPICallBackMessage.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteApiConnection.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteApiRadioCommand.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteAPIRadioEvent.cpp">
+			</File>
+			<File RelativePath=".\src\RemoteAPIS.cpp">
+			</File>
+			<File RelativePath="src\TimeoutCallback.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\EventToResultFactory.h">
+			</File>
+			<File RelativePath="src\FutureManager.h">
+			</File>
+			<File RelativePath="src\FutureResult.h">
+			</File>
+			<File RelativePath=".\src\IMcdbRefreshCallback.h">
+			</File>
+			<File RelativePath=".\src\IRadioAgentDAI.h">
+			</File>
+			<File RelativePath="src\IRadioMFTAgentCallback.h">
+			</File>
+			<File RelativePath="src\IRadioMFTAgentCommand.h">
+			</File>
+			<File RelativePath="src\RadioAgentDAIImpl.h">
+			</File>
+			<File RelativePath="src\RadioApplicationStateManager.h">
+			</File>
+			<File RelativePath="src\RadioEventDispatcher.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgent.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentCallbackAdapter.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentCommandServant.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentFramework.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentHelper.h">
+			</File>
+			<File RelativePath=".\src\RadioMFTAgentRemoteAPICommandImpl.h">
+			</File>
+			<File RelativePath=".\src\RadioMFTAgentRemoteApiEventImpl.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentStatusManager.h">
+			</File>
+			<File RelativePath="src\RadioMFTAgentSummary.h">
+			</File>
+			<File RelativePath="src\RadioResourceConfigFacade.h">
+			</File>
+			<File RelativePath=".\src\RemoteAPI.h">
+			</File>
+			<File RelativePath=".\src\RemoteAPICallBackMessage.h">
+			</File>
+			<File RelativePath=".\src\RemoteApiConnection.h">
+			</File>
+			<File RelativePath=".\src\RemoteApiRadioCommand.h">
+			</File>
+			<File RelativePath=".\src\RemoteAPIRadioEvent.h">
+			</File>
+			<File RelativePath=".\src\RemoteApiResponse.h">
+			</File>
+			<File RelativePath="src\TimeoutCallback.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.scada.proxy_library</ProjectName>
+    <ProjectGuid>{C7A754E2-6AFE-4D39-B7E7-118076F31000}</ProjectGuid>
+    <RootNamespace>bus.scada.proxy_library</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_ScadaProxyLibrary_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_ScadaProxyLibrary</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\scada\datanode_library\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\idl\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\DataPointCorbaDef\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\bus\scada\datanode_library\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\common_library\idl\src;$(TA_BuildPath)\win32_n\transactive\bus\scada\DataPointCorbaDef\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentSynchronisationInterface.cpp" />
+    <ClCompile Include="src\DataNodeBulkPollingSynchronizer.cpp" />
+    <ClCompile Include="src\DataNodeLocalAccess.cpp" />
+    <ClCompile Include="src\DataNodeLocalSynchronizer.cpp" />
+    <ClCompile Include="src\DataNodeProxy.cpp" />
+    <ClCompile Include="src\DataNodeProxyManager.cpp" />
+    <ClCompile Include="src\DataNodeProxySmartPtr.cpp" />
+    <ClCompile Include="src\DataNodeProxy_Read.cpp" />
+    <ClCompile Include="src\DataNodeProxy_Write.cpp" />
+    <ClCompile Include="src\DataNodeRemoteAccess.cpp" />
+    <ClCompile Include="src\DataNodeSyncManager.cpp" />
+    <ClCompile Include="src\DataPointBulkPollingSynchronizer.cpp" />
+    <ClCompile Include="src\DataPointLocalAccess.cpp" />
+    <ClCompile Include="src\DataPointLocalSynchronizer.cpp" />
+    <ClCompile Include="src\DataPointProxy.cpp" />
+    <ClCompile Include="src\DataPointProxyManager.cpp" />
+    <ClCompile Include="src\DataPointProxySmartPtr.cpp" />
+    <ClCompile Include="src\DataPointProxy_Read.cpp" />
+    <ClCompile Include="src\DataPointProxy_Write.cpp" />
+    <ClCompile Include="src\DataPointRemoteAccess.cpp" />
+    <ClCompile Include="src\DataPointSyncManager.cpp" />
+    <ClCompile Include="src\ObserverUpdateQueueProcessor.cpp" />
+    <ClCompile Include="src\ProxyObserverNotifier.cpp" />
+    <ClCompile Include="src\ScadaProxyFactory.cpp" />
+    <ClCompile Include="src\ScadaProxyManager.cpp" />
+    <ClCompile Include="src\SynchronisationManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentSynchronisationInterface.h" />
+    <ClInclude Include="src\DataNodeBulkPollingSynchronizer.h" />
+    <ClInclude Include="src\DataNodeLocalAccess.h" />
+    <ClInclude Include="src\DataNodeLocalSynchronizer.h" />
+    <ClInclude Include="src\DataNodeProxy.h" />
+    <ClInclude Include="src\DataNodeProxyManager.h" />
+    <ClInclude Include="src\DataNodeProxySmartPtr.h" />
+    <ClInclude Include="src\DataNodeRemoteAccess.h" />
+    <ClInclude Include="src\DataNodeSyncManager.h" />
+    <ClInclude Include="src\DataPointBulkPollingSynchronizer.h" />
+    <ClInclude Include="src\DataPointLocalAccess.h" />
+    <ClInclude Include="src\DataPointLocalSynchronizer.h" />
+    <ClInclude Include="src\DataPointProxy.h" />
+    <ClInclude Include="src\DataPointProxyManager.h" />
+    <ClInclude Include="src\DataPointProxySmartPtr.h" />
+    <ClInclude Include="src\DataPointRemoteAccess.h" />
+    <ClInclude Include="src\DataPointSyncManager.h" />
+    <ClInclude Include="src\IDataNodeAccess.h" />
+    <ClInclude Include="src\IDataNodeProxy.h" />
+    <ClInclude Include="src\IDataPointAccess.h" />
+    <ClInclude Include="src\IDataPointProxy.h" />
+    <ClInclude Include="src\IEntityUpdateEventProcessor.h" />
+    <ClInclude Include="src\IProxySmartPtrCallback.h" />
+    <ClInclude Include="src\ObserverUpdateQueueProcessor.h" />
+    <ClInclude Include="src\ProxyObserverNotifier.h" />
+    <ClInclude Include="src\ScadaProxyFactory.h" />
+    <ClInclude Include="src\ScadaProxyManager.h" />
+    <ClInclude Include="src\SynchronisationManager.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

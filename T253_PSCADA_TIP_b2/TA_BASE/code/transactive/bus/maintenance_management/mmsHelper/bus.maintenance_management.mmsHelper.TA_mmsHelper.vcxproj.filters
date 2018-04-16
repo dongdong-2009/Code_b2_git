@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ClienttInterface">
+      <UniqueIdentifier>{349317ff-d7b9-4d7e-89b8-8d1a9151428f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="COMMON">
+      <UniqueIdentifier>{0e31ffe6-d4ad-4a84-a25d-e3cc08bc77ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="APIInterface">
+      <UniqueIdentifier>{c87db913-69a7-4c66-8fdd-c411360cf319}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\IMMSSubmitter.h">
+      <Filter>ClienttInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSGlobalInhibitionManager.h">
+      <Filter>ClienttInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSSubmitManager.h">
+      <Filter>ClienttInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSSubmitterDatabase.h">
+      <Filter>ClienttInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSDatabaseCache.h">
+      <Filter>COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSUtility.h">
+      <Filter>COMMON</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMMSAPI.h">
+      <Filter>APIInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSAPIManager.h">
+      <Filter>APIInterface</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\MMSGlobalInhibitionManager.cpp">
+      <Filter>ClienttInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSSubmitManager.cpp">
+      <Filter>ClienttInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSSubmitterDatabase.cpp">
+      <Filter>ClienttInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSDatabaseCache.cpp">
+      <Filter>COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSUtility.cpp">
+      <Filter>COMMON</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IMMSAPI.cpp">
+      <Filter>APIInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSAPIManager.cpp">
+      <Filter>APIInterface</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

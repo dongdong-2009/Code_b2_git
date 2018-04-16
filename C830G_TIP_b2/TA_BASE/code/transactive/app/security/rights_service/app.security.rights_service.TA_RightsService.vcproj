@@ -1,0 +1,101 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.security.rights_service" ProjectGUID="{BDB0CCDA-7415-4BB4-91B1-AE6A50E0F876}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/security/rights_service" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nd/app.security.rights_service.TA_RightsService.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_WIN32_WINNT=0x500" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/security/rights_service/app.security.rights_service.TA_RightsService.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/security/rights_service/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/security/rights_service/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/security/rights_service/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="acemfcd.lib omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib oci.lib ws2_32.lib htmlhelp.lib Rpcrt4.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/TA_RightsService.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd,../../../../cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7,..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\cots\HTMLHelp\lib,..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib,..\..\..\..\cots\boost\boost_1_39_0\stage\lib,..\..\..\..\cots\WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/TA_RightsService.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.security.rights_service.TA_RightsService.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/security/rights_service" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nr/app.security.rights_service.TA_RightsService.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/process_management/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG;WIN32;_WINDOWS;__WIN32__;__x86__;__NT__;__OSVERSION__=4;_WIN32_WINNT=0x500" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/security/rights_service/app.security.rights_service.TA_RightsService.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/security/rights_service/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/security/rights_service/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/security/rights_service/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="acemfc.lib omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib oci.lib ws2_32.lib htmlhelp.lib Rpcrt4.lib TA_Base_Core.lib TA_Base_Bus.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/TA_RightsService.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr,../../../../cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7,..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\cots\HTMLHelp\lib,..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib,..\..\..\..\cots\boost\boost_1_39_0\stage\lib,..\..\..\..\cots\WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/TA_RightsService.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.security.rights_service.TA_RightsService.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AccessRights.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AccessRights.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\RippleRights.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RippleRights.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCMIDLTool" GenerateStublessProxies="true" TypeLibraryName="../../../../../sdk/win32_nd/TA_RightsService.tlb" HeaderFileName="../../../../../build/win32_n/transactive/app/security/rights_service/src/RippleRights.h" InterfaceIdentifierFileName="../../../../../build/win32_n/transactive/app/security/rights_service/src/RippleRights_i.c"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCMIDLTool" GenerateStublessProxies="true" TypeLibraryName="../../../../../sdk/win32_nr/TA_RightsService.tlb" HeaderFileName="../../../../../build/win32_n/transactive/app/security/rights_service/src/RippleRights.h" InterfaceIdentifierFileName="../../../../../build/win32_n/transactive/app/security/rights_service/src/RippleRights_i.c"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RippleRights.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src;$(OUTDIR)"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src;$(OUTDIR)"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="1" PrecompiledHeaderThrough="stdafx.h"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="src\AccessRights.rgs">
+			</File>
+			<File RelativePath="src\RippleRights.rgs">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

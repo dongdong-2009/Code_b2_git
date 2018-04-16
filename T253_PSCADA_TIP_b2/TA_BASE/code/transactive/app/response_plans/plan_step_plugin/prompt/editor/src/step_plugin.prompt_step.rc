@@ -1,0 +1,136 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (Simplified, PRC) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (Simplified, PRC) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_PROMPT_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Prompt message:",IDC_STATIC,13,15,92,12,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PROMPT_PROMPT_MESSAGE,109,15,231,53,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    LTEXT           "Response timeout:",IDC_STATIC,13,76,92,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "mm:ss",IDC_STATIC,161,76,34,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    CONTROL         "",IDC_PROMPT_RESPONSE_TIMEOUT,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,111,75,43,15
+END
+
+IDD_PROMPT_DLG DIALOGEX 0, 0, 326, 197
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION
+CAPTION "Prompt"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Plan:",IDC_STATIC,57,22,40,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PROMPT_PLAN_PATH_EDIT,101,22,202,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Instance:",IDC_STATIC,57,45,40,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PROMPT_ACTIVE_INSTANCE_EDIT,101,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Location:",IDC_STATIC,147,45,42,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PROMPT_LOCATION_NAME_EDIT,193,45,37,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    LTEXT           "Step:",IDC_STATIC,246,45,24,14,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_PROMPT_STEP_NUMBER_EDIT,274,45,29,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE | NOT WS_TABSTOP
+    EDITTEXT        IDC_PROMPT_EDIT,45,80,269,85,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL | NOT WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,138,176,50,14
+    ICON            32516,IDC_STATIC,11,10,20,20
+    GROUPBOX        "Step summary",IDC_STATIC,45,7,269,62,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_PROMPT_DLG, DIALOG
+    BEGIN
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_PROMPT_REPORT_COMPLETION_STATUS "report completion status"
+    IDS_PROMPT_STEP_PARAMETER_PROMPT_MESSAGE "Prompt Message"
+    IDS_PROMPT_STEP_PARAMETER_RESPONSE_TIMEOUT "Response Timeout"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

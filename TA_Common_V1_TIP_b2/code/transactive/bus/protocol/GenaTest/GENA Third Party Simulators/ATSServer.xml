@@ -1,0 +1,106 @@
+<Config>
+	<AllowSubscription>
+	<Platform Enabled='1'>
+	  <AttributeNameList>
+		<Name>OpenStatus</Name>
+		<Name>Hold</Name>
+	  </AttributeNameList>
+	</Platform>
+	<Train Enabled='1'>
+	  <AttributeNameList>
+		<Name>TrainLabel</Name>
+		<Name>FrontPos</Name>
+		<Name>CurrentDir</Name>
+		<Name>TravelTimeExceeded</Name>
+	  </AttributeNameList>
+	</Train>
+	</AllowSubscription>
+	<Notification>
+	  <Platform Enabled='1'>
+		<Birth>
+		  <Message>
+			<ObjectIdList>
+			  <Id>1</Id>
+			  <Id>2</Id>
+			  <Id>3</Id>
+			  <Id>4</Id>
+			  <Id>5</Id>
+			  <Id>6</Id>
+			</ObjectIdList>
+			<AttributeNameValuePairs>
+			  <OpenStatus>Closed</OpenStatus>
+			  <Hold>Not Hold</Hold>
+			</AttributeNameValuePairs>
+		  </Message>
+		</Birth>
+		<Update>
+		  <Message>
+			<RecurUpdate>1</RecurUpdate>
+			<UpdateInterval>5</UpdateInterval>
+			<ObjectIdList>
+			  <Id>1</Id>
+			  <Id>2</Id>
+			  <Id>3</Id>
+			  <Id>4</Id>
+			  <Id>5</Id>
+			  <Id>6</Id>
+			</ObjectIdList>
+			<AttributeValueList>
+			  <OpenStatus>
+				<Value>Open</Value>
+				<Value>Closed</Value>
+			  </OpenStatus>
+			  <Hold>
+				<Value>Not Hold</Value>
+				<Value>Persistent Hold</Value>
+			  </Hold>
+			</AttributeValueList>
+		  </Message>
+		</Update>
+	  </Platform>
+	  <Train Enabled='1'>
+		<Birth>
+		  <Message>
+			<ObjectIdList>
+			  <Id>1</Id>
+			  <Id>2</Id>
+			  <Id>3</Id>
+			  <Id>4</Id>
+			  <Id>5</Id>
+			  <Id>6</Id>
+			</ObjectIdList>
+			<AttributeNameValuePairs>
+			  <TrainLabel>AAXXXNN</TrainLabel>
+			  <FrontPos>19</FrontPos>
+			  <CurrentDir>Uptrack - towards Gao Zeng Station</CurrentDir>
+			  <TravelTimeExceeded>1</TravelTimeExceeded>
+			</AttributeNameValuePairs>
+		  </Message>
+		</Birth>
+		<Update>
+		  <Message>
+			<RecurUpdate>1</RecurUpdate>
+			<UpdateInterval>5</UpdateInterval>
+			<ObjectIdList>
+			  <Id>1</Id>
+			  <Id>2</Id>
+			  <Id>3</Id>
+			  <Id>4</Id>
+			  <Id>5</Id>
+			  <Id>6</Id>
+			</ObjectIdList>
+			<AttributeValueList>
+			  <FrontPos>
+				<Value>19</Value>
+				<Value>21</Value>
+			  </FrontPos>
+			  <CurrentDir>
+				<Value>Uptrack - towards Gao Zeng Station</Value>
+				<Value>Downtrack - towards FeiE Ling Station</Value>
+			  </CurrentDir>
+			</AttributeValueList>
+		  </Message>
+		</Update>
+	  </Train>
+	</Notification>
+</Config>

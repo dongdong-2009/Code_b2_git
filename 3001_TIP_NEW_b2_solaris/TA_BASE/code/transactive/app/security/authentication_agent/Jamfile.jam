@@ -1,0 +1,4 @@
+
+ta-exe AuthenticationAgent
+	: [ glob src/*.cpp : src/AuthenticationMessageReceiver.cpp ]
+	;

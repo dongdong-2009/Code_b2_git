@@ -1,0 +1,617 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RADIOMANAGER_DIALOG DIALOGEX 0, 0, 644, 410
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Radio Manager"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Subscriber",IDC_SELECTED_ENTITY_STATIC,4,19,174,352
+    GROUPBOX        "Details",IDC_ENTITY_DETAILS,9,30,161,176
+    LTEXT           "",IDC_DETAILS_HOLDER,12,43,156,158
+    GROUPBOX        "Operations",IDC_ENTITY_OPERATIONS,9,209,161,151
+    LTEXT           "",IDC_OPERATIONS_HOLDER,12,219,156,138
+    GROUPBOX        "Directory",IDC_DIRECTORY_PANEL_HOLDER,182,19,190,352
+    GROUPBOX        "",IDC_PROPSHEET_HOLDER,373,12,259,359
+END
+
+IDD_RADIO_INBOX_PAGE DIALOG  0, 0, 190, 256
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Inbox"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_MSG_HISTORY,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,7,21,176,141
+    LTEXT           "History",IDC_STATIC,7,7,42,9
+    LTEXT           "Text",IDC_STATIC,7,167,35,8
+    EDITTEXT        IDC_MSG_TEXT,7,180,176,45,ES_AUTOHSCROLL
+    PUSHBUTTON      "Close",IDC_CLOSE,147,235,36,14
+END
+
+IDD_RADIO_SEND_TEXT_PAGE DIALOG  0, 0, 196, 262
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Send Text"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "Message selection",IDC_STATIC,7,7,182,164
+    LISTBOX         IDC_MSG_SELECTION,13,40,170,106,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Add",IDC_ADD,13,151,36,14
+    PUSHBUTTON      "Remove",IDC_REMOVE,54,151,36,14
+    PUSHBUTTON      "Save",IDC_SAVE,106,151,36,14
+    PUSHBUTTON      "Cancel",IDC_CANCEL,147,151,36,14
+    EDITTEXT        IDC_TEXT_EDIT,14,187,169,39,ES_MULTILINE | ES_AUTOHSCROLL | ES_WANTRETURN
+    PUSHBUTTON      "Send",IDC_SEND,105,241,36,14
+    PUSHBUTTON      "Close",IDC_CLOSE,147,241,36,14
+    LTEXT           "Chars used",IDC_STATIC,17,231,48,8
+    LTEXT           "Chars available",IDC_STATIC,17,242,59,8
+    LTEXT           "Text",IDC_CHAR_SET_TEXT,14,175,60,8
+    CONTROL         "Ad-hoc",IDC_ADHOC,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,36,21,50,15
+    CONTROL         "Predefined",IDC_PREDEFINED,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,107,21,51,15
+    RTEXT           "",IDC_CHARS_USED,73,231,21,8
+    RTEXT           "",IDC_CHARS_AVAILABLE,72,242,21,8
+END
+
+IDD_PATCHMANAGER_RADIO_PAGE DIALOG  0, 0, 243, 44
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Description",IDC_STATIC,4,9,39,11
+    LTEXT           "ID",IDC_STATIC,4,28,14,13
+    COMBOBOX        IDC_ENTITY_DESCRIPTION,45,7,148,76,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Call",IDC_PATCHMANAGER_RADIO_CALL,197,7,40,14
+    COMBOBOX        IDC_ENTITY_NUMBER,46,27,126,76,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Release",IDC_PATCHMANAGER_RADIO_RELEASE,197,27,40,14
+    PUSHBUTTON      "",IDC_PATCHMANAGER_RADIO_DIALPAD,174,27,19,14,BS_BITMAP
+END
+
+IDD_RADIO_INITIALISE DIALOG  0, 0, 254, 23
+STYLE DS_SETFONT | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_BORDER
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Radio Manager is initialising,  please wait...",IDC_INITIALISE_MSG,10,8,237,12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "RadioManager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "RadioManager"
+            VALUE "LegalCopyright", "Copyright (C) 2005"
+            VALUE "OriginalFilename", "RadioManager.EXE"
+            VALUE "ProductName", "RadioManager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RADIOMANAGER_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 409
+    END
+
+    IDD_RADIO_INBOX_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    IDD_RADIO_SEND_TEXT_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 189
+        VERTGUIDE, 14
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_PATCHMANAGER_RADIO_PAGE, DIALOG
+    BEGIN
+        VERTGUIDE, 197
+    END
+
+    IDD_RADIO_INITIALISE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 21
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PATCHMANAGER_DIALOG DIALOG  0, 0, 273, 263
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Patch Manager"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "EPAX Entity",IDC_STATIC,7,7,259,53
+    LTEXT           "Description",IDC_STATIC,17,19,38,8
+    LTEXT           "Number",IDC_STATIC,17,38,27,8
+    COMBOBOX        IDC_EPAX_DESCRIPTION,62,18,148,76,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Dial",IDC_EPAX_DIAL,214,17,40,14
+    COMBOBOX        IDC_EPAX_NUMBER,62,37,126,76,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "End Call",IDC_EPAX_END_CALL,214,36,40,14
+    PUSHBUTTON      "",IDC_EPAX_DIALPAD,191,36,19,14,BS_BITMAP
+    GROUPBOX        "DLTS Entity",IDC_STATIC,7,69,259,53
+    LTEXT           "Description",IDC_STATIC,17,79,38,8
+    LTEXT           "Number",IDC_STATIC,17,98,27,8
+    COMBOBOX        IDC_DLTS_DESCRIPTION,62,78,148,76,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Dial",IDC_DLTS_DIAL,214,77,40,14
+    COMBOBOX        IDC_DLTS_NUMBER,62,97,126,76,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "End Call",IDC_DLTS_END_CALL,214,96,40,14
+    PUSHBUTTON      "",IDC_DLTS_DIALPAD,191,96,19,14,BS_BITMAP
+    CONTROL         "Tab1",IDC_ENTITY_TAB,"SysTabControl32",0x0,12,144,244,67
+    PUSHBUTTON      "Patch",IDC_PATCH_BTN,171,234,44,14
+    PUSHBUTTON      "Close",IDC_CLOSE_BTN,222,234,44,14
+    GROUPBOX        "Radio Entity",IDC_STATIC,7,131,259,92
+END
+
+IDD_GENERIC_DIALPAD DIALOG  0, 0, 98, 146
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Keypad"
+FONT 10, "Arial Bold"
+BEGIN
+    COMBOBOX        IDC_DIALEDNUM_CB,7,109,61,63,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "OK",ID_GENERIC_DIALPAD_OK,7,127,34,12
+    PUSHBUTTON      "1",IDC_KEYPAD_1,7,7,28,24
+    PUSHBUTTON      "2",IDC_KEYPAD_2,35,7,28,24
+    PUSHBUTTON      "3",IDC_KEYPAD_3,63,7,28,24
+    PUSHBUTTON      "4",IDC_KEYPAD_4,7,31,28,24
+    PUSHBUTTON      "6",IDC_KEYPAD_6,63,31,28,24
+    PUSHBUTTON      "5",IDC_KEYPAD_5,35,31,28,24
+    PUSHBUTTON      "7",IDC_KEYPAD_7,7,55,28,24
+    PUSHBUTTON      "9",IDC_KEYPAD_9,63,55,28,24
+    PUSHBUTTON      "8",IDC_KEYPAD_8,35,55,28,24
+    PUSHBUTTON      "*",IDC_KEYPAD_ST,7,79,28,24,WS_DISABLED
+    PUSHBUTTON      "#",IDC_KEYPAD_PND,63,79,28,24,WS_DISABLED
+    PUSHBUTTON      "0",IDC_KEYPAD_0,35,79,28,24
+    PUSHBUTTON      "Cancel",IDCANCEL,57,127,34,12
+    PUSHBUTTON      "Back",IDC_KEYPAD_BACKSP,69,109,22,12
+END
+
+IDD_NEW_ENTITY_DLG DIALOG  0, 0, 207, 73
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Entity"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,81,52,50,14
+    COMBOBOX        IDC_ENTITY_TYPE_CB,56,7,141,49,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_DESCRIPTION,56,29,141,12,ES_AUTOHSCROLL
+    LTEXT           "Entity Type",IDC_STATIC,10,7,42,13
+    LTEXT           "Description",IDC_STATIC,10,30,42,13
+    PUSHBUTTON      "Cancel",IDCANCEL,147,52,50,14
+END
+
+IDD_CALLSTACK_PAGE DIALOG  0, 0, 286, 383
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Call Stack"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_CALLSTACK_LIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,4,5,278,375
+END
+
+IDD_HISTORY_PAGE DIALOG  0, 0, 286, 379
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "History"
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_HISTORY_LIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,3,5,279,373
+END
+
+IDD_DIRECTORY_PAGE DIALOGEX 0, 0, 184, 343
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_DIRECTORY_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | WS_BORDER | WS_TABSTOP,29,10,150,307,WS_EX_CLIENTEDGE
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32",TCS_VERTICAL | TCS_MULTILINE,5,3,178,319
+    EDITTEXT        IDC_FILTER,30,326,82,13,ES_AUTOHSCROLL
+    LTEXT           "Filter",IDC_STATIC,7,327,22,12
+    EDITTEXT        IDC_FILTER_ID,113,326,66,13,ES_AUTOHSCROLL
+END
+
+IDD_SELECTED_ENTITY DIALOGEX 0, 0, 153, 165
+STYLE DS_SETFONT | WS_CHILD
+EXSTYLE WS_EX_ACCEPTFILES
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_TYPE,59,3,93,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_DESCRIPTION,59,15,93,12,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ID,59,27,93,12,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Description",IDC_STATIC_DESC,4,16,42,10
+    LTEXT           "Type",IDC_STATIC_TYPE,4,4,26,10
+    LTEXT           "ID",IDC_STATIC_ID,4,29,17,8
+    LTEXT           "",IDC_STATIC_TEXT,4,41,47,8
+    PUSHBUTTON      "Delete Group",IDC_DELETE_BTN,4,90,53,14
+    PUSHBUTTON      "Edit",IDC_EDIT_BTN,4,55,53,14
+    PUSHBUTTON      "Save",IDC_SAVE_BTN,4,72,53,14
+    PUSHBUTTON      "Cancel",IDC_CANCEL_BTN,4,108,53,14
+    CTEXT           "",IDC_STATIC_BLANK,17,56,125,25
+    EDITTEXT        IDC_DG_TALKGROUP,59,27,93,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_VISIBLE
+    LTEXT           "Members",IDC_DG_TEXT,4,41,47,8,NOT WS_VISIBLE
+    PUSHBUTTON      "Delete Member",IDC_DELETE_MEMBER_BTN,4,108,53,14,NOT WS_VISIBLE | WS_DISABLED
+    CONTROL         "",IDC_LIST2,"SysListView32",LVS_LIST | LVS_SINGLESEL | LVS_ALIGNLEFT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_GROUP | WS_TABSTOP,59,38,93,84
+END
+
+IDD_SELECTED_OPERATIONS DIALOGEX 0, 0, 161, 132
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Send Text...",IDC_SENDTEXT_BTN,71,40,78,14
+    PUSHBUTTON      "Call",IDC_CALL_BTN,58,40,48,14
+    PUSHBUTTON      "Answer",IDC_ANSWER_BTN,59,66,48,14
+    PUSHBUTTON      "End Call",IDC_ENDCALL_BTN,59,96,48,14
+    PUSHBUTTON      "Patch...",IDC_PATCH_BTN,71,68,78,14
+    PUSHBUTTON      "Connect",IDC_CONNECT_BTN,42,40,78,14
+    PUSHBUTTON      "Release",IDC_RELEASE_BTN,41,96,78,14
+    CONTROL         "Slider1",IDC_VOLUME_SLIDER,"msctls_trackbar32",TBS_AUTOTICKS | TBS_BOTH | WS_TABSTOP,20,13,119,18
+    CTEXT           "Volume",IDC_STATIC_VOLUME,32,6,96,10
+    LTEXT           "",IDC_DUMMY_NEW_PATCH,42,115,78,14
+    LTEXT           "",IDC_DUMMY_SEND_TEXT,71,40,78,14
+    LTEXT           "",IDC_DUMMY_ORIGINAL_PATCH,71,68,78,14
+    CONTROL         "Select Speaker",IDC_SPEAKER_BTN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,42,68,78,14
+    LTEXT           "min",IDC_MIN,8,18,13,8,NOT WS_VISIBLE
+    LTEXT           "max",IDC_MAX,139,18,15,8,NOT WS_VISIBLE
+    CONTROL         "Ambience Listening",IDC_AMBIENCE_BTN,"Button",BS_AUTOCHECKBOX | BS_PUSHLIKE | WS_TABSTOP,71,96,78,14
+END
+
+IDD_RADIOSTATUS_PAGE DIALOGEX 0, 0, 262, 398
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Radio Status"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    LTEXT           "Talk Group Monitored Status Buttons",IDC_STATIC,3,4,142,9
+    LTEXT           "Broadcast Status Button",IDC_STATIC_MONITOR2,5,317,107,10
+    LTEXT           "CAD Status Buttons",IDC_STATIC_MONITOR3,5,245,107,10
+    CONTROL         "Check1",IDC_EMERGENCY_CHECK,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,238,4,8,8
+    LTEXT           "Emergency",IDC_EMERGENCY_STATIC,183,4,46,10,NOT WS_VISIBLE
+END
+
+IDD_CALLFORWARDING_PAGE DIALOGEX 0, 0, 284, 398
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Call Forwarding"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Forward Radio Calls",IDC_RADIO_BUTTON_GROUP,11,8,256,131,0,WS_EX_TRANSPARENT
+    CONTROL         "Immediate forward to extension",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,28,23,187,16,WS_EX_TRANSPARENT
+    CONTROL         "Forward to extension when not Reachable",IDC_RADIO2,
+                    "Button",BS_AUTORADIOBUTTON,28,38,195,16,WS_EX_TRANSPARENT
+    CONTROL         "Never Forward",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,28,53,102,16,WS_EX_TRANSPARENT
+    GROUPBOX        "Extension",IDC_EXTENSION,17,73,243,51,0,WS_EX_TRANSPARENT
+    LTEXT           "ID",IDC_STATIC_ID,27,88,19,10
+    LTEXT           "Description",IDC_STATIC_DESC,27,106,43,10
+    COMBOBOX        IDC_COMBO1,78,86,174,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,78,104,174,12,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Apply",IDC_APPLY,106,150,57,15
+END
+
+IDD_SUBS_MONITORING_PAGE DIALOGEX 0, 0, 276, 398
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED | WS_CAPTION
+CAPTION "Sub. Monitoring"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    LTEXT           "Affiliated Station",IDC_AFFILIATED_STATIC,109,13,62,8
+    LTEXT           "Selected Talkgroup",IDC_SEL_TG_STATIC,175,13,85,8
+    LTEXT           "Monitored Subscriber",IDC_RESULT_STATIC,8,12,94,8
+    EDITTEXT        IDC_AFFILIATED_EDIT,109,22,63,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        IDC_SEL_TG_EDIT,174,22,100,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER,WS_EX_STATICEDGE
+    EDITTEXT        IDC_MONITORING_TEXT,8,22,99,12,ES_AUTOHSCROLL | ES_READONLY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_GENERIC_DIALPAD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 91
+        VERTGUIDE, 35
+        VERTGUIDE, 63
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 144
+        HORZGUIDE, 31
+        HORZGUIDE, 55
+        HORZGUIDE, 79
+        HORZGUIDE, 131
+    END
+
+    IDD_NEW_ENTITY_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 10
+        RIGHTMARGIN, 197
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 66
+    END
+
+    IDD_DIRECTORY_PAGE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 183
+        VERTGUIDE, 179
+        HORZGUIDE, 339
+    END
+
+    IDD_SELECTED_ENTITY, DIALOG
+    BEGIN
+        RIGHTMARGIN, 152
+        VERTGUIDE, 4
+        BOTTOMMARGIN, 163
+        HORZGUIDE, 140
+    END
+
+    IDD_SELECTED_OPERATIONS, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 129
+        HORZGUIDE, 87
+    END
+
+    IDD_RADIOSTATUS_PAGE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 246
+        BOTTOMMARGIN, 397
+    END
+
+    IDD_CALLFORWARDING_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 397
+    END
+
+    IDD_SUBS_MONITORING_PAGE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 274
+        BOTTOMMARGIN, 397
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\RadioManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\RadioManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR1 TOOLBAR  110, 15
+BEGIN
+    BUTTON      ID_DIALPAD_TB
+    BUTTON      ID_EMERGENCYMODE_TB
+    BUTTON      ID_INBOX_TB
+    BUTTON      ID_NEW_ENTITY_TB
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR1            BITMAP                  "res\\toolbar1.bmp"
+IDB_BITMAP_Rad          BITMAP                  "res\\Rad_BMP.bmp"
+IDB_BITMAP_TG           BITMAP                  "res\\TG_BMP.bmp"
+IDB_BITMAP_AG           BITMAP                  "res\\AG_BMP.bmp"
+IDB_BITMAP_PG           BITMAP                  "res\\PG_BMP.bmp"
+IDB_BITMAP_DG           BITMAP                  "res\\DG_BMP.bmp"
+IDB_BITMAP_MS           BITMAP                  "res\\MS_BMP.bmp"
+IDB_BITMAP_SW           BITMAP                  "res\\SW_BMP.bmp"
+IDB_BITMAP_Mu_SW        BITMAP                  "res\\Mu_SW_BMP.bmp"
+IDB_DRAG_RADIO          BITMAP                  "res\\bitmap1.bmp"
+IDB_BITMAP_DIAL         BITMAP                  "res\\bmp_dial.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    MENUITEM "Delete Member",               ID_DELETE_MENU
+END
+
+IDR_MENU2 MENU 
+BEGIN
+    MENUITEM "Stop Monitoring",             ID_STOP_MONITOR_MENU
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_HISTORYCOLUMN_HISTORY "History"
+    IDS_HISTORYCOLUMN_SOURCE "Source"
+    IDS_HISTORYCOLUMN_TEXT  "Text"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INBOX_TB             "Send Text Message"
+    ID_NEW_ENTITY_TB        "Create New Entity"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_HEADER_DESC     "Description"
+    IDS_COL_HEADER_TYPE     "Type"
+    IDS_COL_HEADER_ID       "ID"
+    IDS_COL_HEADER_STATUS   "Status"
+    IDS_COL_HEADER_SOURCE   "Source"
+    IDS_COL_HEADER_TIME     "Time"
+    IDS_COL_HEADER_ACTION   "Action"
+    IDS_RR_NIL              "NONE"
+    IDS_RR_RADIO            "Individual Call"
+    IDS_RR_TALKGROUP        "Talk Group"
+    IDS_RR_ANNGROUP         "Announcement Group"
+    IDS_RR_PATCHGROUP       "CAD"
+    IDS_RR_DYNGROUP         "DGNA"
+    IDS_RR_MSELECT          "BroadCast"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_RR_SITE             "Site"
+    IDS_RR_MSITE            "MultiSite"
+    IDS_RR_TRAIN            "Train"
+    IDS_PATCH_STATUS        "Patch Status:"
+    IDS_STATUS_BAR_MSG_1    "Individual Call Status:"
+    IDS_STATUS_BAR_MSG_2    "Talking Party Identification:"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\RadioManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

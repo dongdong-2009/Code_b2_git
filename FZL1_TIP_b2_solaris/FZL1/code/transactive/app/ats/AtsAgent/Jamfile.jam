@@ -1,0 +1,6 @@
+
+ta-exe AtsAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/ats/atsagent/modbusprotocolhandler//TA_ModBusProtocolHandler
+	  /proj/app/ats/AtsAgent/TimetableManager//TA_TimetableManager
+	;

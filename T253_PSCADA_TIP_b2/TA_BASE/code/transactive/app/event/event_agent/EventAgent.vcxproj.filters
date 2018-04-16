@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{7abece7c-cb69-4b50-a762-260fb3373d00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentStateController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseLoader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbEventRetriever.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventAgentImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventDataProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PropagateActorCentral.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PropagateActorLocal.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReceiveEventCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentStateController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbEventRetriever.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventAgentImpl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventDataIndices.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventDataProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocalRunParamDefinitions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PropagateActor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PropagateActorCentral.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PropagateActorLocal.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ReceiveEventCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\targetver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,297 @@
+#################################################################
+# C830								#
+#								#
+# Filename: CSV_Version_Description.txt				#
+#								#
+# Purpose:							#
+#  This file describes the modifications done on  		#
+#  the CSV files used for distributed database			#
+#								#
+#								#
+# README:							#
+# 1. The latest updates are ALWAYS on top of the document. They	#
+#    are identified by the date of the update.			#
+# 2. Each update contains a short description, including the	#
+#    TD Defect and/or the TES references.			#
+# 3. Each Version is identified by the following header in the	#
+#    file:							#
+#								#
+#	#############################################		#
+#	# dd/mm/yy - Version : TXX.XX.XX.XX         #		#
+#	#                                           #		#
+#	#############################################		#
+#								#
+#								#
+#################################################################
+
+#############################################
+# 13/06/07 - Version : T00.27.13.02	    #
+#                                           #
+#############################################
+TD19028 - FAT Degarded mode- Radio Manager did not show new subscriber added into the DB from Simulator.
+#############################################
+# 22/05/07 - Version : T00.27.13.01	    #
+#                                           #
+#############################################
+
+
+#############################################
+# 15/03/07 - Version : T00.27.12.03	    #
+#                                           #
+#############################################
+
+TD 18317 - PISF/TST/XXXX-Unable To Establish Group Patch When OCC Servers 
+	   Connected To Local Database           
+TD 18473 - PISF/TST/XXXX-Unable To Write To History Call Stack When ISCS 
+	   Central DB Is down 	 
+
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MPSConnectionString.csv 
+	  20. MRMConnectionString.csv
+	  21. NCHConnectionString.csv 
+	  22. OARConnectionString.csv 
+	  23. OCCConnectionString.csv 
+	  24. ONHConnectionString.csv 
+	  25. PMNConnectionString.csv 
+	  26. PPJConnectionString.csv 
+	  27. PYLConnectionString.csv 
+	  28. SDMConnectionString.csv 
+	  29. SERConnectionString.csv 
+	  30. TLBConnectionString.csv
+	  31. TSGConnectionString.csv
+	  32. TSNConnectionString.csv
+	  33. WCTConnectionString.csv
+          34. Database_Directory.xls
+
+
+#############################################
+# 21/12/06 - Version : T00.27.11.05	    #
+#                                           #
+#############################################
+
+TD 18044 - Added AlarmRules_Cd database connection type for alarm rules            
+TD 17500 - appended Tis_OCC_Cd to the Database_Directory.xls          
+           since this is the central file for all database connection types  	 
+TD 16467 - appended GlobalParameter_Cd to the Database_Directory.xls         
+           since this is the central file for all database connection types  	 	
+
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MPSConnectionString.csv 
+	  20. MRMConnectionString.csv
+	  21. NCHConnectionString.csv 
+	  22. OARConnectionString.csv 
+	  23. OCCConnectionString.csv 
+	  24. ONHConnectionString.csv 
+	  25. PMNConnectionString.csv 
+	  26. PPJConnectionString.csv 
+	  27. PYLConnectionString.csv 
+	  28. SDMConnectionString.csv 
+	  29. SERConnectionString.csv 
+	  30. TLBConnectionString.csv
+	  31. TSGConnectionString.csv
+	  32. TSNConnectionString.csv
+	  33. WCTConnectionString.csv
+          34. Database_Directory.xls
+
+
+#############################################
+# 27/10/06 - Version : T00.27.11.01	    #
+#                                           #
+#############################################
+
+TD 16799 - TES0319 FT-POW HV: Inconsistency naming(Label and Asset)
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MPSConnectionString.csv 
+	  20. MRMConnectionString.csv 
+	  21. NCHConnectionString.csv 
+	  22. OARConnectionString.csv 
+	  23. OCCConnectionString.csv 
+	  24. ONHConnectionString.csv 
+	  25. PMNConnectionString.csv 
+	  26. PPJConnectionString.csv 
+	  27. PYLConnectionString.csv 
+	  28. SDMConnectionString.csv 
+	  29. SERConnectionString.csv 
+	  30. TLBConnectionString.csv
+	  31. TSGConnectionString.csv
+	  32. TSNConnectionString.csv
+	  33. WCTConnectionString.csv
+
+
+#############################################
+# 09/10/06 - Version : T00.27.10.06	    #
+#                                           #
+#############################################
+
+TD 17142 - DB-PROD: Delivery of V0.3.20D (Rebuilt of all database)
+Following files are modified:
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MPSConnectionString.csv 
+	  20. MRMConnectionString.csv 
+	  21. NCHConnectionString.csv 
+	  22. OARConnectionString.csv 
+	  23. OCCConnectionString.csv 
+	  24. ONHConnectionString.csv 
+	  25. PMNConnectionString.csv 
+	  26. PPJConnectionString.csv 
+	  27. PYLConnectionString.csv 
+	  28. SDMConnectionString.csv 
+	  29. SERConnectionString.csv 
+	  30. TLBConnectionString.csv
+	  31. TSGConnectionString.csv
+	  32. TSNConnectionString.csv
+	  33. WCTConnectionString.csv
+
+#############################################
+# 13/09/06 - Version : T00.27.10.04	    #
+#                                           #
+#############################################
+
+TD 16467 - New database created for T00271004. 
+Following files are modified:
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MPSConnectionString.csv 
+	  20. MRMConnectionString.csv 
+	  21. NCHConnectionString.csv 
+	  22. OARConnectionString.csv 
+	  23. OCCConnectionString.csv 
+	  24. ONHConnectionString.csv 
+	  25. PMNConnectionString.csv 
+	  26. PPJConnectionString.csv 
+	  27. PYLConnectionString.csv 
+	  28. SDMConnectionString.csv 
+	  29. SERConnectionString.csv 
+	  30. TLBConnectionString.csv
+	  31. TSGConnectionString.csv
+	  32. TSNConnectionString.csv
+	  33. WCTConnectionString.csv
+	 
+#############################################
+# dd/mm/yy - Version : T00.27.10.01	    #
+#                                           #
+#############################################
+
+TD 16702 - New database created for T00271001. 
+	  Following files are modified:
+	  1. BBSConnectionString.csv
+	  2. BKBConnectionString.csv
+	  3. BLYConnectionString.csv
+	  4. BNVConnectionString.csv
+	  5. BSHConnectionString.csv
+	  6. BTNConnectionString.csv
+	  7. ConfigConnectionString.csv
+	  8. DBGConnectionString.csv
+	  9. DKTConnectionString.csv
+	  10. EPNConnectionString.csv
+	  11. FRRConnectionString.csv
+	  12. HBFConnectionString.csv
+	  13. HLVConnectionString.csv
+	  14. KCDConnectionString.csv
+	  15. KRGConnectionString.csv
+	  16. LBDConnectionString.csv
+	  17. LRCConnectionString.csv
+	  18. MBTConnectionString.csv
+	  19. MLNConnectionString.csv
+	  20. MPSConnectionString.csv
+	  21. MRMConnectionString.csv
+	  22. NCHConnectionString.csv
+	  23. OARConnectionString.csv
+	  24. OCCConnectionString.csv
+	  25. ONHConnectionString.csv
+	  26. PMNConnectionString.csv
+	  27. PPJConnectionString.csv
+	  28. PYLConnectionString.csv
+	  29. SDMConnectionString.csv
+	  30. SERConnectionString.csv
+	  31. TKTConnectionString.csv
+	  32. TLBConnectionString.csv
+	  33. TSGConnectionString.csv
+	  34. TSNConnectionString.csv
+	  35. WCTConnectionString.csv
+	  36. XX6ConnectionString.csv
+

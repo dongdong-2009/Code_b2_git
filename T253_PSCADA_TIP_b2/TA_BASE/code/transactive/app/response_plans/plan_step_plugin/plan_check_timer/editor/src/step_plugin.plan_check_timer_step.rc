@@ -1,0 +1,122 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PLANCHTI_STEP_PARAMETER_TIME_SPAN "Timespan"
+    IDS_PLANCHTI_STEP_PARAMETER_SUCCESS_STEP "Success Step"
+    IDS_PLANCHTI_STEP_PARAMETER_FAILURE_STEP "Failure Step"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) (unknown sub-lang: 0x12) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENE)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, 0x12
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_PLAN_CHECK_TIMER_DLG DIALOGEX 0, 0, 353, 162
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Time span:",IDC_STATIC,26,33,36,8
+    LTEXT           "Success step:",IDC_STATIC,17,64,45,8
+    LTEXT           "Failure step:",IDC_STATIC,21,89,41,8
+    EDITTEXT        IDC_PLANCHTI_SUCCESS_STEP,69,62,192,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_PLANCHTI_FAIL_STEP,69,86,192,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_PLANCHTI_PICK_SUCCESS_STEP_BUTTON,261,62,18,14
+    PUSHBUTTON      "...",IDC_PLANCHTI_PICK_FAIL_STEP_BUTTON,261,86,18,14
+    LTEXT           "HH:MM:SS",IDC_STATIC,139,33,74,8
+    CONTROL         "",IDC_PLANCHTI_TIMESPAN_PICKER,"SysDateTimePick32",DTS_UPDOWN | WS_TABSTOP | 0x8,69,30,61,15
+END
+
+#endif    // English (U.S.) (unknown sub-lang: 0x12) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

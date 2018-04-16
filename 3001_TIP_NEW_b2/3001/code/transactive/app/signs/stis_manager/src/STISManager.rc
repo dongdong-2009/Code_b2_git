@@ -1,0 +1,412 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_STISMANAGER_DIALOG DIALOGEX 0, 0, 833, 386
+STYLE DS_SETFONT | DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TIS Manager"
+MENU IDR_MENU1
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tab1",IDC_MAINPAGE_TAB,"SysTabControl32",0x0,6,1,823,358
+    PUSHBUTTON      "Help",IDC_HELP_BUTTON,6,362,49,19
+    PUSHBUTTON      "Close",IDC_CLOSE,780,362,49,19
+END
+
+IDD_TIME_SCHEDULE_PAGE DIALOGEX 0, 0, 823, 343
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    LTEXT           "From Date/Time",IDC_START_TIME_LABEL,21,268,33,18
+    LTEXT           "To Date/Time",IDC_END_TIME_LABEL,21,298,33,18
+    CONTROL         "",IDC_START_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,63,277,52,12
+    CONTROL         "",IDC_END_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,63,307,52,12
+    LTEXT           "Repeat Interval (Minutes)",IDC_REPEAT_LABEL,21,317,29,24
+    CONTROL         "",IDC_START_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,63,264,52,12
+    CONTROL         "",IDC_END_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,63,294,52,12
+    GROUPBOX        "Priority",IDC_PRIORITY_GROUPBOX_LABEL,21,226,113,34
+    COMBOBOX        IDC_PRIORITY,40,239,75,90,CBS_DROPDOWNLIST | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    GROUPBOX        "All Displays",IDC_ALL_DISPLAYS_GROUPBOX_LABEL,200,217,98,126,0,WS_EX_TRANSPARENT
+    LTEXT           "Display Mode",IDC_DISPLAY_MODE_LABEL,207,228,59,9
+    LTEXT           "Scroll Speed",IDC_SCROLLSPEED_LABEL,207,287,57,9
+    LTEXT           "Justification",IDC_JUSTIFICATION_LABEL,207,314,52,9
+    COMBOBOX        IDC_DISPLAY_MODE,207,238,82,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JUSTIFICATION,207,324,82,116,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SCROLL_SPEED,207,297,82,115,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "LCD",IDC_LCD_FRAME,315,217,98,97
+    GROUPBOX        "LED",IDC_LED_FRAME,430,217,98,97
+    LTEXT           "Font Size",IDC_LED_FONT_SIZE_LABEL,441,259,41,8
+    COMBOBOX        IDC_LED_FONT_SIZE,441,269,77,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font Size",IDC_LCD_FONT_SIZE_LABEL,326,259,41,8
+    LTEXT           "Font Colour",IDC_LCD_FONT_COLOUR_LABEL,326,228,66,10
+    COMBOBOX        IDC_LCD_FONT_SIZE,326,269,77,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_LCD_FONT_COLOUR,326,238,77,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Display Time (m:s)",IDC_DISPLAY_TIME_LABEL,207,263,35,17
+    CONTROL         "",IDC_DISPLAY_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,244,263,45,15
+    LTEXT           "Font Colour",IDC_LED_FONT_COLOUR_LABEL,441,228,41,8
+    COMBOBOX        IDC_LED_FONT_COLOUR,441,238,77,63,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Free text",IDC_FREE_TEXT_LABEL,200,12,30,8
+    EDITTEXT        IDC_EDIT_TIME_SCHEDULE,200,23,591,102,ES_MULTILINE | ES_NOHIDESEL
+    PUSHBUTTON      "Save",IDC_BTN_SAVE_TIME_SCHEDULE,422,134,69,14
+    PUSHBUTTON      "Edit",IDC_BTN_EDIT_TIME_SCHEDULE,505,134,69,14
+    LTEXT           "Messages",IDC_MESSAGES_LABEL,7,4,32,8
+    LTEXT           "Saved",IDC_SAVED_LABEL,131,4,21,8
+    CONTROL         "",IDC_LIST_TIME_SCHEDULE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | LVS_NOSCROLL | LVS_NOCOLUMNHEADER | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,15,146,202
+    PUSHBUTTON      "Download",IDC_BTN_DOWNLOAD_TIME_SCHEDULE,668,296,72,22
+    EDITTEXT        IDC_EDIT_REPEAT_INTERVAL,63,323,52,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_REPEAT_INTERVAL,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,115,322,10,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "FileDescription", "TIS Manager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "TIS Manager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "STISManager.EXE"
+            VALUE "ProductName", "TIS Manager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_STISMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+    END
+
+    IDD_TIME_SCHEDULE_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 791
+        VERTGUIDE, 152
+        VERTGUIDE, 184
+        VERTGUIDE, 574
+        VERTGUIDE, 740
+        TOPMARGIN, 4
+        HORZGUIDE, 217
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_CHECK               ICON                    "..\\res\\icon_check.ico"
+IDI_BLANK               ICON                    "..\\res\\icon_blank.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PREDEFINED DIALOGEX 0, 0, 446, 303
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    LTEXT           "Message Content",IDC_CONTENT_LABEL,8,224,70,8
+    LTEXT           "",IDC_PREDEFINED_CONTENT,8,233,428,63,0,WS_EX_TRANSPARENT
+    LTEXT           "Filter",IDC_LABEL_SEARCH1,8,210,17,10
+    EDITTEXT        IDC_SEARCH_NORMAL,30,209,185,12
+    LTEXT           "Normal",IDC_NORMAL_LABEL,100,1,23,8
+    LTEXT           "Emergency",IDC_EMERGENCY_LABEL,315,1,37,8
+    LTEXT           "Filter",IDC_LABEL_SEARCH2,229,211,18,9
+    EDITTEXT        IDC_SEARCH_EMERGENCY,251,209,185,12
+    CONTROL         "List1",IDC_EMERGENCY_PREDEFINED,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,229,10,207,195
+    CONTROL         "List1",IDC_NORMAL_PREDEFINED,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,8,10,207,195
+END
+
+IDD_FREE_TEXT DIALOGEX 0, 0, 446, 303
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_STATION_FREE_TEXT,121,11,298,119,ES_MULTILINE | ES_AUTOVSCROLL | ES_NOHIDESEL | WS_GROUP
+    GROUPBOX        "All Displays",IDC_ALL_DISPLAYS_GROUPBOX_LABEL,15,175,113,116,0,WS_EX_TRANSPARENT
+    LTEXT           "Display Mode",IDC_DISPLAY_MODE_LABEL,28,188,59,9
+    LTEXT           "Scroll Speed",IDC_SCROLLSPEED_LABEL,28,236,57,9
+    LTEXT           "Justification",IDC_JUSTIFICATION_LABEL,28,261,52,9
+    COMBOBOX        IDC_DISPLAY_MODE,28,198,88,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JUSTIFICATION,28,271,88,116,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SCROLL_SPEED,28,246,88,115,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "LCD",IDC_LCD_FRAME,142,175,113,82
+    GROUPBOX        "LED",IDC_LED_FRAME,269,175,113,82
+    LTEXT           "Font Size",IDC_LED_FONT_SIZE_LABEL,281,215,41,8
+    COMBOBOX        IDC_LED_FONT_SIZE,281,224,88,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Font Size",IDC_LCD_FONT_SIZE_LABEL,155,215,41,8
+    LTEXT           "Font Colour",IDC_LCD_FONT_COLOUR_LABEL,155,188,66,10
+    COMBOBOX        IDC_LCD_FONT_SIZE,155,224,88,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_LCD_FONT_COLOUR,155,198,88,108,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Message Content",IDC_MESSAGE_CONTENT_FRAME,7,1,429,162
+    GROUPBOX        "Display Attributes",IDC_DISPLAY_ATTRIBUTES_FRAME,7,165,429,132
+    LTEXT           "Display Time (m:s)",IDC_DISPLAY_TIME_LABEL,28,215,34,17
+    LISTBOX         IDC_FREETEXT_LIST,15,35,93,51,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    LTEXT           "Saved Messages",IDC_RECENT_MESSAGES,16,23,57,8
+    PUSHBUTTON      "Save",IDC_SAVE,244,140,55,14
+    CONTROL         "DateTimePicker1",IDC_DISPLAY_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,79,215,37,15
+    LTEXT           "Font Colour",IDC_LED_FONT_COLOUR_LABEL,281,188,41,8
+    COMBOBOX        IDC_LED_FONT_COLOUR,281,198,88,63,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DISPLAY_PAGE DIALOGEX 0, 0, 823, 343
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Display",IDC_DISPLAY,689,310,96,28
+    GROUPBOX        "Time",IDC_TIME_GROUPBOX_LABEL,689,6,123,132
+    CONTROL         "Cyclic",IDC_RADIO_TIMED,"Button",BS_AUTORADIOBUTTON | WS_GROUP,705,19,36,12
+    CONTROL         "Continuous",IDC_RADIO_CONTINUOUS,"Button",BS_AUTORADIOBUTTON,703,120,51,12
+    LTEXT           "From Date/Time",IDC_START_TIME_LABEL,705,39,33,18
+    LTEXT           "To Date/Time",IDC_END_TIME_LABEL,705,69,33,18
+    CONTROL         "DateTimePicker1",IDC_START_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,741,48,52,12
+    CONTROL         "DateTimePicker1",IDC_END_TIME,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP | 0x8,741,78,52,12
+    LTEXT           "Repeat Interval (Minutes)",IDC_REPEAT_LABEL,705,91,29,24
+    CONTROL         "Tab1",IDC_MESSAGE_TYPE_TAB,"SysTabControl32",0x0,206,16,456,319
+    GROUPBOX        "Priority",IDC_PRIORITY_GROUPBOX_LABEL,689,152,123,43
+    COMBOBOX        IDC_PRIORITY,719,169,63,90,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    CONTROL         "List1",IDC_PID_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | WS_BORDER | WS_TABSTOP,16,15,152,228
+    GROUPBOX        "Selected PIDs",IDC_STATIC,6,6,173,278
+    GROUPBOX        "Message Content",IDC_STATIC,194,6,480,333
+    PUSHBUTTON      "Clear All",IDC_CLEAR_ALL,16,318,152,17
+    PUSHBUTTON      "Clear Emergency",IDC_CLEAR_EMERGENCY,16,298,72,17
+    PUSHBUTTON      "Clear Normal",IDC_CLEAR_NORMAL,96,298,72,17
+    GROUPBOX        "PID Message Clearing",IDC_STATIC,6,286,173,53
+    COMBOBOX        IDC_STN_PID_GROUP_COMBO,16,249,152,51,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_AUTOHSCROLL | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Save",IDC_SAVE_GROUP,16,265,68,15
+    PUSHBUTTON      "Delete",IDC_DELETE_GROUP,100,265,68,15
+    CONTROL         "DateTimePicker1",IDC_START_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,741,35,52,12
+    CONTROL         "DateTimePicker1",IDC_END_DATE,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | WS_TABSTOP,741,65,52,12
+    EDITTEXT        IDC_EDIT_REPEAT_INTERVAL,741,96,52,12,ES_CENTER | ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_REPEAT_INTERVAL,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_AUTOBUDDY | UDS_ARROWKEYS,793,95,10,14
+END
+
+IDD_VERSION_PAGE DIALOGEX 0, 0, 823, 343
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Upgrade ISCS Version",IDC_UPGRADE_ISCS,648,11,77,25,BS_CENTER
+    CONTROL         "List1",IDC_STATION_VERSION_LIST,"SysListView32",LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,6,25,538,314
+    CONTROL         "List2",IDC_VERSION_LIST_MAIN_HEADER,"SysListView32",LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,6,6,538,9
+    CONTROL         "List3",IDC_VERSION_LIST_SUBHEADER,"SysListView32",LVS_REPORT | LVS_NOCOLUMNHEADER | WS_TABSTOP,6,16,538,9
+END
+
+IDD_PID_GROUP_NAME DIALOGEX 0, 0, 186, 66
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "TIS Manager"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,45,50,14
+    PUSHBUTTON      "Cancel",ID_CLOSE,129,45,50,14
+    EDITTEXT        IDC_EDITNAME,7,26,172,12,ES_AUTOHSCROLL
+    CTEXT           "",IDC_STATICTEXT,7,12,172,9
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PREDEFINED, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 301
+        HORZGUIDE, 210
+    END
+
+    IDD_FREE_TEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 1
+        HORZGUIDE, 162
+        HORZGUIDE, 169
+    END
+
+    IDD_DISPLAY_PAGE, DIALOG
+    BEGIN
+        HORZGUIDE, 6
+        HORZGUIDE, 285
+        HORZGUIDE, 338
+    END
+
+    IDD_VERSION_PAGE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 339
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\STISManager.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\STISManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "Help",                        ID_HELP_STISMANAGERHELP
+        MENUITEM "About TIS Manager",           ID_HELP_ABOUTSTISMANAGER
+    END
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\STISManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

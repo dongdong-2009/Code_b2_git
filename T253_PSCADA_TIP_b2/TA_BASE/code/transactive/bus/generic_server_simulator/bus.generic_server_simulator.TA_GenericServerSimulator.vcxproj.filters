@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Notes">
+      <UniqueIdentifier>{ecb5ab0c-d05d-4a00-b185-d74d11f4d89b}</UniqueIdentifier>
+      <Extensions>.txt</Extensions>
+    </Filter>
+    <Filter Include="GenericServerSimulator Files">
+      <UniqueIdentifier>{f4e63754-c575-4d3f-8c3e-a406026af784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GenericServerSimulator Files\Gss Source Files">
+      <UniqueIdentifier>{51a31689-34bc-4101-83ae-48ea3627a73e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="GenericServerSimulator Files\Gss Header Files">
+      <UniqueIdentifier>{6eb81f0d-1f05-49e1-89ae-156b20e98d74}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="GenericSimulator Files">
+      <UniqueIdentifier>{a3d2faeb-6971-458f-b975-eba6119a5618}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GenericSimulator Files\Source Files">
+      <UniqueIdentifier>{cf9c1ce9-2d0e-4a41-bfef-cdfc96b12488}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="GenericSimulator Files\Header Files">
+      <UniqueIdentifier>{6caf6bfa-5925-452f-a9ef-d22e85a6a3ed}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Command Files">
+      <UniqueIdentifier>{6ac2822a-a57a-47fe-ad03-ee744eb19ee0}</UniqueIdentifier>
+      <Extensions>.cpp;.h</Extensions>
+    </Filter>
+    <Filter Include="No Console Files">
+      <UniqueIdentifier>{e04b64d7-9ff0-401a-b8bb-abfa25920500}</UniqueIdentifier>
+      <Extensions>.h;.cpp</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GssAbstractModuleCreator.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssCommandMonitor.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssCommandProcessor.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssCommsObserver.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssSimulationModule.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssSimulationModuleFactory.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GssUtility.cpp">
+      <Filter>GenericServerSimulator Files\Gss Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandMonitor.cpp">
+      <Filter>GenericSimulator Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericCommandProcessor.cpp">
+      <Filter>GenericSimulator Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericSimulator.cpp">
+      <Filter>GenericSimulator Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandException.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandOwner.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DetachCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExecCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IntermediateCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LeafCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StatusCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionCommand.cpp">
+      <Filter>Command Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BackgroundCommsObserver.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BackgroundModuleCreator.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BackgroundSimulationModule.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConsoleDetachUtility.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TelnetCommon.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TelnetCommsObserver.cpp">
+      <Filter>No Console Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\GssAbstractModuleCreator.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssCommandMonitor.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssCommandProcessor.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssCommon.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssCommsObserver.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssSimulationModule.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssSimulationModuleFactory.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GssUtility.h">
+      <Filter>GenericServerSimulator Files\Gss Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandMonitor.h">
+      <Filter>GenericSimulator Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericCommandProcessor.h">
+      <Filter>GenericSimulator Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericSimulator.h">
+      <Filter>GenericSimulator Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISimulationCommandProcessor.h">
+      <Filter>GenericSimulator Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISimulationModule.h">
+      <Filter>GenericSimulator Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandException.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandOwner.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DetachCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExecCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IntermediateCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LeafCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StatusCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VersionCommand.h">
+      <Filter>Command Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BackgroundCommsObserver.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BackgroundModuleCreator.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BackgroundSimulationModule.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConsoleDetachUtility.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TelnetCommon.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TelnetCommsObserver.h">
+      <Filter>No Console Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

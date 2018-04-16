@@ -1,0 +1,12 @@
+import os ;
+
+if [ os.name ] != NT
+{
+	source = [ glob src/*.cpp : src/OPCEntityDataAccessFactory.cpp ] ;
+}
+
+ta-lib TA_DAI
+	: $(source)
+	: <define>PROJECT_4669
+	  <dependency>/core/data_access_interface/src
+	;

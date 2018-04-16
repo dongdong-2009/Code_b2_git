@@ -1,0 +1,5 @@
+
+ta-exe VideoSwitchAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/cctv/video_switch_agent/protocols/coe//TA_COESwitchAgent
+	;

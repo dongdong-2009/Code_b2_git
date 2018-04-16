@@ -1,0 +1,258 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)\r\n"
+    "LANGUAGE 9, 3\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PIDSMANAGER_DIALOG DIALOGEX 0, 0, 586, 313
+STYLE DS_SETFONT | WS_CHILD | WS_SYSMENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_MESSAGE_TAB,"SysTabControl32",0x0,7,9,389,298
+    CONTROL         "",IDC_TIME_TYPE_CONTINUOUS,"Button",BS_AUTORADIOBUTTON,424,38,9,10
+    PUSHBUTTON      "Reset",IDC_RESET,453,282,63,14,WS_DISABLED
+    CONTROL         "",IDC_TIME_TYPE_PER_RUN,"Button",BS_AUTORADIOBUTTON,424,58,9,10
+    LTEXT           "Per-Run(1-255)",IDC_STATIC_PER_RUN_LABEL,440,55,53,8
+    EDITTEXT        IDC_EDIT_PER_RUN,440,64,49,12,ES_AUTOHSCROLL
+    GROUPBOX        "General Display Attributes",IDC_STATIC,406,9,161,297
+    LTEXT           "Continuous",IDC_STATIC_CONTINUOUS_LABEL,440,39,37,8
+END
+
+IDD_DIALOG_PREDFINED_MESSAGE_PAGE DIALOGEX 0, 0, 389, 277
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_PREDFEINED,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,375,169
+    LTEXT           "Filter:",IDC_STATIC_FILTER,8,187,23,8
+    EDITTEXT        IDC_EDIT_FILTER,33,186,162,12,ES_AUTOHSCROLL
+    LTEXT           "Message Content",IDC_STATIC_MESSAGE_CONTENT,7,205,56,8
+    EDITTEXT        IDC_EDIT_MESSAGE_CONTENT,70,207,311,58,ES_MULTILINE | ES_READONLY
+END
+
+IDD_DIALOG_ADHOC_MESSAGE_PAGE DIALOGEX 0, 0, 389, 277
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "Message Content",IDC_STATIC,12,16,62,10
+    EDITTEXT        IDC_TRAIN_FREE_TEXT,77,18,303,127,ES_MULTILINE
+    LTEXT           "Font Size",IDC_STATIC,13,163,55,8
+    LTEXT           "Justification",IDC_STATIC,13,182,55,8
+    LTEXT           "Mode",IDC_STATIC,13,219,55,8
+    LTEXT           "Intensity",IDC_STATIC,13,200,55,8
+    COMBOBOX        IDC_FONT_SIZE,77,162,119,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JUSTIFICATION,77,181,119,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_INTENSITY,77,199,119,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DISPLAY_MODE,77,218,119,30,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_PREDEFINED_MESSAGE_DISPLAY_REQUEST_DIALOG DIALOGEX 0, 0, 313, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Display Progress",IDC_STATIC,7,7,299,233
+    GROUPBOX        "Display Attributes",IDC_STATIC,7,251,299,83
+    PUSHBUTTON      "Close",IDC_CLOSE,257,339,50,14
+    EDITTEXT        IDC_EDIT_MESSAGE_DESCRIPTION,92,272,207,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Predefined Message",IDC_STATIC,19,275,69,8
+    CONTROL         "",IDC_CONTINUOUS_BTN,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,29,301,9,10
+    CONTROL         "",IDC_PERRUN_BTN,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,99,301,11,10
+    LTEXT           "Per-Run(1-255)",IDC_STATIC,116,295,51,8
+    EDITTEXT        IDC_EDIT_MESSAGE_PER_RUN,116,304,51,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_REQUEST_STATUS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,16,20,282,209
+    LTEXT           "Continuous",IDC_STATIC,43,299,37,8
+END
+
+IDD_ADHOC_MESSAGE_DISPLAY_REQUEST_DIALOG DIALOGEX 0, 0, 313, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Display Progress",IDC_STATIC,7,7,301,188
+    GROUPBOX        "Ad-hoc Display Configuration",IDC_STATIC,7,203,301,134
+    PUSHBUTTON      "Close",IDC_CLOSE,259,341,50,14
+    LTEXT           "Message Content",IDC_STATIC,19,216,69,8
+    CONTROL         "",IDC_CONTINUOUS_BTN,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,154,291,10,10
+    CONTROL         "",IDC_PERRUN_BTN,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,215,291,11,10
+    LTEXT           "Per-Run(1-255)",IDC_STATIC,232,286,51,8
+    EDITTEXT        IDC_EDIT_MESSAGE_PER_RUN,232,296,51,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "",IDC_REQUEST_STATUS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,16,20,285,167
+    EDITTEXT        IDC_ADHOC_REQUEST_STATUS_CONTENT,19,228,111,103,ES_MULTILINE | ES_READONLY
+    EDITTEXT        IDC_ADHOC_REQUEST_STATUS_MODE,221,268,73,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ADHOC_REQUEST_STATUS_FONT,221,219,73,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ADHOC_REQUEST_STATUS_IT,221,251,73,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_ADHOC_REQUEST_STATUS_JF,221,235,73,12,ES_CENTER | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Font Size",IDC_STATIC,152,221,30,8
+    LTEXT           "Justification",IDC_STATIC,152,237,39,8
+    LTEXT           "Intensity",IDC_STATIC,152,253,30,8
+    LTEXT           "Mode",IDC_STATIC,152,270,18,8
+    LTEXT           "Continuous",IDC_STATIC,168,290,37,8
+END
+
+IDD_CLEAR_STATUS_DIALOG DIALOGEX 0, 0, 313, 358
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Close",IDC_CLOSE,257,339,50,14
+    CONTROL         "",IDC_REQUEST_STATUS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,13,19,287,305
+    GROUPBOX        "Clear Progress",IDC_STATIC,5,7,302,324
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PIDSMANAGER_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        VERTGUIDE, 504
+        TOPMARGIN, 9
+    END
+
+    IDD_DIALOG_PREDFINED_MESSAGE_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 347
+        TOPMARGIN, 7
+    END
+
+    IDD_DIALOG_ADHOC_MESSAGE_PAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 6
+        RIGHTMARGIN, 342
+        TOPMARGIN, 7
+    END
+
+    IDD_PREDEFINED_MESSAGE_DISPLAY_REQUEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 306
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 352
+    END
+
+    IDD_ADHOC_MESSAGE_DISPLAY_REQUEST_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 355
+    END
+
+    IDD_CLEAR_STATUS_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 307
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 352
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_PIDS           ICON                    "..\\..\\TrainBorneManager\\res\\TrainBorneManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Train-Borne Manager"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+LANGUAGE 9, 3
+#pragma code_page(1252)
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

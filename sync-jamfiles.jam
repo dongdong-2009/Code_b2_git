@@ -1,0 +1,74 @@
+import sequence path option set print ;
+
+TOP = [ path.pwd ] ;
+VERIFY = F:/Verify ;
+
+BRANCHS	=
+	PRIV_3001
+	C830G_TIP
+	FZL1_TIP
+	GZL9_TIP
+	3001_TIP_NEW
+	T253_PSCADA_TIP
+	TA_Common_V1_TIP
+	;
+
+SUFFIX = _b2 ;
+
+rule sync-jamfiles ( from )
+{
+	if [ option.get "with-solaris" : : true ]
+	{
+		SUFFIX += _solaris ;
+	}
+	
+	local TOPs = $(TOP) ;
+		
+	if [ option.get "with-verify" : : true ]
+	{
+		TOPs += $(VERIFY) ;
+	}
+		
+	BRANCHS += $(BRANCHS)$(SUFFIX) ;
+
+	if $(from) in $(BRANCHS)
+	{
+		from = $(TOP)/$(from) ;
+		local files = [ sequence.transform path.native : [ path.glob $(from) : *.jam pch.hpp : config.jam ] ] ;
+		
+		if $(files)
+		{
+			files = [ sequence.transform path.native : $(files) ] ;
+			to = $(TOPs)/$(BRANCHS) $(TOPs)/$(BRANCHS)$(SUFFIX) ;
+
+			print.lines "Sync files" $(files:BS) : "\t" ;
+			print.lines "From" [ path.native $(from) ] : "\t" ;
+			print.lines "To" ;
+
+			for local dir in [ sequence.transform path.native : $(to) ]
+			{
+				if $(dir:B) = $(from:B)
+				{
+					continue ;
+				}
+			
+				if [ path.exists $(dir) ]
+				{			
+					print.lines $(dir) : "\t" "\t" ;
+
+					for file in $(files)
+					{					
+						if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
+						{
+							local copy-command = "COPY /Y $(file) $(dir)" ;
+							# echo $(copy-command) ;
+							SHELL "$(copy-command)" ;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+IMPORT $(__name__) : [ RULENAMES $(__name__) ] : : [ RULENAMES $(__name__) ] ;

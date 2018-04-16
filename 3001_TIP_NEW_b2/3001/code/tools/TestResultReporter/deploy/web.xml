@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <description>Automated Test Result Reporter</description>
+    <display-name>Automated Test Results</display-name>
+
+    <!-- The controller servlet -->
+    <servlet>
+        <!-- Description of the servlet -->
+        <description>
+            This servlet is responsible for handling requests for the test result reporting application. It will
+            process the request, generate the output, and pass it on to the appropriate JSP pages.
+        </description>
+        
+        <!-- Name and Class -->
+        <servlet-name>TestResultReporter</servlet-name>
+        <servlet-class>TestResultReporter.TestResultReporter</servlet-class>
+
+        <!-- Configuration Parameters -->
+        <init-param>
+            <param-name>db_driver</param-name>
+            <param-value>org.postgresql.Driver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_host</param-name>
+            <param-value>postgresql://dione</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_database</param-name>
+            <param-value>build</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_username</param-name>
+            <param-value>build</param-value>
+        </init-param>
+        <init-param>
+            <param-name>db_password</param-name>
+            <param-value>build</param-value>
+        </init-param>    
+    </servlet>
+
+    <!-- Map the servlet so that it is the default page for the application -->
+    <servlet-mapping>
+        <servlet-name>TestResultReporter</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+</web-app>

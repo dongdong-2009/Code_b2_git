@@ -1,0 +1,428 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+// Generated Help ID header file
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "resource.hm"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ECSSTATIONMODES_DIALOG DIALOGEX 0, 0, 329, 271
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_LOCATIONSELECTION_COMBO,77,21,60,113,CBS_DROPDOWNLIST | CBS_OWNERDRAWFIXED | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    CTEXT           "",IDC_CURRENTSTATIONMODE_DISPLAY,78,38,60,12,0,WS_EX_CLIENTEDGE
+    CONTROL         "List1",IDC_STATIONMODESELECTION_LISTCTRL,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,15,70,295,112
+    PUSHBUTTON      "Help",ID_HELP,7,250,50,14,0,0,HID_HELP
+    PUSHBUTTON      "Apply",IDC_APPLYSTATIONMODE_BUTTON,186,250,50,14,WS_DISABLED
+    GROUPBOX        "Station Mode Status",IDC_STATIONMODESTATUS_GROUPBOX,7,7,197,46
+    GROUPBOX        "Station Mode Selection",IDC_STATIONMODESELECTION_GROUPBOX,7,57,311,133
+    LTEXT           "",IDC_INBOUND_LABEL,143,34,8,8
+    LTEXT           "",IDC_OUTBOUND_LABEL,17,33,8,8
+    CTEXT           "",IDC_OUTBOUNDLOCATION_DISPLAY,17,21,50,12,0,WS_EX_CLIENTEDGE
+    CTEXT           "",IDC_INBOUNDLOCATION_DISPLAY,147,21,50,12,0,WS_EX_CLIENTEDGE
+    CONTROL         "",IDC_MENU_SEPERATOR,"Static",SS_ETCHEDHORZ,0,0,297,1
+    PUSHBUTTON      "Close",IDC_CLOSE_BUTTON,261,250,50,14
+    GROUPBOX        "Status",IDC_STATUS_GROUPBOX3,7,192,311,45
+    EDITTEXT        IDC_STATUS_EDIT,14,201,296,33,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "FileDescription", "ECSManager MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "ECSManager"
+            VALUE "LegalCopyright", "Copyright (C) 2003"
+            VALUE "OriginalFilename", "ECSManager.EXE"
+            VALUE "ProductName", "ECSManager Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ECSSTATIONMODES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 264
+        BOTTOMMARGIN, 257
+        HORZGUIDE, 241
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAIN_MENU MENU 
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "ECS Manager &Help",           ID_HELP_INDEX
+        MENUITEM SEPARATOR
+        MENUITEM "&About ECS Manager",          ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_CURRENTSETTINGS ICON                    "..\\res\\CurrentTimetable.ico"
+IDI_ICON_NEWSELECTION   ICON                    "..\\res\\SelectedTimetable.ico"
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ECSSTATIONMODESOVERVIEW_DIALOG DIALOGEX 0, 0, 689, 415
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "Station Modes Overview Grid Ctrl 1",IDC_STATIONMODESOVERVIEW_GRIDCTRL_1,19,18,653,90,SS_SUNKEN
+    LTEXT           "Station Modes Overview Grid Ctrl 2",IDC_STATIONMODESOVERVIEW_GRIDCTRL_2,19,118,652,90,SS_SUNKEN
+    LTEXT           "Station Modes Overview Grid Ctrl 3",IDC_STATIONMODESOVERVIEW_GRIDCTRL_3,19,218,652,90,SS_SUNKEN
+    PUSHBUTTON      "Help",ID_HELP,7,399,50,14,0,0,HID_HELP
+    PUSHBUTTON      "Apply Selections",IDC_APPLYSTATIONMODE_BUTTON,509,399,62,14,WS_DISABLED
+    PUSHBUTTON      "Close",IDC_CLOSE_BUTTON,622,399,50,14
+    PUSHBUTTON      "Apply All Proposed Congestion",IDC_APPLYALL_CONGESTIONSTATIONMODES_BUTTON,378,399,112,14,WS_DISABLED
+    CONTROL         "",IDC_MENU_SEPERATOR2,"Static",SS_ETCHEDHORZ,0,0,445,1
+    GROUPBOX        "Station Modes Overview",IDC_STATIC,7,3,674,311
+    GROUPBOX        "Status",IDC_STATIONOVERVIEW_STATUS_GROUPBOX3,7,314,674,79
+    EDITTEXT        IDC_STATIONOVERVIEW_STATUS_EDIT,17,322,654,59,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_ECSMASTERMODES_DIALOG DIALOGEX 0, 0, 332, 224
+STYLE DS_SETFONT | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    LTEXT           "Master Modes Grid Ctrl",IDC_MASTERMODES_GRIDCTRL,16,21,301,113,SS_SUNKEN
+    PUSHBUTTON      "Help",ID_HELP,7,202,50,14,0,0,HID_HELP
+    PUSHBUTTON      "Apply",IDC_APPLYMASTERMODE_BUTTON,219,202,50,14,WS_DISABLED
+    PUSHBUTTON      "Close",IDC_CLOSE_BUTTON,276,202,50,14
+    GROUPBOX        "Master Modes Selection",IDC_MASTERMODES_SELECTION_GROUPBOX,7,7,319,138
+    CONTROL         "",IDC_MENU_SEPERATOR,"Static",SS_ETCHEDHORZ,0,0,335,1
+    GROUPBOX        "Status",IDC_MASTERMODES_STATUS_GROUPBOX3,7,145,319,51
+    EDITTEXT        IDC_MASTERMODES_STATUS_EDIT,12,156,305,34,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "",IDC_BUTTON_LEFT,280,137,8,7,BS_ICON | NOT WS_VISIBLE | WS_GROUP
+    PUSHBUTTON      "",IDC_BUTTON_RIGHT,309,137,8,7,BS_ICON | NOT WS_VISIBLE | WS_GROUP | NOT WS_TABSTOP
+END
+
+IDD_DECISION_DIALOG DIALOG  0, 0, 225, 87
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "ECSManager"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,60,66,50,14,WS_DISABLED
+    PUSHBUTTON      "Cancel",IDCANCEL,116,66,50,14
+    LISTBOX         IDC_DECISIONLIST,7,37,211,22,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_DECISIONMESSAGE,31,8,186,19
+    ICON            "",IDC_DECISIONICON,8,7,20,20
+END
+
+IDD_CONGESTION_PARAMS_DIALOG DIALOGEX 0, 0, 225, 274
+STYLE DS_SETFONT | DS_3DLOOK | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "ECS Setting for Congestion Operation"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "Train stall time",IDC_STALL_TIME_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,20,171,10
+    CONTROL         "Temperature of stalled train",IDC_TRAIN_TEMP_CHECK,
+                    "Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,13,35,115,10
+    EDITTEXT        IDC_MINUTE,70,91,34,12,ES_NUMBER | WS_DISABLED,WS_EX_RIGHT
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | WS_DISABLED,58,91,8,13
+    EDITTEXT        IDC_SECOND,117,91,22,12,ES_CENTER | ES_AUTOHSCROLL | ES_NUMBER | WS_DISABLED
+    CONTROL         "Spin1",IDC_SPIN2,"msctls_updown32",UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS | WS_DISABLED,146,91,8,13
+    CONTROL         "Slider1",IDC_TEMP_SLIDER,"msctls_trackbar32",WS_DISABLED | WS_TABSTOP,9,143,100,15
+    DEFPUSHBUTTON   "Apply",IDOK,118,250,50,14,WS_DISABLED
+    PUSHBUTTON      "Close",IDCLOSE,172,250,50,14
+    PUSHBUTTON      "Help",IDHELP,3,250,50,14
+    LTEXT           "minutes",IDC_MIN_TEXT,79,106,26,8,WS_DISABLED
+    LTEXT           "seconds",IDC_SEC_TEXT,114,106,27,8,WS_DISABLED
+    GROUPBOX        "Congestion Trigger",IDC_STATIC,3,5,219,52
+    GROUPBOX        "Trigger Settings",IDC_STATIC,3,59,219,131
+    LTEXT           "Max train stall time",IDC_STATIC,79,75,62,8
+    LTEXT           "Max temperature of stalled train ( °C )",IDC_STATIC,7,121,120,8
+    CTEXT           "30",IDC_TEMP_TEXT,56,130,11,8,SS_CENTERIMAGE | WS_DISABLED
+    LTEXT           "30",IDC_TEMP_LOW,12,159,11,8,WS_DISABLED
+    LTEXT           "60",IDC_TEMP_HIGH,99,159,11,8,WS_DISABLED
+    GROUPBOX        "Status",IDC_CON_STATIC2,3,194,219,51
+    EDITTEXT        IDC_STATUS_EDIT,8,205,209,34,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "",IDC_MENU_SEPERATOR,"Static",SS_ETCHEDHORZ,0,0,225,1
+    LTEXT           "Temperature deadband( °C )",IDC_STATIC,130,121,91,8
+    CONTROL         "Slider1",IDC_DEADBAND_SLIDER,"msctls_trackbar32",WS_DISABLED | WS_TABSTOP,115,143,100,15
+    CTEXT           "15",IDC_DEADBAND_TEXT,162,130,11,8,SS_CENTERIMAGE | WS_DISABLED
+    LTEXT           "1",IDC_DEADBAND_LOW,118,159,11,8,WS_DISABLED
+    LTEXT           "30",IDC_DEADBAND_HIGH,205,159,11,8,WS_DISABLED
+END
+
+IDD_TIMETABLE_CHANGE_DLG DIALOGEX 0, 0, 285, 175
+STYLE DS_SETFONT | DS_3DLOOK | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "ECS Timetable Selection"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_STATION,108,7,62,88,CBS_DROPDOWNLIST | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_NEW_TIMETABLE,108,47,119,108,CBS_DROPDOWNLIST | CBS_UPPERCASE | WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Apply",ID_APPLY,152,156,50,14,WS_DISABLED
+    PUSHBUTTON      "Close",ID_CLOSE,221,156,50,14
+    PUSHBUTTON      "Help",ID_HELP,6,155,50,14
+    LTEXT           "Station : ",IDC_STATIC,78,9,30,8
+    LTEXT           "Current Timetable :",IDC_STATIC,43,27,63,8
+    EDITTEXT        IDC_CURRENT_TIMETABLE,108,26,119,12,ES_UPPERCASE | ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "New Timetable :",IDC_STATIC,52,49,53,8
+    GROUPBOX        "Status",IDC_TIMETABLE_STATIC,4,66,275,82
+    EDITTEXT        IDC_STATUS_TEXT,9,77,264,64,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    CONTROL         "",IDC_MENU_SEPERATOR,"Static",SS_ETCHEDHORZ,0,0,221,1
+END
+
+IDD_ECSOVERALLTIMETABLE_SELECTION_DIALOG DIALOG  0, 0, 421, 332
+STYLE DS_SETFONT | DS_3DLOOK | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "ECS Overall Timetable Selection"
+MENU IDR_MAIN_MENU
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_OVERALL_ECS_TIMETABLE_LIST,"SysListView32",LVS_REPORT | LVS_OWNERDRAWFIXED | WS_BORDER | WS_TABSTOP,13,21,395,208
+    DEFPUSHBUTTON   "Apply",ID_APPLY,219,311,57,14
+    DEFPUSHBUTTON   "Cancel",ID_CANCEL,288,311,57,14
+    PUSHBUTTON      "Close",ID_CLOSE,357,311,57,14
+    PUSHBUTTON      "Help",ID_HELP,7,311,57,14
+    EDITTEXT        IDC_STATUS_TEXT,13,250,396,45,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    GROUPBOX        " Timetable Selection ",IDC_OVERALL_TIMETABLE_STATIC_LIST,7,7,407,223
+    GROUPBOX        " Status ",IDC_OVERALL_TIMETABLE_STATIC,7,239,407,61
+    CONTROL         "",IDC_MENU_SEPERATOR,"Static",SS_ETCHEDHORZ,0,0,414,1
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ECSSTATIONMODESOVERVIEW_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 668
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 413
+    END
+
+    IDD_ECSMASTERMODES_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 326
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_DECISION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+
+    IDD_CONGESTION_PARAMS_DIALOG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 273
+        HORZGUIDE, 143
+        HORZGUIDE, 165
+    END
+
+    IDD_TIMETABLE_CHANGE_DLG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 221
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_ECSOVERALLTIMETABLE_SELECTION_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 414
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 325
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\ECSManager.ico"
+IDI_ICON_LEFT           ICON                    "..\\res\\icon_lef.ico"
+IDI_ICON_RIGHT          ICON                    "..\\res\\icon_rig.ico"
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\ECSManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ECSMANAGER          "Template Property Sheet"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\ECSManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

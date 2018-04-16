@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.dai.archive_manager</ProjectName>
+    <ProjectGuid>{AFA7612C-8D55-4559-8164-C6839046590C}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_ArchiveManagerDAI</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ArchiveInventoryAccessFactory.cpp" />
+    <ClCompile Include="src\ArchiveInventoryData.cpp" />
+    <ClCompile Include="src\ArchiveManagerDaiUtilities.cpp" />
+    <ClCompile Include="src\ArchiveOnline.cpp" />
+    <ClCompile Include="src\ArchiveOnlineAccessFactory.cpp" />
+    <ClCompile Include="src\ArchiveOnlineHelper.cpp" />
+    <ClCompile Include="src\ArchiveTable.cpp" />
+    <ClCompile Include="src\ArchiveTableAccessFactory.cpp" />
+    <ClCompile Include="src\ArchiveTableHelper.cpp" />
+    <ClCompile Include="src\ConfigArchiveOnline.cpp" />
+    <ClCompile Include="src\ConfigArchiveTable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ArchiveInventoryAccessFactory.h" />
+    <ClInclude Include="src\ArchiveInventoryData.h" />
+    <ClInclude Include="src\ArchiveInventoryTable.h" />
+    <ClInclude Include="src\ArchiveManagerDaiUtilities.h" />
+    <ClInclude Include="src\ArchiveOnline.h" />
+    <ClInclude Include="src\ArchiveOnlineAccessFactory.h" />
+    <ClInclude Include="src\ArchiveOnlineHelper.h" />
+    <ClInclude Include="src\ArchiveOnlineTable.h" />
+    <ClInclude Include="src\ArchiveTable.h" />
+    <ClInclude Include="src\ArchiveTableAccessFactory.h" />
+    <ClInclude Include="src\ArchiveTableHelper.h" />
+    <ClInclude Include="src\ArchiveTableTable.h" />
+    <ClInclude Include="src\ConfigArchiveOnline.h" />
+    <ClInclude Include="src\ConfigArchiveTable.h" />
+    <ClInclude Include="src\IArchiveInventory.h" />
+    <ClInclude Include="src\IArchiveOnline.h" />
+    <ClInclude Include="src\IArchiveTable.h" />
+    <ClInclude Include="src\IConfigArchiveOnline.h" />
+    <ClInclude Include="src\IConfigArchiveTable.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

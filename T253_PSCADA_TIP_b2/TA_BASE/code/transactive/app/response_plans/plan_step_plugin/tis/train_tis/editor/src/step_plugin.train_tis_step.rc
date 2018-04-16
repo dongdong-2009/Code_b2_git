@@ -1,0 +1,141 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PLAN_STEP_EDIT_TRAIN_TIS_DLG DIALOGEX 0, 0, 353, 189
+STYLE DS_SETFONT | WS_CHILD | WS_CAPTION
+CAPTION "Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "Train ID:",IDC_TRAINTIS_TRAIN_ID_RADIO,"Button",BS_AUTORADIOBUTTON | BS_BOTTOM | WS_TABSTOP,16,20,61,12
+    COMBOBOX        IDC_TRAINTIS_TRAIN_ID_COMBO,80,20,49,179,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Inbound trains",IDC_TRAINTIS_INBOUND_TRAINS_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,37,82,12
+    CONTROL         "Outbound trains",IDC_TRAINTIS_OUTBOUND_TRAINS_RADIO,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,54,82,12
+    CONTROL         "All trains",IDC_TRAINTIS_ALL_TRAINS_RADIO,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,16,71,82,12
+    EDITTEXT        IDC_TRAINTIS_MESSAGE_EDIT,80,111,244,14,ES_AUTOHSCROLL | ES_READONLY
+    PUSHBUTTON      "...",IDC_TRAINTIS_PICK_MESSAGE_BUTTON,323,111,14,14
+    COMBOBOX        IDC_TRAINTIS_PRIORITY_COMBO,80,134,95,117,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_TRAINTIS_DURATION_PICKER,
+                    "SysDateTimePick32",DTS_UPDOWN | WS_TABSTOP | 0x8,80,157,49,15
+    LTEXT           "Duration:",IDC_STATIC,16,158,45,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Message:",IDC_STATIC,16,111,48,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        "Destination",IDC_STATIC,8,7,337,84
+    LTEXT           "Priority:",IDC_STATIC,16,134,45,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    GROUPBOX        "Display",IDC_STATIC,8,97,337,84
+    LTEXT           "hh:mm",IDC_STATIC,134,158,38,13,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+END
+
+IDD_PLAN_STEP_PARAMETER_TRAIN_TIS_MESSAGE_EDIT_DLG DIALOGEX 0, 0, 430, 321
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select message"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_TRAINTIS_MESSAGE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,7,67,415,226
+    DEFPUSHBUTTON   "OK",IDOK,157,300,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,223,300,50,14
+    LTEXT           "Destination",IDC_STATIC,166,26,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "library version:",IDC_STATIC,166,35,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Message",IDC_STATIC,291,26,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "library version:",IDC_STATIC,291,35,67,10,0,WS_EX_TRANSPARENT
+    LTEXT           "Parameter name:",IDC_STATIC,7,8,82,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    LTEXT           "Message list:",IDC_STATIC,7,55,96,10,0,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_TRAINTIS_PARAMETER_NAME,94,8,328,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    LTEXT           "Library type:",IDC_STATIC,8,29,82,14,SS_CENTERIMAGE,WS_EX_TRANSPARENT
+    EDITTEXT        IDC_TRAINTIS_LIBRARY_TYPE,94,29,51,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAINTIS_DEST_LIBRARY_VERSION,237,29,34,14,ES_AUTOHSCROLL | ES_READONLY | ES_NUMBER | NOT WS_TABSTOP
+    EDITTEXT        IDC_TRAINTIS_MSG_LIBRARY_VERSION,362,29,59,14,ES_AUTOHSCROLL | ES_READONLY | NOT WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_TRAINTIS_STEP_PARAMETER_TRAIN "Train"
+    IDS_TRAINTIS_STEP_PARAMETER_TIS_MESSAGE "Message"
+    IDS_TRAINTIS_STEP_PARAMETER_TIS_PRIORITY "Priority"
+    IDS_TRAINTIS_STEP_PARAMETER_TIS_DURATION "Duration"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

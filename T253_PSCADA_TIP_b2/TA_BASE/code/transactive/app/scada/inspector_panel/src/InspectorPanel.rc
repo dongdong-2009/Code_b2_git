@@ -1,0 +1,583 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral (Sys. Default) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEUSD)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_SYS_DEFAULT
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Inspector Panel"
+    IDS_ENABLE_DATAPOINT    "enable %1 for %2"
+    IDS_DISABLE_DATAPOINT   "disable %1 for %2"
+    IDS_APPLY_TAG_CHANGES   "apply tag changes"
+    IDS_SCAN_INHIBIT        "Scan Inhibit"
+    IDS_ALARM_INHIBIT       "Alarm Inhibit"
+    IDS_MMS_INHIBIT         "MMS Inhibit"
+    IDS_CONTROL_INHIBIT     "Control Inhibit"
+    IDS_OVERRIDE            "Override"
+    IDS_REMOVE_EQUIPMENT_STATUS "remove equipment status"
+    IDS_UPDATE_EQUIPMENT_STATUS "update equipment status"
+    IDS_REMOVE_EQUIPMENT_NOTES "remove equipment notes"
+    IDS_UPDATE_EQUIPMENT_NOTES "update equipment notes"
+    IDS_OVERRIDE_ALARM_ENABLED "%1"
+    IDS_OVERRIDE_ALARM_THRESHOLD "%1"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_INSPECTORPANEL_TITLE        "Inspector Panel"
+    IDS_LOADING                     "Loading"
+    IDS_LOADING_DATA_NODE           "Loading Equipment"
+    IDS_LOADING_DATA_POINT          "Loading Equipment Data"
+    IDS_LOADING_COMPLETE            "Loading Complete"
+    IDS_LOADING_NODE_PROXY          "Loading Equipment Proxy"
+    IDS_LOADING_NODE_PROXY_FAILED   "Loading Equipment Proxy Failed"
+    IDS_LOADING_NODE_FAILED         "Loading Equipment Failed"
+    IDS_LOADING_DATA_POINT_FAILED   "Loading Equipment Data Failed"
+    IDS_LOADING_DATA_PROXY          "Loading Equipment Data Proxy"
+    IDS_LOADING_DATA_PROXY_FAILED   "Loading Equipment Data Proxy Failed"
+    IDS_CONFIRM_CANCLE              "Please Confirm or Cancel Command"
+    IDS_EQUIPMENT                   "Equipment"
+    IDS_CONTROL_POINT               "Control Point"
+    IDS_CONTROL_ACTION              "Control Action"
+    IDS_CONTROL_INFO                "Control Info"
+    IDS_CONFIRM                     "Confirm"
+    IDS_CANCEL                      "Cancel"
+    IDS_DESCRIPTION_COLUMN          "Discription"
+    IDS_TYPE_COLUMN                 "Type"
+    IDS_STATE_COLUMN                "State"
+    IDS_OPERATION_COLUMN            "Operation"
+    IDS_CURRENT_VALUE_COLUMN        "Current Value"
+    IDS_QUALITY_COLUMN              "Quality"
+    IDS_TIME_COLUMN                 "Time"
+    IDS_CONTROL_COLUMN              "Control"
+    IDS_SCAN_COLUMN                 "Scan"
+    IDS_ALARM_COLUMN                "Alarm"
+    IDS_ALARM_TYPE_COLUMN           "Alarm Type"
+    IDS_ENABLE_COLUMN               "Enabled"
+    IDS_THRESHOLD_COLUMN            "Threshold Value"
+    IDS_ADJUST_COLUMN               "Adjustment"
+    IDS_OVERRIDE_COLUMN             "Ovr"
+    IDS_OVERRIDE_VALUE_COLUMN       "Override Value"
+    // IDS_CONTROL                     "Control"
+    IDS_SETUP                       "Setup"
+    IDS_SENT                        "Sent"
+    IDS_PENDING                     "Pending"
+    IDS_SUCCESSFUL                  "Successful"
+    IDS_FAILED                      "Failed"
+    IDS_LCC_FAILED                  "Failed due to %1"
+    IDS_RCC_FAILED                  "Sending Control To %1 Failed Due To Bad Return Condition"
+    IDS_COMMS_FAILED                "Failed due to Comms Error."
+    IDS_SELECT_COMMAND_WRITE        "Sent Select Command to %1"
+    IDS_SELECT_COMMAND_CONFIRM      "Recv Select Confirm From %1"
+    IDS_SELECT_COMMAND_TIMEOUT      "Select Confirm From %1 Due To Timeout"
+    IDS_OPERATOR_TIMEOUT            "Operator timeout"
+    IDS_EXE_COMMAND_WRITE           "Sent Execute Command To %1"
+    IDS_EXE_COMMAND_CONFIRM         "Recv Execute Confirm From %1"
+    IDS_EXE_COMMAND_TIMEOUT         "Execute Confirm From %1 Failed Due To Timeout"
+    IDS_EXE_COMMAND_SUCCESS         "Recv Execute Success from %1"
+    IDS_EXE_COMMAND_SUCCESS_TIMEOUT "Execute Success From %1 Failed Due To Timeout"
+    IDS_CANCEL_COMMAND_WRITE        "Sent Cancel Command to %1"
+    IDS_CANCEL_COMMAND_CONFIRM      "Recv Cancel Confirm from %1"
+    IDS_CANCEL_COMMAND_TIMEOUT      "Cancel Confirm from %1 failed due to timeout"
+    IDS_SELECT_COMMAND_NEGATIVE     "Recv Select Confirm from %1 Failed due to device refuse"
+    IDS_EXE_COMMAND_NEGATIVE        "Recv Execute Confirm from %1 failed due to device refuse"
+    IDS_CANCEL_COMMAND_NEGATIVE     "Recv Cancel Confirm from %1 failed due to device refuse"
+    IDS_COMMAND_EXCEPTION           "Recv Command Execute from %1 failed due to device exception"
+    IDS_SELECT_ACTION               "selection"
+    IDS_EXEC_ACTION                 "execution"
+    IDS_CANCEL_ACTION               "cancel"
+    IDS_SEND_COMMAND_NO_PERMISSION  "Send %1 command failed due to no permission"
+    IDS_SET_FAILED_NO_PERMISSION    "Set value failed due to no permission"
+    // IDS_SELECT_FAILED_NO_PERMISSION "Failed to send select command due to no permission"
+    // IDS_EXEC_FAILED_NO_PERMISSION   "Failed to send execute command due to no permission"
+    // IDS_EXEC_CANCEL_NO_PERMISSION   "Failed to send cancel command due to no permission"
+    IDS_VALUE_INVALID               "%1 : value '%2' is invalid"
+    IDS_VALUE_OUT_RANGE             "%1 : value '%2' is not in range"
+    IDS_VALUE_RANGE                 "valid range is from %1 to %2"
+    IDS_INVALID_NUM_MSG             "%1: value %2 is not a valid number."
+    IDS_INVALID_VALUE_MSG           "%1: value %2 is not valid."
+    IDS_NO_PERMISSION_MSG           "1%: no permission"
+    IDS_CONTROL_INHIBITED_MSG       "%1: control inhibited"
+    IDS_SET_NEW_VALUE_MSG           "%1: has set new value to %2"
+    IDS_SET_FAILED_PROXY_MSG        "%1: set new value to %2 failed due to proxy exception"
+    IDS_SET_FAILED_UNKNOWN_MSG      "%1: set new value to %2 failed due to unknown exception"    
+    IDS_DATA_GOOD                   "Good"
+    IDS_DATA_GOOD_OVERRIDE          "Good - Local Override"
+    IDS_DATA_BAD                    "Bad"
+    IDS_DATA_BAD_NO_CONECT          "Bad - Not connected"
+    IDS_DATA_BAD_LAST_KNOWN         "Bad - Last Known Value"
+    IDS_DATA_BAD_CFG                "Bad - Configuration Error"
+    IDS_DATA_BAD_DEVICE             "Bad - Device Failure"
+    IDS_DATA_BAD_SENSOR             "Bad - Sensor Failure"
+    IDS_DATA_BAD_COMM               "Bad - Comm Failure"
+    IDS_DATA_BAD_SERVICE            "Bad - Out of Service"
+    IDS_DATA_UNCERTAIN              "Uncertain"
+    IDS_DATA_UNCERTAIN_LAST_KNOWN   "Uncertain - Last Usable Value"
+    IDS_DATA_UNCERTAIN_SENSOR       "Uncertain - Sensor not Accurate"
+    IDS_DATA_UNCERTAIN_EXCEED       "Uncertain - Engineering Unit Exceeded"
+    IDS_DATA_UNCERTAIN_SUB_NORMAL   "Uncertain - Sub-normal"
+    IDS_SCAN_INHIBIT_MSG            ": Scan Inhibit "
+    IDS_ON_MSG                      "ON"
+    IDS_OFF_MSG                     "OFF"
+    IDS_ALARM_INHIBIT_MSG           ": Alarm Inhibit "
+    IDS_CONTROL_INHIBIT_MSG         ": Control Inhibit "
+    IDS_CHANGEING_EQUIPMENT_MSG     "Changing Equipment to "    
+    IDS_ALARM_TYPE                  "Alarm Type "
+    IDS_ALARM_ENABLE_MSG            "Alarm Type %1 enabled"
+    IDS_ALARM_DISABLE_MSG           "Alarm Type %1 disabled"
+    IDS_SET_UNIT_ERR_MSG            "The input value %1 is not a valid number (should exclude unit)"
+    IDS_SET_THRESHOLD_FAILED        "Set new Threshold Value %1 Failed."
+    IDS_TAB_INFO                    "Information"
+    IDS_TAB_CTRL                    "Control"
+    IDS_TAB_NOTE                    "Notes"
+    IDS_TAB_LABEL                   "Label"
+    IDS_TAB_INHIBIT                 "Inhibit"
+    IDS_TAB_OVERRIDE                "Override"
+    IDS_TAB_LIMIT                   "Limitation"
+    IDS_TAB_METER                   "Meter"
+    IDS_TAB_STATUS                  "Status"
+    IDS_ADJUST_FAILED_MSG           "Adjusted by %1 Failed."
+    IDS_ADJUST_VALUE_FAILED_MSG     "Adjust %1 Failed."
+    IDS_ADJUST_SUCCESS              "Adjusted By %1 Successful."
+    IDS_NOTE_REMOVE_FAILED          "Notes Removed Failed: "
+    IDS_NOTE_REMOVE_FAILED_UNKNOWN  "Notes Removed Failed: Uknow Exception"
+    IDS_NOTE_REMOVE_SUCCESS         "Notes Removed Successful."
+    IDS_NOTE_ADD_FAILED             "Notes Added Failed : "
+    IDS_NOTE_ADD_FAILED_UNKNOWN     "Notes Added Failed: Uknow Exception"
+    IDS_NOTE_ADD_SUCCESS            "Notes Added Successful."
+    IDS_OVR_FAILED1                 "Override Failed: entered value is empty."
+    IDS_OVR_FAILED2                 "Override Failed: entered value is not within range."
+    IDS_OVR_FAILED3                 "Override Failed: Value %1 is not a valid number."
+    IDS_OVR_FAILED4                 "Override No permission"
+    IDS_OVR_FAILED5                 "Override %1 Failed."
+    IDS_OVR_FAILED6                 "Override OFF Failed."
+    IDS_OVR_SUCCESSFUL1             "Override %1 Successful."
+    IDS_OVR_SUCCESSFUL2             "Override OFF Successful."
+    IDS_TAG_LAB1                    "Tag without PTW"
+    IDS_TAG_LAB2                    "Tag with PTW \'"
+    IDS_TAG_LAB3                    "Remove Tag"
+    IDS_TAG_LAB4                    "Inhibit Scan"
+    IDS_TAG_LAB5                    "Inhibit Alarm"
+    IDS_TAG_LAB6                    "Inhibit Control"
+    IDS_TAG_LAB7                    " and Control"
+    IDS_TAG_LAB8                    "Enable Scan"
+    IDS_TAG_LAB9                    "Enable Alarm"
+    IDS_TAG_LAB10                   "Enable Control"
+    IDS_TAG_LAB11                   "Inhibition unchanged"
+    IDS_TAG_LAB12                   "No Inhibition"
+    IDS_TAG_LAB13                   "Equipment Tag"
+    IDS_TAG_LAB14                   " with "
+    IDS_TAG_LAB15                   "Scan Inhibit"
+    IDS_TAG_LAB16                   "Alarm Inhibit"
+    IDS_TAG_LAB17                   "Control Inhibit"
+    IDS_TAG_LAB18                   " ON Successful."
+    IDS_TAG_LAB19                   " With PTW"
+    IDS_TAG_LAB20                   " with "
+    IDS_TAG_LAB21                   " OFF Successful."
+    IDS_TAG_LAB22                   " OFF Failed."
+    IDS_TAG_LAB23                   " ON Failed."
+    IDS_UNDEFINED_STR               "Undefined"
+    IDS_LCC_FAILED_STR              "LCC failed"
+    IDS_RCC_FAILED_STR              "RCC failed"
+    IDS_COMMS_FAILED_STR            "Comms failed"
+    IDS_CONTROL_SELECT_SENT_STR     "Pending"
+    IDS_CONTROL_SELECT_CFR_STR      "Pending"
+    IDS_CONTROL_EXE_SENT_STR        "Pending"
+    IDS_CONTROL_EXE_CFM_STR         "Pending"
+    IDS_CONTROL_CANCEL_SENT_STR     "Pending"
+END
+
+#endif    // Neutral (Sys. Default) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INSPECTOR_PANEL_DIALOG DIALOGEX 0, 0, 318, 365
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Inspector Panel"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_STATUS,11,297,296,37,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Help",ID_HELP_IP,6,341,50,14
+    PUSHBUTTON      "Close",IDCANCEL,261,341,50,14
+    CONTROL         "Tab1",IDC_MAINTAB,"SysTabControl32",NOT WS_VISIBLE | WS_TABSTOP,7,15,305,267
+    LTEXT           "",IDC_EQUIPMENT_DESCRIPTION,7,3,308,10
+    GROUPBOX        "Status",IDC_STATUS_GROUP_BOX,6,287,305,51
+    LTEXT           "",IDC_COUNT,274,14,23,12,NOT WS_VISIBLE
+END
+
+IDD_INFORMATION DIALOGEX 0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    CONTROL         "List1",IDC_INFO_DATAPOINTLIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,0,0,300,252,WS_EX_ACCEPTFILES
+END
+
+IDD_CONTROL DIALOGEX 0, 0, 318, 280
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_CONTROLLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,0,0,301,252
+END
+
+IDD_TAG DIALOGEX 0, 0, 300, 164
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    GROUPBOX        "Tag",IDC_TAG,5,0,290,126
+    RADIOBUTTON     "Not Tagged",IDC_RADIO_NOT_TAGGED,11,10,47,11,WS_DISABLED
+    RADIOBUTTON     "Tag",IDC_RADIO_TAG,11,22,45,11,WS_DISABLED
+    RADIOBUTTON     "Tag with PTW",IDC_RADIO_TAG_PTW,11,34,57,11,WS_DISABLED
+    LTEXT           "PTW ID",IDC_STATIC,83,11,33,9
+    EDITTEXT        IDC_PTW_ID,83,20,110,31,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "Comment",IDC_STATIC,12,47,33,9
+    EDITTEXT        IDC_COMMENT,12,56,275,64,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Inhibit",IDC_INHIBIT,204,0,91,52
+    PUSHBUTTON      "Apply",IDC_APPLY_TAG,246,138,50,14,WS_DISABLED
+    CONTROL         "Inhibit Scan",IDC_SCANINHIBIT_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,213,12,54,10
+    CONTROL         "Inhibit Control",IDC_CONTROLINHIBIT_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,213,40,61,10
+    CONTROL         "Inhibit Alarm",IDC_ALARMINHIBIT_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,222,26,57,10
+    // CONTROL         "Inhibit MMS",IDC_MMSINHIBIT_CHECK,"Button",BS_AUTOCHECKBOX | WS_DISABLED | WS_TABSTOP,222,54,64,10
+END
+
+IDD_CONFIRM_CONTROL_DIALOG DIALOGEX 0, 0, 269, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Command confirmation"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CC,5,86,50,14
+    GROUPBOX        "Please confirm command...",IDC_STATIC1,5,7,257,76
+    LTEXT           "Equipment",IDC_STATIC2,14,22,43,8
+    LTEXT           "Attribute",IDC_STATIC3,14,47,40,13
+    LTEXT           "Command",IDC_STATIC4,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,62,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,62,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,62,64,176,11,SS_SUNKEN
+END
+
+IDD_INPUT_VALUE_DIALOG DIALOGEX 0, 0, 269, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Input value"
+FONT 10, "Arial Bold", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CC,5,86,50,14
+    GROUPBOX        "Please input value...",IDC_STATIC1,5,7,257,76
+    LTEXT           "Equipment",IDC_STATIC2,14,22,43,8
+    LTEXT           "Attribute",IDC_STATIC3,14,47,40,13
+    LTEXT           "Value",IDC_STATIC4,14,67,41,13
+    LTEXT           "",IDC_EQUIPMENT,62,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,62,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_VALUE_UNIT,188,65,49,11,SS_SUNKEN
+    EDITTEXT        IDC_INPUT_NEW_VALUE,61,65,120,11,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    COMBOBOX        IDC_COMBOBOX_VALUE,61,65,117,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_CONFIRM_TAG_DIALOG DIALOG  0, 0, 269, 104
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Tag confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CT,5,86,50,14
+    GROUPBOX        "Please confirm tag...",IDC_STATIC,5,7,257,75
+    LTEXT           "Equipment",IDC_STATIC,15,22,43,13
+    LTEXT           "Tag",IDC_STATIC,15,47,40,13
+    LTEXT           "Inhibit",IDC_STATIC,15,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,61,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_TAG,61,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_INHIBIT,61,64,176,11,SS_SUNKEN
+END
+
+IDD_MAINTENANCE DIALOG  0, 0, 474, 101
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INFO_MAINTENANCELIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,7,25,460,77
+    LTEXT           "Description",IDC_STATIC,10,7,40,17
+    LTEXT           "Type",IDC_STATIC,110,7,28,17
+    LTEXT           "Control Inhibit",IDC_STATIC,170,7,28,17
+    LTEXT           "Scan Inhibit",IDC_STATIC,200,7,28,17
+    LTEXT           "Alarm Inhibit",IDC_STATIC,230,7,28,17
+    LTEXT           "Override Enable",IDC_STATIC,260,7,28,17
+    LTEXT           "Override Value",IDC_STATIC,290,7,28,17
+    LTEXT           "Current Value",IDC_STATIC,378,7,28,17
+END
+
+IDD_NOTES DIALOG  0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_EDITNOTES,1,2,297,76,ES_MULTILINE | ES_WANTRETURN | WS_DISABLED | WS_VSCROLL
+    PUSHBUTTON      "Update",IDC_UPDATE,32,83,50,14,WS_DISABLED
+    PUSHBUTTON      "Clear",IDC_REMOVE,222,83,50,14,WS_DISABLED
+END
+
+IDD_CONFIRM_OVERRIDE_DIALOG DIALOGEX 0, 0, 269, 96
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Override confirmation"
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "Override",IDOK,157,79,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,212,79,50,14
+    PUSHBUTTON      "Help",ID_HELP_CO,5,79,50,14
+    GROUPBOX        "Please enter override value...",IDC_STATIC,5,7,257,68
+    LTEXT           "Equipment",IDC_STATIC,15,22,43,13
+    LTEXT           "Attribute",IDC_STATIC,15,44,40,13
+    LTEXT           "Value",IDC_STATIC,15,59,41,13
+    LTEXT           "",IDC_EQUIPMENT,61,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,61,44,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,61,58,176,13,SS_SUNKEN
+END
+
+IDD_LIMITS DIALOGEX 0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_INFO_DATAPOINTLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,1,2,107,244
+    EDITTEXT        IDC_LIMIT_INFO,113,2,184,22,ES_MULTILINE | ES_READONLY | ES_WANTRETURN | NOT WS_TABSTOP
+    CONTROL         "List1",IDC_LIMITS_DETAILSLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,113,23,184,223
+END
+
+IDD_STATUS DIALOG  0, 0, 300, 101
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    EDITTEXT        IDC_STATUS_INFO,1,2,297,97,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN | WS_VSCROLL
+END
+
+IDD_INHIBIT DIALOG  0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_INHIBIT_DATAPOINTLIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,0,0,300,252
+END
+
+IDD_OVERRIDE DIALOG  0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_OVERRIDE_DATAPOINTLIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,0,0,300,252
+END
+
+IDD_METER DIALOG  0, 0, 309, 278
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "List1",IDC_METER_DATAPOINTLIST,"SysListView32",LVS_REPORT | WS_BORDER | WS_TABSTOP,0,0,300,252
+END
+
+IDD_CONFIRM_ADJUST_DIALOG DIALOG  0, 0, 269, 103
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Command confirmation"
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDOK,157,86,50,14
+    DEFPUSHBUTTON   "Cancel",IDCANCEL,212,86,50,14
+    PUSHBUTTON      "Help",ID_HELP_CA,5,86,50,14
+    GROUPBOX        "Please confirm metering adjustment...",IDC_STATIC,5,7,257,76
+    LTEXT           "Equipment",IDC_STATIC,14,22,43,8
+    LTEXT           "Meter",IDC_STATIC,14,47,40,13
+    LTEXT           "Adjustment",IDC_STATIC,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,62,22,176,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,62,47,176,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,62,64,176,11,SS_SUNKEN
+END
+
+IDD_CONFIRM_DIRECT_CONTROL_DIALOG DIALOG  0, 0, 307, 121
+STYLE DS_SETFONT | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    PUSHBUTTON      "Confirm",IDCONFIRM,250,97,50,14
+    GROUPBOX        "Please confirm command...",IDC_STATIC,0,0,307,118
+    LTEXT           "Equipment",IDC_STATIC,14,22,43,8
+    LTEXT           "Attribute",IDC_STATIC,14,47,40,13
+    LTEXT           "Command",IDC_STATIC,14,64,41,13
+    LTEXT           "",IDC_EQUIPMENT,57,22,243,19,SS_SUNKEN
+    LTEXT           "",IDC_DATA_POINT,57,47,243,11,SS_SUNKEN
+    LTEXT           "",IDC_NEW_VALUE,57,64,243,11,SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "FileDescription", "InspectorPanel MFC Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "InspectorPanel"
+            VALUE "LegalCopyright", "Copyright (C) 2018"
+            VALUE "OriginalFilename", "InspectorPanel.EXE"
+            VALUE "ProductName", "InspectorPanel Application"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_INSPECTOR_PANEL_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 354
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\InspectorPanel.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "..\\res\\InspectorPanel.ico"
+IDI_GREEN               ICON                    "..\\res\\blank.ico"
+IDI_ORANGE              ICON                    "..\\res\\green1.ico"
+IDI_BLUE                ICON                    "..\\res\\green2.ico"
+IDI_RED                 ICON                    "..\\res\\green3.ico"
+IDI_GREY                ICON                    "..\\res\\grey.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_GREEN               BITMAP                  "..\\res\\bitmap1.bmp"
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\InspectorPanel.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

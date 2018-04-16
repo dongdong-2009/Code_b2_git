@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.radio.radioagentcorbadef_4669.corbadef</ProjectName>
+    <ProjectGuid>{27FF8E1D-3A2B-4C4D-8C22-346939E1DDE8}</ProjectGuid>
+    <RootNamespace>bus.radio.radioagentcorbadef_4669.idl</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_RadioAgentCorbaDef_4669_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_RadioAgentCorbaDef_4669</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioDirectoryCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioDirectoryCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioSessionCorbaDef.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioSessionCorbaDef_skel.cpp" />
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioStateSynchronisationCorbaDef.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(TA_BuildPath)\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(TA_BuildPath)\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioStateSynchronisationCorbaDef_skel.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(TA_BuildPath)\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(TA_BuildPath)\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioDirectoryCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioSessionCorbaDef.h" />
+    <ClInclude Include="..\..\..\..\..\..\build\win32_n\transactive\bus\radio\radioagentcorbadef_4669\IDL\src\IRadioStateSynchronisationCorbaDef.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

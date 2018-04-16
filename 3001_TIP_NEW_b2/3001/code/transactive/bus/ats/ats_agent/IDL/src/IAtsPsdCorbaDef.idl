@@ -1,0 +1,41 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/3001_TIP_NEW/3001/transactive/bus/ats/ats_agent/IDL/src/IAtsPsdCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2012/02/06 16:15:14 $
+// Last modified by:  $Author: haijun.li $
+//
+// IAtsTisCorbaDef structure definition for the ATS/TIS Agent interfacing.  
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsPsdCorbaDef
+	{
+		//
+		// AtsTisMessageCorbaDef is expected to be sent to the TIS Agent through the 
+		// 'any messageState' member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsPsdMessageCorbaDef
+		{
+			PlatformIdType				platformId;	
+
+			// PSD 
+			boolean						psdClosePreWarning;
+			boolean						psdClosedAndLocked;
+			boolean						psdDoorInhibitionStatus[12];
+		}; // AtsPsdMessageCorbaDef
+
+		//
+		// A sequence of AtsTisMessageCorbaDef defined for getTisInformationList
+		//
+		typedef sequence<AtsPsdMessageCorbaDef>  PsdInfoList;
+
+	}; // IAtsPsdCorbaDef
+}; // TA_Bus

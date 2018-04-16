@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.alarm.alarm_list_control</ProjectName>
+    <ProjectGuid>{045F2CE1-F02D-47EB-ABC1-3F701CF1CE03}</ProjectGuid>
+    <RootNamespace>bus.alarm.alarm_list_control</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_AlarmListCtrl_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetName>TA_AlarmListCtrl</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\;$(TA_BuildPath)\win32_n\transactive\bus\trains\TrainAgentCorba\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\bus\resources\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ResourceOutputFileName />
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(TA_BuildPath)\win32_n\transactive\core\exceptions\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\message\IDL\src;$(TA_BuildPath)\win32_n\transactive\core\alarm\IDL\src;$(TA_BuildPath)\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\;$(TA_BuildPath)\win32_n\transactive\bus\trains\TrainAgentCorba\idl\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\..\bus\resources\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ResourceOutputFileName />
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\actions\ActionAcknowledgeAlarm.cpp" />
+    <ClCompile Include="src\actions\ActionAcknowledgeAllAlarms.cpp" />
+    <ClCompile Include="src\actions\ActionCloseAndAckAlarm.cpp" />
+    <ClCompile Include="src\actions\ActionDisplayComment.cpp" />
+    <ClCompile Include="src\actions\ActionEventsViewer.cpp" />
+    <ClCompile Include="src\actions\ActionIncidentLogSheet.cpp" />
+    <ClCompile Include="src\actions\ActionJobRequest.cpp" />
+    <ClCompile Include="src\actions\ActionPostponeDSS.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedAvalancheEvents.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedDSS.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedEvents.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedInspector.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedPlanInstance.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedSchematic.cpp" />
+    <ClCompile Include="src\actions\ActionRelatedTrend.cpp" />
+    <ClCompile Include="src\actions\ActionSuppressAlarm.cpp" />
+    <ClCompile Include="src\ActionThread.cpp" />
+    <ClCompile Include="src\AlarmActionFactory.cpp" />
+    <ClCompile Include="src\AlarmDataSync.cpp" />
+    <ClCompile Include="src\AlarmListCtrl.cpp" />
+    <ClCompile Include="src\AlarmRetriever.cpp" />
+    <ClCompile Include="src\AlarmSelectionWrap.cpp" />
+    <ClCompile Include="src\AlarmStore.cpp" />
+    <ClCompile Include="src\AlarmStoreCallback.cpp" />
+    <ClCompile Include="src\AlarmVectorWrap.cpp" />
+    <ClCompile Include="src\ATSAlarmBridgeWrap.cpp" />
+    <ClCompile Include="src\columns\ColumnAck.cpp" />
+    <ClCompile Include="src\columns\ColumnAckBy.cpp" />
+    <ClCompile Include="src\columns\ColumnAckTime.cpp" />
+    <ClCompile Include="src\columns\ColumnAlarmOperationMode.cpp" />
+    <ClCompile Include="src\columns\ColumnAlarmType.cpp" />
+    <ClCompile Include="src\columns\ColumnAsset.cpp" />
+    <ClCompile Include="src\columns\ColumnAvalanche.cpp" />
+    <ClCompile Include="src\columns\ColumnCloseTime.cpp" />
+    <ClCompile Include="src\columns\ColumnComment.cpp" />
+    <ClCompile Include="src\columns\ColumnDecisionSupport.cpp" />
+    <ClCompile Include="src\columns\ColumnDescription.cpp" />
+    <ClCompile Include="src\columns\ColumnEntityName.cpp" />
+    <ClCompile Include="src\columns\ColumnLocation.cpp" />
+    <ClCompile Include="src\columns\ColumnMms.cpp" />
+    <ClCompile Include="src\columns\ColumnSeverity.cpp" />
+    <ClCompile Include="src\columns\ColumnSourceTimestamp.cpp" />
+    <ClCompile Include="src\columns\ColumnState.cpp" />
+    <ClCompile Include="src\columns\ColumnSubsystem.cpp" />
+    <ClCompile Include="src\columns\ColumnTransActiveTimestamp.cpp" />
+    <ClCompile Include="src\columns\ColumnValue.cpp" />
+    <ClCompile Include="src\CommentDialog.cpp" />
+    <ClCompile Include="src\CSuppressAlarmConfirmDlg.cpp" />
+    <ClCompile Include="src\DatabaseCache.cpp" />
+    <ClCompile Include="src\EditCommentDialog.cpp" />
+    <ClCompile Include="src\ExtAlarmActionChecker.cpp" />
+    <ClCompile Include="src\FASAlarmHandler.cpp" />
+    <ClCompile Include="src\TA_Filter.cpp" />
+    <ClCompile Include="src\ListHeaderCtrl.cpp" />
+    <ClCompile Include="src\LocationSelectionDialog.cpp" />
+    <ClCompile Include="src\PlanAssociationDialog.cpp" />
+    <ClCompile Include="src\PreConflictAckDlg.cpp" />
+    <ClCompile Include="src\RightsChecker.cpp" />
+    <ClCompile Include="src\SimpleDispMultiIndex.cpp" />
+    <ClCompile Include="src\Sort.cpp" />
+    <ClCompile Include="src\StdAfx.cpp" />
+    <ClCompile Include="src\SuppressAlarmDialog.cpp" />
+    <ClCompile Include="src\TrainAgentAccess.cpp" />
+    <ClCompile Include="src\TrainAlarms.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\actions\ActionAcknowledgeAlarm.h" />
+    <ClInclude Include="src\actions\ActionAcknowledgeAllAlarms.h" />
+    <ClInclude Include="src\actions\ActionCloseAndAckAlarm.h" />
+    <ClInclude Include="src\actions\ActionDisplayComment.h" />
+    <ClInclude Include="src\actions\ActionEventsViewer.h" />
+    <ClInclude Include="src\actions\ActionIncidentLogSheet.h" />
+    <ClInclude Include="src\actions\ActionJobRequest.h" />
+    <ClInclude Include="src\actions\ActionPostponeDSS.h" />
+    <ClInclude Include="src\actions\ActionRelatedAvalancheEvents.h" />
+    <ClInclude Include="src\actions\ActionRelatedDSS.h" />
+    <ClInclude Include="src\actions\ActionRelatedEvents.h" />
+    <ClInclude Include="src\actions\ActionRelatedInspector.h" />
+    <ClInclude Include="src\actions\ActionRelatedPlanInstance.h" />
+    <ClInclude Include="src\actions\ActionRelatedSchematic.h" />
+    <ClInclude Include="src\actions\ActionRelatedTrend.h" />
+    <ClInclude Include="src\actions\ActionResources.h" />
+    <ClInclude Include="src\actions\ActionSeparator.h" />
+    <ClInclude Include="src\actions\ActionSuppressAlarm.h" />
+    <ClInclude Include="src\ActionThread.h" />
+    <ClInclude Include="src\AlarmActionFactory.h" />
+    <ClInclude Include="src\AlarmDataSync.h" />
+    <ClInclude Include="src\AlarmListCtrl.h" />
+    <ClInclude Include="src\AlarmRetriever.h" />
+    <ClInclude Include="src\AlarmSelectionWrap.h" />
+    <ClInclude Include="src\AlarmStore.h" />
+    <ClInclude Include="src\AlarmStoreCallback.h" />
+    <ClInclude Include="src\AlarmVectorWrap.h" />
+    <ClInclude Include="src\ATSAlarmBridgeWrap.h" />
+    <ClInclude Include="src\columns\AbstractAlarmColumn.h" />
+    <ClInclude Include="src\columns\ColumnAck.h" />
+    <ClInclude Include="src\columns\ColumnAckBy.h" />
+    <ClInclude Include="src\columns\ColumnAckTime.h" />
+    <ClInclude Include="src\columns\ColumnAlarmOperationMode.h" />
+    <ClInclude Include="src\columns\ColumnAlarmType.h" />
+    <ClInclude Include="src\columns\ColumnAsset.h" />
+    <ClInclude Include="src\columns\ColumnAvalanche.h" />
+    <ClInclude Include="src\columns\ColumnCloseTime.h" />
+    <ClInclude Include="src\columns\ColumnComment.h" />
+    <ClInclude Include="src\columns\ColumnDecisionSupport.h" />
+    <ClInclude Include="src\columns\ColumnDescription.h" />
+    <ClInclude Include="src\columns\ColumnEntityName.h" />
+    <ClInclude Include="src\columns\ColumnIdentifiers.h" />
+    <ClInclude Include="src\columns\ColumnLocation.h" />
+    <ClInclude Include="src\columns\ColumnMms.h" />
+    <ClInclude Include="src\columns\ColumnSeverity.h" />
+    <ClInclude Include="src\columns\ColumnSourceTimestamp.h" />
+    <ClInclude Include="src\columns\ColumnState.h" />
+    <ClInclude Include="src\columns\ColumnSubsystem.h" />
+    <ClInclude Include="src\columns\ColumnTransActiveTimestamp.h" />
+    <ClInclude Include="src\columns\ColumnValue.h" />
+    <ClInclude Include="src\CommentDialog.h" />
+    <ClInclude Include="src\CommonStructures.h" />
+    <ClInclude Include="src\ConstDefine.h" />
+    <ClInclude Include="src\CSuppressAlarmConfirmDlg.h" />
+    <ClInclude Include="src\DatabaseCache.h" />
+    <ClInclude Include="src\EditCommentDialog.h" />
+    <ClInclude Include="src\ExtAlarmActionChecker.h" />
+    <ClInclude Include="src\FASAlarmHandler.h" />
+    <ClInclude Include="src\TA_Filter.h" />
+    <ClInclude Include="src\IAlarmAction.h" />
+    <ClInclude Include="src\IAlarmColumn.h" />
+    <ClInclude Include="src\IAlarmDisplayUpdate.h" />
+    <ClInclude Include="src\IAlarmListObserver.h" />
+    <ClInclude Include="src\IAlarmRetriever.h" />
+    <ClInclude Include="src\ListHeaderCtrl.h" />
+    <ClInclude Include="src\LocationSelectionDialog.h" />
+    <ClInclude Include="src\PlanAssociationDialog.h" />
+    <ClInclude Include="src\PreConflictAckDlg.h" />
+    <ClInclude Include="src\resource.h" />
+    <ClInclude Include="src\RightsChecker.h" />
+    <ClInclude Include="src\SimpleDispMultiIndex.h" />
+    <ClInclude Include="src\Sort.h" />
+    <ClInclude Include="src\StdAfx.h" />
+    <ClInclude Include="src\SuppressAlarmDialog.h" />
+    <ClInclude Include="src\TrainAgentAccess.h" />
+    <ClInclude Include="src\TrainAlarms.h" />
+    <ClInclude Include="src\WinMsgDef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\AlarmListCtrl.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="src\AlarmListCtrl.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,19 @@
+How to Install BEA Package and Misc Files in OCC Servers
+--------------------------------------------------------
+
+1. Place the Mms_Software directory, dmqsaf.jrn, dmq.ini to /u01/transactive/bin/ directory.
+   - This is needed for the configuration of MMS and also for the journal file.
+
+
+2. Place the .profile file in the transactive user directory (/u01/transactive/)
+   - .profile file is needed for running BEA test client. Added additional path for BEADIR
+     and LD_LIBRARY_PATH
+
+
+3. Place the static-routes file in the /etc/init.d directory. This file is needed to add route
+   permanently to MMS network. Also place the link file (S76static-route) in /etc/rc2.d directory to link to this
+   file.
+
+4. Place the tcpip_timeout file in the /etc/init.d directory. This file is needed to minimise 
+   the timing of tcp/ip connection timeout when MMS server is not available. Also place the link
+   file (S76tcpip_timeout) in /etc/rc2.d directory to link to the file.

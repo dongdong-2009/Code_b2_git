@@ -1,0 +1,241 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4677_TIP/4677/transactive/bus/radio/radio_agent/IDL/src/CommonRadioAgentIDL.idl $
+// @author:  zou chunzhong
+// @version: $Revision: #2 $
+//
+// Last modification: $DateTime: 2009/12/15 19:31:45 $
+// Last modified by:  $	$
+//
+// Radio Agents IDL interface.
+//
+
+#ifndef COMMON_RADIO_AGENT_IDL
+#define COMMON_RADIO_AGENT_IDL
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_IRS_Bus
+{
+	interface Radio 
+	{
+
+		const unsigned long RADIO_MAX_MESSAGE_TEXT_LENGTH			=	140;
+
+		const unsigned long RADIO_MAX_OPERATOR_SHORT_NAME_LENGTH	=	20;
+
+
+		enum ERadioResourceType
+		{
+			RR_NIL,
+
+			RR_RADIO,
+
+			RR_TALKGROUP,
+
+			RR_ANNGROUP,
+
+			RR_PATCHGROUP,
+
+			RR_DYNGROUP,
+
+			RR_MSELECT,
+
+			RR_SITE,
+
+			RR_MSITE,
+
+			RR_TRAIN
+		};
+
+
+		struct RadioResource
+		{
+			ERadioResourceType type;
+
+			unsigned long id;
+
+			unsigned long ssi;
+
+			string alias;
+
+			boolean hasError; // used when the resource is part of a group
+			                  // to indicate error state
+		};
+
+		typedef sequence<RadioResource> RadioResourceCollection;
+
+		struct ResourceButton
+		{
+			unsigned long key;
+
+			unsigned long operator;
+
+			short buttonRef;
+
+			ERadioResourceType resourceType;
+
+			unsigned long resourceId;
+		};
+
+		typedef sequence<ResourceButton> ResourceButtonCollection;
+
+		struct PredefinedMessage
+		{
+			unsigned long key;
+
+			unsigned long operator;
+
+			string shortName;
+
+			string messageText;
+
+			boolean type;  // True: for RadioStatus, otherwise for SDS
+		};
+
+		typedef sequence<PredefinedMessage> PredefinedMessageCollection;
+
+		struct Message
+		{
+			unsigned long key;
+
+			TA_Base_Core::DateTime time;
+
+			unsigned long operator;
+
+			boolean isRead;
+
+			string messageText;
+		};
+
+		typedef sequence<Message> MessageCollection;
+
+		typedef sequence<octet> MessageName;
+
+		typedef sequence<octet> MessageText;
+
+		enum EApplicationState
+		{
+			AP_INITIALISATION_MODE,
+			
+			AP_OPERATION_MODE,
+			
+			AP_CONFIGURATION_MODE,
+
+			AP_APIFAILURE_MODE,   //for the API initialization fails
+
+			AP_CONNECTIONFAILURE_MODE,
+
+			AP_MCC_CONNECTION_ESTABLISH
+		};
+
+		enum EApiState
+		{
+			AP_ASSIGN_STATE,
+
+			AP_DEASSIGN_STATE,
+
+			AP_SELECT_STATE,
+
+			AP_DESELECT_STATE
+		};
+
+		enum EAssignmentState
+		{
+			ASSIGNED,
+			
+			DEASSIGNED
+		};
+
+		enum ESpeakerState
+		{
+			SPEAKER_NIL,
+
+			SPEAKER_SELECT,		
+
+			SPEAKER_UNSELECTED
+		};
+
+
+		enum EInboundCallState
+		{
+			IC_NEW,
+			
+			IC_ENDED
+		};
+
+		enum EPrivateCallState
+		{
+			PC_NOT_INVOLVED,
+			
+			PC_INCOMING,
+
+			PC_OUTGOING,
+
+			PC_ESTABLISHED
+		};
+
+		enum EAmbienceListeningState
+		{
+			ALC_NOT_INVOLVED,
+
+			ALC_INCOMING,
+
+			ALC_ESTABLISHED
+		};
+
+		enum EGroupConnectionState
+		{
+			NAG,
+
+			RELEASED,
+    
+			CONNECTION_BUSY, // either connecting / releasing
+
+			CONNECTED
+		};
+
+		enum EResourceActivityType
+		{
+			NO_ACTIVITY,
+			RX_BEGUN,  
+			RX_BUSY,
+			RX_ENDED
+		};
+
+
+		enum EPTTState
+		{
+			PTT_PUSHED,
+			
+			PTT_RELEASED
+		};
+
+		enum EmergencyModeState
+		{
+			RE_NO_EMERGENCY,
+
+			RE_EMERGENCY,
+
+			RE_UNACK_EMERGENCY
+		};
+
+		enum ERadioServerAgentEncodeType
+		{
+			ET_ENCODED,
+
+			ET_UNENCODED
+		};
+
+		typedef sequence<string> OpTalkgroups;
+	};
+
+};//End of TA_IRS_Bus
+#endif
+
+

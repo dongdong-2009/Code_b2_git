@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.cctv_gzl9.video_switch_agent.idl</ProjectName>
+    <ProjectGuid>{6F8DCBB8-6DF7-4F32-AB87-65D1AF5D69A4}</ProjectGuid>
+    <RootNamespace>bus.cctv.video_switch_agent.IDL_gzl9</RootNamespace>
+    <Keyword>MakeFileProj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../../build/win32_n/transactive/bus/cctv_gzl9/video_switch_agent/IDL/src/bus.cctv.video_switch_agent.IDL.TA_VideoSwitchAgentIDL_gzl9.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../../build/win32_n/transactive/bus/cctv_gzl9/video_switch_agent/IDL/src/bus.cctv.video_switch_agent.IDL.TA_VideoSwitchAgentIDL_gzl9.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\BVSStageCorbaDef.idl" />
+    <CustomBuild Include="src\CameraCorbaDef.idl" />
+    <CustomBuild Include="src\ExceptionsCorbaDef.idl" />
+    <CustomBuild Include="src\FocusIrisControlCorbaDef.idl" />
+    <CustomBuild Include="src\MovementControlCorbaDef.idl" />
+    <CustomBuild Include="src\QuadCorbaDef.idl" />
+    <CustomBuild Include="src\RecordingUnitCorbaDef.idl" />
+    <CustomBuild Include="src\SequenceCorbaDef.idl" />
+    <CustomBuild Include="src\SuperimposedTextControlCorbaDef.idl" />
+    <CustomBuild Include="src\SwitchManagerCorbaDef.idl" />
+    <CustomBuild Include="src\VideoInputCorbaDef.idl" />
+    <CustomBuild Include="src\VideoMonitorCorbaDef.idl" />
+    <CustomBuild Include="src\VideoOutputCorbaDef.idl" />
+    <CustomBuild Include="src\VideoOutputGroupCorbaDef.idl" />
+    <CustomBuild Include="src\VideoSwitchResourceCorbaDef.idl" />
+    <CustomBuild Include="src\WashWipeControlCorbaDef.idl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

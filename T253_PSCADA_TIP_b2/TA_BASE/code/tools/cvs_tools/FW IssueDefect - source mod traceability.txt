@@ -1,0 +1,91 @@
+From: Gregg Kirkpatrick
+Sent: Thursday, 19 February 2004 10:17 AM
+To: 4669 C830 (projman)
+Subject: FW: Issue/Defect -> source mod traceability
+
+Setting up a working command-line cvs:
+
+Add "C:\Program Files\GNU\WinCvs 1.3\CVSNT" to your PATH environment variable (quotes required).
+Set your CVSROOT environment variable to :pserver:greggk@cvs:/cvs/1TS-9999-T (substitute your user name).
+
+For those of you who use DOS as your command line instead of cygwin (WHY?) I have updated the script so that it correctly quotes the date range. If you use DOS you will also have to comply with the dos quoting rules i.e.:
+
+"2004-02-14<2004-02-17" instead of '2004-02-14<2004-02-17' or 2004-02-14\<2004-02-17
+
+Otherwise DOS will try to read the file 2004-02-17 and give you a useless message saying that it couldn't find the file specified (without telling you which file of course).
+
+-----Original Message-----
+From: Gregg Kirkpatrick 
+Sent: Wednesday, 18 February 2004 5:03 PM
+To: 4669 C830 (projman)
+Subject: Issue/Defect -> source mod traceability
+
+
+I have just checked in code/tools/cvs_tools/trace_defects_and_issues.pl under 9999(CODE_4669).
+
+It:
+# Lists files that have been modified as part of a fix for an issue
+# or defect within a date range for a specified cvs user based on the
+# file's cvs logs. Note that the defect or issue number must be present
+# in the file's logs and must match the regex [TP][DW].{0,2}[0-9]+
+
+It's usage is:
+trace_defets_and_issues FILE_NAME [USER CVS_COMPAT_DATE_RANGE]
+e.g. trace_defects_and_issues cvs-out.txt greggk 2004-02-14\<2004-02-17
+or   trace_defects_and_issues cvs-out.txt
+
+Note that the \ is to get the < through the command line. You could equally use '2004-02-14<2004-02-17'.
+
+If you call it with the single parameter option it doesn't go off to cvs again, it just re-processes your local copy of the cvs query results. Useful for sorting/reformatting the output without having to re-query cvs. Don't forget to delete the output text file when you're done, they can get quite big.
+
+Note that you need Perl and a correctly functioning command-line cvs.
+
+Just run it from sandbox/code (go and have a cup of coffee or two) and (with "| sort" appended) it produces output that looks like:
+
+PW2316,bus/trains/TrainAgentCorbaDef/TrainAgentCorbaDef.dsp
+PW2772,app/radio/radio_manager_gui/src/RadioManager.cpp
+PW3009,app/alarms_events/alarm_store_service/src/AlarmStoreAgentUser.cpp
+PW3009,app/alarms_events/alarm_store_service/src/AlarmStoreService.cpp
+PW3009,app/alarms_events/alarm_store_service/src/ServiceAgent.cpp
+PW3009,bus/alarm/alarm_store_library/Test/AlarmStoreUnitTest.dsp
+PW3009,bus/alarm/alarm_store_library/Test/AlarmStoreUnitTest.dsw
+PW3009,bus/alarm/alarm_store_library/Test/cfg/UnitConfig.ini
+PW3009,bus/alarm/alarm_store_library/Test/output/AlarmStoreManagerTest.log
+PW3009,bus/alarm/alarm_store_library/Test/src/AlarmStoreManagerTest.cpp
+PW3009,bus/alarm/alarm_store_library/Test/src/AlarmStoreManagerTest.h
+PW3009,bus/alarm/alarm_store_library/Test/src/UnitTestMain.cpp
+PW3009,bus/alarm/alarm_store_library/Test/src/VersionGen.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmAgentInterface.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmAgentInterface.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmAgentInterfaceManager.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmAgentInterfaceManager.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmFilterSet.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmSortByField.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmSortByField.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmSortingSet.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmSortingSet.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreException.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreIndex.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreIndex.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreIndexCallbackManager.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreIndexCallbackManager.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreManager.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreManager.h
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreServant.cpp
+PW3009,bus/alarm/alarm_store_library/src/AlarmStoreServant.h
+PW3009,bus/alarm/alarm_store_library/src/IAlarmFilter.h
+PW3009,bus/alarm/alarm_store_library/src/IAlarmStoreIndexChanges.h
+PW3009,bus/alarm/alarm_store_library/src/IAlarmStoreIndexDelete.h
+PW3009,bus/alarm/alarm_store_library/src/IAlarmUpdate.h
+PW3009,core/alarm/IDL/src/AlarmStoreCallbackCorbaDef.idl
+PW3009,core/alarm/IDL/src/AlarmStoreCorbaDef.idl
+PW3009,core/data_access_interface/entity_access/Makefile
+PW3009,core/data_access_interface/entity_access/TA_EntityAccess.dsp
+PW3009,core/data_access_interface/entity_access/src/AlarmStoreEntityData.cpp
+PW3009,core/data_access_interface/entity_access/src/AlarmStoreEntityData.h
+PW3009,core/data_access_interface/entity_access/src/EntityAccessFactory.cpp
+PW3009,core/data_access_interface/entity_access/src/IAlarmStoreEntityData.h
+TD 954,app/alarms_events/alarm_store_service/src/ServiceAgent.h
+TD1102,app/radio/radio_manager_gui/src/RadioManager.rc
+TD1107,bus/radio/RadioCallStackLibrary/src/RadioCallStackListCtrl.cpp
+TD1377,app/radio/radio_manager_gui/src/VersionGen.cpp

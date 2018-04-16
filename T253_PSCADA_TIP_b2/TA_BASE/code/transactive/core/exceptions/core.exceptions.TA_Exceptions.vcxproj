@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>core.exceptions</ProjectName>
+    <ProjectGuid>{BD905322-B027-4F3B-BC83-B6ABB98EE9C9}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\tools\build\VCPropSheet\Common2.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>TA_Exceptions_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmActionException.cpp" />
+    <ClCompile Include="src\AlarmAgentException.cpp" />
+    <ClCompile Include="src\AlarmCacheCapacityExceededException.cpp" />
+    <ClCompile Include="src\AlarmListCtrlException.cpp" />
+    <ClCompile Include="src\AlarmStoreException.cpp" />
+    <ClCompile Include="src\AlarmViewerException.cpp" />
+    <ClCompile Include="src\ApplicationException.cpp" />
+    <ClCompile Include="src\ArchiveException.cpp" />
+    <ClCompile Include="src\AssertException.cpp" />
+    <ClCompile Include="src\AtsAgentException.cpp" />
+    <ClCompile Include="src\AuthenticationAgentException.cpp" />
+    <ClCompile Include="src\AuthenticationSecurityException.cpp" />
+    <ClCompile Include="src\BannerFrameworkException.cpp" />
+    <ClCompile Include="src\CannotUseSysControllerException.cpp" />
+    <ClCompile Include="src\CCTVException.cpp" />
+    <ClCompile Include="src\CorbaException.cpp" />
+    <ClCompile Include="src\CtaRuntimeEntityParameterNotFoundException.cpp" />
+    <ClCompile Include="src\DatabaseException.cpp" />
+    <ClCompile Include="src\DataConfigurationException.cpp" />
+    <ClCompile Include="src\DataException.cpp" />
+    <ClCompile Include="src\DataUserSettingException.cpp" />
+    <ClCompile Include="src\DbConnectionFailed.cpp" />
+    <ClCompile Include="src\DbConnectionNoFile.cpp" />
+    <ClCompile Include="src\DbUniqueConstraintViolated.cpp" />
+    <ClCompile Include="src\DutyAgentException.cpp" />
+    <ClCompile Include="src\EntityTypeException.cpp" />
+    <ClCompile Include="src\EventViewerException.cpp" />
+    <ClCompile Include="src\FailoverException.cpp" />
+    <ClCompile Include="src\FatalConfigurationException.cpp" />
+    <ClCompile Include="src\GenericAgentException.cpp" />
+    <ClCompile Include="src\GenericApplicationException.cpp" />
+    <ClCompile Include="src\GenericGUIException.cpp" />
+    <ClCompile Include="src\GraphWorxException.cpp" />
+    <ClCompile Include="src\IncidentException.cpp" />
+    <ClCompile Include="src\InterlockingException.cpp" />
+    <ClCompile Include="src\InvalidCommandLineException.cpp" />
+    <ClCompile Include="src\ManagedProcessException.cpp" />
+    <ClCompile Include="src\MathematicalEvaluationException.cpp" />
+    <ClCompile Include="src\MessageResourceException.cpp" />
+    <ClCompile Include="src\NameNotFoundException.cpp" />
+    <ClCompile Include="src\NoAlarmAgentException.cpp" />
+    <ClCompile Include="src\ObjectResolutionException.cpp" />
+    <ClCompile Include="src\PlanAgentException.cpp" />
+    <ClCompile Include="src\PlanControllerException.cpp" />
+    <ClCompile Include="src\PlanEditorException.cpp" />
+    <ClCompile Include="src\PlanStepDetailException.cpp" />
+    <ClCompile Include="src\PlanStepException.cpp" />
+    <ClCompile Include="src\PolicyDecisionPointException.cpp" />
+    <ClCompile Include="src\ProcessAlreadyRunningException.cpp" />
+    <ClCompile Include="src\ReportManagerException.cpp" />
+    <ClCompile Include="src\RightsException.cpp" />
+    <ClCompile Include="src\ScadaCommonException.cpp" />
+    <ClCompile Include="src\ScadaProxyException.cpp" />
+    <ClCompile Include="src\SchedulingManagerException.cpp" />
+    <ClCompile Include="src\SessionException.cpp" />
+    <ClCompile Include="src\SocketException.cpp" />
+    <ClCompile Include="src\SoundInitException.cpp" />
+    <ClCompile Include="src\SoundPlayerException.cpp" />
+    <ClCompile Include="src\SystemControllerException.cpp" />
+    <ClCompile Include="src\TcpSocketException.cpp" />
+    <ClCompile Include="src\ThreadException.cpp" />
+    <ClCompile Include="src\TransactiveException.cpp" />
+    <ClCompile Include="src\TrendViewerException.cpp" />
+    <ClCompile Include="src\UserCancelException.cpp" />
+    <ClCompile Include="src\UserSettingsException.cpp" />
+    <ClCompile Include="src\UtilitiesException.cpp" />
+    <ClCompile Include="src\VideoSwitchAgentInternalException.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmActionException.h" />
+    <ClInclude Include="src\AlarmAgentException.h" />
+    <ClInclude Include="src\AlarmCacheCapacityExceededException.h" />
+    <ClInclude Include="src\AlarmListCtrlException.h" />
+    <ClInclude Include="src\AlarmStoreException.h" />
+    <ClInclude Include="src\AlarmViewerException.h" />
+    <ClInclude Include="src\ApplicationException.h" />
+    <ClInclude Include="src\ArchiveException.h" />
+    <ClInclude Include="src\AssertException.h" />
+    <ClInclude Include="src\AtsAgentException.h" />
+    <ClInclude Include="src\AuthenticationAgentException.h" />
+    <ClInclude Include="src\AuthenticationSecurityException.h" />
+    <ClInclude Include="src\BannerFrameworkException.h" />
+    <ClInclude Include="src\CannotUseSysControllerException.h" />
+    <ClInclude Include="src\CCTVException.h" />
+    <ClInclude Include="src\CorbaException.h" />
+    <ClInclude Include="src\CtaRuntimeEntityParameterNotFoundException.h" />
+    <ClInclude Include="src\CtaScadaExceptions.h" />
+    <ClInclude Include="src\DatabaseException.h" />
+    <ClInclude Include="src\DataConfigurationException.h" />
+    <ClInclude Include="src\DataException.h" />
+    <ClInclude Include="src\DataRecordingAgentException.h" />
+    <ClInclude Include="src\DataUserSettingException.h" />
+    <ClInclude Include="src\DbConnectionFailed.h" />
+    <ClInclude Include="src\DbConnectionNoFile.h" />
+    <ClInclude Include="src\DbUniqueConstraintViolated.h" />
+    <ClInclude Include="src\DebugMsgConstructionException.h" />
+    <ClInclude Include="src\DutyAgentException.h" />
+    <ClInclude Include="src\DutyManagerException.h" />
+    <ClInclude Include="src\ECSAgentExceptions.h" />
+    <ClInclude Include="src\EntityTypeException.h" />
+    <ClInclude Include="src\EventViewerException.h" />
+    <ClInclude Include="src\FailoverException.h" />
+    <ClInclude Include="src\FatalConfigurationException.h" />
+    <ClInclude Include="src\GenericAgentException.h" />
+    <ClInclude Include="src\GenericApplicationException.h" />
+    <ClInclude Include="src\GenericGUIException.h" />
+    <ClInclude Include="src\GraphWorxException.h" />
+    <ClInclude Include="src\HistoryInitialisationException.h" />
+    <ClInclude Include="src\IncidentException.h" />
+    <ClInclude Include="src\InterlockingException.h" />
+    <ClInclude Include="src\InvalidCommandLineException.h" />
+    <ClInclude Include="src\ManagedProcessException.h" />
+    <ClInclude Include="src\MathematicalEvaluationException.h" />
+    <ClInclude Include="src\MessageResourceException.h" />
+    <ClInclude Include="src\NameNotFoundException.h" />
+    <ClInclude Include="src\NoAlarmAgentException.h" />
+    <ClInclude Include="src\ObjectResolutionException.h" />
+    <ClInclude Include="src\PasExceptions.h" />
+    <ClInclude Include="src\PlanAgentException.h" />
+    <ClInclude Include="src\PlanControllerException.h" />
+    <ClInclude Include="src\PlanEditorException.h" />
+    <ClInclude Include="src\PlanStepDetailException.h" />
+    <ClInclude Include="src\PlanStepException.h" />
+    <ClInclude Include="src\PolicyDecisionPointException.h" />
+    <ClInclude Include="src\ProcessAlreadyRunningException.h" />
+    <ClInclude Include="src\ReportManagerException.h" />
+    <ClInclude Include="src\RightsException.h" />
+    <ClInclude Include="src\ScadaCommonException.h" />
+    <ClInclude Include="src\ScadaProxyException.h" />
+    <ClInclude Include="src\SchedulingManagerException.h" />
+    <ClInclude Include="src\SessionException.h" />
+    <ClInclude Include="src\SocketException.h" />
+    <ClInclude Include="src\SoundInitException.h" />
+    <ClInclude Include="src\SoundPlayerException.h" />
+    <ClInclude Include="src\SystemControllerException.h" />
+    <ClInclude Include="src\TcpSocketException.h" />
+    <ClInclude Include="src\ThreadException.h" />
+    <ClInclude Include="src\TransactiveException.h" />
+    <ClInclude Include="src\TrendViewerException.h" />
+    <ClInclude Include="src\UserCancelException.h" />
+    <ClInclude Include="src\UserSettingsException.h" />
+    <ClInclude Include="src\UtilitiesException.h" />
+    <ClInclude Include="src\ValueNotSetException.h" />
+    <ClInclude Include="src\VideoSwitchAgentInternalException.h" />
+    <ClInclude Include="src\WILDAgentExceptions.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\data_access_interface\PlanAgent\IDL\core.dai.PlanAgent.idl.TA_PlanAgentIDL.vcxproj">
+      <Project>{2ed6530a-2b15-4c6a-84de-313d060a5e9f}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

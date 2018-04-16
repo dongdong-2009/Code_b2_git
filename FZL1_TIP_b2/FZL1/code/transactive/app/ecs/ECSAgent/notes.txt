@@ -1,0 +1,109 @@
+Running DbgEcsAgent:
+\9999_Sandbox\code\app\ecs\ECSAgent\Debug\ECSAgent --entity-name=DbgEcsAgent --agent-mode=Station --operation-mode=Control --debug-level=DEBUG --debug-file=c:\temp\DbgEcs
+
+Running MsmEcsAgent:
+\9999_Sandbox\code\app\ecs\ECSAgent\Debug\ECSAgent --entity-name=MsmEcsAgent --agent-mode=Station --operation-mode=Control --debug-level=DEBUG --debug-file=c:\temp\MsmEcs
+
+
+Running OccEcsAgent:
+\9999_Sandbox\code\app\ecs\ECSAgent\Debug\ECSAgent.exe --entity-name=OccEcsAgent --agent-mode=Master --operation-mode=Control --debug-level=DEBUG --debug-file=c:\temp\OccEcs
+
+
+Running OPCBridge:
+\9999_Sandbox\code\app\scada\OpcBridgeService\Debug\OpcBridgeService.exe --host-names=localhost --entity-name=OPCBridge --debug-level=DEBUG --debug-file=c:\temp\OPC -debug
+
+Running ATSECSAgentSimulator
+\9999_Sandbox\code\app\ats\ATSECSAgentSimulator\Debug\ATSECSAgentSimulator.exe --entity-name=ATSECSAgentSimulator --debug-file=c:\temp\ATSECS --debug-level=DEBUG --location-key=1
+
+Running Console Manager
+\9999_Sandbox\code\app\system_control\system_controller\stub\Debug\ConsoleManager.exe --db-connection=transact:ecs:ecs --notify-hosts=c830-dev1:2323 --session-id=crap
+
+
+*************************************************
+*     Local ECS Testing Environment Setup           
+*************************************************
+
+1. Execute console manager:
+
+   ConsoleManager.exe --db-connection=transact:seanl:seanl --notify-hosts=c830-dev1:2323 --session-id=10
+
+2. Execute control ECS Agents:
+
+   ECSAgent --entity-name=DbgEcsAgent --agent-mode=Station --operation-mode=Control
+   ECSAgent --entity-name=MsmEcsAgent --agent-mode=Station --operation-mode=Control
+   ECSAgent --entity-name=OccEcsAgent --agent-mode=Master  --operation-mode=Control
+
+3. Execute monitor ECS Agents:
+
+   ECSAgent --entity-name=DbgEcsAgent --agent-mode=Station --operation-mode=Monitor
+   ECSAgent --entity-name=MsmEcsAgent --agent-mode=Station --operation-mode=Monitor
+   ECSAgent --entity-name=OccEcsAgent --agent-mode=Master  --operation-mode=Monitor
+
+4. Execute OPCBridge:
+
+   TransActiveOPCBridge --entity-name=OPCBridge --station-names=ALL
+
+5. Run Graphworx and display schematic:
+
+   \9999_Sandbox\code\app\ecs\ECSAgent\ECSAgentTest.gdf
+
+6. Execute ATSECSAgentSimulator:
+
+   ATSECSAgentSimulator.exe --entity-name=ATSECSAgentSimulator
+
+
+*************************************************
+*      ATSECSAgentSimulator Notes
+*************************************************
+
+ - Click 'Randomise' to toggle the sending of random ATS data to the Station ECS 
+   Agents.
+
+ - Click 'Reset' to set '0' to all ECS Zone Status Datapoints for the Station 
+   ECS Agents.
+
+ - To manually set a status for an ECS Zone, edit the contents in the 'Operation 
+   Condition' area and click execute.  Note that the numeric entries only have 
+   an effect if they are above a pre-configured threshold.  
+
+     Train Stall Time  > 60
+     Train Temperature > 50
+
+ - Note that only ECS Zone ID's 1-10 have any effect as configuration only exists 
+   for DBG and MSM
+
+ - Note that the 'Train Description' area fields are currently not used.  
+
+
+*************************************************
+*      TestOverrides
+*************************************************
+
+std::vector<std::string> TransActiveDataSource::getLocations()
+
+        // TestOverride *****************
+        m_locations.push_back("OCC");
+        return locations;
+        // ***************** TestOverride
+
+bool DataPoint::isActionPermitted ( const std::string & sessionID, unsigned long actionKey )
+
+	//rl = rlFactory.buildRightsLibrary();
+
+	//*** HV: to be used while in manual debug
+	TA_Core::RightsLibrary * rl = rlFactory.buildRightsLibrary ( ALWAYS_TRUE_RL );
+	//*** HV
+
+
+void DataPointProxy::initialiseAckStatus()
+
+	try
+	{
+		alarmData = alarmHelper->getMostRecentActiveAlarmForEntity ( m_entityKey, m_locationKey );
+	}
+	catch ( TA_Core::AlarmAgentCorbaDef::AlarmException )
+	{
+	}
+        // TestOverride *******************************************
+            catch ( ... ){}
+        // ******************************************* TestOverride

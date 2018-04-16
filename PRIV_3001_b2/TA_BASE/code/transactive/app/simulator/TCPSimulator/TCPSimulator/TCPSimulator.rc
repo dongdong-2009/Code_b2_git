@@ -1,0 +1,231 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\TCPSimulator.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\TCPSimulator.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About TCPSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
+    LTEXT           "TCPSimulator Version 1.0.2",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2011",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_TCPSIMULATOR_DIALOG DIALOGEX 0, 0, 490, 393
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "TCPSimulator"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Start Server",IDC_BT_STARTSERVER,377,12,47,14
+    PUSHBUTTON      "Clear",IDC_BT_CLEAR_SERVERINFO,427,12,48,14
+    EDITTEXT        IDC_ED_IP,56,33,61,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    EDITTEXT        IDC_ED_PORT,139,33,27,12,ES_AUTOHSCROLL | ES_READONLY | NOT WS_BORDER
+    LTEXT           "Server IP:",IDC_STATIC,16,34,34,8
+    LTEXT           "Port:",IDC_STATIC,123,34,16,8
+    PUSHBUTTON      "Refresh",IDC_BT_GETPOINTTABLE,427,31,48,14
+    EDITTEXT        IDC_ED_CONNECT_IP,56,244,61,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_CONNECT_PORT,139,244,26,12,ES_AUTOHSCROLL
+    LTEXT           "Connect IP:",IDC_STATIC,16,247,39,8
+    LTEXT           "Port:",IDC_STATIC,123,247,16,8
+    CONTROL         "Hex",IDC_CH_INFOHEX,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,173,33,24,10
+    CONTROL         "Hex",IDC_CH_OUTPUTHEX,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,173,245,24,10
+    PUSHBUTTON      "Connect",IDC_BT_CONNECTSERVER,327,242,48,14
+    PUSHBUTTON      "Send",IDC_BT_SEND,377,242,48,14,WS_DISABLED
+    EDITTEXT        IDC_ED_OUTPUT,13,258,464,31,ES_MULTILINE | ES_AUTOHSCROLL
+    EDITTEXT        IDC_ED_TIMER_SEND,275,243,40,14,ES_AUTOHSCROLL
+    CONTROL         "Timer(ms):",IDC_CH_TIMER,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,228,245,45,10
+    CONTROL         "",IDC_LT_SERVER_INFO,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,14,85,462,139
+    CONTROL         "",IDC_LT_CLIENT_INFO,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,13,292,464,94
+    PUSHBUTTON      "Clear",IDC_BT_CLEAR_CLIENTINFO,427,242,48,14
+    LTEXT           "¾²Ì¬",IDC_ST_HANDLER,16,17,22,8
+    EDITTEXT        IDC_ED_SVR_OUTPUT,14,47,462,36,ES_MULTILINE | ES_AUTOHSCROLL
+    PUSHBUTTON      "Send",IDC_BT_SVR_SEND,377,30,48,14,WS_DISABLED
+    GROUPBOX        "Server",IDC_STATIC,7,3,478,227
+    GROUPBOX        "Client",IDC_STATIC,8,232,476,159
+    CONTROL         "CRC",IDC_CH_SERVER_CRC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,197,33,27,10
+    CONTROL         "CRC",IDC_CH_CLIENT_CRC,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,197,245,27,10
+    EDITTEXT        IDC_ED_SVR_TIMER_SEND,275,31,40,14,ES_AUTOHSCROLL
+    CONTROL         "Timer(ms):",IDC_CH_SVR_TIMER,"Button",BS_AUTOCHECKBOX | BS_FLAT | WS_TABSTOP,228,33,45,10
+END
+
+IDD_DLG_INFO_DETAIL DIALOGEX 0, 0, 395, 193
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Whole Infomation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_ED_WHOLETEXT,4,4,382,171,ES_MULTILINE | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+    PUSHBUTTON      "OK",IDOK,335,177,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "TODO: <Company name>"
+            VALUE "FileDescription", "TODO: <File description>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "TCPSimulator.exe"
+            VALUE "LegalCopyright", "TODO: (c) <Company name>.  All rights reserved."
+            VALUE "OriginalFilename", "TCPSimulator.exe"
+            VALUE "ProductName", "TODO: <Product name>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_TCPSIMULATOR_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 486
+        BOTTOMMARGIN, 392
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About TCPSimulator..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\TCPSimulator.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

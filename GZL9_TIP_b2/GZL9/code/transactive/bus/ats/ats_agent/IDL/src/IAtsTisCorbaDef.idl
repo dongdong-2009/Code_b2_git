@@ -1,0 +1,164 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/GZL6_TIP/3002/transactive/bus/ats/ats_agent/IDL/src/IAtsTisCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2012/06/12 13:35:44 $
+// Last modified by:  $Author: builder $
+//
+// IAtsTisCorbaDef structure definition for the ATS/TIS Agent interfacing.  
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsTisCorbaDef
+	{
+		//
+		// Message type to reduce size of messages - only transmit 
+		// platform or train information
+		//
+		enum AtsTisMessageType
+		{
+			PLATFORM_INFORMATION,
+			TRAIN_INFORMATION
+		}; // AtsTisMessageType
+
+		///////////////////////////////////////////////////////////////////////
+		//
+		//      Platform Information Table
+		//
+		///////////////////////////////////////////////////////////////////////
+		// 
+		// The following attributes are taken straight from the current 
+		// ATS OCC/MSS Platform Table.
+		// 
+		//      <Pre-arrival>
+		//      <Arrival>
+		//      <Pre-departure>
+		//      <Departure>
+		//      <Skip>
+		//      <Hold>
+		//      <Evaculation>
+		//      <Train overrun>
+		//
+		//	Validity is derived from the current health state of the ATS server
+		//
+		///////////////////////////////////////////////////////////////////////
+		struct PlatformInfo
+		{
+			boolean						preArrival;
+			boolean						arrival;
+			boolean						preDeparture;
+			boolean						departure;
+			boolean						skip;
+			boolean						hold;
+			boolean						evacuation;
+			boolean						trainOverrun;
+			boolean						validity;
+		}; // PlatformInformation
+		
+		///////////////////////////////////////////////////////////////////////
+		//
+		//      Train Information
+		//
+		///////////////////////////////////////////////////////////////////////
+		// 
+		// The following attributes are derived from the current 
+		// ATS OCC/MSS Platform Table.
+		// 
+		//      <Physical Train number>
+		//      <Service Number>
+		//      <Destimation area ID>
+		//      <Last train of the operating day>
+		//		<Scheduled arrival date and time>
+		//
+		// The stationType attribute is currently not available from the ATS
+		// tables and may be a configuration item.  This will be clarified with 
+		// the STIS team.
+		//
+		///////////////////////////////////////////////////////////////////////
+		struct TrainInfo
+		{
+			boolean						valid;
+			PhysicalTrainNumberType		physicalTrainNumber;
+			ServiceNumberType			serviceNumber;
+			StationIdType				destinationStationId;
+			boolean						lastTrain;
+			TimeStampType				predictedTime;
+			boolean						stationType;
+		}; // TrainInformation
+
+		//
+		// Train information - always sent in pairs
+		//
+		struct TrainInfoPair
+		{
+			TrainInfo					firstTrain;
+			TrainInfo					secondTrain;
+		}; // TrainInformationPair
+
+		//
+		// Union to reduce size of messages - only transmit 
+		// platform or train information
+		//
+		union AtsTisMessageUnion switch (AtsTisMessageType)
+		{
+			case PLATFORM_INFORMATION:
+				PlatformInfo			platformInformation;
+
+			case TRAIN_INFORMATION:
+				TrainInfoPair			trainInformation;
+		}; // AtsTisMessageUnion
+
+		//
+		// AtsTisMessageCorbaDef is expected to be sent to the TIS Agent through the 
+		// 'any messageState' member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsTisMessageCorbaDef
+		{
+			StationIdType				stationId;
+			PlatformIdType				platformId;
+			TisPlatformIdType			tisPlatformId;
+			
+			AtsTisMessageUnion			message;
+		}; // AtsTisMessageCorbaDef
+
+		//
+		// A sequence of AtsTisMessageCorbaDef defined for getTisInformationList
+		//
+		typedef sequence<AtsTisMessageCorbaDef>  TisInfoList;
+
+		/**
+          * getTisInformationList
+          *
+          * This method is used to access the full list of TIS information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsTisMessageCorbaDef for all platforms known
+		  *			to the ATS agent. There will be two AtsTisMessageCorbaDef in
+		  *			the sequence for each platform - one for platform information,
+		  *			one for train information.
+          */
+		TisInfoList getTisInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccTisUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on TIS
+		  * information
+          *
+		  * @param	tisUpdate	A sequence of AtsTisMessageCorbaDef for updates  
+		  *						to platforms for the sector
+          */
+		void processOccTisUpdate(in TisInfoList tisUpdate)
+			raises (TA_Base_Core::OperationModeException);
+
+	}; // IAtsTisCorbaDef
+}; // TA_App

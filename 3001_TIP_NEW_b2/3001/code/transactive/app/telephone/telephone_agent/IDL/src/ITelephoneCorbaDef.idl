@@ -1,0 +1,137 @@
+#if !defined(TELEPHONECORBADEF_IDL)
+#define TELEPHONECORBADEF_IDL
+
+/**
+  * The source code in this file is the property of 
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/3001_TIP_NEW/3001/transactive/app/telephone/telephone_agent/IDL/src/ITelephoneCorbaDef.idl $
+  * @author:  Bavo De Pauw
+  * @version: $Revision: #2 $
+  *
+  * Last modification: $DateTime: 2012/02/06 16:15:14 $
+  * Last modified by:  $Author: haijun.li $
+  * 
+  * This is the interface to the Telephone
+  */
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "app/telephone/telephone_agent/IDL/src/IDirectoryCorbaDef.idl"
+
+module TA_App
+{
+    interface ITelephoneCorbaDef
+    {
+		/**
+		  * Exceptions
+		  */
+		// Generic exception thrown by the Telephone object whenever something is wrong
+        exception TelephoneException
+        {
+            string reason;
+        };
+
+		/**
+		  * Enumerations
+		  */
+		// the possible states of a telephone call
+		enum ETelephoneCallStatus
+		{
+			Null,
+			Initiated,
+			Queued,
+			Alerting,
+			Connected,
+			Held,
+			Failed
+		};
+
+		// the possible types of telephone call
+		enum ETelephoneCallType
+		{
+			BasicCall,
+			ComplexCall,
+			EmergencyCall
+		};
+
+		/**
+		  * Structs
+		  */
+		// A struct to contain the telephone data
+		struct TelephoneCallData
+		{
+			unsigned long			callId;
+			IDirectoryCorbaDef::DirectoryEntryData	origin;
+			IDirectoryCorbaDef::DirectoryEntryData	destination;
+			ETelephoneCallType		type;
+			ETelephoneCallStatus	status;
+			TA_Core::DateTime		createTime;
+			TA_Core::DateTime		connectedTime;
+			TA_Core::DateTime		endedTime;
+		};
+		typedef sequence<TelephoneCallData> TelephoneCallDataSequence;
+
+		// A struct to contain the call stacks
+		struct TelephoneCallStackData
+		{
+			TelephoneCallDataSequence callStack;
+			TelephoneCallDataSequence emergencyCallStack;
+			TelephoneCallDataSequence switchCallStack;
+			TelephoneCallDataSequence historyCallStack;
+		};
+		typedef sequence<TelephoneCallStackData> TelephoneCallStackDataSequence;
+
+		/**
+		  * methods
+		  */
+		/**
+		  * returns the telephone data for this telephone
+		  */
+		IDirectoryCorbaDef::DirectoryEntryData	getTelephoneData(in string sessionId)
+			raises( TelephoneException );
+		/**
+		  * returns the call stacks for this telephone
+		  */
+		TelephoneCallStackData					getTelephoneCallStacks(in string sessionId)
+			raises( TelephoneException );
+		/**
+		  * answers the specified call on this telephone
+		  */
+		void	answerCall		(in string sessionId, in unsigned long callId)
+			raises( TelephoneException );
+		/**
+		  * holds the specified call on this telephone
+		  */
+		void	holdCall		(in string sessionId, in unsigned long callId)
+			raises( TelephoneException );
+		/**
+		  * makes a call to a given number from this telephone
+		  */
+		void	makeCall		(in string sessionId, in IDirectoryCorbaDef::DirectoryEntryData destination)
+			raises( TelephoneException );
+		/**
+		  * picks up an alerting/queued call from another telephone on this telephone
+		  */
+		void	pickUpCall		(in string sessionId, in unsigned long callId)
+			raises( TelephoneException );
+		/**
+		  * ends the specified call on this telephones
+		  */
+		void	endCall			(in string sessionId, in unsigned long callId)
+			raises( TelephoneException );
+		/**
+		  * transfers the held call to the active call
+		  */
+		void	transferCall	(in string sessionId, in unsigned long heldCallId, in unsigned long activeCallId)
+			raises( TelephoneException );
+		/**
+		  * conferences the held call with the active one
+		  */
+		void	conferenceCall	(in string sessionId, in unsigned long heldCallId, in unsigned long activeCallId)
+			raises( TelephoneException );
+	};
+
+}; // module TA_App
+
+#endif // !defined(TELEPHONECORBADEF_IDL)

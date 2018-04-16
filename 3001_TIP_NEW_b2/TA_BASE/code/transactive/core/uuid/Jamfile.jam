@@ -1,0 +1,8 @@
+import os ;
+
+if [ os.on-unix ]
+{
+	source =  [ glob src/*.cpp src/*.c ] ;
+}
+
+ta-lib TA_Uuid : $(source) ;

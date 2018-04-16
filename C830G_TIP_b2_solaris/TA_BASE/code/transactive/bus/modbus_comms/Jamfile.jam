@@ -1,0 +1,8 @@
+
+ta-lib TA_ModbusComms
+	: [ glob src/*.cpp
+			: src/ModbusSerialConnection.cpp
+			  src/SerialPort.cpp
+			  src/SerialPortException.cpp
+	  ]
+	;

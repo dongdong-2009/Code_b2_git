@@ -1,0 +1,5 @@
+#!/bin/sh
+
+nohup /usr/local/bin/python ./iscs_agent_monitor.py > ./data/startup.txt 2>&1 &
+
+echo "iscs internal monitor is statred"

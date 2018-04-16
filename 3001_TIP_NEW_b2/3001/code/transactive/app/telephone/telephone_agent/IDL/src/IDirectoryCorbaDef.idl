@@ -1,0 +1,116 @@
+#if !defined(DIRECTORYCORBADEF_IDL)
+#define DIRECTORYCORBADEF_IDL
+
+/**
+  * The source code in this file is the property of 
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/3001_TIP_NEW/3001/transactive/app/telephone/telephone_agent/IDL/src/IDirectoryCorbaDef.idl $
+  * @author:  Bavo De Pauw
+  * @version: $Revision: #2 $
+  *
+  * Last modification: $DateTime: 2012/02/06 16:15:14 $
+  * Last modified by:  $Author: haijun.li $
+  * 
+  * This is the interface to the Directory
+  */
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+module TA_App
+{
+    interface IDirectoryCorbaDef
+    {
+		/**
+		  * Exceptions
+		  */
+		// Generic exception thrown by the Directory whenever something is wrong
+        exception DirectoryException
+        {
+            string reason;
+        };
+
+		/**
+		  * Enumerations
+		  */
+		// the possible types of entries
+		enum EDirectoryEntryType
+		{
+			FixedSet,
+			Mobile,
+			HeadSet,
+			External
+		};
+
+		// the possible types of directories
+		enum EDirectoryType
+		{
+			InternalDirectory,
+			ExternalDirectory
+		};
+
+		/**
+		  * Structs
+		  */
+		// A struct to contain the directory data
+		struct DirectoryData
+		{
+			string			name;
+			EDirectoryType	type;
+		};
+		typedef sequence<DirectoryData> DirectoryDataSequence;
+
+		// A struct to contain the entry data
+		struct DirectoryEntryData
+		{
+			string				name;
+			string				number;
+			EDirectoryEntryType	type;
+			unsigned long		location;
+		};
+		typedef sequence<DirectoryEntryData> DirectoryEntryDataSequence;
+
+		/**
+		  * methods
+		  */
+		/**
+		  * returns the directory data for this directory
+		  */
+		DirectoryData				getDirectoryData(in string sessionId)
+			raises( DirectoryException );
+		/**
+		  * returns all the entries in this directory
+		  */
+		DirectoryEntryDataSequence	getAllEntries(in string sessionId)
+			raises( DirectoryException );
+		/**
+		  * returns all entries that have this name as a substring
+		  */
+		DirectoryEntryDataSequence	getEntriesByName(in string sessionId, in string name)
+			raises( DirectoryException );
+		/**
+		  * returns the entry with the specified number
+		  */
+		DirectoryEntryData			getEntryByNumber(in string sessionId, in string number)
+			raises( DirectoryException );
+		/**
+		  * adds an entry to the directory
+		  */
+		void addEntry	(in string sessionId, in DirectoryEntryData newEntry)
+			raises( DirectoryException );
+		/**
+		  * modifies an entry in this directory
+		  */
+		void modifyEntry(in string sessionId, in DirectoryEntryData modifiedEntry)
+			raises( DirectoryException );
+		/**
+		  * removes an entry from this directory
+		  */
+		void deleteEntry(in string sessionId, in DirectoryEntryData deletedEntry)
+			raises( DirectoryException );
+	};
+
+}; // module TA_App
+
+#endif // !defined(DIRECTORYCORBADEF_IDL)

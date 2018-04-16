@@ -1,0 +1,443 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.dai.pa_4669" ProjectGUID="{12D62F64-D99D-4466-A07B-69D86A7815EA}" RootNamespace="core.dai.pa_4669" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/pa_4669" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;../../../../../build/win32_n/transactive;..\..\..\..\cots\boost\boost_1_39_0;../../../../../build/win32_n/transactive/core/message/IDL/src" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/pa_4669/core.dai.pa_4669.TA_PADAI_4669.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/pa_4669/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/pa_4669/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/pa_4669/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_PADAI_4669_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.dai.pa_4669.TA_PADAI_4669.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/pa_4669" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..;..\..\..\..\cots\omniORB\omniORB_4.1.6\include;../../../../../build/win32_n/transactive;..\..\..\..\cots\boost\boost_1_39_0;../../../../../build/win32_n/transactive/core/message/IDL/src" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/pa_4669/core.dai.pa_4669.TA_PADAI_4669.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/pa_4669/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/pa_4669/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/pa_4669/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_PADAI_4669.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.dai.pa_4669.TA_PADAI_4669.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="PA_ZONE">
+			<File RelativePath="Src\ConfigPaZone.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\ConfigPaZone.h">
+			</File>
+			<File RelativePath="Src\IConfigPaZone.h">
+			</File>
+			<File RelativePath="Src\IPaZone.h">
+			</File>
+			<File RelativePath="Src\PaZone.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZone.h">
+			</File>
+			<File RelativePath="Src\PaZoneAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZoneAccessFactory.h">
+			</File>
+			<File RelativePath="Src\PaZoneHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZoneHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_ZONE_GROUP">
+			<File RelativePath="Src\ConfigPaZoneGroup.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\ConfigPaZoneGroup.h">
+			</File>
+			<File RelativePath="Src\IConfigPaZoneGroup.h">
+			</File>
+			<File RelativePath="Src\IPaZoneGroup.h">
+			</File>
+			<File RelativePath="Src\PaZoneGroup.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZoneGroup.h">
+			</File>
+			<File RelativePath="Src\PaZoneGroupAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZoneGroupAccessFactory.h">
+			</File>
+			<File RelativePath="Src\PaZoneGroupHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaZoneGroupHelper.h">
+			</File>
+			<Filter Name="PA_ATS_TRIGGERED_BROADCAST">
+				<File RelativePath="Src\ConfigPaAtsTriggeredBroadcast.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="Src\ConfigPaAtsTriggeredBroadcast.h">
+				</File>
+				<File RelativePath="Src\IConfigPaAtsTriggeredBroadcast.h">
+				</File>
+				<File RelativePath="Src\IPaAtsTriggeredBroadcast.h">
+				</File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcast.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcast.h">
+				</File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcastAccessFactory.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcastAccessFactory.h">
+				</File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcastHelper.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+					</FileConfiguration></File>
+				<File RelativePath="Src\PaAtsTriggeredBroadcastHelper.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="PA_DVA_MESSAGE">
+			<File RelativePath="Src\ConfigPaDvaMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\ConfigPaDvaMessage.h">
+			</File>
+			<File RelativePath="Src\IConfigPaDvaMessage.h">
+			</File>
+			<File RelativePath="Src\IPaDvaMessage.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessage.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessageAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessageAccessFactory.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessageHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessageHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="HelperFiles">
+			<File RelativePath="Src\DatabaseQueryHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\DatabaseQueryHelper.h">
+			</File>
+			<File RelativePath="src\GenericDaiHelper.h">
+			</File>
+			<File RelativePath="src\GenericDaiHelper.inl">
+			</File>
+			<File RelativePath=".\src\PaTableConsts.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_TRAIN_DVA_MESSAGE">
+			<File RelativePath="Src\ConfigPaTrainDvaMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\ConfigPaTrainDvaMessage.h">
+			</File>
+			<File RelativePath="Src\IConfigPaTrainDvaMessage.h">
+			</File>
+			<File RelativePath="Src\IPaTrainDvaMessage.h">
+			</File>
+			<File RelativePath="Src\PaTrainDvaMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaTrainDvaMessage.h">
+			</File>
+			<File RelativePath="Src\PaTrainDvaMessageAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaTrainDvaMessageAccessFactory.h">
+			</File>
+			<File RelativePath="Src\PaTrainDvaMessageHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaTrainDvaMessageHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_DVA_MESSAGE_VERSION">
+			<File RelativePath="Src\ConfigPaDvaMessageVersion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\ConfigPaDvaMessageVersion.h">
+			</File>
+			<File RelativePath="Src\IConfigPaDvaMessageVersion.h">
+			</File>
+			<File RelativePath="Src\IPaDvaMessageVersion.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessageVersion.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessageVersion.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessageVersionAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessageVersionAccessFactory.h">
+			</File>
+			<File RelativePath="Src\PaDvaMessageVersionHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="Src\PaDvaMessageVersionHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_STATION">
+			<File RelativePath="src\ConfigPaStation.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConfigPaStation.h">
+			</File>
+			<File RelativePath="src\IConfigPaStation.h">
+			</File>
+			<File RelativePath="src\IPaStation.h">
+			</File>
+			<File RelativePath="src\PaStation.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PaStation.h">
+			</File>
+			<File RelativePath="src\PaStationAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PaStationAccessFactory.h">
+			</File>
+			<File RelativePath="src\PaStationHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PaStationHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_SYS_PARAMETER">
+			<File RelativePath="src\PaSysParamAccessFactory.cpp">
+			</File>
+			<File RelativePath="src\PaSysParamAccessFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_PAGING_CONSOLE">
+			<File RelativePath=".\src\PaPagingConsoleAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\PaPagingConsoleAccessFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_FIRE_COUNTDOWN_TIMER">
+			<File RelativePath=".\src\PaFireCountdownAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\PaFireCountdownAccessFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_TIS_MESSAGE_MAPPING">
+			<File RelativePath="src\ConfigPaTisMessageMap.cpp">
+			</File>
+			<File RelativePath="src\ConfigPaTisMessageMap.h">
+			</File>
+			<File RelativePath="src\IConfigPaTisMessageMap.h">
+			</File>
+			<File RelativePath="src\IPaTisMessageMap.h">
+			</File>
+			<File RelativePath="src\PaTisMessageMap.cpp">
+			</File>
+			<File RelativePath="src\PaTisMessageMap.h">
+			</File>
+			<File RelativePath="src\PaTisMessageMapHelper.cpp">
+			</File>
+			<File RelativePath="src\PaTisMessageMapHelper.h">
+			</File>
+			<File RelativePath=".\src\PaTisMessageMappingAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\PaTisMessageMappingAccessFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_TIS_ZONE_MAPPING">
+			<File RelativePath=".\src\ConfigPaTisZoneMap.cpp">
+			</File>
+			<File RelativePath=".\src\ConfigPaTisZoneMap.h">
+			</File>
+			<File RelativePath=".\src\IConfigPaTisZoneMap.h">
+			</File>
+			<File RelativePath=".\src\IPaTisZoneMap.h">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMap.cpp">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMap.h">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMapHelper.cpp">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMapHelper.h">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMappingAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\PaTisZoneMappingAccessFactory.h">
+			</File>
+		</Filter>
+		<Filter Name="PA_SCHEDULED_DVA_HISTORY">
+			<File RelativePath=".\src\ConfigPaScheduleBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\ConfigPaScheduleBroadcast.h">
+			</File>
+			<File RelativePath=".\src\IConfigPaScheduleBroadcast.h">
+			</File>
+			<File RelativePath=".\src\IPaScheduleBroadcast.h">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcast.cpp">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcast.h">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcastAccessFactory.cpp">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcastAccessFactory.h">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcastHelper.cpp">
+			</File>
+			<File RelativePath=".\src\PaScheduleBroadcastHelper.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

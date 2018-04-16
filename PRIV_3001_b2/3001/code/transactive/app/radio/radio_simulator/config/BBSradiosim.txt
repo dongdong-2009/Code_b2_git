@@ -1,0 +1,19 @@
+addmod bbs radio 175.2.63.1 4000
+clearsim
+loadsim RadioSimulator.ini
+loadsim TrainCoreFunctions.ini
+loadsim TrainCctv.ini
+loadsim TrainOccCalls.ini
+loadsim TrainDriverCalls.ini
+loadsim TrainPec.ini
+loadsim TrainPa.ini
+loadsim TrainTis.ini
+loadsim TrainMpuChangeover.ini
+loadsim AtsStcpVol1.ini
+loadsim RadioMonitorSimulator.ini
+loadsim RadioSubscriberSupport.ini
+loadsim IncomingCallSupport.ini
+loadsim OutgoingCall_Single2Billy.ini
+loadsim CatchAll.ini
+start
+showsim

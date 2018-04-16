@@ -1,0 +1,31 @@
+
+# x_fmltbl is a Field Table File
+# This file is created with any text editor
+# The contents are the field definitions for FML
+
+# Blank lines and lines beginning with # are ignored
+
+
+# the following command suplies a base offset for the
+# subsequent field definitions.   This is optional and
+# is used to easily group and renumber field sets.
+*base 666 
+
+
+# Lines beginning with $ are passed through as comments
+# to the header definition file
+
+$/* ------------------------------------------ */
+$/* MessageQ X_FML example program definitions */
+$/* ------------------------------------------ */
+
+# name      rel-number  type   flag    comment
+
+FSHORT          1       short   -       Short
+FLONG           2       long    -       Long
+FCHAR           3       char    -       Char
+FFLOAT          4       float   -       Float
+FDOUBLE         5       double  -       Double
+FSTRING         6       string  -       String
+FCARRAY         7       carray  -       Carray
+

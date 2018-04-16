@@ -1,0 +1,147 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <ProjectGuid>{6155A522-E174-4465-9201-6D162779A590}</ProjectGuid>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\bin\win32_nd\</OutputPath>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\..\..\..\bin\win32_nr\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="*.cs" />
+    <Compile Include="Jyc\Expr\*.cs" />
+    <Compile Include="OPCTrendLib\AdditiveOp.cs" />
+    <Compile Include="OPCTrendLib\ArithmeticDivide.cs" />
+    <Compile Include="OPCTrendLib\ArithmeticModulus.cs" />
+    <Compile Include="OPCTrendLib\ArithmeticMultiply.cs" />
+    <Compile Include="OPCTrendLib\ArithmeticOp.cs" />
+    <Compile Include="OPCTrendLib\ArithmeticSubtract.cs" />
+    <Compile Include="OPCTrendLib\Base64Decoder.cs" />
+    <Compile Include="OPCTrendLib\Base64Encoder.cs" />
+    <Compile Include="OPCTrendLib\BinaryHelper.cs" />
+    <Compile Include="OPCTrendLib\BinaryOp.cs" />
+    <Compile Include="OPCTrendLib\BinaryOpExecutor.cs" />
+    <Compile Include="OPCTrendLib\BitwiseAnd.cs" />
+    <Compile Include="OPCTrendLib\BitwiseOp.cs" />
+    <Compile Include="OPCTrendLib\BitwiseOr.cs" />
+    <Compile Include="OPCTrendLib\BitwiseShift.cs" />
+    <Compile Include="OPCTrendLib\BitwiseXor.cs" />
+    <Compile Include="OPCTrendLib\BooleanAnd.cs" />
+    <Compile Include="OPCTrendLib\BooleanAndExecutor.cs" />
+    <Compile Include="OPCTrendLib\BooleanOp.cs" />
+    <Compile Include="OPCTrendLib\BooleanOr.cs" />
+    <Compile Include="OPCTrendLib\BooleanOrExecutor.cs" />
+    <Compile Include="OPCTrendLib\CompareOp.cs" />
+    <Compile Include="OPCTrendLib\CompareResult.cs" />
+    <Compile Include="OPCTrendLib\ConditionalOp.cs" />
+    <Compile Include="OPCTrendLib\ConditionalOpExecutor.cs" />
+    <Compile Include="OPCTrendLib\Constant.cs" />
+    <Compile Include="OPCTrendLib\Context.cs" />
+    <Compile Include="OPCTrendLib\ConvertHelper.cs" />
+    <Compile Include="OPCTrendLib\Error.cs" />
+    <Compile Include="OPCTrendLib\ErrorFormator.cs" />
+    <Compile Include="OPCTrendLib\EvalException.cs" />
+    <Compile Include="OPCTrendLib\Evaluator.cs" />
+    <Compile Include="OPCTrendLib\ExecuteAction.cs" />
+    <Compile Include="OPCTrendLib\Executor.cs" />
+    <Compile Include="OPCTrendLib\ExecutorContext.cs" />
+    <Compile Include="OPCTrendLib\Expression.cs" />
+    <Compile Include="OPCTrendLib\ExprNode.cs" />
+    <Compile Include="OPCTrendLib\Identifier.cs" />
+    <Compile Include="OPCTrendLib\IExecutor.cs" />
+    <Compile Include="OPCTrendLib\IExecutorContext.cs" />
+    <Compile Include="OPCTrendLib\IndexerOp.cs" />
+    <Compile Include="OPCTrendLib\IVariableHolder.cs" />
+    <Compile Include="OPCTrendLib\MemberId.cs" />
+    <Compile Include="OPCTrendLib\MemberOp.cs" />
+    <Compile Include="OPCTrendLib\OPCDataInterface\*.cs" />
+    <Compile Include="OPCTrendLib\OPCData\*.cs" />
+    <Compile Include="OPCTrendLib\OPCHeader\*.cs" />
+    <Compile Include="OPCTrendLib\Operand.cs" />
+    <Compile Include="OPCTrendLib\OperandExecutor.cs" />
+    <Compile Include="OPCTrendLib\Operator.cs" />
+    <Compile Include="OPCTrendLib\OperatorPriority.cs" />
+    <Compile Include="OPCTrendLib\Parameter.cs" />
+    <Compile Include="OPCTrendLib\ParameterCollection.cs" />
+    <Compile Include="OPCTrendLib\ParameterVariableHolder.cs" />
+    <Compile Include="OPCTrendLib\Parser.cs" />
+    <Compile Include="OPCTrendLib\ParserException.cs" />
+    <Compile Include="OPCTrendLib\Properties\*.cs" />
+    <Compile Include="OPCTrendLib\Result.cs" />
+    <Compile Include="OPCTrendLib\Scanner.cs" />
+    <Compile Include="OPCTrendLib\ScannerException.cs" />
+    <Compile Include="OPCTrendLib\StringToken.cs" />
+    <Compile Include="OPCTrendLib\Token.cs" />
+    <Compile Include="OPCTrendLib\Tree.cs" />
+    <Compile Include="OPCTrendLib\TypeNamePart.cs" />
+    <Compile Include="OPCTrendLib\UnaryOp.cs" />
+    <Compile Include="OPCTrendLib\Variable.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="OPCTrendLib.Properties.Resources.resources" />
+    <EmbeddedResource Include="OPCTrendLib.SR.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STEE.ISCS.LOG\STEE.ISCS.Log.csproj">
+      <Project>{1A02D3A3-31E6-4037-B769-8C311F468BAB}</Project>
+      <Name>STEE.ISCS.Log</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Condition="" Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,74 @@
+import generators ;
+
+rule unregister ( ids + )
+{
+	for t in [ get-all-target-types ]
+	{
+		unregister-by-target-type $(t) : $(ids) ;
+	}
+}
+
+rule get ( id )
+{
+    for local g in [ modules.peek generators : .all-generators ]
+    {
+		if $(id) = [ $(g).id ]
+		{
+			return $(g) ;
+		}
+    }
+}
+
+rule replace ( id : g )
+{
+	local old = [ get $(id) ] ;
+	unregister $(id) ;
+	generators.register $(g) ;
+	return $(old) ;
+}
+
+rule unregister-by-target-type ( target-type : ids + )
+{
+	local new-generators ;
+	local old-generators = [ modules.peek generators : .generators.$(target-type) ] ;
+    for local g in $(old-generators)
+    {
+		if ! ( [ $(g).id ] in $(ids) )
+		{
+			new-generators += $(g) ;
+		}
+    }
+
+	if $(new-generators) != $(old-generators)
+	{
+		modules.poke generators : .generators.$(target-type) : $(new-generators) ;
+	}
+}
+
+rule get-all-target-types ( )
+{
+	return [ MATCH ".generators\\.([^.]+)" : [ VARNAMES generators ] ] ;
+}
+
+rule dump-by-type ( )
+{
+	local all-types = [ MATCH ".generators\\.([^.]+)" : [ VARNAMES generators ] ] ;
+	for t in $(all-types)
+	{
+		local str = $(t) -> ;
+		local gens = [ modules.peek generators : .generators.$(t) ] ;
+		for local g in $(gens)
+		{
+			str += [ $(g).id ] ;
+		}
+		ECHO $(str) ;
+	}
+}
+
+rule dump ( generators * )
+{
+    for local g in $(generators)
+    {
+        ECHO [ $(g).id ] ":" [ $(g).source-types ] -> [ $(g).target-types ] ;
+    }
+}

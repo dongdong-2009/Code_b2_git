@@ -1,0 +1,5 @@
+
+ta-exe StatisticsAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/history/traffic_historian/traffic_historian_dmif//StatisticsDmIf
+	;

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{db1a66e1-4fb9-41b7-af17-e10aaf7062ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AlarmCommand">
+      <UniqueIdentifier>{5d860017-a58b-49dc-8a63-a459e6dc3ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ATSAlarmInfo">
+      <UniqueIdentifier>{54f76bff-5c9e-4c12-8a84-765d9a596268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Common">
+      <UniqueIdentifier>{a44b08da-52f8-4c14-afdc-05f395acf557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Profile">
+      <UniqueIdentifier>{e94c1344-a67d-42ad-b7ab-e3826c98b0ee}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmACKCommandManager.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmMMSJobCommandManager.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmRequestManager.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreReceiverAlarmRequest.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterAlarmACKCommand.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterAlarmRequest.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterMMSJobCommand.cpp">
+      <Filter>src\AlarmCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSAlarmInfoManager.cpp">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreReceiverATSAlarmInfo.cpp">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterATSAlarmInfo.cpp">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CacheDataHead.cpp">
+      <Filter>src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CacheDataWraper.cpp">
+      <Filter>src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShareMemoryHelper.cpp">
+      <Filter>src\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ATSProfileManager.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreReceiverATSProfile.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreReceiverISCSProfile.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterATSProfile.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataStoreUpdaterISCSProfile.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISCSProfileManager.cpp">
+      <Filter>src\Profile</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmACKCommandManager.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmMMSJobCommandManager.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmRequestManager.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreReceiverAlarmRequest.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterAlarmACKCommand.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterAlarmRequest.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterMMSJobCommand.h">
+      <Filter>src\AlarmCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSAlarmInfoManager.h">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreReceiverATSAlarmInfo.h">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterATSAlarmInfo.h">
+      <Filter>src\ATSAlarmInfo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BatchingProcessQueue.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CacheDataHead.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CacheDataManager.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CacheDataManagerChild.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CacheDataWraper.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreReceiver.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdater.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStructInfo.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICacheDataUpdateObserver.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShareMemoryHelper.h">
+      <Filter>src\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ATSProfileManager.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreReceiverATSProfile.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreReceiverISCSProfile.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterATSProfile.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataStoreUpdaterISCSProfile.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISCSProfileManager.h">
+      <Filter>src\Profile</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

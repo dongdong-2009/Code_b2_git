@@ -1,0 +1,170 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.configuration.config_plugins.tis_ratis_tag" ProjectGUID="{3BBF280E-1C34-44CA-9E2E-AA07D5804DFC}" Keyword="MFCProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/tis_ratis_tag" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nd/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..\..,..\..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include,..,..\..\..\..\..\..\sdk\include\cots/ACE/6_0_4/ACE_wrappers,..\..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION=4;TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/tis_ratis_tag/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/tis_ratis_tag/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/tis_ratis_tag/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/tis_ratis_tag/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081" AdditionalIncludeDirectories="../../../../../bus/response_plans/plan_tree/res;../../../../../../sdk/include/transactive/bus/resources;../../../../../../sdk/include/transactive/bus/response_plans/plan_tree/res;../../../../../../sdk/include/transactive;../../../../../../sdk/include/transactive/app/configuration/config_plugins/config_plugin_helper/res"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" IgnoreImportLibrary="true" AdditionalDependencies="omnithread34_rtd.lib omniORB416_rtd.lib omniDynamic416_rtd.lib COS416_rtd.lib oci.lib libmysql.lib Rpcrt4.lib Msimg32.lib acemfcd.lib TA_IRS_Core_d.lib TA_IRS_Bus_d.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib TA_ConfigPluginHelper_d.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nd/TA_TisRatisTagConfigPlugin.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\lib\x86_win32,..\..\..\..\..\..\build\win32_nd,..\..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\..\sdk\lib,../../../../../../sdk/include/cots/WinStackTrace\build\Debug" ModuleDefinitionFile=".\src\TA_TisRatisTagConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nd/TA_TisRatisTagConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nd/TA_TisRatisTagConfigPlugin.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/tis_ratis_tag" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nr/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..\..,..\..\..\..\..\..\sdk\include\transactive,..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\include,..,..\..\..\..\..\..\sdk\include\cots/ACE/6_0_4/ACE_wrappers,..\..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION=4;TA_ASSERT_FAIL=EXCEPTION;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/tis_ratis_tag/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/tis_ratis_tag/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/tis_ratis_tag/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/tis_ratis_tag/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081" AdditionalIncludeDirectories="../../../../../bus/response_plans/plan_tree/res;../../../../../../sdk/include/transactive/bus/resources;../../../../../../sdk/include/transactive/bus/response_plans/plan_tree/res;../../../../../../sdk/include/transactive;../../../../../../sdk/include/transactive/app/configuration/config_plugins/config_plugin_helper/res"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" IgnoreImportLibrary="true" AdditionalDependencies="omnithread34_rt.lib omniORB416_rt.lib omniDynamic416_rt.lib COS416_rt.lib oci.lib libmysql.lib Rpcrt4.lib Msimg32.lib acemfc.lib TA_IRS_Core.lib TA_IRS_Bus.lib TA_mcl.lib TA_Base_Core.lib TA_Base_Bus.lib TA_ConfigPluginHelper.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nr/TA_TisRatisTagConfigPlugin.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\..\..\..\sdk\omniORB\omniORB_4.1.6\lib\x86_win32,..\..\..\..\..\..\build\win32_nr,..\..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\..\sdk\lib,../../../../../../sdk/include/cots/WinStackTrace\build\Release" ModuleDefinitionFile=".\src\TA_TisRatisTagConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nr/TA_TisRatisTagConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nr/TA_TisRatisTagConfigPlugin.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/app.configuration.config_plugins.tis_ratis_tag.TA_TisRatisTagConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\central.ico">
+			</File>
+			<File RelativePath="src\ConfigTisRatisTags.ico">
+			</File>
+			<File RelativePath="res\copy.ico">
+			</File>
+			<File RelativePath="res\icon1.ico">
+			</File>
+			<File RelativePath="res\local.ico">
+			</File>
+			<File RelativePath="res\location.ico">
+			</File>
+			<File RelativePath="res\Mandatory.bmp">
+			</File>
+			<File RelativePath="res\NotApplied.ico">
+			</File>
+			<File RelativePath="res\profile.ico">
+			</File>
+			<File RelativePath="res\rights.ico">
+			</File>
+			<File RelativePath="res\TA_TisRatisTagConfigPlugin.rc2">
+			</File>
+			<File RelativePath="res\TisRatisTag.ico">
+			</File>
+		</Filter>
+		<Filter Name="src">
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TA_TisRatisTagConfigPlugin.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TA_TisRatisTagConfigPlugin.def">
+			</File>
+			<File RelativePath="src\TA_TisRatisTagConfigPlugin.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions=";_USE_32BIT_TIME_T" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagComponent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagComponent.h">
+			</File>
+			<File RelativePath="src\TisRatisTagDatabaseAccessor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagDatabaseAccessor.h">
+			</File>
+			<File RelativePath="src\TisRatisTagDetailView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagDetailView.h">
+			</File>
+			<File RelativePath="src\TisRatisTagFrameworkView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagFrameworkView.h">
+			</File>
+			<File RelativePath="src\TisRatisTagListColumns.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagListColumns.h">
+			</File>
+			<File RelativePath="src\TisRatisTagListView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TisRatisTagListView.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+		</Filter>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

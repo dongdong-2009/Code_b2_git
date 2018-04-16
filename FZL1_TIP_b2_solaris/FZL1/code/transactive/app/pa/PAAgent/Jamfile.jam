@@ -1,0 +1,9 @@
+
+ta-exe PAAgent
+	: [ glob src/*.cpp :
+			src/InvalidatePASDataPoints.cpp
+			src/ForcedDataPointSynchroniser.cpp
+			src/TrainLiveBroadcast.cpp
+			src/TrainDVABroadcast.cpp
+		]
+	;

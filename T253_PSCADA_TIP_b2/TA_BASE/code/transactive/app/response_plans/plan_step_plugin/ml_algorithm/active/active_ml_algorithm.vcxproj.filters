@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\DllActiveInstance.cpp" />
+    <ClCompile Include="src\MLAlgorithmStepComponent.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+    <ClCompile Include="src\ActivePCAStep.cpp">
+      <Filter>Steps</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\MLAlgorithmStepComponent.h" />
+    <ClInclude Include="src\ActivePCAStep.h">
+      <Filter>Steps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\PCAStepParameter.h">
+      <Filter>Parameters</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Steps">
+      <UniqueIdentifier>{939df25b-54ca-4e9e-95fa-9ed5dcda6149}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Parameters">
+      <UniqueIdentifier>{33eedbfe-be8e-4f8c-8858-e82fd82d0104}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
