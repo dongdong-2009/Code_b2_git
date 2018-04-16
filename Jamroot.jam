@@ -12,3 +12,8 @@ if [ option.get "sync" ]
 {
 	sync-jamfiles [ option.get "sync" ] ;
 }
+
+if [ option.get "remove" ]
+{
+	remove-jamfiles [ option.get "remove" ] ;
+}

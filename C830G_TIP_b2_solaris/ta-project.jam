@@ -216,19 +216,19 @@ class ta-projects
 		{
 			local id = [ $(tp).id ] ;
 			local dep = [ $(tp).dependency ] ;
+			echo $(id) ; # debug-out-put
 
 			if $(dep)
 			{
-				echo $(id) ; # debug-out-put
+				echo "\t" $(dep) ;
 				contents += "$(id) = $(dep:J= ) ;" ;
 			}
 		}
 
-		ALWAYS $(file) ;
-		DEPENDS all : $(file) ;
 		print.output $(file) ;
 		print.lines $(contents) ;
 		print.output console ;
+		UPDATE_NOW $(file) ;
 	}
 
 	if [ os.name ] = NT

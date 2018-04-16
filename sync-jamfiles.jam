@@ -1,4 +1,4 @@
-import sequence path option set print ;
+import sequence path option set print common ;
 
 TOP = [ path.pwd ] ;
 VERIFY = F:/Verify ;
@@ -15,57 +15,101 @@ BRANCHS	=
 
 SUFFIX = _b2 ;
 
-rule sync-jamfiles ( from )
+IGNORE_FILE_PATTERN = config.jam project-dependency.jam ;
+
+rule all-dirs ( exclude * )
 {
+	local suffixes = $(SUFFIX) ;
+
 	if [ option.get "with-solaris" : : true ]
 	{
-		SUFFIX += _solaris ;
+		suffixes += _solaris ;
 	}
-	
-	local TOPs = $(TOP) ;
-		
+
+	local tops = $(TOP) ;
+
 	if [ option.get "with-verify" : : true ]
 	{
-		TOPs += $(VERIFY) ;
+		tops += $(VERIFY) ;
 	}
-		
-	BRANCHS += $(BRANCHS)$(SUFFIX) ;
 
-	if $(from) in $(BRANCHS)
+	local result ;
+	local branches = $(BRANCHS) $(BRANCHS)$(suffixes) ;
+
+	for local dir in [ sequence.transform path.native : $(tops)/$(branches) $(tops)/$(branches)$(suffixes) ]
 	{
-		from = $(TOP)/$(from) ;
-		local files = [ sequence.transform path.native : [ path.glob $(from) : *.jam pch.hpp : config.jam ] ] ;
-		
-		if $(files)
+		if [ path.exists $(dir) ]
 		{
-			files = [ sequence.transform path.native : $(files) ] ;
-			to = $(TOPs)/$(BRANCHS) $(TOPs)/$(BRANCHS)$(SUFFIX) ;
+			result += $(dir) ;
+		}
+	}
 
-			print.lines "Sync files" $(files:BS) : "\t" ;
-			print.lines "From" [ path.native $(from) ] : "\t" ;
-			print.lines "To" ;
+	result = [ sequence.unique $(result) ] ;
+	
+	if $(exclude)
+	{
+		result = [ set.difference $(result) : [ sequence.transform path.native : $(exclude) ] ] ;
+	}
+	return $(result) ;
+}
 
-			for local dir in [ sequence.transform path.native : $(to) ]
+rule all-branches ( )
+{
+	local suffixes = $(SUFFIX) ;
+
+	if [ option.get "with-solaris" : : true ]
+	{
+		suffixes += _solaris ;
+	}
+
+	return $(BRANCHS) $(BRANCHS)$(suffixes) ;
+}
+
+rule sync-jamfiles ( from )
+{
+	if ! $(from) in [ all-branches ]
+	{
+		return ;
+	}
+
+	local files = [ sequence.transform path.native : [ path.glob $(TOP)/$(from) : *.jam pch.hpp : $(IGNORE_FILE_PATTERN) ] ] ;
+
+	if $(files)
+	{
+		print.lines "Sync files" $(files:BS) : "\t" ;
+		print.lines "From" [ path.native $(from) ] : "\t" ;
+		print.lines "To" ;
+
+		for local dir in [ all-dirs $(TOP)/$(from) ]
+		{
+			print.lines $(dir) : "\t" "\t" ;
+
+			for file in $(files)
 			{
-				if $(dir:B) = $(from:B)
+				if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
 				{
-					continue ;
+					local copy-command = "COPY /Y $(file) $(dir)" ;
+					# echo $(copy-command) ;
+					SHELL "$(copy-command)" ;
 				}
-			
-				if [ path.exists $(dir) ]
-				{			
-					print.lines $(dir) : "\t" "\t" ;
+			}
+		}
+	}
+}
 
-					for file in $(files)
-					{					
-						if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
-						{
-							local copy-command = "COPY /Y $(file) $(dir)" ;
-							# echo $(copy-command) ;
-							SHELL "$(copy-command)" ;
-						}
-					}
-				}
+rule remove-jamfiles ( jamfiles + )
+{
+	local RM = [ common.rm-command ] ;
+	
+	for local dir in [ all-dirs ]
+	{
+		for file in $(jamfiles)
+		{
+			local to-delete = [ path.native $(dir)/$(file) ] ;
+			if [ path.exists $(to-delete) ]
+			{
+				local rm-command = [ sequence.join $(RM) $(to-delete) : " " ] ;
+				SHELL "$(rm-command)" ;
 			}
 		}
 	}
