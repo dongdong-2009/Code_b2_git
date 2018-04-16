@@ -123,6 +123,14 @@ class ta-path
 		}
 	}
 
+	rule jamfiles ( )
+	{
+		local result ;
+		result = [ path.glob-tree [ transactive base proj ] : Jamfile.jam ] ;
+		result += [ path.glob [ paths base : proj : code base proj ] : Jamfile.jam ] ;
+		return $(result) ;
+	}
+
 	rule includes ( level * )
 	{
 		level ?= $(self.levels) ;

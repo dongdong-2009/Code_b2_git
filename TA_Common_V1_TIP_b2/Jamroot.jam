@@ -35,24 +35,14 @@ if $(config.p4.sync) = true
 	}
 }
 
+constant TA_Projects : [ ta-project.create $(TA_Path) : $(Project_Dependency_File) ] ;
+
 import cots ;
 cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) ;
 constant Cots : [ cots.create $(config.cots) ] ;
 
 import sqlgen ;
 sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
-
-rule jamfiles ( )
-{
-	if ! $(.jamfiles)
-	{
-		.jamfiles = [ path.glob-tree [ $(TA_Path).transactive base proj ] : Jamfile.jam ] ;
-		.jamfiles += [ path.glob [ $(TA_Path).paths base : proj : code base proj ] : Jamfile.jam ] ;
-	}
-	return $(.jamfiles) ;
-}
-
-constant TA_Projects : [ ta-project.create [ jamfiles ] : $(Project_Dependency_File) ] ;
 
 if [ os.on-unix ]
 {

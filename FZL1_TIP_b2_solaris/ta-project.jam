@@ -1,9 +1,9 @@
 import "class" : new ;
 import os ;
 
-rule create ( jamfiles * : dependency-file ? )
+rule create ( ta-path * : dependency-file ? )
 {
-	return [ new ta-projects $(jamfiles) : $(dependency-file) ] ;
+	return [ new ta-projects $(ta-path) : $(dependency-file) ] ;
 }
 
 rule transform ( projects * : function + )
@@ -22,12 +22,13 @@ class ta-projects
 	import "class" : new ;
 	import os path string assert print sequence path project set numbers order ;
 
-	rule __init__ ( jamfiles * : dependency-file ? )
+	rule __init__ ( ta-path * : dependency-file ? )
 	{
-		self.jamfiles = $(jamfiles) ;
+		self.ta-path = $(ta-path) ;
+		self.jamfiles = [ $(ta-path).jamfiles ] ;
 		self.dependency-file = $(dependency-file) ;
 
-		for local jamfile in $(jamfiles)
+		for local jamfile in $(self.jamfiles)
 		{
 			local tp = [ new ta-project-class $(jamfile) ] ;
 			for local key in [ $(tp).id ] [ $(tp).target-name ] [ $(tp).path ]

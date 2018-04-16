@@ -17,6 +17,11 @@ SUFFIX = _b2 ;
 
 IGNORE_FILE_PATTERN = config.jam project-dependency.jam ;
 
+rule all-top-dirs ( )
+{
+	return [ path.glob $(TOP) : * : *.* ] ;
+}
+
 rule all-dirs ( exclude * )
 {
 	local suffixes = $(SUFFIX) ;
@@ -45,7 +50,7 @@ rule all-dirs ( exclude * )
 	}
 
 	result = [ sequence.unique $(result) ] ;
-	
+
 	if $(exclude)
 	{
 		result = [ set.difference $(result) : [ sequence.transform path.native : $(exclude) ] ] ;
@@ -69,29 +74,34 @@ rule sync-jamfiles ( from )
 {
 	if ! $(from) in [ all-branches ]
 	{
+		echo "'$(from)' is not a branch." ;
+		print.lines "\nBranchs:" $(BRANCHS) : "\t" ;
 		return ;
 	}
 
 	local files = [ sequence.transform path.native : [ path.glob $(TOP)/$(from) : *.jam pch.hpp : $(IGNORE_FILE_PATTERN) ] ] ;
 
-	if $(files)
+	if ! $(files)
 	{
-		print.lines "Sync files" $(files:BS) : "\t" ;
-		print.lines "From" [ path.native $(from) ] : "\t" ;
-		print.lines "To" ;
+		echo "cannot find .jam in '$(from)'" ;
+		return ;
+	}
 
-		for local dir in [ all-dirs $(TOP)/$(from) ]
+	print.lines "Sync files" $(files:BS) : "\t" ;
+	print.lines "From" [ path.native $(from) ] : "\t" ;
+	print.lines "To" ;
+
+	for local dir in [ all-dirs $(TOP)/$(from) ]
+	{
+		print.lines $(dir) : "\t" "\t" ;
+
+		for file in $(files)
 		{
-			print.lines $(dir) : "\t" "\t" ;
-
-			for file in $(files)
+			if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
 			{
-				if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
-				{
-					local copy-command = "COPY /Y $(file) $(dir)" ;
-					# echo $(copy-command) ;
-					SHELL "$(copy-command)" ;
-				}
+				local copy-command = "COPY /Y $(file) $(dir)" ;
+				# echo $(copy-command) ;
+				SHELL "$(copy-command)" ;
 			}
 		}
 	}
@@ -100,7 +110,7 @@ rule sync-jamfiles ( from )
 rule remove-jamfiles ( jamfiles + )
 {
 	local RM = [ common.rm-command ] ;
-	
+
 	for local dir in [ all-dirs ]
 	{
 		for file in $(jamfiles)

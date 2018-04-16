@@ -11,9 +11,24 @@ project
 if [ option.get "sync" ]
 {
 	sync-jamfiles [ option.get "sync" ] ;
+	exit ;
 }
 
 if [ option.get "remove" ]
 {
 	remove-jamfiles [ option.get "remove" ] ;
+	exit ;
 }
+
+print.lines
+	"Usage:"
+	"--sync=<dir>"
+	"--remove=<x.jam>"
+	""
+	: "\t"
+	;
+print.lines
+	"Directories:"
+	[ sequence.transform path.basename : [ sync-jamfiles.all-top-dirs ] ]
+	: "\t"
+	;
