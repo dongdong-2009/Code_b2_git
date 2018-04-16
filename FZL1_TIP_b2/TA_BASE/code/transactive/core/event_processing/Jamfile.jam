@@ -1,0 +1,7 @@
+
+ta-lib TA_EventProcessing
+	: [ glob src/*.cpp : src/RealTimeEventDataHelper.cpp ]
+	: <dependency>/core/exceptions/idl
+	  <dependency>/core/message/idl
+	  <dependency>/core/event/idl
+	;

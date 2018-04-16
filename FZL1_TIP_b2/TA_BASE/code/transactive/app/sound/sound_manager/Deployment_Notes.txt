@@ -1,0 +1,11 @@
+Sound Manager
+-------------------
+
+The Sound Manager implements a COM interfaces, which must be registered on the target machine. This is done by running the following command:
+   "SoundManager.exe --regserver --host-names=<SystemControllersToFetchRunParamsFrom>".
+
+For example,
+   "SoundManager.exe --regserver --host-names=occa,occb".
+
+The Sound Manager will try to fetch its run params from the System Controllers in the order given. A port number can optionally be specified with each hostname, eg:
+   "SoundManager.exe --regserver --host-names=occa:6667,occb".

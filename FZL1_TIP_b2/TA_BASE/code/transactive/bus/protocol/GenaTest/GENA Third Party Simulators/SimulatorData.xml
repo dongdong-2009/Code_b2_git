@@ -1,0 +1,72 @@
+<?xml version='1.0'?>
+<SimulateData>
+	<Topic Name="Train" URL="/Train" ItemCount="10" Interval="1000" >
+		<Birth> 
+			<TrainID><TDN>19</TDN><HeadCode>ML</HeadCode></TrainID>
+			<FrontPos><meter>18</meter><parentEdge>1234</parentEdge></FrontPos>
+			<CurrentDir>Uptrack</CurrentDir>
+			<TravelTimeExceeded>
+				<TravelTimeExceeded>True</TravelTimeExceeded>
+				<TrainVentPosition>
+					<FrontVent>1</FrontVent>
+					<RearVent>2</RearVent>
+				</TrainVentPosition>
+			</TravelTimeExceeded>
+			<DriveMode>OFF</DriveMode>
+		</Birth>
+		<Update>
+			<TrainID><TDN>20</TDN><HeadCode>ML</HeadCode></TrainID>
+			<FrontPos><meter>15</meter><parentEdge>3214</parentEdge></FrontPos>
+			<CurrentDir>Downtrack</CurrentDir>
+			<TravelTimeExceeded>
+				<TravelTimeExceeded>False</TravelTimeExceeded>
+				<TrainVentPosition>
+					<FrontVent>5</FrontVent>
+					<RearVent>7</RearVent>
+				</TrainVentPosition>
+			</TravelTimeExceeded>
+			<DriveMode>ON</DriveMode>
+		</Update>
+		<Update>
+			<TrainID><TDN>25</TDN><HeadCode>SL</HeadCode></TrainID>
+			<FrontPos><meter>15</meter><parentEdge>2134</parentEdge></FrontPos>
+			<CurrentDir>Uptrack</CurrentDir>
+			<TravelTimeExceeded>
+				<TravelTimeExceeded>False</TravelTimeExceeded>
+				<TrainVentPosition>
+					<FrontVent>9</FrontVent>
+					<RearVent>10</RearVent>
+				</TrainVentPosition>
+			</TravelTimeExceeded>
+			<DriveMode>OFF</DriveMode>
+		</Update>
+		<Update>
+			<TrainID><TDN>35</TDN><HeadCode>VM</HeadCode></TrainID>
+			<FrontPos><meter>15</meter><parentEdge>14546</parentEdge></FrontPos>
+			<CurrentDir>Downtrack</CurrentDir>
+			<DriveMode>ON</DriveMode>
+		</Update>
+	</Topic>
+	<Topic Name="Platform" URL="/Platform?attr=Hold&amp;attr=OpenStatus" ItemCount="10" Interval="1000" >
+		<Birth>
+			<OpenStatus>Closed</OpenStatus>
+			<Hold>Not Hold</Hold>
+		</Birth>
+		<Update>
+			<OpenStatus>Open</OpenStatus>
+			<Hold>Not Hold</Hold>
+		</Update>
+		<Update>
+			<OpenStatus>Closed</OpenStatus>
+			<Hold>Persistent Hold</Hold>
+		</Update>
+		<Update>
+			<OpenStatus>Open</OpenStatus>
+			<Hold>Not Hold</Hold>
+		</Update>
+		<Update>
+			<OpenStatus>Closed</OpenStatus>
+			<Hold>Persistent Hold</Hold>
+		</Update>
+	  </Topic>
+</SimulateData>

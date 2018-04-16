@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.security.duty_agent", "app.security.duty_agent.DutyAgent.vcproj", "{9777AAE2-A62D-4FFC-94D6-335AF936843D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.security.rights_agent", "..\rights_agent\app.security.rights_agent.RightsAgent.vcproj", "{F120A278-9145-47B3-90DD-29775C3B0E90}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.security.authentication_agent", "..\authentication_agent\app.security.authentication_agent.AuthenticationAgent.vcproj", "{D7A0A676-F9BD-4835-9D61-6DDAE1EFF87A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9777AAE2-A62D-4FFC-94D6-335AF936843D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9777AAE2-A62D-4FFC-94D6-335AF936843D}.Debug|Win32.Build.0 = Debug|Win32
+		{9777AAE2-A62D-4FFC-94D6-335AF936843D}.Release|Win32.ActiveCfg = Release|Win32
+		{9777AAE2-A62D-4FFC-94D6-335AF936843D}.Release|Win32.Build.0 = Release|Win32
+		{F120A278-9145-47B3-90DD-29775C3B0E90}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F120A278-9145-47B3-90DD-29775C3B0E90}.Debug|Win32.Build.0 = Debug|Win32
+		{F120A278-9145-47B3-90DD-29775C3B0E90}.Release|Win32.ActiveCfg = Release|Win32
+		{F120A278-9145-47B3-90DD-29775C3B0E90}.Release|Win32.Build.0 = Release|Win32
+		{D7A0A676-F9BD-4835-9D61-6DDAE1EFF87A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D7A0A676-F9BD-4835-9D61-6DDAE1EFF87A}.Debug|Win32.Build.0 = Debug|Win32
+		{D7A0A676-F9BD-4835-9D61-6DDAE1EFF87A}.Release|Win32.ActiveCfg = Release|Win32
+		{D7A0A676-F9BD-4835-9D61-6DDAE1EFF87A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

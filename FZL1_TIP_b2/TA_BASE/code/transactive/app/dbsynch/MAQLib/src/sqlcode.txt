@@ -1,0 +1,129 @@
+; this file is to store all static SQL statements used in our system
+; all table names in the SQL statement should be in lower case
+; all the SQL statements store in this file follows a format like
+; [table name]
+; ID=SQL Statement (if the statment too long, separate it using '+' as its first character in the newline)
+; [[common]] 
+; contains all the statements which can use by all the database system that we currently supported in our system
+; [[Oracle]]
+; contains the statements which can only apply in Oracle database
+; [[MySQL]]
+; contains the statements which can only apply in MySQL database
+
+[queue_sys_table]
+; the following SQL Statements of the enqueue_sys_table table used in source file: 
+; MysqlListener.cpp
+[[common]]
+[[oracle]]
+AQSYSMTABLE_SELECT_4050=no_Oracle_sql
+AQSYSSTABLE_SELECT_4051=no_Oracle_sql
+AQSYSSTABLE_SELECT_4052=no_Oracle_sql
+AQSYSDEQJOB_INSERT_4053=no_Oracle_sql
+[[mysql]]
+AQSYSMTABLE_SELECT_4050=SELECT Q_NAME, SUB_COUNT, PAYLOAD_TYPE FROM aq_sys_queue_m
+AQSYSSTABLE_SELECT_4051=SELECT SUB_ID, SUB_NAME, SUB_ADDRESS FROM %s
+AQSYSSTABLE_SELECT_4052=SELECT SUB_ID, SUB_NAME, SUB_ADDRESS FROM %s WHERE SUB_ID NOT IN ( %s )
+AQSYSDEQJOB_INSERT_4053=CALL %s('%s')
+
+[oracle_V_DATABASE]
+[[common]]
+[[oracle]]
+ORACLESYSTABLE_SELECT_5000=SELECT   NAME   FROM   V$DATABASE
+[[mysql]]
+ORACLESYSTABLE_SELECT_5000=SELECT DATABASE() AS NAME 
+
+
+[oracle_recipient]
+[[common]]
+[[oracle]]
+ORACLERECIPIENT_SELECT_5001=select name from recipient_info where (address like '%s%%') and (upper(NAME) != (SELECT   NAME   FROM   V$DATABASE)) 
+[[mysql]]
+ORACLERECIPIENT_SELECT_5001=select name from recipient_info where (address like '%s%%') and (upper(NAME) != upper(database())) 
+
+[db_server_port]
+[[common]]
+[[oracle]]
+DB_GET_SERVER_PORT_5002=select address from recipient_info  where upper(name) = (SELECT   NAME   FROM   V$DATABASE) 
+[[mysql]]
+DB_GET_SERVER_PORT_5002=select address from recipient_info  where upper(name) = upper(database()) 
+
+
+[db_queue]
+[[common]]
+[[oracle]]
+DB_GET_QUEUE_TABLENAME_6000=select queue_table from user_queues where name = upper('%s')
+DB_GET_AQDATA_TYPE_6001=select t.data_type from user_tab_columns t where t.TABLE_NAME = '%s' and t.COLUMN_NAME='USER_DATA'
+DB_GET_AQDATA_TYPE_6002=select t.data_type from user_tab_columns t where t.TABLE_NAME = (select queue_table from user_queues where name = upper('%s')) and t.COLUMN_NAME='USER_DATA'
+[[mysql]]
+DB_GET_QUEUE_TABLENAME_6000=no_mysql_sql
+DB_GET_AQDATA_TYPE_6001=no_mysql_sql
+DB_GET_AQDATA_TYPE_6002=no_mysql_sql
+
+
+
+ 
+[AQ_ENQ_DUPLICATE_CHECK]
+[[common]]
+ENQ_SQL_SUPDATE_GET_MSGSID_7000=select SRV_ID,MSG_SID from AQ_ENQ_DUPLICATE_CHECK where LOCATION='%s' and Q_NAME='%s' for update
+ENQ_SQL_UPDATE_SET_NEWMSGSID_7001=update AQ_ENQ_DUPLICATE_CHECK set MSG_SID=%s where LOCATION='%s' and SRV_ID=%s and Q_NAME='%s'
+ENQ_SQL_INSERT_ADD_MSGSID_7004=insert into AQ_ENQ_DUPLICATE_CHECK(LOCATION, SRV_ID, Q_NAME, MSG_SID) values(UPPER('%s'), %s, UPPER('%s'), %s)
+[[oracle]]
+ENQ_SQL_INSERT_ADD_MSGSID_7002=insert into AQ_ENQ_DUPLICATE_CHECK(PKEY, LOCATION, SRV_ID, Q_NAME, MSG_SID) values((select nvl(max(PKEY),0)+1 from AQ_ENQ_DUPLICATE_CHECK), UPPER('%s'), %s, UPPER('%s'), %s)
+ENQ_SQL_INSERT_ADD_MSGSID_7003=no_Oracle_sql
+[[mysql]]
+ENQ_SQL_INSERT_ADD_MSGSID_7002=insert into AQ_ENQ_DUPLICATE_CHECK(PKEY, LOCATION, SRV_ID, Q_NAME, MSG_SID) values(IF((select max(PKEY)+1 from AQ_ENQ_DUPLICATE_CHECK a) IS NULL, 1, (select max(PKEY)+1 from AQ_ENQ_DUPLICATE_CHECK a)), UPPER('%s'), %s, UPPER('%s'), %s)
+ENQ_SQL_INSERT_ADD_MSGSID_7003=insert into aq_sys_queue_e(q_name, msg_sid, msgid, priority, enq_time, user_data) values ('%s', %s, '%s', %s, sysdate(), '%s'); 
+  
+ 
+[AQ_DEQ_TOKEN_CHECK]
+[[common]]
+
+[[oracle]]
+DEQ_SQL_SELECT_GET_DBTIMENOW_7010=select current_timestamp as DB_NOW_TIME from dual
+DEQ_SQL_SELECT_GET_UPDATETIME_7011=select SRV_ID, UPD_TIME from AQ_DEQ_TOKEN_CHECK where LOCATION = '%s' and Q_NAME = '%s'
+DEQ_SQL_UPDATE_SET_UPDATETIME_7012=update AQ_DEQ_TOKEN_CHECK set UPD_TIME = current_timestamp where LOCATION='%s' and SRV_ID=%s and Q_NAME = '%s'
+DEQ_SQL_UPDATE_SET_TIMEANDSRVID_7013=update AQ_DEQ_TOKEN_CHECK set UPD_TIME = current_timestamp,SRV_ID=%s where LOCATION = '%s' and Q_NAME = '%s'
+DEQ_SQL_INSERT_ADD_UPDATETIME_7014=insert into AQ_DEQ_TOKEN_CHECK (PKEY, LOCATION, SRV_ID, Q_NAME, UPD_TIME) values((select nvl(max(PKEY),0)+1 from AQ_DEQ_TOKEN_CHECK), UPPER('%s'), %s, UPPER('%s'), current_timestamp)
+DEQ_SQL_SELECT_GET_LOCKUPDATETIME_7015=select UPD_TIME from AQ_DEQ_TOKEN_CHECK where  LOCATION = '%s' and Q_NAME='%s' and SRV_ID = %s for update
+DEQ_SQL_SELECT_GET_NOTWORKTIME_7016 =select tmp.minutes * 60 + tmp.seconds as NOTWORKTIME from 
++ (SELECT substr((current_timestamp-UPD_TIME),instr((current_timestamp-upd_time),' ')+4,2)   minutes, 
++ substr((current_timestamp-UPD_TIME),instr((current_timestamp-UPD_TIME),' ')+7,2) seconds,
++ substr((current_timestamp-upd_time),instr((current_timestamp-upd_time),' ')+1,2)         hours,
++ trunc(to_number(substr((current_timestamp-upd_time),1,instr(current_timestamp-upd_time,' '))))  days,
++ trunc(to_number(substr((current_timestamp-upd_time),1,instr(current_timestamp-upd_time,' ')))/7) weeks
++ FROM AQ_DEQ_TOKEN_CHECK where  LOCATION = '%s' and Q_NAME='%s' ) tmp
+DEQ_SQL_INSERT_ADD_UPDATETIME_7017=insert into AQ_DEQ_TOKEN_CHECK (LOCATION, SRV_ID, Q_NAME, UPD_TIME) values(UPPER('%s'), %s, UPPER('%s'), current_timestamp)
+DEQ_SQL_UPDATE_SET_SRVID_7018=update AQ_DEQ_TOKEN_CHECK set SRV_ID=%s where UPPER(LOCATION) = UPPER('%s') and UPPER(Q_NAME) = UPPER('%s')
+[[mysql]]
+DEQ_SQL_SELECT_GET_DBTIMENOW_7010=no_mysql_sql
+DEQ_SQL_SELECT_GET_UPDATETIME_7011=no_mysql_sql
+DEQ_SQL_UPDATE_SET_UPDATETIME_7012=no_mysql_sql
+DEQ_SQL_UPDATE_SET_TIMEANDSRVID_7013=no_mysql_sql
+DEQ_SQL_INSERT_ADD_UPDATETIME_7014=no_mysql_sql
+DEQ_SQL_SELECT_GET_LOCKUPDATETIME_7015=no_mysql_sql
+DEQ_SQL_SELECT_GET_NOTWORKTIME_7016 =no_mysql_sql
+DEQ_SQL_INSERT_ADD_UPDATETIME_7017=no_mysql_sql
+DEQ_SQL_UPDATE_SET_SRVID_7018=no_mysql_sql
+
+[AQ_TABLE]
+[[common]]
+
+[[oracle]]
+;prc_enq_audit_data(p_message_qualifier IN VARCHAR2, p_audit_data_Oracle IN VARCHAR2,p_audit_data_MySQL IN VARCHAR2 default null)
+ENQ_SQL_PRC_ENQ_AUDIT_DATA_8001=begin prc_enq_audit_data('%s','%s','%s');end;
+
+[[mysql]]
+ENQ_SQL_PRC_ENQ_AUDIT_DATA_8001=no_mysql_sql
+
+	
+
+[AQ_SYS_QUEUE_M]
+[[common]]
+[[oracle]]
+AQ_SQL_SElECT_AQSYSQUEUEM_8002=SELECT Q_NAME, ENQ_MODE FROM AQ_SYS_QUEUE_M
+[[mysql]]
+AQ_SQL_SElECT_AQSYSQUEUEM_8002=SELECT Q_NAME, ENQ_MODE FROM AQ_SYS_QUEUE_M
+ 
+ 
+
+

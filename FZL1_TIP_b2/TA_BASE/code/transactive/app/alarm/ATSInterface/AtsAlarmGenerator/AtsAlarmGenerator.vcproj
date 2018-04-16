@@ -1,0 +1,148 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="AtsAlarmGenerator" ProjectGUID="{452703EC-F34A-4B5A-89B6-65F7F8005412}" RootNamespace="AtsAlarmGenerator" Keyword="MFCProj" TargetFrameworkVersion="196613">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmGenerator" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="false" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\ShareMemoryDLL;..\..\..\..\..\;.\../../../../../cots/boost/boost_1_56_0" PreprocessorDefinitions="WIN32;_WINDOWS;_DEBUG;_USE_32BIT_TIME_T;_CRT_SECURE_NO_WARNINGS" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" UsePrecompiledHeader="2" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmGenerator/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmGenerator/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/alarm/ATSAlarmGenerator/vc90.pdb" WarningLevel="3" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="Rpcrt4.lib odbc32.lib odbccp32.lib ShareMemoryDll_d.lib" OutputFile=".\../../../../../../bin/win32_nd/$(ProjectName).exe" LinkIncremental="2" AdditionalLibraryDirectories=".\../../../../../../sdk/win32_nd/" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../../bin/win32_nd/$(TargetName).pdb" SubSystem="2" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmGenerator" ConfigurationType="1" UseOfMFC="2" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="false" ValidateParameters="true"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\ShareMemoryDLL;..\..\..\..\..\;.\../../../../../cots/boost/boost_1_56_0" PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_USE_32BIT_TIME_T;_CRT_SECURE_NO_WARNINGS" RuntimeLibrary="2" UsePrecompiledHeader="2" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmGenerator/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmGenerator/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/alarm/ATSAlarmGenerator/vc90.pdb" WarningLevel="3" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="1033" AdditionalIncludeDirectories="$(IntDir)"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="Rpcrt4.lib odbc32.lib odbccp32.lib ShareMemoryDll.lib" OutputFile=".\../../../../../../bin/win32_nr/$(ProjectName).exe" LinkIncremental="1" AdditionalLibraryDirectories=".\../../../../../../sdk/win32_nr/" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../../bin/win32_nr/$(TargetName).pdb" SubSystem="2" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx" UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}">
+			<File RelativePath=".\AtsAlarmGenerator.cpp">
+			</File>
+			<File RelativePath=".\AtsAlarmGeneratorDlg.cpp">
+			</File>
+			<File RelativePath=".\ATSListCtrl.cpp">
+			</File>
+			<File RelativePath=".\CommandHandler.cpp">
+			</File>
+			<File RelativePath=".\DataGenerator.cpp">
+			</File>
+			<File RelativePath=".\NonReEntrantThreadLockable.cpp">
+			</File>
+			<File RelativePath=".\RequestHandler.cpp">
+			</File>
+			<File RelativePath=".\Semaphore.cpp">
+			</File>
+			<File RelativePath=".\stdafx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" UsePrecompiledHeader="1"/>
+				</FileConfiguration></File>
+			<File RelativePath=".\SystemSubSystem.cpp">
+			</File>
+			<File RelativePath=".\Thread.cpp">
+			</File>
+			<File RelativePath=".\ThreadAutoAckClose.cpp">
+			</File>
+			<File RelativePath=".\ThreadGuard.cpp">
+			</File>
+			<File RelativePath=".\ThreadWorker.cpp">
+			</File>
+			<File RelativePath=".\ThreadWorkerMgr.cpp">
+			</File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl;inc;xsd" UniqueIdentifier="{93995380-89BD-4b04-88EB-625FBE52EBFB}">
+			<File RelativePath=".\AtsAlarmGenerator.h">
+			</File>
+			<File RelativePath=".\AtsAlarmGeneratorDlg.h">
+			</File>
+			<File RelativePath=".\ATSListCtrl.h">
+			</File>
+			<File RelativePath=".\CommandHandler.h">
+			</File>
+			<File RelativePath=".\CommonDefine.h">
+			</File>
+			<File RelativePath=".\DataGenerator.h">
+			</File>
+			<File RelativePath=".\IAlarmUpdate.h">
+			</File>
+			<File RelativePath=".\IThreadLockable.h">
+			</File>
+			<File RelativePath=".\IUpdateCounters.h">
+			</File>
+			<File RelativePath=".\NonReEntrantThreadLockable.h">
+			</File>
+			<File RelativePath=".\RequestHandler.h">
+			</File>
+			<File RelativePath=".\Resource.h">
+			</File>
+			<File RelativePath=".\Semaphore.h">
+			</File>
+			<File RelativePath=".\stdafx.h">
+			</File>
+			<File RelativePath=".\SystemSubSystem.h">
+			</File>
+			<File RelativePath=".\targetver.h">
+			</File>
+			<File RelativePath=".\Thread.h">
+			</File>
+			<File RelativePath=".\ThreadAutoAckClose.h">
+			</File>
+			<File RelativePath=".\ThreadGuard.h">
+			</File>
+			<File RelativePath=".\ThreadWorker.h">
+			</File>
+			<File RelativePath=".\ThreadWorkerMgr.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav" UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}">
+			<File RelativePath=".\res\AtsAlarmGenerator.ico">
+			</File>
+			<File RelativePath=".\AtsAlarmGenerator.rc">
+			</File>
+			<File RelativePath=".\res\AtsAlarmGenerator.rc2">
+			</File>
+		</Filter>
+		<Filter Name="Config">
+			<File RelativePath=".\AtsAlarmGenerator.cfg">
+			</File>
+		</Filter>
+		<File RelativePath=".\ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+		<Global Name="RESOURCE_FILE" Value="AtsAlarmGenerator.rc"/>
+	</Globals>
+</VisualStudioProject>

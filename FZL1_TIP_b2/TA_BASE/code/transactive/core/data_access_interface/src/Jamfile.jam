@@ -1,0 +1,6 @@
+import sqlgen ;
+path-constant HERE	: . ;
+generate sql-statements
+	: $(HERE)/sqlcode.txt
+	: <generating-rule>@sqlgen.sql-generating-rule
+	;

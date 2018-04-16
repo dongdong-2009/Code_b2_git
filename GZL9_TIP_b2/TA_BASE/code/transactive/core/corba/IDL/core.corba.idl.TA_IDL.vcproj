@@ -1,0 +1,42 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.corba.idl" ProjectGUID="{BD262114-29CB-425D-AA7F-C18A63AAFA68}" Keyword="MakeFileProj" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\Debug" IntermediateDirectory=".\Debug" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\tools\build\VCPropSheet\commonDebug.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\Debug/core.corba.idl.TA_IDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\Release" IntermediateDirectory=".\Release" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops;..\..\..\..\tools\build\VCPropSheet\commonRelease.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\Release/core.corba.idl.TA_IDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="IDL">
+			<File RelativePath="src\IChannelLocatorCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\cots\omniORB\$(OMNI_VERSION)\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -C..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).h;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).cpp;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\cots\omniORB\$(OMNI_VERSION)\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -C..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).h;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).cpp;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IFederatableEventChannel.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\cots\omniORB\$(OMNI_VERSION)\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.hh -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -I..\..\..\..\cots\omniORB\$(OMNI_VERSION)\src\services\omniNotify\idl -I..\..\..\..\cots\omniORB\$(OMNI_VERSION)\idl\COS -C..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).hh;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).cpp;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\cots\omniORB\$(OMNI_VERSION)\bin\x86_win32\omniidl -nf -bcxx -Wba -Wbh=.hh -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\.. -I..\..\..\..\cots\omniORB\$(OMNI_VERSION)\src\services\omniNotify\idl -I..\..\..\..\cots\omniORB\$(OMNI_VERSION)\idl\COS -C..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).hh;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName).cpp;..\..\..\..\..\build\win32_n\transactive\core\corba\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
