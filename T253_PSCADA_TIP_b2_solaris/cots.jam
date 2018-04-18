@@ -17,11 +17,20 @@ rule init ( root : gcc-ver ? : msvc-ver ? )
 			{
 				case 5.8  : OMNI_OS_IDENTIFIER = sun4_sosV_$(OP_SYS_VERSION) ;
 				case 5.9  : OMNI_OS_IDENTIFIER = ;
-				case 5.10 :
+				case 5.1? :
 				{
-					SHELL "chmod +x $(.root)/omniORB/omniORB_4.1.6/bin/scripts/config.guess" ;
-					OMNI_OS_IDENTIFIER = [ string.words [ SHELL $(.root)/omniORB/omniORB_4.1.6/bin/scripts/config.guess ] ] ;
-					assert.variable-not-empty OMNI_OS_IDENTIFIER ;
+					for local omni-ver in [ sequence.transform path.basename : [ path.glob $(.root)/omniORB : omniORB_?.?.? ] ]
+					{
+						local config.guess = [ path.native $(.root)/omniORB/$(omni-ver)/bin/scripts/config.guess ] ;
+						
+						if [ path.exists $(config.guess) ]
+						{
+							SHELL "chmod +x $(config.guess)" : no-output ;
+							OMNI_OS_IDENTIFIER = [ string.words [ SHELL $(config.guess) ] ] ;
+							assert.variable-not-empty OMNI_OS_IDENTIFIER ;
+							break ;
+						}
+					}
 				}
 			}
 
