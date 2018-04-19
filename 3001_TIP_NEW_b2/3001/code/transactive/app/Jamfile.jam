@@ -1,8 +1,8 @@
 
-# TODO: use <build> feature
-import os ;
+# TODO: use <build>no feature
 local not-build = VideoSwitchSimulator DataRecordingAgent StatisticsAgent ;
-if [ os.platform ] != SPARC
+
+if ! [ $(TA_OS).on-sparc-solaris ]
 {
 	not-build += MmsAgent ;
 }

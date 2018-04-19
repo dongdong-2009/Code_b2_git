@@ -1,46 +1,37 @@
 import "class" : new ;
 import os path string assert print sequence numbers option path ;
+import ta-os ;
 
 rule init ( root : gcc-ver ? : msvc-ver ? )
 {
 	.root = [ path.make $(root) ] ;
 	.cots = ;
+	.ta-os = [ new ta-os-class ] ;
 
 	if [ os.on-unix ]
 	{
-		OP_SYS_VERSION	= [ string.words [ SHELL "uname -r" ] ] ;
-		ARCHITECTURE	= [ string.words [ SHELL "arch" ] ] ;
+		TA_OS_IDENTIFIER = [ sequence.join [ $(.ta-os).name ] [ $(.ta-os).version ] [ $(.ta-os).arch ] : _ ] ;
 
-		if [ os.name ] = SOLARIS
+		if [ $(.ta-os).on-solaris-10 and-later ]
 		{
-			switch $(OP_SYS_VERSION)
+			for local omni-ver in [ sequence.transform path.basename : [ path.glob $(.root)/omniORB : omniORB_?.?.? ] ]
 			{
-				case 5.8  : OMNI_OS_IDENTIFIER = sun4_sosV_$(OP_SYS_VERSION) ;
-				case 5.9  : OMNI_OS_IDENTIFIER = ;
-				case 5.1? :
-				{
-					for local omni-ver in [ sequence.transform path.basename : [ path.glob $(.root)/omniORB : omniORB_?.?.? ] ]
-					{
-						local config.guess = [ path.native $(.root)/omniORB/$(omni-ver)/bin/scripts/config.guess ] ;
+				local config.guess = [ path.native $(.root)/omniORB/$(omni-ver)/bin/scripts/config.guess ] ;
 
-						if [ path.exists $(config.guess) ]
-						{
-							SHELL "chmod +x $(config.guess)" : no-output ;
-							OMNI_OS_IDENTIFIER = [ string.words [ SHELL $(config.guess) ] ] ;
-							assert.variable-not-empty OMNI_OS_IDENTIFIER ;
-							break ;
-						}
-					}
+				if [ path.exists $(config.guess) ]
+				{
+					SHELL "chmod +x $(config.guess)" : no-output ;
+					OMNI_OS_IDENTIFIER = [ string.words [ SHELL $(config.guess) ] ] ;
+					assert.variable-not-empty OMNI_OS_IDENTIFIER ;
+					break ;
 				}
 			}
-
-			TA_OS_IDENTIFIER = SOLARIS_$(OP_SYS_VERSION)_$(ARCHITECTURE) ;
 		}
 
 		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
 		.ta-os-identifier		= $(TA_OS_IDENTIFIER) ;
 		.gcc-ver				= $(gcc-ver) ;
-		.os-ver					= $(OP_SYS_VERSION) ;
+		.os-ver					= [ $(.ta-os).version ] ;
 	}
 	else
 	{
@@ -112,6 +103,7 @@ class cots
 	{
 		self.all = ;
 		self.os = [ os.name ] ;
+		self.ta-os = [ cots.get ta-os ] ;
 		init-$(self.os) ;
 	}
 
@@ -315,6 +307,7 @@ class cot-class
 	rule __init__ ( name version ? )
 	{
 		self.os						= [ os.name ] ;
+		self.ta-os					= [ cots.get ta-os ] ;
 		self.root					= [ cots.get root ] ;
 		init-cot-$(self.os) ;
 
@@ -665,7 +658,7 @@ class mysql : cot-class
 		self.include-path				= $(self.prefix)/inc ;
 		self.library-path				= $(self.prefix)/lib ;
 
-		if $(self.version) = 5.5.15 && [ cots.get os-ver ] = 5.11
+		if $(self.version) = 5.5.15 && [ $(self.ta-os).on-solaris-11 ]
 		{
 			self.include-path			= $(self.prefix)/include ;
 		}
@@ -746,7 +739,7 @@ class openssl : cot-class
 		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
 		self.library					= ssl crypto ;
 
-		if [ cots.get os-ver ] = 5.11
+		if [ $(self.ta-os).on-solaris-11 ]
 		{
 			self.prefix						= $(self.path)/build/$(self.ta-os-identifier) ;
 			self.include-path				= $(self.prefix)/include ;

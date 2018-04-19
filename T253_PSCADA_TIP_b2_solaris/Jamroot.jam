@@ -1,11 +1,12 @@
 import "class" : new ;
 import os path string assert print sequence option path project param modules errors common ;
-import ta-path ta-project ta-version ;
+import ta-path ta-project ta-version ta-os ;
 
 path-constant	TOP							: . ;
 path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
 constant 		USE-PCH						: true ;
 constant		TA_Path						: [ new ta-path ] ;
+constant		TA_OS						: [ new ta-os-class ] ;
 
 include $(TOP)/config.jam ;
 
@@ -46,24 +47,9 @@ sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
 
 if [ os.on-unix ]
 {
-	constant OPERATING_SYSTEM	: [ os.name ] ;
-	constant OS_VERSION			: __OSVERSION__=5 ;
-	constant OP_SYS_VERSION 	: [ string.words [ SHELL "uname -r" ] ] ;
-	constant ARCHITECTURE		: [ string.words [ SHELL "arch" ] ] ;
-	switch [ string.words [ SHELL "uname -p | tr A-Z a-z" ] ]
-	{
-		case sparc		: constant PROCESSOR : __sparc__ ;
-		case i[356]86	: constant PROCESSOR : __x86__ ;
-		case unknown	: constant PROCESSOR : __x86__ ;
-	}
-
 	constant gcc-version	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
 	local options = ;
-	local preprocessor-definitions = STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS $(PROCESSOR) $(OPERATING_SYSTEM) $(OS_VERSION) ;
-	if [ os.name ] = SOLARIS
-	{
-		preprocessor-definitions += __sunos__ ;
-	}
+	local preprocessor-definitions = [ $(TA_OS).preprocessor ] STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS ;
 	options += -D$(preprocessor-definitions) ;
 
 	local force-includes = typeinfo string memory cstdlib climits string.h stdio.h stdint.h ;
@@ -89,14 +75,15 @@ if [ os.on-unix ]
 	}
 	else
 	{
-		using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
+		using gcc : : : <cxxflags>$(options) <linkflags>"-z rescan" ;
+		# using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
 	}
 }
 else
 {
 	constant msvc-version 	: $(config.msvc-version) ; # 9.0 12.0 14.1
 	local options = ;
-	local preprocessor-definitions = _USE_32BIT_TIME_T __OSVERSION__=4 __WIN32__ __x86__ __NT__ WIN32 _AFXDLL ;
+	local preprocessor-definitions = [ $(TA_OS).preprocessor ] _USE_32BIT_TIME_T _AFXDLL ;
 	options += -D$(preprocessor-definitions) ;
 	if $(USE-PCH)
 	{
@@ -364,6 +351,11 @@ rule show-env ( )
 	{
 		echo $(e) => [ os.environ $(e) ] $($(e)) ;
 	}
+}
+
+rule show-os ( )
+{
+	$(TA_OS).__debug__ ;
 }
 
 rule show-help ( all-show-rules + )
