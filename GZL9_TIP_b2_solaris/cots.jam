@@ -22,7 +22,7 @@ rule init ( root : gcc-ver ? : msvc-ver ? )
 					for local omni-ver in [ sequence.transform path.basename : [ path.glob $(.root)/omniORB : omniORB_?.?.? ] ]
 					{
 						local config.guess = [ path.native $(.root)/omniORB/$(omni-ver)/bin/scripts/config.guess ] ;
-						
+
 						if [ path.exists $(config.guess) ]
 						{
 							SHELL "chmod +x $(config.guess)" : no-output ;
@@ -40,6 +40,7 @@ rule init ( root : gcc-ver ? : msvc-ver ? )
 		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
 		.ta-os-identifier		= $(TA_OS_IDENTIFIER) ;
 		.gcc-ver				= $(gcc-ver) ;
+		.os-ver					= $(OP_SYS_VERSION) ;
 	}
 	else
 	{
@@ -655,20 +656,27 @@ class mysql : cot-class
 		cot-class.__init__ MySQL $(version) ;
 		self.path						= mysql/$(version) ;
 		init-$(self.os) ;
-		self.include-path				= $(self.prefix)/inc ;
-		self.library-path				= $(self.prefix)/lib ;
 	}
 
 	rule init-SOLARIS ( )
 	{
 		self.prefix						= $(self.path)/$(self.ta-os-identifier) ;
 		self.library					= mysqlclient ;
+		self.include-path				= $(self.prefix)/inc ;
+		self.library-path				= $(self.prefix)/lib ;
+
+		if $(self.version) = 5.5.15 && [ cots.get os-ver ] = 5.11
+		{
+			self.include-path			= $(self.prefix)/include ;
+		}
 	}
 
 	rule init-NT ( )
 	{
 		self.prefix						= $(self.path)/winnt ;
 		self.library					= libmysql ;
+		self.include-path				= $(self.prefix)/inc ;
+		self.library-path				= $(self.prefix)/lib ;
 	}
 }
 
@@ -737,6 +745,13 @@ class openssl : cot-class
 	{
 		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
 		self.library					= ssl crypto ;
+
+		if [ cots.get os-ver ] = 5.11
+		{
+			self.prefix						= $(self.path)/build/$(self.ta-os-identifier) ;
+			self.include-path				= $(self.prefix)/include ;
+			self.library-path				= $(self.prefix)/lib ;
+		}
 	}
 
 	rule init-NT ( )
