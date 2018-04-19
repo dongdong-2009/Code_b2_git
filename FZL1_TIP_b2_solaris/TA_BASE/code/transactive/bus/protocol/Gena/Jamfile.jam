@@ -1,0 +1,18 @@
+
+rule build-or-not ( )
+{
+	if [ $(TA_OS).on-solaris-10 ]
+	{
+		return <build>no ;
+	}
+	
+	if [ MATCH "(TA_Common_V1_TIP)" : [ $(TA_Path).branch ] ]
+	{
+		return <build>no ;
+	}
+}
+
+ta-lib TA_GenaLibrary
+	: [ glob src/*.cpp : src/AssemblyInfo.cpp ]
+	: [ build-or-not ]
+	;

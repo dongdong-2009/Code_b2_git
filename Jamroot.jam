@@ -1,24 +1,25 @@
-import sequence common path option param set print ;
-import sync-jamfiles ;
-using msvc ;
+import path sequence os ;
 
-path-constant	TOP : . ;
+path-constant TOP	: . ;
 
-project
-	: build-dir C:/Temp
-	;
-
-if [ option.get "sync" ]
+if [ os.on-windows ]
 {
-	sync-jamfiles [ option.get "sync" ] ;
-	exit ;
+	using msvc ;
+	path-constant COTS	: C:/COTS ;
+	
+	project
+		: build-dir C:/Temp/Temp/Verify
+		;
+}
+else
+{
+	using gcc ;
+	path-constant COTS	: /export/home/core/limin/verify/COTS ;
 }
 
-if [ option.get "remove" ]
-{
-	remove-jamfiles [ option.get "remove" ] ;
-	exit ;
-}
+import p4-sync ;
+p4-sync ;
+soft-link-cots $(COTS) ;
 
 print.lines
 	"Usage:"

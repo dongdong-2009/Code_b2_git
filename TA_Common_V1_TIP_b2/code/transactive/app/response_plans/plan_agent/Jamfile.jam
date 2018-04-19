@@ -1,2 +1,13 @@
 
-ta-exe PlanAgent ;
+rule build-or-not ( )
+{
+	if [ MATCH "(TA_Common_V1_TIP)" : [ $(TA_Path).branch ] ]
+	{
+		return <build>no ;
+	}
+}
+
+ta-exe PlanAgent
+	:
+	: [ build-or-not ]
+	;

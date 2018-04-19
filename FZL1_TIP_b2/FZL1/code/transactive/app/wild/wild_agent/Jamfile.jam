@@ -1,4 +1,13 @@
 
+rule build-or-not ( )
+{
+	if [ MATCH "(FZL1)" : [ $(TA_Path).branch ] ]
+	{
+		return <build>no ;
+	}
+}
+
 ta-exe WILDAgent
 	: [ glob src/*.cpp : ]
+	: [ build-or-not ]
 	;

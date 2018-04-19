@@ -1,4 +1,12 @@
 
+rule build-or-not ( )
+{
+	if [ MATCH "(FZL1)" : [ $(TA_Path).branch ] ]
+	{
+		return <build>no ;
+	}
+}
+
 ta-exe TrainAgent
 	: [ glob src/*.cpp :
 			src/TrainTSI.cpp
@@ -23,4 +31,5 @@ ta-exe TrainAgent
 			src/UnsolicitedTrainTimer.cpp
 			src/TrainWorkQueue.cpp
 		]
+	: [ build-or-not ]
 	;

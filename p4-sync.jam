@@ -4,7 +4,7 @@ TOP				= [ path.pwd ] ;
 p4.command		= p4 ;
 p4.user			= limin.zhu ;
 p4.port			= "192.168.253.15:1666" ;
-p4.client		= limin.zhu_solaris10_verify_build ; if [ os.on-windows ] { p4.client = limin.zhu_windows_verify_build ; }
+p4.client		= limin.zhu_windows_verify_build ;
 p4.password		= Coreteam ;
 Branchs			= PRIV_3001
 				  TA_Common_V1_TIP
@@ -24,17 +24,20 @@ rule p4-sync ( )
 		force-sync-option = -f ;
 	}
 
-	for local branch in $(Branchs)
+	for local client in $(p4.client)
 	{
-		local cmd = [ sequence.join "$(p4.command)"
-									"-p $(p4.port)"
-									"-u $(p4.user)"
-									"-P $(p4.password)"
-									"-c $(p4.client)"
-									"sync $(force-sync-option) //depot/$(branch)/..."
-									: " " ] ;
+		for local branch in $(Branchs)
+		{
+			local cmd = [ sequence.join "$(p4.command)"
+										"-p $(p4.port)"
+										"-u $(p4.user)"
+										"-P $(p4.password)"
+										"-c $(client)"
+										"sync $(force-sync-option) //depot/$(branch)/..."
+										: " " ] ;
 
-		echo [ SHELL "$(cmd)" ] ;
+			echo [ SHELL "$(cmd)" ] ;
+		}
 	}
 }
 
