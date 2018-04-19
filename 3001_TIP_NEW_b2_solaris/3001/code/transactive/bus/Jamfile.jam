@@ -4,7 +4,6 @@ alias TA_IRS_Bus
 			:
 			: is-levels project bus
 			: is-library
-			: is-target-name-not-in TA_GenericServerSimulator TA_GenericSimulator
 		]
 	;
 ta-install-lib library : TA_IRS_Bus ;
@@ -18,7 +17,6 @@ if [ option.get test : : true ]
 			:
 			: is-levels project bus
 			: is-library
-			: is-target-name-not-in TA_GenericServerSimulator TA_GenericSimulator
 		] ;
 		exit ;
 	}

@@ -1,13 +1,5 @@
 
-# TODO: use <build> feature
-import os ;
-local not-build = VideoSwitchSimulator DataRecordingAgent StatisticsAgent ;
-if [ os.platform ] != SPARC
-{
-	not-build += MmsAgent ;
-}
-
-exe-projects ?= [ $(TA_Projects).selects : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] ;
+exe-projects ?= [ $(TA_Projects).selects : is-levels project app : is-exe ] ;
 
 for exe in $(exe-projects)
 {
@@ -20,7 +12,7 @@ if [ option.get test : : true ]
 	if [ current-ta-project.get path ] = [ path.pwd ]
 	{
 		current-ta-project.get __debug__ ;
-		print.lines [ $(TA_Projects).selects-x target-id : : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] : "\t" "\t" ;
+		print.lines [ $(TA_Projects).selects-x target-id : : is-levels project app : is-exe ] : "\t" "\t" ;
 		exit ;
 	}
 }

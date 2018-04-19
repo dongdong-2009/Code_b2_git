@@ -1,7 +1,16 @@
 
+rule build-or-not ( )
+{
+	if [ $(TA_OS).on-unix ]
+	{
+		return <build>no ;
+	}
+}
+
 ta-lib TA_SNMPLib
 	: requirements
 		  <dependency>/core/message/idl
 		  <dependency>/core/exceptions/idl
 		  <dependency>/bus/scada/common_library/idl
+		  [ build-or-not ]
 	;

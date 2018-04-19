@@ -1,8 +1,26 @@
 
+path-constant HERE : . ;
+
+if [ $(TA_OS).on-sparc-solaris ]
+{
+	sdk_lib = [ lib sdk : : <search>$(HERE)/protocols/imos_sdk_sparc ] ;
+}
+
+rule build-or-not ( )
+{
+	if [ $(TA_OS).on-windows ] || [ $(TA_OS).on-sparc-solaris ]
+	{
+		return <build>yes ;
+	}
+	return <build>no ;
+}
+
 ta-exe VideoSwitchAgent
 	: [ glob src/*.cpp :
 			src/BVSStage.cpp
 		]
 	  /proj/app/cctv/video_switch_agent/protocols/imos//TA_IMOSSwitchAgent
 	  /proj/app/cctv/video_switch_agent/protocols/modbus//TA_MODBUSSwitchAgent
+	  $(sdk_lib)
+	: [ build-or-not ]
 	;

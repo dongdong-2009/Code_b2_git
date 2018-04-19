@@ -1,6 +1,16 @@
 
+rule build-or-not ( )
+{
+	if [ $(TA_OS).on-solaris-10 ]
+	{
+		return <build>no ;
+	}
+	return <build>yes ;
+}
+
 ta-exe AtsAgent
 	: [ glob src/*.cpp ]
 	  /proj/app/ats/AtsAgent/TimetableManager//TA_TimetableManager
 	  /proj/app/ats/AtsAgent/GenaProtocolHandler//TA_GenaProtocolHandler
+	: [ build-or-not ]
 	;

@@ -97,7 +97,7 @@ rule sync-jamfiles ( from )
 
 		for file in $(files)
 		{
-			if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
+			# if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
 			{
 				local copy-command = "COPY /Y $(file) $(dir)" ;
 				# echo $(copy-command) ;

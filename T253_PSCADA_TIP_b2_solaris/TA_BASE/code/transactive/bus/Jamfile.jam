@@ -1,17 +1,9 @@
-import os ;
-
-local not-build = TA_GenericServerSimulator TA_GenericSimulator TA_PlanDataAccess ;
-if [ os.on-unix ]
-{
-	not-build += TA_SNMPLib ;
-}
 
 alias TA_Base_Bus
 	: [ $(TA_Projects).selects-ordered-x target-id
 			:
 			: is-levels base bus
 			: is-library
-			: is-target-name-not-in $(not-build)
 		]
 	;
 ta-install-lib library : TA_Base_Bus ;
@@ -26,7 +18,6 @@ if [ option.get test : : true ]
 			:
 			: is-levels base bus
 			: is-library
-			: is-target-name-not-in $(not-build)
 		] : "\t" "\t" ;
 		exit ;
 	}
