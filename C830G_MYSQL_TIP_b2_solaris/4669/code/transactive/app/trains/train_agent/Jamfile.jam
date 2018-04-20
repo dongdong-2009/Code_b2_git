@@ -1,0 +1,27 @@
+
+ta-exe TrainAgent
+	: [ glob src/*.cpp :
+			src/TrainTSI.cpp
+			src/TrainAlarm.cpp
+			src/TrainInfo.cpp
+			src/TrainManager.cpp
+			src/TrainATS.cpp
+			src/TrainCCTV.cpp
+			src/TrainStatusManager.cpp
+			src/TrainMisc.cpp
+			src/TrainCorbaTypes.cpp
+			src/TrainTimer.cpp
+			src/TrainCallDriver.cpp
+			src/TrainTIS.cpp
+			src/TrainPEC.cpp
+			src/TrainTransactionManager.cpp
+			src/TrainTypes.cpp
+			src/TrainEventSender.cpp
+			src/TrainEventSubscriber.cpp
+			src/TrainPublicAddress.cpp
+			src/TrainEventSubscriber.cpp
+			src/UnsolicitedTrainTimer.cpp
+			src/TrainWorkQueue.cpp
+			src/TrainCommsStateTimedSender.cpp
+		]
+	;

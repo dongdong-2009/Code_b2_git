@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{52b5890a-acd5-49a5-8a64-fd083378cc11}</UniqueIdentifier>
+      <Extensions>idl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\IControlStationCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IHeartbeatReceiverCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IManagedAgentCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IManagedApplicationCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IManagedGUICorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IManagedProcessCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IProcessManagerCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IProcessObserverCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IProcessSubjectCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\ISystemControllerAdminCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\ProcessManagementDataDefinitionsCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

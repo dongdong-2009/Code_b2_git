@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{33558a53-5762-4d1a-9b04-214c616c3266}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataPointAccessCorbaDef_Impl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAgentCorbaDef_Impl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAgentSynHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointDisplayClient.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointStateContainer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataPointAccessCorbaDef_Impl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAgentCorbaDef_Impl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAgentSynHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointDisplayClient.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointStateContainer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

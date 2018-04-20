@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>app.ecs.ECSAgent</ProjectName>
+    <ProjectGuid>{B598838A-F7BC-4922-854B-DECFB65D36BA}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../../../../../bin/win32_nr\</OutDir>
+    <IntDir>.\../../../../../build/win32_nr/transactive/app/ecs/ECSAgent\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nd/app.ecs.ECSAgent.ECSAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>msvcrtd.lib;msvcprtd.lib;TA_Base_Core_d.lib;TA_IRS_Core_d.lib;TA_Base_Bus_d.lib;TA_IRS_Bus_d.lib;Rpcrt4.lib;odbc32.lib;odbccp32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;msvcprt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\../../../../../build/win32_nd/transactive/app/ecs/ECSAgent/ECSAgent.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <TypeLibraryName>.\../../../../../bin/win32_nr/app.ecs.ECSAgent.ECSAgent.tlb</TypeLibraryName>
+      <HeaderFileName />
+    </Midl>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;__WIN32__;__x86__;_NT_;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;WIN32;_CONSOLE;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <BrowseInformation>true</BrowseInformation>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>msvcrtd.lib;msvcprtd.lib;TA_Base_Core.lib;TA_IRS_Core.lib;TA_Base_Bus.lib;TA_IRS_Bus.lib;Rpcrt4.lib;odbc32.lib;odbccp32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBC;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>.\../../../../../build/win32_nr/transactive/app/ecs/ECSAgent/ECSAgent.map</MapFileName>
+      <SubSystem>Console</SubSystem>
+      <DataExecutionPrevention />
+    </Link>
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractECSAgent.cpp" />
+    <ClCompile Include="src\AutoModeMonitor.cpp" />
+    <ClCompile Include="src\CalculatedExpression.cpp" />
+    <ClCompile Include="src\CongestionProposalEngine.cpp" />
+    <ClCompile Include="src\CtaEcsAgentCompleteState.cpp" />
+    <ClCompile Include="src\CtaEcsAgentSummary.cpp" />
+    <ClCompile Include="src\CtaEcsAlarms.cpp" />
+    <ClCompile Include="src\CtaEcsAuditing.cpp" />
+    <ClCompile Include="src\CtaEcsCachedConfig.cpp" />
+    <ClCompile Include="src\CtaEcsCachedMaps.cpp" />
+    <ClCompile Include="src\CtaEcsComms.cpp" />
+    <ClCompile Include="src\CtaEcsDatapoints.cpp" />
+    <ClCompile Include="src\CtaEcsSynchronisation.cpp" />
+    <ClCompile Include="src\DataPointWriteQueueProcessor.cpp" />
+    <ClCompile Include="src\EcsArrowManager.cpp" />
+    <ClCompile Include="src\EcsHelpers.cpp" />
+    <ClCompile Include="src\EcsZoneCongestionContext.cpp" />
+    <ClCompile Include="src\EcsZoneDataSource.cpp" />
+    <ClCompile Include="src\EmergencyNormalisationMonitor.cpp" />
+    <ClCompile Include="src\EmergencyProposalEngine.cpp" />
+    <ClCompile Include="src\IscsAliveWorker.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\MasterECSAgent.cpp" />
+    <ClCompile Include="src\MasterModeDataPointWorkQueue.cpp" />
+    <ClCompile Include="src\MasterModeExecutionWorker.cpp" />
+    <ClCompile Include="src\MasterModeLocksManager.cpp" />
+    <ClCompile Include="src\MasterModeManager.cpp" />
+    <ClCompile Include="src\StationECSAgent.cpp" />
+    <ClCompile Include="src\StationModeExecutionWorker.cpp" />
+    <ClCompile Include="src\StationModeManager.cpp" />
+    <ClCompile Include="src\VersionGen.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\core\exceptions\src\ECSAgentExceptions.h" />
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentAlarms_MessageTypes.h" />
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentAudit_MessageTypes.h" />
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentComms_MessageTypes.h" />
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentStateUpdateRequest_MessageTypes.h" />
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentStateUpdate_MessageTypes.h" />
+    <ClInclude Include="src\AbstractECSAgent.h" />
+    <ClInclude Include="src\AbstractFailoverable.h" />
+    <ClInclude Include="src\AutoModeMonitor.h" />
+    <ClInclude Include="src\CalculatedExpression.h" />
+    <ClInclude Include="src\CongestionProposalEngine.h" />
+    <ClInclude Include="src\CorbaNameWrapperForMaps.h" />
+    <ClInclude Include="src\CtaEcsAgentCompleteState.h" />
+    <ClInclude Include="src\CtaEcsAgentSummary.h" />
+    <ClInclude Include="src\CtaEcsAlarms.h" />
+    <ClInclude Include="src\CtaEcsAuditing.h" />
+    <ClInclude Include="src\CtaEcsCachedConfig.h" />
+    <ClInclude Include="src\CtaEcsCachedMaps.h" />
+    <ClInclude Include="src\CtaEcsComms.h" />
+    <ClInclude Include="src\CtaEcsDatapoints.h" />
+    <ClInclude Include="src\CtaEcsSynchronisation.h" />
+    <ClInclude Include="src\DataPointWriteQueueProcessor.h" />
+    <ClInclude Include="src\EcsArrowManager.h" />
+    <ClInclude Include="src\EcsGlobals.h" />
+    <ClInclude Include="src\EcsHelpers.h" />
+    <ClInclude Include="src\EcsZoneCongestionContext.h" />
+    <ClInclude Include="src\EcsZoneDataSource.h" />
+    <ClInclude Include="src\EmergencyNormalisationMonitor.h" />
+    <ClInclude Include="src\EmergencyProposalEngine.h" />
+    <ClInclude Include="src\IAliveDataPointAccess.h" />
+    <ClInclude Include="src\IscsAliveWorker.h" />
+    <ClInclude Include="src\ItaEcsAgentCompleteState.h" />
+    <ClInclude Include="src\ItaEcsAgentSummary.h" />
+    <ClInclude Include="src\ItaEcsAlarms.h" />
+    <ClInclude Include="src\ItaEcsAuditing.h" />
+    <ClInclude Include="src\ItaEcsCachedConfig.h" />
+    <ClInclude Include="src\ItaEcsCachedConfigInitialiser.h" />
+    <ClInclude Include="src\ItaEcsCachedMaps.h" />
+    <ClInclude Include="src\ItaEcsCachedMapsInitialiser.h" />
+    <ClInclude Include="src\ItaEcsComms.h" />
+    <ClInclude Include="src\ItaEcsDatapoints.h" />
+    <ClInclude Include="src\ItaEcsSynchronisation.h" />
+    <ClInclude Include="src\MasterECSAgent.h" />
+    <ClInclude Include="src\MasterModeDataPointWorkQueue.h" />
+    <ClInclude Include="src\MasterModeExecutionWorker.h" />
+    <ClInclude Include="src\MasterModeLocksManager.h" />
+    <ClInclude Include="src\MasterModeManager.h" />
+    <ClInclude Include="src\StationECSAgent.h" />
+    <ClInclude Include="src\StationModeExecutionWorker.h" />
+    <ClInclude Include="src\StationModeManager.h" />
+    <ClInclude Include="src\TrainState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ECSAgentTest.gdf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

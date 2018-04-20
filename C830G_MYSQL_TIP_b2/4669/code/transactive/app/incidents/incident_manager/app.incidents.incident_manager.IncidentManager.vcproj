@@ -1,0 +1,235 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.incidents.incident_manager" ProjectGUID="{EC306A54-9587-4419-908B-927858361E4B}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/incidents/incident_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.incidents.incident_manager.IncidentManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../transactive,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;__OSVERSION__=4;TA_ASSERT_LOG=1;TA_ASSERT_FAIL=EXCEPTION;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/incidents/incident_manager/app.incidents.incident_manager.IncidentManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/incidents/incident_manager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/incidents/incident_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/incidents/incident_manager/" BrowseInformation="1" WarningLevel="2" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib oci.lib htmlhelp.lib Rpcrt4.lib TA_IRS_Core_d.lib TA_mcl_d.lib TA_Base_Core_d.lib TA_mcl_d.lib TA_IRS_Bus_d.lib TA_Base_Bus_d.lib ws2_32.lib Msimg32.lib acemfcd.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/IncidentManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nd,../../../../../sdk/lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\win32_nd,../../../../../sdk/include/cots/WinStackTrace\build\Debug" IgnoreDefaultLibraryNames="nafxcwd.lib,libcpd.lib,libcd.lib" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/IncidentManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../build/win32_nd/IncidentManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/incidents/incident_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.incidents.incident_manager.IncidentManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../transactive,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive,../../../../../sdk/omniORB/omniORB_4.0.5/include,..\..\..\..\..\sdk\include\cots\boost\boost_1_39_0" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__x86__;__OSVERSION__=4;TA_ASSERT_LOG=1;TA_ASSERT_FAIL=EXCEPTION;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/incidents/incident_manager/app.incidents.incident_manager.IncidentManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/incidents/incident_manager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/incidents/incident_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/incidents/incident_manager/" BrowseInformation="1" WarningLevel="2" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rt.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib oci.lib htmlhelp.lib Rpcrt4.lib TA_IRS_Core.lib TA_mcl.lib TA_Base_Core.lib TA_IRS_Bus.lib TA_Base_Bus.lib ws2_32.lib Msimg32.lib acemfc.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/IncidentManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../build/win32_nr,../../../../../sdk/lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\win32_nr,../../../../../sdk/include/cots/WinStackTrace\build\Release" IgnoreDefaultLibraryNames="LIBC" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/IncidentManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile="../../../../../build/win32_nr/IncidentManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AssetDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CachedIncident.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CIncidentManagerApp.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CIncidentManagerListView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CMainFrame.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaIncidentSummary.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentHandler.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentManagerDoc.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentManagerFramework.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\IncidentReportDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StationReportDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\AssetDialog.h">
+			</File>
+			<File RelativePath="src\CachedIncident.h">
+			</File>
+			<File RelativePath="src\CIncidentManagerApp.h">
+			</File>
+			<File RelativePath="src\CIncidentManagerListView.h">
+			</File>
+			<File RelativePath="src\CMainFrame.h">
+			</File>
+			<File RelativePath="src\ColumnInfo.h">
+			</File>
+			<File RelativePath="src\ColumnType.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\CtaIncidentReportFactory.h">
+			</File>
+			<File RelativePath="..\..\..\bus\INCIDENTS\incident_rights\src\CtaIncidentRights.h">
+			</File>
+			<File RelativePath="src\CtaIncidentSummary.h">
+			</File>
+			<File RelativePath="src\IIncidentUpdate.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\IncidentCauseType.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\IncidentConditionType.h">
+			</File>
+			<File RelativePath="src\IncidentHandler.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\IncidentLocationType.h">
+			</File>
+			<File RelativePath="src\IncidentManagerDoc.h">
+			</File>
+			<File RelativePath="src\IncidentManagerFramework.h">
+			</File>
+			<File RelativePath="src\IncidentReportDialog.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\IncidentType.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\ItaIncidentGuiCallback.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\ItaIncidentReportData.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\ItaIncidentReportFactory.h">
+			</File>
+			<File RelativePath="..\..\..\bus\INCIDENTS\incident_rights\src\ItaIncidentRights.h">
+			</File>
+			<File RelativePath="src\ItaIncidentSummary.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\ItaLocationAccessFactory.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\ItaStationReportData.h">
+			</File>
+			<File RelativePath="src\PlanDialog.h">
+			</File>
+			<File RelativePath="..\..\..\core\data_access_interface\INCIDENT_DAI\src\PlanType.h">
+			</File>
+			<File RelativePath="src\resource.h">
+			</File>
+			<File RelativePath="src\StationReportDialog.h">
+			</File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\icon_lef.ico">
+			</File>
+			<File RelativePath="res\icon_rig.ico">
+			</File>
+			<File RelativePath="res\IncidentManager.ico">
+			</File>
+			<File RelativePath="res\IncidentManager.rc2">
+			</File>
+			<File RelativePath="res\toolbar.bmp">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

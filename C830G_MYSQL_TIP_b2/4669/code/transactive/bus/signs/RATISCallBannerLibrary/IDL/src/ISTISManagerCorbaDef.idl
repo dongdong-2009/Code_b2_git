@@ -1,0 +1,271 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/4669/transactive/bus/signs/RATISCallBannerLibrary/IDL/src/ISTISManagerCorbaDef.idl $
+// @author:  Rob Ashcroft
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// Station Traveller Information System (STIS) Manager IDL interface.
+//
+
+#ifndef ISTISMANAGERCORBADEF_IDL_INCLUDED
+#define ISTISMANAGERCORBADEF_IDL_INCLUDED
+
+#include <core/data_access_interface/tis_agent_4669/IDL/src/TISMessageDataDefinitions.idl>
+
+module TA_IRS_Bus
+{
+
+	interface ISTISManagerCorbaDef
+	{
+		/*
+		*  This exception is thrown when a client calls a method that requires the STISManager to send
+		*  a message to the STIS server, and the socket connection does not exist.
+		*/
+		exception STISServerNotConnectedException
+		{
+		};
+
+		/*
+		*  This exception is thrown when the reply from the STIS server is not received 
+		*  within the timeout period.
+		*/
+		exception STISCommunicationTimeoutException
+		{
+		};
+
+		/*
+		*  This is a generic comms failure exception
+		*/
+		exception STISCommunicationFailureException
+		{
+			string details;
+		};
+
+		/*
+		*  This exception is thrown when the client attempts to call a method containing functionality
+		*  that is not available at the agent's location.
+		*/
+		exception STISFunctionalityNotAvailableException
+		{
+		};
+
+		exception STISInvalidParameterException
+		{
+			string details;
+		};
+
+		/*
+		*  This exception is thrown when the call fails due to the agent not being able
+		* to complete the call due to varying reasons
+		*/
+		exception STISGeneralFailureException
+		{
+			string details;
+		};
+
+		struct RATISMessageDetails
+		{
+			long            messageID;        // ID for the call
+        	long			sessionRef;
+			string          startTime;
+			string          endTime;
+			boolean			requiresVetting;
+			boolean			overridable;
+			TA_IRS_Core::ERATISMessageType		 type;
+			TA_IRS_Core::ERATISMessageStatus			status;
+			long		    timeCreated;
+			string destination;
+			string tag;
+			short priority;
+			string messageText;
+		};
+
+		struct IncomingRATISEvent
+		{
+			long             messageID;
+			long		sessionRef;
+			boolean			 requiresVetting;
+			TA_IRS_Core::ERATISMessageType		 type;
+		};
+
+		typedef sequence<RATISMessageDetails> RATISMessageList;
+
+		// RATIS message related methods used by the banner 
+
+		/**
+          * getAllIncomingRATISMessages
+          *
+          * Allows the banner to retrieve the list of existing 
+		  * incoming RATIS messages
+		  *
+          */
+		RATISMessageList getAllIncomingRATISMessages();
+
+		/**
+          * getIncomingRATISMessage
+          *
+          * Allows the banner to retrieve the details for
+		  * a specific incoming RATIS message after receiving notification
+		  * that a new message has been received from the RXH
+		  *
+          */
+		RATISMessageDetails getIncomingRATISMessage( in long messageID ) 
+				raises( STISGeneralFailureException );
+		
+		/**
+          * submitPredefinedDisplayRequest
+          *
+          * This method allows clients to initiate the display of a predefined message.
+		  *
+          */
+		void submitPredefinedDisplayRequest( in TA_IRS_Core::STISDestinationList destinationList, in TA_IRS_Core::ELibrarySection librarySection, 
+											 in unsigned short libraryVersion,in unsigned short messageTag,
+										     in string startTime, in string endTime, in unsigned short priority, in string sessionID)
+						raises( STISServerNotConnectedException, STISCommunicationTimeoutException, STISInvalidParameterException );
+
+		/**
+          * submitAdHocDisplayRequest
+          *
+          * This method allows clients to initiate the display of an ad hoc message.
+		  *
+          */
+		void submitAdHocDisplayRequest( in TA_IRS_Core::STISDestinationList destinationList, 
+										in string messageContent, in string startTime, in string endTime, 
+										in unsigned short priority, in TA_IRS_Core::DisplayAttributes displayAttr, in TA_IRS_Core::PlasmaAttributes plasmaAttr,
+										in TA_IRS_Core::LEDAttributes LEDAttr, in string sessionID)
+						raises( STISServerNotConnectedException, STISCommunicationTimeoutException);
+
+		/**
+          * submitClearRequest
+          *
+          * This method allows clients to initiate the clearing of a PID and its queue.
+		  *
+          */
+		void submitClearRequest( in TA_IRS_Core::STISDestinationList destinationList, in unsigned short upperPriority, in unsigned short lowerPriority,
+								 in string sessionID )
+						raises( STISServerNotConnectedException, STISCommunicationTimeoutException);
+
+		/**
+          * upgradePredefinedStationMessageLibrary
+          *
+          * This method allows the OCC to inform a station agent that it should switch
+		  * to the new Predefined message library.
+		  *
+		  * Note: This functionality is only available in Station agents.
+          */
+		void upgradePredefinedStationMessageLibrary( in unsigned short newLibraryVersion, in string sessionID )
+						raises( STISServerNotConnectedException, STISCommunicationTimeoutException, STISGeneralFailureException );
+
+		/**
+          * upgradePredefinedTrainMessageLibrary
+          *
+          * This method allows the OCC to inform a station agent that it should switch
+		  * to the new Predefined message library.
+		  *
+		  * Note: This functionality is only available in Station agents.
+          */
+		void upgradePredefinedTrainMessageLibrary( in unsigned short newLibraryVersion, in string sessionID )
+						raises( STISGeneralFailureException );
+						
+		/**
+          * getCurrentDisplayingMessage
+          *
+          * This method allows clients to retrieve the message content currently being displayed
+		  * on a PID.
+		  *
+          */
+		TA_IRS_Core::CurrentDisplayingMessage getCurrentDisplayingMessage( in TA_IRS_Core::STISDestination destination )
+						raises( STISServerNotConnectedException, STISCommunicationTimeoutException);
+
+		/**
+          * submitRATISVettingResponse
+          *
+          * This method allows clients (RATIS Approval app) to indicate the
+		  * approval or rejection of an incoming RATIS message.
+		  *
+		  * Note: This functionality is only available in the OCC TIS agent.
+          */
+		void submitRATISVettingResponse ( in long key, in boolean approved, in string sessionID )
+				raises( STISServerNotConnectedException, STISCommunicationTimeoutException, STISFunctionalityNotAvailableException );
+
+		/**
+          * submitRATISDisplayRequest
+          *
+          * This method allows clients to send a RATIS message to the RATIS Exchange Hub via
+		  * the STIS server.
+		  *
+		  * Note: This functionality is only available in the OCC TIS agent.
+          */
+		void submitRATISDisplayRequest ( in string messageContent, in unsigned short priority, in string RATISTag, 
+									in string RATISDestination, in string startTime, in string endTime, in TA_IRS_Core::ERATISMessageType type, 
+									in boolean overridable,	in string sessionID )
+				raises( STISServerNotConnectedException, STISCommunicationTimeoutException, STISFunctionalityNotAvailableException );
+
+		/**
+          * reportNewStationLibraryVersion
+          *
+          * Used to check whether a station has received the new Station library
+		  * version via Oracle data replication
+		  * 
+          */
+		boolean reportStationLibraryVersionReceived( in unsigned short newVersion );
+
+		/**
+          * submitPIDControlRequest
+          *
+          * Used to turn a PID on or off
+		  *
+		  * @param	destination	The full PID name DBG.TIS.Platform.PDP02
+		  * @param controlCommand	On or off
+		  * @param sessionID	The users session
+          */
+		void submitPIDControlRequest( in string destination, in TA_IRS_Core::EPIDControl controlCommand, in string sessionID )
+			raises( STISServerNotConnectedException, STISCommunicationTimeoutException, STISFunctionalityNotAvailableException, STISInvalidParameterException );
+
+		/**
+          * reportNewTrainLibraryVersion
+          *
+          * Used to check whether a station has received the new Train library
+		  * version via Oracle data replication
+		  * 
+          */
+		boolean reportTrainLibraryVersionReceived( in unsigned short newVersion );
+
+		boolean isStationLibrarySynchronisationComplete();
+
+		boolean isTrainLibrarySynchronisationComplete();
+
+		unsigned short getCurrentSTISMessageLibraryVersion();
+
+		unsigned short getCurrentTTISMessageLibraryVersion();
+
+		unsigned short getNextSTISMessageLibraryVersion();
+
+		unsigned short getNextTTISMessageLibraryVersion();
+
+		/**
+          * getCurrentTrainTimeScheduleVersion
+          *
+          * Gets the current train time schedule in use, with the version number.
+		  * 
+          */
+		TA_IRS_Core::TimeScheduleVersion getCurrentTrainTimeScheduleVersion();
+
+		/**
+          * setCurrentTrainTimeScheduleVersion
+          *
+          * Sets the current ISCS train time schedule, with the version number and.
+		  * database primary key.
+          */
+		void setCurrentTrainTimeScheduleVersion( in TA_IRS_Core::TimeScheduleVersion scheduleVersion, in string sessionID );
+
+	}; // ISTISManagerCorbaDef
+}; // TA_IRS_Bus
+
+#endif

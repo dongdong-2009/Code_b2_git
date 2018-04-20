@@ -1,0 +1,80 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/4669_T01271350/4669/transactive/app/history/scada_historian/scada_historian_dmif/src/DataCollectionDmIf.idl $
+  * @author:  Ripple
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2008/11/28 16:26:01 $
+  * Last modified by:  $Author: builder $
+  *
+  */
+//==============================================================================
+//
+// Copyright (c) 2001
+// Mi Consulting Group (Australia) Pty Ltd
+// All rights reserved.
+// ACN 001 651 949
+//
+// Trademark application for transActive has been made and registration of that
+// trademark is pending.
+//
+//==============================================================================
+//
+// DataCollectionDmIf
+//
+// Author: Anita Lee 21/06/02
+//
+
+#ifndef DATACOLLECTIONDMIF_IDL_INCLUDED
+#define DATACOLLECTIONDMIF_IDL_INCLUDED
+
+//#include <CommonDmIf.idl>
+
+module TA_App
+{
+	interface DataCollectionDmIf
+	{
+		enum DataCollectionType
+		{
+			Sample,
+			Average,
+			Minimum,
+			Maximum
+		};
+
+		struct SimpleTime
+		{
+			unsigned short hour;	// 24 hour - 0 is midnight, 23 is 11pm
+			unsigned short minute;	// 0-59
+		};
+
+		struct DataCollection
+		{
+			long entityKey;					// pkey of datapoint
+			DataCollectionType dataType;	
+			string baseData;				// name of base entity
+			unsigned long timePeriod;		// seconds
+			string shortDescription;		
+			string longDescription;
+			boolean archiveOn;
+			long storageTime;				// days
+			SimpleTime startOfDay;
+			string tableName;
+		};
+
+
+		// Set DataCollection
+		void SetDataCollection(in DataCollection newDataCollection, in string sessionId);
+			//raises(nexus::NoPermission);
+
+		// GetDataCollection
+		DataCollection GetDataCollection();
+        
+	};
+	
+};
+
+#endif // DATACOLLECTIONDMIF_IDL_INCLUDED

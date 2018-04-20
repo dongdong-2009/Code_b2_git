@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3fd9f07e-fd18-4050-b006-9c7fdc8bc605}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4f547ae3-2246-49ba-8898-d4fd0cb157cf}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentEntityComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParameterListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_AgentEntityConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentEntityComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParameterListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TA_AgentEntityConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+    <None Include="res\TA_AgentEntityConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_AgentEntityConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\entity.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

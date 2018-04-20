@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c7076495-5e40-4d39-8e87-c4048c68a0d9}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{b8813ca0-dad7-4e96-95c2-0151597e2c94}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\central.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\ConfigECSZones.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ECSZone.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\local.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\location.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\NotApplied.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\profile.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rights.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TA_ECSZoneConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\TA_ECSZoneConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ECSZoneComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_ECSZoneConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ECSZoneComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_ECSZoneConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

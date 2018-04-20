@@ -1,0 +1,93 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/TA_BASE/transactive/bus/response_plans/plan_manager/IDL/src/IPlanManagerCorbaDef.idl $
+// @author:  Bart Golab
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// Plan Manager IDL interface.
+//
+
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+#include "core/data_access_interface/PlanAgent/IDL/src/PlanAgentDataCorbaDef.idl"
+
+
+module TA_Base_Bus
+{
+	interface IPlanManagerCorbaDef
+	{       	   
+	    // Constants
+		// ---------
+		// Number of seconds before the message prompting operator to
+		// okay the launch of Plan Controller for a Run Plan step is 
+		// auto-acknowledged and the result returned to the Plan Agent.
+		const unsigned long RUNPLAN_RESPONSE_TIMEOUT = 60;
+
+		// Number of seconds before the message prompting operator to
+		// okay the launch of an app for a Launch GUI Application step is 
+		// auto-acknowledged and the result returned to the Plan Agent.
+		const unsigned long LAUNCHGUIAPP_RESPONSE_TIMEOUT = 30; 
+
+		// Number of seconds before the message prompting operator to
+		// okay the launch of a display for a Launch Schematic step is 
+		// auto-acknowledged and the result returned to the Plan Agent.
+		const unsigned long LAUNCHSCHEMATIC_RESPONSE_TIMEOUT = 60; 
+
+		// Structures
+		// ----------
+		union InteractiveStepData switch(TA_Base_Core::EStep)
+		{
+			case TA_Base_Core::PROMPT_STEP:
+				TA_Base_Core::PromptParameters prompt;
+
+			case TA_Base_Core::DECISION_STEP:
+				TA_Base_Core::DecisionParameters decision;
+
+			case TA_Base_Core::LOG_STEP:
+				TA_Base_Core::LogParameters log;
+
+			case TA_Base_Core::RUN_PLAN_STEP:
+				TA_Base_Core::ActivePlanId runPlan; // ID and instance of child plan to be controlled
+			
+			case TA_Base_Core::LAUNCH_GUI_APP_STEP:
+				TA_Base_Core::LaunchGuiAppParameters launchGuiApp;	
+				
+			case TA_Base_Core::LAUNCH_SCHEMATIC_STEP:
+				TA_Base_Core::LaunchSchematicParameters launchSchematic;		    
+			
+			//lizettejl++ (DP-changes)
+			case TA_Base_Core::FAILURE_SUMMARY_STEP:		    
+				TA_Base_Core::FailedStepDetails failedSteps;
+			//++lizettejl
+		};
+
+		struct CurrentPlanStepDetail
+		{
+            TA_Base_Core::ActivePlanId activePlan; // ID and instance of plan executing the interactive step
+			TA_Base_Core::StepNumber   step;       // interactive step number
+			InteractiveStepData        data;       // additional step-specific info needed to execute the step
+		};
+
+
+	    // Exceptions
+		// ----------
+        exception InteractiveStepExecuteError
+		{
+			string reason;
+		};		
+
+
+		// Interactive plan step support
+		// -----------------------------
+		void executeInteractiveStep(in CurrentPlanStepDetail stepDetail) raises(InteractiveStepExecuteError, TA_Base_Core::OperationModeException); 
+
+	}; // interface IPlanManagerCorbaDef
+
+}; // module TA_Base_Bus
+

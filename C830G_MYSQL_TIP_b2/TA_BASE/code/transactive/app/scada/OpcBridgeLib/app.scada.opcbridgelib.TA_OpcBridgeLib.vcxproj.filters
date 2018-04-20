@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{5c5d5a67-a9cd-4e35-85cb-f7d2f635d045}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Attribute">
+      <UniqueIdentifier>{ec79a80d-1c78-446e-ac05-97c2b67e0c20}</UniqueIdentifier>
+      <Extensions>*.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractDataObjectAttributes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Attribute.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AttributeMapManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeAgentProxy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeAttributes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAgentProxy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAttributes.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayProxyManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcBridge.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OPCDataCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OPCDataCacheFile.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcTag.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcTagManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TagThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveDataSource.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnAckStateSummary.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnAlarmStateSummary.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnAssetName.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnLabel.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnOnitp.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnQualitySummary.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DnShortLabel.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DpAckState.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DpAlarmState.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DpQuality.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+    <ClCompile Include="attributes\DpValue.cpp">
+      <Filter>Attribute</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractDataObjectAttributes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Attribute.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AttributeMapManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeAgentProxy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeAttributes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAgentProxy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAttributes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayProxyManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcBridge.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OPCDataCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OPCDataCacheFile.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcTag.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcTagManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TagThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveDataSource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnAckStateSummary.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnAlarmStateSummary.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnAssetName.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnAttributeNames.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnLabel.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnOnitp.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnQualitySummary.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DnShortLabel.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DpAckState.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DpAlarmState.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DpAttributeNames.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DpQuality.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+    <ClInclude Include="attributes\DpValue.h">
+      <Filter>Attribute</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="observer">
+      <UniqueIdentifier>{c9fe5664-fc73-4114-8c66-2af301542ea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="conversion">
+      <UniqueIdentifier>{8078c35e-bada-45c5-a2cc-0829284b2ba3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proxy">
+      <UniqueIdentifier>{fc40b3ad-a4da-4106-8050-cc639df569d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ITrainCctvUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainDriverCallUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainInformationUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainPaUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainPecUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainRadioGroupUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainStateUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainTisUpdateObserver.h">
+      <Filter>observer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CallTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExceptionConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioGroupTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TisTypesConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainInformationConversion.h">
+      <Filter>conversion</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAgentProxyFactory.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCctvCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainDriverCallCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainInformationCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainOperationModeCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainPaCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainPecCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainRadioGroupCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainStateUpdateCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTisCorbaProxy.h">
+      <Filter>proxy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CallTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommonTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioGroupTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TisTypesConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainInformationConversion.cpp">
+      <Filter>conversion</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAgentProxyFactory.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCctvCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainDriverCallCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainInformationCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainOperationModeCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainPaCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainPecCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainRadioGroupCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainStateUpdateCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTisCorbaProxy.cpp">
+      <Filter>proxy</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

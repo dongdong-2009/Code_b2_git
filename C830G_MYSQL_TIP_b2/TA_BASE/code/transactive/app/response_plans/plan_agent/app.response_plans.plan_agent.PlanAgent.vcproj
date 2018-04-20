@@ -1,0 +1,747 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.response_plans.plan_agent" ProjectGUID="{AE26451B-B096-4680-816B-852F44F5ECCD}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/response_plans/plan_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nd/app.response_plans.plan_agent.PlanAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/data_access_interface/planagent/IDL/src,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src,../../../../../build/win32_n/transactive/bus/scada/common_library/IDL/src,../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,..\..\..\..\cots\boost\boost_1_39_0,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/data_access_interface/tis_agent_4669/IDL/src" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;_DEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/response_plans/plan_agent/app.response_plans.plan_agent.PlanAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/response_plans/plan_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/response_plans/plan_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/response_plans/plan_agent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib omnithread30_rtd.lib TA_mcl_d.lib oci.lib Rpcrt4.lib aced.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/PlanAgent.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd,..\..\..\..\cots\boost\boost_1_39_0\stage\lib,..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7,..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib,..\..\..\..\cots\WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/PlanAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.response_plans.plan_agent.PlanAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/response_plans/plan_agent" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../bin/win32_nr/app.response_plans.plan_agent.PlanAgent.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,../../../..,../../../../../build/win32_n/transactive,../../../../../build/win32_n/transactive/core/data_access_interface/planagent/IDL/src,../../../../../build/win32_n/transactive/core/process_management/IDL/src,../../../../../build/win32_n/transactive/core/message/IDL/src,../../../../../build/win32_n/transactive/core/exceptions/IDL/src,../../../../../build/win32_n/transactive/bus/response_plans/plan_manager/IDL/src,../../../../../build/win32_n/transactive/bus/scada/common_library/IDL/src,../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers,..\..\..\..\cots\boost\boost_1_39_0,../../../../../build/win32_n/transactive/core/alarm/IDL/src,../../../../../build/win32_n/transactive/core/data_access_interface/tis_agent_4669/IDL/src" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;NDEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/response_plans/plan_agent/app.response_plans.plan_agent.PlanAgent.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/response_plans/plan_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/response_plans/plan_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/response_plans/plan_agent/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib omnithread30_rt.lib TA_mcl.lib oci.lib Rpcrt4.lib ace.lib TA_Base_Core.lib TA_Base_Bus.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/PlanAgent.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr,..\..\..\..\cots\boost\boost_1_39_0\stage\lib,..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7,..\..\..\..\cots\oracle\10.2.0\winnt\lib,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\lib,..\..\..\..\cots\WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/PlanAgent.pdb" SubSystem="1" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.response_plans.plan_agent.PlanAgent.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Steps" Filter="cpp;h">
+			<File RelativePath="src\ActiveAbortStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveAbortStep.h">
+			</File>
+			<File RelativePath="src\ActiveActivePlanCheckStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveActivePlanCheckStep.h">
+			</File>
+			<File RelativePath="src\ActiveAssignCameraToMonitorStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveAssignCameraToMonitorStep.h">
+			</File>
+			<File RelativePath="src\ActiveAssignCameraToPresetStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveAssignCameraToPresetStep.h">
+			</File>
+			<File RelativePath="src\ActiveDataPointCheckStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveDataPointCheckStep.h">
+			</File>
+			<File RelativePath="src\ActiveDataPointSetStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveDataPointSetStep.h">
+			</File>
+			<File RelativePath="src\ActiveDecisionStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveDecisionStep.h">
+			</File>
+			<File RelativePath="src\ActiveEndStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveEndStep.h">
+			</File>
+			<File RelativePath="src\ActiveEvaluateExpressionStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveEvaluateExpressionStep.h">
+			</File>
+			<File RelativePath="src\ActiveFailureSummaryStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveFailureSummaryStep.h">
+			</File>
+			<File RelativePath="src\ActiveJumpStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveJumpStep.h">
+			</File>
+			<File RelativePath="src\ActiveLaunchGuiAppStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveLaunchGuiAppStep.h">
+			</File>
+			<File RelativePath="src\ActiveLaunchSchematicStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveLaunchSchematicStep.h">
+			</File>
+			<File RelativePath="src\ActiveLogStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveLogStep.h">
+			</File>
+			<File RelativePath="src\ActiveNullStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveNullStep.h">
+			</File>
+			<File RelativePath="src\ActivePromptStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePromptStep.h">
+			</File>
+			<File RelativePath="src\ActiveRunPlanStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveRunPlanStep.h">
+			</File>
+			<File RelativePath="src\ActiveSendSmsMessageStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveSendSmsMessageStep.h">
+			</File>
+			<File RelativePath="src\ActiveStationPaStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveStationPaStep.h">
+			</File>
+			<File RelativePath="src\ActiveStationTisStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveStationTisStep.h">
+			</File>
+			<File RelativePath="src\ActiveStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveStep.h">
+			</File>
+			<File RelativePath="src\ActiveTerminatePlanStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveTerminatePlanStep.h">
+			</File>
+			<File RelativePath="src\ActiveTrainPaStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveTrainPaStep.h">
+			</File>
+			<File RelativePath="src\ActiveTrainTisStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveTrainTisStep.h">
+			</File>
+			<File RelativePath="src\ActiveVideoWallStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveVideoWallStep.h">
+			</File>
+			<File RelativePath="src\ActiveVmsBlankoutStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveVmsBlankoutStep.h">
+			</File>
+			<File RelativePath="src\ActiveVmsRestoreScheduleStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveVmsRestoreScheduleStep.h">
+			</File>
+			<File RelativePath="src\ActiveVmsSetSceneStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveVmsSetSceneStep.h">
+			</File>
+			<File RelativePath="src\BooleanContextImpl.h">
+			</File>
+			<File RelativePath="src\GRC3DataPointSetComplexStep.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GRC3DataPointSetComplexStep.h">
+			</File>
+			<File RelativePath="src\GRCType3SubTask.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GRCType3SubTask.h">
+			</File>
+			<File RelativePath="src\GRCType3SubTaskMO.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GRCType3SubTaskMO.h">
+			</File>
+		</Filter>
+		<Filter Name="States" Filter="cpp;h">
+			<File RelativePath="src\ActivePlanDelayedState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanDelayedState.h">
+			</File>
+			<File RelativePath="src\ActivePlanExecutingState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanExecutingState.h">
+			</File>
+			<File RelativePath="src\ActivePlanOperatorPausedState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanOperatorPausedState.h">
+			</File>
+			<File RelativePath="src\ActivePlanPausedState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanPausedState.h">
+			</File>
+			<File RelativePath="src\ActivePlanPendingState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanPendingState.h">
+			</File>
+			<File RelativePath="src\ActivePlanState.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanState.h">
+			</File>
+		</Filter>
+		<Filter Name="Messages" Filter="cpp;h">
+			<File RelativePath="src\ActivePlanCompleteMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanCompleteMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanCustomiseStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanCustomiseStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanDecisionStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanDecisionStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanDetailUpdateMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanDetailUpdateMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanFailureSummaryStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanFailureSummaryStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanLaunchGuiAppStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanLaunchGuiAppStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanLaunchSchematicStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanLaunchSchematicStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanLogStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanLogStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanMessageBlock.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanMessageBlock.h">
+			</File>
+			<File RelativePath="src\ActivePlanMessageQueue.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanMessageQueue.h">
+			</File>
+			<File RelativePath="src\ActivePlanPauseForOperatorMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanPauseForOperatorMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanPauseMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanPauseMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanPromptStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanPromptStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanReassignMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanReassignMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanResumeMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanResumeMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanRunPlanStepMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanRunPlanStepMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanStopMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanStopMessage.h">
+			</File>
+			<File RelativePath="src\ActivePlanUnassignMessage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanUnassignMessage.h">
+			</File>
+			<File RelativePath="src\IActivePlanMessage.h">
+			</File>
+		</Filter>
+		<Filter Name="Active Plans" Filter="cpp;h">
+			<File RelativePath="src\ActivePlan.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlan.h">
+			</File>
+			<File RelativePath="src\ActivePlanBulletinBoard.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanBulletinBoard.h">
+			</File>
+			<File RelativePath="src\IActivePlanFlow.h">
+			</File>
+			<File RelativePath="src\PlanExecutionEngine.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanExecutionEngine.h">
+			</File>
+			<File RelativePath="src\PlanExecutor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanExecutor.h">
+			</File>
+			<File RelativePath="src\PlanHouseKeepingMethodObject.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanHouseKeepingMethodObject.h">
+			</File>
+			<File RelativePath="src\RunPlanMethodObject.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RunPlanMethodObject.h">
+			</File>
+			<File RelativePath="src\SortablePlanId.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SortablePlanId.h">
+			</File>
+		</Filter>
+		<Filter Name="DB, GenericAgent &amp; CORBA" Filter="cpp;h">
+			<File RelativePath="src\AAMessageSender.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AAMessageSender.h">
+			</File>
+			<File RelativePath="src\ActiveStepsHeader.h">
+			</File>
+			<File RelativePath="src\DataPointUpdateStateSubscriber.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DataPointUpdateStateSubscriber.h">
+			</File>
+			<File RelativePath="src\PlanAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanAccessFactory.h">
+			</File>
+			<File RelativePath="src\PlanAgent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanAgent.h">
+			</File>
+			<File RelativePath="src\PlanAgentCorbaDefImpl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanAgentCorbaDefImpl.h">
+			</File>
+			<File RelativePath="src\PlanAgentUser.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanAgentUser.h">
+			</File>
+			<File RelativePath="src\PlanDataWriter.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanDataWriter.h">
+			</File>
+			<File RelativePath="..\common\src\ProjectDefinition.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Exceptions">
+			<File RelativePath="src\ActivePlanMessageException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActivePlanMessageException.h">
+			</File>
+			<File RelativePath="src\ActiveStepParamException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActiveStepParamException.h">
+			</File>
+			<File RelativePath="src\PlanNotFoundException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PlanNotFoundException.h">
+			</File>
+			<File RelativePath="..\..\..\core\exceptions\src\PlanStepDetailException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="..\..\..\core\exceptions\src\PlanStepDetailException.h">
+			</File>
+			<File RelativePath="src\ThirdPartyLibException.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ThirdPartyLibException.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

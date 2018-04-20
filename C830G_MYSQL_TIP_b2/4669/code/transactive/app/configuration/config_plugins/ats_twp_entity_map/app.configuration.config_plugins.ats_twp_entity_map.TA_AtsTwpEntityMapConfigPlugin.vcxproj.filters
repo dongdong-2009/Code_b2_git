@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{31a78d41-c287-471b-8bd8-54b5004aaabf}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{7c9d7753-b5d5-42bd-9886-c13079cafcae}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\AtsTwpEntityMap.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\central.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\ConfigAtsTwpEntityMaps.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\local.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\location.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\NotApplied.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\profile.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rights.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TA_AtsTwpEntityMapConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\TA_AtsTwpEntityMapConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AtsTwpEntityMapComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpEntityMapDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpEntityMapDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpEntityMapFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpEntityMapListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_AtsTwpEntityMapConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AtsTwpEntityMapComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpEntityMapDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpEntityMapDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpEntityMapFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpEntityMapListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_AtsTwpEntityMapConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

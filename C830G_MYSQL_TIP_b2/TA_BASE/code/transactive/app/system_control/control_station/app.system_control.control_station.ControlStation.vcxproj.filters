@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9471bf7c-3459-4501-84ff-9fec995515c9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{0e1bde03-c127-4ee0-980f-652b8233ae02}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="GUI Files">
+      <UniqueIdentifier>{56251994-9675-4ca9-bbbc-02811c8a7361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="COM Files">
+      <UniqueIdentifier>{f409243e-3878-414e-9868-2bbdefa392af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphWorX Files">
+      <UniqueIdentifier>{25edb589-89e6-4b3c-a6b4-4fa46d4a647f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server Monitoring Files">
+      <UniqueIdentifier>{da7ddf31-9b5d-42fb-bcdc-1872c95347d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Process Monitoring Files">
+      <UniqueIdentifier>{1687ecb0-c8b9-4f15-b2cb-90d47ebc5d59}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ControlStation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlStationCorbaImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyChangeNoteDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OverRideExclusiveDuty.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScreenPositioning.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sinstall.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WinkeysMgr.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BtnST.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ButtonListCtrl.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlStationBar.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlStationRootDialog.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyNotificationDialog.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyRequestDialog.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EditShortcutDialog.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExclusiveDutyDialog.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LogoutDlg.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PasswordDlg.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProfileLoginDlg.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuickToolComboEx.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TaskManagerDlg.cpp">
+      <Filter>GUI Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlStation2.cpp">
+      <Filter>COM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchematicDisplay.cpp">
+      <Filter>COM Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GraphWorxApplication.cpp">
+      <Filter>GraphWorX Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GraphWorxCommunicator.cpp">
+      <Filter>GraphWorX Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GraphWorxManager.cpp">
+      <Filter>GraphWorX Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gwx32.cpp">
+      <Filter>GraphWorX Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConsecutiveNetworkFailureAlarmPolicy.cpp">
+      <Filter>Server Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PingableItem.cpp">
+      <Filter>Server Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerMonitor.cpp">
+      <Filter>Server Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApplicationMover.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EnumProcess.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessManager.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessWatcher.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RunningApplication.cpp">
+      <Filter>Process Monitoring Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ControlStation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStationConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStationCorbaImpl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyChangeNoteDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScreenPositioning.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionDetails.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sinstall.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WinkeysMgr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BtnST.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ButtonListCtrl.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStationBar.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStationRootDialog.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyNotificationDialog.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyRequestDialog.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EditShortcutDialog.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExclusiveDutyDialog.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LogoutDlg.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PasswordDlg.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProfileLoginDlg.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuickToolComboEx.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TaskManagerDlg.h">
+      <Filter>GUI Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStation2.h">
+      <Filter>COM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStationCP.h">
+      <Filter>COM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RippleControlStationCP.h">
+      <Filter>COM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchematicDisplay.h">
+      <Filter>COM Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphWorxApplication.h">
+      <Filter>GraphWorX Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphWorxCommunicator.h">
+      <Filter>GraphWorX Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GraphWorxManager.h">
+      <Filter>GraphWorX Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gwx32.h">
+      <Filter>GraphWorX Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IGraphWorxManager.h">
+      <Filter>GraphWorX Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConsecutiveNetworkFailureAlarmPolicy.h">
+      <Filter>Server Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\INetworkFailureAlarmPolicy.h">
+      <Filter>Server Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PingableItem.h">
+      <Filter>Server Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ServerMonitor.h">
+      <Filter>Server Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApplicationMover.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnumProcess.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProcessManager.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessManager.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessWatcher.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RunningApplication.h">
+      <Filter>Process Monitoring Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OverRideExclusiveDuty.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\ControlStation.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\bus\resources\icons\ControlStation.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ControlStation.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\ControlStation.reg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\ControlStation2.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\RippleControlStation.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\SchematicDisplay.rgs">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="src\ControlStation.idl">
+      <Filter>COM Files</Filter>
+    </Midl>
+    <Midl Include="src\RippleControlStation.idl">
+      <Filter>COM Files</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

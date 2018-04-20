@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9e122f1b-89fb-4350-9df6-6e7f00497a1f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="inc">
+      <UniqueIdentifier>{75468592-58c9-4a0f-a000-219820a45ceb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ObservedSocket.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Radio.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioAgentConstants.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioAuthorisationManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioBackgroundProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioCallStackUpdateTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioCircuitModeManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioCircuitTransfer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioConfigurationException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioConnectionException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioConnectionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioCorbaTypeConverter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioDeleteReferenceTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioDirectory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioDirectoryServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioDirectorySynchronisation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioEventSubscriber.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioFallbackException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioFullStateReceiver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioGroupCallAckTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioKeepAliveHandlerThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMethodTimeoutException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioResetConnectionTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioResetSessionTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioResetSocketTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioResourceManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSDSDetailsUpdateTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioServerLinkStatusUpdateThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSession.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionInitialisationThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionNotInitialisedException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioStateMessageConverter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioStateSynchronisationServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioStateUpdateBroadcaster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioStateUpdateReceiver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSubscriberActivityTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSubscriberMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTaskFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTCPConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTcpServer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTetraAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTimedEvent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioTransactionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CallForwardingDetails.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioCallback.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioConnectionObserver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioDirectoryCallback.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioTetraAgentPeerState.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioTetraAgentState.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISocketObserver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ObservedSocket.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Radio.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioAgentConstants.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioAuthorisationManager.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioBackgroundProcessor.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioCallStackUpdateTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioCircuitModeManager.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioCircuitTransfer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioConfigurationException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioConnectionException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioConnectionManager.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioCorbaTypeConverter.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioDeleteReferenceTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioDirectory.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioDirectoryServant.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioDirectorySynchronisation.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioEventSubscriber.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioFallbackException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioFullStateReceiver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioGroupCallAckTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioHelper.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioKeepAliveHandlerThread.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMethodTimeoutException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioResetConnectionTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioResetSessionTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioResetSocketTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioResourceManager.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSDSDetailsUpdateTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioServant.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioServerLinkStatusUpdateThread.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSession.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionHelper.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionInitialisationThread.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionNotInitialisedException.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionServant.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioStateMessageConverter.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioStateSynchronisationServant.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioStateUpdateBroadcaster.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioStateUpdateReceiver.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSubscriberActivityTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSubscriberMonitor.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSynchronisationTypes.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTask.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTaskFactory.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTCPConnection.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTcpServer.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTetraAgent.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTimedEvent.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTransactionManager.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioTypes.h">
+      <Filter>inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

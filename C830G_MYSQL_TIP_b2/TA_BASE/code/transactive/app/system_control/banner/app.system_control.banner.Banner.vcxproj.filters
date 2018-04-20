@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{f3c75228-7ef3-4828-b343-9f57e450a756}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\banner.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bannerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BannerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ComponentLibraryAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IscsBanner.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\banner.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bannerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BannerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentLibraryAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IscsBanner.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="src\banner.idl">
+      <Filter>src</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\banner.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\banner.ico" />
+  </ItemGroup>
+</Project>

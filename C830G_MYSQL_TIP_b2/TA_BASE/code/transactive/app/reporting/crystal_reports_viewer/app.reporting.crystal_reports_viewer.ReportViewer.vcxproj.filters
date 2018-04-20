@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ae838dd8-400c-4d13-8695-5aa5d43f16c6}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{c76a1d6c-a782-4bed-aefd-a136930d261d}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AppSettings.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandLineParser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crutil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crutilDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crutilGui.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crvtrackcursorinfo.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CrystalReportsHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\crystalreportviewer9.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventLogger.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HistoryReportsDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpenFileDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\webbrowser2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AppSettings.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandLineParser.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crutil.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crutilDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crutilGui.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crvtrackcursorinfo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CrystalReportsHelper.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\crystalreportviewer9.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventLogger.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventMessages.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\globals.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HistoryReportsDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpenFileDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\strings.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\webbrowser2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\craxdrt9.tlh">
+      <Filter>src</Filter>
+    </None>
+    <None Include="res\crutil.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\crutil.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\crutil.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\bus\resources\icons\ReportManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

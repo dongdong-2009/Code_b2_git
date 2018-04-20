@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{09dabd61-9795-47bf-89a4-59efde76bdf2}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractCommand.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommandScheduler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventLoggingProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventProcessingLibrary.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessCommand.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RetryCommand.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractCommand.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommandScheduler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventLoggingProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventProcessingLibrary.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEvent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventProcessorCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessCommand.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RetryCommand.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

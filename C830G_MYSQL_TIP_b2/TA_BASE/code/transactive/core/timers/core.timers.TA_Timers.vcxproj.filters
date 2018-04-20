@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Timers">
+      <UniqueIdentifier>{88a71aa1-d866-4c77-9822-c60a3ab3eeb8}</UniqueIdentifier>
+      <Extensions>*.cpp. *.h</Extensions>
+    </Filter>
+    <Filter Include="TimedWaitSemaphore">
+      <UniqueIdentifier>{8dff67f9-f274-41d6-af35-214364e3bc9d}</UniqueIdentifier>
+      <Extensions>*.cpp, *.h</Extensions>
+    </Filter>
+    <Filter Include="TimedSingleThreadBarrier">
+      <UniqueIdentifier>{1a2fdd0f-2baf-4a45-b250-752b974db00f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractThreadedTimeoutUser.cpp">
+      <Filter>Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SingletonTimerUtil.cpp">
+      <Filter>Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StopwatchUtil.cpp">
+      <Filter>Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimerUtil.cpp">
+      <Filter>Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WindowsTimerQueue.cpp">
+      <Filter>Timers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimedWaitSemaphore.cpp">
+      <Filter>TimedWaitSemaphore</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimedSingleThreadBarrier.cpp">
+      <Filter>TimedSingleThreadBarrier</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractThreadedTimeoutUser.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITimeoutCallback.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SingletonTimerUtil.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StopwatchUtil.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimerUtil.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WindowsTimerQueue.h">
+      <Filter>Timers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimedWaitSemaphore.h">
+      <Filter>TimedWaitSemaphore</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimedSingleThreadBarrier.h">
+      <Filter>TimedSingleThreadBarrier</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

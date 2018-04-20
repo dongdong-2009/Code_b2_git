@@ -1,0 +1,210 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/4669/transactive/bus/ecs/ecs_agent/IDL/src/CommonEcsAgentCorbaDef.idl $
+// @author:  Sean Liew
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// PA Agent IDL interface.
+//
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+#include "core/exceptions/IDL/src/CommonExceptionsCorbaDef.idl"
+
+module TA_IRS_Bus
+{
+    ///////////////////////////////////////////////////////////////////////
+    //
+    //     Constants
+    //
+    ///////////////////////////////////////////////////////////////////////
+
+    const long ECS_MIN_NORMAL_STATION_MODE          = 0;
+    const long ECS_MAX_NORMAL_STATION_MODE          = 10;
+    const long ECS_MIN_CONGESTION_STATION_MODE      = 11;
+    const long ECS_MAX_CONGESTION_STATION_MODE      = 29;
+    const long ECS_MIN_EMERGENCY_STATION_MODE       = 30;
+    const long ECS_MAX_EMERGENCY_STATION_MODE       = 100;
+
+    const long ECS_MIN_NORMAL_MASTER_MODE           = 1000;
+    const long ECS_MAX_NORMAL_MASTER_MODE           = 1999;
+    const long ECS_MIN_EMERGENCY_MASTER_MODE        = 2000;
+    const long ECS_MAX_EMERGENCY_MASTER_MODE        = 2999;
+
+    // ECS schematic special definitions
+
+    // CL20389++
+    const long ECS_NONE_OR_INVALID                  = -1;
+    //const long ECS_NONE_OR_INVALID                  = 32767;	// lots of functions in ecs use unsigned long to extract this value, but failed, local sychronize will failed!
+    // ++CL20389
+    const long ECS_MULTI                            = -2;
+    //const long ECS_NONE_AND_GUI_OPEN				= -3;
+	const long ECS_NONE_AND_EXPECTING				= -3;
+
+    const string ECS_SESSION_ID_FILTER_STRING       = "SessionIdFilter";
+
+    // ECS Zone Congestion enumeration values
+    const unsigned long ECS_ZONE_CONGESTION_ENUM_NORMAL                 = 0;
+    const unsigned long ECS_ZONE_CONGESTION_ENUM_STALLED                = 1;
+    const unsigned long ECS_ZONE_CONGESTION_ENUM_HITEMP                 = 2;
+    const unsigned long ECS_ZONE_CONGESTION_ENUM_STALLED_CONGESTION     = 3;
+    const unsigned long ECS_ZONE_CONGESTION_ENUM_HITEMP_CONGESTION      = 4;
+
+    const unsigned long ECS_ZONE_ARROWS_ENUM_NONE                       = 0;
+    const unsigned long ECS_ZONE_ARROWS_ENUM_UP                         = 1;
+    const unsigned long ECS_ZONE_ARROWS_ENUM_DOWN                       = 2;
+    const unsigned long ECS_ZONE_ARROWS_ENUM_LEFT                       = 3;
+    const unsigned long ECS_ZONE_ARROWS_ENUM_RIGHT                      = 4;
+
+    // liuyu++ #134
+    const unsigned long INVALID_LOCATION_KEY_OF_CONGESTION_PAIR			= 0;
+    // ++liuyu #134
+
+    // Entity Parameters in the future
+    const string ECS_INNER_TRACK                                        = "IT";
+    const string ECS_OUTER_TRACK                                        = "OT";
+
+    // ECS subsystem global parameter names
+    const string ECS_GLOBAL_PARAMETER_THRESHOLD_STALL_TIME              = "ThresholdStallTimeInSecs";
+    const string ECS_GLOBAL_PARAMETER_THRESHOLD_TEMPERATURE             = "ThresholdTemperature";
+    const string ECS_GLOBAL_PARAMETER_TEMPERATURE_DEADBAND              = "TemperatureDeadband";
+    const string ECS_GLOBAL_PARAMETER_CONGESTION_USES_STALL_TIME        = "CongestionUsesStallTime";
+    const string ECS_GLOBAL_PARAMETER_CONGESTION_USES_TEMPERATURE       = "CongestionUsesTemperature";
+    const string ECS_GLOBAL_PARAMETER_STATION_MODE_NORMAL_COLOUR        = "StationModeNormalColour";
+    const string ECS_GLOBAL_PARAMETER_STATION_MODE_CONGESTION_COLOUR    = "StationModeCongestionColour";
+    const string ECS_GLOBAL_PARAMETER_STATION_MODE_EMERGENCY_COLOUR     = "StationModeEmergencyColour";
+    const string ECS_GLOBAL_PARAMETER_STATION_MODE_FAILED_COLOUR        = "StationModeFailedColour";
+    const string ECS_GLOBAL_PARAMETER_STATION_MODE_COLOUR               = "StationModeColour";
+    const string ECS_GLOBAL_PARAMETER_MASTER_MODE_COLOUR                = "MasterModeColour";
+    const string ECS_GLOBAL_PARAMETER_STATION_LOCKED_COLOUR             = "StationLockedColour";
+
+    ///////////////////////////////////////////////////////////////////////
+    //
+    //     Synchronisation
+    //
+    ///////////////////////////////////////////////////////////////////////
+
+    enum EEcsExecutionState
+    {
+        ECS_EXECUTION_READY,
+        ECS_EXECUTION_CONTROL,
+        ECS_EXECUTION_IN_PROGRESS,
+        ECS_EXECUTION_COMPLETED
+    };
+
+    enum EEcsExecutionError
+    {
+        ECS_ERROR_NONE,                     // "No errors encountered"
+        ECS_ERROR_ABORTED,                  // "Execution aborted"
+        ECS_ERROR_TIME_LIMIT_EXCEEDED,      // "Time limit exceeded"
+        ECS_ERROR_CORRUPTED_STATE,          // "Corrupted request aborted"
+        ECS_ERROR_WRONG_MODE_RESULT,        // "Unable to achieve desired mode"
+        ECS_ERROR_MM_LOCAL_MODES_P,         // "Station(s) %s in local mode"
+        ECS_ERROR_MM_IN_PROGRESS_P,         // "Master mode %ld is in progress"
+        ECS_ERROR_MM_ACTIVE_P,              // "Master mode %ld is active"
+        ECS_ERROR_MM_NORMAL_MM_FAILURE_P,   // "Normal master mode cannot be applied. %s"
+        ECS_ERROR_SM_WRITE_FAILURE_P,       // "ModeControl write failed.  %s"
+        ECS_ERROR_SM_LOCAL_MODE,            // "Station is in local mode"
+        ECS_ERROR_SM_MASTER_MODE_LOCKED,    // "Station is master mode locked"
+        ECS_ERROR_SM_IN_PROGRESS_P,         // "Station mode %ld execution is in progress"
+        ECS_ERROR_SM_STN_AGENT_FAILURE_P    // "Station ECS Agent failure. %s"
+
+                                            // *_P => parameters provided by the additionalInfo field
+                                            // *_MM_* => For EcsMasterModeExecutionUpdateData
+                                            // *_SM_* => For EcsStationModeExecutionUpdateData
+    }; 
+
+                                     
+
+    // EEcsExecutionError associated error messages for auditing:
+
+    const string ECS_ERROR_MSG_NONE                       = "No errors encountered";
+    const string ECS_ERROR_MSG_ABORTED                    = "Execution aborted";
+    const string ECS_ERROR_MSG_TIME_LIMIT_EXCEEDED        = "Time limit exceeded";
+    const string ECS_ERROR_MSG_CORRUPTED_STATE            = "Corrupted request aborted";
+    const string ECS_ERROR_MSG_WRONG_MODE_RESULT          = "Unable to achieve desired mode";
+    const string ECS_ERROR_MSG_MM_LOCAL_MODES_P           = "Station(s) %s in local mode";
+    const string ECS_ERROR_MSG_MM_IN_PROGRESS_P           = "Master mode %ld is in progress";
+    const string ECS_ERROR_MSG_MM_ACTIVE_P                = "Master mode %ld is active";
+    const string ECS_ERROR_MSG_MM_NORMAL_MM_FAILURE_P     = "Normal master mode cannot be applied. %s";
+    const string ECS_ERROR_MSG_SM_WRITE_FAILURE_P         = "ModeControl write failed.  %s";
+    const string ECS_ERROR_MSG_SM_LOCAL_MODE              = "Station is in local mode";
+    const string ECS_ERROR_MSG_SM_MASTER_MODE_LOCKED      = "Station is master mode locked";
+    const string ECS_ERROR_MSG_SM_IN_PROGRESS_P           = "Station mode %ld execution is in progress";
+    const string ECS_ERROR_MSG_SM_STN_AGENT_FAILURE_P     = "Station ECS Agent failure. %s";
+
+    enum EEcsAgentParameter
+    {
+        PARAM_DATAPOINT_INTERNAL_STATE,
+        PARAM_DATAPOINT_STATE,
+        PARAM_PROPOSED_MODES,
+        PARAM_STATION_MODE_EXECUTION_UPDATE_DATA,
+        PARAM_MASTER_MODE_EXECUTION_UPDATE_DATA
+    };
+
+    struct EcsAgentParameter
+    {
+        EEcsAgentParameter                  parameter;
+        any                                 data;
+    };
+
+    typedef EcsAgentParameter               EcsAgentParameterUpdateData; 
+
+
+    ///////////////////////////////////////////////////////////////////////
+    //
+    //     Structures for describing ECS database table records
+    //
+    ///////////////////////////////////////////////////////////////////////
+
+    typedef sequence<unsigned long>         EcStationModeKeys;
+
+    struct EcZoneRecord
+    {
+        unsigned long                       ecsZoneId;
+        string                              ecsLocation;
+        string                              track;
+        unsigned long                       occEquipmentEntityKey;
+        unsigned long                       stnEquipmentEntityKey;
+		boolean								isIgnoringCongestion;
+    };
+    typedef sequence<EcZoneRecord>          EcZoneTable;
+
+
+    struct EcStationModeRecord
+    {
+        unsigned long                       pKey;
+        unsigned long                       stationMode;
+        unsigned long                       locationKey;
+        string                              operation;
+        string                              track;
+        string                              condition;
+        string                              congestionLogic;
+    };
+    typedef sequence<EcStationModeRecord>   EcStationModeTable;
+    typedef sequence<EcStationModeRecord>   EcStationModeRecords;
+
+
+    struct EcMasterModeRecord
+    {
+        unsigned long                       pKey;
+        unsigned long                       masterMode;
+        string                              condition;
+        unsigned long                       ecsZoneId;
+        string                              evacuationDirection;
+        string                              airflowDirection;
+        string                              displayDirection;
+        string                              verificationMessage;
+
+        EcStationModeKeys                   stationModeKeys;
+    };
+    typedef sequence<EcMasterModeRecord>    EcMasterModeTable;
+
+
+}; // TA_Bus
+

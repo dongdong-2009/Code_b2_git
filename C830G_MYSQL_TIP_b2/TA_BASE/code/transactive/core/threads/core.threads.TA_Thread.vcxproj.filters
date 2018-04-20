@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{c778f3e9-cceb-4d47-8305-3db2283f3abe}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="ThreadPool">
+      <UniqueIdentifier>{b09e11e5-fc67-4194-afd8-19cd0ff43edd}</UniqueIdentifier>
+      <Extensions>*.cpp, *.h</Extensions>
+    </Filter>
+    <Filter Include="QueueProcessorPool">
+      <UniqueIdentifier>{7023e4e6-f006-4744-a588-b25403a992fb}</UniqueIdentifier>
+      <Extensions>*.cpp, *.h</Extensions>
+    </Filter>
+    <Filter Include="WorkItemQueue">
+      <UniqueIdentifier>{21e48802-db28-49a5-b8d7-0ec11e057021}</UniqueIdentifier>
+      <Extensions>*.cpp, *.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Thread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadedWorker.cpp">
+      <Filter>ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadPoolManager.cpp">
+      <Filter>ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadPoolSingletonManager.cpp">
+      <Filter>ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WorkItemQueueProcessor.cpp">
+      <Filter>WorkItemQueue</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Thread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadMemberFunction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IThreadPoolWorkerCallback.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IWorkItem.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadedWorker.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadPoolManager.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadPoolSingletonManager.h">
+      <Filter>ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PriorityQueueProcessor.h">
+      <Filter>QueueProcessorPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueueItem.h">
+      <Filter>QueueProcessorPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueueProcessor.h">
+      <Filter>QueueProcessorPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QueueProcessorPool.h">
+      <Filter>QueueProcessorPool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WorkItemQueueProcessor.h">
+      <Filter>WorkItemQueue</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

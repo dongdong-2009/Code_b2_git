@@ -1,0 +1,90 @@
+<VisualStudioProject ProjectType="Visual C++" Version="8.00" Name="core.dai.online_printing_agent" ProjectGUID="{BDF27CAB-3CCB-4BE9-AA41-C0DEEA279103}">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/online_printing_agent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..\..,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../../build/win32_n/transactive,C:\code\build\win32_n\transactive\core\message\IDL\src,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\,..\..\..\..\..\build\win32_n\transactive\core\message\IDL\src" PreprocessorDefinitions="_DEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/online_printing_agent/core.dai.online_printing_agent.TA_OnlinePrintingAgentDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/online_printing_agent/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/online_printing_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/online_printing_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_PrintAgentDAI_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.dai.online_printing_agent.TA_OnlinePrintingAgentDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/online_printing_agent" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..\..,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../../build/win32_n/transactive,C:\code\build\win32_n\transactive\core\message\IDL\src,..\..\..\..\cots\ACE\6_0_4\ACE_wrappers\,..\..\..\..\..\build\win32_n\transactive\core\message\IDL\src" PreprocessorDefinitions="NDEBUG;WIN32;_LIB;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/online_printing_agent/core.dai.online_printing_agent.TA_OnlinePrintingAgentDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/online_printing_agent/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/online_printing_agent/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/online_printing_agent/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_PrintAgentDAI.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.dai.online_printing_agent.TA_OnlinePrintingAgentDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src">
+			<File RelativePath="src\ConfigPrintableEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConfigPrintableEvent.h">
+			</File>
+			<File RelativePath="src\IConfigPrintableEvent.h">
+			</File>
+			<File RelativePath="src\IPrintableEventData.h">
+			</File>
+			<File RelativePath="src\PrintableEventAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PrintableEventAccessFactory.h">
+			</File>
+			<File RelativePath="src\PrintableEventData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PrintableEventData.h">
+			</File>
+			<File RelativePath="src\PrintableEventHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PrintableEventHelper.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

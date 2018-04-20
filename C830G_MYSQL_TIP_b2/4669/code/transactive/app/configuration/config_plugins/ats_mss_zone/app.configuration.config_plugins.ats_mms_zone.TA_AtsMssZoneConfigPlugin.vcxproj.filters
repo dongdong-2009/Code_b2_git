@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8fdec2b9-0977-46ee-a3e4-c1d546c649dc}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{e0b04750-b471-4fd1-a7a9-74fc3fbfed3f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\AtsMssZone.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\central.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\ConfigAtsMssZones.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\local.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\location.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\NotApplied.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\profile.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rights.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\TA_AtsMssZoneConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="src\TA_AtsMssZoneConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AtsMssZoneComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsMssZoneDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsMssZoneDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsMssZoneFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsMssZoneListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_AtsMssZoneConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AtsMssZoneComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsMssZoneDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsMssZoneDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsMssZoneFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsMssZoneListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_AtsMssZoneConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

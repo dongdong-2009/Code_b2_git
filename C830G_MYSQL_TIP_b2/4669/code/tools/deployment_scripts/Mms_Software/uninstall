@@ -1,0 +1,468 @@
+#!/bin/ksh
+
+bin_mod=555
+so_mod=555
+include_mod=444
+udataobj_mod=444
+locale_mod=444
+
+# On HP-UX, the .sl files need to be executable
+sl_mod=555
+
+bin_files=" TMQFORWARD_BMQ_64 TMQFORWARD_BMQ_65 TMQUEUE_BMQ_64 TMQUEUE_BMQ_65 dmqcls dmqgcp dmqjourn dmqld dmqloader dmqqe dmqsbs"
+
+lib_files=""
+
+shlib_files=" libcore.so libdmq.so libdmqcl.so libio.so"
+
+udataobj_files=" mqpatchlev patchnotes.txt"
+
+locale_files=""
+
+MB_files=""
+
+include_files=" p_msg.h p_symbol.h"
+
+MQ_RELEASE=V5.0
+PRODUCT=MessageQ
+PLATFORM=solaris/sparc
+PATCH=31
+prename=_pre-$PATCH
+origname=_orig-31
+####################### End of generated section ###################
+
+
+#ident	"@(#)uninstall.static	1.6"
+#****************************************************************
+# Execute the command passed. If it fails, stop the 
+# uninstall and return all files to their original state.
+#
+executeCommand() {
+        #
+        # Execute the command passed.
+        #
+        eval $1
+
+        if [ "$?" -ne 0 ]; then
+                echo "\nERROR: ${1} failed!\n"
+		putItBack
+        fi
+}
+
+
+#****************************************************************
+# Function to make sure the appropriate directory structure is
+# present, and the necessary environment variables are set.
+#
+function checkEnv {
+
+	if [ -z "$BEADIR" ]
+	then
+		echo "*** Error: BEADIR is not defined"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR" ]
+	then
+		echo "*** Error: Directory '$BEADIR' does not exist"
+		exit
+	fi
+
+	if [ -n "$bin_files" -a ! -d "$BEADIR/bin" ]
+	then
+		echo "*** Error: Directory '$BEADIR/bin' does not exist"
+		exit
+	fi
+
+	if [ -n "$lib_files" -a ! -d "$BEADIR/lib" ]
+	then
+		echo "*** Error: Directory '$BEADIR/lib' does not exist"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR" ]
+	then
+		echo "*** Error: '$BEADIR' is not a directory"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/bin" ]
+	then
+		echo "*** Error: '$BEADIR/bin' is not a directory"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/lib" ]
+	then
+		echo "*** Error: '$BEADIR/lib' is not a directory"
+		exit
+	fi
+
+	if [ ! -d "$BEADIR/include" ]
+	then
+		is_RTK=TRUE
+	else
+		is_RTK=FALSE
+	fi
+}
+
+
+#*****************************************************************
+# Function to make sure all of the backup files 
+# still exist (the customer may have removed them).
+#
+function backup_exists
+{
+
+	#
+	# Initialize BACKUP to TRUE, meaning an uninstall is
+	# possible. Once one backup file is not found, BACKUP
+	# will be set to FALSE, and an uninstall will no longer
+	# be considered possible.
+	#
+	BACKUP=TRUE
+
+	#
+	# Make a list of all the files (full path included) 
+	# which were installed as part of this patch.
+	#
+	for thisfile in $bin_files
+	do
+		thisfile=`echo $thisfile | sed -e 's/_6[45]//'`
+		backup_files="$backup_files $BEADIR/bin/$thisfile$prename"
+	done
+
+	for thisfile in $lib_files
+	do
+		backup_files="$backup_files $BEADIR/lib/$thisfile$prename"
+	done
+
+	for thisfile in $shlib_files
+	do
+		backup_files="$backup_files $BEADIR/lib/$thisfile$prename"
+	done
+
+	for thisfile in $include_files
+	do
+		backup_files="$backup_files $BEADIR/include/$thisfile$prename"
+	done
+
+	for thisfile in $locale_files
+	do
+		backup_files="$backup_files $BEADIR/locale/C/$thisfile$prename"
+	done
+
+	#
+	# In order to do an uninstall, all of the backup files must
+	# be present, otherwise, BEADIR will be left in an inconsistent
+	# state.
+	#
+	for thisfile in $backup_files
+	do
+		if [ ! -r $thisfile ]
+		then
+			echo "*** Error: Cannot find backup file\n$thisfile"
+			BACKUP=FALSE
+		fi
+	done
+}
+
+
+#****************************************************************
+# Function used on interrupt to stop the uninstall and restore all
+# files touched thus far to their original state.
+#
+function putItBack {
+
+	echo "Rolling back uninstall..."
+	
+	for thisfile in $bin_done 
+	do
+		if [ -f "$TUXEDO/bin/$thisfile" ]
+		then
+			mv $BEADIR/bin/$thisfile $BEADIR/bin/$thisfile$prename
+			mv $BEADIR/bin/$thisfile$origname $BEADIR/bin/$thisfile	
+		fi
+	done
+
+	for thisfile in $lib_done 
+	do
+		if [ -f "$TUXEDO/lib/$thisfile" ]
+		then
+			mv $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$prename
+			mv $BEADIR/lib/$thisfile$origname $BEADIR/lib/$thisfile	
+		fi
+	done
+
+	for thisfile in $shlib_done 
+	do
+		if [ -f "$TUXEDO/lib/$thisfile" ]
+		then
+			mv $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$prename
+			mv $BEADIR/lib/$thisfile$origname $BEADIR/lib/$thisfile	
+		fi
+	done
+
+	if [ FALSE = "${is_RTK}" ]
+	then
+		for thisfile in $include_done 
+		do
+			mv $BEADIR/include/$thisfile $BEADIR/include/$thisfile$prename
+			mv $BEADIR/include/$thisfile$origname $BEADIR/include/$thisfile	
+		done
+	fi
+	for thisfile in $locale_done 
+	do
+		if [ -f "$TUXEDO/locale/C/$thisfile" ]
+		then
+			mv $BEADIR/locale/C/$thisfile $BEADIR/locale/C/$thisfile$prename
+			mv $BEADIR/locale/C/$thisfile$origname $BEADIR/locale/C/$thisfile
+		fi
+	done
+
+	for thisfile in $udataobj_done 
+	do
+		#
+		# If this was the first patch the customer has installed,
+		# we don't need to worry about putting patchlev and binfiles
+		# back... they will just be removed.
+		#
+		if [ -s "${BEADIR}/udataobj/$thisfile" ]; then
+			mv $BEADIR/udataobj/$thisfile $BEADIR/udataobj/$thisfile$prename
+			mv $BEADIR/udataobj/$thisfile$origname $BEADIR/udataobj/$thisfile	
+		fi
+	done
+
+	exit 1
+}
+
+
+#****************************************************************
+# Function which moves all the backed up files to the originals.
+#
+function uninstall_patch {
+
+	# 
+	# BIN files.
+	#
+	for thisfile in $bin_files
+	do
+		thisfile=`echo $thisfile | sed -e 's/_6[45]//'`
+		if [ -f $BEADIR/bin/$thisfile -a -f $BEADIR/bin/$thisfile$prename ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/bin/$thisfile $BEADIR/bin/$thisfile$origname"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			bin_done="$bin_done $thisfile"
+
+			#
+			# Move the backed up file to the original. This is the
+			# step that does the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/bin/$thisfile$prename $BEADIR/bin/$thisfile"
+			#
+			# Change the mode of the file.
+			#
+			executeCommand "chmod $bin_mod $BEADIR/bin/$thisfile"
+		fi
+	done
+
+	# 
+	# LIB files.
+	#
+	for thisfile in $lib_files
+	do
+		if [ -f $BEADIR/lib/$thisfile -a -f $BEADIR/lib/$thisfile$prename ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$origname"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			lib_done="$lib_done $thisfile"
+
+			#
+			# Move the backed up file to the original. This is the
+			# step that does the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/lib/$thisfile$prename $BEADIR/lib/$thisfile"
+			#
+			# Change the mode of the file.
+			#
+			ext=`echo $thisfile | cut -d. -f 2-2`
+			if [ "$os" = "HP-UX" -a "$ext" = "sl" ]
+			then
+				lib_mod=$sl_mod
+			else
+				lib_mod=$so_mod
+			fi
+			executeCommand "chmod $lib_mod $BEADIR/lib/$thisfile"
+		fi
+	done
+	# 
+	# SHLIB files.
+	#
+	for thisfile in $shlib_files
+	do
+		if [ -f $BEADIR/lib/$thisfile -a -f $BEADIR/lib/$thisfile$prename ]
+		then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/lib/$thisfile $BEADIR/lib/$thisfile$origname"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			shlib_done="$shlib_done $thisfile"
+
+			#
+			# Move the backed up file to the original. This is the
+			# step that does the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/lib/$thisfile$prename $BEADIR/lib/$thisfile"
+			#
+			# Change the mode of the file.
+			#
+			ext=`echo $thisfile | cut -d. -f 2-2`
+			if [ "$os" = "HP-UX" -a "$ext" = "sl" ]
+			then
+				lib_mod=$sl_mod
+			else
+				lib_mod=$so_mod
+			fi
+			executeCommand "chmod $lib_mod $BEADIR/lib/$thisfile"
+		fi
+	done
+
+	# 
+	# INCLUDE files.
+	#
+	if [ FALSE = "${is_RTK}" ]
+	then
+		for thisfile in $include_files
+		do
+		    if [ -f $BEADIR/include/$thisfile -a -f $BEADIR/include/$thisfile$prename ]
+		    then
+			#
+			# Move the original to a backup in case the user
+			# interrupts the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/include/$thisfile $BEADIR/include/$thisfile$origname"
+			#
+			# Add this file to the list of originals that have been
+			# moved thus far.
+			#
+			include_done="$include_done $thisfile"
+
+			#
+			# Move the backed up file to the original. This is the
+			# step that does the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/include/$thisfile$prename $BEADIR/include/$thisfile"
+			#
+			# Change the mode of the file.
+			#
+			executeCommand "chmod $include_mod $BEADIR/include/$thisfile"	
+		    fi
+		done
+	fi
+
+	# 
+	# UDATAOBJ files.
+	#
+	for thisfile in $udataobj_files
+	do
+		#
+		# Move the original to a backup in case the user
+		# interrupts the uninstall.
+		#
+		executeCommand "mv -f $BEADIR/udataobj/$thisfile $BEADIR/udataobj/$thisfile$origname"
+		#
+		# Add this file to the list of originals that have been
+		# moved thus far.
+		#
+		udataobj_done="$udataobj_done $thisfile"
+
+		#
+		# If this is the first patch the user has installed, there
+		# will be no backup of patchlev and binfiles, so don't worry
+		# about them.
+		#
+		if [ -s "${BEADIR}/udataobj/$thisfile$prename" ]; then
+			#
+			# Move the backed up file to the original. This is the
+			# step that does the uninstall.
+			#
+			executeCommand "mv -f $BEADIR/udataobj/$thisfile$prename $BEADIR/udataobj/$thisfile"
+			#
+			# Change the mode of the file.
+			#
+			executeCommand "chmod $udataobj_mod $BEADIR/udataobj/$thisfile"	
+		fi
+	done
+
+}
+
+
+
+
+#***************
+# MAIN.
+#***************
+is_RTK=FALSE
+
+export BEADIR
+
+checkEnv
+#
+# Initialize variables.
+#
+backup_files=""
+bin_done=""
+lib_done=""
+shlib_done=""
+include_done=""
+udataobj_done=""
+locale_done=""
+#
+# Make sure an uninstall is possible.
+#
+# Since we do not have a good file list for an RTK, we can not confirm that the 
+# backup files are in place.
+#
+if [ FALSE = "${is_RTK}" ]
+then
+	backup_exists
+else
+	BACKUP=TRUE
+fi
+if [ "${BACKUP}" != TRUE ]; then
+	echo "** WARN: missing files - do you want to continue"
+	read ans
+	case $ans in
+	y*|Y*)
+		;;
+	*)
+		exit 1
+		;;
+	esac
+fi
+#
+# Set up an interrupt routine.
+#
+trap "putItBack" 1 2 3 15
+uninstall_patch
+trap  1 2 3 15
+find $BEADIR -name "*$origname" -print | xargs rm -f

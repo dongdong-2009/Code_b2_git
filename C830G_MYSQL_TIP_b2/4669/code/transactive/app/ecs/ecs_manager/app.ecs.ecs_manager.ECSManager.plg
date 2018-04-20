@@ -1,0 +1,137 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: app.ecs.ecs_manager.ECSManager - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0xc09 /fo"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/ECSManager.res" /i "src" /d "_DEBUG" /d "_AFXDLL" "E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSManager.rc"" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "./src" /I "../../.." /I "../../../../../build/win32_n/transactive" /I "../../../../../sdk/include/transactive" /I "../../../../../sdk/include/transactive/core/exceptions/IDL/src" /I "../../../../../sdk/include/transactive/core/message/IDL/src" /I "../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src" /I "../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src" /I "../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src" /I "../../../../../sdk\include\transactive\core\process_management\idl\src" /I "../../../../../sdk\include\transactive\core\alarm\idl\src" /I "../../../../../sdk/omniORB/omniORB_4.0.5/include" /I "../../../../../sdk/include/cots/boost/boost_1_31_0" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "__WIN32__" /D "__NT__" /D "__x86__" /D __OSVERSION__=4 /D TA_ASSERT_LOG=1 /D TA_ASSERT_FAIL=EXCEPTION /Fr"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /Fo"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /Fd"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /FD /GZ /c 
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\AuditMessageUtility.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\CongestionParameterDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\DecisionDialog.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSColourAccessor.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSManager.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSManagerConfigurationAccess.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSManagerGUI.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSMasterModes.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSMasterModesDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSOverallTimetableListCtrl.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\EcsOverallTimetableSettingDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSStationModes.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSStationModesDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSStationModesOverview.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ECSStationModesOverviewDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\MappedECSDataCache.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\MasterModesGridCtrl.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ProposedMasterModeUpdateSubscriber.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\ProposedStationModeUpdateSubscriber.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\RightsMgrSingleton.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\StationModesDataPointManager.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\StationModesListCtrl.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\StationModesOverviewGridCtrl.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\TextDisplay.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\TimetableSelectionDlg.cpp"
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\VersionGen.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6B.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6C.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "./src" /I "../../.." /I "../../../../../build/win32_n/transactive" /I "../../../../../sdk/include/transactive" /I "../../../../../sdk/include/transactive/core/exceptions/IDL/src" /I "../../../../../sdk/include/transactive/core/message/IDL/src" /I "../../../../../sdk/include/transactive/bus/scada/common_library/IDL/src" /I "../../../../../sdk\include\transactive\core\data_access_interface\PlanAgent\IDL\src" /I "../../../../../sdk\include\transactive\bus\response_plans\plan_manager\IDL\src" /I "../../../../../sdk\include\transactive\core\process_management\idl\src" /I "../../../../../sdk\include\transactive\core\alarm\idl\src" /I "../../../../../sdk/omniORB/omniORB_4.0.5/include" /I "../../../../../sdk/include/cots/boost/boost_1_31_0" /D "_DEBUG" /D "WIN32" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /D "__WIN32__" /D "__NT__" /D "__x86__" /D __OSVERSION__=4 /D TA_ASSERT_LOG=1 /D TA_ASSERT_FAIL=EXCEPTION /Fr"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /Fp"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/app.ecs.ecs_manager.ECSManager.pch" /Yc"stdafx.h" /Fo"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /Fd"../../../../../build/win32_nd/transactive/app/ecs/ecs_manager/" /FD /GZ /c 
+"E:\T1350_DE\C830_Build\4669\code\transactive\app\ecs\ecs_manager\src\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6C.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6D.tmp" with contents
+[
+omnithread30_rtd.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib TA_Base_Core_d.lib TA_IRS_Core_d.lib TA_Base_Bus_d.lib TA_IRS_Bus_d.lib ws2_32.lib oci.lib htmlhelp.lib Rpcrt4.lib acemfcd.lib winmm.lib stracelib.lib /nologo /subsystem:windows /incremental:yes /pdb:"../../../../../bin/win32_nd/ECSManager.pdb" /debug /debugtype:both /machine:I386 /out:"../../../../../bin/win32_nd/ECSManager.exe" /pdbtype:sept /libpath:"../../../../../build/win32_nd" /libpath:"../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32" /libpath:"..\..\..\..\..\sdk\win32_nd" /libpath:"..\..\..\..\..\sdk\lib" /libpath:"../../../../../sdk/include/cots/WinStackTrace\build\Debug" 
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\AuditMessageUtility.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\CongestionParameterDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\DecisionDialog.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSColourAccessor.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSManager.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSManagerConfigurationAccess.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSManagerGUI.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSMasterModes.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSMasterModesDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSOverallTimetableListCtrl.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\EcsOverallTimetableSettingDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSStationModes.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSStationModesDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSStationModesOverview.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSStationModesOverviewDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\MappedECSDataCache.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\MasterModesGridCtrl.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ProposedMasterModeUpdateSubscriber.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ProposedStationModeUpdateSubscriber.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\RightsMgrSingleton.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\StationModesDataPointManager.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\StationModesListCtrl.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\StationModesOverviewGridCtrl.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\StdAfx.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\TextDisplay.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\TimetableSelectionDlg.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\VersionGen.obj
+\T1350_DE\C830_Build\4669\build\win32_nd\transactive\app\ecs\ecs_manager\ECSManager.res
+]
+Creating command line "link.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP1A6D.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+AuditMessageUtility.cpp
+CongestionParameterDlg.cpp
+DecisionDialog.cpp
+ECSColourAccessor.cpp
+ECSManager.cpp
+ECSManagerConfigurationAccess.cpp
+ECSManagerGUI.cpp
+ECSMasterModes.cpp
+c:\program files\microsoft visual studio\vc98\include\utility(32) : warning C4503: 'pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCo
+rbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' : decorated name length exceeded, name was truncated
+        c:\program files\microsoft visual studio\vc98\include\map(111) : see reference to class template instantiation 'std::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' being compiled
+        c:\program files\microsoft visual studio\vc98\include\map(111) : while compiling class-template member function 'class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *&__thiscall std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::operator [](const unsigned long &) '
+ECSMasterModesDlg.cpp
+ECSOverallTimetableListCtrl.cpp
+EcsOverallTimetableSettingDlg.cpp
+ECSStationModes.cpp
+e:\t1350_de\c830_build\4669\code\transactive\app\ecs\ecs_manager\src\ecsstationmodes.cpp(1179) : warning C4286: 'const class TA_Base_Core::AccessDeniedException &' : is caught by base class ('const class CORBA::Exception &') on line 1129
+c:\program files\microsoft visual studio\vc98\include\utility(32) : warning C4503: 'pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCo
+rbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' : decorated name length exceeded, name was truncated
+        c:\program files\microsoft visual studio\vc98\include\map(111) : see reference to class template instantiation 'std::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' being compiled
+        c:\program files\microsoft visual studio\vc98\include\map(111) : while compiling class-template member function 'class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *&__thiscall std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::operator [](const unsigned long &) '
+ECSStationModesDlg.cpp
+ECSStationModesOverview.cpp
+c:\program files\microsoft visual studio\vc98\include\utility(32) : warning C4503: 'pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCo
+rbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' : decorated name length exceeded, name was truncated
+        c:\program files\microsoft visual studio\vc98\include\map(111) : see reference to class template instantiation 'std::pair<class std::_Tree<unsigned long,struct std::pair<unsigned long const ,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *>,struct std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::_Kfn,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::iterator,bool>' being compiled
+        c:\program files\microsoft visual studio\vc98\include\map(111) : while compiling class-template member function 'class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *&__thiscall std::map<unsigned long,class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *,struct std::less<unsigned long>,class std::allocator<class TA_Base_Core::FlexibleTimeoutNamedObject<class TA_IRS_Bus::IStationEcsAgentCorbaDef,class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef *,class _CORBA_ObjRef_Var<class TA_IRS_Bus::_objref_IStationEcsAgentCorbaDef,class TA_IRS_Bus::IStationEcsAgentCorbaDef_Helper> > *> >::operator [](const unsigned long &) '
+ECSStationModesOverviewDlg.cpp
+MappedECSDataCache.cpp
+MasterModesGridCtrl.cpp
+ProposedMasterModeUpdateSubscriber.cpp
+ProposedStationModeUpdateSubscriber.cpp
+RightsMgrSingleton.cpp
+Generating Code...
+Compiling...
+StationModesDataPointManager.cpp
+StationModesListCtrl.cpp
+StationModesOverviewGridCtrl.cpp
+TextDisplay.cpp
+TimetableSelectionDlg.cpp
+VersionGen.cpp
+Generating Code...
+Linking...
+LINK : warning LNK4075: ignoring /INCREMENTAL due to /DEBUGTYPE specification
+   Creating library ../../../../../bin/win32_nd/ECSManager.lib and object ../../../../../bin/win32_nd/ECSManager.exp
+
+
+
+<h3>Results</h3>
+ECSManager.exe - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>

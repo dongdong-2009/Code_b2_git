@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{1caaf48a-805e-43e2-ba82-a0c24d9a6109}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{32c42768-e589-4c3e-b631-70162cfec1e1}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundFileComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundFileDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundFileDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundFileFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SoundFileListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SoundFileComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundFileDatabaseAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundFileDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundFileFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SoundFileListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_SoundFileConfigPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TA_SoundFileConfigPlugin.def">
+      <Filter>src</Filter>
+    </None>
+    <None Include="res\TA_SoundFileConfigPlugin.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_SoundFileConfigPlugin.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\central.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\local.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\location.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\NotApplied.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\profile.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\rights.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SoundFile.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

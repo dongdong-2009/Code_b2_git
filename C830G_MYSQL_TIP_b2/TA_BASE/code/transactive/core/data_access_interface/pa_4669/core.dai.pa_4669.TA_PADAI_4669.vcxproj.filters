@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="PA_ZONE">
+      <UniqueIdentifier>{20f669d3-ab07-41a1-bab0-ddf582668ee3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_ZONE_GROUP">
+      <UniqueIdentifier>{62e242fe-e663-4aa5-9dfe-815acf1e7ebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST">
+      <UniqueIdentifier>{b0fc78cb-b1bf-4365-83eb-e100b3f199ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_DVA_MESSAGE">
+      <UniqueIdentifier>{9d9b0cba-4a8a-40f0-8598-3356333c5e93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HelperFiles">
+      <UniqueIdentifier>{09b4f957-8249-422b-92e8-08c781fa51b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_TRAIN_DVA_MESSAGE">
+      <UniqueIdentifier>{75753c9e-72b6-4965-85e9-5663eb742f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_DVA_MESSAGE_VERSION">
+      <UniqueIdentifier>{48596f44-3235-4c6b-9bfc-08dca2331a21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_STATION">
+      <UniqueIdentifier>{0477ee51-16f6-481b-99e1-37a6211a34aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_SYS_PARAMETER">
+      <UniqueIdentifier>{26f47ef7-8a15-4ad9-8de5-91ff0ecdf791}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_PAGING_CONSOLE">
+      <UniqueIdentifier>{60dab3b7-1df0-4fae-92a1-9b677b5b5515}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_FIRE_COUNTDOWN_TIMER">
+      <UniqueIdentifier>{5939ce27-08a8-4262-83b6-2ed8a4e01b7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_TIS_MESSAGE_MAPPING">
+      <UniqueIdentifier>{b8995d88-7025-4a9a-906c-a3ecb057ea46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_TIS_ZONE_MAPPING">
+      <UniqueIdentifier>{2a59f289-34fd-4300-9d92-44ab71197e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA_SCHEDULED_DVA_HISTORY">
+      <UniqueIdentifier>{432bb5a3-1853-4b07-a4e8-d8bb2ad30c80}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\ConfigPaZone.cpp">
+      <Filter>PA_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZone.cpp">
+      <Filter>PA_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZoneAccessFactory.cpp">
+      <Filter>PA_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZoneHelper.cpp">
+      <Filter>PA_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ConfigPaZoneGroup.cpp">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZoneGroup.cpp">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZoneGroupAccessFactory.cpp">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaZoneGroupHelper.cpp">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ConfigPaAtsTriggeredBroadcast.cpp">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaAtsTriggeredBroadcast.cpp">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaAtsTriggeredBroadcastAccessFactory.cpp">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaAtsTriggeredBroadcastHelper.cpp">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ConfigPaDvaMessage.cpp">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessage.cpp">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessageAccessFactory.cpp">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessageHelper.cpp">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\DatabaseQueryHelper.cpp">
+      <Filter>HelperFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ConfigPaTrainDvaMessage.cpp">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaTrainDvaMessage.cpp">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaTrainDvaMessageAccessFactory.cpp">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaTrainDvaMessageHelper.cpp">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\ConfigPaDvaMessageVersion.cpp">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessageVersion.cpp">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessageVersionAccessFactory.cpp">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\PaDvaMessageVersionHelper.cpp">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigPaStation.cpp">
+      <Filter>PA_STATION</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaStation.cpp">
+      <Filter>PA_STATION</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaStationAccessFactory.cpp">
+      <Filter>PA_STATION</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaStationHelper.cpp">
+      <Filter>PA_STATION</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaSysParamAccessFactory.cpp">
+      <Filter>PA_SYS_PARAMETER</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaPagingConsoleAccessFactory.cpp">
+      <Filter>PA_PAGING_CONSOLE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaFireCountdownAccessFactory.cpp">
+      <Filter>PA_FIRE_COUNTDOWN_TIMER</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigPaTisMessageMap.cpp">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisMessageMap.cpp">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisMessageMapHelper.cpp">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisMessageMappingAccessFactory.cpp">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigPaTisZoneMap.cpp">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisZoneMap.cpp">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisZoneMapHelper.cpp">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTisZoneMappingAccessFactory.cpp">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigPaScheduleBroadcast.cpp">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaScheduleBroadcast.cpp">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaScheduleBroadcastAccessFactory.cpp">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaScheduleBroadcastHelper.cpp">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\ConfigPaZone.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaZone.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaZone.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZone.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZoneAccessFactory.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZoneHelper.h">
+      <Filter>PA_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ConfigPaZoneGroup.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaZoneGroup.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaZoneGroup.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZoneGroup.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZoneGroupAccessFactory.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaZoneGroupHelper.h">
+      <Filter>PA_ZONE_GROUP</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ConfigPaAtsTriggeredBroadcast.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaAtsTriggeredBroadcast.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaAtsTriggeredBroadcast.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaAtsTriggeredBroadcast.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaAtsTriggeredBroadcastAccessFactory.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaAtsTriggeredBroadcastHelper.h">
+      <Filter>PA_ZONE_GROUP\PA_ATS_TRIGGERED_BROADCAST</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ConfigPaDvaMessage.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaDvaMessage.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaDvaMessage.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessage.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessageAccessFactory.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessageHelper.h">
+      <Filter>PA_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\DatabaseQueryHelper.h">
+      <Filter>HelperFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericDaiHelper.h">
+      <Filter>HelperFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTableConsts.h">
+      <Filter>HelperFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ConfigPaTrainDvaMessage.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaTrainDvaMessage.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaTrainDvaMessage.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaTrainDvaMessage.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaTrainDvaMessageAccessFactory.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaTrainDvaMessageHelper.h">
+      <Filter>PA_TRAIN_DVA_MESSAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ConfigPaDvaMessageVersion.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IConfigPaDvaMessageVersion.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\IPaDvaMessageVersion.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessageVersion.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessageVersionAccessFactory.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\PaDvaMessageVersionHelper.h">
+      <Filter>PA_DVA_MESSAGE_VERSION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigPaStation.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPaStation.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPaStation.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaStation.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaStationAccessFactory.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaStationHelper.h">
+      <Filter>PA_STATION</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaSysParamAccessFactory.h">
+      <Filter>PA_SYS_PARAMETER</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaPagingConsoleAccessFactory.h">
+      <Filter>PA_PAGING_CONSOLE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaFireCountdownAccessFactory.h">
+      <Filter>PA_FIRE_COUNTDOWN_TIMER</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigPaTisMessageMap.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPaTisMessageMap.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPaTisMessageMap.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisMessageMap.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisMessageMapHelper.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisMessageMappingAccessFactory.h">
+      <Filter>PA_TIS_MESSAGE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigPaTisZoneMap.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPaTisZoneMap.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPaTisZoneMap.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisZoneMap.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisZoneMapHelper.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTisZoneMappingAccessFactory.h">
+      <Filter>PA_TIS_ZONE_MAPPING</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigPaScheduleBroadcast.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigPaScheduleBroadcast.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPaScheduleBroadcast.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaScheduleBroadcast.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaScheduleBroadcastAccessFactory.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaScheduleBroadcastHelper.h">
+      <Filter>PA_SCHEDULED_DVA_HISTORY</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\GenericDaiHelper.inl">
+      <Filter>HelperFiles</Filter>
+    </None>
+  </ItemGroup>
+</Project>

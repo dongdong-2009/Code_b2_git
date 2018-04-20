@@ -1,0 +1,760 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{3adfd5d9-7776-4593-a1e7-9fd27bd207c9}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractPAAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmRaiserEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStoreEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmVolumeTestEntityType.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArchiveManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsPsdEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AuthenticationAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Banner.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BVSStage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CallBannerPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigEntity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Console.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConsoleAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlStation.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataLogAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DefaultEntity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EquipmentStatusViewerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HierarchicalAlarmViewEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HistoryViewerData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IncidentManagerData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InspectorPanelEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LessAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterECSAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterPAAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MisAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MisAlarmSubmitterEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MisConnectionEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MisJobRequestSubmitterEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MisPeriodicEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsAlarmSubmitterEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsConnectionEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsJobRequestSubmitterEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MmsPeriodicEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotificationAgentData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnlinePrintingAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OpcServerAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PidLogViewerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PMSAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PowerDemandEditorEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Process.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Quad.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuickFindEntity.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuickFindEntityAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioDirectoryEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioGlobalEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMFTAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioProfileEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioSessionEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioStateSynchronisationEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RecordingUnit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RTUEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaHistoryAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaHistoryConfigData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaRootEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sequence.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ServerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SsaParamHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationECSAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationPAAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationSubSystemEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationSystemEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\STISEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\System.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemStatusAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TelephoneManagerProfileEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TISAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TisLogViewerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainBorneManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCctvCameraEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainSettingsEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TTISEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TTISManagerEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TVSSAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoInput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoOutput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoOutputGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSwitchAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSwitchResource.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VirtualDataPointAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WILDAgentEntityData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmRaiserEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmVolumeTestEntityType.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ArchiveManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsPsdEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AuthenticationAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Banner.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BVSStage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CallBannerPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ConfigChangesTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Console.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConsoleAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlStation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataLogAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DefaultEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityStatusData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EquipmentStatusViewerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HierarchicalAlarmViewEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HistoryViewerData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConsole.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IHistoryViewerData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMasterECSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMasterPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IncidentManagerData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\INotificationAgentData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InspectorPanelEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IPMSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProcess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IQuickFindEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRadioSessionEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRTUEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISchedulingAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStationECSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStationEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStationPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStationSystemEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISTISEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISystem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITISAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITTISEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IWILDAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LessAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterECSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MisAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MisAlarmSubmitterEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MisConnectiontEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MisJobRequestSubmitterEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MisPeriodicEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsAlarmSubmitterEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsConnectiontEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsJobRequestSubmitterEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MmsPeriodicEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotificationAgentData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnlinePrintingAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OpcServerAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PidLogViewerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentDai.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PMSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PowerDemandEditorEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Process.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Quad.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuickFindEntity.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuickFindEntityAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioDirectoryEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioGlobalEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMFTAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioProfileEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioSessionEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioStateSynchronisationEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RecordingUnit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RTUEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaHistoryAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaHistoryConfigData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaRootEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sequence.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ServerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SsaParamHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationECSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationPAAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationSubSystemEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationSystemEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\STISEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\System.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemStatusAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TelephoneManagerProfileEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TISAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TisLogViewerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainBorneManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCctvCameraEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainSettingsEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TTISEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TTISManagerEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TVSSAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoInput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoOutput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoOutputGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSwitchAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSwitchResource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VirtualDataPointAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WILDAgentEntityData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

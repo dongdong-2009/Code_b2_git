@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e555928f-7f5f-49c2-ac0f-d212302fc2dd}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{e3563763-3427-4533-9d91-0f48078c651d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractDetailView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractFrameworkView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractListView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeEntityDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FieldValidityChecker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MessageSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultipleChangeDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SingletonHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransparentImage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractFrameworkView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractListView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeEntityDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FieldValidityChecker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\helperresource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAllView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDatabaseAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDetailView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IMainView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListColumnsBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MessageSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultipleChangeDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SingletonHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransparentImage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ListColumnsBase.inl">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\TA_ConfigPluginHelper.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\copy.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\delete.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\new.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

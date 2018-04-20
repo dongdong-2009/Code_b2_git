@@ -1,0 +1,205 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/4669/transactive/bus/ats/ats_agent/IDL/src/IAtsEcsCorbaDef.idl $
+// @author:  Sean Liew
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// IAtsEcsCorbaDef interface definition for the ATS/ECS interfacing.  
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsEcsCorbaDef
+	{
+		//
+		// AtsEcsLocalisationData from ATS Train Table
+		//
+		struct AtsEcsLocalisationData
+		{
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      Localisation Validity
+			//
+			///////////////////////////////////////////////////////////////////////
+			boolean					valid;
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      Train Identification
+			//
+			///////////////////////////////////////////////////////////////////////
+			// 
+			// The following attributes are taken straight from the current 
+			// ATS OCC Train Table.  They are only used by ECS for additional 
+			// logging info.
+			// 
+			//      <Service number>
+			//      <Schedule number>
+			//
+			///////////////////////////////////////////////////////////////////////
+
+			ServiceNumberType		serviceNumber;
+			ScheduleNumberType		scheduleNumber;
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      ECS Location
+			//
+			///////////////////////////////////////////////////////////////////////
+			//
+			// The ECS Zone Id will be supplied by the ATS by referencing the 
+			// Fixed Block Mapping tables in the database.  The fixed block 
+			// location is supplied by the current ATS OCC Train Table.
+			//
+			//      <Fixed Block's Branch ID>
+			//      <FB abscissa in the branch>
+			//      <Head CAR abscissa on FB>
+			//
+			///////////////////////////////////////////////////////////////////////
+        
+			StationIdType			stationZoneId;
+			StationIdType			lastStationZoneId;
+			unsigned long			ecsZoneId;
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      Train State
+			//
+			///////////////////////////////////////////////////////////////////////
+			// 
+			// The train state will be derived from certain data in the ATS OCC 
+			// Train Table.  
+			//
+			// The stallTimeInSeconds attribute will be set based on the 
+			// <Stalled in inter-station> field.  The ATS Agent will be responsible
+			// for keeping track of stalled trains and how long they are stalled
+			// for.
+			//
+			///////////////////////////////////////////////////////////////////////
+			unsigned long			stallTimeInSeconds;
+		};
+
+		//
+		// AtsEcsOa1Data from ATS Train Table
+		//
+		struct AtsEcsOa1Data
+		{
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      OA1 Validity
+			//
+			///////////////////////////////////////////////////////////////////////
+			boolean					valid;
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      Train State
+			//
+			///////////////////////////////////////////////////////////////////////
+			// 
+			// The train state will be derived from certain data in the ATS OCC 
+			// Train Table.  
+			//
+			// The isInEmergency flag will be set to true if any of the following
+			// fields are set:
+			//
+			//      <Under Frame Fire Detected in Car 1>
+			//      <Under Frame Fire Detected in Car 2>
+			//      <Under Frame Fire Detected in Car 3>
+			//      <Exterior smoke detected in Car 1>    
+			//      <Exterior smoke detected in Car 2>
+			//      <Exterior smoke detected in Car 3>
+			//      <Interior smoke detected in Car 1>
+			//      <Interior smoke detected in Car 2>
+			//      <Interior smoke detection in Car 3>
+			//      <Under Seat Fire  detected in Car 1>
+			//      <Under Seat Fire  detected in Car 2>
+			//      <Under Seat Fire  detected in Car 3>
+			// 
+			// The maxExternalTemperatureCelsius field will be will be set to the 
+			// maximum of the following fields:
+			//
+			//      <External Air temperature (max) in Car 1>
+			//      <External Air temperature (max) in Car 2>
+			//      <External Air temperature (max) in Car 3>
+			//
+			///////////////////////////////////////////////////////////////////////
+
+			boolean				isInEmergency;
+			unsigned long		maxExternalTemperatureInCelsius;
+		};
+
+		//
+		// AtsEcsMessageCorbaDef is expected to be sent to the ECS Agent through the 'any messageState' 
+		// member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsEcsMessageCorbaDef
+		{
+
+			///////////////////////////////////////////////////////////////////////
+			//
+			//      Train Identification
+			//
+			///////////////////////////////////////////////////////////////////////
+			// 
+			// The following attributes are taken straight from the current 
+			// ATS OCC Train Table.  They are only used by ECS for additional 
+			// logging info.
+			// 
+			//      <Physical Train number>
+			//      <ATC train number>
+			//      <Service number>
+			//      <Schedule number>
+			//
+			///////////////////////////////////////////////////////////////////////
+        
+			PhysicalTrainNumberType	physicalTrainNumber;
+			AtcTrainNumberType		atcTrainNumber;
+
+			boolean					trainValid;				// Validity of the data - train does not exist
+															//						  if this is false
+
+			AtsEcsLocalisationData	localisation;
+			AtsEcsOa1Data			oa1Data;
+
+		}; // AtsEcsMessageCorbaDef
+
+		//
+		// A sequence of AtsEcsMessageCorbaDef defined for getEcsInformationList
+		//
+		typedef sequence<AtsEcsMessageCorbaDef>  EcsInfoList;
+
+		/**
+          * getEcsInformationList
+          *
+          * This method is used to access the full list of ECS information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsEcsMessageCorbaDef for all trains known
+		  *			to the ATS agent.
+          */
+		EcsInfoList getEcsInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccEcsUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on ECS
+		  * information
+          *
+		  * @param	ecsUpdate	A sequence of AtsEcsMessageCorbaDef for updates  
+		  *						to trains for the sector
+          */
+		void processOccEcsUpdate(in EcsInfoList ecsUpdate)
+			raises (TA_Base_Core::OperationModeException);
+
+	}; // IAtsEcsCorbaDef
+}; // TA_App

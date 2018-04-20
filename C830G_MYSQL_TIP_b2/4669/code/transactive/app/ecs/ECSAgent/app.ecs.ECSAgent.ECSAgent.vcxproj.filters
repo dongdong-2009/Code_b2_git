@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Master ECS Agent">
+      <UniqueIdentifier>{21d6b5d4-fdf2-4774-bcf3-083c4b9a14ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Station ECS Agent">
+      <UniqueIdentifier>{bfa7340b-ff9c-49e0-bc7e-42dd4b2cbd13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{60934acb-0bcc-4417-8bdb-59c6a11bcdad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{eb399c3d-3317-4d95-91ae-8d6d2f0dcf50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TransActive Interfaces">
+      <UniqueIdentifier>{032c01ae-97f0-4112-998a-7c26aaa5488d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TransActive Implementations">
+      <UniqueIdentifier>{faeb2316-59bc-4529-aaff-077206fe5a86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CalculatedExpression.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CongestionProposalEngine.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EcsArrowManager.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EcsZoneCongestionContext.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EmergencyNormalisationMonitor.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EmergencyProposalEngine.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterECSAgent.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterModeDataPointWorkQueue.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterModeExecutionWorker.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterModeLocksManager.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MasterModeManager.cpp">
+      <Filter>Master ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AutoModeMonitor.cpp">
+      <Filter>Station ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IscsAliveWorker.cpp">
+      <Filter>Station ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationECSAgent.cpp">
+      <Filter>Station ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationModeExecutionWorker.cpp">
+      <Filter>Station ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationModeManager.cpp">
+      <Filter>Station ECS Agent</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractECSAgent.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointWriteQueueProcessor.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EcsHelpers.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EcsZoneDataSource.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsAgentCompleteState.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsAgentSummary.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsAlarms.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsAuditing.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsCachedConfig.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsCachedMaps.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsComms.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsDatapoints.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CtaEcsSynchronisation.cpp">
+      <Filter>TransActive Implementations</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CalculatedExpression.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CongestionProposalEngine.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EcsArrowManager.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EcsZoneCongestionContext.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EmergencyNormalisationMonitor.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EmergencyProposalEngine.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterECSAgent.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterModeDataPointWorkQueue.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterModeExecutionWorker.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterModeLocksManager.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MasterModeManager.h">
+      <Filter>Master ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AutoModeMonitor.h">
+      <Filter>Station ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IscsAliveWorker.h">
+      <Filter>Station ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationECSAgent.h">
+      <Filter>Station ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationModeExecutionWorker.h">
+      <Filter>Station ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationModeManager.h">
+      <Filter>Station ECS Agent</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractECSAgent.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractFailoverable.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CorbaNameWrapperForMaps.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointWriteQueueProcessor.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\ECSAgentExceptions.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EcsGlobals.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EcsHelpers.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EcsZoneDataSource.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainState.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentAlarms_MessageTypes.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentAudit_MessageTypes.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentComms_MessageTypes.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentStateUpdate_MessageTypes.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\ECSAgentStateUpdateRequest_MessageTypes.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAliveDataPointAccess.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsAgentCompleteState.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsAgentSummary.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsAlarms.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsAuditing.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsCachedConfig.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsCachedConfigInitialiser.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsCachedMaps.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsCachedMapsInitialiser.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsComms.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsDatapoints.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ItaEcsSynchronisation.h">
+      <Filter>TransActive Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsAgentCompleteState.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsAgentSummary.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsAlarms.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsAuditing.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsCachedConfig.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsCachedMaps.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsComms.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsDatapoints.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CtaEcsSynchronisation.h">
+      <Filter>TransActive Implementations</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ECSAgentTest.gdf">
+      <Filter>misc</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="notes.txt">
+      <Filter>misc</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

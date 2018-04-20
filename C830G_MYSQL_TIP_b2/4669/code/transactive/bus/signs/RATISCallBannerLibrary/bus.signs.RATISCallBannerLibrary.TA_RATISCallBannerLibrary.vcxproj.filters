@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{82294e86-21af-4d70-8fe7-dde1c0536e32}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ratisapprovaldialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RATISCallEntry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RATISCallFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ratisapprovaldialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RATISCallEntry.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RATISCallFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\RatisApprovalDialog.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4d534bec-fad3-410d-a4f6-f96d453e6a6a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="AlarmActionFiles">
+      <UniqueIdentifier>{ae961c59-1cea-474b-b068-e541e5a027db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dialogs">
+      <UniqueIdentifier>{b510816d-3d66-46e6-af04-0233e736f84b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FilesNotNeededByUser">
+      <UniqueIdentifier>{e66d65ea-85a7-4f3c-94c9-93f49e41c6a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Columns">
+      <UniqueIdentifier>{823d7828-91c6-47c9-8e14-2d086587fb13}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Filter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListHeaderCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sort.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAgentAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAlarms.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionAcknowledgeAlarm.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionAcknowledgeAllAlarms.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionCloseAndAckAlarm.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionDisplayComment.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionEventsViewer.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionIncidentLogSheet.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionJobRequest.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionPostponeDSS.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedAvalancheEvents.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedDSS.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedEvents.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedInspector.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedPlanInstance.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedSchematic.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionRelatedTrend.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\actions\ActionSuppressAlarm.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmActionFactory.cpp">
+      <Filter>AlarmActionFiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommentDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSuppressAlarmConfirmDlg.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EditCommentDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocationSelectionDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAssociationDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PreConflictAckDlg.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SuppressAlarmDialog.cpp">
+      <Filter>Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionThread.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmDataSync.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmRetriever.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmSelectionWrap.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStore.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmVectorWrap.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseCache.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsChecker.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SimpleDispMultiIndex.cpp">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnAck.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnAckBy.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnAlarmType.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnAsset.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnAvalanche.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnComment.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnDecisionSupport.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnDescription.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnEntityName.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnLocation.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnMms.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnSeverity.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnSourceTimestamp.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnState.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnSubsystem.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+    <ClCompile Include="src\columns\ColumnValue.cpp">
+      <Filter>Columns</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConstDefine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Filter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmListObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListHeaderCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sort.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAgentAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAlarms.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WinMsgDef.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionAcknowledgeAlarm.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionAcknowledgeAllAlarms.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionCloseAndAckAlarm.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionDisplayComment.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionEventsViewer.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionIncidentLogSheet.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionJobRequest.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionPostponeDSS.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedAvalancheEvents.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedDSS.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedEvents.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedInspector.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedPlanInstance.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedSchematic.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionRelatedTrend.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionResources.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionSeparator.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\actions\ActionSuppressAlarm.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmActionFactory.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmAction.h">
+      <Filter>AlarmActionFiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommentDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CSuppressAlarmConfirmDlg.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EditCommentDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocationSelectionDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAssociationDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PreConflictAckDlg.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SuppressAlarmDialog.h">
+      <Filter>Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionThread.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmDataSync.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmRetriever.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmSelectionWrap.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStore.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmVectorWrap.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonStructures.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseCache.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmDisplayUpdate.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmRetriever.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsChecker.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SimpleDispMultiIndex.h">
+      <Filter>FilesNotNeededByUser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\AbstractAlarmColumn.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnAck.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnAckBy.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnAlarmType.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnAsset.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnAvalanche.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnComment.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnDecisionSupport.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnDescription.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnEntityName.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnIdentifiers.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnLocation.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnMms.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnSeverity.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnSourceTimestamp.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnState.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnSubsystem.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\columns\ColumnValue.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmColumn.h">
+      <Filter>Columns</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\AlarmListCtrl.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

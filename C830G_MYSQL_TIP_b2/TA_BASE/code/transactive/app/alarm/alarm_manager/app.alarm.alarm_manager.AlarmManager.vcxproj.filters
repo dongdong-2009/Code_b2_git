@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e0ee864c-91f2-45dc-acda-b0b13178d6a7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6fee9b2d-4be2-4589-86f0-dfdcd30d08d9}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmFilterDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmsGui.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmsGuiDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmViewerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ColourCheckListBox.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExportAlarms.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultipleSelectionDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SuppressionRulesDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmFilterDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmsGui.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmsGuiDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmViewerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ColourCheckListBox.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExportAlarms.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\globals.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultipleSelectionDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SuppressionRulesDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\AlarmsGui.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="res\TransActiveResources.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\ack.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ackhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\acknowle.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\alarm_comment.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\AlarmsGui.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\appfilt.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\appfltht.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap3.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\closed_padlock.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\comment.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\comment.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\comment_.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\commenthot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\commentsGrey.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\del.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Delete.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\delete.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\delhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\det.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\dethot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EventViewer_cold.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EventViewer_hot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\manualClose.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\manualClose_hot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mute.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mutehot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\open_padlock.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Plan.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\print.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\printhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refresh.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refreshot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\save.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\savehot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\show_fil.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\showruls.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shwfilt.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shwfltht.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\shwrlsht.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sm_bell.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Sort.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sort_hot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Spelling.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\suphot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\suppress.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tbar.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\tbar_hot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\viewcam.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\views.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\vwcamhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\AlarmsGui.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

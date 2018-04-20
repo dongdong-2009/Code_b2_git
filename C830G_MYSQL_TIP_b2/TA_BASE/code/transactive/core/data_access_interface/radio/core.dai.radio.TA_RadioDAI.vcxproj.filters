@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{480ce585-3bf5-4de0-9c7f-eafa166dc451}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConfigITSIGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ITSIGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ITSIGroupAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RACallStackHistory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RACallStackHistoryAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RADAIHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAGroupMembers.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAGroupMembersAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAPatchMembers.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAPatchMembersAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAPredefinedSDSMessage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RAPredefinedSDSMessageAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASelectedCall.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASelectedCallAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASpeedDialButton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASpeedDialButtonAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASpeedDialSet.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASpeedDialSetAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASubscribers.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASubscribersAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RASubscribersHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConfigITSIGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigITSIGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IITSIGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRACallStackHistory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRAGroupMembers.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRAPatchMembers.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRAPredefinedSDSMessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRASpeedDialButton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRASpeedDialSet.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRASubscribers.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITSIGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITSIGroupAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RACallStackHistory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RACallStackHistoryAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RAGroupMembersAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RAPatchMembersAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RAPredefinedSDSMessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RAPredefinedSDSMessageAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASpeedDialButton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASpeedDialButtonAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASpeedDialSet.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASpeedDialSetAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASubscribers.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RASubscribersAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RADAIHelper.h" />
+    <ClInclude Include="src\RASelectedCall.h" />
+    <ClInclude Include="src\RASelectedCallAccessFactory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\IConfigRASubscribers.h">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\RAGroupMembers.h">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\RAPatchMembers.h">
+      <Filter>src</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\RASubscribersHelper.h">
+      <Filter>src</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

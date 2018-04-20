@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{0f893efe-bf24-4e53-9b13-7e2cb0eacdfe}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DataCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DefaultRegionAssignmentMatrix.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAgentAccessSingleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyDataStore.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyDataStoreSingleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyMonitorFrameworkException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyRights.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyRightsSingleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IConfigDataObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IRegionDutyObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISessionObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ISubsystemDutyObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionDutyMatrix.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionDutyMatrixElement.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionDutyMatrixUpdater.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionMatrixDutyUpdateMO.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RegionMatrixSessionUpdateMO.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemDutyMatrix.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemDutyMatrixElement.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DataCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbCacheLookupEx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DefaultRegionAssignmentMatrix.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DMFTypeDefs.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAgentAccessSingleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyDataStore.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyDataStoreSingleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorFramework.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyMonitorFrameworkException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyRights.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyRightsSingleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigDataObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRegionDutyObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISessionObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISubsystemDutyObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionDutyMatrix.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionDutyMatrixElement.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionDutyMatrixUpdater.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionMatrixDutyUpdateMO.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegionMatrixSessionUpdateMO.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemDutyMatrix.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemDutyMatrixElement.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\DbCacheLookupEx.inl">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

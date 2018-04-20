@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SystemController">
+      <UniqueIdentifier>{1c124545-5d34-4ac6-bbdf-371cd96db8cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GroupMonitor">
+      <UniqueIdentifier>{fe2bd1b7-8acc-4180-9a94-4f28f2b0b945}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ManagedProcess">
+      <UniqueIdentifier>{fe8103cc-a699-4a6c-ac27-2cdff2ce007e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConfigSystemController.cpp">
+      <Filter>SystemController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerAccessFactory.cpp">
+      <Filter>SystemController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerData.cpp">
+      <Filter>SystemController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerHelper.cpp">
+      <Filter>SystemController</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigGroupMonitor.cpp">
+      <Filter>GroupMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GroupMonitorAccessFactory.cpp">
+      <Filter>GroupMonitor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ManagedProcessAccessFactory.cpp">
+      <Filter>ManagedProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ManagedProcessData.cpp">
+      <Filter>ManagedProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ManagedProcessHelper.cpp">
+      <Filter>ManagedProcess</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConfigSystemController.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigSystemController.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISystemControllerData.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerAccessFactory.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerData.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerHelper.h">
+      <Filter>SystemController</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigGroupMonitor.h">
+      <Filter>GroupMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GroupMonitorAccessFactory.h">
+      <Filter>GroupMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigGroupMonitor.h">
+      <Filter>GroupMonitor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IManagedProcessData.h">
+      <Filter>ManagedProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedProcessAccessFactory.h">
+      <Filter>ManagedProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedProcessData.h">
+      <Filter>ManagedProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedProcessHelper.h">
+      <Filter>ManagedProcess</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

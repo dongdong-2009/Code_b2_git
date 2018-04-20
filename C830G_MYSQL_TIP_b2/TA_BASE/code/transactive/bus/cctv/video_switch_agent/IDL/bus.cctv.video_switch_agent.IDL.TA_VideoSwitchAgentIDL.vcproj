@@ -1,0 +1,140 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.cctv.video_switch_agent.IDL" ProjectGUID="{A8AE6953-27D2-46C3-A589-06992A08DF36}" Keyword="MakeFileProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src" IntermediateDirectory=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src/bus.cctv.video_switch_agent.IDL.TA_VideoSwitchAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src" IntermediateDirectory=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src" ConfigurationType="10" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCMIDLTool" TypeLibraryName=".\../../../../../../build/win32_n/transactive/bus/cctv/video_switch_agent/IDL/src/bus.cctv.video_switch_agent.IDL.TA_VideoSwitchAgentIDL.tlb" HeaderFileName=""/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="IDL" Filter="idl">
+			<File RelativePath="src\BVSStageCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CameraCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ExceptionsCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\FocusIrisControlCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MovementControlCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\QuadCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RecordingUnitCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SequenceCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SuperimposedTextControlCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SwitchManagerCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoInputCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoMonitorCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoOutputCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoOutputGroupCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VideoSwitchResourceCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\WashWipeControlCorbaDef.idl">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCustomBuildTool" CommandLine="..\..\..\..\..\cots\omniORB\omniORB_4.0.5\bin\x86_win32_win7\omniidl -nf -bcxx -Wba -Wbh=.h -Wbs=.cpp -Wbd=_skel.cpp -I. -I..\..\..\.. -C..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src src/$(InputName).idl&#13;&#10;" Outputs="..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).h;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName).cpp;..\..\..\..\..\..\build\win32_n\transactive\bus\cctv\video_switch_agent\IDL\src\$(InputName)_skel.cpp"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

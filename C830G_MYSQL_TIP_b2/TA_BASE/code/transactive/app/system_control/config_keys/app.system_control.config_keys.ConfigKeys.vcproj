@@ -1,0 +1,92 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.system_control.config_keys" ProjectGUID="{BF3099B6-E305-46E5-BCD8-4503E79DB5FD}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nd/app.system_control.config_keys.ConfigKeys.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../.." PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;_DEBUG;_WINDOWS;_USRDLL;app.system_control.config_keys.ConfigKeys_EXPORTS;_DLL_" MinimalRebuild="true" RuntimeLibrary="3" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys/app.system_control.config_keys.ConfigKeys.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib TA_Base_Bus_d.lib" OutputFile="../../../../../bin/win32_nd/TA_ConfigKeys.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nd" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nd/TA_ConfigKeys.pdb" GenerateMapFile="true" MapFileName=".\../../../../../build/win32_nd/transactive/app/system_control/config_keys/TA_ConfigKeys.map" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nd/TA_ConfigKeys.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/app.system_control.config_keys.ConfigKeys.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../build/win32_nr/app.system_control.config_keys.ConfigKeys.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../.." PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;NDEBUG;_WINDOWS;_USRDLL;app.system_control.config_keys.ConfigKeys_EXPORTS;_DLL_" RuntimeLibrary="2" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys/app.system_control.config_keys.ConfigKeys.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys/" BrowseInformation="1" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="1033"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="odbc32.lib odbccp32.lib TA_Base_Bus.lib" OutputFile="../../../../../bin/win32_nr/TA_ConfigKeys.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../sdk/win32_nr" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../bin/win32_nr/TA_ConfigKeys.pdb" GenerateMapFile="true" MapFileName=".\../../../../../build/win32_nr/transactive/app/system_control/config_keys/TA_ConfigKeys.map" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../build/win32_nr/TA_ConfigKeys.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/app.system_control.config_keys.ConfigKeys.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="Source Files" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\InjDll.c">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Inject.c">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\WinLockDLL.c">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Header Files" Filter="h;hpp;hxx;hm;inl">
+			<File RelativePath="src\Inject.h">
+			</File>
+			<File RelativePath="src\resource.h">
+			</File>
+			<File RelativePath="src\WinLockDll.h">
+			</File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="src\WinLockDLL.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{cb4db124-dc93-4b51-9299-756d60898ca4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\DutyAgentTypeCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentAuthCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentAutoDegradeCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentMgrCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentPeerCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentQueryCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\IDutyAgentRespCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

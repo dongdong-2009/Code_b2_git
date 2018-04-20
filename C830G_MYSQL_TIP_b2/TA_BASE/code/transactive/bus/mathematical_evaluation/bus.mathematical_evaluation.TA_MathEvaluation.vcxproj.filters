@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{9c0998d6-1777-44d7-a24e-b4db74d2ed36}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AndExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BooleanConstant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BooleanVariable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ContextContainer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EqualityComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExpressionEvaluator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InequalityComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OrExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberAbsoluteExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberAddExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberConstant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberDivideExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberGreaterThanComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberGreaterThanOrEqualComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberLessThanComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberLessThanOrEqualComparison.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberMultiplyExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberPowerOfExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberSquareRootExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberSubtractExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RealNumberVariable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringLiteral.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StringVariable.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Token.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Tokeniser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\XorExpression.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AndExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanConstant.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BooleanVariable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ContextContainer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EqualityComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExpressionEvaluator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IBooleanContext.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IBooleanExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InequalityComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRealNumberContext.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRealNumberExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStringContext.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IStringExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OrExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberAbsoluteExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberAddExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberConstant.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberDivideExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberGreaterThanComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberGreaterThanOrEqualComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberLessThanComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberLessThanOrEqualComparison.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberMultiplyExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberPowerOfExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberSquareRootExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberSubtractExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RealNumberVariable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StringLiteral.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StringVariable.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Token.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tokeniser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\XorExpression.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

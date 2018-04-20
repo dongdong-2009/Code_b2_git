@@ -1,0 +1,1 @@
+The files in this directory contain a very simple Java program that will just copy the transActive program files to the correct location.  Nothing else is done.

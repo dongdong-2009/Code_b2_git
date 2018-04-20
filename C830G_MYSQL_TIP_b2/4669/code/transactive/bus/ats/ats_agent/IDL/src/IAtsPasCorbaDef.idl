@@ -1,0 +1,84 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/4669/transactive/bus/ats/ats_agent/IDL/src/IAtsPasCorbaDef.idl $
+// @author:  Darren Sampson
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// IAtsPasCorbaDef interface definition for the ATS/PAS Agent interfacing.   
+//
+#include "bus/ats/ats_agent/IDL/src/AtsCommonCorbaDef.idl"
+
+module TA_IRS_Bus
+{   
+	interface IAtsPasCorbaDef
+	{
+        enum EEventType
+        {
+            PreArrival,
+            Arrival,
+            PreDeparture,
+            Departure,
+            Skip,
+            Hold,
+            Evacuation,
+            TrainOverrun
+            // Valid type not required
+        };
+
+		struct AtsPasTrainInfo
+		{	
+			boolean						valid;
+
+			StationIdType				destinationStationId;
+			boolean						lastTrain;
+		};
+
+		//
+		// AtsPasMessageCorbaDef is expected to be sent to the PA Agent through the 
+		// 'any messageState' member of the TA_Core::CommsMessageCorbaDef.
+		//
+		struct AtsPasMessageCorbaDef
+		{
+			StationIdType				stationId;
+			PlatformIdType				platformId;
+			
+            EEventType                  atsEventType;
+
+			AtsPasTrainInfo				trainInfo;
+		}; // AtsPasMessageCorbaDef
+
+		typedef sequence<AtsPasMessageCorbaDef>  PasInfoList;
+
+		/**
+          * getPasInformationList
+          *
+          * This method is used to access the full list of PAS information
+		  * and will typlically used to synchronise at startup of the client
+		  * application
+          *
+		  * @return A sequence of AtsPasMessageCorbaDef for all trains known
+		  *			to the ATS agent.
+          */
+		PasInfoList getPasInformationList()
+			raises (TA_Base_Core::OperationModeException, TA_Base_Core::NotAvailableException);
+
+		/**
+          * processOccPasUpdate
+          *
+          * This method is used to allow the OCC ATS Agent to pass on PAS
+		  * information
+          *
+		  * @param	pasUpdate	A sequence of AtsPasMessageCorbaDef for updates  
+		  *						to platforms for the sector
+          */
+		void processOccPasUpdate(in PasInfoList pasUpdate)
+			raises (TA_Base_Core::OperationModeException);
+		
+	}; // IAtsPasCorbaDef
+}; // TA_Bus

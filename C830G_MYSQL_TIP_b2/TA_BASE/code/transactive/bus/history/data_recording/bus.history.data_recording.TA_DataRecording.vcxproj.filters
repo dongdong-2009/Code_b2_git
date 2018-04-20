@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{6424b37a-f16c-4346-bcd0-61a6d82e1764}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmOnWriteErrorPolicy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataRecorder.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataRecorderDbDataAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Datum.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbDataWriter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExceptionOnWriteErrorPolicy.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmOnWriteErrorPolicy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CachedData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataRecorder.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataRecorderDbDataAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataRecordingException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Datum.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbDataWriter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExceptionOnWriteErrorPolicy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataRecorderDbAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataSink.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataSource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataWritePolicy.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataWriter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

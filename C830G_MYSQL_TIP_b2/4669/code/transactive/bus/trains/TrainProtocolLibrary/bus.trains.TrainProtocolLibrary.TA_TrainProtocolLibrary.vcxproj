@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.trains.TrainProtocolLibrary</ProjectName>
+    <ProjectGuid>{1611FDBC-7803-4ADF-B6F0-9CCEB0B73E5F}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractCctvCommand.cpp" />
+    <ClCompile Include="src\AbstractPecCommand.cpp" />
+    <ClCompile Include="src\AbstractPecEvent.cpp" />
+    <ClCompile Include="src\AbstractTableEvent.cpp" />
+    <ClCompile Include="src\AbstractTtisCommand.cpp" />
+    <ClCompile Include="src\AtcEvent.cpp" />
+    <ClCompile Include="src\AudioCabToCabEvent.cpp" />
+    <ClCompile Include="src\BadCommandEvent.cpp" />
+    <ClCompile Include="src\CallTrainCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\CctvCarrierOffCommand.cpp" />
+    <ClCompile Include="src\CctvCarrierOnCommand.cpp" />
+    <ClCompile Include="src\CctvCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\CctvQuadCommand.cpp" />
+    <ClCompile Include="src\CctvSequenceCommand.cpp" />
+    <ClCompile Include="src\CctvSingleCommand.cpp" />
+    <ClCompile Include="src\ChangeAreaCommand.cpp" />
+    <ClCompile Include="src\ChangeAreaCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\ChangeModeCommand.cpp" />
+    <ClCompile Include="src\ChangeoverStatusEvent.cpp" />
+    <ClCompile Include="src\EndOfOccCallEvent.cpp" />
+    <ClCompile Include="src\EndOfTtisDownloadEvent.cpp" />
+    <ClCompile Include="src\EndOfVoiceCallCommand.cpp" />
+    <ClCompile Include="src\FrameCheckSequence.cpp" />
+    <ClCompile Include="src\Oa1Event.cpp" />
+    <ClCompile Include="src\OccCallCommandReceivedCommand.cpp" />
+    <ClCompile Include="src\OccCallResetCommand.cpp" />
+    <ClCompile Include="src\PaAudioSwitchEvent.cpp" />
+    <ClCompile Include="src\PaCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\PaContinueCommand.cpp" />
+    <ClCompile Include="src\PaCyclicPreRecordedAnnouncementCommand.cpp" />
+    <ClCompile Include="src\PaLiveAnnouncementCommand.cpp" />
+    <ClCompile Include="src\PaPreRecordedAnnouncementCommand.cpp" />
+    <ClCompile Include="src\PaReadyForLiveAnnouncementEvent.cpp" />
+    <ClCompile Include="src\PaRequestForResetEvent.cpp" />
+    <ClCompile Include="src\PaResetCommand.cpp" />
+    <ClCompile Include="src\PaResetEvent.cpp" />
+    <ClCompile Include="src\PaTrainMessageCompletedEvent.cpp" />
+    <ClCompile Include="src\PecActivatedEvent.cpp" />
+    <ClCompile Include="src\PecAnswerCommand.cpp" />
+    <ClCompile Include="src\PecCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\PecContinueCommand.cpp" />
+    <ClCompile Include="src\PecReadyForConversationEvent.cpp" />
+    <ClCompile Include="src\PecRequestForResetEvent.cpp" />
+    <ClCompile Include="src\PecResetCommand.cpp" />
+    <ClCompile Include="src\PecResetEvent.cpp" />
+    <ClCompile Include="src\PecSelectedByDriverEvent.cpp" />
+    <ClCompile Include="src\RequestForCallTrainCommand.cpp" />
+    <ClCompile Include="src\RequestForOccCallEvent.cpp" />
+    <ClCompile Include="src\TestCallEvent.cpp" />
+    <ClCompile Include="src\TestCallResultCommand.cpp" />
+    <ClCompile Include="src\TimsCommand.cpp" />
+    <ClCompile Include="src\TimsEvent.cpp" />
+    <ClCompile Include="src\TrainEventFactoryImpl.cpp" />
+    <ClCompile Include="src\TtdFrame.cpp" />
+    <ClCompile Include="src\TtisCommandReceivedEvent.cpp" />
+    <ClCompile Include="src\TtisFreeTextMessageCommand.cpp" />
+    <ClCompile Include="src\TtisLibraryDownloadCommand.cpp" />
+    <ClCompile Include="src\TtisLibraryUpgradeCommand.cpp" />
+    <ClCompile Include="src\TtisPreStoredMessageCommand.cpp" />
+    <ClCompile Include="src\TtisResetCommand.cpp" />
+    <ClCompile Include="src\TtisScheduleDownloadCommand.cpp" />
+    <ClCompile Include="src\TtisScheduleUpgradeCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractCctvCommand.h" />
+    <ClInclude Include="src\AbstractPecCommand.h" />
+    <ClInclude Include="src\AbstractPecEvent.h" />
+    <ClInclude Include="src\AbstractTableEvent.h" />
+    <ClInclude Include="src\AbstractTtisCommand.h" />
+    <ClInclude Include="src\AtcEvent.h" />
+    <ClInclude Include="src\AudioCabToCabEvent.h" />
+    <ClInclude Include="src\BadCommandEvent.h" />
+    <ClInclude Include="src\CallTrainCommandReceivedEvent.h" />
+    <ClInclude Include="src\CctvCarrierOffCommand.h" />
+    <ClInclude Include="src\CctvCarrierOnCommand.h" />
+    <ClInclude Include="src\CctvCommandReceivedEvent.h" />
+    <ClInclude Include="src\CctvQuadCommand.h" />
+    <ClInclude Include="src\CctvSequenceCommand.h" />
+    <ClInclude Include="src\CctvSingleCommand.h" />
+    <ClInclude Include="src\ChangeAreaCommand.h" />
+    <ClInclude Include="src\ChangeAreaCommandReceivedEvent.h" />
+    <ClInclude Include="src\ChangeModeCommand.h" />
+    <ClInclude Include="src\ChangeoverStatusEvent.h" />
+    <ClInclude Include="src\EndOfOccCallEvent.h" />
+    <ClInclude Include="src\EndOfTtisDownloadEvent.h" />
+    <ClInclude Include="src\EndOfVoiceCallCommand.h" />
+    <ClInclude Include="src\FrameCheckSequence.h" />
+    <ClInclude Include="src\MiscDataTypes.h" />
+    <ClInclude Include="src\Oa1Event.h" />
+    <ClInclude Include="src\OccCallCommandReceivedCommand.h" />
+    <ClInclude Include="src\OccCallResetCommand.h" />
+    <ClInclude Include="src\PaAudioSwitchEvent.h" />
+    <ClInclude Include="src\PaCommandReceivedEvent.h" />
+    <ClInclude Include="src\PaContinueCommand.h" />
+    <ClInclude Include="src\PaCyclicPreRecordedAnnouncementCommand.h" />
+    <ClInclude Include="src\PaLiveAnnouncementCommand.h" />
+    <ClInclude Include="src\PaPreRecordedAnnouncementCommand.h" />
+    <ClInclude Include="src\PaReadyForLiveAnnouncementEvent.h" />
+    <ClInclude Include="src\PaRequestForResetEvent.h" />
+    <ClInclude Include="src\PaResetCommand.h" />
+    <ClInclude Include="src\PaResetEvent.h" />
+    <ClInclude Include="src\PaTrainMessageCompletedEvent.h" />
+    <ClInclude Include="src\PecActivatedEvent.h" />
+    <ClInclude Include="src\PecAnswerCommand.h" />
+    <ClInclude Include="src\PecCommandReceivedEvent.h" />
+    <ClInclude Include="src\PecContinueCommand.h" />
+    <ClInclude Include="src\PecReadyForConversationEvent.h" />
+    <ClInclude Include="src\PecRequestForResetEvent.h" />
+    <ClInclude Include="src\PecResetCommand.h" />
+    <ClInclude Include="src\PecResetEvent.h" />
+    <ClInclude Include="src\PecSelectedByDriverEvent.h" />
+    <ClInclude Include="src\RequestForCallTrainCommand.h" />
+    <ClInclude Include="src\RequestForOccCallEvent.h" />
+    <ClInclude Include="src\TestCallEvent.h" />
+    <ClInclude Include="src\TestCallResultCommand.h" />
+    <ClInclude Include="src\TimsCommand.h" />
+    <ClInclude Include="src\TimsEvent.h" />
+    <ClInclude Include="src\TrainEventFactoryImpl.h" />
+    <ClInclude Include="src\TtdFrame.h" />
+    <ClInclude Include="src\TtisCommandReceivedEvent.h" />
+    <ClInclude Include="src\TtisFreeTextMessageCommand.h" />
+    <ClInclude Include="src\TtisLibraryDownloadCommand.h" />
+    <ClInclude Include="src\TtisLibraryUpgradeCommand.h" />
+    <ClInclude Include="src\TtisPreStoredMessageCommand.h" />
+    <ClInclude Include="src\TtisResetCommand.h" />
+    <ClInclude Include="src\TtisScheduleDownloadCommand.h" />
+    <ClInclude Include="src\TtisScheduleUpgradeCommand.h" />
+    <ClInclude Include="src\TtisTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrainTransactionModel\bus.trains.TrainTransactionModel.TA_TrainTransactionModel.vcxproj">
+      <Project>{0a8dfac5-663d-4dc4-940b-182b6a1f3205}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

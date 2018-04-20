@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4e746648-41b2-4b87-85c6-27ba3c2a95d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Data">
+      <UniqueIdentifier>{2da4c3e4-02ec-4fce-98f2-06ff11a10ecf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Tables">
+      <UniqueIdentifier>{166e1faf-783d-48ac-8ede-532aab722d50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Modbus">
+      <UniqueIdentifier>{048eb6f7-1a5c-4a1d-ab0a-cf8765e6ef42}</UniqueIdentifier>
+      <Extensions>*.h, *.cpp</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{afc60b3a-edbb-42f3-ba88-ed3acb58ec3c}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AtsAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsServerLinkStatusUpdateThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTrainDataTimer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointControlStateProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OperationModeManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AddressUtil.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsCctvData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsDssData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsEcsData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsPasData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsPsdData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTisData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTrainData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsTwpData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsWildData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvBooleanContext.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvRealNumberContext.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataManager.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointHelper.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OccUpdateProcessor.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PowerData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SectorData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StationOccUpdateProcessor.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCctvCamera.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WatchDogData.cpp">
+      <Filter>src\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtcDataTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsWatchDogTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DssTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ElectricalSubsectionTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IscsWatchDogTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlatformTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RawTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TableManager.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WashTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WildTable.cpp">
+      <Filter>src\Tables</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtsModbusTcpConnection.cpp">
+      <Filter>src\Modbus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModbusComms.cpp">
+      <Filter>src\Modbus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DoubleAtsFailureWorkItem.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AtsAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\AtsAgentException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsAgentRunParams.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsServerLinkStatusUpdateThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTrainDataTimer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointControlStateProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OperationModeManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AddressUtil.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsCctvData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsDssData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsEcsData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsPasData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsPsdData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTisData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTrainData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsTwpData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsWildData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvBooleanContext.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvRealNumberContext.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataManager.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointHelper.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OccUpdateProcessor.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PowerData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SectorData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StationOccUpdateProcessor.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCctvCamera.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WatchDogData.h">
+      <Filter>src\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtcDataTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsWatchDogTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DssTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ElectricalSubsectionTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAtsTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IIscsTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IscsWatchDogTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlatformTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RawTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TableManager.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WashTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WildTable.h">
+      <Filter>src\Tables</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsModbusTcpConnection.h">
+      <Filter>src\Modbus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DoubleAtsFailureWorkItem.h">
+      <Filter>src\Modbus</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModbusComms.h">
+      <Filter>src\Modbus</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

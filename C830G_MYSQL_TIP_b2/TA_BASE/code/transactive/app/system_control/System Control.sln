@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.system_control.system_controller", "system_controller\app.system_control.system_controller.SystemController.vcproj", "{7DFFC377-57C1-4438-8D4F-F6DA4A0AA43B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core.corba", "..\..\core\corba\core.corba.TA_CorbaUtil.vcproj", "{E0980797-BDCC-40C7-87D2-69446151938E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.notification_service", "..\notification_service\app.notification_service.NotificationServiceAgent.vcproj", "{3AB2D121-EC43-4C87-9C3B-4029FC7796CC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bus.generic_agent", "..\..\bus\generic_agent\bus.generic_agent.TA_GenericAgent.vcproj", "{03A1F89E-49C9-48F3-92C6-8360EFA472E8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.system_control.system_controller.console_manager", "system_controller\console_manager\app.system_control.system_controller.console_manager.ConsoleManager.vcproj", "{63AB53BF-EFA2-433F-A771-1D0A44D340E8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.scada.datanodeagent", "..\scada\DataNodeAgent\app.scada.datanodeagent.DataNodeAgent.vcproj", "{DDEB0D0B-80E4-4B64-AC38-B4130AAFDCD1}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core.process_management", "..\..\core\process_management\core.process_management.TA_ManagedProcess.vcproj", "{807B4A31-41B7-4105-B393-E55D6C249CA9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.system_control.dummy_agent", "dummy_agent\app.system_control.system_controller.DummyAgent.vcproj", "{8501049C-333F-4848-837F-56D13A42FD10}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.system_control.system_manager", "system_manager\app.system_control.system_manager.SystemManager.vcproj", "{BE462287-3CC4-42B0-A7C9-266550496714}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bus.generic_gui", "..\..\bus\generic_gui\bus.generic_gui.TA_GenericGUI.vcproj", "{E431F9AA-3893-49D6-809A-32E4E16872A3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "app.system_control.control_station", "control_station\app.system_control.control_station.ControlStation.vcproj", "{3066DA22-84F8-4EDA-8B1C-BAE8685D1E67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DFFC377-57C1-4438-8D4F-F6DA4A0AA43B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7DFFC377-57C1-4438-8D4F-F6DA4A0AA43B}.Debug|Win32.Build.0 = Debug|Win32
+		{7DFFC377-57C1-4438-8D4F-F6DA4A0AA43B}.Release|Win32.ActiveCfg = Release|Win32
+		{7DFFC377-57C1-4438-8D4F-F6DA4A0AA43B}.Release|Win32.Build.0 = Release|Win32
+		{E0980797-BDCC-40C7-87D2-69446151938E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E0980797-BDCC-40C7-87D2-69446151938E}.Debug|Win32.Build.0 = Debug|Win32
+		{E0980797-BDCC-40C7-87D2-69446151938E}.Release|Win32.ActiveCfg = Release|Win32
+		{E0980797-BDCC-40C7-87D2-69446151938E}.Release|Win32.Build.0 = Release|Win32
+		{3AB2D121-EC43-4C87-9C3B-4029FC7796CC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AB2D121-EC43-4C87-9C3B-4029FC7796CC}.Debug|Win32.Build.0 = Debug|Win32
+		{3AB2D121-EC43-4C87-9C3B-4029FC7796CC}.Release|Win32.ActiveCfg = Release|Win32
+		{3AB2D121-EC43-4C87-9C3B-4029FC7796CC}.Release|Win32.Build.0 = Release|Win32
+		{03A1F89E-49C9-48F3-92C6-8360EFA472E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03A1F89E-49C9-48F3-92C6-8360EFA472E8}.Debug|Win32.Build.0 = Debug|Win32
+		{03A1F89E-49C9-48F3-92C6-8360EFA472E8}.Release|Win32.ActiveCfg = Release|Win32
+		{03A1F89E-49C9-48F3-92C6-8360EFA472E8}.Release|Win32.Build.0 = Release|Win32
+		{63AB53BF-EFA2-433F-A771-1D0A44D340E8}.Debug|Win32.ActiveCfg = Debug|Win32
+		{63AB53BF-EFA2-433F-A771-1D0A44D340E8}.Debug|Win32.Build.0 = Debug|Win32
+		{63AB53BF-EFA2-433F-A771-1D0A44D340E8}.Release|Win32.ActiveCfg = Release|Win32
+		{63AB53BF-EFA2-433F-A771-1D0A44D340E8}.Release|Win32.Build.0 = Release|Win32
+		{DDEB0D0B-80E4-4B64-AC38-B4130AAFDCD1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DDEB0D0B-80E4-4B64-AC38-B4130AAFDCD1}.Debug|Win32.Build.0 = Debug|Win32
+		{DDEB0D0B-80E4-4B64-AC38-B4130AAFDCD1}.Release|Win32.ActiveCfg = Release|Win32
+		{DDEB0D0B-80E4-4B64-AC38-B4130AAFDCD1}.Release|Win32.Build.0 = Release|Win32
+		{807B4A31-41B7-4105-B393-E55D6C249CA9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{807B4A31-41B7-4105-B393-E55D6C249CA9}.Debug|Win32.Build.0 = Debug|Win32
+		{807B4A31-41B7-4105-B393-E55D6C249CA9}.Release|Win32.ActiveCfg = Release|Win32
+		{807B4A31-41B7-4105-B393-E55D6C249CA9}.Release|Win32.Build.0 = Release|Win32
+		{8501049C-333F-4848-837F-56D13A42FD10}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8501049C-333F-4848-837F-56D13A42FD10}.Debug|Win32.Build.0 = Debug|Win32
+		{8501049C-333F-4848-837F-56D13A42FD10}.Release|Win32.ActiveCfg = Release|Win32
+		{8501049C-333F-4848-837F-56D13A42FD10}.Release|Win32.Build.0 = Release|Win32
+		{BE462287-3CC4-42B0-A7C9-266550496714}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BE462287-3CC4-42B0-A7C9-266550496714}.Debug|Win32.Build.0 = Debug|Win32
+		{BE462287-3CC4-42B0-A7C9-266550496714}.Release|Win32.ActiveCfg = Release|Win32
+		{BE462287-3CC4-42B0-A7C9-266550496714}.Release|Win32.Build.0 = Release|Win32
+		{E431F9AA-3893-49D6-809A-32E4E16872A3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E431F9AA-3893-49D6-809A-32E4E16872A3}.Debug|Win32.Build.0 = Debug|Win32
+		{E431F9AA-3893-49D6-809A-32E4E16872A3}.Release|Win32.ActiveCfg = Release|Win32
+		{E431F9AA-3893-49D6-809A-32E4E16872A3}.Release|Win32.Build.0 = Release|Win32
+		{3066DA22-84F8-4EDA-8B1C-BAE8685D1E67}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3066DA22-84F8-4EDA-8B1C-BAE8685D1E67}.Debug|Win32.Build.0 = Debug|Win32
+		{3066DA22-84F8-4EDA-8B1C-BAE8685D1E67}.Release|Win32.ActiveCfg = Release|Win32
+		{3066DA22-84F8-4EDA-8B1C-BAE8685D1E67}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,58 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: core.database.TA_DataAccess - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19BF.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "..\..\..\cots\oracle\920\winnt\inc" /I "..\..\\" /I "..\..\..\cots\omniORB\omniORB_4.0.5\include" /I "..\..\..\cots\boost\boost_1_31_0" /D "_DEBUG" /D "WIN32" /D "_MBCS" /D "_LIB" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /FR"../../../../build/win32_nd/transactive/core/database/" /Fo"../../../../build/win32_nd/transactive/core/database/" /Fd"../../../../build/win32_nd/transactive/core/database/" /FD /GZ /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\ConnectionReaper.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\DBException.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\OCIAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\OCIAccessStatusMonitor.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\OCIConnection.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\OCIConnectionStatusMonitor.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\SimpleDb.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\QueryAdapter.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\core\database\src\SimpleDbStatusMonitor.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19BF.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19C0.tmp" with contents
+[
+/nologo /out:"../../../../build/win32_nd/TA_DataAccess_d.lib" /ignore:4006 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\ConnectionReaper.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\DBException.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\OCIAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\OCIAccessStatusMonitor.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\OCIConnection.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\OCIConnectionStatusMonitor.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\SimpleDb.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\QueryAdapter.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\core\database\SimpleDbStatusMonitor.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\TA_ocl.lib
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19C0.tmp"
+<h3>Output Window</h3>
+Compiling...
+ConnectionReaper.cpp
+DBException.cpp
+OCIAccess.cpp
+OCIAccessStatusMonitor.cpp
+OCIConnection.cpp
+OCIConnectionStatusMonitor.cpp
+SimpleDb.cpp
+QueryAdapter.cpp
+SimpleDbStatusMonitor.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_DataAccess_d.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

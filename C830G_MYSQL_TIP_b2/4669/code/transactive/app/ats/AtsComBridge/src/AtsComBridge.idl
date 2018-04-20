@@ -1,0 +1,55 @@
+/**
+  * The source code in this file is the property of
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/4669_T01271350/4669/transactive/app/ats/AtsComBridge/src/AtsComBridge.idl $
+  * @author:  Ripple
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2008/11/28 16:26:01 $
+  * Last modified by:  $Author: builder $
+  *
+  */
+
+// AtsComBridge.idl : IDL source for AtsComBridge.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (AtsComBridge.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	
+	[
+		object,
+		uuid(83F30F6B-6D48-4CFA-8DC4-CD246A930CBC),
+		dual,
+		helpstring("IAtsSoundManager Interface"),
+		pointer_default(unique)
+	]
+	interface IAtsSoundManager : IDispatch
+	{
+		[id(1), helpstring("method setAlarmSeverity")] HRESULT setAlarmSeverity(long alarmSeverity);
+	};
+
+[
+	uuid(ABDA9109-E619-4BAC-A024-31C6E971AAB4),
+	version(1.0),
+	helpstring("AtsComBridge 1.0 Type Library")
+]
+library AtsComBridge
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	
+	[
+		uuid(45DC4630-A275-4D48-A255-782C2FF672C9),
+		helpstring("AtsSoundManager Class")
+	]
+	coclass AtsSoundManager
+	{
+		[default] interface IAtsSoundManager;
+	};
+};

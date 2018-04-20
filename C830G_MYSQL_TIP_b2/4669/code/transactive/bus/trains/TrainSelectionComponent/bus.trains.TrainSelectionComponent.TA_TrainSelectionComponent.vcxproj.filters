@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{289fe3f1-b841-45e3-876c-b1582bb5278f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="MFC Specific">
+      <UniqueIdentifier>{fef7e9bc-57fe-4406-96ae-4a2de6e3422e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ITrainSelectorGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainList.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainSelector.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICustomTrainDataProvider.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainGroupComboEventListener.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainListCtrlEventListener.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainSelectionListener.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainStaticGroupComboEventListener.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MFCTrainSelectorGUI.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainGroupComboBox.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainListCtrl.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainSelectorGUI.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainStaticGroupComboBox.h">
+      <Filter>MFC Specific</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\TrainList.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainSelector.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MFCTrainSelectorGUI.cpp">
+      <Filter>MFC Specific</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainGroupComboBox.cpp">
+      <Filter>MFC Specific</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainListCtrl.cpp">
+      <Filter>MFC Specific</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainSelectorGUI.cpp">
+      <Filter>MFC Specific</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainStaticGroupComboBox.cpp">
+      <Filter>MFC Specific</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

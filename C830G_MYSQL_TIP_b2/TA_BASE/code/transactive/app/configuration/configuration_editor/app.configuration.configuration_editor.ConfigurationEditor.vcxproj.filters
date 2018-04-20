@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{cfc2ae5d-ddc9-4116-81e7-97201ca0a715}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1bda2972-6c1a-49d3-8438-51749d709e16}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Component.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ComponentLibraryAccessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorDoc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorMenu.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorSelectionBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorSessionUpdater.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorStatusBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorToolbar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationEditorView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigurationProgressDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlItems.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseLoginDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DllHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FixedSplitterWnd.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigurableComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDllHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProgressStatusBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISessionChecker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MainFrm.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsChecker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TitleView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveLoginDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ComponentLibraryAccessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorDoc.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorMenu.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorSelectionBar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorSessionUpdater.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorStatusBar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorToolbar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationEditorView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigurationProgressDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseLoginDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DllHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FixedSplitterWnd.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MainFrm.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsChecker.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TitleView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveLoginDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\ConfigurationEditor.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\bus\resources\icons\ConfigurationEditor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\bus\resources\icons\ConfigurationEditor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ConfigurationEditor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ConfigurationEditorDoc.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\entity.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\mandatory.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\reload_hot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\ConfigurationEditor.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

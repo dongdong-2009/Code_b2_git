@@ -1,0 +1,28 @@
+
+not-build = TA_PACachedMaps ;
+
+alias TA_IRS_Bus
+	: [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels project bus
+			: is-library
+			: is-target-name-not-in $(not-build)
+		]
+	;
+ta-install-lib library : TA_IRS_Bus ;
+
+if [ option.get test : : true ]
+{
+	import option path print ;
+	if [ current-ta-project.get path ] = [ path.pwd ]
+	{
+		current-ta-project.get __debug__ ;
+		print.lines [ $(TA_Projects).selects-ordered-x target-id
+			:
+			: is-levels project bus
+			: is-library
+			: is-target-name-not-in $(not-build)
+		] ;
+		exit ;
+	}
+}

@@ -1,0 +1,461 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.signs.ttis_manager" ProjectGUID="{D3200FDB-24CF-4533-A38C-5D22ABD3B212}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../bin/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/app/signs/ttis_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nd/app.signs.ttis_manager.TTISManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../..,../../../../,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../cots/ssce/sdk/include,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0,../../../../../sdk/include/transactive/bus/scada/datapointcorbadef/src,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/idl/src,../../../../../sdk/include/transactive/bus,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers,../../../../../sdk/include,../../../../../sdk/include/cots/ssce/sdk/include" PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/app/signs/ttis_manager/app.signs.ttis_manager.TTISManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/app/signs/ttis_manager/" ObjectFile=".\../../../../../build/win32_nd/transactive/app/signs/ttis_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/app/signs/ttis_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG" Culture="3081" AdditionalIncludeDirectories="..\..\..\..\..\sdk\include\transactive\bus\resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="COS405_rtd.lib omniORB405_rtd.lib omnithread30_rtd.lib omniDynamic405_rtd.lib acemfcd.lib TA_Base_Core_d.lib TA_mcl_d.lib TA_Base_Bus_d.lib TA_IRS_Core_d.lib TA_mcl_d.lib TA_IRS_Bus_d.lib ssce5432.lib oci.lib htmlhelp.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nd/TTISManager.exe" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\..\cots\ssce\sdk\lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\lib,..\..\..\..\..\sdk\win32_nd,..\..\..\..\..\build\win32_nd,../../../../../sdk/include/cots/WinStackTrace\build\Debug" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nd/TTISManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nd/app.signs.ttis_manager.TTISManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../bin/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/app/signs/ttis_manager" ConfigurationType="1" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../bin/win32_nr/app.signs.ttis_manager.TTISManager.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../..,../../../../,../../../../../build/win32_n/transactive,../../../../../sdk/include/transactive/core/data_access_interface/tis_agent_4669/IDL/src,../../../../../sdk/include/transactive,../../../../../sdk/include/transactive/core/exceptions/IDL/src,../../../../../sdk/include/transactive/core/message/IDL/src,../../../../cots/ssce/sdk/include,../../../../../sdk/omniORB/omniORB_4.0.5/include,../../../../../sdk/include/cots/boost/boost_1_39_0,../../../../../sdk/include/transactive/bus/scada/datapointcorbadef/src,../../../../../sdk/include/transactive/bus/trains/TrainAgentCorbaDef/idl/src,../../../../../sdk/include/transactive/bus,../../../../../sdk/include/cots/ACE/6_0_4/ACE_wrappers,../../../../../sdk/include,../../../../../sdk/include/cots/ssce/sdk/include" PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;__WIN32__;__NT__;__OSVERSION__=4;__x86__;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/app/signs/ttis_manager/app.signs.ttis_manager.TTISManager.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/app/signs/ttis_manager/" ObjectFile=".\../../../../../build/win32_nr/transactive/app/signs/ttis_manager/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/app/signs/ttis_manager/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG" Culture="3081" AdditionalIncludeDirectories="..\..\..\..\..\sdk\include\transactive\bus\resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="COS405_rt.lib omniORB405_rt.lib omnithread30_rt.lib omniDynamic405_rt.lib acemfc.lib TA_Base_Core.lib TA_Base_Bus.lib TA_IRS_Core.lib TA_mcl.lib TA_IRS_Bus.lib ssce5432.lib oci.lib htmlhelp.lib Rpcrt4.lib winmm.lib stracelib.lib" OutputFile="../../../../../bin/win32_nr/TTISManager.exe" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="..\..\..\..\cots\ssce\sdk\lib,../../../../../sdk/omniORB/omniORB_4.0.5/lib/x86_win32_win7,..\..\..\..\..\sdk\lib,..\..\..\..\..\sdk\win32_nr,..\..\..\..\..\build\win32_nr,../../../../../sdk/include/cots/WinStackTrace\build\Release" GenerateDebugInformation="true" ProgramDatabaseFile=".\../../../../../bin/win32_nr/TTISManager.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../bin/win32_nr/app.signs.ttis_manager.TTISManager.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\CallbackDateTimeCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CallbackDateTimeCtrl.h">
+			</File>
+			<File RelativePath="src\IDateTimeListener.h">
+			</File>
+			<File RelativePath="src\MainTab.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MainTab.h">
+			</File>
+			<File RelativePath="src\REBProgressManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\REBProgressManager.h">
+			</File>
+			<File RelativePath="src\resource.h">
+			</File>
+			<File RelativePath="src\RightsManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RightsManager.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TrainTimeScheduleManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainTimeScheduleManager.h">
+			</File>
+			<File RelativePath="src\TTISCommonConfiguration.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISCommonConfiguration.h">
+			</File>
+			<File RelativePath="src\TTISManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISManager.h">
+			</File>
+			<File RelativePath="src\TTISManager.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISManagerDlg.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISManagerDlg.h">
+			</File>
+			<File RelativePath="src\TTISManagerGUI.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISManagerGUI.h">
+			</File>
+			<File RelativePath="src\TTISMessageManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISMessageManager.h">
+			</File>
+			<File RelativePath="src\TTISPredefinedMessages.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TTISPredefinedMessages.h">
+			</File>
+			<File RelativePath="src\ValidatingEdit.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ValidatingEdit.h">
+			</File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\bitmap1.bmp">
+			</File>
+			<File RelativePath="res\bmp00001.bmp">
+			</File>
+			<File RelativePath="res\rightarrow.ico">
+			</File>
+			<File RelativePath="..\..\..\bus\resources\icons\SignViewer.ico">
+			</File>
+			<File RelativePath="..\..\..\..\..\sdk\include\transactive\bus\resources\icons\SignViewer.ico">
+			</File>
+			<File RelativePath="res\toolbar1.bmp">
+			</File>
+			<File RelativePath="res\TTISManager.ico">
+			</File>
+			<File RelativePath="res\TTISManager.rc2">
+			</File>
+		</Filter>
+		<Filter Name="Train Display Tab">
+			<File RelativePath="src\DisplayAttributeManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DisplayAttributeManager.h">
+			</File>
+			<File RelativePath="src\DisplayRequestManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DisplayRequestManager.h">
+			</File>
+			<File RelativePath="src\DisplayRequestStatusDialog.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DisplayRequestStatusDialog.h">
+			</File>
+			<File RelativePath="src\IMessageSelectionListener.h">
+			</File>
+			<File RelativePath="src\IPidSelectionListener.h">
+			</File>
+			<File RelativePath="src\PidSelectionManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PidSelectionManager.h">
+			</File>
+			<File RelativePath="src\TrainDisplayPage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainDisplayPage.h">
+			</File>
+			<Filter Name="Message Selection">
+				<File RelativePath="src\TrainDisplayTab.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainDisplayTab.h">
+				</File>
+				<File RelativePath="src\TrainSelectFreeTextPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainSelectFreeTextPage.h">
+				</File>
+				<File RelativePath="src\TrainSelectPredefinedPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainSelectPredefinedPage.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="Time Schedule Tab">
+			<File RelativePath="src\EditFreeText.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EditFreeText.h">
+			</File>
+			<File RelativePath="src\TimeScheduleEntryListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TimeScheduleEntryListCtrl.h">
+			</File>
+			<File RelativePath="src\TrainTimeSchedulePage.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TrainTimeSchedulePage.h">
+			</File>
+		</Filter>
+		<Filter Name="Train Download Tab">
+			<File RelativePath="src\LibraryVersionListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+			<File RelativePath="src\LibraryVersionListCtrl.h">
+			</File>
+			<Filter Name="Train Download Management">
+				<File RelativePath="src\AbstractTrainDownloads.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\AbstractTrainDownloads.h">
+				</File>
+				<File RelativePath="src\TrainDownloadManager.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainDownloadManager.h">
+				</File>
+				<File RelativePath="src\TrainLibraryDownloads.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainLibraryDownloads.h">
+				</File>
+				<File RelativePath="src\TrainLibraryUpgrades.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainLibraryUpgrades.h">
+				</File>
+				<File RelativePath="src\TrainScheduleDownloads.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainScheduleDownloads.h">
+				</File>
+				<File RelativePath="src\TrainScheduleUpgrades.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainScheduleUpgrades.h">
+				</File>
+			</Filter>
+			<Filter Name="Train Download Display">
+				<File RelativePath="src\CurrentDownloadsListCtrl.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\CurrentDownloadsListCtrl.h">
+				</File>
+				<File RelativePath="src\DownloadTrainListCtrl.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\DownloadTrainListCtrl.h">
+				</File>
+				<File RelativePath="src\LibraryDownloadPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\LibraryDownloadPage.h">
+				</File>
+				<File RelativePath="src\ScheduleDownloadPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\ScheduleDownloadPage.h">
+				</File>
+				<File RelativePath="src\TrainDownloadPage.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainDownloadPage.h">
+				</File>
+				<File RelativePath="src\TrainDownloadTab.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainDownloadTab.h">
+				</File>
+			</Filter>
+			<Filter Name="Train version management">
+				<File RelativePath="src\TrainVersionManager.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+					</FileConfiguration></File>
+				<File RelativePath="src\TrainVersionManager.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="External" Filter="*.cpp *.h">
+			<File RelativePath="..\stis_manager\src\UserMessages.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=""/>
+				</FileConfiguration></File>
+		</Filter>
+		<File RelativePath="ReadMe.txt">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

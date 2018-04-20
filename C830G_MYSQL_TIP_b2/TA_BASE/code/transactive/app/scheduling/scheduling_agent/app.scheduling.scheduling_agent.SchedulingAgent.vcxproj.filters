@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{34066025-f62b-4609-82f8-87911f2b9c8c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractJob.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractJobInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmGeneratorJob.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmGeneratorJobFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmGeneratorJobInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IJob.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobInstanceManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobRunner.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\JobThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentLocationAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanAgentMap.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanRunnerJob.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanRunnerJobFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanRunnerJobInstance.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Schedule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingAccessManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingAlarmSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingController.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingMessageSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingSessionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SchedulingTimer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractJob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractJobInstance.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmGeneratorJob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmGeneratorJobFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmGeneratorJobInstance.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJobExecutionListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJobFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IJobInstance.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobInstanceCreationException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobInstanceExecutionException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobInstanceManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobInstanceNotFoundException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobInstanceStateRetrievalException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobRunner.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\JobThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentLocationAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanRunnerJob.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanRunnerJobFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanRunnerJobInstance.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Schedule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingAccessManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingController.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingMessageSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingSessionManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SchedulingTimer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanAgentMap.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{56641746-7f0b-4030-a803-33454c66ef7e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Method Objects">
+      <UniqueIdentifier>{5abb1ed4-e86a-4691-a369-021ecd747006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queries">
+      <UniqueIdentifier>{fe42eb64-e933-4cf7-9f86-6998942a4dfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Local Duty Peer">
+      <UniqueIdentifier>{0f4aaf8c-4495-4c8c-ae07-31e83cf18be4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Caches">
+      <UniqueIdentifier>{a499b324-00d9-43eb-b7a7-a522e704f4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Duty Policy">
+      <UniqueIdentifier>{693483c4-52fc-4bdf-a24d-44750c25033f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Remote Duty Peer">
+      <UniqueIdentifier>{cae30495-73ca-4655-aa44-d9fd29f4faa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Subjects">
+      <UniqueIdentifier>{7ff2efd5-1e8d-449a-b8cb-79d5c2e0ab71}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DutyAgentState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPeerTask.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPeerTaskManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPeerTaskResultHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPrimitive.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyState.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyPeer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyPeerTaskCommand.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyStateConverter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransactiveAgentInfo.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DegradeMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPeerTaskMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ExecuteQueryMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionBeginMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionEndMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionOvrBeginMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionOvrEndMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferRegionsMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferSubsystemsMO.h">
+      <Filter>Method Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetDutyQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GetExclusiveDutyQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SesSnapshotQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SnapshotQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubSnapshotQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferableRegionQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransferableSubsystemQuery.h">
+      <Filter>Queries</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DefaultApplyConverter.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyRequestConverter.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyRequestSender.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRegSubCommand.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocalDutyPeer.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PendingDutyHelper.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Region.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubMultiProfCommand.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubMultiProfCommandSessionInfo.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubQueryCommand.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubSimpleCommand.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubUniProfCommand.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RegSubUniProfCommand2.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateConverter.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Subsystem.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SubsystemState.h">
+      <Filter>Local Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyDbCache.h">
+      <Filter>Caches</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyDbCacheUpdater.h">
+      <Filter>Caches</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutySessionCache.h">
+      <Filter>Caches</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyContext.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyContextBuilderFactory.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPolicyCombAlg.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyPolicyFactory.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EvaluateDutyPolicy.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyContextBuilder.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDutyPolicy.h">
+      <Filter>Duty Policy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RemoteDutyPeer.h">
+      <Filter>Remote Duty Peer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AgentModeSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AgentTerminateSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyResponseSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FrontEndStateChangeSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeerStateChangeSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateSubject.h">
+      <Filter>Subjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PeerStateChangeMO.h" />
+    <ClInclude Include="src\PeerStateChangeTask.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DutyPeerTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPeerTaskManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPeerTaskResultHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPrimitive.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyState.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeerStateChangeMO.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeerStateChangeTask.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DegradeMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPeerTaskMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ExecuteQueryMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionBeginMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionEndMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionOvrBeginMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionOvrEndMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferRegionsMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferSubsystemsMO.cpp">
+      <Filter>Method Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetDutyQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GetExclusiveDutyQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SesSnapshotQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SnapshotQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubSnapshotQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferableRegionQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransferableSubsystemQuery.cpp">
+      <Filter>Queries</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DefaultApplyConverter.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyRequestConverter.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyRequestSender.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocalDutyPeer.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PendingDutyHelper.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Region.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateConverter.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Subsystem.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SubsystemState.cpp">
+      <Filter>Local Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyDbCache.cpp">
+      <Filter>Caches</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyDbCacheUpdater.cpp">
+      <Filter>Caches</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutySessionCache.cpp">
+      <Filter>Caches</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyContext.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyContextBuilderFactory.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPolicyCombAlg.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyPolicyFactory.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EvaluateDutyPolicy.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IDutyContextBuilder.cpp">
+      <Filter>Duty Policy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RemoteDutyPeer.cpp">
+      <Filter>Remote Duty Peer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AgentModeSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AgentTerminateSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyResponseSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FrontEndStateChangeSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PeerStateChangeSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateSubject.cpp">
+      <Filter>Subjects</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

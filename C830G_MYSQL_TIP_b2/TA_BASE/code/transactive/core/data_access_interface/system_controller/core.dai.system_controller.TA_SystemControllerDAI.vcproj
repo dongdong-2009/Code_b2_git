@@ -1,0 +1,143 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.dai.system_controller" ProjectGUID="{01292A78-A47C-431A-9510-189399B498E2}" TargetFrameworkVersion="131072">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../build/win32_nd/transactive/core/data_access_interface/system_controller" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../..,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="WIN32;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/system_controller/core.dai.system_controller.TA_SystemControllerDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nd/transactive/core/data_access_interface/system_controller/" ObjectFile=".\../../../../../build/win32_nd/transactive/core/data_access_interface/system_controller/" ProgramDataBaseFileName=".\../../../../../build/win32_nd/transactive/core/data_access_interface/system_controller/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_DEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nd/TA_SystemControllerDAI_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nd/core.dai.system_controller.TA_SystemControllerDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../build/win32_nr/transactive/core/data_access_interface/system_controller" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../../../build/win32_n/transactive,..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../..,..\..\..\..\cots\boost\boost_1_39_0" PreprocessorDefinitions="WIN32;__WIN32__;__x86__;__NT__;_WIN32_WINNT=0x500;_CRT_SECURE_NO_DEPRECATE;__OSVERSION__=4;TA_ASSERT_LOG=1;_USE_32BIT_TIME_T" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/system_controller/core.dai.system_controller.TA_SystemControllerDAI.pch" AssemblerListingLocation=".\../../../../../build/win32_nr/transactive/core/data_access_interface/system_controller/" ObjectFile=".\../../../../../build/win32_nr/transactive/core/data_access_interface/system_controller/" ProgramDataBaseFileName=".\../../../../../build/win32_nr/transactive/core/data_access_interface/system_controller/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="NDEBUG;_USE_32BIT_TIME_T" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../../build/win32_nr/TA_SystemControllerDAI.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../build/win32_nr/core.dai.system_controller.TA_SystemControllerDAI.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="SystemController">
+			<File RelativePath="src\ConfigSystemController.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConfigSystemController.h">
+			</File>
+			<File RelativePath="src\IConfigSystemController.h">
+			</File>
+			<File RelativePath="src\ISystemControllerData.h">
+			</File>
+			<File RelativePath="src\SystemControllerAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SystemControllerAccessFactory.h">
+			</File>
+			<File RelativePath="src\SystemControllerData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SystemControllerData.h">
+			</File>
+			<File RelativePath="src\SystemControllerHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SystemControllerHelper.h">
+			</File>
+		</Filter>
+		<Filter Name="GroupMonitor">
+			<File RelativePath="src\ConfigGroupMonitor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConfigGroupMonitor.h">
+			</File>
+			<File RelativePath="src\GroupMonitorAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\GroupMonitorAccessFactory.h">
+			</File>
+			<File RelativePath="src\IConfigGroupMonitor.h">
+			</File>
+		</Filter>
+		<Filter Name="ManagedProcess">
+			<File RelativePath="src\IManagedProcessData.h">
+			</File>
+			<File RelativePath="src\ManagedProcessAccessFactory.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ManagedProcessAccessFactory.h">
+			</File>
+			<File RelativePath="src\ManagedProcessData.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ManagedProcessData.h">
+			</File>
+			<File RelativePath="src\ManagedProcessHelper.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions=";_USE_32BIT_TIME_T"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ManagedProcessHelper.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

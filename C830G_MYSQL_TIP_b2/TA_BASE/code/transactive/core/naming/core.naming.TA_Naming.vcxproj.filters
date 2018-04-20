@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{bd2d3808-80c2-4f90-8c5a-379d981ce9f2}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="NamedObject">
+      <UniqueIdentifier>{97ef0248-e5cc-4a29-b39a-926d2cadde32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\BindingHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BindingRequestListener.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Naming.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NamingHeartbeatMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NamingThreadPoolSingleton.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractNamedObject.cpp">
+      <Filter>NamedObject</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\BindingHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BindingRequestListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Naming.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NamingHeartbeatMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NamingThreadPoolSingleton.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractNamedObject.h">
+      <Filter>NamedObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FlexibleTimeoutNamedObject.h">
+      <Filter>NamedObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\INamedObject.h">
+      <Filter>NamedObject</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NamedObject.h">
+      <Filter>NamedObject</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,8 @@
+option batch on 
+option confirm off 
+option transfer binary 
+open ftp://transactive:tra@sms-nch 
+cd /u02/deployment/01271350 
+put C:\autoversion\01271350\bin-T01.27.13.80.tar.gz 
+close 
+exit 

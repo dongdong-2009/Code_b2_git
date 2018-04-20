@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a0b47b94-65d3-4014-be9a-66e00296ef99}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Protocol Dependent Interfaces">
+      <UniqueIdentifier>{6fa7f61a-4641-4964-97da-56bb1835efa5}</UniqueIdentifier>
+      <Extensions>.h</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AddressHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AgentModeMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BVSStage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommunicationsHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigUpdateBroadcaster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EntityCreationFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FocusIrisControl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MovementControl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Quad.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RecordingUnit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sequence.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateBroadcaster.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateSubscriber.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SuperimposedTextControl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SwitchManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UserPrivilegeVerifier.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoInput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoOutput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoOutputGroup.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSwitchAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSwitchResource.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VisualAuditMessageSender.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WashWipeControl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AddressHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AgentModeMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AllSupportedFeatures.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BVSStage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommunicationsHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigUpdateBroadcaster.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityCreationFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EntityTypeConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FocusIrisControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MovementControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Quad.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RecordingUnit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sequence.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateBroadcaster.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateSubscriber.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SuperimposedTextControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SwitchManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UserPrivilegeVerifier.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoInput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoOutput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoOutputGroup.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSwitchAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSwitchResource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VisualAuditMessageSender.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\VisualComms_MessageTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\VisualStateUpdate_MessageTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WashWipeControl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDAlarmInterface.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDBVSStage.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDCamera.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDCommunicationsHandler.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDFocusIrisControl.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDMovementControl.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDQuad.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDRecordingUnit.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDSequence.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDSuperimposedTextControl.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDVideoInput.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDVideoOutput.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\IPDWashWipeControl.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="protocols\src\PDInterfaceFactory.h">
+      <Filter>Protocol Dependent Interfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,110 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: bus.scada.proxy_library.TA_ScadaProxyLibrary - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19ED.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GR /GX /ZI /Od /I "..\..\..\..\cots\boost\boost_1_31_0" /I "..\..\.." /I "..\..\..\..\..\build\win32_n\transactive" /I "..\..\..\..\..\build\win32_n\transactive\bus\scada\datanode_library\IDL\src" /I "..\..\..\..\..\build\win32_n\transactive\core\exceptions\IDL\src" /I "../../../../../build/win32_n/transactive/bus/scada/common_library/idl/src" /I "..\..\..\..\..\build\win32_n\transactive\bus\scada\DataPointCorbaDef\src" /I "..\..\..\..\..\build\win32_n\transactive\core\alarm\IDL\src" /I "..\..\..\..\..\build\win32_n\transactive\core\message\IDL\src" /I "..\..\..\..\cots\omniORB\omniORB_4.0.5\include" /I "..\..\..\..\cots/ACE/5_3/ACE_wrappers/" /D "WIN32" /D "_DEBUG" /D "_MBCS" /D "_LIB" /D "__WIN32__" /D "__x86__" /D "__NT__" /D __OSVERSION__=4 /FR"../../../../../build/win32_nd/transactive/bus/scada/proxy_library/" /Fo"../../../../../build/win32_nd/transactive/bus/scada/proxy_library/" /Fd"../../../../../build/win32_nd/transactive/bus/scada/proxy_library/" /FD /GZ /c 
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointBulkPollingSynchronizer.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointLocalSynchronizer.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointSyncManager.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeBulkPollingSynchronizer.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeLocalSynchronizer.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeSyncManager.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeLocalAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeProxy.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeProxy_Read.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeProxy_Write.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeProxyManager.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeProxySmartPtr.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataNodeRemoteAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointLocalAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointProxy.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointProxy_Read.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointProxy_Write.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointProxyManager.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointProxySmartPtr.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\DataPointRemoteAccess.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\AgentSynchronisationInterface.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\ObserverUpdateQueueProcessor.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\ProxyObserverNotifier.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\ScadaProxyFactory.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\ScadaProxyManager.cpp"
+"E:\T1350_DE\Base_4669\Base\code\transactive\bus\scada\proxy_library\src\SynchronisationManager.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19ED.tmp" 
+Creating temporary file "C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19EE.tmp" with contents
+[
+/nologo /out:"../../../../../build/win32_nd/TA_ScadaProxyLibrary_d.lib" /ignore:4006 
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointBulkPollingSynchronizer.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointLocalSynchronizer.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointSyncManager.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeBulkPollingSynchronizer.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeLocalSynchronizer.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeSyncManager.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeLocalAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeProxy.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeProxy_Read.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeProxy_Write.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeProxyManager.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeProxySmartPtr.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataNodeRemoteAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointLocalAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointProxy.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointProxy_Read.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointProxy_Write.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointProxyManager.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointProxySmartPtr.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\DataPointRemoteAccess.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\AgentSynchronisationInterface.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\ObserverUpdateQueueProcessor.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\ProxyObserverNotifier.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\ScadaProxyFactory.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\ScadaProxyManager.obj
+\T1350_DE\Base_4669\Base\build\win32_nd\transactive\bus\scada\proxy_library\SynchronisationManager.obj
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\CPPTES~1\LOCALS~1\Temp\RSP19EE.tmp"
+<h3>Output Window</h3>
+Compiling...
+DataPointBulkPollingSynchronizer.cpp
+DataPointLocalSynchronizer.cpp
+DataPointSyncManager.cpp
+DataNodeBulkPollingSynchronizer.cpp
+DataNodeLocalSynchronizer.cpp
+DataNodeSyncManager.cpp
+DataNodeLocalAccess.cpp
+DataNodeProxy.cpp
+DataNodeProxy_Read.cpp
+DataNodeProxy_Write.cpp
+DataNodeProxyManager.cpp
+DataNodeProxySmartPtr.cpp
+DataNodeRemoteAccess.cpp
+DataPointLocalAccess.cpp
+DataPointProxy.cpp
+DataPointProxy_Read.cpp
+DataPointProxy_Write.cpp
+DataPointProxyManager.cpp
+DataPointProxySmartPtr.cpp
+DataPointRemoteAccess.cpp
+Generating Code...
+Compiling...
+AgentSynchronisationInterface.cpp
+ObserverUpdateQueueProcessor.cpp
+ProxyObserverNotifier.cpp
+ScadaProxyFactory.cpp
+ScadaProxyManager.cpp
+SynchronisationManager.cpp
+Generating Code...
+Creating library...
+
+
+
+<h3>Results</h3>
+TA_ScadaProxyLibrary_d.lib - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

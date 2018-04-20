@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{20fe9245-4366-499b-bad2-f4a8b112fb41}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\DataPoint Sync">
+      <UniqueIdentifier>{7a8b2928-3edd-4184-a966-37f729bea91d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DataNode Sync">
+      <UniqueIdentifier>{329a745a-b617-4c5c-93d5-ae139ff67fea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DataNode Proxies">
+      <UniqueIdentifier>{1a4accee-ca28-41d7-9853-28f67406dd6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DataPoint Proxies">
+      <UniqueIdentifier>{0bc7be0d-80e2-47d5-9975-e42ed8865c70}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentSynchronisationInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ObserverUpdateQueueProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProxyObserverNotifier.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaProxyFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScadaProxyManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SynchronisationManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointBulkPollingSynchronizer.cpp">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointLocalSynchronizer.cpp">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointSyncManager.cpp">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeBulkPollingSynchronizer.cpp">
+      <Filter>src\DataNode Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeLocalSynchronizer.cpp">
+      <Filter>src\DataNode Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeSyncManager.cpp">
+      <Filter>src\DataNode Sync</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeLocalAccess.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeProxy.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeProxy_Read.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeProxy_Write.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeProxyManager.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeProxySmartPtr.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataNodeRemoteAccess.cpp">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointLocalAccess.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointProxy.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointProxy_Read.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointProxy_Write.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointProxyManager.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointProxySmartPtr.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DataPointRemoteAccess.cpp">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentSynchronisationInterface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEntityUpdateEventProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IProxySmartPtrCallback.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ObserverUpdateQueueProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProxyObserverNotifier.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaProxyFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScadaProxyManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SynchronisationManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointBulkPollingSynchronizer.h">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointLocalSynchronizer.h">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointSyncManager.h">
+      <Filter>src\DataPoint Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeBulkPollingSynchronizer.h">
+      <Filter>src\DataNode Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeLocalSynchronizer.h">
+      <Filter>src\DataNode Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeSyncManager.h">
+      <Filter>src\DataNode Sync</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeLocalAccess.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeProxy.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeProxyManager.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeProxySmartPtr.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataNodeRemoteAccess.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataNodeAccess.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataNodeProxy.h">
+      <Filter>src\DataNode Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointLocalAccess.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointProxy.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointProxyManager.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointProxySmartPtr.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DataPointRemoteAccess.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataPointAccess.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataPointProxy.h">
+      <Filter>src\DataPoint Proxies</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{c6f238d5-3a25-4728-b13c-af5fead05585}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6647ffc5-e932-481b-b221-7886cfe3355c}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Types">
+      <UniqueIdentifier>{4540005c-9d91-456e-a93b-f8e800fe5a4b}</UniqueIdentifier>
+      <Extensions>*.cpp,*.h</Extensions>
+    </Filter>
+    <Filter Include="Exceptions">
+      <UniqueIdentifier>{0cefd0c4-d2e9-48df-80f6-a3d767b7aa99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Protocol Types">
+      <UniqueIdentifier>{edd0c243-9270-43ee-9215-99857c6fe10c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AtsZoneUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocationCache.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioGroupUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CallTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CommonTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioGroupTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateUpdateTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainInformationTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisTypes.cpp">
+      <Filter>Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AgentCommunicationException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BadCommandException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvConflictException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GroupInUseException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InvalidParameterException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InvalidSelectionListException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InvalidTrainException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MpuChangeoverException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OperationNotSupportedException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainAccessDeniedException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCallException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainRadioException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTimeoutException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTimerException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTransmissionFailureException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransactionCancelledException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisException.cpp">
+      <Filter>Exceptions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolCallTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolCctvTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolCommonTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolPaTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolPecTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProtocolTtisTypes.cpp">
+      <Filter>Protocol Types</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AtsZoneUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericObserverManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocationCache.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioGroupUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CallTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioGroupTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateUpdateTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainInformationTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisTypes.h">
+      <Filter>Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AgentCommunicationException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BadCommandException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvConflictException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GroupInUseException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidParameterException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidSelectionListException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InvalidTrainException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MpuChangeoverException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OperationNotSupportedException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainAccessDeniedException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCallException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainRadioException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTimeoutException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTimerException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTransmissionFailureException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransactionCancelledException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisException.h">
+      <Filter>Exceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolCallTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolCctvTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolCommonTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolPaTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolPecTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProtocolTtisTypes.h">
+      <Filter>Protocol Types</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

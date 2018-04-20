@@ -1,0 +1,26 @@
+HKCR
+{
+	RippleUtil.RippleTimer.1 = s 'RippleTimer Class'
+	{
+		CLSID = s '{6C550E1E-AEA7-4081-8B8A-C731FBB1660C}'
+	}
+	RippleUtil.RippleTimer = s 'RippleTimer Class'
+	{
+		CLSID = s '{6C550E1E-AEA7-4081-8B8A-C731FBB1660C}'
+		CurVer = s 'RippleUtil.RippleTimer.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6C550E1E-AEA7-4081-8B8A-C731FBB1660C} = s 'RippleTimer Class'
+		{
+			ProgID = s 'RippleUtil.RippleTimer.1'
+			VersionIndependentProgID = s 'RippleUtil.RippleTimer'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{67CE85A4-B4CD-4D62-8FA9-109DB030938D}'
+		}
+	}
+}

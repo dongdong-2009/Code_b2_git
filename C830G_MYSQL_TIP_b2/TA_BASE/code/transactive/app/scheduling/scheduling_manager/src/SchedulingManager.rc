@@ -1,0 +1,609 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\..\\..\\..\\bus\\resources\\icons\\SchedulingManager.ico"
+IDR_TESTDOTYPE          ICON    DISCARDABLE     "..\\..\\..\\..\\bus\\resources\\icons\\SchedulingManager.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "..\\res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Print...",                   ID_FILE_PRINT
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "All Jobs",                    ID_VIEW_ALLJOBS
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Job"
+    BEGIN
+        MENUITEM "&Add...",                     ID_JOB_ADD
+        MENUITEM "View...",                     ID_VIEW_JOBDETAILS
+        MENUITEM "&Delete",                     ID_JOB_DELETE
+        MENUITEM "&Edit...",                    ID_JOB_EDIT
+        MENUITEM "Enable",                      ID_JOB_ENABLE
+        MENUITEM "Disable",                     ID_JOB_DISABLE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Scheduling Manager Help",     ID_HELP_SCHEDULINGMANAGER
+        MENUITEM "&About Scheduling Manager",   ID_APP_ABOUT
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SchedulingManager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "SchedulingManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SchedulingManager.EXE\0"
+            VALUE "ProductName", "SchedulingManager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "Scheduling Manager\n\nTestDo\n\n\nSchedulingManager.Document\nTestDo Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Scheduling Manager"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_PRINT           "Prints the job schedule list"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    IDS_ABOUTBOX            "&About SchedulingManager"
+    IDS_GET_JOBS            "get the job list"
+    IDS_SAVE_JOB            "save the job"
+    IDS_SAVE_NEW_JOB        "save new the job"
+    IDS_DELETE_JOB          "delete the job"
+    IDS_INITIALISE_APP      "initialise the application"
+    IDS_ENABLE_JOB          "enable the job"
+    IDS_DISABLE_JOB         "disable the job"
+    IDS_COLUMN_STATUS       "Status"
+    IDS_COLUMN_TYPE         "Type"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_JOBDETAILS      "Displays details of the selected job"
+    ID_VIEW_VIEWALLJOBS     "Toggles between displaying jobs scheduled using Operator's profile and all jobs"
+    ID_HELP_SCHEDULINGMANAGERHELP 
+                            "Displays the Scheudling Manager help information"
+    ID_JOB_ADD              "Displays the Add Job Dialog"
+    ID_JOB_DELETE           "Deletes the job"
+    ID_JOB_EDIT             "Displays the Edit Job Dialog"
+    ID_JOB_ENABLE           "Enable the selected schedule"
+    ID_JOB_DISABLE          "Disable the selected schedule"
+    ID_VIEW_ALLJOBS         "Toggle between viewing all jobs and viewing just the jobs scheduled with operator's profile"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_COLUMN_DESCRIPTION  "Description"
+    IDS_COLUMN_SCHEDULE_START "Schedule Start"
+    IDS_COLUMN_RECURRENCE   "Recurrence"
+    IDS_COLUMN_SCHEDULE_END "Schedule End"
+    IDS_COLUMN_PROFILE      "Profile"
+    IDS_COLUMN_LOCATION     "Loc"
+    IDS_UNKNOWN_ERROR       "an unknown error has occurred"
+    IDS_SCHEDULING_AGENT    "Scheduling Agent"
+    IDS_RIGHTS_AGENT        "Rights Agent"
+    IDS_MONDAY              "Monday"
+    IDS_TUESDAY             "Tuesday"
+    IDS_WEDNESDAY           "Wednesday"
+    IDS_THURSDAY            "Thursday"
+    IDS_FRIDAY              "Friday"
+    IDS_SATURDAY            "Saturday"
+    IDS_SUNDAY              "Sunday"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RECURRENCE_FORMAT_NONE "Occurs on %1 at %2."
+    IDS_RECURRENCE_FORMAT_DAILY "Occurs every day at %1."
+    IDS_RECURRENCE_FORMAT_WEEKLY "Occurs every %1 at %2."
+    IDS_RECURRENCE_FORMAT_MONTHLY_SPECIFIC 
+                            "Occurs every month on day %1 at %2."
+    IDS_RECURRENCE_FORMAT_MONTHLY_LAST 
+                            "Occurs on the last day of every month at %1."
+    IDS_RECURRENCE_FORMAT_YEARLY_SPECIFIC "Occurs every year on %1 at %2."
+    IDS_RECURRENCE_FORMAT_YEARLY_LAST 
+                            "Occurs on the last day of February every year at %1."
+    IDS_RANGE_END_AFTER     "\r\nEnds after %1 occurrences on %2."
+    IDS_RANGE_END_BEFORE    "\r\nEnds on %1."
+    IDS_INHIBITED           "Disabled"
+    IDS_UNINHIBITED         "Enabled"
+    IDS_NUM_JOBS_STATUS     "%1 scheduled jobs"
+    IDS_RANGE_NONE          " "
+    IDS_RECUR_NONE          "None"
+    IDS_RECUR_DAILY         "Daily"
+    IDS_RECUR_WEEKLY        "Weekly"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_RECUR_MONTHLY       "Monthly"
+    IDS_RECUR_YEARLY        "Yearly"
+    IDS_VIEW_JOB_DIALOG_TITLE "View Job"
+    IDS_ADD_JOB_DIALOG_TITLE "Add Job"
+    IDS_EDIT_JOB_DIALOG_TITLE "Edit Job"
+    IDS_VIEW_DIALOG_OK_BUTTON_NAME "OK"
+    IDS_ADD_JOB             "add new job"
+    IDS_EDIT_JOB            "edit the job"
+	IDS_EDIT_SCHEDULE       "edit schedule" 
+    IDS_HELP_PATH_FORMAT    "../help/%1.hlp"
+    IDS_DLL_PATH_FORMAT     "TA_%1JobDetailsPlugin.dll"
+    IDS_ALL_SCHEDULES_PRINT_HEADER "Job schedule list %1"                  //cl-16406-lkm
+    IDS_PROFILE_SCHEDULES_PRINT_HEADER 
+                            "Job schedule list %1 (filtered by profile)"   //cl-16406-lkm
+    IDS_PRINT_TITLE         "Schedules"
+    IDS_SHOW_JOB_DETAIL     "show job details"
+    IDS_UNDEFINED_JOB       "<undefined>"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_PROFILE             "profile"
+    IDS_LOCATION            "location"
+    IDS_JOB_SETTING         "job setting"
+    IDS_DELETE              "delete"
+    IDS_SHOW_LOCATION       "show location"
+    IDS_SHOW_PROFILE        "show profile"
+    IDS_ENABLE_JOBS_STATUS  "Processed %d/%d enable job requests"
+    IDS_DISABLE_JOBS_STATUS "Processed %d/%d disable job requests"
+    IDS_DELETE_JOBS_STATUS  "Processed %d/%d delete job requests"
+    IDS_UPDATE_EDIT_LOCK    "update edit lock"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_JOB_DIALOG DIALOG DISCARDABLE  0, 0, 321, 382
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Job Dialog"
+FONT 10, "Arial Bold"
+BEGIN
+    COMBOBOX        IDC_JD_COMBO_JOBTYPE,60,20,157,84,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Select...",IDC_JD_BUTTON_SELECTJOB,222,61,40,14
+    EDITTEXT        IDC_JD_EDIT_JOBDESCRIPTION,60,41,247,12,ES_AUTOHSCROLL
+    CONTROL         "None",IDC_JD_RADIO_ONCEOFF,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,26,111,33,10
+    CONTROL         "Daily",IDC_JD_RADIO_DAILY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,26,125,31,10
+    CONTROL         "Weekly",IDC_JD_RADIO_WEEKLY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,26,139,40,10
+    CONTROL         "Monthly",IDC_JD_RADIO_MONTHLY,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,26,153,41,10
+    CONTROL         "Yearly",IDC_JD_RADIO_YEARLY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,26,167,35,10
+    CONTROL         "No end date",IDC_JD_RADIO_NO_END_DATE,"Button",
+                    BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,26,203,55,10
+    CONTROL         "End after",IDC_JD_RADIO_END_AFTER,"Button",
+                    BS_AUTORADIOBUTTON | WS_TABSTOP,26,218,45,10
+    EDITTEXT        IDC_JD_EDIT_END_AFTER,76,217,68,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "End by",IDC_JD_RADIO_END_BY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,26,233,38,10
+    CONTROL         "DateTimePicker1",IDC_JD_DATETIMEPICKER_END_BY,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,76,232,
+                    68,12
+    COMBOBOX        IDC_JD_COMBO_PROFILE,46,336,105,74,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_JD_COMBO_LOCATION,198,336,105,75,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Save",IDOK,66,361,50,14
+    PUSHBUTTON      "Save New",IDC_SAVE_NEW,136,361,50,14
+    PUSHBUTTON      "Close",IDCANCEL,206,361,50,14
+    GROUPBOX        "Job Type",IDC_STATIC,7,7,307,72
+    LTEXT           "Type",IDC_STATIC,17,22,17,8,NOT WS_GROUP
+    LTEXT           "Description",IDC_STATIC,17,43,36,8,NOT WS_GROUP
+    GROUPBOX        "Job Schedule",IDC_STATIC,7,88,307,226
+    GROUPBOX        "Range of Recurrence",IDC_STATIC_RANGE_PANEL,17,191,286,
+                    61
+    LTEXT           "occurrences",IDC_RANGE_PANEL_TEXT,149,219,40,8,NOT 
+                    WS_GROUP
+    GROUPBOX        "",IDC_JD_RECURRENCE_PATTERN,76,105,227,79,NOT 
+                    WS_VISIBLE
+    GROUPBOX        "Details Summary",IDC_STATIC,17,260,286,44
+    GROUPBOX        "Job Execution",IDC_STATIC,7,324,307,31
+    LTEXT           "Profile",IDC_STATIC,17,338,23,8,NOT WS_GROUP
+    LTEXT           "Location",IDC_STATIC,163,338,28,8,NOT WS_GROUP
+    EDITTEXT        IDC_JD_EDIT_SCHEDULE_SUMMARY,26,273,271,27,ES_MULTILINE | 
+                    ES_READONLY | NOT WS_BORDER
+    CONTROL         "Spin1",IDC_JD_SPINNER_END_AFTER,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS,115,217,
+                    8,12
+    GROUPBOX        "",IDC_STATIC,76,99,227,85
+    GROUPBOX        "Recurrence Pattern",IDC_STATIC,17,99,286,85
+    LTEXT           "Job",IDC_STATIC,17,64,13,8
+    EDITTEXT        IDC_JD_EDIT_JOBNAME,60,62,157,12,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "Details...",IDC_JD_BUTTON_JOBDETAILS,267,61,40,14
+END
+
+IDD_NO_RECURRENCE DIALOG DISCARDABLE  0, 0, 262, 62
+STYLE 0x0L
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Execute on",IDC_STATIC,7,21,37,8
+    CONTROL         "DateTimePicker1",IDC_ONCEOFF_DATETIMEPICKER_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,50,19,66,
+                    12
+    LTEXT           "at",IDC_STATIC,122,21,8,8
+    CONTROL         "DateTimePicker2",IDC_ONCEOFF_DATETIMEPICKER_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,136,19,54,12
+END
+
+IDD_DAILY_RECURRENCE DIALOG DISCARDABLE  0, 0, 159, 50
+STYLE 0x0L
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Re&cur every day at",IDC_STATIC,7,21,61,8
+    CONTROL         "DateTimePicker1",IDC_DAILY_DATETIMEPICKER_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,74,18,54,13
+END
+
+IDD_WEEKLY_RECURRENCE DIALOG DISCARDABLE  0, 0, 230, 76
+STYLE 0x0L
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "Recur every week on",IDC_STATIC,7,7,69,8
+    CONTROL         "Monday",IDC_WEEKLY_CHECK_MONDAY,"Button",BS_OWNERDRAW | 
+                    BS_NOTIFY | WS_GROUP | WS_TABSTOP,7,22,41,10
+    CONTROL         "Tuesday",IDC_WEEKLY_CHECK_TUESDAY,"Button",BS_OWNERDRAW | 
+                    BS_NOTIFY | WS_TABSTOP,55,22,43,10
+    CONTROL         "Wednesday",IDC_WEEKLY_CHECK_WEDNESDAY,"Button",
+                    BS_OWNERDRAW | BS_NOTIFY | WS_TABSTOP,105,22,54,10
+    CONTROL         "Thursday",IDC_WEEKLY_CHECK_THURSDAY,"Button",
+                    BS_OWNERDRAW | BS_NOTIFY | WS_TABSTOP,166,22,45,10
+    CONTROL         "Friday",IDC_WEEKLY_CHECK_FRIDAY,"Button",BS_OWNERDRAW | 
+                    BS_NOTIFY | WS_TABSTOP,7,38,35,10
+    CONTROL         "Saturday",IDC_WEEKLY_CHECK_SATURDAY,"Button",
+                    BS_OWNERDRAW | BS_NOTIFY | WS_TABSTOP,55,38,44,10
+    CONTROL         "Sunday",IDC_WEEKLY_CHECK_SUNDAY,"Button",BS_OWNERDRAW | 
+                    BS_NOTIFY | WS_TABSTOP,105,38,40,10
+    LTEXT           "at",IDC_STATIC,7,55,8,8
+    CONTROL         "DateTimePicker1",IDC_WEEKLY_DATETIMEPICKER_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,24,53,53,13
+END
+
+IDD_MONTHLY_RECURRENCE DIALOG DISCARDABLE  0, 0, 255, 67
+STYLE 0x0L
+FONT 10, "Arial Bold"
+BEGIN
+    CONTROL         "Spin1",IDC_MONTHLY_SPINNER_DAY,"msctls_updown32",
+                    UDS_SETBUDDYINT | UDS_ALIGNRIGHT | UDS_ARROWKEYS,142,17,
+                    8,12
+    EDITTEXT        IDC_MONTHLY_EDIT_ADAY_DAY,107,17,35,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "at",IDC_STATIC,154,19,8,8,NOT WS_GROUP
+    CONTROL         "DateTimePicker1",IDC_MONTHLY_DATETIMEPICKER_ADAY_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,166,17,54,12
+    CONTROL         "Recur every month on day",IDC_MONTHLY_RADIO_ADAY,"Button",
+                    BS_OWNERDRAW | WS_GROUP | WS_TABSTOP,9,18,94,10
+    CONTROL         "Recur every month on last day at",
+                    IDC_MONTHLY_RADIO_LASTDAY,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,9,40,115,10
+    CONTROL         "DateTimePicker2",
+                    IDC_MONTHLY_DATETIMEPICKER_LASTDAY_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,133,39,54,12
+END
+
+IDD_YEARLY_RECURRENCE DIALOG DISCARDABLE  0, 0, 246, 76
+STYLE 0x0L
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "at",IDC_STATIC,149,19,8,8,NOT WS_GROUP
+    CONTROL         "DateTimePicker1",IDC_YEARLY_DATETIMEPICKER_ADAY_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,163,17,56,12
+    CONTROL         "Recur every year on",IDC_YEARLY_RADIO_ADAY,"Button",
+                    BS_OWNERDRAW | WS_GROUP,7,18,73,10
+    CONTROL         "Recur every year on last day of February",
+                    IDC_YEARLY_RADIO_LASTDAY,"Button",BS_OWNERDRAW,7,37,137,
+                    10
+    CONTROL         "DateTimePicker2",IDC_YEARLY_DATETIMEPICKER_LASTDAY_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,160,36,56,12
+    LTEXT           "at",IDC_STATIC,148,38,8,8,NOT WS_GROUP
+    CONTROL         "DateTimePicker1",IDC_YEARLY_DATETIMEPICKER_ADAY_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,87,17,56,
+                    12
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_JOB_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 314
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 375
+    END
+
+    IDD_NO_RECURRENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DAILY_RECURRENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 152
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 43
+    END
+
+    IDD_WEEKLY_RECURRENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 223
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+
+    IDD_MONTHLY_RECURRENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 9
+        RIGHTMARGIN, 248
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 60
+    END
+
+    IDD_YEARLY_RECURRENCE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 239
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 69
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\SchedulingManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""..\\..\\..\\..\\bus\\resources\\TransActiveResources.rc"" // Standard Transactive Resources\r\n"
+    "#include ""..\\..\\..\\..\\bus\\response_plans\\plan_tree\\src\\PlanTree.rc"" // Plan Tree control resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\SchedulingManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "..\..\..\..\bus\resources\TransActiveResources.rc" // Standard Transactive Resources
+#include "..\..\..\..\bus\response_plans\plan_tree\src\PlanTree.rc" // Plan Tree control resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

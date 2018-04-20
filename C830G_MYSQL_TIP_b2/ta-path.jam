@@ -1,0 +1,267 @@
+
+class ta-path
+{
+	import os string assert print sequence path errors modules project numbers ;
+	import ta-path ;
+
+	#
+	# for example :
+	#     tp = new [ ta-path ] ;
+	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW ] ;
+	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW : TA_BASE : 3001 ] ;
+	#
+	rule __init__ ( top ? : base ? : proj ? )
+	{
+		if $(top)
+		{
+			self.top	= [ path.make $(top) ] ;
+			self.base	= $(top)/$(base) ;
+			self.proj	= $(top)/$(proj) ;
+		}
+
+		self.me						= [ path.make [ modules.binding ta-path ] ] ;
+		self.top					?= $(self.me:D) ;
+		self.branch					= [ path.basename $(self.top) ] ;
+		self.ta-os					= [ ta-os ] ;
+
+		self.base					?= [ detect-base ] ;
+		self.base-code				= $(self.base)/code ;
+		self.base-sdk				= $(self.base)/sdk ;
+		self.base-build				= $(self.base)/build ;
+		self.base-bin				= $(self.base)/bin ;
+		self.base-tools				= $(self.base)/code/tools ;
+		self.base-transactive		= $(self.base)/code/transactive ;
+		self.base-cots				= $(self.base)/code/cots ;
+
+		self.proj					?= [ detect-project ] ;
+		self.proj-code				= $(self.proj)/code ;
+		self.proj-sdk				= $(self.proj)/sdk ;
+		self.proj-build				= $(self.proj)/build ;
+		self.proj-bin				= $(self.proj)/bin ;
+		self.proj-tools				= $(self.proj)/code/tools ;
+		self.proj-transactive		= $(self.proj)/code/transactive ;
+		self.proj-cots				= $(self.proj)/code/cots ;
+
+		self.levels					= [ levels ] ;
+	}
+
+	rule branch ( )
+	{
+		return $(self.branch) ;
+	}
+
+	rule paths ( * : * )
+	{
+		local result ;
+
+		for local i in [ numbers.range 1 9 ]
+		{
+			if $($(i))
+			{
+				result += [ $($(i)) ] ;
+			}
+		}
+		return $(result) ;
+	}
+
+	rule top ( )
+	{
+		return $(self.top) ;
+	}
+
+	rule base ( )
+	{
+		return $(self.base) ;
+	}
+
+	rule proj ( )
+	{
+		return $(self.proj) ;
+	}
+
+	rule cots ( level * )
+	{
+		return [ level-based $(level) : cots ] ;
+	}
+
+	rule transactive ( level * )
+	{
+		return [ level-based $(level) : transactive ] ;
+	}
+
+	rule code ( level * )
+	{
+		return [ level-based $(level) : code ] ;
+	}
+
+	rule build ( level * )
+	{
+		return [ level-based $(level) : build ] ;
+	}
+
+	rule bin ( level * )
+	{
+		return [ level-based $(level) : bin ] ;
+	}
+
+	rule tools ( level * )
+	{
+		return [ level-based $(level) : tools ] ;
+	}
+
+	rule sdk ( level * )
+	{
+		return [ level-based $(level) : sdk ] ;
+	}
+
+	rule level-based ( level * : x )
+	{
+		level ?= [ current-level ] ;
+		return $(self.$(level)-$(x)) ;
+	}
+
+	rule is-base-level ( )
+	{
+		if [ current-level ] = base
+		{
+			return true ;
+		}
+	}
+
+	rule is-project-level ( )
+	{
+		if [ current-level ] = proj
+		{
+			return true ;
+		}
+	}
+
+	rule jamfiles ( )
+	{
+		local result ;
+		result = [ path.glob-tree [ transactive base proj ] : Jamfile.jam ] ;
+		result += [ path.glob [ paths base : proj : code base proj ] : Jamfile.jam ] ;
+		return $(result) ;
+	}
+
+	rule includes ( level * )
+	{
+		level ?= $(self.levels) ;
+		return	$(self.$(level))
+				$(self.$(level)-transactive)
+				$(self.$(level)-sdk)
+				$(self.$(level)-code)
+				$(self.$(level)-build)
+				$(self.$(level)-build)/$(self.ta-os)_n/transactive
+				;
+	}
+
+	rule detect-base ( )
+	{
+		for local base in TA_BASE TA_Base BASE Base
+		{
+			if [ path.exists [ path.native $(self.top)/$(base)/code/transactive/core/versioning ] ]
+			{
+				return $(self.top)/$(base) ;
+			}
+		}
+
+		if [ path.exists [ path.native $(self.top)/code/transactive/core/versioning ] ]
+		{
+			return $(self.top) ;
+		}
+
+		errors.error Cannot detect 'TA_BASE' path. ;
+	}
+
+	rule detect-project ( )
+	{
+		for local proj in 1001 4677 4712 4669 3001 3002 FZL1 GZL9 GZL13 T252
+		{
+			if [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/core ] ] &&
+			   [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/bus ] ] &&
+			   [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/app ] ]
+			{
+				return $(self.top)/$(proj) ;
+			}
+		}
+	}
+
+	rule ta-os ( )
+	{
+		if ! $(self.ta-os)
+		{
+			switch [ os.name ]
+			{
+				case NT : self.ta-os = win32 ;
+				case *  : self.ta-os = [ os.name ] ;
+			}
+		}
+		return $(self.ta-os) ;
+	}
+
+	rule installation ( level ? : type variant ) # type : library, exe; variant debug, release ;
+	{
+		level ?= [ current-level ] ;
+		local var = self.$(level)-$(variant)-$(type)-installation ;
+		if ! $($(var))
+		{
+			local debug-suffix = _nd ;
+			local release-suffix = _nr ;
+			local library-base	= [ build ] ;
+			local exe-base	= [ bin ] ;
+			$(var) = [ path.join $($(type)-base) [ sequence.join [ ta-os ] $($(variant)-suffix) ] ] ;
+		}
+		return $($(var)) ;
+	}
+
+	rule levels ( )
+	{
+		if ! $(self.levels)
+		{
+			for local level in base proj
+			{
+				if $(self.$(level))
+				{
+					self.levels += $(level) ;
+				}
+			}
+		}
+		return $(self.levels) ;
+	}
+
+	rule current-path ( )
+	{
+		local proj = [ project.current ] ;
+		return [ path.root [ $(proj).get location ] [ path.pwd ] ] ;
+	}
+
+	rule current-level ( )
+	{
+		for local level in base proj
+		{
+			if $(self.$(level)) && [ path.relative [ current-path ] $(self.$(level)) : no-error ] != not-a-child
+			{
+				return $(level) ;
+			}
+		}
+	}
+
+	rule __debug__ ( )
+	{
+		for local x in top branch levels
+		{
+			echo "\t" [ PAD $(x) : 20 ] " => " [ sequence.transform path.native : [ $(x) ] ] ;
+		}
+
+		for local level in [ levels ]
+		{
+			echo $(level) level ;
+			echo "\t" [ PAD $(level) : 20 ] " => " [ path.native [ $(level) ] ] ;
+			for local x in code sdk bin build cots tools transactive includes
+			{
+				echo "\t" [ PAD $(x) : 20 ] " => " [ sequence.transform path.native : [ $(x) $(level) ] ] ;
+			}
+		}
+	}
+}

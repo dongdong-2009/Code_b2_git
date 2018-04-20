@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.trains.TrainCorbaProxy</ProjectName>
+    <ProjectGuid>{106E7CCC-6185-4096-AB13-B340089208AD}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CallTypesConversion.h" />
+    <ClInclude Include="src\CctvTypesConversion.h" />
+    <ClInclude Include="src\CommonTypesConversion.h" />
+    <ClInclude Include="src\ExceptionConversion.h" />
+    <ClInclude Include="src\ITrainCctvUpdateObserver.h" />
+    <ClInclude Include="src\ITrainDriverCallUpdateObserver.h" />
+    <ClInclude Include="src\ITrainInformationUpdateObserver.h" />
+    <ClInclude Include="src\ITrainPaUpdateObserver.h" />
+    <ClInclude Include="src\ITrainPecUpdateObserver.h" />
+    <ClInclude Include="src\ITrainRadioGroupUpdateObserver.h" />
+    <ClInclude Include="src\ITrainStateUpdateObserver.h" />
+    <ClInclude Include="src\ITrainTisUpdateObserver.h" />
+    <ClInclude Include="src\PaTypesConversion.h" />
+    <ClInclude Include="src\PecTypesConversion.h" />
+    <ClInclude Include="src\RadioGroupTypesConversion.h" />
+    <ClInclude Include="src\StateUpdateTypesConversion.h" />
+    <ClInclude Include="src\TisTypesConversion.h" />
+    <ClInclude Include="src\TrainAgentProxyFactory.h" />
+    <ClInclude Include="src\TrainCctvCorbaProxy.h" />
+    <ClInclude Include="src\TrainDriverCallCorbaProxy.h" />
+    <ClInclude Include="src\TrainInformationConversion.h" />
+    <ClInclude Include="src\TrainInformationCorbaProxy.h" />
+    <ClInclude Include="src\TrainOperationModeCorbaProxy.h" />
+    <ClInclude Include="src\TrainPaCorbaProxy.h" />
+    <ClInclude Include="src\TrainPecCorbaProxy.h" />
+    <ClInclude Include="src\TrainRadioGroupCorbaProxy.h" />
+    <ClInclude Include="src\TrainStateUpdateCorbaProxy.h" />
+    <ClInclude Include="src\TrainTisCorbaProxy.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CallTypesConversion.cpp" />
+    <ClCompile Include="src\CctvTypesConversion.cpp" />
+    <ClCompile Include="src\CommonTypesConversion.cpp" />
+    <ClCompile Include="src\PaTypesConversion.cpp" />
+    <ClCompile Include="src\PecTypesConversion.cpp" />
+    <ClCompile Include="src\RadioGroupTypesConversion.cpp" />
+    <ClCompile Include="src\StateUpdateTypesConversion.cpp" />
+    <ClCompile Include="src\TisTypesConversion.cpp" />
+    <ClCompile Include="src\TrainAgentProxyFactory.cpp" />
+    <ClCompile Include="src\TrainCctvCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainDriverCallCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainInformationConversion.cpp" />
+    <ClCompile Include="src\TrainInformationCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainOperationModeCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainPaCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainPecCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainRadioGroupCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainStateUpdateCorbaProxy.cpp" />
+    <ClCompile Include="src\TrainTisCorbaProxy.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrainCommonLibrary\bus.trains.TrainCommonLibrary.TA_TrainCommonLibrary.vcxproj">
+      <Project>{758a5834-0fd3-47fb-b061-7f6f41e68600}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

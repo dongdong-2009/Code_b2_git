@@ -1,0 +1,60 @@
+#if !defined(BindingRequestMessage_6257BEC1_1102_4108_8852_B38C67A63217__INCLUDED_)
+#define BindingRequestMessage_6257BEC1_1102_4108_8852_B38C67A63217__INCLUDED_
+
+/**
+  * The source code in this file is the property of 
+  * Ripple Systems and is not for redistribution
+  * in any form.
+  *
+  * Source:   $File: //depot/4669_T01271350/TA_BASE/transactive/core/message/IDL/src/BindingRequestMessageCorbaDef.idl $
+  * @author:  Cameron Rochester
+  * @version: $Revision: #1 $
+  *
+  * Last modification: $DateTime: 2008/11/28 16:26:01 $
+  * Last modified by:  $Author: builder $
+  * 
+  * The BindingRequestMessage is used by the Transactive Distributed Naming
+  * Service
+  * 
+  * The BindingRequestListener that has the requested name calls back the
+  * originator using this interface. It will be queried by waiting threads to see
+  * if the callback has been received.
+  */
+
+#include "core/message/IDL/src/GenericMessageCorbaDef.idl"
+
+module TA_Base_Core
+{
+		struct BindingRequestMessageCorbaDef
+		{
+			/**
+			 * Time the Message was first generated
+			 */
+			DateTime createTime;
+
+			/**
+			 * The MessageTypeKey as defined in the MESSAGETYPE table
+			 */			
+			string messageTypeKey;
+
+			/**
+			* The context that the name resides within. This is generally the subsystem.
+			*/
+			string nameContext;
+
+			/**
+			* The name of the object within the given context. This is generally the Entity Name.
+			*/
+			string name;
+
+			/**
+			* This is the actual object reference of the object that wants to resolve the name.
+			*/
+			Object originator;
+
+		}; // interface BindingRequestMessageCorbaDef
+
+
+}; // module TA_Base_Core
+
+#endif // !defined(BindingRequestMessage_6257BEC1_1102_4108_8852_B38C67A63217__INCLUDED_)

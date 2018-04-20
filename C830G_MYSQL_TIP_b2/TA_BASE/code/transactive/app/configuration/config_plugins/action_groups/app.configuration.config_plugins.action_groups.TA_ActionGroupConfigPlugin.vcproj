@@ -1,0 +1,164 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="app.configuration.config_plugins.action_groups" ProjectGUID="{6C9DEEF4-5167-493B-B4F3-D848D132BB6B}" Keyword="MFCProj" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../../../build/win32_nd" IntermediateDirectory=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/action_groups" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nd/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../../..,../../../../../../build/win32_n/transactive,..\..\..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;__OSVERSION=4;TA_ASSERT_LOG=1" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" UsePrecompiledHeader="2" PrecompiledHeaderThrough="stdafx.h" PrecompiledHeaderFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/action_groups/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/action_groups/" ObjectFile=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/action_groups/" ProgramDataBaseFileName=".\../../../../../../build/win32_nd/transactive/app/configuration/config_plugins/action_groups/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081" AdditionalIncludeDirectories="../../../../bus/resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rtd.lib TA_mcl_d.lib omniORB405_rtd.lib omniDynamic405_rtd.lib COS405_rtd.lib oci.lib Rpcrt4.lib Msimg32.lib acemfcd.lib TA_Base_Core_d.lib TA_Base_Bus_d.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nd/TA_ActionGroupConfigPlugin.dll" LinkIncremental="2" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../sdk/win32_nd;..\..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7;../../../../../cots/oracle/10.2.0/winnt/lib;..\..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\..\cots\WinStackTrace\build\Debug" ModuleDefinitionFile=".\src\TA_DutyConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nd/TA_ActionGroupConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nd/TA_ActionGroupConfigPlugin.lib" TargetMachine="1"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nd/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../../../build/win32_nr" IntermediateDirectory=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/action_groups" ConfigurationType="2" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="2" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" MkTypLibCompatible="true" SuppressStartupBanner="true" TargetEnvironment="1" TypeLibraryName=".\../../../../../../build/win32_nr/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.tlb" HeaderFileName=""/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../../..,../../../../../../build/win32_n/transactive,..\..\..\..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG;WIN32;_WINDOWS;_AFXEXT;__WIN32__;__x86__;__NT__;__OSVERSION=4;TA_ASSERT_LOG=1" RuntimeLibrary="2" RuntimeTypeInfo="true" UsePrecompiledHeader="2" PrecompiledHeaderThrough="stdafx.h" PrecompiledHeaderFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/action_groups/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.pch" AssemblerListingLocation=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/action_groups/" ObjectFile=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/action_groups/" ProgramDataBaseFileName=".\../../../../../../build/win32_nr/transactive/app/configuration/config_plugins/action_groups/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081" AdditionalIncludeDirectories="../../../../bus/resources"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLinkerTool" AdditionalDependencies="omnithread30_rt.lib TA_mcl.lib omniORB405_rt.lib omniDynamic405_rt.lib COS405_rt.lib oci.lib Rpcrt4.lib Msimg32.lib acemfc.lib TA_Base_Core.lib TA_Base_Bus.lib stracelib.lib" OutputFile="../../../../../../bin/win32_nr/TA_ActionGroupConfigPlugin.dll" LinkIncremental="1" SuppressStartupBanner="true" AdditionalLibraryDirectories="../../../../../../sdk/win32_nr;..\..\..\..\..\cots\omniORB\omniORB_4.0.5\lib\x86_win32_win7;../../../../../cots/oracle/10.2.0/winnt/lib;..\..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\..\cots\mcl\1.1.0\lib\winnt;..\..\..\..\..\cots/ACE/6_0_4/ACE_wrappers/lib;..\..\..\..\..\cots\boost\boost_1_39_0\stage\lib;..\..\..\..\..\cots\WinStackTrace\build\Release" ModuleDefinitionFile=".\src\TA_DutyConfigPlugin.def" GenerateDebugInformation="true" ProgramDatabaseFile="../../../../../../bin/win32_nr/TA_ActionGroupConfigPlugin.pdb" SubSystem="2" RandomizedBaseAddress="1" DataExecutionPrevention="0" ImportLibrary=".\../../../../../../build/win32_nr/TA_ActionGroupConfigPlugin.lib" TargetMachine="1" IgnoreDefaultLibraryNames="LIBC"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCManifestTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../../../build/win32_nr/app.configuration.config_plugins.action_groups.TA_ActionGroupConfigPlugin.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCAppVerifierTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\ActionListCtrl.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ActionListCtrl.h">
+			</File>
+			<File RelativePath="src\DutyComponent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyComponent.h">
+			</File>
+			<File RelativePath="src\DutyDatabaseAccessor.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyDatabaseAccessor.h">
+			</File>
+			<File RelativePath="src\DutyDetailView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyDetailView.h">
+			</File>
+			<File RelativePath="src\DutyFrameworkView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyFrameworkView.h">
+			</File>
+			<File RelativePath="src\DutyListView.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\DutyListView.h">
+			</File>
+			<File RelativePath="src\Resource.h">
+			</File>
+			<File RelativePath="src\StdAfx.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StdAfx.h">
+			</File>
+			<File RelativePath="src\TA_DutyConfigPlugin.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TA_DutyConfigPlugin.def">
+			</File>
+			<File RelativePath="src\TA_DutyConfigPlugin.rc">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;" AdditionalIncludeDirectories="src"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\VersionGen.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0" WarningLevel="1"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;" UsePrecompiledHeader="0" WarningLevel="1"/>
+				</FileConfiguration></File>
+		</Filter>
+		<Filter Name="Resource Files" Filter="ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+			<File RelativePath="res\copy.ico">
+			</File>
+			<File RelativePath="res\duty.ico">
+			</File>
+			<File RelativePath="res\entity.ico">
+			</File>
+			<File RelativePath="src\icon1.ico">
+			</File>
+			<File RelativePath="res\location.ico">
+			</File>
+			<File RelativePath="res\Mandatory.bmp">
+			</File>
+			<File RelativePath="res\operator.ico">
+			</File>
+			<File RelativePath="res\sort_ascending.bmp">
+			</File>
+			<File RelativePath="res\sort_descending.bmp">
+			</File>
+			<File RelativePath="res\TA_DutyConfigPlugin.rc2">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

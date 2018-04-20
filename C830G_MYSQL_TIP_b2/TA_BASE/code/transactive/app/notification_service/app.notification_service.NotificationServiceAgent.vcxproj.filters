@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{de44bdeb-ba2b-4b71-ade1-c359013d7bf8}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FederatableEventChannel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Federator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Gateway.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GatewayConsumer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotificationAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotificationServiceThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NotificationStatisticsThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NSALocator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\FederatableEventChannel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Federator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Gateway.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GatewayConsumer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotificationAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotificationServiceConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotificationServiceThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NotificationStatisticsThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NSALocator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="omni_notification.cfg" />
+  </ItemGroup>
+</Project>

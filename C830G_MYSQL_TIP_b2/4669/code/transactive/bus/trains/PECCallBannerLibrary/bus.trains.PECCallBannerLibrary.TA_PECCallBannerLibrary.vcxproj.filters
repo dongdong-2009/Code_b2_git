@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{0570f800-0d57-4ef4-b855-a44fc92e845d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\LocationSelectionDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PECCallEntry.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PECCallFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PECCallInitialiser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PECDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\LocationSelectionDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PECCallEntry.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PECCallFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PECCallInitialiser.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PECDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PECDialog.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

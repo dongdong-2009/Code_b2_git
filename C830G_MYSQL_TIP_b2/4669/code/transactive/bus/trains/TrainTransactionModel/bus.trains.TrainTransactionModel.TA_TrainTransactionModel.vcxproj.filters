@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="States">
+      <UniqueIdentifier>{925b6964-a8e1-4ea4-97b4-939452bcc3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Transactions">
+      <UniqueIdentifier>{2114c3a0-d7a3-4f93-9d00-8a674f0f39c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{f33f49d7-189b-4151-9d98-ebcc409016b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{75719cdc-31bf-49e3-84da-e7075a4024b0}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CoreTrainState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateChangeWorkItem.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainStateLock.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainStatusManager.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\NonBlockingTrainTransaction.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParallelTrainTransaction.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ScheduledTrainTransaction.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCommand.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainEvent.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainEventWorkItem.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTransaction.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTransactionManager.cpp">
+      <Filter>Transactions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainTimer.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnsolicitedTrainTimerManager.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CoreTrainState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainStateUpdateListener.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateChangeWorkItem.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainStateLock.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainStatusManager.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICommandSender.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IResponseReceiver.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IScheduledEventProcessor.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainEventFactory.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainEventProcessor.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITrainTransactionManager.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\NonBlockingTrainTransaction.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParallelTrainTransaction.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ScheduledTrainTransaction.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCommand.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainEvent.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainEventWorkItem.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTransaction.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTransactionManager.h">
+      <Filter>Transactions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IUnsolicitedTrainTimerCallback.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnsolicitedTrainTimerManager.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CommonDataTypes.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

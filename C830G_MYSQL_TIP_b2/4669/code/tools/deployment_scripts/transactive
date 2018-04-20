@@ -1,0 +1,242 @@
+#!/bin/sh
+#
+# Purpose:
+#
+#     The purpose of this script is to start and stop the ITS system
+#     controller as part of the server start up and shutdown
+#     procedure.
+#
+#
+# Set up the ITS operating environment.
+#
+# TD14376, solve OmniOrb binding to the wrong ip address problem 
+ORBendPoint=giop:tcp:`hostname`:
+export ORBendPoint
+ITS_HOME=/u01/transactive
+export ITS_HOME
+PATH=$PATH:/etc:$ITS_HOME/bin:.
+export PATH
+ORACLE_HOME=/u01/app/oracle/product/10.2.0/db_1
+export ORACLE_HOME
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ITS_HOME/lib:$ORACLE_HOME/lib
+export LD_LIBRARY_PATH
+#SYSTEM_VERSION=`grep Version /u01/transactive/bin/versions`
+#echo $LD_LIBRARY_PATH
+#
+# Determine which machine it is running on.
+#
+if [ "occa" = "`hostname`" ]
+then
+    ENTITY_NAME="OCCA"
+elif [ "occb" = "`hostname`" ]
+then
+    ENTITY_NAME="OCCB";
+else
+    /usr/ucb/echo "System being started on unsupported machine.  It will not be started"
+    exit 255
+fi
+
+#
+# Get the PID of the running SystemController.  It will be used to determine if
+# an existing SystemController is running.
+#
+MONITOR_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+
+case $1 in
+
+    #
+    # Start the software.
+    #
+    start)
+
+        #
+        # Done start a second system controller if one is already
+        # running.
+        #
+        if [ "" -ne "$MONITOR_PID" ]
+        then
+            /usr/ucb/echo "There is already a system controller running. $SYSTEM_VERSION A second one will not be started."
+            exit 255
+        fi
+        
+	# 
+        # Archive existing log files
+        #
+        ARCHIVENAME=log 
+        ARCHIVENAME=$ARCHIVENAME.`date '+%d%m%y-%H.%M.%S'`.tar.gz
+        LOGPATH=/u01/transactive/log
+        ARCHIVEPATH=/u01/transactive/log_archive
+	FILESEXIST=`ls $LOGPATH | wc -l | sed -e 's/ //g'"`
+        ARCHIVEPATHEXISTS=`ls -p $ITS_HOME | grep log_archive/ | wc -l | sed -e 's/ //g'"`
+        if [ "$ARCHIVEPATHEXISTS" = "0" ]
+        then 
+            mkdir $ARCHIVEPATH
+        fi
+        if [ "$FILESEXIST" != "0" ]
+        then
+            /usr/ucb/echo "Archiving previous log files to $ARCHIVEPATH/$ARCHIVENAME"
+            tar cf - $LOGPATH/* | /usr/bin/gzip > $ARCHIVEPATH/$ARCHIVENAME
+            rm -f $LOGPATH/*
+            /usr/ucb/echo
+        fi
+
+        # Determine if log_archive collection is within MAX_ARCHIVE_SIZE
+        # If not remove existing log archives (tar.gz files)
+        MAX_ARCHIVE_SIZE=12000
+        LOG_ARCHIVE_USAGE=`du -ks $ARCHIVEPATH | awk '{ print $1 }'`
+        if [ "$LOG_ARCHIVE_USAGE" -gt "$MAX_ARCHIVE_SIZE" ] 
+        then
+            /usr/ucb/echo "Deleting previous log tar.gz files to clear disc space"
+            rm $ARCHIVEPATH/log*.tar.gz
+        fi
+
+        #
+        # Determine if there is sufficient disc space.  We need to
+        # have at least 10% before we can start.  The disc capacities
+        # are percentages.
+        #
+        # The disc space capacity is calculated by subtracting the
+        # percentage used as reported by the df command from 100%
+        #
+        /usr/ucb/echo -n "Checking for sufficient disc space...."
+        DISC_CAPACITY=`df -k $ITS_HOME | tail -1 | awk '{ print int( substr( $5, 0, length($5) - 1 ) ) }'`
+        MINIMUM_DISC_CAPACITY=5
+        REMAINING_CAPACITY=`expr 100 - $DISC_CAPACITY`
+        if [ "$REMAINING_CAPACITY" -lt "$MINIMUM_DISC_CAPACITY" ]
+        then
+            /usr/ucb/echo "failed"
+            /usr/ucb/echo "    There is insufficient disc space to start the system "
+            /usr/ucb/echo "    Require $MINIMUM_DISC_CAPACITY%, actual $REMAINING_CAPACITY%"
+            exit 255
+        fi
+        /usr/ucb/echo "OK"
+        /usr/ucb/echo "We are using a minimum of $MINIMUM_DISC_CAPACITY% until the system has been fully cleaned up"
+        /usr/ucb/echo
+
+	#
+	# Wait for the listener to start up.
+	#
+#	LISTENER_TRANSACT=`su - oracle -c "lsnrctl services" | grep -v Sun | grep transact | wc -l | sed -e 's/ //g'"`
+#	LISTEN_DELAY=120
+#	/usr/ucb/echo -n "Waiting for TRANSACT database ( up to $LISTEN_DELAY seconds ): "
+#	while [ "0" = "$LISTENER_TRANSACT" -a "0" != "$LISTEN_DELAY" ]
+#	do
+#		/usr/ucb/echo -n "."
+#		LISTEN_DELAY=`expr $LISTEN_DELAY - 1`
+#		sleep 1
+#		LISTENER_TRANSACT=`su - oracle -c "lsnrctl services" | grep -v Sun | grep transact | wc -l | sed -e 's/ //g'"`
+#	done
+	/usr/ucb/echo ""
+#	if [ "0" = "$LISTEN_DELAY" ]
+#	then
+#		/usr/ucb/echo "TRANSACT database not available.  Manual intervention required"
+#		/usr/ucb/echo "TRANSACTIVE system has not been started."
+#		exit 255
+#	fi
+
+        #
+        # Display configuration details.
+        #
+        /usr/ucb/echo
+        /usr/ucb/echo "System controller starting with entity name - $ENTITY_NAME";
+
+ 	# speed up failover in event primary not contactable
+        # ndd -set /dev/tcp tcp_ip_abort_cinterval 30000
+
+        #
+        # Start the system controller.
+        #
+        cd /u01/transactive/bin
+        watson kill
+        # jianghp fixed, TD19152
+	SCSTARTED=false
+	# let the systemcontroller start 3 times upon it fails
+	TRY_TIMES=3 
+	CALLED_TIMES=1
+	while [ "$SCSTARTED" != "true" -a $CALLED_TIMES -le $TRY_TIMES ]
+	do
+		/usr/ucb/echo "checking whether the system controller is running properly..."	
+		MONITOR_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+		if [ "" = "$MONITOR_PID" ]
+		then
+ 		    # using ">> /u01/transactive/log/startup.out" instead of " > startup.out" to make sure the 'out' file are new in any time
+		    nohup ./SystemController --startup-time=20000 --debug-level=INFO --db-connection=instance:userid:password --central-database=centralinstance:centraluserid:centralpassword --db-connection-file=XXXConnectionStrings.csv --debug-file=/u01/transactive/log/SystemController.log --entity-name=$ENTITY_NAME 2>&1 >> /u01/transactive/log/startup.out &	    
+		    # echo "try $CALLED_TIMES round to start system controller"	 
+		    CALLED_TIMES=`expr $CALLED_TIMES + 1`
+		else
+		    # /usr/ucb/echo "the systemcontroller pid is $MONITOR_PID "
+		    SCSTARTED=true
+		    /usr/ucb/echo "TRANSACTIVE system controller, $SYSTEM_VERSION has been started"
+		fi
+		sleep 3 
+	done
+	/usr/ucb/echo
+	# jianghp fixed, TD19152
+	;;
+
+    #
+    # Stop the running system controller.
+    #
+    stop)
+
+        #
+        # If the system controller is not running, display an
+        # error message and exit.
+        #
+        if [ "" -eq "$MONITOR_PID" ]
+        then
+            echo "ITS system controller not running"
+            exit 0
+        fi
+
+        #
+        # Now stop the system controller.
+        #
+        /usr/ucb/echo
+        /usr/ucb/echo
+        /usr/ucb/echo "Stopping the TRANSACTIVE system controller with entity name - $ENTITY_NAME"
+        kill -15 $MONITOR_PID
+
+		#
+		# Wait until the system controller has stopped.
+		#
+#		DURATION=0
+#		while [ "" -ne "$MONITOR_PID" ]
+#        do
+#		    DURATION=`expr $DURATION + 1 `
+#			sleep 1
+#			/usr/ucb/echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+#           #1.7 line below
+#            MONITOR_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+#
+#        done
+#            /usr/ucb/echo 'System Controller has now stopped'
+        ;;
+
+    *)
+        /usr/ucb/echo "usage: transactive start|stop"
+	exit
+        ;;
+esac
+
+case $2 in
+	#if this is being run as a startup script then we dont want watson to kill the terminal
+	nowatson)
+    		if [ $1 = "stop" ]
+		then	
+			DURATION=0
+			while [ "" -ne "$MONITOR_PID" ]
+       			do
+		    		DURATION=`expr $DURATION + 1 `
+				sleep 1
+				/usr/ucb/echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+            			MONITOR_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+       		 	done
+	
+		fi
+	;;
+	
+	*)
+		watson
+	;;
+esac

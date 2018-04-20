@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>bus.trains.TrainCommonLibrary</ProjectName>
+    <ProjectGuid>{758A5834-0FD3-47FB-B061-7F6F41E68600}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC60.props" />
+    <Import Project="..\..\..\..\tools\build\VCPropSheet\Common.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>15.0.27130.2020</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;__WIN32__;__x86__;__NT__;_CRT_SECURE_NO_DEPRECATE;_WIN32_WINNT=0x500;__OSVERSION__=4;WIN32;_LIB;_AFXDLL;_USE_32BIT_TIME_T;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0c09</Culture>
+    </ResourceCompile>
+    <Lib />
+    <Bscmake />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AgentCommunicationException.cpp" />
+    <ClCompile Include="src\AtsZoneUtils.cpp" />
+    <ClCompile Include="src\BadCommandException.cpp" />
+    <ClCompile Include="src\CallTypes.cpp" />
+    <ClCompile Include="src\CctvConflictException.cpp" />
+    <ClCompile Include="src\CctvException.cpp" />
+    <ClCompile Include="src\CctvTypes.cpp" />
+    <ClCompile Include="src\CommonTypes.cpp" />
+    <ClCompile Include="src\GroupInUseException.cpp" />
+    <ClCompile Include="src\InvalidParameterException.cpp" />
+    <ClCompile Include="src\InvalidSelectionListException.cpp" />
+    <ClCompile Include="src\InvalidTrainException.cpp" />
+    <ClCompile Include="src\LocationCache.cpp" />
+    <ClCompile Include="src\MpuChangeoverException.cpp" />
+    <ClCompile Include="src\OperationNotSupportedException.cpp" />
+    <ClCompile Include="src\PaException.cpp" />
+    <ClCompile Include="src\PaTypes.cpp" />
+    <ClCompile Include="src\PecException.cpp" />
+    <ClCompile Include="src\PecTypes.cpp" />
+    <ClCompile Include="src\ProtocolCallTypes.cpp" />
+    <ClCompile Include="src\ProtocolCctvTypes.cpp" />
+    <ClCompile Include="src\ProtocolCommonTypes.cpp" />
+    <ClCompile Include="src\ProtocolException.cpp" />
+    <ClCompile Include="src\ProtocolPaTypes.cpp" />
+    <ClCompile Include="src\ProtocolPecTypes.cpp" />
+    <ClCompile Include="src\ProtocolTtisTypes.cpp" />
+    <ClCompile Include="src\RadioGroupTypes.cpp" />
+    <ClCompile Include="src\RadioGroupUtils.cpp" />
+    <ClCompile Include="src\StateUpdateTypes.cpp" />
+    <ClCompile Include="src\TrainAccessDeniedException.cpp" />
+    <ClCompile Include="src\TrainCallException.cpp" />
+    <ClCompile Include="src\TrainException.cpp" />
+    <ClCompile Include="src\TrainInformationTypes.cpp" />
+    <ClCompile Include="src\TrainRadioException.cpp" />
+    <ClCompile Include="src\TrainTimeoutException.cpp" />
+    <ClCompile Include="src\TrainTimerException.cpp" />
+    <ClCompile Include="src\TrainTransmissionFailureException.cpp" />
+    <ClCompile Include="src\TransactionCancelledException.cpp" />
+    <ClCompile Include="src\TtisException.cpp" />
+    <ClCompile Include="src\TtisTypes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AgentCommunicationException.h" />
+    <ClInclude Include="src\AtsZoneUtils.h" />
+    <ClInclude Include="src\BadCommandException.h" />
+    <ClInclude Include="src\CallTypes.h" />
+    <ClInclude Include="src\CctvConflictException.h" />
+    <ClInclude Include="src\CctvException.h" />
+    <ClInclude Include="src\CctvTypes.h" />
+    <ClInclude Include="src\CommonTypes.h" />
+    <ClInclude Include="src\GenericObserverManager.h" />
+    <ClInclude Include="src\GroupInUseException.h" />
+    <ClInclude Include="src\InvalidParameterException.h" />
+    <ClInclude Include="src\InvalidSelectionListException.h" />
+    <ClInclude Include="src\InvalidTrainException.h" />
+    <ClInclude Include="src\LocationCache.h" />
+    <ClInclude Include="src\MpuChangeoverException.h" />
+    <ClInclude Include="src\OperationNotSupportedException.h" />
+    <ClInclude Include="src\PaException.h" />
+    <ClInclude Include="src\PaTypes.h" />
+    <ClInclude Include="src\PecException.h" />
+    <ClInclude Include="src\PecTypes.h" />
+    <ClInclude Include="src\ProtocolCallTypes.h" />
+    <ClInclude Include="src\ProtocolCctvTypes.h" />
+    <ClInclude Include="src\ProtocolCommonTypes.h" />
+    <ClInclude Include="src\ProtocolException.h" />
+    <ClInclude Include="src\ProtocolPaTypes.h" />
+    <ClInclude Include="src\ProtocolPecTypes.h" />
+    <ClInclude Include="src\ProtocolTtisTypes.h" />
+    <ClInclude Include="src\RadioGroupTypes.h" />
+    <ClInclude Include="src\RadioGroupUtils.h" />
+    <ClInclude Include="src\StateUpdateTypes.h" />
+    <ClInclude Include="src\TrainAccessDeniedException.h" />
+    <ClInclude Include="src\TrainCallException.h" />
+    <ClInclude Include="src\TrainException.h" />
+    <ClInclude Include="src\TrainInformationTypes.h" />
+    <ClInclude Include="src\TrainRadioException.h" />
+    <ClInclude Include="src\TrainTimeoutException.h" />
+    <ClInclude Include="src\TrainTimerException.h" />
+    <ClInclude Include="src\TrainTransmissionFailureException.h" />
+    <ClInclude Include="src\TransactionCancelledException.h" />
+    <ClInclude Include="src\TtisException.h" />
+    <ClInclude Include="src\TtisTypes.h" />
+    <ClInclude Include="src\Utility.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{4c385a9f-3653-455b-946f-3fc2ec3ecee1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc Classes">
+      <UniqueIdentifier>{66a76b8b-d3ce-4fef-bf8e-3ca3858451e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CCTV Classes">
+      <UniqueIdentifier>{f7706b9a-3ec0-446e-a459-0cb77150ea65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Call Classes">
+      <UniqueIdentifier>{cd3e1376-540f-48e5-a9b7-edff700ee7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PA Classes">
+      <UniqueIdentifier>{a098f5f2-7fbe-45a4-8109-ffc579e31c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PEC Classes">
+      <UniqueIdentifier>{85fd0bc7-979e-4668-a413-c3b7ad5cd71c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TTIS Classes">
+      <UniqueIdentifier>{d0f1cfb2-5e7b-4c43-9b2b-e2dec3623ca5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FrameCheckSequence.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimsCommand.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TimsEvent.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainEventFactoryImpl.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractTableEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AtcEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BadCommandEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeAreaCommand.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeAreaCommandReceivedEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeModeCommand.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeoverStatusEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Oa1Event.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TestCallEvent.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TestCallResultCommand.cpp">
+      <Filter>Misc Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractCctvCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvCarrierOffCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvCarrierOnCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvCommandReceivedEvent.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvQuadCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvSequenceCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CctvSingleCommand.cpp">
+      <Filter>CCTV Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CallTrainCommandReceivedEvent.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndOfOccCallEvent.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndOfVoiceCallCommand.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OccCallCommandReceivedCommand.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OccCallResetCommand.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RequestForCallTrainCommand.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RequestForOccCallEvent.cpp">
+      <Filter>Call Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AudioCabToCabEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaAudioSwitchEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaCommandReceivedEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaContinueCommand.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaCyclicPreRecordedAnnouncementCommand.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaLiveAnnouncementCommand.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaPreRecordedAnnouncementCommand.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaReadyForLiveAnnouncementEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaRequestForResetEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaResetCommand.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaResetEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PaTrainMessageCompletedEvent.cpp">
+      <Filter>PA Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPecCommand.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPecEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecActivatedEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecAnswerCommand.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecCommandReceivedEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecContinueCommand.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecReadyForConversationEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecRequestForResetEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecResetCommand.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecResetEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PecSelectedByDriverEvent.cpp">
+      <Filter>PEC Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractTtisCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EndOfTtisDownloadEvent.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtdFrame.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisCommandReceivedEvent.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisFreeTextMessageCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisLibraryDownloadCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisLibraryUpgradeCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisPreStoredMessageCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisResetCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisScheduleDownloadCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TtisScheduleUpgradeCommand.cpp">
+      <Filter>TTIS Classes</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\FrameCheckSequence.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimsCommand.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TimsEvent.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainEventFactoryImpl.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractTableEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtcEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BadCommandEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeAreaCommand.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeAreaCommandReceivedEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeModeCommand.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeoverStatusEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MiscDataTypes.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Oa1Event.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TestCallEvent.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TestCallResultCommand.h">
+      <Filter>Misc Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractCctvCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvCarrierOffCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvCarrierOnCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvCommandReceivedEvent.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvQuadCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvSequenceCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CctvSingleCommand.h">
+      <Filter>CCTV Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CallTrainCommandReceivedEvent.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EndOfOccCallEvent.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EndOfVoiceCallCommand.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OccCallCommandReceivedCommand.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OccCallResetCommand.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RequestForCallTrainCommand.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RequestForOccCallEvent.h">
+      <Filter>Call Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AudioCabToCabEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaAudioSwitchEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaCommandReceivedEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaContinueCommand.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaCyclicPreRecordedAnnouncementCommand.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaLiveAnnouncementCommand.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaPreRecordedAnnouncementCommand.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaReadyForLiveAnnouncementEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaRequestForResetEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaResetCommand.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaResetEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PaTrainMessageCompletedEvent.h">
+      <Filter>PA Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPecCommand.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPecEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecActivatedEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecAnswerCommand.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecCommandReceivedEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecContinueCommand.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecReadyForConversationEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecRequestForResetEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecResetCommand.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecResetEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PecSelectedByDriverEvent.h">
+      <Filter>PEC Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractTtisCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EndOfTtisDownloadEvent.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtdFrame.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisCommandReceivedEvent.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisFreeTextMessageCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisLibraryDownloadCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisLibraryUpgradeCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisPreStoredMessageCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisResetCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisScheduleDownloadCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisScheduleUpgradeCommand.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TtisTypes.h">
+      <Filter>TTIS Classes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

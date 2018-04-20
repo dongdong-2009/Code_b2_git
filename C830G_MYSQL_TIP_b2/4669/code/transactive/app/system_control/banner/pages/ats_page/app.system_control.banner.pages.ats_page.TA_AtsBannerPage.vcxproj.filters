@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{003d337e-9b76-4ccc-a704-6510df334a02}</UniqueIdentifier>
+      <Extensions>*.h *.cpp</Extensions>
+    </Filter>
+    <Filter Include="COM">
+      <UniqueIdentifier>{3730fd0e-a514-461d-a7d0-91ad94d2e0f8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\AtsBannerPage.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AtsBannerPage_rc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AtsPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\webbrowser2.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IscsBanner.h">
+      <Filter>COM</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AtsPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_AtsBannerPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\webbrowser2.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IscsBanner.cpp">
+      <Filter>COM</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="src\banner.idl">
+      <Filter>COM</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

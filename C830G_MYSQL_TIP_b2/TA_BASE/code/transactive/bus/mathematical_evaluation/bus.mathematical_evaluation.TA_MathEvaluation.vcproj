@@ -1,0 +1,305 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="bus.mathematical_evaluation" ProjectGUID="{EA8E34F0-42A0-4473-8363-BC556270D931}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../build/win32_nd" IntermediateDirectory=".\../../../../build/win32_nd/transactive/bus/mathematical_evaluation" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="../../,../../../,../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;_DEBUG;_LIB" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nd/transactive/bus/mathematical_evaluation/bus.mathematical_evaluation.TA_MathEvaluation.pch" AssemblerListingLocation=".\../../../../build/win32_nd/transactive/bus/mathematical_evaluation/" ObjectFile=".\../../../../build/win32_nd/transactive/bus/mathematical_evaluation/" ProgramDataBaseFileName=".\../../../../build/win32_nd/transactive/bus/mathematical_evaluation/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../build/win32_nd/TA_MathEvaluation_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nd/bus.mathematical_evaluation.TA_MathEvaluation.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+	<Configuration Name="Release|Win32" OutputDirectory=".\../../../../build/win32_nr" IntermediateDirectory=".\../../../../build/win32_nr/transactive/bus/mathematical_evaluation" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="../../,../../../,../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;WIN32;NDEBUG;_LIB" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nr/transactive/bus/mathematical_evaluation/bus.mathematical_evaluation.TA_MathEvaluation.pch" AssemblerListingLocation=".\../../../../build/win32_nr/transactive/bus/mathematical_evaluation/" ObjectFile=".\../../../../build/win32_nr/transactive/bus/mathematical_evaluation/" ProgramDataBaseFileName=".\../../../../build/win32_nr/transactive/bus/mathematical_evaluation/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../build/win32_nr/TA_MathEvaluation.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nr/bus.mathematical_evaluation.TA_MathEvaluation.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="src" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AndExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AndExpression.h">
+			</File>
+			<File RelativePath="src\BooleanConstant.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\BooleanConstant.h">
+			</File>
+			<File RelativePath="src\BooleanVariable.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\BooleanVariable.h">
+			</File>
+			<File RelativePath="src\ContextContainer.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ContextContainer.h">
+			</File>
+			<File RelativePath="src\EqualityComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EqualityComparison.h">
+			</File>
+			<File RelativePath="src\ExpressionEvaluator.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ExpressionEvaluator.h">
+			</File>
+			<File RelativePath="src\IBooleanContext.h">
+			</File>
+			<File RelativePath="src\IBooleanExpression.h">
+			</File>
+			<File RelativePath="src\InequalityComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\InequalityComparison.h">
+			</File>
+			<File RelativePath="src\IRealNumberContext.h">
+			</File>
+			<File RelativePath="src\IRealNumberExpression.h">
+			</File>
+			<File RelativePath="src\IStringContext.h">
+			</File>
+			<File RelativePath="src\IStringExpression.h">
+			</File>
+			<File RelativePath="src\NotExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\NotExpression.h">
+			</File>
+			<File RelativePath="src\OrExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\OrExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberAbsoluteExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberAbsoluteExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberAddExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberAddExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberConstant.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberConstant.h">
+			</File>
+			<File RelativePath="src\RealNumberDivideExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberDivideExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberGreaterThanComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberGreaterThanComparison.h">
+			</File>
+			<File RelativePath="src\RealNumberGreaterThanOrEqualComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberGreaterThanOrEqualComparison.h">
+			</File>
+			<File RelativePath="src\RealNumberLessThanComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberLessThanComparison.h">
+			</File>
+			<File RelativePath="src\RealNumberLessThanOrEqualComparison.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberLessThanOrEqualComparison.h">
+			</File>
+			<File RelativePath="src\RealNumberMultiplyExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberMultiplyExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberPowerOfExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberPowerOfExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberSquareRootExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberSquareRootExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberSubtractExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberSubtractExpression.h">
+			</File>
+			<File RelativePath="src\RealNumberVariable.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\RealNumberVariable.h">
+			</File>
+			<File RelativePath="src\StringLiteral.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StringLiteral.h">
+			</File>
+			<File RelativePath="src\StringVariable.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StringVariable.h">
+			</File>
+			<File RelativePath="src\Token.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Token.h">
+			</File>
+			<File RelativePath="src\Tokeniser.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\Tokeniser.h">
+			</File>
+			<File RelativePath="src\XorExpression.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+			<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\XorExpression.h">
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

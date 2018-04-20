@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{b9a2407a-208d-4aa3-b316-a8e0a008b2a0}</UniqueIdentifier>
+      <Extensions>*.h *.cpp</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\PlanBannerPage.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\PlanBannerPage_rc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanPage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\PlanPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TA_PlanBannerPage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\plan.bmp" />
+    <Image Include="src\pland.bmp" />
+    <Image Include="src\plandg.bmp" />
+    <Image Include="src\plang.bmp" />
+  </ItemGroup>
+</Project>

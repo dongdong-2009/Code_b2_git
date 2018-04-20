@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{87a26eb7-1b38-4c75-b5d2-3723b313e49c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{e39ccf25-8226-4c19-8ba6-f26bd0037516}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActionCreateIncidentReport.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionShowComment.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ApplyRightsThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AvalancheNamedFilter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventFilter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventFilterDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CombinedEventItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CreateDefaultFilterThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseAccess.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventViewerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MultipleLoadDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PopulateEventLevelsThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StatusProgressBar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WaitNotificationBox.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActionCreateIncidentReport.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionIds.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ActionShowComment.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AvalancheNamedFilter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventFilter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventFilterDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CombinedEventItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventViewerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FilterDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MultipleLoadDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StatusProgressBar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WaitNotificationBox.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ApplyRightsThread.h" />
+    <ClInclude Include="src\CreateDefaultFilterThread.h" />
+    <ClInclude Include="src\PopulateEventLevelsThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\EventViewer.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\AlarmManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\AlarmManagerHot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\east_arr.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\EventViewer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\filter.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\filterhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00001.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00002.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00003.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00004.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00005.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ico00006.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pagedown.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pageup.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Plan.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Planhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\print.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\printhot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refresh.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\refreshot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\save.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\savehot.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\WarningDot.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EventViewer.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,778 @@
+import "class" : new ;
+import os ;
+
+rule create ( ta-path * : dependency-file ? )
+{
+	return [ new ta-projects $(ta-path) : $(dependency-file) ] ;
+}
+
+rule transform ( projects * : function + )
+{
+	local result ;
+
+	for local proj in $(projects)
+	{
+		result += [ $(proj).$(function[1]) $(function[2-]) ] ;
+	}
+	return $(result) ;
+}
+
+class ta-projects
+{
+	import "class" : new ;
+	import os path string assert print sequence path project set numbers order ;
+
+	rule __init__ ( ta-path * : dependency-file ? )
+	{
+		self.ta-path = $(ta-path) ;
+		self.jamfiles = [ $(ta-path).jamfiles ] ;
+		self.dependency-file = $(dependency-file) ;
+
+		for local jamfile in $(self.jamfiles)
+		{
+			local tp = [ new ta-project-class $(jamfile) ] ;
+			for local key in [ $(tp).id ] [ $(tp).target-name ] [ $(tp).path ]
+			{
+				self.map.$(key) = $(tp) ;
+			}
+			self.projects += $(tp) ;
+		}
+
+		if $(dependency-file)
+		{
+			if [ path.exists $(dependency-file) ]
+			{
+				init-dependency $(dependency-file) ;
+			}
+			else
+			{
+				generate-dependency-file $(dependency-file) ;
+			}
+		}
+	}
+
+	rule init-dependency ( dependency-file ? )
+	{
+		if ! $(self.dependency-initialized)
+		{
+			self.dependency-initialized = true ;
+
+			if $(dependency-file)
+			{
+				for local line in [ read-file $(dependency-file) ]
+				{
+					local id-deps = [ MATCH "^([^ ]*) = (.*) ;$" : $(line) ] ;
+					local id = $(id-deps[1]) ;
+					local deps = $(id-deps[2-]) ;
+					self.$(id).dependency = [ string.words $(deps) ] ;
+				}
+
+				for local tp in $(self.projects)
+				{
+					local id = [ $(tp).id ] ;
+					$(tp).set-dependency $(self.$(id).dependency) ;
+				}
+			}
+			else
+			{
+				for local tp in $(self.projects)
+				{
+					local id = [ $(tp).id ] ;
+					self.$(id).dependency = [ $(tp).dependency ] ;
+				}
+			}
+		}
+	}
+
+	rule projects ( )
+	{
+		return $(self.projects) ;
+	}
+
+	rule find ( keys * )
+	{
+		return $(self.map.$(keys)) ;
+	}
+
+	rule select ( predicate + : projects * )
+	{
+		projects ?= $(self.projects) ;
+		local result ;
+
+		for tp in $(projects)
+		{
+			if [ call $(tp) : $(predicate) ]
+			{
+				result += $(tp) ;
+			}
+		}
+		return $(result) ;
+	}
+
+	rule select-x ( x + : predicate + : projects * )
+	{
+		return [ transform [ select $(predicate) : $(projects) ] : $(x) ] ;
+	}
+
+	rule select-ordered ( predicate + : projects * )
+	{
+		return [ order [ select $(predicate) : $(projects) ] ] ;
+	}
+
+	rule select-ordered-x ( x + : predicate + : projects * )
+	{
+		return [ transform [ order [ select $(predicate) : $(projects) ] ] : $(x) ] ;
+	}
+
+	rule selects ( projects * : predicate + : * )
+	{
+		projects ?= $(self.projects) ;
+		local result = [ select $(predicate) : $(projects) ] ;
+
+		for local i in [ numbers.range 3 9 ]
+		{
+			if ! $($(i))
+			{
+				return $(result) ;
+			}
+
+			result = [ select $($(i)) : $(result) ] ;
+		}
+	}
+
+	rule selects-x ( x + : projects * : predicate + : * )
+	{
+		return [ transform [ selects $(projects) : $(predicate) : $(4) : $(5) : $(6) : $(7) : $(8) : $(9) ] : $(x) ] ;
+	}
+
+	rule selects-ordered ( projects * : predicate + : * )
+	{
+		return [ order [ selects $(projects) : $(predicate) : $(3) : $(4) : $(5) : $(6) : $(7) : $(8) : $(9) ] ] ;
+	}
+
+	rule selects-ordered-x ( x + : projects * : predicate + : * )
+	{
+		return [ transform [ order [ selects $(projects) : $(predicate) : $(4) : $(5) : $(6) : $(7) : $(8) : $(9) ] ] : $(x) ] ;
+	}
+
+	rule get ( projects * : function + )
+	{
+		return [ transform $(projects) : $(function) ] ;
+	}
+
+	rule call ( projects * : function + )
+	{
+		return [ transform $(projects) : $(function) ] ;
+	}
+
+	rule transform ( projects * : function + )
+	{
+		projects ?= $(self.projects) ;
+		local result ;
+
+		for local tp in $(projects)
+		{
+			result += [ $(tp).$(function[1]) $(function[2-]) ] ;
+		}
+		return $(result) ;
+	}
+
+	rule get-order ( )
+	{
+		if ! $(self.order)
+		{
+			self.order = [ new order ] ;
+			init-dependency ;
+
+			for local tp in $(self.projects)
+			{
+				local id = [ $(tp).id ] ;
+
+				for dep-tp in [ find $(self.$(id).dependency) ]
+				{
+					$(self.order).add-pair $(tp) $(dep-tp) ;
+
+					for local key in id target-id target-name
+					{
+						$(self.order).add-pair [ $(tp).$(key) ] [ $(dep-tp).$(key) ] ;
+					}
+				}
+			}
+		}
+		return $(self.order) ;
+	}
+
+	rule order ( projects * )
+	{
+		projects ?= $(self.projects) ;
+		local order = [ get-order ] ;
+		return [ $(order).order $(projects) ] ;
+	}
+
+	rule generate-dependency-file ( file )
+	{
+		local contents ;
+
+		for local tp in $(self.projects)
+		{
+			local id = [ $(tp).id ] ;
+			local dep = [ $(tp).dependency ] ;
+			echo $(id) ; # debug-out-put
+
+			if $(dep)
+			{
+				echo "\t" $(dep) ;
+				contents += "$(id) = $(dep:J= ) ;" ;
+			}
+		}
+
+		print.output $(file) ;
+		print.lines $(contents) ;
+		print.output console ;
+		UPDATE_NOW $(file) ;
+	}
+
+	if [ os.name ] = NT
+	{
+		rule read-file ( file )
+		{
+			return [ SPLIT_BY_CHARACTERS [ SHELL "type \"$(file:G=)\" 2>nul" ] : "\n" ] ;
+		}
+	}
+	else
+	{
+		rule read-file ( file )
+		{
+			return [ SPLIT_BY_CHARACTERS [ SHELL "cat \"$(file:G=)\" 2>/dev/null" ]  : "\n" ] ;
+		}
+	}
+
+	rule __debug__ ( )
+	{
+		print.lines exes [ selects-x target-id : : is-app-level : is-exe ] : "\t" ;
+
+		local alias = [ selects : is-alias ] ;
+		print.lines alias [ transform $(alias) : target-name ] : "\t" ;
+
+		for local tp in $(alias)
+		{
+			print.lines [ $(tp).target-name ] [ selects-ordered-x target-id : : is-levels [ $(tp).levels ] : is-library ] : "\t" ;
+		}
+	}
+}
+
+class ta-project-class
+{
+	import os path string assert print sequence path project set ;
+
+	rule __init__ ( jamfile )
+	{
+		self.jamfile	= [ path.make $(jamfile) ] ;
+		self.path		= $(self.jamfile:D) ;
+		self.location	= $(self.path) ;
+		self.os			= [ os.name ] ;
+		self.ta-os		= [ ta-os ] ;
+	}
+
+	rule get ( data )
+	{
+		return $(self.$(data)) ;
+	}
+
+	rule get-native ( data )
+	{
+		return [ path.native $(self.$(data)) ] ;
+	}
+
+	rule jamfile ( )
+	{
+		return $(self.jamfile) ;
+	}
+
+	rule id ( )
+	{
+		if ! $(self.id)
+		{
+			self.id = [ sequence.join [ prefix ] [ short-path ] ] ;
+			self.id = $(self.id:L) ;
+		}
+		return $(self.id) ;
+	}
+
+	rule id2 ( )
+	{
+		if ! $(self.id2)
+		{
+			self.id2 = [ sequence.join [ prefix ] [ short-path ] ] ;
+		}
+		return $(self.id2) ;
+	}
+
+	rule target-id ( )
+	{
+		if ! $(self.target-id)
+		{
+			local id = [ id ] ;
+			local target-name = [ target-name ] ;
+			self.target-id = $(id)//$(target-name) ;
+		}
+		return $(self.target-id) ;
+	}
+
+	rule location-based-target-id ( )
+	{
+		if ! $(self.location-based-target-id)
+		{
+			local path = [ path ] ;
+			local target-name = [ target-name ] ;
+			self.location-based-target-id = $(path)//$(target-name) ;
+		}
+		return $(self.location-based-target-id) ;
+	}
+
+	rule target-type ( )
+	{
+		if ! $(self.target-type)
+		{
+			parse-jamfile ;
+		}
+		return $(self.target-type) ;
+	}
+
+	rule target-name ( )
+	{
+		if ! $(self.target-name)
+		{
+			parse-jamfile ;
+		}
+		return $(self.target-name) ;
+	}
+
+	rule is-target-name-in ( names * )
+	{
+		if [ target-name ] in $(names)
+		{
+			return true ;
+		}
+	}
+
+	rule is-target-name-not-in ( names * )
+	{
+		if ! [ is-target-name-in $(names) ]
+		{
+			return true ;
+		}
+	}
+
+	rule is-library ( )
+	{
+		return [ is-target-type lib : idl-lib ta-lib ] ;
+	}
+
+	rule is-alias ( )
+	{
+		return [ is-target-type alias ] ;
+	}
+
+	rule is-exe ( )
+	{
+		return [ is-target-type exe : ta-exe ] ;
+	}
+
+	rule is-target-type ( lib|exe|alias : target-type-variant * )
+	{
+		if ! $(self.is-$(lib|exe|alias))
+		{
+			local type = [ target-type ] ;
+			if $(type) && ( $(type) in $(lib|exe|alias) $(target-type-variant) )
+			{
+				self.is-$(lib|exe|alias) = true ;
+			}
+			self.is-$(lib|exe|alias) ?= false ;
+		}
+
+		if $(self.is-$(lib|exe|alias)) = true
+		{
+			return true ;
+		}
+	}
+
+	rule is-core ( )
+	{
+		return [ is-core-bus-app core ] ;
+	}
+
+	rule is-bus ( )
+	{
+		return [ is-core-bus-app bus ] ;
+	}
+
+	rule is-app ( )
+	{
+		return [ is-core-bus-app app ] ;
+	}
+
+	rule is-core-bus-app ( core|bus|app )
+	{
+		if ! $(self.is-$(core|bus|app))
+		{
+			if $(core|bus|app) = [ short-path ]
+			{
+				self.is-$(core|bus|app) = true ;
+			}
+			self.is-$(core|bus|app) ?= false ;
+		}
+
+		if $(self.is-$(core|bus|app)) = true
+		{
+			return true ;
+		}
+	}
+
+	rule prefix ( )
+	{
+		if ! $(self.prefix)
+		{
+			local base-prefix = / ;
+			local project-prefix = /proj/ ;
+			local level-1 = [ level-1 ] ;
+			self.prefix = $($(level-1)-prefix) ;
+		}
+		return $(self.prefix) ;
+	}
+
+	rule path ( )
+	{
+		return $(self.path) ;
+	}
+
+	rule location ( )
+	{
+		return [ path ] ;
+	}
+
+	rule short-path ( )
+	{
+		if ! $(self.short-path)
+		{
+			self.short-path = [ relative-transactive-path ] ;
+		}
+		return $(self.short-path) ;
+	}
+
+	rule src-path ( )
+	{
+		if ! $(self.src-path)
+		{
+			if [ path.exists [ path.native $(self.path)/src ] ]
+			{
+				self.src-path = $(self.path)/src ;
+			}
+			self.src-path ?= [ path ] ;
+		}
+		return $(self.src-path) ;
+	}
+
+	rule transactive-path ( )
+	{
+		if ! $(self.transactive-path)
+		{
+			self.transactive-path ?= [ MATCH ^(.*/transactive)/ : $(self.path) ] ;
+
+			if ( ! $(self.transactive-path) ) && [ path.exists [ path.native $(self.path)/transactive ] ]
+			{
+				self.transactive-path ?= $(self.path)/transactive ;
+			}
+			if ( ! $(self.transactive-path) ) && [ path.exists [ path.native $(self.path)/code/transactive ] ]
+			{
+				self.transactive-path ?= $(self.path)/code/transactive ;
+			}
+		}
+		return $(self.transactive-path) ;
+	}
+
+	rule relative-transactive-path ( )
+	{
+		self.relative-transactive-path ?= [ path.relative [ path ] [ transactive-path ] ] ;
+		return  $(self.relative-transactive-path) ;
+	}
+
+	rule code-path ( )
+	{
+		self.code-path ?= [ path.parent [ transactive-path ] ] ;
+		return $(self.code-path) ;
+	}
+
+	rule relative-code-path ( )
+	{
+		self.relative-code-path ?= [ path.relative [ path ] [ code-path ] ] ;
+		return  $(self.relative-code-path) ;
+	}
+
+	rule tools-path ( )
+	{
+		self.tools-path ?= [ path.root tools [ code-path ] ] ;
+		return $(self.tools-path) ;
+	}
+
+	rule cots-path ( )
+	{
+		self.cots-path ?= [ path.root cots [ code-path ] ] ;
+		return $(self.cots-path) ;
+	}
+
+	rule base-path ( )
+	{
+		if ! $(self.base-path)
+		{
+			if [ is-base-level ]
+			{
+				self.base-path = [ path.parent [ code-path ] ] ;
+			}
+		}
+		return $(self.base-path) ;
+	}
+
+	rule project-path ( )
+	{
+		if ! $(self.project-path)
+		{
+			if [ is-project-level ]
+			{
+				self.project-path = [ path.parent [ code-path ] ] ;
+			}
+		}
+		return $(self.project-path) ;
+	}
+
+	rule build-path ( )
+	{
+		if ! $(self.build-path)
+		{
+			self.build-path = [ path.root build [ path.parent [ code-path ] ] ] ;
+		}
+		return $(self.build-path) ;
+	}
+
+	rule bin-path ( )
+	{
+		if ! $(self.bin-path)
+		{
+			self.bin-path = [ path.root bin [ path.parent [ code-path ] ] ] ;
+		}
+		return $(self.bin-path) ;
+	}
+
+	rule idl-skeleton-path ( )
+	{
+		return [ path.join [ build-path ] $(self.ta-os)_n [ relative-code-path ] ] ;
+	}
+
+	rule installation-path ( variant )
+	{
+		local debug-suffix = _nd ;
+		local release-suffix = _nr ;
+
+		if [ is-library ]
+		{
+			return [ path.join [ build-path ] [ sequence.join [ ta-os ] $($(variant)-suffix) ] ] ;
+		}
+
+		if [ is-exe ]
+		{
+			return [ path.join [ bin-path ] [ sequence.join [ ta-os ] $($(variant)-suffix) ] ] ;
+		}
+	}
+
+	rule ta-os ( )
+	{
+		if ! $(self.ta-os)
+		{
+			switch [ os.name ]
+			{
+				case NT : self.ta-os = win32 ;
+				case *  : self.ta-os = [ os.name ] ;
+			}
+		}
+		return $(self.ta-os) ;
+	}
+
+
+	rule get-base-project-level ( )
+	{
+		return [ level-1 ] ;
+	}
+
+	rule is-base-level ( )
+	{
+		return [ is-base-project-level base ] ;
+	}
+
+	rule is-project-level ( )
+	{
+		return [ is-base-project-level project ] ;
+	}
+
+	rule is-base-project-level ( base|project )
+	{
+		return [ is-level level-1 $(base|project) ] ;
+	}
+
+	rule get-core-bus-app-level ( )
+	{
+		return [ level-2 ] ;
+	}
+
+	rule is-app-level ( )
+	{
+		return [ is-core-bus-app-level app ] ;
+	}
+
+	rule is-bus-level ( )
+	{
+		return [ is-core-bus-app-level bus ] ;
+	}
+
+	rule is-core-level ( )
+	{
+		return [ is-core-bus-app-level core ] ;
+	}
+
+	rule is-core-bus-app-level ( core|bus|app )
+	{
+		return [ is-level level-2 $(core|bus|app) ] ;
+	}
+
+	rule is-levels ( levels + )
+	{
+		if $(levels) in [ levels ]
+		{
+			return true ;
+		}
+	}
+
+	rule is-level ( first-level second-level )
+	{
+		if ! $(self.is-$(second-level)-level)
+		{
+			if [ $(first-level) ] = $(second-level)
+			{
+				self.is-$(second-level)-level = true ;
+			}
+			self.is-$(second-level)-level ?= false ;
+		}
+
+		if $(self.is-$(second-level)-level) = true
+		{
+			return true ;
+		}
+	}
+
+	rule levels ( )
+	{
+		if ! $(self.levels)
+		{
+			self.levels = [ level-1 ] [ level-2 ] ;
+		}
+		return $(self.levels) ;
+	}
+
+	# base project
+	rule level-1 ( )
+	{
+		if ! $(self.level-1)
+		{
+			local code-parent-path = [ path.parent [ code-path ] ] ;
+			if [ path.exists [ path.native $(code-parent-path)/code/transactive/core/versioning/Jamfile.jam ] ]
+			{
+				self.level-1 = base ;
+			}
+			else if [ path.exists [ path.native $(code-parent-path)/code/transactive/core/Jamfile.jam ] ]
+			{
+				self.level-1 = project ;
+			}
+		}
+		return $(self.level-1) ;
+	}
+
+	# core bus app
+	rule level-2 ( )
+	{
+		if ! $(self.level-2)
+		{
+			self.level-2 = [ MATCH "^(core|bus|app)" : [ short-path ] ] ;
+		}
+		return $(self.level-2) ;
+	}
+
+	rule set-dependency ( dependency * )
+	{
+		self.dependency = $(dependency) ;
+		self.is-dependency-set = true ;
+	}
+
+	rule dependency ( )
+	{
+		if ! $(self.is-dependency-set)
+		{
+			self.is-dependency-set = true ;
+			local level = [ get-core-bus-app-level ] ;
+			local src-path = [ path.native [ src-path ] ] ;
+			local source = [ sequence.transform path.native : [ path.glob $(self.path)/src : *.cpp *.h *.idl ] ] ;
+
+			if $(source)
+			{
+				local search-pattern-NT	= "FINDSTR /R /C:\"^[ \\t]*#include[ \\t]*[<\\\"]$(level)/\" /D:$(src-path) $(source:BS:J= )" ;
+				local search-pattern-SOLARIS = "/usr/xpg4/bin/grep -E '^[ \\t]*#include[ \\t]*[<\\\"]$(level)/' $(src-path)/*" ;
+				local jamfile-native = [ get-native jamfile ] ;
+				local search-result = [ SHELL "$(search-pattern-$(self.os))" ] ;
+				local words = [ string.words $(search-result) ] ;
+				local include-dirs = [ sequence.unique [ MATCH "($(level)/.*)/src/" : $(words) ] ] ;
+				local prefix = [ prefix ] ;
+				local project-ids = $(prefix)$(include-dirs:L) ;
+				self.dependency = [ set.difference $(project-ids) : [ id ] ] ;
+			}
+		}
+		return $(self.dependency) ;
+	}
+
+	rule parse-jamfile ( )
+	{
+		if ( ! $(self.target-type) ) && ( ! $(self.target-name) )
+		{
+			local target-pattern = lib idl-lib ta-lib ta-dlib exe ta-exe alias ;
+			local expression = "^$(target-pattern)\\>" ;
+			local search-pattern-NT	= "FINDSTR /R \"$(expression:J= )\"" ;
+			local search-pattern-SOLARIS = "/usr/xpg4/bin/grep -E '^$(target-pattern:J=|) '" ;
+			local jamfile-native = [ get-native jamfile ] ;
+			local search-result = [ SHELL "$(search-pattern-$(self.os)) $(jamfile-native)" : exit-status ] ;
+
+			if $(search-result[2]) = 0
+			{
+				local words = [ string.words $(search-result[1]) ] ;
+				local target-type = $(words[1]) ;
+				local target-name = $(words[2]) ;
+				if ( $(target-type) in $(target-pattern) )
+				{
+					self.target-type = $(target-type) ;
+					self.target-name = $(target-name) ;
+				}
+			}
+		}
+	}
+
+	rule __debug__ ( )
+	{
+		for rule-name in target-name
+							target-type
+							levels
+							id
+							target-id
+							path
+							dependency
+		{
+			echo [ PAD $(rule-name) : 20 ] " : " [ $(rule-name) ] ;
+		}
+		echo ;
+	}
+}

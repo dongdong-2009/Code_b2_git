@@ -1,0 +1,207 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ATSBRANCHTRACKRECORD_VIEW DIALOG DISCARDABLE  0, 0, 340, 197
+STYLE DS_MODALFRAME | WS_CHILD
+FONT 10, "Arial Bold"
+BEGIN
+    COMBOBOX        IDC_COMBO_ZONETYPE,97,21,222,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_ZONE,97,37,222,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_BRANCH_ID,97,70,222,30,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_MIN_ABSCISSA,97,86,222,13,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_MAX_ABSCISSA,97,103,222,13,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Apply",IDC_BUTTON_APPLY,113,162,50,14
+    PUSHBUTTON      "&Reset",IDC_BUTTON_RESET,177,162,50,14
+    GROUPBOX        "<TYPE>",IDC_STATIC_TYPE,8,5,324,184
+    LTEXT           "Track:",IDC_TRACK_STATIC,21,53,53,13,SS_CENTERIMAGE
+    LTEXT           "Branch ID:",IDC_BRANCH_STATIC,21,69,53,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_TRACK_BITMAP,"Static",SS_BITMAP,90,57,11,11
+    CONTROL         9005,IDC_BRANCH_BITMAP,"Static",SS_BITMAP,90,73,11,11
+    LTEXT           "Zone Type:",IDC_ZONETYPE_STATIC,21,21,53,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_ZONETYPE_BITMAP,"Static",SS_BITMAP,90,25,11,11
+    LTEXT           "Zone:",IDC_ZONE_STATIC,21,37,53,13,SS_CENTERIMAGE
+    CONTROL         9005,IDC_ZONE_BITMAP,"Static",SS_BITMAP,90,41,11,11
+    LTEXT           "Min Abscissa:",IDC_MIN_ABSCISSA_STATIC,21,86,53,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_MIN_ABSCISSA_BITMAP,"Static",SS_BITMAP,90,90,11,
+                    11
+    LTEXT           "Max Abscissa:",IDC_MAX_ABSCISSA_STATIC,21,103,53,13,
+                    SS_CENTERIMAGE
+    CONTROL         9005,IDC_MAX_ABSCISSA_BITMAP,"Static",SS_BITMAP,90,107,
+                    11,11
+    EDITTEXT        IDC_EDIT_TRACK,98,52,222,13,ES_AUTOHSCROLL | WS_DISABLED
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ATSBRANCHTRACKRECORD_VIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 332
+        VERTGUIDE, 21
+        VERTGUIDE, 90
+        VERTGUIDE, 97
+        VERTGUIDE, 310
+        VERTGUIDE, 319
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 189
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Ripple\0"
+            VALUE "FileDescription", "TA_AtsFixedBlockMapConfigPlugin DLL\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "TA_AtsFixedBlockMapConfigPlugin\0"
+            VALUE "LegalCopyright", "Copyright (C) 2003\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "TA_AtsFixedBlockMapConfigPlugin.DLL\0"
+            VALUE "ProductName", "TA_AtsFixedBlockMapConfigPlugin Dynamic Link Library\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\TA_AtsFixedBlockMapConfigPlugin.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""..\\config_plugin_helper\\src\\TA_ConfigPluginHelper.rc"" // Config Plugin Helper library resources\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\TA_AtsFixedBlockMapConfigPlugin.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "app\configuration\config_plugins\config_plugin_helper\src\TA_ConfigPluginHelper.rc" // Config Plugin Helper library resources
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

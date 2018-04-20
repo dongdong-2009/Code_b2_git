@@ -1,0 +1,37 @@
+#Note: When writing a regular expression to search for, must backslash all perl special characters
+# eg. doesnt contain a '.'
+# reg expression = !(/.*\..*/)
+# FileNameContains = > !(\/\.\*\\\.\.\*\/)
+
+###Binary Directories###
+
+Deploy (
+    Search	    		=> "code/core",
+    FileNameContains        	=> "!(\/\.\*\\\.\.\*\/)",
+    DirectoryNameContains       => "\/obj\$",
+    CopyTo          		=> "bin",
+);
+Deploy (
+    Search	    		=> "code/bus",
+    FileNameContains        	=> "!(\/\.\*\\\.\.\*\/)",
+    DirectoryNameContains       => "\/obj\$",
+    CopyTo          		=> "bin",
+);
+Deploy (
+    Search	    		=> "code/app",
+    FileNameContains        	=> "!(\/\.\*\\\.\.\*\/)",
+    DirectoryNameContains       => "\/obj\$",
+    CopyTo          		=> "bin",
+);
+
+########################Other files to copy##################################################
+
+####solaris libraries (COTS)#####
+
+fileCopy("code/cots/omniORB/omniORB_4.0.1/Solaris8/omni/lib/sun4_sosV_5.8/\*","lib");
+fileCopy("code/cots/ACE/5_3/ACE_wrappers/ace/libACE.so*","lib");
+#fileCopy("code/cots/TAO/TAO_1.3.1/Solaris8/lib/sun4_sosV_5.8/\*","lib");
+
+
+####Omni Notify configuration#####
+fileCopy("code/app/notification_service/omni_notification.cfg","bin");

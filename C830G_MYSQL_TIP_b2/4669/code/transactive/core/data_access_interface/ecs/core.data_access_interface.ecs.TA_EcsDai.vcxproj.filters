@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="EC_ZONE">
+      <UniqueIdentifier>{3ded58bd-912f-463c-a279-b24728f39d7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EC_STATION_MODE">
+      <UniqueIdentifier>{a69e46ed-3aee-40d0-a679-8746e56bcebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="EC_MASTER_MODE">
+      <UniqueIdentifier>{b4e8a436-a56c-45af-aaf9-b47013e3baaa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConfigECSZone.cpp">
+      <Filter>EC_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZone.cpp">
+      <Filter>EC_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneAccessFactory.cpp">
+      <Filter>EC_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSZoneHelper.cpp">
+      <Filter>EC_ZONE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigECSStationMode.cpp">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSStationMode.cpp">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSStationModeAccessFactory.cpp">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSStationModeHelper.cpp">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ConfigECSMasterMode.cpp">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSMasterMode.cpp">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSMasterModeAccessFactory.cpp">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECSMasterModeHelper.cpp">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ConfigECSZone.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZone.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneAccessFactory.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSZoneHelper.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigECSZone.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IECSZone.h">
+      <Filter>EC_ZONE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigECSStationMode.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSStationMode.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSStationModeAccessFactory.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSStationModeHelper.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigECSStationMode.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IECSStationMode.h">
+      <Filter>EC_STATION_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConfigECSMasterMode.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSMasterMode.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSMasterModeAccessFactory.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ECSMasterModeHelper.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IConfigECSMasterMode.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IECSMasterMode.h">
+      <Filter>EC_MASTER_MODE</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

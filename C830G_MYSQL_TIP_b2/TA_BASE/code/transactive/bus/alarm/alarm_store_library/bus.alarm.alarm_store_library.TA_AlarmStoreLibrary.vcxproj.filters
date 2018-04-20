@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{359eb30a-d47f-4233-8a7f-192160944d58}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\Filters">
+      <UniqueIdentifier>{80437285-a9df-4fa4-bba0-3170e78eeaea}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="src\AlarmManager">
+      <UniqueIdentifier>{43dffa46-a902-4488-8508-012b7a1cff9a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlarmAgentInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAgentInterfaceManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterSet.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStoreMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStoreServant.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\IWatchObject.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SharedAlarmAccessFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByAssetName.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByAssociatedEntityKey.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByAssociatedEntityName.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByDate.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByDescription.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByLocation.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByOperator.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByProfile.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterBySeverity.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByState.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterBySubSystem.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmFilterByType.cpp">
+      <Filter>src\Filters</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAccessAdaptor.cpp">
+      <Filter>src\AlarmManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmStoreManager.cpp">
+      <Filter>src\AlarmManager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAlarmManager.cpp">
+      <Filter>src\AlarmManager</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlarmAgentInterface.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAgentInterfaceManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreServant.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreUpdateListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmFilter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IAlarmUpdate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IWatchObject.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SharedAlarmAccessFactory.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SortIndex.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByAssetName.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByAssociatedEntityKey.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByAssociatedEntityName.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByDate.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByDescription.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByLocation.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByOperator.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByProfile.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterBySeverity.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByState.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterBySubSystem.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmFilterByType.h">
+      <Filter>src\Filters</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAccessAdaptor.h">
+      <Filter>src\AlarmManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmStoreManager.h">
+      <Filter>src\AlarmManager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAlarmManager.h">
+      <Filter>src\AlarmManager</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{70a3881f-501f-4837-b059-8d05583e2512}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Exceptions No. 1">
+      <UniqueIdentifier>{38f06570-fb1e-4298-beda-92775df0ef72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files No. 2">
+      <UniqueIdentifier>{9f2e4e12-9ee2-4461-8de3-03ad5a828907}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AdminManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AdminObserver.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ChangeOperationModeDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OptionsDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ProcessParamsDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SessionHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ShutdownSystemControllerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StartProcessDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StopProcessDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\SystemControllerException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemManagerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemManagerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveLoginDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\CannotUseSysControllerException.cpp">
+      <Filter>Exceptions No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\GenericGUIException.cpp">
+      <Filter>Exceptions No. 1</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\UserCancelException.cpp">
+      <Filter>Exceptions No. 1</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AdminManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AdminObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ChangeOperationModeDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISessionChecker.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OptionsDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ProcessParamsDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SessionHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ShutdownSystemControllerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StartProcessDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StopProcessDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemControllerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\SystemControllerException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemManagerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SystemManagerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveLoginDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\CannotUseSysControllerException.h">
+      <Filter>Exceptions No. 1</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\UserCancelException.h">
+      <Filter>Exceptions No. 1</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\icon1.ico">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\icon2.ico">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\login.icon.bmp">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\refresh.ico">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\SystemManager.ico">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\toolbar1.bmp">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+    <Image Include="res\up.bmp">
+      <Filter>Resource Files No. 2</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\SystemManager.rc">
+      <Filter>Resource Files No. 2</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\SystemManager.rc2">
+      <Filter>Resource Files No. 2</Filter>
+    </None>
+  </ItemGroup>
+</Project>

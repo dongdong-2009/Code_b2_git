@@ -1,0 +1,628 @@
+<VisualStudioProject ProjectType="Visual C++" Version="9.00" Name="core.message" ProjectGUID="{8C5E42A7-AFAE-4FE7-894E-39B4EBB23B35}" TargetFrameworkVersion="0">
+	<Platforms>
+		<Platform Name="Win32"/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration Name="Debug|Win32" OutputDirectory=".\../../../../build/win32_nd" IntermediateDirectory=".\../../../../build/win32_nd/transactive/core/message" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="0" AdditionalIncludeDirectories="..\..,../../../../build/win32_n/transactive,../../../../build/win32_n/transactive/core/message/idl/src,..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../cots/ACE/6_0_4/ACE_wrappers,../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4;WIN32;_LIB" MinimalRebuild="true" BasicRuntimeChecks="3" RuntimeLibrary="3" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nd/transactive/core/message/core.message.TA_Message.pch" AssemblerListingLocation=".\../../../../build/win32_nd/transactive/core/message/" ObjectFile=".\../../../../build/win32_nd/transactive/core/message/" ProgramDataBaseFileName=".\../../../../build/win32_nd/transactive/core/message/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="4"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;_DEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../build/win32_nd/TA_Message_d.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nd/core.message.TA_Message.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration>
+		<Configuration Name="Release|Win32" OutputDirectory=".\../../../../build/win32_nr" IntermediateDirectory=".\../../../../build/win32_nr/transactive/core/message" ConfigurationType="4" InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops" UseOfMFC="0" ATLMinimizesCRunTimeLibraryUsage="false" CharacterSet="2">
+			<Tool Name="VCPreBuildEventTool"/>
+			<Tool Name="VCCustomBuildTool"/>
+			<Tool Name="VCXMLDataGeneratorTool"/>
+			<Tool Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool Name="VCMIDLTool"/>
+			<Tool Name="VCCLCompilerTool" Optimization="2" AdditionalIncludeDirectories="..\..,../../../../build/win32_n/transactive,../../../../build/win32_n/transactive/core/message/idl/src,..\..\..\cots\omniORB\omniORB_4.0.5\include,../../../cots/ACE/6_0_4/ACE_wrappers,../../../cots/boost/boost_1_39_0" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG;__WIN32__;__x86__;__NT__;__OSVERSION__=4;WIN32;_LIB" RuntimeLibrary="2" RuntimeTypeInfo="true" PrecompiledHeaderFile=".\../../../../build/win32_nr/transactive/core/message/core.message.TA_Message.pch" AssemblerListingLocation=".\../../../../build/win32_nr/transactive/core/message/" ObjectFile=".\../../../../build/win32_nr/transactive/core/message/" ProgramDataBaseFileName=".\../../../../build/win32_nr/transactive/core/message/" WarningLevel="3" SuppressStartupBanner="true" DebugInformationFormat="3" InlineFunctionExpansion="1" StringPooling="true" EnableFunctionLevelLinking="true"/>
+			<Tool Name="VCManagedResourceCompilerTool"/>
+			<Tool Name="VCResourceCompilerTool" PreprocessorDefinitions="_USE_32BIT_TIME_T;NDEBUG" Culture="3081"/>
+			<Tool Name="VCPreLinkEventTool"/>
+			<Tool Name="VCLibrarianTool" OutputFile="../../../../build/win32_nr/TA_Message.lib" SuppressStartupBanner="true"/>
+			<Tool Name="VCALinkTool"/>
+			<Tool Name="VCXDCMakeTool"/>
+			<Tool Name="VCBscMakeTool" SuppressStartupBanner="true" OutputFile=".\../../../../build/win32_nr/core.message.TA_Message.bsc"/>
+			<Tool Name="VCFxCopTool"/>
+			<Tool Name="VCPostBuildEventTool"/>
+		</Configuration></Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter Name="specific_messages" Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat">
+			<File RelativePath="src\AuditEvent.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\AuditEvent.h">
+			</File>
+			<File RelativePath="src\CtaAuditing.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\CtaAuditing.h">
+			</File>
+			<File RelativePath="src\MessageConfig.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MessageConfig.h">
+			</File>
+			<File RelativePath="src\MessageConstants.h">
+			</File>
+			<File RelativePath="src\MessageFilters.h">
+			</File>
+			<File RelativePath="src\MessagePublicationManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\MessagePublicationManager.h">
+			</File>
+			<File RelativePath="src\MessageTypes.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="types\MessageTypes.h">
+			</File>
+			<File RelativePath="src\NameValuePair.h">
+			</File>
+			<File RelativePath="src\TransactiveMessageSubscription.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TransactiveMessageSubscription.h">
+			</File>
+			<Filter Name="backwards_compatibility">
+				<File RelativePath="src\AbstractMessageSubscriber.h">
+				</File>
+				<File RelativePath="src\BackwardsCompatibility.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\BackwardsCompatibility.h">
+				</File>
+				<File RelativePath="src\MessageSubscriptionManager.h">
+				</File>
+				<File RelativePath="src\SpecialisedMessageSubscriber.h">
+				</File>
+			</Filter>
+			<Filter Name="senders">
+				<File RelativePath="src\AuditMessageSender.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\AuditMessageSender.h">
+				</File>
+				<File RelativePath="src\BindingRequestMessageSender.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\BindingRequestMessageSender.h">
+				</File>
+				<File RelativePath="src\CommsMessageSender.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\CommsMessageSender.h">
+				</File>
+				<File RelativePath="src\ConfigUpdateMessageSender.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\ConfigUpdateMessageSender.h">
+				</File>
+				<File RelativePath="src\StateUpdateMessageSender.cpp">
+					<FileConfiguration Name="Debug|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration>
+					<FileConfiguration Name="Release|Win32">
+						<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+					</FileConfiguration></File>
+				<File RelativePath="src\StateUpdateMessageSender.h">
+				</File>
+			</Filter>
+		</Filter>
+		<Filter Name="generic_common">
+			<File RelativePath="src\ConnectionChecker.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConnectionChecker.h">
+			</File>
+			<File RelativePath="src\ConnectionThread.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\ConnectionThread.h">
+			</File>
+			<File RelativePath="src\DispatchingQueue.h">
+			</File>
+			<File RelativePath="src\EventChannelUser.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\EventChannelUser.h">
+			</File>
+			<File RelativePath="src\TA_CosNotifyChannel.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TA_CosNotifyChannel.h">
+			</File>
+			<File RelativePath="src\TA_CosNotifyInterfaces.h">
+			</File>
+			<File RelativePath="src\TA_CosUtility.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\TA_CosUtility.h">
+			</File>
+		</Filter>
+		<Filter Name="generic_send">
+			<File RelativePath="src\PublicationManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\PublicationManager.h">
+			</File>
+			<File RelativePath="src\StructuredEventSupplier.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StructuredEventSupplier.h">
+			</File>
+		</Filter>
+		<Filter Name="generic_recv">
+			<File RelativePath="src\IMessageSubscriber.h">
+			</File>
+			<File RelativePath="src\StructuredEventConsumer.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StructuredEventConsumer.h">
+			</File>
+			<File RelativePath="src\StructuredEventConsumerDispatchers.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\StructuredEventConsumerDispatchers.h">
+			</File>
+			<File RelativePath="src\SubscriptionManager.cpp">
+				<FileConfiguration Name="Debug|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration>
+				<FileConfiguration Name="Release|Win32">
+					<Tool Name="VCCLCompilerTool" AdditionalIncludeDirectories="" PreprocessorDefinitions="_USE_32BIT_TIME_T;"/>
+				</FileConfiguration></File>
+			<File RelativePath="src\SubscriptionManager.h">
+			</File>
+		</Filter>
+		<Filter Name="message_types">
+			<File RelativePath="types\AIDAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AIDAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AIDData_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AIDStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\Alarm_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmAgentAlarm_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmAgentSynch_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmNotUsed_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AlarmUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ApplicationStatusAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ArchiveAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AtsAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ATSAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\Audit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AuthenticationAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AuthenticationAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\AuthenticationAgentStateUpdateBroadcast_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CapacityAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CapacityAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CCTVAgentSynch_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CCTVAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CCTVAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CCTVComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CCTVStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ConfigUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\Configuration_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CongestionAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\CongestionComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ControlStationAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ControlStationComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DatabaseStatusComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataNodeAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataNodeAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataNodeAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataNodeStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataPointAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataPointAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataPointStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataRecordingAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataRecordingAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DataRecordingAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DutyAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DutyAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DutyAgentBroadcastComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DutyAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\DutyStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ECSAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ESVAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\EventLoggingAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\GenericAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\GenericDataPointStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\HistoryComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\HistoryStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IasAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IasAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentDetectionAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentLogSheetAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentManagerBroadcastComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\IncidentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\InspectorPanelAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\InterlockingConfigAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ITACAAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ITACAAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ITACAAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\LessAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\LivePropertyServerData_MessageTypes.h">
+			</File>
+			<File RelativePath="types\MFTComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\MmsAlarm_MessageTypes.h">
+			</File>
+			<File RelativePath="types\MmsAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\MMSComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ModbusStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\NameRebindStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\NamingService_MessageTypes.h">
+			</File>
+			<File RelativePath="types\NetworkStatusAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\NetworkStatusStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\OnlinePrintingAgentAlarm_MessageTypes.h">
+			</File>
+			<File RelativePath="types\OnlinePrintingAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\OperatorAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\OsssAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\OsssAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PAManagerAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PeekAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PeekData_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PIDSAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PIDSAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PIDSComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PlanAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PlanAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PlanAgentBroadcastComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PlanAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PMSAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PMSAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PMSAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\PMSAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+			<File RelativePath="types\RadioAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\RadioAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\RadioComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\RadioTetraAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ReportsAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ScadaAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ScadaAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ScatsAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\ScatsData_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SchedulingAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SchedulingAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SchedulingComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SchedulingStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignallingAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignallingAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignsAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignsAudits_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignsComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SignsStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SmsAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SmsAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SmsAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SmsAgentConfigUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SmsAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SystemAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SystemControlAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SystemControllerComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\SystemStatusAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TelephoneManagerAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TelephoneManagerDirectoryBroadcastMessage_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TelephoneManagerSpeedDialBroadcastMessage_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TelephonyComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TEST_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TESTALARM_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TESTAUDIT_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TISAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TISAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TISBroadcastComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TISComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainAgentBroadcastComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainAgentComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrainCctvCameraAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TravelTimeAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TravelTimeAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TravelTimeComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\TrendViewerAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\UserInteractionAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VideoWallAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VideoWallAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VideoWallComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VideoWallStateUpdates_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VisualAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VisualAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VisualComms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VisualStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\VmsAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\WATTSAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\WILDAgentAlarms_MessageTypes.h">
+			</File>
+			<File RelativePath="types\WILDAgentAudit_MessageTypes.h">
+			</File>
+			<File RelativePath="types\WILDAgentStateUpdate_MessageTypes.h">
+			</File>
+			<File RelativePath="types\WILDAgentStateUpdateRequest_MessageTypes.h">
+			</File>
+		</Filter>
+		<File RelativePath="core.message.TA_Message.dsp">
+		</File>
+		<File RelativePath="Makefile">
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{563c0680-9b95-4c7a-86d6-875dd35fcdca}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractDialogGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractDocumentGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractGUIApplication.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractPropertySheetGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AppLauncher.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GenericGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\HelpLauncher.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\core\exceptions\src\MessageResourceException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemControllerGroupUpdateSubscriber.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveFrame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveMDIFrame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveMessage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActivePropertySheet.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransActiveWinApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractDialogGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractDocumentGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractGUIApplication.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractPropertySheetGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AppLauncher.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GenericGuiConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HelpLauncher.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IGUIAccess.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IGUIApplication.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITransActiveFrame.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\core\exceptions\src\MessageResourceException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveFrame.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveMDIFrame.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveMessage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActivePropertySheet.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransActiveWinApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISystemStateUpdateObserver.h" />
+    <ClInclude Include="src\SystemControllerGroupUpdateSubscriber.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TA_GenericGUI.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

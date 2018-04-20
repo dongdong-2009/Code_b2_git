@@ -1,0 +1,6 @@
+
+ta-exe DataRecordingAgent
+	: [ glob src/*.cpp ]
+	  /proj/app/history/scada_historian/scada_historian_data_access//HistorianDataAccess
+	: <build>no
+	;

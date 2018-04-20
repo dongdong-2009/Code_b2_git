@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="IDL">
+      <UniqueIdentifier>{c9d5d091-d767-4f6b-9610-51dece4b528f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="src\AlarmAgentCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\AlarmAgentQueueItemCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\AlarmMessageCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\AlarmStoreCallbackCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\AlarmStoreCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+    <CustomBuild Include="src\AlarmUpdateCorbaDef.idl">
+      <Filter>IDL</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

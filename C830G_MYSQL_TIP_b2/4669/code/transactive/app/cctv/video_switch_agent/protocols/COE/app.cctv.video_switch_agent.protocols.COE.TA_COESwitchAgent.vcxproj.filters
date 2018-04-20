@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2f1a95ba-fb3f-4bb6-bf55-87f040b9bcca}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Command Files">
+      <UniqueIdentifier>{5d405112-ae4c-49c2-8e9e-3037d6d43ad0}</UniqueIdentifier>
+      <Extensions>h;cpp</Extensions>
+    </Filter>
+    <Filter Include="Command Files\Command Header Files">
+      <UniqueIdentifier>{55fabbf5-79c0-4779-a078-fefe069d2285}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Command Files\Command Source Files">
+      <UniqueIdentifier>{b46cb715-0079-49fa-92dc-540420b555e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\..\..\sdk\include\transactive\core\alarm\src\AlarmConstants.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COEBVSStage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COECamera.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COECommunicationsChannel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COECommunicationsHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COEHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COEQuad.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COERecordingUnit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COESequence.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COESwitchManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COEVideoInput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COEVideoOutput.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ReceivedDataProcessor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StateValidationCycle.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SynchronisedQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\core\message\types\VisualAlarms_MessageTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractCOERequestCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BVSStatusCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ControlSequencePlaybackCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IAgentRequestCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IHardwareNotificationCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MonitorStatusCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuadStatusCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RecordingUnitStatusCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequenceConfigCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SetRecordingUnitModeCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SetSequenceConfigCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SetStageSwitchModeCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SummaryPollingCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SwitchInputToOutputCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SwitchQuadInputsCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCameraAlarmAckCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainCameraAlarmClearCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TriggeringEventAckCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TriggeringEventClearCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TriggeringEventCommand.h">
+      <Filter>Command Files\Command Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\COEBVSStage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COECamera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COECommunicationsChannel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COECommunicationsHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COEHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COEInterfaceFactory.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COEQuad.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COERecordingUnit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COESequence.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COESwitchManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COEVideoInput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COEVideoOutput.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ReceivedDataProcessor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StateValidationCycle.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractCOERequestCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BVSStatusCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ControlSequencePlaybackCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MonitorStatusCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuadStatusCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RecordingUnitStatusCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequenceConfigCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SetRecordingUnitModeCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SetSequenceConfigCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SetStageSwitchModeCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SummaryPollingCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SwitchInputToOutputCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SwitchQuadInputsCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCameraAlarmAckCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainCameraAlarmClearCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriggeringEventAckCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriggeringEventClearCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriggeringEventCommand.cpp">
+      <Filter>Command Files\Command Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\SynchronisedQueue.inl">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+</Project>

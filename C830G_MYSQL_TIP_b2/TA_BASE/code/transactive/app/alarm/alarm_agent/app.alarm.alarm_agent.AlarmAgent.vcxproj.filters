@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{a43c63c2-a536-4886-940a-50ab7bd0e36e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AbstractRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAgent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\AlarmAgentException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmAgentImpl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmCache.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\core\exceptions\src\AlarmCacheCapacityExceededException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmHistoricalQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlarmQueueWrapper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AutoAcknowledgeRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AvalancheSuppressionRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CCTVRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DatabaseLoader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MMSRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PlanExecutionRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RuleRepository.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RuleTimer.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SuppressionRule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransactionQueue.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AbstractRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\bus\security\access_control\alarm_actions\src\AlarmActions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAgent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\AlarmAgentException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmAgentImpl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\message\types\AlarmAudit_MessageTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmCache.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\core\exceptions\src\AlarmCacheCapacityExceededException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmHistoricalQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlarmQueueWrapper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AutoAcknowledgeRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AvalancheSuppressionChild.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AvalancheSuppressionRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CCTVRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DatabaseLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDataLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocalRunParamDefinitions.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MMSRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\PlanExecutionRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RuleRepository.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RuleTimer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SuppressionRule.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransactionQueue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

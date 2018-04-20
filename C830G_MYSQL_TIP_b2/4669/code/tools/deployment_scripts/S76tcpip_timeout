@@ -1,0 +1,5 @@
+#!/bin/sh
+# This script configures the timeout time for the tcp/ip connection that is needed for MMS
+# It is set to 10000milisecond (10 seconds) when there is a disconnection between ISCS and MMS and alarms will be
+# stored in the journal file
+/usr/sbin/ndd -set /dev/tcp tcp_ip_abort_interval 10000 

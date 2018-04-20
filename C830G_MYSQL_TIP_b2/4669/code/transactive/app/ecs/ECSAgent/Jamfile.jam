@@ -1,0 +1,4 @@
+
+ta-exe ECSAgent
+	: [ glob src/*.cpp : src/ForcedDataPointSynchroniser.cpp ]
+	;

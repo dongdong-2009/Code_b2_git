@@ -1,0 +1,176 @@
+//
+// The source code in this file is the property of
+// Ripple Systems and is not for redistribution
+// in any form.
+//
+// Source:   $File: //depot/4669_T01271350/4669/transactive/bus/signs/RATISCallBannerLibrary/IDL/src/ITTISManagerCorbaDef.idl $
+// @author:  Rob Ashcroft
+// @version: $Revision: #1 $
+//
+// Last modification: $DateTime: 2008/11/28 16:26:01 $
+// Last modified by:  $Author: builder $
+//
+// Train Traveller Information System (TTIS) Manager IDL interface.
+//
+
+#ifndef ITTISMANAGERCORBADEF_IDL_INCLUDED
+#define ITTISMANAGERCORBADEF_IDL_INCLUDED
+
+#include <core/data_access_interface/tis_agent_4669/IDL/src/TISMessageDataDefinitions.idl>
+
+module TA_IRS_Bus
+{
+
+	interface ITTISManagerCorbaDef
+	{
+
+		/*
+		*  This exception is thrown when the Train Agent throws its equivalent exception
+		*  when the reply from the TIMS is not received within the timeout period.
+		*/
+		exception TTISTrainTimeout
+		{
+		};
+
+		exception TTISInvalidParameter
+		{
+			string details;  // e.g. Invalid train id, No PA call for sessionID
+		};
+
+		/*
+		*  This exception is thrown when a trian idicates that it is currently busy
+		*  It indicates if an override request can be used.
+		*/
+		exception TTISTrainBusy
+		{
+		    boolean canOverride;
+		    string  details;
+		};
+
+		/*
+		* This exception thrown when any other fault occurs that means the command
+		* cannot be successfully completed. Including: Bad command, invalid checksum, 
+		* different library version, ...
+		*/
+		exception TTISTrainGeneralFailure
+		{
+			string details;
+		};
+
+		/**
+          * submitPredefinedDisplayRequest
+          *
+          * This method allows clients to initiate the display of a predefined message.
+		  *
+		  * If this is a new display request - ie it is not part of an earlier display request
+		  * then set displayRequestId to 0. Otherwise this is the pkey of the existing display request.
+		  * on return this parameter will contain the display request id.
+		  *
+          */
+
+		void submitPredefinedDisplayRequest( in unsigned short trainNumber, in TA_IRS_Core::TrainPIDList PIDs, in TA_IRS_Core::ELibrarySection librarySection, in unsigned short libraryVersion,
+  											 in unsigned short messageId, in unsigned short priority, in string startTime,
+											 in string endTime, inout unsigned long displayRequestId, in string sessionID )
+				raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainBusy, TTISTrainGeneralFailure );
+
+		/**
+          * submitAdHocDisplayRequest
+          *
+          * This method allows clients to initiate the display of an adhoc message.
+          * 
+		  * If this is a new display request - ie it is not part of an earlier display request
+		  * then set displayRequestId to 0. Otherwise this is the pkey of the existing display request.
+		  * on return this parameter will contain the display request id.
+		  *
+          */
+		void submitAdHocDisplayRequest( in unsigned short trainNumber, in TA_IRS_Core::TrainPIDList PIDs, in string messageContent, in TA_IRS_Core::ELEDFontSize fontSize, 
+										in TA_IRS_Core::EJustification justification, in TA_IRS_Core::ETTISLEDIntensity intensity, in TA_IRS_Core::EDisplayMode displayMode,
+										in unsigned short priority, in string startTime, in string endTime, in unsigned short repeatInterval, inout unsigned long displayRequestId,
+										in string sessionID )
+				raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainBusy, TTISTrainGeneralFailure );
+									
+		/**
+		  * submitClearRequest
+		  *
+		  * This method allows clients to initiate the clearing of a PID and its queue.
+		  * 
+		  */
+		void submitClearRequest( in unsigned short trainNumber, in TA_IRS_Core::TrainPIDList PIDs, in TA_IRS_Core::ETTISClearType type, in string sessionID )
+							raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainGeneralFailure);
+
+		/**
+		  * downloadNextMessageLibrary
+		  *
+		  * This method allows clients to initiate the download of the next 
+		  * predefined message library.
+		  */
+		void downloadNextMessageLibrary( in unsigned short trainNumber, in string sessionID )
+				raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainBusy, TTISTrainGeneralFailure );
+
+		/**
+		  * upgradeMessageLibrary
+		  *
+		  * This method allows clients to send an upgrade command to inform
+		  * a train to switch to the recently downloaded message library.
+		  */
+		void upgradeMessageLibrary( in unsigned short trainNumber, in string sessionID )
+							raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainGeneralFailure);
+
+		/**
+		  * downloadCurrentTimeSchedule
+		  *
+		  * This method allows clients to download the current ISCS Time Schedule.
+		  * 
+		  */
+		void downloadCurrentTimeSchedule ( in unsigned short trainNumber, in string sessionID )
+				raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainBusy, TTISTrainGeneralFailure );
+
+		/**
+		  * upgradeTimeSchedule
+		  *
+		  * This method allows clients to send an upgrade command to inform
+		  * a train to switch to the recently downloaded time schedule.
+		  */
+		void upgradeTimeSchedule ( in unsigned short trainNumber, in string sessionID )
+							raises( TTISInvalidParameter, TTISTrainTimeout, TTISTrainGeneralFailure);
+
+
+		/**
+		  *	getCurrentTrainDownloads
+		  *
+		  * Get the list of current message downloads
+		  *
+		  *	@return the train id's and the downloads that are in progress.
+		  */
+		TA_IRS_Core::TrainDownloadList getCurrentTrainDownloads();
+
+		/**
+		  *	getMessageLibraryVersions
+		  *
+		  * Get the message library versions and upgrade status for each train.
+		  *
+		  *	@return the pre-defined and time schedule versions for each train.
+		  */
+		TA_IRS_Core::TrainDataVersionList getTrainDataVersions();
+
+
+		/**
+		  *	timeScheduleChanged
+		  *
+		  * Notify the agent of a time schedule change.
+		  * This allows the agent to notify all other users of train time schedules.
+		  *
+		  *	@param timeSchedulePkey		The time schedule that was changed
+		  *	@param changeType			what was done
+		  *	@param timeSchedulePkey		who did it
+		  */
+		void timeScheduleChanged( in unsigned long timeSchedulePkey,
+								  in TA_IRS_Core::ETimeScheduleChangeType changeType,
+								  in string sessionID);
+
+
+	}; // ITTISManagerCorbaDef
+
+}; // TA_IRS_Bus
+
+#endif

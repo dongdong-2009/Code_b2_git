@@ -1,0 +1,6 @@
+
+ta-exe PAAgent
+	: [ glob src/*.cpp :
+			src/ForcedDataPointSynchroniser.cpp
+		]
+	;

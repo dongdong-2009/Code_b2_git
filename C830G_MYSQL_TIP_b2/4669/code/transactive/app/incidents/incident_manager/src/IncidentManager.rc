@@ -1,0 +1,586 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""..\\res\\IncidentManager.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (Australia) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENA)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&All Incidents",              ID_VIEW_ALL_INCIDENTS
+        MENUITEM SEPARATOR
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Incident"
+    BEGIN
+        MENUITEM "&New...",                     ID_INCIDENT_NEW
+        MENUITEM "&View...",                    ID_INCIDENT_VIEW
+        MENUITEM "&Edit...",                    ID_INCIDENT_EDIT
+        MENUITEM "&Delete",                     ID_INCIDENT_DELETE
+        MENUITEM "&Print...",                   ID_INCIDENT_PRINT
+        MENUITEM "&Close",                      ID_INCIDENT_CLOSE
+        MENUITEM "&Re-open",                    ID_INCIDENT_REOPEN
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Incident Manager &Help",      ID_HELP_INDEX
+        MENUITEM SEPARATOR
+        MENUITEM "&About Incident Manager",     ID_APP_ABOUT
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION 99, 99, 99, 99
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "IncidentManager MFC Application\0"
+            VALUE "FileVersion", "99, 99, 99, 99\0"
+            VALUE "InternalName", "IncidentManager\0"
+            VALUE "LegalCopyright", "Copyright (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "IncidentManager.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "IncidentManager Application\0"
+            VALUE "ProductVersion", "99, 99, 99, 99\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "..\\res\\IncidentManager.ico"
+IDI_ICON_LEFT           ICON    DISCARDABLE     "..\\res\\icon_lef.ico"
+IDI_ICON_RIGHT          ICON    DISCARDABLE     "..\\res\\icon_rig.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_INCIDENT_REPORT_DIALOG DIALOG DISCARDABLE  0, 0, 561, 418
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Incident Report"
+FONT 10, "Arial Bold"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,84,547,25
+    GROUPBOX        "Incident Report",IDC_STATIC,7,7,547,70
+    LTEXT           "ID:",IDC_STATIC,15,21,27,8
+    EDITTEXT        IDC_EDIT_ID,47,18,95,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER
+    LTEXT           "Title",IDC_STATIC,151,21,52,8
+    EDITTEXT        IDC_EDIT_TITLE,205,18,338,14,ES_AUTOHSCROLL
+    LTEXT           "Creator:",IDC_STATIC,15,39,27,8
+    EDITTEXT        IDC_EDIT_CREATOR,47,36,95,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Creator Profile:",IDC_STATIC,151,39,52,8
+    EDITTEXT        IDC_EDIT_CREATOR_PROFILE,205,36,75,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Creation Date:",IDC_STATIC,292,39,48,8
+    EDITTEXT        IDC_EDIT_CREATION_DATE,342,36,70,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Creation Time:",IDC_STATIC,420,39,50,8
+    EDITTEXT        IDC_EDIT_CREATION_TIME,474,36,70,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Modifier:",IDC_STATIC,15,57,27,8
+    EDITTEXT        IDC_EDIT_MODIFIER,47,54,95,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Modifier Profile:",IDC_STATIC,151,57,52,8
+    EDITTEXT        IDC_EDIT_MODIFIER_PROFILE,205,54,75,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Modified Date",IDC_STATIC,292,57,48,8
+    EDITTEXT        IDC_EDIT_MODIFIED_DATE,342,54,70,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "Modified Time:",IDC_STATIC,420,58,50,8
+    EDITTEXT        IDC_EDIT_MODIFIED_TIME,474,54,70,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    GROUPBOX        "Incident",IDC_STATIC,7,84,547,180
+    CONTROL         "False Incident",IDC_CHECK_FALSE_INCIDENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,96,60,10
+    LTEXT           "Asset:",IDC_STATIC,15,122,61,8
+    EDITTEXT        IDC_EDIT_ASSET,79,119,116,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    PUSHBUTTON      "...",IDC_BUTTON_ASSET,200,119,16,15
+    LTEXT           "Train ID:",IDC_STATIC,15,140,61,8
+    EDITTEXT        IDC_EDIT_TRAIN_ID,79,137,116,14,ES_AUTOHSCROLL
+    CONTROL         "Inner Track",IDC_CHECK_INNER_TRACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,79,160,53,10
+    CONTROL         "Outer Track",IDC_CHECK_OUTER_TRACK,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,137,160,54,10
+    LTEXT           "Kilometre loss:",IDC_STATIC,15,177,61,8
+    EDITTEXT        IDC_EDIT_KILOMETRE_LOSS,79,175,116,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    LTEXT           "Location 1:",IDC_STATIC,221,122,40,8
+    COMBOBOX        IDC_COMBO_LOCATION1,266,118,112,74,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Start Date:",IDC_STATIC,221,140,40,8
+    CONTROL         "DateTimePicker1",IDC_DATEPICKER_START_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,266,134,112,14
+    LTEXT           "Start Time:",IDC_STATIC,221,158,40,8
+    CONTROL         "DateTimePicker1",IDC_TIMEPICKER_START_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,266,152,112,14
+    LTEXT           "Initial Delay:",IDC_STATIC,221,175,43,9
+    EDITTEXT        IDC_EDIT_INITIAL_DELAY_TIME_HOURS,266,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "hr",IDC_STATIC,287,175,14,8
+    EDITTEXT        IDC_EDIT_INITIAL_DELAY_TIME_MINUTES,303,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "min",IDC_STATIC,326,175,14,8
+    EDITTEXT        IDC_EDIT_INITIAL_DELAY_TIME_SECONDS,343,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "sec",IDC_STATIC,366,175,14,8
+    LTEXT           "Location 2:",IDC_STATIC,383,122,40,8
+    COMBOBOX        IDC_COMBO_LOCATION2,434,118,112,75,CBS_DROPDOWNLIST | 
+                    CBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "End Date:",IDC_STATIC,383,139,40,8
+    CONTROL         "DateTimePicker1",IDC_DATEPICKER_END_DATE,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_SHOWNONE | 
+                    WS_TABSTOP,434,134,112,14
+    LTEXT           "End Time:",IDC_STATIC,383,158,40,8
+    CONTROL         "DateTimePicker1",IDC_TIMEPICKER_END_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | DTS_UPDOWN | 
+                    WS_TABSTOP | 0x8,434,152,112,14
+    CTEXT           "Accumulated Delay:",IDC_STATIC,383,175,48,16
+    EDITTEXT        IDC_EDIT_ACCUMULATED_DELAY_TIME_HOURS,434,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "hr",IDC_STATIC,455,175,14,8
+    EDITTEXT        IDC_EDIT_ACCUMULATED_DELAY_TIME_MINUTES,471,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "min",IDC_STATIC,494,175,14,8
+    EDITTEXT        IDC_EDIT_ACCUMULATED_DELAY_TIME_SECONDS,511,174,18,14,
+                    ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "sec",IDC_STATIC,534,175,14,8
+    LTEXT           "Associated Alarm:",IDC_STATIC,15,202,61,8
+    EDITTEXT        IDC_EDIT_ASSOCIATED_ALARM,79,194,465,28,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_READONLY | ES_WANTRETURN
+    LTEXT           "Additional Alarm Descriptions:",IDC_STATIC,15,228,61,21
+    EDITTEXT        IDC_EDIT_ADDITIONAL_ALARM_DESCRIPTIONS,79,227,465,28,
+                    ES_MULTILINE | ES_AUTOVSCROLL | ES_WANTRETURN
+    GROUPBOX        "Response",IDC_STATIC,7,266,547,127
+    LTEXT           "Plans Executed:",IDC_STATIC,15,277,71,8
+    PUSHBUTTON      "Add Plan ...",IDC_BUTTON_ADD_PLAN,217,287,57,14
+    PUSHBUTTON      "Remove Plan",IDC_BUTTON_REMOVE_PLAN,217,305,57,14,
+                    WS_DISABLED
+    LTEXT           "Operators",IDC_STATIC,286,277,64,8
+    EDITTEXT        IDC_EDIT_OPERATORS,286,287,259,35,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN
+    LTEXT           "Comments",IDC_STATIC,15,327,51,8
+    EDITTEXT        IDC_EDIT_COMMENTS,15,338,259,47,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    LTEXT           "Recommendation",IDC_STATIC,285,328,64,8
+    EDITTEXT        IDC_EDIT_RECOMMENDED_ACTION,286,338,259,47,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "View Station Report",IDC_BUTTON_VIEW_STATION_REPORT,7,
+                    397,90,14
+    PUSHBUTTON      "Edit Station Report",IDC_BUTTON_EDIT_STATION_REPORT,101,
+                    397,90,14
+    DEFPUSHBUTTON   "Save",IDC_BUTTON_SAVE,396,397,50,14
+    PUSHBUTTON      "Print",IDC_BUTTON_PRINT,450,397,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,504,397,50,14
+    LISTBOX         IDC_LIST_PLAN,15,287,195,35,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Location1  Read Only Text",IDC_COMBOSTATIC1,211,93,101,
+                    12,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "Start Date  Read Only Text",IDC_START_DATESTATIC,318,93,
+                    101,12,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "Start Time  Read Only Text",IDC_START_TIMESTATIC,425,93,
+                    101,12,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "Location2 Read Only Text",IDC_COMBOSTATIC2,208,78,101,
+                    12,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "End Date  Read Only Text",IDC_END_DATESTATIC,316,79,101,
+                    12,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "End Time  Read Only Text",IDC_END_TIMESTATIC,424,79,101,
+                    12,NOT WS_VISIBLE | NOT WS_GROUP
+END
+
+IDD_STATION_REPORT_DIALOG DIALOG DISCARDABLE  0, 0, 536, 412
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Station Report"
+FONT 10, "Arial Bold"
+BEGIN
+    LTEXT           "ID:",IDC_STATIC,8,13,27,8
+    EDITTEXT        IDC_EDIT_ID,57,8,127,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Submitted by:",IDC_STATIC,8,31,44,8
+    EDITTEXT        IDC_EDIT_SUBMITTED_BY,57,28,127,14,ES_AUTOHSCROLL
+    LTEXT           "EP:",IDC_STATIC,201,31,15,8
+    EDITTEXT        IDC_EDIT_EP,220,28,152,14,ES_AUTOHSCROLL
+    LTEXT           "Date:",IDC_STATIC,416,32,24,8
+    CONTROL         "DateTimePicker1",IDC_DATEPICKER_DATE,"SysDateTimePick32",
+                    DTS_RIGHTALIGN | DTS_SHOWNONE | WS_TABSTOP,444,28,84,14
+    LTEXT           "Type:",IDC_STATIC,8,60,44,8
+    CONTROL         "Train Service Delay",IDC_CHECK_TRAIN_SERVICE_DELAY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,56,60,79,10
+    CONTROL         "Derailment",IDC_CHECK_DERAILMENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,56,76,51,10
+    CONTROL         "Damaged Facility/Property",IDC_CHECK_DAMAGED_FACILITY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,56,92,101,10
+    CONTROL         "Fire",IDC_CHECK_FIRE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,108,29,10
+    CONTROL         "Equipment Abnormality",IDC_CHECK_EQUIPMENT_ABNORMALITY,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,60,87,10
+    CONTROL         "Equipment Malfunction",IDC_CHECK_EQUIPMENT_MALFUNCTION,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,168,76,88,10
+    CONTROL         "Trespassing",IDC_CHECK_TRESPASSING,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,168,92,54,10
+    CONTROL         "Criminal Act",IDC_CHECK_CRIMINAL_ACT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,168,108,53,10
+    CONTROL         "Arrest of person",IDC_CHECK_ARREST_OF_PERSON,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,300,60,65,10
+    CONTROL         "Assault",IDC_CHECK_ASSAULT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,300,76,39,10
+    CONTROL         "Heated Argument",IDC_CHECK_HEATED_ARGUMENT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,300,92,71,10
+    CONTROL         "Others (Specify)",IDC_CHECK_TYPE_OTHERS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,56,124,66,10
+    EDITTEXT        IDC_EDIT_TYPE_OTHERS,125,123,404,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Location:",IDC_STATIC,8,153,44,8
+    CONTROL         "Train",IDC_CHECK_TRAIN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,153,32,10
+    CONTROL         "Trackside",IDC_CHECK_TRACKSIDE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,153,47,10
+    CONTROL         "Station",IDC_CHECK_STATION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,153,38,10
+    CONTROL         "Depot",IDC_CHECK_DEPOT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,153,35,10
+    CONTROL         "Other:",IDC_CHECK_LOCATION_OTHERS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,228,153,33,10
+    EDITTEXT        IDC_EDIT_LOCATION_OTHERS,269,151,260,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Condition:",IDC_STATIC,8,172,44,8
+    CONTROL         "Dry",IDC_CHECK_DRY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,172,27,10
+    CONTROL         "Wet",IDC_CHECK_WET,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,172,29,10
+    CONTROL         "Clean",IDC_CHECK_CLEAN,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,172,34,10
+    CONTROL         "Dirty",IDC_CHECK_DIRTY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,172,30,10
+    CONTROL         "Well Lit",IDC_CHECK_WELL_LIT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,172,39,10
+    CONTROL         "Poorly Lit",IDC_CHECK_POORLY_LIT,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,268,172,45,10
+    CONTROL         "Other:",IDC_CHECK_CONDITION_OTHERS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,316,172,35,10
+    EDITTEXT        IDC_EDIT_CONDITION_OTHERS,357,171,172,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Caused By:",IDC_STATIC,8,192,44,8
+    CONTROL         "ESP",IDC_CHECK_ESP,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,56,192,30,10
+    CONTROL         "BLS",IDC_CHECK_BLS,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,96,192,29,10
+    CONTROL         "Pax",IDC_CHECK_PAX,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,148,192,28,10
+    CONTROL         "Point",IDC_CHECK_POINT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,188,192,32,10
+    CONTROL         "Power",IDC_CHECK_POWER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,228,192,36,10
+    CONTROL         "Signal",IDC_CHECK_SIGNAL,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,268,192,35,10
+    CONTROL         "Tk Cct",IDC_CHECK_TK_CCT,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,316,192,37,10
+    CONTROL         "Other:",IDC_CHECK_CAUSED_BY_OTHERS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,356,192,36,10
+    EDITTEXT        IDC_EDIT_CAUSED_BY_OTHERS,393,189,136,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Action Taken:",IDC_STATIC,8,216,52,8
+    EDITTEXT        IDC_EDIT_ACTION_TAKEN,60,212,468,14,ES_AUTOHSCROLL
+    LTEXT           "Staff Involved:",IDC_STATIC,8,236,52,8
+    EDITTEXT        IDC_EDIT_STAFF_INVOLVED,60,233,468,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_DESCRIPTION,8,268,520,116,ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_WANTRETURN | WS_VSCROLL
+    DEFPUSHBUTTON   "Save",IDOK,426,391,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,480,391,50,14
+    LTEXT           "Read only Date Static text",IDC_DATE_STATIC,444,49,87,
+                    11,NOT WS_VISIBLE | NOT WS_GROUP
+    LTEXT           "Description:",IDC_STATIC,8,254,52,8
+END
+
+IDD_PLAN_DIALOG DIALOG DISCARDABLE  0, 0, 263, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Plan"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,80,242,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,242,50,14
+    CONTROL         "Tree1",IDC_TREE_PLAN,"SysTreeView32",WS_BORDER | 
+                    WS_TABSTOP,7,7,249,230
+END
+
+IDD_ASSET_DIALOG DIALOG DISCARDABLE  0, 0, 263, 263
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Asset"
+FONT 10, "Arial Bold"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,80,242,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,242,50,14
+    CONTROL         "Tree1",IDC_ASSET_TYPE_TREE,"SysTreeView32",
+                    TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | 
+                    TVS_DISABLEDRAGDROP | TVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,7,7,249,230
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_INCIDENT_REPORT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 554
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 411
+    END
+
+    IDD_STATION_REPORT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 529
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 405
+    END
+
+    IDD_PLAN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_ASSET_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  63, 37
+BEGIN
+    BUTTON      ID_INCIDENT_NEW
+    BUTTON      ID_INCIDENT_VIEW
+    BUTTON      ID_INCIDENT_EDIT
+    BUTTON      ID_INCIDENT_DELETE
+    BUTTON      ID_INCIDENT_PRINT
+    BUTTON      ID_INCIDENT_CLOSE
+    BUTTON      ID_INCIDENT_REOPEN
+    BUTTON      ID_VIEW_ALL_INCIDENTS
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  DISCARDABLE     "..\\res\\toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IncidentMANAGER     "Template Property Sheet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Toggles the toolbar on/off\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Toggles the status bar on/off\nToggle StatusBar"
+    IDS_LISTVIEWCOLUMN_ID   "ID"
+    IDS_LISTVIEWCOLUMN_CREATED "Created"
+    IDS_LISTVIEWCOLUMN_TITLE "Title"
+    IDS_LISTVIEWCOLUMN_LOCATION "Loc"
+    IDS_LISTVIEWCOLUMN_TRACK "Track"
+    IDS_LISTVIEWCOLUMN_TRAIN "Train"
+    IDS_LISTVIEWCOLUMN_ALARM "Alarm"
+    IDS_LISTVIEWCOLUMN_ASSET "Asset"
+    IDS_LISTVIEWCOLUMN_SUBSYSTEM "Subsystem"
+    IDS_LISTVIEWCOLUMN_CREATOR "Creator"
+    IDS_LISTVIEWCOLUMN_PROFILE "Profile"
+    IDS_LISTVIEWCOLUMN_CLOSED "Closed"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INCIDENT_NEW         "Creates a new incident report\nCreate Report(s)"
+    ID_INCIDENT_VIEW        "Displays the details of the selected incident report in read-only mode\nView Report(s)"
+    ID_INCIDENT_EDIT        "Displays the details of the selected incident report in editable mode\nEdit Report(s)"
+    ID_INCIDENT_DELETE      "Deletes the selected (closed) incident report from the list\nDelete Report(s)"
+    ID_INCIDENT_PRINT       "Launches the standard MS Windows print dialog to enable the Operator to print the selected incident report\nPrint report(s)"
+    ID_INCIDENT_CLOSE       "Close s the selected incident report\nClose Report(s)"
+    ID_INCIDENT_REOPEN      "Re-opens the selected incident report\nReopen Report(s)"
+    ID_VIEW_ALL_INCIDENTS   "Shows all incidents if pushed down; shows only incidents associated with the current profile and location otherwise\nDisplay associated report(s)"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display information about the Incident Manager."
+    ID_APP_EXIT             "Exits the Incident Manager."
+    ID_HELP_INDEX           "Display Incident Manager help information"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "IncidentManager\n\nIncide\n\n\nIncidentManager.Document\nIncide Document"
+END
+
+#endif    // English (Australia) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "..\res\IncidentManager.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

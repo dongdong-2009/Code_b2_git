@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{81c5b61e-bcdd-44e0-8338-ee21676a3d4e}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{1bcd280a-b9f1-446e-a406-fc7525bc798b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ActionThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayItem.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DutyAdapter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventListComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EventLoader.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Filter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ActionThread.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayItem.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DutyAdapter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventListComponent.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventListComponent_rc.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EventLoader.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Filter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IEventAction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\EventListComponent.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\down.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

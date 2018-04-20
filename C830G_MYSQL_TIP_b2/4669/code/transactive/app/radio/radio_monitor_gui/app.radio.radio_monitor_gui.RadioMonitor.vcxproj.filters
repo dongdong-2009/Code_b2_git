@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{992829ea-077f-44b7-8b3c-972c087e5d3d}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="src\Workaround">
+      <UniqueIdentifier>{3d5a8523-cb30-4ac4-9750-9e84b750e740}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{6c0bb251-4e2d-401f-92b3-c2b20446b457}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CachedConfig.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListeningCallStackListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MonitoredCallStackListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorErrorHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorModel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorTestData.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RadioMonitorUtils.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\REBProgressManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RightsChangedWindowNotificationHandler.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SearchPageHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SelectedListCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\bus\radio\RadioSearchPage\src\SearchPage.cpp">
+      <Filter>src\Workaround</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CachedConfig.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IRightsChangeListener.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListeningCallStackListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ManagedListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MonitoredCallStackListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorErrorHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorModel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorTestData.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RadioMonitorUtils.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RightsChangedWindowNotificationHandler.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SearchPageHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SelectedListCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\REBProgressManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ManagedListCtrl.inl">
+      <Filter>src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\RadioMonitor.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\..\sdk\include\transactive\bus\resources\icons\RadioMonitor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\bus\resources\icons\RadioMonitor.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="ReadMe.txt">
+      <Filter>src\Workaround</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>

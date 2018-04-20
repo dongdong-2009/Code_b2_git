@@ -1,0 +1,14 @@
+
+rule build-or-not ( )
+{
+	if ! [ $(TA_OS).on-sparc-solaris ]
+	{
+		return <build>no ;
+	}
+}
+
+ta-exe MmsAgent
+	: [ glob src/*.cpp : src/MmsStubbedApiWrapper.cpp ]
+	: <toolset>gcc:<define>UNIX
+	  [ build-or-not ]
+	;

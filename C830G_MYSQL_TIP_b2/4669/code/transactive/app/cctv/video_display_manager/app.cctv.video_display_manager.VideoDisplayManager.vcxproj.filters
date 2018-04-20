@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{46a8c4fb-ae59-41f3-8903-32dbbc247107}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{714d4f88-1522-4dbf-b557-2bbcaf882d86}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Display Items">
+      <UniqueIdentifier>{7be55bc5-6b0a-4849-8b31-1241636b4f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Agent Comms">
+      <UniqueIdentifier>{729a8699-7a68-4d69-a6a0-e3381b82e7b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Video Source Pages">
+      <UniqueIdentifier>{9b209422-30f4-42d0-a651-971b996de6e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pop-Up Dialogs">
+      <UniqueIdentifier>{3b009547-e421-4588-aa3f-5626c3cfd6fe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EditNoFocus.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Label.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\LocationSelectionDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StdAfx.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TheToolTipCtrl.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ToolTipWnd.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TransparentImage.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VersionGen.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoDisplayManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoDisplayManagerDlg.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoDisplayManagerGUI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BvsStage.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayItem.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayItemManager.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DisplayItemTasks.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Monitor.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Quad.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sequence.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoInput.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoOutput.cpp">
+      <Filter>Display Items</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SwitchAgentCommunicator.cpp">
+      <Filter>Agent Comms</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CamerasPage.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuadsPage.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequencesPage.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainsPage.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSourcesListBox.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSourcesListCtrl.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSourcesPropertySheet.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\VideoSourcesTreeCtrl.cpp">
+      <Filter>Video Source Pages</Filter>
+    </ClCompile>
+    <ClCompile Include="src\QuadControllerDlg.cpp">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequenceEditorDlg.cpp">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SequenceEditorSaveAsDlg.cpp">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TrainborneControllerDlg.cpp">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EditNoFocus.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Label.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LocationSelectionDialog.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Resource.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StdAfx.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TheToolTipCtrl.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ToolTipWnd.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TransparentImage.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoDisplayManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoDisplayManagerDlg.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoDisplayManagerGUI.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BvsStage.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayItem.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayItemManager.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DisplayItemTasks.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDisplayItemLoader.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Monitor.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Quad.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sequence.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoInput.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoOutput.h">
+      <Filter>Display Items</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SwitchAgentCommunicator.h">
+      <Filter>Agent Comms</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CamerasPage.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuadsPage.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequencesPage.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainsPage.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSourcesListBox.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSourcesListCtrl.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSourcesPropertySheet.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\VideoSourcesTreeCtrl.h">
+      <Filter>Video Source Pages</Filter>
+    </ClInclude>
+    <ClInclude Include="src\QuadControllerDlg.h">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequenceEditorDlg.h">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SequenceEditorSaveAsDlg.h">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TrainborneControllerDlg.h">
+      <Filter>Pop-Up Dialogs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\VideoDisplayManager.rc">
+      <Filter>src</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\add.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\bottom.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\camera.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\cameraSelected.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\closedfolder.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\down.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\halt.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\nextElement_FF.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ODS.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\ODSHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\openfolder.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\pause.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\play.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\previousElement_RW.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\quad.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadSegment.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadSegmentHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadSegmentHiighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\quadSelected.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadVmon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadVmonDisabled.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\QuadVmonHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\record.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\remove.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sequence.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\sequenceSelected.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SingleVmon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SingleVmonDisabled.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SingleVmonForTrain.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SingleVmonForTrainHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\SingleVmonHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\top.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\train.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\TrainCamLeft.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\TrainCamLeftHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\TrainCamRight.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\TrainCamRightHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\trainSelected.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\up.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\VCR.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\VCRHighLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\VideoDisplayManager.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Vmon.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\VmonHighlite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\VmonHighlLite.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Dragmove.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\lnodrop.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\VideoDisplayManager.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

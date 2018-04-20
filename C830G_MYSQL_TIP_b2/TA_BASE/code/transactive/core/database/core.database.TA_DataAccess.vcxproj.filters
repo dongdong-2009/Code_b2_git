@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{b51cc690-99f4-413d-88b2-781460cc9a06}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CommonType.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ConnectionReaper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DBException.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DbServerLocator.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDbConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IQueryAdapter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MysqlConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MysqlQueryAdapter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OCIAccessStatusMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OCIConnection.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OCIConnectionStatusMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OCIQueryAdapter.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SimpleDb.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SimpleDbStatusMonitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ConnectionReaper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DBException.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DbServerLocator.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MysqlConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MysqlQueryAdapter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OCIAccessStatusMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OCIConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OCIConnectionStatusMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OCIQueryAdapter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SimpleDb.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SimpleDbStatusMonitor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

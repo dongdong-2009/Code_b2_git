@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{c5c7d20e-b04e-4ea7-9e64-bd9249bed92f}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Socket Options">
+      <UniqueIdentifier>{c9c09f4b-a280-46d8-8283-a51ea0669e0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ACE Sockets">
+      <UniqueIdentifier>{a3c54b13-4f46-47ca-825d-ea9d4b6bd99d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Datagram.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ICMPMessageCodec.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InetAddress.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RawDatagramSocket.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TcpSocket.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AbstractSocketOption.cpp">
+      <Filter>Socket Options</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SocketOptions.cpp">
+      <Filter>Socket Options</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TcpNoDelay.cpp">
+      <Filter>Socket Options</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ObservedSocket.cpp">
+      <Filter>ACE Sockets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Datagram.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ICMPMessageCodec.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\IDatagramSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InetAddress.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ITcpSocketObserver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RawDatagramSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SocketSet.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SocketSetP.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpNonblockingSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpObservedSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpServerSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpSocket.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AbstractSocketOption.h">
+      <Filter>Socket Options</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SocketOptions.h">
+      <Filter>Socket Options</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TcpNoDelay.h">
+      <Filter>Socket Options</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ISocketObserver.h">
+      <Filter>ACE Sockets</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ObservedSocket.h">
+      <Filter>ACE Sockets</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

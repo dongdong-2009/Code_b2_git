@@ -1,0 +1,435 @@
+BEA MessageQ
+Release Notes for UNIX and NT, Version 5.0 Rolling Patch 31
+
+August 2005
+
+The MessageQ Release Notes for UNIX and NT systems describe software
+changes implemented for Versions 5.0 as well as  corrections,
+known problems, and restrictions. The release notes also contain
+corrections to documentation distributed with this software.
+
+Software Version:          MessageQ for NT, Version 5.0 RP 31 
+
+This release notes file contains:
+
+1.  Read Before Installing
+2.  Corrections to Known Problems
+
+
+Read Before installing
+
+This section describes important information that you need to know before
+you install this rolling patch on UNIX or NT.
+
+- Do I need to change my existing configuration files to run 
+  Version 5.0 RP 31?
+
+  No. Version 5.0, and 5.0 configuration files can be used when
+  running MessageQ for UNIX and NT, Version 5.0 RP 31.
+
+- Do I need to recompile my existing applications to run them under
+  Version 5.0 RP 31?
+
+  No.  No changes in application interfaces or flags have been made.
+
+- Do I need to relink my existing applications to run them under
+  Version 5.0?
+
+  No, when shared objects and dynamic link libraries are used.
+  Yes, for remote client applications that use statically linked 
+  libraries.
+
+Note:  The installation for patches does not retain any modifications
+to permissions that the administrator does after installation of the
+base product.  The administrator must manually reset permissions if
+they have been manually changed from the defaults.
+
+
+Corrections to Known Problems
+
+The MessageQ for UNIX and NT, Version 5.0, RP 31 kit contains new images
+for the following files:
+
+for UNIX:
+
+$BEADIR/bin/TMQFORWARD_BMQ      - MessageQ/Tuxedo Bridge
+$BEADIR/bin/TMQUEUE_BMQ         - MessageQ/Tuxedo Bridge
+$BEADIR/bin/dmqld               - Link driver
+$BEADIR/bin/dmqqe               - Queuing Engine
+$BEADIR/bin/dmqgcp              - Group Control Process
+$BEADIR/bin/dmqjourn            - Journal Process
+$BEADIR/bin/dmqloader           - Loader Process
+$BEADIR/bin/dmqsbs              - Selective Broadcast Services Process
+$BEADIR/bin/dmqcls              - Client Library Server Process
+$BEADIR/bin/dmqlibcl            - Client library
+$BEADIR/bin/dmqcltest           - Client test program
+$BEADIR/bin/dmqmonm		- Motif monitor utility for HP-UX 10.20 Only
+$BEADIR/bin/dmqtestm		- Motif test utility for HP-UX 10.20 Only
+$BEADIR/lib/libcore.so          - core library for Digital UNIX, SUN solaris, SCO UnixWare, SCO UNIX, NCR mpras, dynix
+$BEADIR/lib/libdmq.so           - library for Digital UNIX, SUN solaris, SCO UnixWare, SCO UNIX, NCR mpras, dynix
+$BEADIR/lib/libdmqcl.so         - client library for Digital UNIX, SUN solaris,
+SCO UnixWare, SCO UNIX, NCR mpras, dynix
+$BEADIR/lib/libio.so            - io library for Digital UNIX, SUN solaris, SCO UnixWare, SCO UNIX, NCR mpras, dynix
+$BEADIR/lib/libcore.sl          - core library for HP HPUX
+$BEADIR/lib/libdmq.sl           - library for HP HPUX
+$BEADIR/lib/libdmqcl.sl         - client library for HP HPUX
+$BEADIR/lib/libio.sl		- io library for HP HPUX
+$BEADIR/lib/libcore.a           - core library for IBM AIX
+$BEADIR/lib/libdmq.a            - library for IBM AIX
+$BEADIR/lib/libdmqcl.a          - client library for IBM AIX
+$BEADIR/lib/libio.a		- io library for IBM AIX
+
+for NT:
+
+$BEADIR\bin\TMQFORWARD_BMQ.EXE  - MessageQ/Tuxedo Bridge
+$BEADIR\bin\TMQUEUE_BMQ.EXE     - MessageQ/Tuxedo Bridge
+$BEADIR\bin\DMQGCP.EXE          - Group Control Progrm (NT only)
+$BEADIR\bin\DMQLD.EXE           - MessageQ Link Driver
+$BEADIR\bin\DMQQE.EXE           - Queuing Engine
+$BEADIR\bin\DMQGCP.EXE          - Queuing Control Process
+$BEADIR\bin\DMQJOURN.EXE        - Journal Process
+$BEADIR\bin\DMQLOADER.EXE       - Loader Process
+$BEADIR\bin\DMQSBS.EXE          - Selective Broadcast Services Process
+$BEADIR\bin\DMQCLS.EXE          - Client Library Service Process
+$BEADIR\bin\DMQCL32.DLL         - Client library
+$BEADIR\bin\DMQCORE.DLL         - core library for Windows NT
+$BEADIR\bin\DMQIO.DLL		- io library for Windows NT
+$BEADIR\bin\DMQSPI.DLL          - spi library for Windows NT
+$BEADIR\lib\DMQ.DLL             - library
+$BEADIR\lib\DMQCL32.DLL         - Client library
+$BEADIR\bin\DMQCONVERT.EXE	- Group Conversion Utility
+$BEADIR\bin\DMQJDUMP.EXE	- Journal Dump Utility
+$BEADIR\bin\DMQJPLAY.EXE	- Journal Replay Utility
+$BEADIR\bin\DMQNA.EXE		- Naming Agent Server
+$BEADIR\bin\DMQSBS.EXE		- Selective Broadcast Services
+$BEADIR\bin\DMQSDM.DLL		- Library
+$BEADIR\bin\DMQSHUTDOWN.EXE	- Group Shutdown Utility
+$BEADIR\bin\DMQSRV.EXE		- Messageq Service Manager for Windows
+$BEADIR\bin\DMQSTARTUP.EXE	- Group startup Utility
+$BEADIR\bin\DMQTESTC.EXE	- Test Utility
+$BEADIR\bin\DMQTRACE.EXE	- Trace Utility
+$BEADIR\bin\DMQDAP.DLL		- Library
+$BEADIR\bin\DMQERR.DLL		- Library
+$BEADIR\bin\DMQIPI.DLL		- Library
+
+
+
+Installing these new images corrects the following reported
+problems:
+
+01 The MessageQ/Tuxedo Bridge would stop processing messages after
+   32K messages.  This problem has been fixed by freeing message
+   handles properly.
+01 When an internal acknowledgement message is sent to the non-blocking
+   queue of a xgroup application,  and that non-blocking queue number
+   of that application is equal to the number of the link sender's
+   control queue that is serving that remote group, the acknowledgements are
+   treated as control messages by the link driver.  Since the acknowledgments
+   are NOT control messages, the link sender ejects the messages from the
+   input stream.  As a result the acknowledgments are lost.  This results
+   in spurious timeouts for messages requiring acknowledgments.  In the worst
+   case this can stall the sending of recoverable messages between two groups.
+   This has been fixed.
+01 On NT, the link driver failed to connect when the local
+   node is configured as a fully qualified domain name in the
+   cross group table in the group initialization file. The message
+   "ld, no xgroup information for group <number>" appears in the log
+   for the NT machine.  The node name is now processed correctly.
+01 If the cross-group configuration for a single group advertises multiple
+   endpoints (multiple interfaces on the same machine or multiple ports
+   on the same interface on a single machine) for that single group, 
+   then the link listener only accepts connections on the last endpoint
+   specified.  For instance,  given the following %XGROUP section
+    
+   %XGROUP
+ 
+   !Group  Group  Node/       Init Thresh- Buffer Recon-   Window   Trans- End-
+   !Name   Number Host             old     Pool   nect   Delay Size port   point
+    
+   GROUP1 1      machine1     Y    2000000 .      30     10   25000 TCPIP  10002
+   GROUP1 1      machine1     Y    2000000 .      30     10   25000 TCPIP  10001
+   GROUP2 2      machine2     N    5000000 .      30     10   25000 TCPIP  20002
+   
+   %EOS
+ 
+   In some instances where multiple endpoints are specified on both sides
+   of the connection where multiple interfaces are involved and the
+   different interfaces are on separate physical networks,  it is possible
+   that no successful connection can be made.  The visible symptoms for
+   all cases are connections made in one direction only to the last
+   endpoint for a specific group with no return connection being made.
+   This occurs every 'n' seconds where 'n' is equal to the reconnect timer
+   specified for the entries in the %XGROUP section.  This has been corrected.
+
+02 In a configuration with an NT initiator group and any other group
+   that is shutdown, the link failed to recover when the group is
+   restarted.  A similar problem occurred when a non-intiating sender
+   was killed (instead of shutdown). The link recovery has been corrected.
+02 Timer notices and other internal notice messages failed to be enqueued
+   because of a bad quota check.  This affected delivery of the following
+   message types: MSG_TYPE_TIMER_EXPIRED, MSG_TYPE_Q_UPDATE, MSG_TYPE_AVAIL,
+   and MSG_TYPE_UNAVAIL.  This has been fixed.
+02 The Queuing Engine may shut down if clock is turned back more
+   than 100,000,000 seconds.  The code was modified to correctly
+   handle a larger time value (although this should not normally happen).
+02 The client journal was failing to forward a message.  This occured when
+   the message was the first message queued and journaled in its attach
+   session and there was a directly previous attach session in which exactly
+   one message was queued and journaled.
+03 The software has been changed back to the 5.0A behavior with
+   respect to OS permissions.  This allow the client application to run
+   under a different user id than the one running dmqgcp.  In order to work
+   in this environment, dmqqe has to be set to be owned by root and dmqqe
+   has to have the "effective user ID" set
+   (e.g.,chown root dmqqe; chmod u+s dmqqe) after patch installation.
+04 A race condition existed when multiple naming agents were configured
+   in the group initialization file.  This caused PAMS__NOOBJECT to
+   be returned during name resolution.  This race condition has been
+   serialized properly.
+04 When a client can't attach, it journals messages in its own endian.
+   Also if a client has attached, but the connection fails, it journals
+   messages in the endian it was using to talk to the CLS. When the client
+   later successfully connects, it assumes journaled messages are the same 
+   endian as it using to talk to the server.
+   This caused the journal to fail to forward a message in two cases:
+      (1)  The client is little endian, the server is big (network) endian but 
+	   the stored message is little endian.
+      (2)  The client is little endian, the server is little endian but 
+	   the stored message is big (network) endian.
+   It did not cause failures when the client is big endian or when the
+   client and server are both little endian.  This has been repaired with
+   a change to the client.
+04 When sending a message with delivery mode WF_DQF to a process 
+   attached to an MRQ (not a permanent queue), the message was not
+   always marked as PAMS__POSSDUPL in the psb when it had been
+   read and not confirmed by another process.  This has been corrected.
+04 On Digital Unix, the size of the LINKMGT_RESP structure in p_msg.h
+   was a byte smaller than other platforms.  The structure has been padded
+   appropriately.
+04 The client tracing did not show the actual 
+   message sent/received when working with handle-style messaging.
+   This was because the message length was less than 0
+   (PSYM_MSG_HANDLE) and the large_size is set to 0.
+   The message will be printed correctly.  Note that SDM
+   messages generally print in binary format (string values
+   may be visible).
+04 In a multihome configuration, MessageQ had a problem in determining
+   the hostname by which to generate the return connection to
+   the initiating sender; the correct hostname is now used for
+   binding the connection.  Further, for non-symmetric configurations,
+   MessageQ did not immediately fail a connection to a host on the
+   remote side for a host name/port that was not configured.
+   If cross group verification is set to yes and a matching
+   address/port is not found, the connection will be rejected
+   immediately.
+04 When sending cross-group recoverable messages the receiving group keeps
+   track of the last message that is received from the sending group.
+   It does this by looking at timestamps (contained in the message sequence
+   number) of incoming messages.   If the receiving group detects a message
+   that is older than a previously received message then that older message
+   is considered to be stale (already received) and it is removed from the
+   queuing system.   The fix made to the UNIX/NT code base defeats the
+   checking for stale messages and allows all messages to come through
+   regardless of age or order.   Specifically,   if the user sets the
+   environment variable DMQJRN_HISTORY_ENABLED to a value of NO,  then the
+   journal process will not check for stale messages.   If the environment
+   variable is not defined or is set to any other value other than "NO",
+   "No", "no" or "nO",  then the history is by default enabled.
+    
+   This addresses several problems reported by customers
+   
+   1) if the clock is explicitly turned backward by the administrator
+   new messages will appear stale to the receiving group and be removed
+   from the queuing  system for a  period equal to the amount of time
+   that the clock was turned back.   while this is not a Y2K problem in
+   and of itself,   the number of clocks being turned backward as a
+   result of Y2K testing has made this a somewhat common occurence.
+   This does not generally occur in a production environment.
+   
+   2) if a primary sending group fails,  and the clock of the secondary
+   sending group is behind the clock of the primary sending group,
+   then the receiving group sees this as the same group and detects this
+   as a clock that has moved backward resulting in new messages appearing
+   stale until such time that the secondary group catches up to the time
+   at which the primary group failed.  The stale messages are removed
+   from the queuing system.   This can be addressed by proper clock
+   synchronization between a primary and its backup.
+   
+   3) if a primary sending group fails,  and the secondary sending group
+   sends some recoverable messages,   then when the primary group is
+   re-established its journals may contain messages that are older
+   than the last message sent by the secondary sending group to the
+   receiving group.   These messages will appear stale and will be
+   removed from the queuing system.
+   
+   5) if a set of journals is saved (for backup or other archival
+   purposes),  and those journals are subsequently restored and resent,
+   then those messages will appear stale and will be removed from the
+   queuing system.
+   
+   Notes:
+   
+   A) the disabling of the history information can cause some side
+   effects.  Specifically, there may be an increased number of possible
+   duplicate messages delivered to the user.
+   
+   B) the disabling of history information can result in messages
+   that are delivered more than once without being marked as possible
+   duplicates.
+
+   C) Do NOT set DMQJRN_HISTORY_ENABLED=NO if you don't need it.
+
+04 The value of the node name was not returned for LIST_ALL_GROUPS.
+   This has been corrected.
+
+05 Occasionally, the CLS would get an access violation when processing
+   a large message (this has only been seen on NT) for pams_get_msg.
+   The processing the the large message reply has been corrected.
+
+05 Attempting to read an FML buffer via pams_get_msg(w) that has more
+   than 15 fields will result in an attempt by the API to add indexing
+   to the FML buffer.  If there was not enough space in the buffer to
+   add the indexing then the pams_get_msg(w) was incorrectly failing with
+   a PAMS__FMLERROR status.  This has been corrected so that if there
+   is not enough space to add indexing then no indexing will be done
+   and no errors will be returned.
+
+06 When using the Windows Client, with a reconnect timer set in the DMQ.INI
+   configuration, and with the link to the server broken, then client would 
+   cause an accvio.   This problem has been repaired.
+
+07 When using the Windows Client, the SAF journal was not draining
+   after a reconnect.  This problem has been corrected.
+
+07 Corrected a problem which resulted in the JRN process exiting with
+   a -4 error status.
+
+07 Allow hypens and dollar signs to be used in queue names
+
+08 In certain cases, on attach, the Windows client would check the registry
+   for MPP which is no longer supported for MQ V5.0, and if this entry was
+   not located, then a harmless error message would be written.  This check
+   has been disabled.
+
+09 A problem was corrected with the MQ client when making requests
+   to the server before the server was ready and if the server was a 
+   different endian than the client.  If the server came up and the
+   client tried an automatic attachment for the first time to drain SAF
+   messages, the attach would fail.   This problem was resolved.
+
+10 Corrected pams_cancel_timer() failure, PAMS__RESRCFAIL, when
+   multiple timer expirations are already pending for that queue.
+
+11 Corrected client SAF drain problem introduced by RP9.
+
+12 Corrected client get msg reconnect failover on server endian change.
+
+13 Corrected PAMS__NETERROR on client attach with long client hostname
+
+14 Corrected logging problem on Solaris 8 where in some instances messages
+   where logging to stderr rather than the specified group log file.
+
+15 Updated dmqmonm and dmqtestm utilities on HP-UX 10.20.
+
+16 Corrected LD bounce problem caused by unrecognized control messages. The
+   link driver failed to distinguish between Xgroup acknowledgements and 
+   control messages when the non-blocking queue number of the xgroup 
+   application is equal to the number of the link sender's control queue 
+   that is serving the remote group.
+
+17 Corrected LD duplicate link receiver condition on Windows NT.
+
+18 Corrected memory leak in CLS when using FML or PSYM_MSG_BUFFER_PTR 
+
+19 Corrected GCP crash when hostname is removed from db while group is running
+
+19 Corrected a problem with recoverable messaging which could lead to a loss 
+   of FIFO and potentially the loss of data.  This problem is triggered by 
+   a failure to successfully write the message to the DQF due to file I/O
+   errors.  This problem is only seen if SAF messaging is involved and is
+   only triggered by DQF write failures. 
+
+20 Corrected CLS from exiting on an accept error
+
+21 Corrected incorrect PSB uma status return of PAMS__DISC_SUCCESS on a
+   pams_put_msg() status of PAMS__TIMEOUT when using a delivery mode of
+   WF_DEQ and UMA of DISC.  The proper PSB uma status for this delivery mode
+   and uma combination on a put timeout should be PAMS__UMA_NA.
+
+22 Corrected JRN exits with -256 and -4 errors.
+
+23 Corrected problem with Client SAF messages with V4.0A CLS Server.
+   Messages had 32 bytes of garbage prepended to the beginning of the
+   message text.
+
+24 Corrected xgroup link reconnect problem with failover groups
+
+25 Corrected loss of 1st recoverable msg sent after client reconnect and SAF drain
+
+25 Corrected endian conversion problem introduced with RP23. If automatic
+   reconnect interval is not zero with a V4.0A CLS Server, the message that
+   re-establishes the connection may contain garbage due to an endian conversion
+   problem.
+
+26 Corrected LD listener failure on socket accept error
+
+26 Log an LD message when attempting to bind to a port already in use
+
+27 Added support to dmqjourn to allow quotas to be based on the number of 
+   unconfirmed messages sent to the queue from the JRN server.  This will
+   prevent the number of messages held in memory by the dmqjourn process
+   from growing beyond the queue quota message limit for receiving applications
+   that are slow to confirm messages.
+
+   To enable this new feature, the following environment variable must 
+   be defined before starting the MessageQ group.
+
+   export DMQJRN_QUOTAS_ON_CONFIRM="YES" 
+
+28 Corrected problem in detecting process exit in Windows server 2003
+
+29 Corrected DMQSRV to free memory when a group is shutdown using monitor
+
+30 Corrected problem with internal header visit-cnt not initialized 
+   properly by SBS.  Side-effect was a loss of SBS handshake messages. 
+
+31 Add network timeout configuration in dmq.ini.
+   "NetworkTimeout" paramter is added in "Default Server" section.
+
+   [Default Server]
+   NetworkTimeout=20
+
+   Before this enhancement, if the network break for some reason while CLS client
+   is performing network receiving from CLS server, the client process 
+   will hang until the network stack detect the error. The hang time depends 
+   on the OS. e.g. It's about 10 minutes on Solaris.
+
+   With this enhancement, users can customize the network receiving timeout for 
+   client. The proper timeout value should take into account the network round trip
+   delay and the time needed for queue manipulation on the CLS side. This
+   timeout will supersed the timeout value passed to PAMS function call in
+   client mode.
+
+   NetworkTimeout should be a positive integer, which specify the timeout in
+   seconds. If "NetworkTimeout" is not set or set to zero, the client behave as
+   before.
+
+   Fix the problem that dynamic gcp tracing does not work on HP.
+
+Documentation Note -- The Journal Dump Utility
+
+For MessageQ 5.0, the dmqjdump journal dump utility was enhanced to 
+allow specification of the target group when dumping saf journals.
+When specifying "-t saf" the "-q <group>" parameter is now required,
+where <group> is the destination group for the journal.  The dmqjdump
+utility now silently fails if the "-q" parameter is not supplied when
+dumping saf files.  The dmqjdump utility also silently fails if it can't
+open the journal files for reading or if the specified directory does not
+exist.  Furthermore, dmqjdump will silently fail on NT if the journals
+are in use by a running MessageQ group.
+
+   
+For more information about MessageQ products, please visit our 
+World Wide Web site at:
+
+http://www.bea.com

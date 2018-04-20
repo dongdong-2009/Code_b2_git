@@ -1,0 +1,403 @@
+# Things we need to know about this project
+ProjectInformation(
+	# Base directory should be 'code' 
+	# relative from here, or absolute both work, although absolute must be reconfigured more often
+	BaseDirectory	=> "code",
+);
+
+# Compilation environments
+BuildEnvironment (
+    Name            => 'MSWin32',
+    OperatingSystem => 'MSWin32',
+    Makefile        => '*.dsw',
+    Processor       => 'intel',
+    MakeProg        => 'msdev',
+    DebugCommand    => '$MakeProg "$Makefile" /MAKE "$Target" /BUILD',
+    ReleaseCommand  => '$MakeProg "$Makefile" /MAKE "ALL - RELEASE" /BUILD',
+#   CleanCommand    => '$MakeProg "$Makefile" /MAKE "ALL - ALL" /CLEAN',
+    ErrorHandling   => 'Output:
+       $Warnings   = grep( /.*warning .*/, split( /\n/, $Output ) );
+       $Errors     = grep( /.*error .*/, split( /\n/, $Output ) ); ',
+
+);
+
+# Actual Components to make
+#========================== CORE =============================
+
+Make (
+   Component       => "TA_Message",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_Message - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_Alarm",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_Alarm - Win32 Debug",
+);
+
+Make (
+   Component       => "ConfigurationUpdates",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "ConfigurationUpdates - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_CorbaUtil",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_CorbaUtil - Win32 Debug",
+);
+
+Make (
+   Component       => "DataAccessLib",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "DataAccessLib - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_Sockets",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_Sockets - Win32 Debug",
+);
+
+Make (
+   Component       => "EntityAccess",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "EntityAccess - Win32 Debug",
+);
+
+Make (
+   Component       => "ManagedProcess",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "ManagedProcess - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_MessageCorbaDef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_MessageCorbaDef - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_NamingCorbaDef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_NamingCorbaDef - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_Naming",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_Naming - Win32 Debug",
+);
+
+Make (
+   Component       => "MiUtil",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "MiUtil - Win32 Debug",
+);
+
+Make (
+   Component       => "MiThread",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "MiThread - Win32 Debug",
+);
+
+Make (
+   Component       => "MiSynchronisation",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "MiSynchronisation - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_UserSettingsDAI",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_UserSettingsDAI - Win32 Debug",
+);
+
+Make (
+   Component       => "ProcessManagementCorbaDef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "ProcessManagementCorbaDef - Win32 Debug",
+);
+
+Make (
+   Component       => "NamedObjRef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "NamedObjRef - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_CorbaDef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_CorbaDef - Win32 Debug",
+);
+
+Make (
+   Component       => "TA_Exceptions",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TA_Exceptions - Win32 Debug",
+);
+
+Make (
+   Component       => "TAuuid",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TAuuid - Win32 Debug",
+);
+
+Make (
+   Component       => "Data Access Interface",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "Data Access Interface - Win32 Debug",
+);
+
+Make (
+   Component       => "MiVersion",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "MiVersion - Win32 Debug",
+);
+#========================== BUS =============================
+
+Make (
+   Component       => "generic_agent",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "generic_agent - Win32 Debug",
+);
+
+Make (
+   Component       => "mfc_extensions",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "mfc_extensions - Win32 Debug",
+);
+
+Make (
+   Component       => "UserSettings",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "UserSettings - Win32 Debug",
+);
+
+Make (
+   Component       => "GenericGUI",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "GenericGUI - Win32 Debug",
+);
+
+Make (
+   Component       => "SoundPlayer",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "SoundPlayer - Win32 Debug",
+);
+
+Make (
+   Component       => "TransActiveAbout",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TransActiveAbout - Win32 Debug",
+);
+#========================== APP =============================
+
+Make (
+   Component       => "TransActiveOPCBridge",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "TransActiveOPCBridge - Win32 Debug",
+);
+
+Make (
+   Component       => "HistoryViewer",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "HistoryViewer - Win32 Debug",
+);
+
+Make (
+   Component       => "EventViewer",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "EventViewer - Win32 Debug",
+);
+
+Make (
+   Component       => "AlarmsGui",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "AlarmsGui - Win32 Debug",
+);
+
+Make (
+   Component       => "ControlStation",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "ControlStation - Win32 Debug",
+);
+
+Make (
+   Component       => "RadioManager",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "RadioManager - Win32 Debug",
+);
+
+Make (
+   Component       => "VolumeTest",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "VolumeTest - Win32 Debug",
+);
+
+Make (
+   Component       => "telephone_manager",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "telephone_manager - Win32 Debug",
+);
+
+Make (
+   Component       => "VideoDisplayManager",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "VideoDisplayManager - Win32 Debug",
+);
+
+Make (
+   Component       => "SoundManager",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "SoundManager - Win32 Debug",
+);
+
+Make (
+   Component       => "AlarmsGUIlib",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "AlarmsGUIlib - Win32 Debug",
+);
+
+Make (
+   Component       => "PlanManagerCorbaDef",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "PlanManagerCorbaDef - Win32 Debug",
+);
+
+Make (
+   Component       => "PlanManager",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "PlanManager - Win32 Debug",
+);
+
+Make (
+   Component       => "inspector_panel",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "inspector_panel - Win32 Debug",
+);
+
+Make (
+   Component       => "banner",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "banner - Win32 Debug",
+);
+
+Make (
+   Component       => "AdminClient",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "AdminClient - Win32 Debug",
+);
+
+Make (
+   Component       => "ConfigEditor",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "ConfigEditor - Win32 Debug",
+);
+
+Make (
+   Component       => "scada_historian_dmif",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "scada_historian_dmif - Win32 Debug",
+);
+
+Make (
+   Component       => "DataPointDmIf",
+   SourceDir       => "tools/build/",
+   BuildOn         => "MSWin32",
+   Makefile        => "Build_Everything.dsw",
+   Target          => "DataPointDmIf - Win32 Debug",
+);
