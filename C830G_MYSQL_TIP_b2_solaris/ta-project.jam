@@ -568,12 +568,13 @@ class ta-project-class
 		return [ path.join [ build-path ] $(self.ta-os)_n [ relative-code-path ] ] ;
 	}
 
-	rule installation-path ( variant )
+	rule installation-path ( variant ? )
 	{
+		variant ?= debug ;
 		local debug-suffix = _nd ;
 		local release-suffix = _nr ;
 
-		if [ is-library ]
+		if [ is-library ] || [ is-alias ]
 		{
 			return [ path.join [ build-path ] [ sequence.join [ ta-os ] $($(variant)-suffix) ] ] ;
 		}
@@ -770,6 +771,7 @@ class ta-project-class
 							target-id
 							path
 							dependency
+							installation-path
 		{
 			echo [ PAD $(rule-name) : 20 ] " : " [ $(rule-name) ] ;
 		}

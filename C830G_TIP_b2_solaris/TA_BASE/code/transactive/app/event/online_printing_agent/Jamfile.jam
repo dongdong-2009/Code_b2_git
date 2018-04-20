@@ -1,2 +1,13 @@
 
-ta-exe OnlinePrintingAgent ;
+rule build-or-not ( )
+{
+	if [ $(TA_OS).on-windows ]
+	{
+		return <build>no ;
+	}
+}
+
+ta-exe OnlinePrintingAgent
+	:
+	: [ build-or-not ]
+	;

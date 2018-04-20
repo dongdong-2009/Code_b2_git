@@ -30,7 +30,7 @@ if [ option.get "remove" ]
 	exit ;
 }
 
-if [ option.get "sync-between-b2-and-solaris-for-all-branch" : : true ]
+if [ option.get "sync-jamfiles-between-b2-and-solaris-for-all-branch" : : true ]
 {
 	sync-jamfiles-between-b2-and-solaris-for-all-branch ;
 	exit ;
@@ -62,6 +62,9 @@ print.lines
 	"Usage:"
 	"--sync=<dir>"
 	"--remove=<x.jam>"
+	"--sync-jamfiles-between-b2-and-solaris-for-all-branch"
+	"--sync-jamfiles-between-b2-and-verify-for-all-branch"
+	""
 	""
 	: "\t"
 	;

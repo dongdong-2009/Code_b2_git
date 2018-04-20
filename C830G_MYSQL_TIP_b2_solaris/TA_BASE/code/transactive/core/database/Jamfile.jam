@@ -1,2 +1,7 @@
 
-ta-lib TA_DataAccess ;
+ta-lib TA_DataAccess
+	: [ glob src/*.cpp :
+				src/QueryAdapter.cpp
+				src/OCIAccess.cpp
+		]
+	;

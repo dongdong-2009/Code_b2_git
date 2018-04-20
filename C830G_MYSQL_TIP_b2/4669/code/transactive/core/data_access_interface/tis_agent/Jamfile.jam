@@ -1,2 +1,12 @@
 
-ta-lib TA_TISAgentDAI ;
+ta-lib TA_TISAgentDAI
+	: [ glob src/*.cpp :
+				src/DisplayRequestAccessFactory.cpp
+				src/DisplayRequestHelper.cpp
+				src/RATISMessageAccessFactory.cpp
+				src/TrainTimeScheduleAccessFactory.cpp
+				src/TrainTimeScheduleEntryHelper.cpp
+				src/TrainTimeScheduleHelper.cpp
+				src/RATISMessageHelper.cpp
+		]
+	;
