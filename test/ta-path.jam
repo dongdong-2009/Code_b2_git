@@ -4,12 +4,6 @@ class ta-path
 	import os string assert print sequence path errors modules project numbers ;
 	import ta-path ;
 
-	#
-	# for example :
-	#     tp = new [ ta-path ] ;
-	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW ] ;
-	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW : TA_BASE : 3001 ] ;
-	#
 	rule __init__ ( top ? : base ? : proj ? )
 	{
 		if $(top)

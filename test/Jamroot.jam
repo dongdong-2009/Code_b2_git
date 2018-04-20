@@ -1,0 +1,10 @@
+import "class" : new ;
+import os path sequence ;
+import ta-path ;
+using msvc ;
+
+path-constant TOP : . ;
+
+tp = [ new ta-path $(TOP)/../3001_TIP_NEW_b2 ] ;
+
+$(tp).__debug__ ;

@@ -1,4 +1,5 @@
-import path sequence os ;
+import path sequence os print string ;
+import sync-jamfiles ;
 
 path-constant TOP	: . ;
 
@@ -6,7 +7,7 @@ if [ os.on-windows ]
 {
 	using msvc ;
 	path-constant COTS	: C:/COTS ;
-	
+
 	project
 		: build-dir C:/Temp/Temp/Verify
 		;
@@ -17,10 +18,46 @@ else
 	path-constant COTS	: /export/home/core/limin/verify/COTS ;
 }
 
-import p4-sync ;
-p4-sync ;
-soft-link-cots $(COTS) ;
+if [ option.get "sync" ]
+{
+	sync-jamfiles [ option.get "sync" ] ;
+	exit ;
+}
 
+if [ option.get "remove" ]
+{
+	remove-jamfiles [ option.get "remove" ] ;
+	exit ;
+}
+
+if [ option.get "sync-between-b2-and-solaris-for-all-branch" : : true ]
+{
+	sync-jamfiles-between-b2-and-solaris-for-all-branch ;
+	exit ;
+}
+
+if [ option.get "sync-jamfiles-between-b2-and-verify-for-all-branch" : : true ]
+{
+	sync-jamfiles-between-b2-and-verify-for-all-branch ;
+	exit ;
+}
+
+if [ option.get "sync-between" : : true ]
+{
+	local from-branch	= [ option.get "from" ] ;
+	local to-branch 	= [ option.get "to" ] ;
+	if $(from-branch) && $(to-branch)
+	{
+		sync-jamfiles-between-branches $(TOP)/$(from-branch) : $(TOP)/$(to-branch) ;
+	}
+	exit ;
+}
+
+##########
+#
+# DEBUG
+#
+##########
 print.lines
 	"Usage:"
 	"--sync=<dir>"
@@ -28,6 +65,7 @@ print.lines
 	""
 	: "\t"
 	;
+
 print.lines
 	"Directories:"
 	[ sequence.transform path.basename : [ sync-jamfiles.all-top-dirs ] ]

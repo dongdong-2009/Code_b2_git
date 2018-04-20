@@ -1,9 +1,11 @@
-import sequence path option set print common ;
+import "class" : new ;
+import sequence path option set print common regex ;
+import ta-path ;
 
 TOP = [ path.pwd ] ;
 VERIFY = F:/Verify ;
 
-BRANCHS	=
+BRANCH_LIST	=
 	PRIV_3001
 	C830G_TIP
 	FZL1_TIP
@@ -39,7 +41,7 @@ rule all-dirs ( exclude * )
 	}
 
 	local result ;
-	local branches = $(BRANCHS) $(BRANCHS)$(suffixes) ;
+	local branches = $(BRANCH_LIST) $(BRANCH_LIST)$(suffixes) ;
 
 	for local dir in [ sequence.transform path.native : $(tops)/$(branches) $(tops)/$(branches)$(suffixes) ]
 	{
@@ -67,7 +69,7 @@ rule all-branches ( )
 		suffixes += _solaris ;
 	}
 
-	return $(BRANCHS) $(BRANCHS)$(suffixes) ;
+	return $(BRANCH_LIST) $(BRANCH_LIST)$(suffixes) ;
 }
 
 rule sync-jamfiles ( from )
@@ -75,7 +77,7 @@ rule sync-jamfiles ( from )
 	if ! $(from) in [ all-branches ]
 	{
 		echo "'$(from)' is not a branch." ;
-		print.lines "\nBranchs:" $(BRANCHS) : "\t" ;
+		print.lines "\nBRANCH_LIST:" $(BRANCH_LIST) : "\t" ;
 		return ;
 	}
 
@@ -125,4 +127,139 @@ rule remove-jamfiles ( jamfiles + )
 	}
 }
 
+rule sync-jamfiles-between-branches ( from-branch : to-branch )
+{
+	from-branch	= [ path.make $(from-branch) ] ;
+	to-branch	= [ path.make $(to-branch) ] ;
+
+	local tp-from = [ new ta-path $(from-branch) ] ;
+	local from-jamfiles	= [ $(tp-from).jamfiles ] [ path.glob $(from-branch) : *.jam : project-dependency.jam config.jam ] ;
+
+	for local jamfile in $(from-jamfiles)
+	{
+		local dest = [ regex.replace $(jamfile) $(from-branch) $(to-branch) ] ;
+
+		if $(jamfile) = $(dest)
+		{
+			continue ;
+		}
+
+		jamfile = [ path.native $(jamfile) ] ;
+		dest = [ path.native $(dest) ] ;
+
+		if ! [ path.exists $(dest) ]
+		{
+			if [ path.exists $(dest:D) ]
+			{
+				local copy-command = "COPY /Y $(jamfile) $(dest:D) " ;
+				SHELL $(copy-command) ;
+				ECHO "$(jamfile) => $(dest)" ;
+			}
+			
+			continue ;
+		}
+
+		local fc-command = [ sequence.join FC /B $(jamfile) $(dest) : " " ] ;
+		local result = [ SHELL $(fc-command) ] ;
+
+		if ! [ MATCH "(FC: no differences encountered)" : $(result) ]
+		{
+			local copy-command = "COPY /Y $(jamfile) $(dest) " ;
+			SHELL $(copy-command) ;
+			ECHO "$(jamfile) => $(dest)" ;
+		}
+	}
+}
+
+rule sync-jamfiles-between-b2-and-solaris ( branch )
+{
+	local from-branch = $(TOP)/$(branch)_b2 ;
+	local to-branch = $(TOP)/$(branch)_b2_solaris ;
+	sync-jamfiles-between-branches $(from-branch) : $(to-branch) ;
+}
+
+rule sync-jamfiles-between-b2-and-solaris-for-all-branch ( )
+{
+	for local branch in $(BRANCH_LIST)
+	{
+		sync-jamfiles-between-b2-and-solaris $(branch) ;
+	}
+}
+
+rule sync-jamfiles-between-b2-and-verify ( branch )
+{
+	local from-branch = $(TOP)/$(branch)_b2 ;
+	local to-branch = $(VERIFY)/$(branch) ;
+	
+	if [ path.exists [ path.native $(from-branch) ] ] && [ path.exists [ path.native $(to-branch) ] ]
+	{
+		sync-jamfiles-between-branches $(from-branch) : $(to-branch) ;
+	}
+}
+
+rule sync-jamfiles-between-b2-and-verify-for-all-branch ( )
+{
+	for local branch in $(BRANCH_LIST)
+	{
+		sync-jamfiles-between-b2-and-verify $(branch) ;
+	}
+}
+
 IMPORT $(__name__) : [ RULENAMES $(__name__) ] : : [ RULENAMES $(__name__) ] ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

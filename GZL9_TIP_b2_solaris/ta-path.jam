@@ -4,14 +4,27 @@ class ta-path
 	import os string assert print sequence path errors modules project numbers ;
 	import ta-path ;
 
-	rule __init__ ( )
+	#
+	# for example :
+	#     tp = new [ ta-path ] ;
+	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW ] ;
+	#     tp = new [ ta-path $(TOP)/../3001_TIP_NEW : TA_BASE : 3001 ] ;
+	#
+	rule __init__ ( top ? : base ? : proj ? )
 	{
+		if $(top)
+		{
+			self.top	= [ path.make $(top) ] ;
+			self.base	= $(top)/$(base) ;
+			self.proj	= $(top)/$(proj) ;
+		}
+
 		self.me						= [ path.make [ modules.binding ta-path ] ] ;
-		self.top					= $(self.me:D) ;
+		self.top					?= $(self.me:D) ;
 		self.branch					= [ path.basename $(self.top) ] ;
 		self.ta-os					= [ ta-os ] ;
 
-		self.base					= [ detect-base ] ;
+		self.base					?= [ detect-base ] ;
 		self.base-code				= $(self.base)/code ;
 		self.base-sdk				= $(self.base)/sdk ;
 		self.base-build				= $(self.base)/build ;
@@ -20,7 +33,7 @@ class ta-path
 		self.base-transactive		= $(self.base)/code/transactive ;
 		self.base-cots				= $(self.base)/code/cots ;
 
-		self.proj					= [ detect-project ] ;
+		self.proj					?= [ detect-project ] ;
 		self.proj-code				= $(self.proj)/code ;
 		self.proj-sdk				= $(self.proj)/sdk ;
 		self.proj-build				= $(self.proj)/build ;
