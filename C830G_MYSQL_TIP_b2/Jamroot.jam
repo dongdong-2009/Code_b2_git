@@ -48,35 +48,49 @@ sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
 if [ os.on-unix ]
 {
 	constant gcc-version	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
-	local options = ;
+	local compile-options = ;
+	local c-compile-options = ;
+	local link-options = ;
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS ;
-	options += -D$(preprocessor-definitions) ;
+	compile-options += -D$(preprocessor-definitions) ;
 
 	local force-includes = typeinfo string memory cstdlib climits string.h stdio.h stdint.h ;
 	if $(USE-PCH) = true
 	{
 		force-includes = pch.hpp ;
 	}
-	options += "-include $(force-includes)" ;
+	compile-options += "-include $(force-includes)" ;
 
-	options += -fpermissive ;
+	compile-options += -fpermissive ;
 	if [ ta-version.ge $(gcc-version) : 4.0.0 ]
 	{
-		options += -pthread ;
+		compile-options += -pthread ;
 	}
 	else
 	{
-		options += -pthreads ;
+		compile-options += -pthreads ;
+	}
+
+	if [ os.name ] = LINUX
+	{
+		compile-options += -m32 ;
+		link-options += -m32 ;
+		c-compile-options += -m32 ;
+	}
+
+	if [ os.name ] = SOLARIS
+	{
+		link-options += "-z rescan" ;
 	}
 
 	if $(gcc-version) = 3.4.3
 	{
-		using gcc : 3.4.3 : /usr/sfw/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
+		using gcc : 3.4.3 : /usr/sfw/bin/g++ : <cflags>$(c-compile-options) <cxxflags>$(compile-options) <linkflags>$(link-options) ;
 	}
 	else
 	{
-		using gcc : : : <cxxflags>$(options) <linkflags>"-z rescan" ;
-		# using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(options) <linkflags>"-z rescan" ;
+		using gcc : : : <cflags>$(c-compile-options) <cxxflags>$(compile-options) <linkflags>$(link-options) ;
+		# using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(compile-options) <linkflags>$(link-options) ;
 	}
 }
 else

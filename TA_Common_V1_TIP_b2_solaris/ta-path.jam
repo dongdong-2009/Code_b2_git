@@ -116,6 +116,7 @@ class ta-path
 
 	rule level-based ( level * : x )
 	{
+
 		level ?= [ current-level ] ;
 		return $(self.$(level)-$(x)) ;
 	}
@@ -158,33 +159,44 @@ class ta-path
 
 	rule detect-base ( )
 	{
+		local result = ;
+
 		for local base in TA_BASE TA_Base BASE Base
 		{
-			if [ path.exists [ path.native $(self.top)/$(base)/code/transactive/core/versioning ] ]
+			if ( ! $(result) ) && [ path.exists [ path.native $(self.top)/$(base)/code/transactive/core/versioning ] ]
 			{
-				return $(self.top)/$(base) ;
+				result ?= $(self.top)/$(base) ;
 			}
 		}
 
-		if [ path.exists [ path.native $(self.top)/code/transactive/core/versioning ] ]
+		if ( ! $(result) ) &&  [ path.exists [ path.native $(self.top)/code/transactive/core/versioning ] ]
 		{
-			return $(self.top) ;
+			result ?= $(self.top) ;
 		}
 
-		errors.error Cannot detect 'TA_BASE' path. ;
+		if ! $(result)
+		{
+			errors.error Cannot detect 'TA_BASE' path. ;
+		}
+
+		return $(result) ;
 	}
 
 	rule detect-project ( )
 	{
+		local result = ;
+
 		for local proj in 1001 4677 4712 4669 3001 3002 FZL1 GZL9 GZL13 T252
 		{
 			if [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/core ] ] &&
 			   [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/bus ] ] &&
 			   [ path.exists [ path.native $(self.top)/$(proj)/code/transactive/app ] ]
 			{
-				return $(self.top)/$(proj) ;
+				result ?= $(self.top)/$(proj) ;
 			}
 		}
+
+		return $(result) ;
 	}
 
 	rule ta-os ( )
@@ -238,13 +250,17 @@ class ta-path
 
 	rule current-level ( )
 	{
+		local result = ;
+
 		for local level in base proj
 		{
 			if $(self.$(level)) && [ path.relative [ current-path ] $(self.$(level)) : no-error ] != not-a-child
 			{
-				return $(level) ;
+				result ?= $(level) ;
 			}
 		}
+
+		return $(result) ;
 	}
 
 	rule __debug__ ( )

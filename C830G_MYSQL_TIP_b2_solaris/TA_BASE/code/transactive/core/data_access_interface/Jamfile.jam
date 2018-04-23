@@ -2,7 +2,7 @@
 ta-lib TA_DAI
 	: [ glob src/*.cpp :
 				src/OPCEntityDataAccessFactory.cpp
-				src//CombinedEventAccessFactory.cpp
+				src/CombinedEventAccessFactory.cpp
 		]
 	: <define>PROJECT_4669
 	  <dependency>/core/data_access_interface/src

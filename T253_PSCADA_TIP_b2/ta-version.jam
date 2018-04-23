@@ -2,15 +2,19 @@ import os version sequence regex numbers assert ;
 
 rule numbers ( name * )
 {
+	local result = ;
+	
 	if [ sequence.length $(name) ] = 1
 	{
 		local vers = [ MATCH "(([0-9]+)([.-_][0-9]+)*)$" : $(name) ] ;
 		if $(vers)
 		{
-			return [ SPLIT_BY_CHARACTERS $(vers[1]) : "_.-" ] ;
+			result = [ SPLIT_BY_CHARACTERS $(vers[1]) : "_.-" ] ;
 		}
 	}
-	return $(name) ;
+	
+	result ?= $(name) ;
+	return $(result) ;
 }
 
 rule main ( name )

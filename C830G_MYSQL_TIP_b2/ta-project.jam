@@ -131,13 +131,13 @@ class ta-projects
 
 		for local i in [ numbers.range 3 9 ]
 		{
-			if ! $($(i))
+			if $($(i))
 			{
-				return $(result) ;
+				result = [ select $($(i)) : $(result) ] ;
 			}
-
-			result = [ select $($(i)) : $(result) ] ;
 		}
+
+		return $(result) ;
 	}
 
 	rule selects-x ( x + : projects * : predicate + : * )
@@ -725,6 +725,7 @@ class ta-project-class
 			{
 				local search-pattern-NT	= "FINDSTR /R /C:\"^[ \\t]*#include[ \\t]*[<\\\"]$(level)/\" /D:$(src-path) $(source:BS:J= )" ;
 				local search-pattern-SOLARIS = "/usr/xpg4/bin/grep -E '^[ \\t]*#include[ \\t]*[<\\\"]$(level)/' $(src-path)/*" ;
+				local search-pattern-LINUX = "/usr/bin/grep -E '^[ \\t]*#include[ \\t]*[<\\\"]$(level)/' $(src-path)/*" ;
 				local jamfile-native = [ get-native jamfile ] ;
 				local search-result = [ SHELL "$(search-pattern-$(self.os))" ] ;
 				local words = [ string.words $(search-result) ] ;
@@ -745,6 +746,7 @@ class ta-project-class
 			local expression = "^$(target-pattern)\\>" ;
 			local search-pattern-NT	= "FINDSTR /R \"$(expression:J= )\"" ;
 			local search-pattern-SOLARIS = "/usr/xpg4/bin/grep -E '^$(target-pattern:J=|) '" ;
+			local search-pattern-LINUX = "/usr/bin/grep -E '^$(target-pattern:J=|) '" ;
 			local jamfile-native = [ get-native jamfile ] ;
 			local search-result = [ SHELL "$(search-pattern-$(self.os)) $(jamfile-native)" : exit-status ] ;
 

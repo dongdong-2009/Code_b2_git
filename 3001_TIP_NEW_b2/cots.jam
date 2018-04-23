@@ -179,8 +179,8 @@ class cots
 
 				while $(release-library)
 				{
-					result += [ lib $(release-library[1]) : : <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
-					result += [ lib $(release-library[1]) : : <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <link>shared <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <link>shared <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
 					debug-library = $(debug-library[2-]) ;
 					release-library = $(release-library[2-]) ;
 				}
@@ -188,7 +188,12 @@ class cots
 		}
 		if [ os.on-unix ]
 		{
-			result	+= [ lib z posix4 socket pthread nsl uuid ] ;
+			result	+= [ lib pthread nsl ] ;
+
+			if [ os.name ] = SOLARIS
+			{
+				result	+= [ lib z posix4 socket uuid ] ;
+			}
 		}
 		else
 		{
@@ -279,6 +284,12 @@ class cots
 		print.lines [ sequence.transform path.native : $(shared-libraries) ] : $(indent) $(indent) ;
 	}
 
+	rule show-tools ( indent ? )
+	{
+		print.lines [ sequence.join sqlgen " => " [ get sqlgen : sqlgen ] ] : $(indent) $(indent) ;
+		print.lines [ sequence.join omniidl " => " [ get omniorb : omniidl ] ] : $(indent) $(indent) ;
+	}
+
 	rule verify ( )
 	{
 		local all-paths = ;
@@ -301,7 +312,7 @@ class cots
 
 	rule __debug__ ( )
 	{
-		for local r in versions os-identifiers paths includes libraries shared-libraries
+		for local r in versions os-identifiers tools paths includes libraries shared-libraries
 		{
 			echo $(r) ;
 			show-$(r) "\t" ;

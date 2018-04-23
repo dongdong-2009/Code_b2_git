@@ -19,32 +19,32 @@ class ta-os-class
 			}
 		}
 	}
-	
+
 	rule name ( )
 	{
 		return $(self.name) ;
 	}
-	
+
 	rule version ( )
 	{
 		return $(self.version) ;
 	}
-	
+
 	rule architecture ( )
 	{
 		return $(self.architecture) ;
 	}
-	
+
 	rule arch ( )
 	{
 		return [ architecture ] ;
 	}
-	
+
 	rule processor ( )
 	{
 		return $(self.processor) ;
 	}
-	
+
 	rule cpu ( )
 	{
 		return [ processor ] ;
@@ -148,28 +148,36 @@ class ta-os-class
 
 	rule preprocessor ( )
 	{
-		if [ on-windows ]
-		{
-			return __OSVERSION__=4 WIN32 __WIN32__ __x86__ __NT__ ;
-		}
-		else if [ on-solaris ]
-		{
-			local result = __sunos__ SOLARIS __OSVERSION__=5 ;
-
-			if [ sparc ]
-			{
-				result += __sparc__ ;
-			}
-
-			if [ x86 ]
-			{
-				result += __x86__ ;
-			}
-
-			return $(result) ;
-		}
+		return [ preprocessor-$(self.name) ] ;
 	}
-	
+
+	rule preprocessor-NT ( )
+	{
+		return __OSVERSION__=4 WIN32 __WIN32__ __x86__ __NT__ ;
+	}
+
+	rule preprocessor-SOLARIS ( )
+	{
+		local result = __sunos__ SOLARIS __OSVERSION__=5 ;
+
+		if [ sparc ]
+		{
+			result += __sparc__ ;
+		}
+
+		if [ x86 ]
+		{
+			result += __x86__ ;
+		}
+
+		return $(result) ;
+	}
+
+	rule preprocessor-LINUX ( )
+	{
+		return __linux__ LINUX __OSVERSION__=4 ;
+	}
+
 	rule identifier ( )
 	{
 		if [ on-unix ]
