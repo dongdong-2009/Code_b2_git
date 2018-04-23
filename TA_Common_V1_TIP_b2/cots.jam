@@ -10,7 +10,7 @@ rule init ( root : gcc-ver ? : msvc-ver ? )
 
 	if [ os.on-unix ]
 	{
-		TA_OS_IDENTIFIER = [ sequence.join [ $(.ta-os).name ] [ $(.ta-os).version ] [ $(.ta-os).arch ] : _ ] ;
+		TA_OS_IDENTIFIER = [ $(.ta-os).identifier ] ;
 
 		if [ $(.ta-os).on-solaris-10 and-later ]
 		{
@@ -31,7 +31,6 @@ rule init ( root : gcc-ver ? : msvc-ver ? )
 		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
 		.ta-os-identifier		= $(TA_OS_IDENTIFIER) ;
 		.gcc-ver				= $(gcc-ver) ;
-		.os-ver					= [ $(.ta-os).version ] ;
 	}
 	else
 	{

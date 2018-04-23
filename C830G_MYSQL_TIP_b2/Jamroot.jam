@@ -128,8 +128,6 @@ rule ta-install-lib ( name : sources * : requirements * : default-build * : usag
 	param.handle-named-params sources requirements default-build usage-requirements ;
 	local debug-installation-path = [ current-ta-project.get installation-path debug ] ;
 	local release-installation-path = [ current-ta-project.get installation-path release ] ;
-
-	# FIXME - BUS HERE
 	ta-install $(name)
 		: $(sources)
 		: <install-type>LIB

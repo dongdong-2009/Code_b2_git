@@ -169,6 +169,14 @@ class ta-os-class
 			return $(result) ;
 		}
 	}
+	
+	rule identifier ( )
+	{
+		if [ on-unix ]
+		{
+			return [ sequence.join [ name ] [ version ] [ arch ] : _ ] ;
+		}
+	}
 
 	rule __debug__ ( )
 	{
@@ -179,6 +187,7 @@ class ta-os-class
 
 		for local test in
 			"preprocessor"
+			"identifier"
 			"on-solaris"
 			"on-linux"
 			"on-windows"
