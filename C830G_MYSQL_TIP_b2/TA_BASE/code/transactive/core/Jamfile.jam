@@ -1,5 +1,5 @@
 
-not-build = TA_PADAI_4669 ;
+not-build =  ; # TA_PADAI_4669
 
 alias TA_Base_Core
 	: [ $(TA_Projects).selects-ordered-x target-id
@@ -21,7 +21,6 @@ if [ option.get test : : true ]
 			:
 			: is-levels base core
 			: is-library
-			: is-target-name-not-in  $(not-build)
 		] : "\t" "\t" ;
 		exit ;
 	}

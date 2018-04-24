@@ -3,8 +3,9 @@ import os path string assert print sequence option path project param modules er
 import ta-path ta-project ta-version ta-os ;
 
 path-constant	TOP							: . ;
-path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
+constant		ADDRESS_MODEL				: 32 ;
 constant 		USE-PCH						: true ;
+path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
 constant		TA_Path						: [ new ta-path ] ;
 constant		TA_OS						: [ new ta-os-class ] ;
 
@@ -39,7 +40,7 @@ if $(config.p4.sync) = true
 constant TA_Projects : [ ta-project.create $(TA_Path) : $(Project_Dependency_File) ] ;
 
 import cots ;
-cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) ;
+cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) : $(ADDRESS_MODEL) ;
 constant Cots : [ cots.create $(config.cots) ] ;
 
 import sqlgen ;
@@ -69,13 +70,6 @@ if [ os.on-unix ]
 	else
 	{
 		compile-options += -pthreads ;
-	}
-
-	if [ os.name ] = LINUX
-	{
-		compile-options += -m32 ;
-		link-options += -m32 ;
-		c-compile-options += -m32 ;
 	}
 
 	if [ os.name ] = SOLARIS
@@ -269,6 +263,7 @@ rule get-project-requirements ( )
 	.project-requirements ?=
 		<warnings>off
 		<runtime-link>shared
+		<address-model>$(ADDRESS_MODEL)
 		[ $(Cots).get-includes ] <include>$(TOP)
 	;
 	return $(.project-requirements) ;
@@ -291,6 +286,21 @@ for ta-project in [ $(TA_Projects).projects ]
 
 project
 	: requirements [ get-project-requirements ]
+	;
+
+install transactive-bin
+	: [ $(TA_Projects).selects-x target-id :
+			: is-exe
+			: is-target-name-not-in PlanAgent PAAgent TisAgent TrainAgent
+		]
+	: <install-type>EXE
+	  <location>$(config.transactive-path)/bin
+	;
+
+install transactive-lib
+	: [ $(Cots).get-shared-libraries ]
+	: <install-type>LIB
+	  <location>$(config.transactive-path)/lib
 	;
 
 ###############
@@ -388,7 +398,7 @@ rule __debug__ ( )
 	{
 		local what = [ MATCH "show-(.*)" : $(show-arg) ] ;
 
-		if $(what) && ( $(what) in $(show-rules) )
+		if $(what) && ( $(what) in $(show-rules) ) && ( $(what) != help )
 		{
 			show-$(what) ;
 		}

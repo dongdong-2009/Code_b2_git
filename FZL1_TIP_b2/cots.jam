@@ -2,13 +2,12 @@ import "class" : new ;
 import os path string assert print sequence numbers option path ;
 import ta-os ;
 
-rule init ( root : gcc-ver ? : msvc-ver ? : buildbits ? )
+rule init ( root : gcc-ver ? : msvc-ver ? : address-model ? )
 {
 	.root = [ path.make $(root) ] ;
 	.cots = ;
 	.ta-os = [ new ta-os-class ] ;
-	buildbits ?= 32 ;
-	.buildbits = $(buildbits) ; # values: 32 64
+	address-model ?= 32 ;
 
 	if [ os.on-unix ]
 	{
@@ -31,7 +30,7 @@ rule init ( root : gcc-ver ? : msvc-ver ? : buildbits ? )
 
 		if [ $(.ta-os).on-linux ]
 		{
-			OMNI_OS_IDENTIFIER = $(OMNI_OS_IDENTIFIER)_$(buildbits) ;
+			OMNI_OS_IDENTIFIER = $(OMNI_OS_IDENTIFIER)_$(address-model) ;
 		}
 
 		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
@@ -179,8 +178,8 @@ class cots
 
 				while $(release-library)
 				{
-					result += [ lib $(release-library[1]) : : <link>shared <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
-					result += [ lib $(release-library[1]) : : <link>shared <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
 					debug-library = $(debug-library[2-]) ;
 					release-library = $(release-library[2-]) ;
 				}
@@ -201,6 +200,41 @@ class cots
 		else
 		{
 			result	+= [ lib winmm Rpcrt4 Ws2_32 ] ;
+		}
+		return $(result) ;
+	}
+
+	rule get-shared-libraries ( )
+	{
+		local variant = [ MATCH (release) : [ modules.peek : ARGV ] ] ;
+		variant ?= debug ;
+		local shared-libraries = ;
+		for local cot in $(self.all)
+		{
+			local libraries = [ $(cot).$(variant)-shared-library ] ;
+			local psths = [ $(cot).$(variant)-shared-library-path ] ;
+			if $(libraries)
+			{
+				if [ os.on-windows ]
+				{
+					shared-libraries += [ path.glob $(psths) : $(libraries).dll ] ;
+				}
+				else
+				{
+					shared-libraries += [ path.glob $(psths) : lib$(libraries).so* ] ;
+				}
+			}
+		}
+
+		local result = ;
+
+		# for variant in debug release
+		{
+			for local sl in $(shared-libraries)
+			{
+				result += [ lib $(sl:BS) : : <file>$(sl) <variant>$(variant) ] ;
+				# echo $(sl:BS) <file>$(sl) ;
+			}
 		}
 		return $(result) ;
 	}
@@ -450,6 +484,11 @@ class cot-class
 		return [ variant-what-path release library ] ;
 	}
 
+	rule shared-library ( )
+	{
+		return $(self.shared-library) ;
+	}
+
 	rule debug-shared-library ( )
 	{
 		return [ variant-what debug shared-library ] [ variant-what debug library ] ;
@@ -512,6 +551,7 @@ class omniorb : cot-class
 		self.include-path				= $(self.path) $(self.prefix) $(self.prefix)/include $(self.prefix)/include/COS $(self.prefix)/include/omniORB$(self.main-version) $(self.notify-include-path) ;
 		self.library-path				= $(self.prefix)/lib ;
 		self.library					= $(self.library-names)$(self.main-version) omnithread ;
+		self.shared-library				= COSDynamic$(self.main-version) ;
 		self.bin-path					= $(self.prefix)/bin ;
 		self.omniidl					= $(self.bin-path)/omniidl ;
 		SHELL "chmod +x $(self.root)/$(self.omniidl:D)/*" ;
@@ -707,6 +747,7 @@ class oracle : cot-class
 	rule init-UNIX ( )
 	{
 		self.library					= clntsh ;
+		self.shared-library				= nnz$(self.main-version) ;
 		self.prefix						= $(self.path)/$(self.os-identifier) ;
 	}
 
@@ -986,7 +1027,7 @@ class curl : cot-class
 		self.include-path				= $(self.path)/include ;
 		init-$(self.os) ;
 	}
-	
+
 	rule init-UNIX ( )
 	{
 		self.library-path				= $(self.path)/build/lib/$(self.os-identifier) ;

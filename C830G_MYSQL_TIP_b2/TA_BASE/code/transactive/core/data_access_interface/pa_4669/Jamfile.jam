@@ -1,6 +1,11 @@
 
 ta-lib TA_PADAI_4669
-	: requirements
-		<dependency>/core/data_access_interface/src
-		<dependency>/core/message/idl
+	: [ glob src/*.cpp :
+				src/PaDvaMessagePublicVersionHelper.cpp
+				src/PaDvaMessagePrivateVersionHelper.cpp
+				src/PaDvaMessagePrivateVersionAccessFactory.cpp
+				src/PaDvaMessagePublicVersionAccessFactory.cpp
+		]
+	: <dependency>/core/data_access_interface/src
+	  <dependency>/core/message/idl
 	;
