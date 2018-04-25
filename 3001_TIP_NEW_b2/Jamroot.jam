@@ -77,6 +77,11 @@ if [ os.on-unix ]
 		link-options += "-z rescan" ;
 	}
 
+	if [ ta-version.ge $(gcc-version) : 4.7 ]
+	{
+		compile-options += -std=c++11 ;
+	}
+
 	if $(gcc-version) = 3.4.3
 	{
 		using gcc : 3.4.3 : /usr/sfw/bin/g++ : <cflags>$(c-compile-options) <cxxflags>$(compile-options) <linkflags>$(link-options) ;
