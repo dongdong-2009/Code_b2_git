@@ -72,6 +72,11 @@ if [ os.on-unix ]
 		compile-options += -pthreads ;
 	}
 
+	if [ ta-version.ge $(gcc-version) : 4.7 ]
+	{
+		compile-options += -std=c++11 ;
+	}
+
 	if [ os.name ] = SOLARIS
 	{
 		link-options += "-z rescan" ;
@@ -155,8 +160,20 @@ rule ta-install-exe ( name : sources * : requirements * : default-build * : usag
 		: <install-type>EXE
 		  <variant>debug:<location>$(debug-installation-path)
 		  <variant>release:<location>$(release-installation-path)
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		  $(requirements)
+		: $(default-build) : $(usage-requirements)
 		;
+
+	if $(config.transactive-path)
+	{
+		ta-install transactive_$(name)
+			: $(sources)
+			: <install-type>EXE
+			  <location>$(config.transactive-path)/bin
+			  $(requirements)
+			: $(default-build) : $(usage-requirements)
+			;
+	}
 }
 
 rule talib ( name : sources * : requirements * : default-build * : usage-requirements * )
@@ -288,20 +305,14 @@ project
 	: requirements [ get-project-requirements ]
 	;
 
-install transactive-bin
-	: [ $(TA_Projects).selects-x target-id :
-			: is-exe
-			: is-target-name-not-in PlanAgent PAAgent TisAgent TrainAgent
-		]
-	: <install-type>EXE
-	  <location>$(config.transactive-path)/bin
-	;
-
-install transactive-lib
-	: [ $(Cots).get-shared-libraries ]
-	: <install-type>LIB
-	  <location>$(config.transactive-path)/lib
-	;
+if $(config.transactive-path)
+{
+	install transactive-lib
+		: [ $(Cots).get-shared-libraries ]
+		: <install-type>LIB
+		  <location>$(config.transactive-path)/lib
+		;
+}
 
 ###############
 #
