@@ -4,7 +4,7 @@ import ta-path ta-project ta-version ta-os ;
 
 path-constant	TOP							: . ;
 constant		ADDRESS_MODEL				: 32 ;
-constant 		USE-PCH						: true ;
+constant 		PCH							: true ;
 path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
 constant		TA_Path						: [ new ta-path ] ;
 constant		TA_OS						: [ new ta-os-class ] ;
@@ -48,65 +48,75 @@ sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
 
 if [ os.on-unix ]
 {
-	constant gcc-version	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
-	local compile-options = ;
-	local c-compile-options = ;
-	local link-options = ;
+	constant TOOLSET_NAME		: gcc ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	constant TOOLSET_VERSION	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	local cflags = ;
+	local cxxflags = ;
+	local linkflags = ;
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS ;
-	compile-options += -D$(preprocessor-definitions) ;
+	cxxflags += -D$(preprocessor-definitions) ;
 
 	local force-includes = typeinfo string memory cstdlib climits string.h stdio.h stdint.h ;
-	if $(USE-PCH) = true
+	if $(PCH) = true
 	{
 		force-includes = pch.hpp ;
 	}
-	compile-options += "-include $(force-includes)" ;
+	cxxflags += "-include $(force-includes)" ;
 
-	compile-options += -fpermissive ;
-	if [ ta-version.ge $(gcc-version) : 4.0.0 ]
+	cxxflags += -fpermissive ;
+
+	if [ ta-version.ge $(TOOLSET_VERSION) : 4.0.0 ]
 	{
-		compile-options += -pthread ;
+		cxxflags += -pthread ;
 	}
 	else
 	{
-		compile-options += -pthreads ;
+		cxxflags += -pthreads ;
 	}
 
-	if [ ta-version.ge $(gcc-version) : 4.7 ]
+	if [ ta-version.ge $(TOOLSET_VERSION) : 4.7 ]
 	{
-		compile-options += -std=c++11 ;
+		cxxflags += -std=c++11 ;
 	}
 
 	if [ os.name ] = SOLARIS
 	{
-		link-options += "-z rescan" ;
+		linkflags += "-z rescan" ;
 	}
 
-	if $(gcc-version) = 3.4.3
+	constant TOOLSET_OPTIONS : <cflags>$(cflags) <cxxflags>$(cxxflags) <linkflags>$(linkflags) ;
+
+	if $(TOOLSET_VERSION) = 3.4.3
 	{
-		using gcc : 3.4.3 : /usr/sfw/bin/g++ : <cflags>$(c-compile-options) <cxxflags>$(compile-options) <linkflags>$(link-options) ;
+		using gcc : 3.4.3 : /usr/sfw/bin/g++ : $(TOOLSET_OPTIONS) ;
 	}
 	else
 	{
-		using gcc : : : <cflags>$(c-compile-options) <cxxflags>$(compile-options) <linkflags>$(link-options) ;
-		# using gcc : $(gcc-version) : /usr/local/gcc-$(gcc-version)/bin/g++ : <cxxflags>$(compile-options) <linkflags>$(link-options) ;
+		using gcc : : : $(TOOLSET_OPTIONS) ;
+		# using gcc : $(TOOLSET_VERSION) : /usr/local/gcc-$(TOOLSET_VERSION)/bin/g++ : $(TOOLSET_OPTIONS) ;
 	}
 }
 else
 {
-	constant msvc-version 	: $(config.msvc-version) ; # 9.0 12.0 14.1
-	local options = ;
+	constant TOOLSET_NAME		: msvc ;
+	constant TOOLSET_VERSION	: $(config.msvc-version) ; # 9.0 12.0 14.1
+	local cxxflags = ;
+
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] _USE_32BIT_TIME_T _AFXDLL ;
-	options += -D$(preprocessor-definitions) ;
-	if $(USE-PCH)
+	cxxflags += -D$(preprocessor-definitions) ;
+
+	if $(PCH) = true
 	{
-		options += "/FI pch.hpp" ;
+		cxxflags += "/FI pch.hpp" ;
 	}
-	if [ ta-version.ge $(msvc-version) : 14.1 ]
+
+	if [ ta-version.ge $(TOOLSET_VERSION) : 14.1 ]
 	{
-		options += /FS ;
+		cxxflags += /FS ;
 	}
-	using msvc : $(msvc-version) : : <cxxflags>$(options) ;
+
+	constant TOOLSET_OPTIONS : <cxxflags>$(cxxflags) ;
+	using msvc : $(TOOLSET_VERSION) : : $(TOOLSET_OPTIONS) ;
 
 	# use boost
 	local boost-version = [ $(Cots).get boost : version-numbers ] ;
@@ -118,7 +128,7 @@ else
 	boost.use-project $(boost-version) ;
 }
 
-import omniidl ; # must after 'using msvc'
+import omniidl ; # MUST AFTER 'using msvc'
 omniidl.init [ $(Cots).get omniorb : omniidl ] : [ $(Cots).get omniorb : omniidl-options ] : [ $(TA_Path).transactive base proj ] ;
 
 rule current-ta-project.get ( function + )
@@ -171,7 +181,7 @@ rule ta-install-exe ( name : sources * : requirements * : default-build * : usag
 
 	if $(config.transactive-path)
 	{
-		ta-install install-transactive-bin_$(name)
+		ta-install $(name)-transactive-bin
 			: $(sources)
 			: <install-type>EXE
 			  <location>$(config.transactive-path)/bin
@@ -188,9 +198,16 @@ rule talib ( name : sources * : requirements * : default-build * : usage-require
 	lib $(name)
 		: $(sources)
 		: [ get-transactive-includes ]
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
-	ta-install-lib library : $(name) : $(requirements) : $(default-build) : $(usage-requirements) ;
+	ta-install-lib install-library-$(name)
+		: $(name)
+		: $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
+		;
 }
 
 rule idl-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
@@ -205,8 +222,11 @@ rule idl-lib ( name : sources * : requirements * : default-build * : usage-requi
 	}
 	talib $(name)
 		: $(sources)
-		: <link>static <omniidl-out-dir>$(idl-skeleton-path)
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		: <link>static
+		  <omniidl-out-dir>$(idl-skeleton-path)
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 }
 
@@ -219,7 +239,7 @@ rule ta-lib ( name : sources * : requirements * : default-build * : usage-requir
 		sources = [ path.glob $(src-path) : *.cpp ] ;
 		sources = src/$(sources:BS) ;
 	}
-	if [ os.on-windows ] && ( $(USE-PCH) = true ) # TODO: shared pch
+	if [ os.on-windows ] && ( $(PCH) = true ) # TODO: shared pch
 	{
 		cpp-pch pch : $(TOP)/pch.hpp : $(requirements) <link>static ;
 		sources += pch ;
@@ -227,7 +247,9 @@ rule ta-lib ( name : sources * : requirements * : default-build * : usage-requir
 	talib $(name)
 		: $(sources)
 		: <link>static
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 }
 
@@ -236,8 +258,11 @@ rule ta-dlib ( name : sources * : requirements * : default-build * : usage-requi
 	param.handle-named-params name sources requirements default-build usage-requirements ;
 	talib $(name)
 		: $(sources)
-		: <link>shared <toolset>gcc:<cflags>-fPIC
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		: <link>shared
+		  <toolset>gcc:<cflags>-fPIC
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 }
 
@@ -250,7 +275,7 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 		sources = [ path.glob $(src-path) : *.cpp ] ;
 		sources = src/$(sources:BS) ;
 	}
-	if [ os.on-windows ] && ( $(USE-PCH) = true )
+	if [ os.on-windows ] && ( $(PCH) = true )
 	{
 		cpp-pch pch : $(TOP)/pch.hpp ;
 		sources += pch ;
@@ -270,9 +295,11 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 		  [ $(Cots).get-libraries ]
 		: <toolset>msvc:<library>/boost//$(boost-libraries)/<link>static
 		  [ get-transactive-includes ]
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
-	ta-install-exe ta-install-exe-$(name)
+	ta-install-exe install-exe-$(name)
 		: $(name)
 		: $(requirements)
 		: $(default-build)
@@ -297,13 +324,15 @@ rule get-project-requirements ( )
 	return $(.project-requirements) ;
 }
 
-if [ os.on-unix ] && ( $(USE-PCH) = true )
+if [ os.on-unix ] && ( $(PCH) = true )
 {
 	cpp-pch pch
 		: $(TOP)/pch.hpp
 		: [ get-project-requirements ] <link>static
 		;
-	project : requirements <dependency>pch ;
+	project
+		: requirements <dependency>pch
+		;
 }
 
 for ta-project in [ $(TA_Projects).projects ]
@@ -323,19 +352,6 @@ if $(config.transactive-path)
 		: <install-type>LIB
 		  <location>$(config.transactive-path)/lib
 		;
-}
-
-if ! $(config.transactive-path)
-{
-	for local jamfile in [ $(TA_Path).jamfiles ]
-	{
-		local m = [ project.load $(jamfile:D) ] ;
-		local t = [ project.target $(m) ] ;
-		for local tb in [ $(t).targets-to-build ]
-		{
-			echo [ $(tb).name ] ;
-		}
-	}
 }
 
 ###############
@@ -426,9 +442,26 @@ rule show-build ( )
 	local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
 	local target-path = [ $(ps).target-path ] ;
 
-	for local x in default-properties project-properties target-path
+	for local x in default-properties project-properties target-path TOOLSET_OPTIONS
 	{
-		print.lines $(x) $($(x)) : "\t" ;
+		print.lines $(x:L) $($(x)) : "\t" ;
+	}
+}
+
+rule show-test ( )
+{
+	import modules project "class" property-set feature build-request ;
+
+	for local jamfile in [ $(TA_Path).jamfiles ]
+	{
+		local m = [ project.load $(jamfile:D) ] ;
+		project.initialize $(m) ;
+		local proj = [ project.current ] ;
+
+		for local t in [ $(proj).targets-to-build ]
+		{
+			echo [ $(t).full-name ] ;
+		}
 	}
 }
 
