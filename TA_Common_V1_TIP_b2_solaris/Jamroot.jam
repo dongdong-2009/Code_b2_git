@@ -450,17 +450,51 @@ rule show-build ( )
 
 rule show-test ( )
 {
-	import modules project "class" property-set feature build-request ;
+	import modules virtual-target targets project "class" property-set feature build-request ;
+
+	# local default-properties = [ feature.add-defaults ] ;
+
+	modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
 
 	for local jamfile in [ $(TA_Path).jamfiles ]
 	{
 		local m = [ project.load $(jamfile:D) ] ;
-		project.initialize $(m) ;
-		local proj = [ project.current ] ;
+		project.initialize $(m) : $(jamfile:D) ;
+	}	
+	
+	for ta-project in [ $(TA_Projects).projects ]
+	{
+		local jamfile = [ $(ta-project).jamfile ] ;
+		local m = [ project.load $(jamfile:D) ] ;
+		project.register-id [ $(ta-project).id ] : $(m) ;
+		project.register-id [ $(ta-project).id2 ] : $(m) ;		
+	}
 
+	for local jamfile in [ $(TA_Path).jamfiles ]
+	{
+		local m = [ project.load $(jamfile:D) ] ;
+		project.initialize $(m) : $(jamfile:D) ;
+		local proj = [ project.current ] ;
+		local attrib = [ project.attributes $(m) ] ;
+		local project-ps = [ targets.main-target-requirements : $(proj) ] ;
+		local project-properties = [ $(project-ps).raw ] ;
+		local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
+
+		# echo [ $(proj).name ] ;
 		for local t in [ $(proj).targets-to-build ]
 		{
-			echo [ $(t).full-name ] ;
+			# echo "\t" [ $(t).full-name ] ;
+		}
+		
+		local g = [ $(proj).generate [ property-set.empty ] ] ;
+		
+		for local vt in [ sequence.unique $(g[2-]) ]
+		{
+			# [ $(vt).name ] [ $(vt).type ] [ $(vt).path ] [ $(vt).action ] ;
+			local action = [ $(vt).action ] ;
+			local ps = [ $(action).properties ] ;
+			print.lines [ $(ps).raw ] ;
+			exit ;
 		}
 	}
 }
