@@ -129,16 +129,18 @@ rule current-ta-project.get ( function + )
 
 rule ta-install ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	install $(name)
-		: [ current-ta-project.get location-based-target-id ]
-		: $(requirements) : $(default-build) : $(usage-requirements)
+		: $(sources) # [ current-ta-project.get location-based-target-id ]
+		: $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 }
 
 rule ta-install-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	local debug-installation-path = [ current-ta-project.get installation-path debug ] ;
 	local release-installation-path = [ current-ta-project.get installation-path release ] ;
 	ta-install $(name)
@@ -146,13 +148,15 @@ rule ta-install-lib ( name : sources * : requirements * : default-build * : usag
 		: <install-type>LIB
 		  <variant>debug:<location>$(debug-installation-path)
 		  <variant>release:<location>$(release-installation-path)
-		  $(requirements) : $(default-build) : $(usage-requirements)
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 }
 
 rule ta-install-exe ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	local debug-installation-path = [ current-ta-project.get installation-path debug ] ;
 	local release-installation-path = [ current-ta-project.get installation-path release ] ;
 	ta-install $(name)
@@ -161,24 +165,26 @@ rule ta-install-exe ( name : sources * : requirements * : default-build * : usag
 		  <variant>debug:<location>$(debug-installation-path)
 		  <variant>release:<location>$(release-installation-path)
 		  $(requirements)
-		: $(default-build) : $(usage-requirements)
+		: $(default-build)
+		: $(usage-requirements)
 		;
 
 	if $(config.transactive-path)
 	{
-		ta-install transactive_$(name)
+		ta-install install-transactive-bin_$(name)
 			: $(sources)
 			: <install-type>EXE
 			  <location>$(config.transactive-path)/bin
 			  $(requirements)
-			: $(default-build) : $(usage-requirements)
+			: $(default-build)
+			: $(usage-requirements)
 			;
 	}
 }
 
 rule talib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	lib $(name)
 		: $(sources)
 		: [ get-transactive-includes ]
@@ -189,7 +195,7 @@ rule talib ( name : sources * : requirements * : default-build * : usage-require
 
 rule idl-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	local idl-skeleton-path = [ path.native [ current-ta-project.get idl-skeleton-path ] ] ;
 	if ! $(sources)
 	{
@@ -206,7 +212,7 @@ rule idl-lib ( name : sources * : requirements * : default-build * : usage-requi
 
 rule ta-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	if ! $(sources) # TODO: search .cpp .c
 	{
 		local src-path = [ current-ta-project.get src-path ] ;
@@ -227,7 +233,7 @@ rule ta-lib ( name : sources * : requirements * : default-build * : usage-requir
 
 rule ta-dlib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	talib $(name)
 		: $(sources)
 		: <link>shared <toolset>gcc:<cflags>-fPIC
@@ -237,7 +243,7 @@ rule ta-dlib ( name : sources * : requirements * : default-build * : usage-requi
 
 rule ta-exe ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params sources requirements default-build usage-requirements ;
+	param.handle-named-params name sources requirements default-build usage-requirements ;
 	if ! $(sources)
 	{
 		src-path = [ current-ta-project.get src-path ] ;
@@ -266,7 +272,12 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 		  [ get-transactive-includes ]
 		  $(requirements) : $(default-build) : $(usage-requirements)
 		;
-	ta-install-exe executables : $(name) : $(requirements) : $(default-build) : $(usage-requirements) ;
+	ta-install-exe ta-install-exe-$(name)
+		: $(name)
+		: $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
+		;
 }
 
 rule get-transactive-includes ( )
@@ -279,7 +290,7 @@ rule get-project-requirements ( )
 {
 	.project-requirements ?=
 		<warnings>off
-		<runtime-link>shared
+		<threading>multi
 		<address-model>$(ADDRESS_MODEL)
 		[ $(Cots).get-includes ] <include>$(TOP)
 	;
@@ -312,6 +323,19 @@ if $(config.transactive-path)
 		: <install-type>LIB
 		  <location>$(config.transactive-path)/lib
 		;
+}
+
+if ! $(config.transactive-path)
+{
+	for local jamfile in [ $(TA_Path).jamfiles ]
+	{
+		local m = [ project.load $(jamfile:D) ] ;
+		local t = [ project.target $(m) ] ;
+		for local tb in [ $(t).targets-to-build ]
+		{
+			echo [ $(tb).name ] ;
+		}
+	}
 }
 
 ###############
@@ -391,6 +415,21 @@ rule show-env ( )
 rule show-os ( )
 {
 	$(TA_OS).__debug__ ;
+}
+
+rule show-build ( )
+{
+	import property targets feature property-set ;
+	local default-properties = [ feature.add-defaults ] ;
+	local project-ps = [ targets.main-target-requirements : [ project.current ] ] ;
+	local project-properties = [ $(project-ps).raw ] ;
+	local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
+	local target-path = [ $(ps).target-path ] ;
+
+	for local x in default-properties project-properties target-path
+	{
+		print.lines $(x) $($(x)) : "\t" ;
+	}
 }
 
 rule show-help ( all-show-rules + )
