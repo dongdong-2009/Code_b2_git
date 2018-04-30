@@ -5,7 +5,7 @@ import ta-path ta-project ta-version ta-os ;
 path-constant	TOP							: . ;
 constant		ADDRESS_MODEL				: 32 ;
 constant 		PCH							: true ;
-path-constant	Project_Dependency_File		: $(TOP)/project-dependency.jam ;
+path-constant	PROJECT_DEPENDENCY_FILE		: $(TOP)/project-dependency.jam ;
 constant		TA_Path						: [ new ta-path ] ;
 constant		TA_OS						: [ new ta-os-class ] ;
 
@@ -33,11 +33,11 @@ if $(config.p4.sync) = true
 
 	if ! $(m)
 	{
-		SHELL [ sequence.join [ common.rm-command ] $(Project_Dependency_File) : " " ] ;
+		SHELL [ sequence.join [ common.rm-command ] $(PROJECT_DEPENDENCY_FILE) : " " ] ;
 	}
 }
 
-constant TA_Projects : [ ta-project.create $(TA_Path) : $(Project_Dependency_File) ] ;
+constant TA_Projects : [ ta-project.create $(TA_Path) : $(PROJECT_DEPENDENCY_FILE) ] ;
 
 import cots ;
 cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) : $(ADDRESS_MODEL) ;
@@ -48,8 +48,19 @@ sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
 
 if [ os.on-unix ]
 {
-	constant TOOLSET_NAME		: gcc ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
-	constant TOOLSET_VERSION	: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	constant TOOLSET_NAME			: gcc ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	constant TOOLSET_VERSION		: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+
+	if [ os.name ] = SOLARIS
+	{
+		constant SYSTEM_LIBRARIES	: z posix4 socket uuid ;
+	}
+
+	if [ os.name ] = LINUX
+	{
+		constant SYSTEM_LIBRARIES	: pthread nsl ;
+	}
+
 	local cflags = ;
 	local cxxflags = ;
 	local linkflags = ;
@@ -100,6 +111,8 @@ else
 {
 	constant TOOLSET_NAME		: msvc ;
 	constant TOOLSET_VERSION	: $(config.msvc-version) ; # 9.0 12.0 14.1
+	constant SYSTEM_LIBRARIES	: winmm Rpcrt4 Ws2_32 ;
+
 	local cxxflags = ;
 
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] _USE_32BIT_TIME_T _AFXDLL ;
@@ -293,6 +306,7 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 		: $(sources)
 		  $(ta-libraries)
 		  [ $(Cots).get-libraries ]
+		  [ lib $(SYSTEM_LIBRARIES) ]
 		: <toolset>msvc:<library>/boost//$(boost-libraries)/<link>static
 		  [ get-transactive-includes ]
 		  $(requirements)
@@ -442,7 +456,7 @@ rule show-build ( )
 	local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
 	local target-path = [ $(ps).target-path ] ;
 
-	for local x in default-properties project-properties target-path TOOLSET_OPTIONS
+	for local x in default-properties project-properties target-path TOOLSET_OPTIONS SYSTEM_LIBRARIES
 	{
 		print.lines $(x:L) $($(x)) : "\t" ;
 	}
@@ -451,23 +465,20 @@ rule show-build ( )
 rule show-test ( )
 {
 	import modules virtual-target targets project "class" property-set feature build-request ;
-
-	# local default-properties = [ feature.add-defaults ] ;
-
 	modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
 
 	for local jamfile in [ $(TA_Path).jamfiles ]
 	{
 		local m = [ project.load $(jamfile:D) ] ;
 		project.initialize $(m) : $(jamfile:D) ;
-	}	
-	
+	}
+
 	for ta-project in [ $(TA_Projects).projects ]
 	{
 		local jamfile = [ $(ta-project).jamfile ] ;
 		local m = [ project.load $(jamfile:D) ] ;
 		project.register-id [ $(ta-project).id ] : $(m) ;
-		project.register-id [ $(ta-project).id2 ] : $(m) ;		
+		project.register-id [ $(ta-project).id2 ] : $(m) ;
 	}
 
 	for local jamfile in [ $(TA_Path).jamfiles ]
@@ -480,17 +491,15 @@ rule show-test ( )
 		local project-properties = [ $(project-ps).raw ] ;
 		local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
 
-		# echo [ $(proj).name ] ;
 		for local t in [ $(proj).targets-to-build ]
 		{
 			# echo "\t" [ $(t).full-name ] ;
 		}
-		
+
 		local g = [ $(proj).generate [ property-set.empty ] ] ;
-		
+
 		for local vt in [ sequence.unique $(g[2-]) ]
 		{
-			# [ $(vt).name ] [ $(vt).type ] [ $(vt).path ] [ $(vt).action ] ;
 			local action = [ $(vt).action ] ;
 			local ps = [ $(action).properties ] ;
 			print.lines [ $(ps).raw ] ;

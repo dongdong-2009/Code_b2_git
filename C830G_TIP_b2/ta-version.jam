@@ -3,7 +3,7 @@ import os version sequence regex numbers assert ;
 rule numbers ( name * )
 {
 	local result = ;
-	
+
 	if [ sequence.length $(name) ] = 1
 	{
 		local vers = [ MATCH "(([0-9]+)([.-_][0-9]+)*)$" : $(name) ] ;
@@ -12,18 +12,18 @@ rule numbers ( name * )
 			result = [ SPLIT_BY_CHARACTERS $(vers[1]) : "_.-" ] ;
 		}
 	}
-	
+
 	result ?= $(name) ;
 	return $(result) ;
 }
 
-rule main ( name )
+rule main ( name * )
 {
-	local vers = [ numbers ] ;
+	local vers = [ numbers $(name) ] ;
 	return $(vers[1]) ;
 }
 
-rule equal ( lhs : rhs )
+rule equal ( lhs + : rhs + )
 {
 	if [ numbers $(lhs) ] = [ numbers $(rhs) ]
 	{
@@ -31,25 +31,51 @@ rule equal ( lhs : rhs )
 	}
 }
 
-rule less ( lhs : rhs )
+rule less ( lhs + : rhs + )
 {
 	return [ version.version-less [ numbers $(lhs) ] : [ numbers $(rhs) ] ] ;
 }
 
-rule greate ( lhs : rhs )
-{
-	if [ ge $(lhs) : $(rhs) ] && ! [ equal $(lhs) : $(rhs) ]
-	{
-		return true ;
-	}
-}
-
-rule ge ( lhs : rhs )
+rule ge ( lhs + : rhs + )
 {
     if ! [ less $(lhs) : $(rhs) ]
 	{
 		return true ;
 	}
+}
+
+rule greate ( lhs + : rhs + )
+{
+	if ( [ ge $(lhs) : $(rhs) ] ) && ! ( [ equal $(lhs) : $(rhs) ] )
+	{
+		return true ;
+	}
+}
+
+rule convert-msvc-to-toolset-version ( visual-studio-ver : prefix ? )
+{
+	prefix ?= "" ;
+	local toolset-ver = ;
+	switch $(visual-studio-ver)
+	{
+		case VS2008 : toolset-ver = 9.0 ;
+		case VS2013 : toolset-ver = 12.0 ;
+		case VS2017 : toolset-ver = 14.1 ;
+	}
+	return $(prefix)$(toolset-ver) ;
+}
+
+rule convert-msvc-to-visual-studio-version ( toolset-ver )
+{
+	local visual-studio-version = ;
+	local ns = [ numbers $(toolset-ver) ] ;
+	switch $(ns:J=.)
+	{
+		case 9.0  : visual-studio-version = VS2008 ;
+		case 12.0 : visual-studio-version = VS2013 ;
+		case 14.1 : visual-studio-version = VS2017 ;
+	}
+	return $(visual-studio-version) ;
 }
 
 rule __debug__ ( )
@@ -71,4 +97,6 @@ rule __debug__ ( )
 	assert.result 			: greate	SOLARIS-5.10	: 5.10 ;
 	assert.result 			: greate	omniORB_4.2.2	: 4 2 2 ;
 	assert.result 4 2 2		: numbers	4 2 2 ;
+	assert.result 14.1		: convert-msvc-to-toolset-version VS2017 ;
+	assert.result VS2017	: convert-msvc-to-visual-studio-version 14.1 ;
 }

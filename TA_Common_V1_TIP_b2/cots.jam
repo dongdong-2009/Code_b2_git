@@ -1,6 +1,6 @@
 import "class" : new ;
 import os path string assert print sequence numbers option path ;
-import ta-os ;
+import ta-os ta-version ;
 
 rule init ( root : gcc-ver ? : msvc-ver ? : address-model ? )
 {
@@ -39,7 +39,7 @@ rule init ( root : gcc-ver ? : msvc-ver ? : address-model ? )
 	}
 	else
 	{
-		.visual-studio-ver		= [ convert-msvc-to-visual-studio $(msvc-ver) ] ;
+		.visual-studio-ver		= [ ta-version.convert-msvc-to-visual-studio-version $(msvc-ver) ] ;
 	}
 }
 
@@ -49,53 +49,58 @@ rule get ( var )
 	return $(.$(var)) ;
 }
 
+#
 # accept two patterns :
 # 1) name_version
 #   	for example: omniORB_4.1.6
+#                    boost_1_39_0/system filesystem regex date_time
 # 2) name/version
 #		for example: ACE/6_0_4
-rule create ( cots-name-patterns + )
+#                    MCL/1.1.0
+#
+rule create ( cots-configuration + )
 {
-	.cots = [ new cots ] ;
-	for local pattern in $(cots-name-patterns)
+	OMNIORB_PATTERN			= "(omniORB)_(.+)" ;
+	BOOST_PATTERN			= "(boost)_(.+)" ;
+	OPENSSL_PATTERN			= "(openssl)-(.+)" ;
+	CURL_PATTERN			= "(curl)-(.+)" ;
+	SNMP_PATTERN			= "(snmp_pp)_(.+)" ;
+	GENERAL_PATTERN			= "([^_-]+)[_-](.+)" ;
+
+	.cots					= [ new cots ] ;
+	.cots-configuration		= $(cots-configuration) ;
+
+	for local config in $(cots-configuration)
 	{
 		local cot-name = ;
 		local cot-version = ;
-		local split = [ SPLIT_BY_CHARACTERS $(pattern) : / ] ;
+		local params = ;
+		local split = [ SPLIT_BY_CHARACTERS $(config) : / ] ;
 
-		if [ sequence.length $(split) ] = 1
+		for local pat in OMNIORB BOOST OPENSSL CURL SNMP GENERAL
 		{
-			local split = [ SPLIT_BY_CHARACTERS $(pattern) : -_ ] ;
-			cot-name = $(split[1]:L) ;
-			cot-version ?= $(pattern) ;
+			local m = [ MATCH "^$($(pat)_PATTERN)" : $(split[1]) ] ;
+			if $(m)
+			{
+				cot-name ?= $(m[1]:L) ;
+				cot-version ?= $(split[1]) ;
+				params ?= $(split[2-]) ;
+			}
 		}
-		else
-		{
-			cot-name = $(split[1]:L) ;
-			cot-version = $(split[2]) ;
-			params = $(split[3-]) ;
-		}
+
+		cot-name ?= $(split[1]:L) ;
+		cot-version ?= $(split[2]) ;
+		params ?= $(split[3-]) ;
 
 		if ! [ MATCH "([-_.][0-9][-_.])" : $(cot-version) ]
 		{
 			cot-version = ;
 		}
 
-		$(.cots).add $(cot-name) : [ new $(cot-name) $(cot-version) ] ;
+		$(.cots).add $(cot-name) : [ new $(cot-name) $(cot-version) : $(params[1]) : $(params[2]) : $(params[3]) ] ;
 	}
 	$(.cots).verify ;
 	return $(.cots) ;
-}
-
-rule convert-msvc-to-visual-studio ( msvc-ver )
-{
-	switch $(msvc-ver)
-	{
-		case 9.0  : return VS2008 ;
-		case 12.0 : return VS2013 ;
-		case 14.1 : return VS2017 ;
-		case *    : return $(msvc-ver) ;
-	}
 }
 
 class cots
@@ -185,22 +190,6 @@ class cots
 				}
 			}
 		}
-		if [ os.on-unix ]
-		{
-			if [ os.name ] = SOLARIS
-			{
-				result	+= [ lib z posix4 socket uuid ] ;
-			}
-
-			if [ os.name ] = LINUX
-			{
-				result	+= [ lib pthread nsl ] ; # crypto
-			}
-		}
-		else
-		{
-			result	+= [ lib winmm Rpcrt4 Ws2_32 ] ;
-		}
 		return $(result) ;
 	}
 
@@ -228,13 +217,9 @@ class cots
 
 		local result = ;
 
-		# for variant in debug release
+		for local sl in $(shared-libraries)
 		{
-			for local sl in $(shared-libraries)
-			{
-				result += [ lib $(sl:BS) : : <file>$(sl) <variant>$(variant) ] ;
-				# echo $(sl:BS) <file>$(sl) ;
-			}
+			result += [ lib $(sl:BS) : : <file>$(sl) ] ;
 		}
 		return $(result) ;
 	}
@@ -276,6 +261,8 @@ class cots
 
 	rule show-libraries ( indent ? )
 	{
+		local PREFIX = "" lib ;
+		local SUFFIX = .lib .so ;
 		local variant = [ MATCH (release) : [ modules.peek : ARGV ] ] ;
 		variant ?= debug ;
 		for local cot in $(self.all)
@@ -284,20 +271,18 @@ class cots
 			local library-path =  [ $(cot).$(variant)-library-path ] ;
 			for local l in $(library)
 			{
-				if [ os.on-windows ]
-				{
-					print.lines [ string.join [ PAD $(l).lib : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;
-				}
-				else
-				{
-					print.lines [ string.join [ PAD lib$(l).a : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;
-				}
+				real-library = [ path.glob $(library-path) : $(PREFIX)$(l)$(SUFFIX) ] ;
+				real-library = $(real-library:BS) ;
+				real-library ?= $(l) ;
+				print.lines [ string.join [ PAD $(real-library) : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;
 			}
 		}
 	}
 
 	rule show-shared-libraries ( indent ? )
 	{
+		local PREFIX = "" lib ;
+		local SUFFIX = .dll .so .so.* ;
 		local variant = [ MATCH (release) : [ modules.peek : ARGV ] ] ;
 		variant ?= debug ;
 		local shared-libraries = ;
@@ -307,14 +292,7 @@ class cots
 			local psths = [ $(cot).$(variant)-shared-library-path ] ;
 			if $(libraries)
 			{
-				if [ os.on-windows ]
-				{
-					shared-libraries += [ path.glob $(psths) : $(libraries).dll ] ;
-				}
-				else
-				{
-					shared-libraries += [ path.glob $(psths) : lib$(libraries).so* ] ;
-				}
+				shared-libraries += [ path.glob $(psths) : $(PREFIX)$(libraries)$(SUFFIX) ] ;
 			}
 		}
 		print.lines [ sequence.transform path.native : $(shared-libraries) ] : $(indent) $(indent) ;
@@ -322,7 +300,7 @@ class cots
 
 	rule show-tools ( indent ? )
 	{
-		print.lines [ string.join [ PAD sqlgen : 20 ]  " => " [ get sqlgen : sqlgen ] ] : $(indent) $(indent) ;
+		print.lines [ string.join [ PAD sqlgen  : 20 ] " => " [ get sqlgen : sqlgen ] ] : $(indent) $(indent) ;
 		print.lines [ string.join [ PAD omniidl : 20 ] " => " [ get omniorb : omniidl ] ] : $(indent) $(indent) ;
 	}
 
@@ -362,11 +340,12 @@ class cot-class
 	import os modules path print sequence version ;
 	import ta-version ;
 
-	rule __init__ ( name version ? )
+	rule __init__ ( name : version ? )
 	{
 		self.os						= [ os.name ] ;
 		self.ta-os					= [ cots.get ta-os ] ;
 		self.root					= [ cots.get root ] ;
+		self.cots-configuration		= [ cots.get cots-configuration ] ;
 		init-cot-$(self.os) ;
 
 		self.name					= $(name) ;
@@ -526,10 +505,10 @@ class omniorb : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ omniORB $(version) ;
+		cot-class.__init__ omniORB : $(version) ;
 		self.thread-version				= [ omnithread-version $(version) ] ;
 		self.path						= omniORB/$(version) ;
-		self.library-names				= omniORB omniDynamic COS AttNotification COSNotify ;
+		self.library-names				= omniORB omniDynamic COS COSDynamic AttNotification COSNotify ;
 
 		if [ ta-version.ge $(version) : 4.2.2 ]
 		{
@@ -551,7 +530,6 @@ class omniorb : cot-class
 		self.include-path				= $(self.path) $(self.prefix) $(self.prefix)/include $(self.prefix)/include/COS $(self.prefix)/include/omniORB$(self.main-version) $(self.notify-include-path) ;
 		self.library-path				= $(self.prefix)/lib ;
 		self.library					= $(self.library-names)$(self.main-version) omnithread ;
-		self.shared-library				= COSDynamic$(self.main-version) ;
 		self.bin-path					= $(self.prefix)/bin ;
 		self.omniidl					= $(self.bin-path)/omniidl ;
 		SHELL "chmod +x $(self.root)/$(self.omniidl:D)/*" ;
@@ -625,12 +603,13 @@ class omniorb : cot-class
 
 class boost : cot-class
 {
-	rule __init__ ( version )
+	rule __init__ ( version : library-names * )
 	{
-		cot-class.__init__ Boost $(version) ;
+		cot-class.__init__ Boost : $(version) ;
 		self.path						= boost/$(version) ;
 		self.include-path				= $(self.path) ;
-		self.library-names				= system filesystem regex date_time ; #TODO: parameter
+		library-names 					?= "system filesystem regex date_time" ;
+		self.library-names				= [ SPLIT_BY_CHARACTERS $(library-names) : " ,;/:" ] ;
 
 		if [ ta-version.ge $(version) : 1_65_1 ]
 		{
@@ -678,7 +657,7 @@ class icu : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ ICU $(version) ;
+		cot-class.__init__ ICU : $(version) ;
 		self.path						= icu/$(version) ;
 		init-$(self.os) ;
 	}
@@ -701,7 +680,7 @@ class ace : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ ACE $(version) ;
+		cot-class.__init__ ACE : $(version) ;
 		self.path						= ACE/$(version) ;
 		self.include-path				= $(self.path)/ACE_wrappers ;
 		init-$(self.os) ;
@@ -737,7 +716,7 @@ class oracle : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ Oracle $(version) ;
+		cot-class.__init__ Oracle : $(version) ;
 		self.path 						= oracle/$(version) ;
 		init-$(self.os) ;
 		self.include-path				= $(self.prefix)/inc ;
@@ -774,7 +753,7 @@ class mysql : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ MySQL $(version) ;
+		cot-class.__init__ MySQL : $(version) ;
 		self.path						= mysql/$(version) ;
 		init-$(self.os) ;
 	}
@@ -818,9 +797,13 @@ class mcl : cot-class
 	# TODO: handle boost-version, mysql-version
 	rule __init__ ( version )
 	{
-		cot-class.__init__ MCL $(version) ;
+		cot-class.__init__ MCL : $(version) ;
 		self.path						= mcl/$(version) ;
 		self.include-path				= $(self.path) ;
+		mysql-version					= [ MATCH "^(mysql.+)$" : $(self.cots-configuration:L) ] ;
+		boost-version					= [ MATCH "^(boost.+)$" : $(self.cots-configuration:L) ] ;
+		self.mysql-version-numbers		= [ ta-version.numbers $(mysql-version) ] ;
+		self.boost-version-numbers		= [ ta-version.numbers $(boost-version) ] ;
 		init-$(self.os) ;
 	}
 
@@ -838,7 +821,7 @@ class mcl : cot-class
 		switch $(self.version)
 		{
 			case 1.1.0 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier) ;
-			case 1.1.1 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier)_mysql5.5.15_boost1.56.0 ;
+			case 1.1.1 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost$(self.boost-version-numbers:J=.) ;
 		}
 	}
 
@@ -846,7 +829,7 @@ class mcl : cot-class
 	{
 		# TODO mysql, boost version
 		self.library						= mysqlcppconn ;
-		self.library-path					= $(self.path)/lib/$(self.omni-os-identifier)_mysql6.1.11_boost_1_65_1 ;
+		self.library-path					= $(self.path)/lib/$(self.omni-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost$(self.boost-version-numbers:J=_) ;
 	}
 
 	rule init-NT ( )
@@ -865,8 +848,8 @@ class mcl : cot-class
 		switch $(self.version)
 		{
 			case 1.1.0 : self.library-path	= $(self.path)/lib/winnt ;
-			case 1.1.1 : self.library-path	= $(self.path)/lib/winnt_mysql.5.5.15_boost1.56.0 ;
-			case 1.1.9 : self.library-path	= $(self.path)/lib_mysql6.1.11_boost_1_65_1/winnt_vs2017 ;
+			case 1.1.1 : self.library-path	= $(self.path)/lib/winnt_mysql.$(self.mysql-version-numbers:J=.)_boost$(self.boost-version-numbers:J=.) ;
+			case 1.1.9 : self.library-path	= $(self.path)/lib_mysql$(self.mysql-version-numbers:J=.)_boost_$(self.boost-version-numbers:J=_)/winnt_vs2017 ;
 		}
 	}
 }
@@ -875,7 +858,7 @@ class openssl : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ OpenSSL $(version) ;
+		cot-class.__init__ OpenSSL : $(version) ;
 		self.path						= openssl/$(version) ;
 		self.include-path				= $(self.path)/build/include ;
 		init-$(self.os) ;
@@ -918,7 +901,7 @@ class libssh2 : cot-class
 {
 	rule __init__ ( version ? )
 	{
-		cot-class.__init__ libssh2 $(version) ;
+		cot-class.__init__ libssh2 : $(version) ;
 		self.path						= libssh2/$(version) ;
 		init-$(self.os) ;
 	}
@@ -953,7 +936,7 @@ class beamessageq : cot-class
 {
 	rule __init__ ( version ? )
 	{
-		cot-class.__init__ BEAMessageQ $(version) ;
+		cot-class.__init__ BEAMessageQ : $(version) ;
 		self.path						= [ path.join BEAMessageQ $(version) ] ;
 		self.include-path				= $(self.path)/include ;
 		self.library-path				= $(self.path)/lib ;
@@ -978,7 +961,7 @@ class poco : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ Poco $(version) ;
+		cot-class.__init__ Poco : $(version) ;
 		self.path						= poco/$(version) ;
 		self.release-library			= PocoUtil PocoNet PocoXML PocoFoundation ;
 		self.debug-library				= $(self.release-library)d ;
@@ -1022,7 +1005,7 @@ class curl : cot-class
 			version = $(version)-win32 ;
 		}
 
-		cot-class.__init__ Curl $(version) ;
+		cot-class.__init__ Curl : $(version) ;
 		self.path						= curl/$(self.version) ;
 		self.include-path				= $(self.path)/include ;
 		init-$(self.os) ;
@@ -1067,7 +1050,7 @@ class snmp_pp : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ SNMP_PP $(version) ;
+		cot-class.__init__ SNMP_PP : $(version) ;
 		self.path						= SNMP_PP/$(version) ;
 		init-$(self.os) ;
 	}
@@ -1085,7 +1068,7 @@ class ziparchive : cot-class
 {
 	rule __init__ ( version ? )
 	{
-		cot-class.__init__ ZipArchive $(version) ;
+		cot-class.__init__ ZipArchive : $(version) ;
 		self.path						= [ path.join ZipArchive $(version) ] ;
 		self.include-path				= $(self.path) $(self.path)/zlib ;
 		init-$(self.os) ;
@@ -1110,7 +1093,7 @@ class winstacktrace : cot-class
 {
 	rule __init__ ( version ? )
 	{
-		cot-class.__init__ WinStackTrace $(version) ;
+		cot-class.__init__ WinStackTrace : $(version) ;
 		self.path						= [ path.join WinStackTrace $(version) ] ;
 		init-$(self.os) ;
 	}
@@ -1138,7 +1121,7 @@ class htmlhelp : cot-class
 {
 	rule __init__ ( version ? )
 	{
-		cot-class.__init__ HTMLHelp $(version) ;
+		cot-class.__init__ HTMLHelp : $(version) ;
 		self.path						= [ path.join HTMLHelp $(version) ] ;
 		init-$(self.os) ;
 	}
@@ -1156,7 +1139,7 @@ class sqlgen : cot-class
 {
 	rule __init__ ( version )
 	{
-		cot-class.__init__ SqlGen $(version) ;
+		cot-class.__init__ SqlGen : $(version) ;
 		self.path						= sqlgen/$(version) ;
 		init-$(self.os) ;
 	}
