@@ -272,6 +272,7 @@ class cots
 			for local l in $(library)
 			{
 				real-library = [ path.glob $(library-path) : $(PREFIX)$(l)$(SUFFIX) ] ;
+				real-library ?= [ path.glob $(library-path) : $(PREFIX)$(l).a ] ;
 				real-library = $(real-library:BS) ;
 				real-library ?= $(l) ;
 				print.lines [ string.join [ PAD $(real-library) : 28 ] " => " [ path.native $(library-path) ] ] : $(indent) $(indent) ;

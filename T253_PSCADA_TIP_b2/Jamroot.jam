@@ -53,7 +53,7 @@ if [ os.on-unix ]
 
 	if [ os.name ] = SOLARIS
 	{
-		constant SYSTEM_LIBRARIES	: z posix4 socket uuid ;
+		constant SYSTEM_LIBRARIES	: z posix4 socket uuid nsl ;
 	}
 
 	if [ os.name ] = LINUX
@@ -87,7 +87,7 @@ if [ os.on-unix ]
 
 	if [ ta-version.ge $(TOOLSET_VERSION) : 4.7 ]
 	{
-		cxxflags += -std=c++11 ;
+		# cxxflags += -std=c++11 ;
 	}
 
 	if [ os.name ] = SOLARIS
@@ -462,10 +462,12 @@ rule show-build ( )
 	}
 }
 
-rule show-test ( )
+rule virtual-targets ( types * )
 {
 	import modules virtual-target targets project "class" property-set feature build-request ;
 	modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
+
+	project.push-current [ project.current ] ;
 
 	for local jamfile in [ $(TA_Path).jamfiles ]
 	{
@@ -481,29 +483,57 @@ rule show-test ( )
 		project.register-id [ $(ta-project).id2 ] : $(m) ;
 	}
 
+	types ?= EXE STATIC_LIB ;
+	local result = ;
+
 	for local jamfile in [ $(TA_Path).jamfiles ]
 	{
 		local m = [ project.load $(jamfile:D) ] ;
 		project.initialize $(m) : $(jamfile:D) ;
 		local proj = [ project.current ] ;
-		local attrib = [ project.attributes $(m) ] ;
-		local project-ps = [ targets.main-target-requirements : $(proj) ] ;
-		local project-properties = [ $(project-ps).raw ] ;
-		local ps = [ property-set.create $(default-properties) $(project-properties) ] ;
-
-		for local t in [ $(proj).targets-to-build ]
-		{
-			# echo "\t" [ $(t).full-name ] ;
-		}
-
+		# local attrib = [ project.attributes $(m) ] ;
 		local g = [ $(proj).generate [ property-set.empty ] ] ;
 
 		for local vt in [ sequence.unique $(g[2-]) ]
 		{
-			local action = [ $(vt).action ] ;
-			local ps = [ $(action).properties ] ;
-			print.lines [ $(ps).raw ] ;
-			exit ;
+			local the-type = [ $(vt).type ] ;
+
+			if $(the-type) && $(the-type) in $(types)
+			{
+				result += $(vt) ;
+			}
+		}
+	}
+
+	project.pop-current ;
+	return $(result) ;
+}
+
+rule clean-exe ( agents * )
+{
+	virtual-targets EXE ;
+	for local vt in [ virtual-targets EXE ]
+	{
+		if ( ! $(agents) ) || [ $(vt).name ] in $(agents)
+		{
+			local exe-file = [ path.native [ path.join [ $(vt).path ] [ $(vt).name ] ] ] ;
+			local cmd = [ sequence.join [ common.rm-command ] $(exe-file) : " " ] ;
+			SHELL "$(cmd)" : no-output ;
+		}
+	}
+}
+
+{
+	local agents = [ option.get "clean-exe" : : true ] ;
+	if $(agents)
+	{
+		if $(agents) = true
+		{
+			clean-exe ;
+		}
+		else
+		{
+			clean-exe $(agents) ;
 		}
 	}
 }

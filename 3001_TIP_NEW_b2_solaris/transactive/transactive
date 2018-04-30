@@ -1,0 +1,189 @@
+#!/bin/sh
+#
+# Purpose:
+#
+#     The purpose of this script is to start and stop the ITS system
+#     controller as part of the server start up and shutdown
+#     procedure.
+#
+#
+# Set up the ITS operating environment.
+#
+# TD14376, solve OmniOrb binding to the wrong ip address problem
+ORBendPoint=giop:tcp:`hostname`:
+export ORBendPoint
+TRA_HOME=/u01/transactive
+export TRA_HOME
+PATH=$PATH:/etc:$TRA_HOME/bin:.
+export PATH
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TRA_HOME/lib:$ORACLE_HOME/lib
+export LD_LIBRARY_PATH
+#SYSTEM_VERSION=`grep Version $TRA_HOME/bin/versions`
+#echo $LD_LIBRARY_PATH
+#
+# Determine which machine it is running on.
+#
+rm -rf $TRA_HOME/log/*
+
+#
+# Get the PID of the running SystemController.  It will be used to determine if
+# an existing SystemController is running.
+#
+SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+
+case $1 in
+
+    #
+    # Start the software.
+    #
+    start)
+
+        #
+        # Done start a second system controller if one is already
+        # running.
+        #
+        if [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+        then
+            echo "There is already a system controller running. $SYSTEM_VERSION A second one will not be started."
+            exit 255
+        fi
+
+		#
+        # Archive existing log files
+        #
+        ARCHIVE_NAME=log
+        ARCHIVE_NAME=$ARCHIVE_NAME.`date '+%d%m%y-%H.%M.%S'`.tar.gz
+        LOG_PATH=$TRA_HOME/log
+        ARCHIVE_PATH=$TRA_HOME/log_archive
+		FILES_EXIST=`ls $LOG_PATH | wc -l | sed -e 's/ //g'"`
+        ARCHIVE_PATH_EXISTS=`ls -p $TRA_HOME | grep log_archive/ | wc -l | sed -e 's/ //g'"`
+        if [ "$ARCHIVE_PATH_EXISTS" = "0" ]
+        then
+            mkdir $ARCHIVE_PATH
+        fi
+        if [ "$FILES_EXIST" != "0" ]
+        then
+            echo "Archiving previous log files to $ARCHIVE_PATH/$ARCHIVE_NAME"
+            tar cf - $LOG_PATH/* | /usr/bin/gzip > $ARCHIVE_PATH/$ARCHIVE_NAME
+            rm -f $LOG_PATH/*
+            echo
+        fi
+
+        # Determine if log_archive collection is within MAX_ARCHIVE_SIZE
+        # If not remove existing log archives (tar.gz files)
+        MAX_ARCHIVE_SIZE=12000
+        LOG_ARCHIVE_USAGE=`du -ks $ARCHIVE_PATH | awk '{ print $1 }'`
+        if [ "$LOG_ARCHIVE_USAGE" -gt "$MAX_ARCHIVE_SIZE" ]
+        then
+            echo "Deleting previous log tar.gz files to clear disc space"
+            rm $ARCHIVE_PATH/log*.tar.gz
+        fi
+
+        #
+        # Determine if there is sufficient disc space.  We need to
+        # have at least 10% before we can start.  The disc capacities
+        # are percentages.
+        #
+        # The disc space capacity is calculated by subtracting the
+        # percentage used as reported by the df command from 100%
+        #
+        echo -n "Checking for sufficient disc space...."
+        DISC_CAPACITY=`df -k $TRA_HOME | tail -1 | awk '{ print int( substr( $5, 0, length($5) - 1 ) ) }'`
+        MINIMUM_DISC_CAPACITY=5
+        REMAINING_CAPACITY=`expr 100 - $DISC_CAPACITY`
+        if [ "$REMAINING_CAPACITY" -lt "$MINIMUM_DISC_CAPACITY" ]
+        then
+            echo "failed"
+            echo "    There is insufficient disc space to start the system "
+            echo "    Require $MINIMUM_DISC_CAPACITY%, actual $REMAINING_CAPACITY%"
+            exit 255
+        fi
+        echo "OK"
+        echo "We are using a minimum of $MINIMUM_DISC_CAPACITY% until the system has been fully cleaned up"
+        echo
+
+		#
+		# Display configuration details.
+		#
+		echo
+		echo "System controller starting with entity name - $ENTITY_NAME";
+
+		# speed up failover in event primary not contactable
+		# ndd -set /dev/tcp tcp_ip_abort_cinterval 30000
+
+		#
+		# Start the system controller.
+		#
+		cd $TRA_HOME/bin
+		watson kill
+
+		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occa --debug-file-max-size=30000000 --startup-time=20000 --debug-level=DEBUG --central-database=Mysql:TRA_OCC_F:ITS_FZL1:ITS_FZL1:176.90.10.11 --dis-central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
+
+	;;
+
+    #
+    # Stop the running system controller.
+    #
+    stop)
+
+        #
+        # If the system controller is not running, display an
+        # error message and exit.
+        #
+        if [ "" -eq "$SYSTEM_CONTROLLER_PID" ]
+        then
+            echo "ITS system controller not running"
+            exit 0
+        fi
+
+        #
+        # Now stop the system controller.
+        #
+        echo
+        echo
+        echo "Stopping the TRANSACTIVE system controller with entity name - $ENTITY_NAME"
+        kill -15 $SYSTEM_CONTROLLER_PID
+
+		#
+		# Wait until the system controller has stopped.
+		#
+		# DURATION=0
+		# while [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+		#  do
+		#     DURATION=`expr $DURATION + 1 `
+		# 	sleep 1
+		# 	echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+		#     #1.7 line below
+		#      SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+		#
+		#  done
+		# echo 'System Controller has now stopped'
+        ;;
+
+    *)
+        echo "usage: transactive start|stop"
+	exit
+        ;;
+esac
+
+case $2 in
+	#if this is being run as a startup script then we dont want watson to kill the terminal
+	nowatson)
+    		if [ $1 = "stop" ]
+		then
+			DURATION=0
+			while [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+       			do
+		    		DURATION=`expr $DURATION + 1 `
+				sleep 1
+				echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+            			SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+       		 	done
+
+		fi
+	;;
+
+	*)
+		watson
+	;;
+esac

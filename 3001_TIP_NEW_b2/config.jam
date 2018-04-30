@@ -1,28 +1,3 @@
 import os ;
-
-config.gcc-version		= 4.8.5 ;
-config.msvc-version		= 9.0 ; # 9.0(VS2008) 12.0(VS2013) 14.1(VS2017)
-
-config.p4.command		= p4 ;
-config.p4.user			= limin.zhu ;
-config.p4.port			= "192.168.253.15:1666" ;
-config.p4.client		= limin.zhu_solaris10_verify_build ; # limin.zhu_windows_verify_build
-config.p4.password		= Coreteam ;
-config.p4.sync			= false ;
-config.p4.force-sync	= false ;
-
-config.cots				= omniORB_4.1.6
-						  boost_1_39_0
-						  ACE/6_0_4
-						  Oracle/11.2.0
-						  MySQL/5.5.15
-						  MCL/1.1.0
-						  openssl-1.0.0d
-						  BEAMessageQ
-						  Poco/1.4.6p4
-						  ZipArchive
-						  WinStackTrace
-						  HTMLHelp
-						  SqlGen/1.1.1
-						  curl-7.21.7
-						  ;
+path-constant HERE : . ;
+include $(HERE)/config-Windows.jam ;

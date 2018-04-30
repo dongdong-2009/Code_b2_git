@@ -263,7 +263,7 @@ class ta-projects
 
 class ta-project-class
 {
-	import os path string assert print sequence path project set ;
+	import os path string assert print sequence path project set modules ;
 
 	rule __init__ ( jamfile )
 	{
@@ -272,6 +272,9 @@ class ta-project-class
 		self.location	= $(self.path) ;
 		self.os			= [ os.name ] ;
 		self.ta-os		= [ ta-os ] ;
+
+		# self.module		= [ project.load $(jamfile:D) ] ;
+		# project.initialize $(self.module) : $(jamfile:D) ;
 	}
 
 	rule get ( data )
