@@ -1,0 +1,30 @@
+
+config.gcc-version				= 4.8.5 ;
+
+config.p4.command				= p4 ;
+config.p4.user					= limin.zhu ;
+config.p4.port					= "192.168.253.15:1666" ;
+config.p4.password				= Coreteam ;
+config.p4.sync					= false ;
+config.p4.force-sync			= false ;
+config.p4.client				= limin.zhu_CentOS-7_verify ;
+	
+path-constant HERE				: . ;
+config.transactive-path			= $(HERE)/transactive ;
+	
+config.cots						= omniORB_4.2.2
+								  boost_1_65_1
+								  ACE/6_4_0
+								  Oracle/11.2.0
+								  MySQL/6.1.11
+								  MCL/1.1.9
+								  openssl-1.0.2m
+								  ZipArchive
+								  WinStackTrace
+								  HTMLHelp
+								  BEAMessageQ
+								  SqlGen/1.1.1
+								  curl-7.56.1
+								  snmp_pp_v3.2.16
+								  libssh2-1.2.9
+								  ;

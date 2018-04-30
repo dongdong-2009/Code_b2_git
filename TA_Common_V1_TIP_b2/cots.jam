@@ -829,7 +829,7 @@ class mcl : cot-class
 	{
 		# TODO mysql, boost version
 		self.library						= mysqlcppconn ;
-		self.library-path					= $(self.path)/lib/$(self.omni-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost$(self.boost-version-numbers:J=_) ;
+		self.library-path					= $(self.path)/lib/$(self.omni-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost_$(self.boost-version-numbers:J=_) ;
 	}
 
 	rule init-NT ( )
