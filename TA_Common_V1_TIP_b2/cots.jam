@@ -353,6 +353,8 @@ class cot-class
 		self.version				= $(version) ;
 		self.version-numbers		= [ ta-version.numbers $(version) ] ;
 		self.main-version			= $(self.version-numbers[1]) ;
+
+		self.link					= shared ; # shared(default), static
 	}
 
 	rule init-cot-SOLARIS ( )

@@ -1,5 +1,6 @@
 import "class" : new ;
-import os ;
+import os path string assert print sequence path project set numbers order ;
+import modules virtual-target targets property-set property feature build-request ;
 
 rule create ( ta-path * : dependency-file ? )
 {
@@ -15,6 +16,20 @@ rule transform ( projects * : function + )
 		result += [ $(proj).$(function[1]) $(function[2-]) ] ;
 	}
 	return $(result) ;
+}
+
+rule variant ( )
+{
+	local r = [ build-request.from-command-line [ modules.peek : ARGV ] ] ;
+	local properties = [ $(r).get-at 2 ] ;
+	if $(properties)
+	{
+		properties = [ build-request.convert-command-line-elements $(properties) ] ;
+		properties = [ build-request.expand-no-defaults $(properties) ] ;
+	}
+	local result = [ property.select <variant> : $(properties) ] ;
+	result ?= <variant>debug ;
+	return $(result:G=) ;
 }
 
 class ta-projects
@@ -240,7 +255,15 @@ class ta-projects
 
 	rule virtual-targets ( types * )
 	{
-		modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
+		local r = [ build-request.from-command-line [ modules.peek : ARGV ] ] ;
+		local properties = [ $(r).get-at 2 ] ;
+		if $(properties)
+		{
+			properties = [ build-request.convert-command-line-elements $(properties) ] ;
+			properties = [ build-request.expand-no-defaults $(properties) ] ;
+		}
+
+		modules.poke build-system : .command-line-free-features : [ property-set.create $(properties) ] ;
 
 		for local tp in [ projects ]
 		{
@@ -658,6 +681,11 @@ class ta-project-class
 		{
 			return [ path.join [ bin-path ] [ sequence.join [ ta-os ] $($(variant)-suffix) ] ] ;
 		}
+	}
+
+	rule install-path ( variant ? )
+	{
+		return [ installation-path $(variant) ] ;
 	}
 
 	rule ta-os ( )

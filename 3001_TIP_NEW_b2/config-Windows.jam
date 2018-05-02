@@ -10,6 +10,9 @@ config.p4.password		= Coreteam ;
 config.p4.sync			= false ;
 config.p4.force-sync	= false ;
 
+path-constant HERE : . ;
+config.transactive-path = $(HERE)/transactive ;
+
 config.cots				= omniORB_4.1.6
 						  boost_1_39_0
 						  ACE/6_0_4

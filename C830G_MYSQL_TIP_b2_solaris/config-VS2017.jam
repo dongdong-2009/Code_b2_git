@@ -1,15 +1,14 @@
 import os ;
 
-config.gcc-version		= 4.8.5 ;
 config.msvc-version		= 14.1 ; # 9.0(VS2008) 12.0(VS2013) 14.1(VS2017)
 
 config.p4.command		= p4 ;
 config.p4.user			= limin.zhu ;
 config.p4.port			= "192.168.253.15:1666" ;
-config.p4.client		= limin.zhu_windows_verify_build ;
 config.p4.password		= Coreteam ;
 config.p4.sync			= false ;
 config.p4.force-sync	= false ;
+config.p4.client		= limin.zhu_windows_verify_build ;
 
 config.cots				= omniORB_4.2.2
 						  boost_1_65_1
@@ -18,34 +17,10 @@ config.cots				= omniORB_4.2.2
 						  MySQL/6.1.11
 						  MCL/1.1.9
 						  openssl-1.0.2m
-						  ICU/4.2.1
 						  ZipArchive
 						  WinStackTrace
 						  HTMLHelp
 						  BEAMessageQ
 						  SqlGen/1.1.1
-						  curl-7.56.1
-						  snmp_pp/snmp_pp_v3.2.16
-						  Poco/1.4.6p4
+						  snmp_pp_v3.2.16
 						  ;
-
-if [ os.name ] = SOLARIS
-{
-	config.cots			= omniORB_4.2.2
-						  boost_1_65_1
-						  ACE/6_4_0
-						  Oracle/11.2.0
-						  MySQL/5.5.15			# TODO MySQL/6.1.11
-						  MCL/1.1.1				# TODO MCL/1.1.9
-						  openssl-1.0.0d		# TODO openssl-1.0.2m
-						  ICU/4.2.1
-						  ZipArchive
-						  WinStackTrace
-						  HTMLHelp
-						  BEAMessageQ
-						  SqlGen/1.1.1
-						  curl-7.21.7			# TODO curl-7.56.1
-						  snmp_pp/snmp_pp_v3.2.16
-						  Poco/1.4.6p4
-						  ;
-}
