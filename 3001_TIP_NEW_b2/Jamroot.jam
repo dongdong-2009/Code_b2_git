@@ -1,5 +1,5 @@
 import "class" : new ;
-import os path string assert print sequence option path project param modules errors common ;
+import os path string assert print sequence option path project param modules errors common configure ;
 import ta-path ta-project ta-version ta-os ;
 
 path-constant	TOP							: . ;
@@ -48,8 +48,8 @@ sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
 
 if [ os.on-unix ]
 {
-	constant TOOLSET_NAME			: gcc ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
-	constant TOOLSET_VERSION		: $(config.gcc-version) ; # 3.4.3 4.8.5 4.9.4 5.5.0 6.4.0 7.3.0
+	constant TOOLSET_NAME			: gcc ;
+	constant TOOLSET_VERSION		: $(config.gcc-version) ;
 
 	if [ os.name ] = SOLARIS
 	{
@@ -61,41 +61,41 @@ if [ os.on-unix ]
 		constant SYSTEM_LIBRARIES	: pthread nsl ;
 	}
 
-	local cflags = ;
-	local cxxflags = ;
-	local linkflags = ;
+	local CFLAGS = ;
+	local CXXFLAGS = ;
+	local LINKFLAGS = ;
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS ;
-	cxxflags += -D$(preprocessor-definitions) ;
+	CXXFLAGS += -D$(preprocessor-definitions) ;
 
 	local force-includes = typeinfo string memory cstdlib climits string.h stdio.h stdint.h ;
 	if $(PCH) = true
 	{
 		force-includes = pch.hpp ;
 	}
-	cxxflags += "-include $(force-includes)" ;
+	CXXFLAGS += "-include $(force-includes)" ;
 
-	cxxflags += -fpermissive ;
+	CXXFLAGS += -fpermissive ;
 
 	if [ ta-version.ge $(TOOLSET_VERSION) : 4.0.0 ]
 	{
-		cxxflags += -pthread ;
+		CXXFLAGS += -pthread ;
 	}
 	else
 	{
-		cxxflags += -pthreads ;
+		CXXFLAGS += -pthreads ;
 	}
 
 	if [ ta-version.ge $(TOOLSET_VERSION) : 4.7 ]
 	{
-		# cxxflags += -std=c++11 ;
+		# CXXFLAGS += -std=c++11 ;
 	}
 
 	if [ os.name ] = SOLARIS
 	{
-		linkflags += "-z rescan" ;
+		LINKFLAGS += "-z rescan" ;
 	}
 
-	constant TOOLSET_OPTIONS : <cflags>$(cflags) <cxxflags>$(cxxflags) <linkflags>$(linkflags) ;
+	constant TOOLSET_OPTIONS : <cflags>$(CFLAGS) <cxxflags>$(CXXFLAGS) <linkflags>$(LINKFLAGS) ;
 
 	if $(TOOLSET_VERSION) = 3.4.3
 	{
@@ -113,25 +113,26 @@ else
 	constant TOOLSET_VERSION	: $(config.msvc-version) ; # 9.0 12.0 14.1
 	constant SYSTEM_LIBRARIES	: winmm Rpcrt4 Ws2_32 ;
 
-	local cxxflags = ;
+	local CXXFLAGS = ;
 
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] _USE_32BIT_TIME_T _AFXDLL ;
-	cxxflags += -D$(preprocessor-definitions) ;
+	CXXFLAGS += -D$(preprocessor-definitions) ;
 
 	if $(PCH) = true
 	{
-		cxxflags += "/FI pch.hpp" ;
+		CXXFLAGS += "/FI pch.hpp" ;
 	}
 
 	if [ ta-version.ge $(TOOLSET_VERSION) : 14.1 ]
 	{
-		cxxflags += /FS ;
+		CXXFLAGS += /FS ;
 	}
 
-	constant TOOLSET_OPTIONS : <cxxflags>$(cxxflags) ;
+	constant TOOLSET_OPTIONS : <cxxflags>$(CXXFLAGS) ;
 	using msvc : $(TOOLSET_VERSION) : : $(TOOLSET_OPTIONS) ;
 
 	# use boost
+	# TODO: use boost in unix
 	local boost-version = [ $(Cots).get boost : version-numbers ] ;
 	boost-version = $(boost-version:J=_) ;
 	local include-path = [ path.native [ $(Cots).get boost : include-path ] ] ;
@@ -152,13 +153,13 @@ rule current-ta-project.get ( function + )
 
 rule ta-install ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
-	param.handle-named-params name sources requirements default-build usage-requirements ;
-	install $(name)
-		: $(sources) # [ current-ta-project.get location-based-target-id ]
-		: $(requirements)
-		: $(default-build)
-		: $(usage-requirements)
-		;
+	# param.handle-named-params name sources requirements default-build usage-requirements ;
+	# install $(name)
+		# : $(sources) # [ current-ta-project.get location-based-target-id ]
+		# : $(requirements)
+		# : $(default-build)
+		# : $(usage-requirements)
+		# ;
 }
 
 rule ta-install-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
@@ -366,7 +367,65 @@ if $(config.transactive-path)
 		: <install-type>LIB
 		  <location>$(config.transactive-path)/lib
 		;
+
 }
+
+###############
+#
+# CLEAN RULE
+#
+###############
+rule ta-clean ( )
+{
+	#
+	# TODO: clean TA_Base_Core, TA_Base_Bus, TA_IRS_Core TA_IRS_Bus
+	#
+	local names = ;
+	local types = EXE STATIC_LIB ;
+	local args = [ option.get "ta-clean" : : true ] ;
+
+	if $(args)
+	{
+		if $(args) in true ALL all *
+		{
+			types = EXE STATIC_LIB ;
+		}
+		else if $(args) in EXE Exe exe
+		{
+			types = EXE ;
+		}
+		else if $(args) in STATIC_LIB LIB Lib lib library Library LIBRARY
+		{
+			types = STATIC_LIB ;
+		}
+		else
+		{
+			types = EXE STATIC_LIB ;
+			names = $(args) ;
+		}
+
+		local files = ;
+		for local vt in [ $(TA_Projects).virtual-targets $(types) ]
+		{
+			if ( ! $(names) ) || [ $(vt).name ] in $(names)
+			{
+				local file = [ path.native [ path.join [ $(vt).path ] [ $(vt).name ] ] ] ;
+
+				if [ path.exists $(file) ]
+				{
+					files += $(file) ;
+				}
+			}
+		}
+
+		for local file in [ sequence.unique $(files) ]
+		{
+			ECHO $(file) ;
+			SHELL [ sequence.join [ common.rm-command ] $(file) : " " ] : no-output ;
+		}
+	}
+}
+ta-clean ;
 
 ###############
 #
@@ -384,9 +443,9 @@ rule show-branch ( )
 	print.lines branch [ $(TA_Path).branch ] : "\t" ;
 }
 
-rule show-config ( )
+rule show-ta-config ( )
 {
-	print.lines "config" ;
+	print.lines "ta-config" ;
 	local proj = [ project.current ] ;
 
 	for local config in [ MATCH "(config.*)" : [ VARNAMES [ $(proj).project-module ] ] ]
@@ -462,79 +521,22 @@ rule show-build ( )
 	}
 }
 
-rule virtual-targets ( types * )
+rule show-virtual-targets ( )
 {
-	import modules virtual-target targets project "class" property-set feature build-request ;
-	modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
-
-	project.push-current [ project.current ] ;
-
-	for local jamfile in [ $(TA_Path).jamfiles ]
+	local all-vt = ;
+	for local vt in [ $(TA_Projects).virtual-targets ]
 	{
-		local m = [ project.load $(jamfile:D) ] ;
-		project.initialize $(m) : $(jamfile:D) ;
-	}
-
-	for ta-project in [ $(TA_Projects).projects ]
-	{
-		local jamfile = [ $(ta-project).jamfile ] ;
-		local m = [ project.load $(jamfile:D) ] ;
-		project.register-id [ $(ta-project).id ] : $(m) ;
-		project.register-id [ $(ta-project).id2 ] : $(m) ;
-	}
-
-	types ?= EXE STATIC_LIB ;
-	local result = ;
-
-	for local jamfile in [ $(TA_Path).jamfiles ]
-	{
-		local m = [ project.load $(jamfile:D) ] ;
-		project.initialize $(m) : $(jamfile:D) ;
-		local proj = [ project.current ] ;
-		# local attrib = [ project.attributes $(m) ] ;
-		local g = [ $(proj).generate [ property-set.empty ] ] ;
-
-		for local vt in [ sequence.unique $(g[2-]) ]
+		local sources ;
+		local action = [ $(vt).action ] ;
+		for local s in [ $(action).sources ]
 		{
-			local the-type = [ $(vt).type ] ;
-
-			if $(the-type) && $(the-type) in $(types)
+			local name = [ $(s).name ] ;
+			if $(name:S) = .obj
 			{
-				result += $(vt) ;
+				sources += $(name:S=.cpp) ;
 			}
 		}
-	}
-
-	project.pop-current ;
-	return $(result) ;
-}
-
-rule clean-exe ( agents * )
-{
-	virtual-targets EXE ;
-	for local vt in [ virtual-targets EXE ]
-	{
-		if ( ! $(agents) ) || [ $(vt).name ] in $(agents)
-		{
-			local exe-file = [ path.native [ path.join [ $(vt).path ] [ $(vt).name ] ] ] ;
-			local cmd = [ sequence.join [ common.rm-command ] $(exe-file) : " " ] ;
-			SHELL "$(cmd)" : no-output ;
-		}
-	}
-}
-
-{
-	local agents = [ option.get "clean-exe" : : true ] ;
-	if $(agents)
-	{
-		if $(agents) = true
-		{
-			clean-exe ;
-		}
-		else
-		{
-			clean-exe $(agents) ;
-		}
+		print.lines [ $(vt).name ] [ $(vt).type ] [ $(vt).path ] $(sources) : "\t" ;
 	}
 }
 

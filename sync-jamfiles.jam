@@ -18,7 +18,7 @@ BRANCH_LIST	=
 
 SUFFIX = _b2 ;
 
-IGNORE_FILE_PATTERN = config.jam project-dependency.jam ;
+IGNORE_FILE_PATTERN = config.jam project-dependency.jam config-*.jam ;
 
 rule all-top-dirs ( )
 {

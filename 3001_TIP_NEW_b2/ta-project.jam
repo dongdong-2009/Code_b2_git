@@ -21,6 +21,7 @@ class ta-projects
 {
 	import "class" : new ;
 	import os path string assert print sequence path project set numbers order ;
+	import modules virtual-target targets property-set feature build-request ;
 
 	rule __init__ ( ta-path * : dependency-file ? )
 	{
@@ -232,6 +233,41 @@ class ta-projects
 		UPDATE_NOW $(file) ;
 	}
 
+	rule virtual-targets ( )
+	{
+		project.push-current [ project.current ] ;
+	}
+
+	rule virtual-targets ( types * )
+	{
+		modules.poke build-system : .command-line-free-features : [ property-set.empty ] ;
+
+		for local tp in [ projects ]
+		{
+			$(tp).initialize ;
+		}
+
+		types ?= EXE STATIC_LIB ;
+		local vt-set = [ class.new set ] ;
+
+		for local tp in [ projects ]
+		{
+			local proj = [ $(tp).project ] ;
+			local g = [ $(proj).generate [ property-set.empty ] ] ;
+
+			for local vt in $(g[2-])
+			{
+				local t = [ $(vt).type ] ;
+
+				if $(t) && $(t) in $(types)
+				{
+					$(vt-set).add $(vt) ;
+				}
+			}
+		}
+		return [ $(vt-set).list ] ;
+	}
+
 	if [ os.name ] = NT
 	{
 		rule read-file ( file )
@@ -264,6 +300,7 @@ class ta-projects
 class ta-project-class
 {
 	import os path string assert print sequence path project set modules ;
+	import modules virtual-target targets property-set feature build-request ;
 
 	rule __init__ ( jamfile )
 	{
@@ -272,9 +309,44 @@ class ta-project-class
 		self.location	= $(self.path) ;
 		self.os			= [ os.name ] ;
 		self.ta-os		= [ ta-os ] ;
+	}
 
-		# self.module		= [ project.load $(jamfile:D) ] ;
-		# project.initialize $(self.module) : $(jamfile:D) ;
+	rule initialize ( )
+	{
+		if ! $(self.initialized)
+		{
+			self.initialized = true ;
+
+			project.push-current [ project.current ] ;
+
+			self.module = [ project.load $(self.jamfile:D) ] ;
+			project.initialize $(self.module) : $(self.jamfile:D) ;
+			self.project = [ project.current ] ;
+			self.attributes = [ project.attributes $(self.project) ] ;
+
+			project.register-id [ id ] : $(self.module) ;
+			project.register-id [ id2 ] : $(self.module) ;
+
+			project.pop-current ;
+		}
+	}
+
+	rule project ( )
+	{
+		initialize ;
+		return $(self.project) ;
+	}
+
+	rule module ( )
+	{
+		initialize ;
+		return $(self.module) ;
+	}
+
+	rule attributes ( )
+	{
+		initialize ;
+		return $(self.attributes) ;
 	}
 
 	rule get ( data )
