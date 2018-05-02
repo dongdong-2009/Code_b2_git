@@ -427,6 +427,7 @@ rule ta-clean ( )
 	local names = ;
 	local types = EXE STATIC_LIB ;
 	local args = [ option.get "ta-clean" : : true ] ;
+	local variant = [ ta-project.variant ] ;
 
 	if $(args)
 	{
@@ -451,24 +452,38 @@ rule ta-clean ( )
 		local files = ;
 		for local vt in [ $(TA_Projects).virtual-targets $(types) ]
 		{
-			if ( ! $(names) ) || [ $(vt).name ] in $(names)
-			{
-				local file = [ path.native [ path.join [ $(vt).path ] [ $(vt).name ] ] ] ;
+			local name = [ $(vt).name ] ;
 
-				if [ path.exists $(file) ]
+			if ( ! $(names) ) || $(name) in $(names)
+			{
+				local file = [ path.native [ path.join [ $(vt).path ] $(name) ] ] ;
+				files += $(file) ;
+
+				local tp = [ $(TA_Projects).find $(name:B) ] ;
+
+				if $(tp)
 				{
+					local install-path = [ $(tp).install-path $(variant) ] ;
+					local file = [ path.native [ path.join $(install-path) $(name) ] ] ;
 					files += $(file) ;
+
+					if $(config.transactive-path)
+					{
+						local file = [ path.native [ path.join $(config.transactive-path)/bin $(name) ] ] ;
+						files += $(file) ;
+					}
 				}
 			}
 		}
 
 		for local file in [ sequence.unique $(files) ]
 		{
-			ECHO $(file) ;
-			SHELL [ sequence.join [ common.rm-command ] $(file) : " " ] : no-output ;
+			if [ path.exists $(file) ]
+			{
+				ECHO $(file) ;
+				SHELL [ sequence.join [ common.rm-command ] $(file) : " " ] : no-output ;
+			}
 		}
-
-		EXIT ;
 	}
 }
 ta-clean ;

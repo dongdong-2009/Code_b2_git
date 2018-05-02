@@ -167,11 +167,12 @@ class cots
 			local include-path = [ $(cot).include-path ] ;
 			local library = [ $(cot).library ] ;
 			local library-path = [ $(cot).library-path ] ;
+			local linkage = [ $(cot).link ] ;
 			if $(library) && $(library-path)
 			{
 				for local l in $(library)
 				{
-					result += [ lib $(l) : : <name>$(l) <search>$(library-path) : : <include>$(include-path) ] ;
+					result += [ lib $(l) : : <name>$(l) <search>$(library-path) <link>$(linkage) : : <include>$(include-path) ] ;
 				}
 			}
 			else
@@ -183,8 +184,8 @@ class cots
 
 				while $(release-library)
 				{
-					result += [ lib $(release-library[1]) : : <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   : : <include>$(include-path) ] ;
-					result += [ lib $(release-library[1]) : : <variant>release <name>$(release-library[1]) <search>$(release-library-path) : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <variant>debug   <name>$(debug-library[1])   <search>$(debug-library-path)   <link>$(linkage) : : <include>$(include-path) ] ;
+					result += [ lib $(release-library[1]) : : <variant>release <name>$(release-library[1]) <search>$(release-library-path) <link>$(linkage) : : <include>$(include-path) ] ;
 					debug-library = $(debug-library[2-]) ;
 					release-library = $(release-library[2-]) ;
 				}
@@ -418,6 +419,11 @@ class cot-class
 	rule path ( )
 	{
 		return [ root $(self.path) ] ;
+	}
+
+	rule link ( )
+	{
+		return $(self.link) ;
 	}
 
 	rule variant-what ( variant what )
@@ -875,9 +881,9 @@ class openssl : cot-class
 	rule init-SOLARIS ( )
 	{
 		init-UNIX ;
-		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
+		# self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
 
-		if [ $(self.ta-os).on-solaris-11 ]
+		# if [ $(self.ta-os).on-solaris-11 ]
 		{
 			self.prefix						= $(self.path)/build/$(self.ta-os-identifier) ;
 			self.include-path				= $(self.prefix)/include ;

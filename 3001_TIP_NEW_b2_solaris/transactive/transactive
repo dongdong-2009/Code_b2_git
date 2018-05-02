@@ -117,7 +117,7 @@ case $1 in
 		cd $TRA_HOME/bin
 		watson kill
 
-		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occa --debug-file-max-size=30000000 --startup-time=20000 --debug-level=DEBUG --central-database=Mysql:TRA_OCC_F:ITS_FZL1:ITS_FZL1:176.90.10.11 --dis-central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
+		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occa --debug-file-max-size=30000000 --startup-time=20000 --debug-level=SQL --dis-central-database=Mysql:TRA_OCC_F:ITS_FZL1:ITS_FZL1:176.90.10.11 --central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
 
 	;;
 
