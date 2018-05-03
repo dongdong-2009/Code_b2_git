@@ -1057,7 +1057,7 @@ class curl : cot-class
 
 class snmp_pp : cot-class
 {
-	rule __init__ ( version )
+	rule __init__ ( version ? )
 	{
 		cot-class.__init__ SNMP_PP : $(version) ;
 		self.path						= SNMP_PP/$(version) ;

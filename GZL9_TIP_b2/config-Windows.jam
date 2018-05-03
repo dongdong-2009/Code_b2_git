@@ -1,4 +1,3 @@
-import os ;
 
 config.msvc-version		= 9.0 ; # 9.0(VS2008) 12.0(VS2013) 14.1(VS2017)
 
@@ -10,12 +9,15 @@ config.p4.password		= Coreteam ;
 config.p4.sync			= false ;
 config.p4.force-sync	= false ;
 
-config.cots				= omniORB_4.1.6
-						  boost_1_39_0
+path-constant HERE : . ;
+config.transactive-path = $(HERE)/transactive ;
+
+config.cots				= omniORB_4.2.1
+						  boost_1_56_0
 						  ACE/6_0_4
 						  Oracle/11.2.0
 						  MySQL/5.5.15
-						  MCL/1.1.0
+						  MCL/1.1.1
 						  openssl-1.0.0d
 						  BEAMessageQ
 						  Poco/1.4.6p4
@@ -24,4 +26,6 @@ config.cots				= omniORB_4.1.6
 						  HTMLHelp
 						  SqlGen/1.1.1
 						  curl-7.21.7
+						  ICU/4.2.1
+						  snmp_pp_v3.2.16
 						  ;

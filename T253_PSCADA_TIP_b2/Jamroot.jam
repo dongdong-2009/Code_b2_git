@@ -1,5 +1,5 @@
 import "class" : new ;
-import os path string assert print sequence option path project param modules errors common configure ;
+import os path string assert print sequence option path project param modules errors common configure set "class" ;
 import ta-path ta-project ta-version ta-os ;
 
 path-constant	TOP							: . ;
@@ -70,6 +70,7 @@ if [ os.on-unix ]
 	local CFLAGS = ;
 	local CXXFLAGS = ;
 	local LINKFLAGS = ;
+
 	local preprocessor-definitions = [ $(TA_OS).preprocessor ] STL_HAS_DEFAULT_ARGS UsePthread _REENTRANT _POSIX_PTHREAD_SEMANTICS ;
 	CXXFLAGS += -D$(preprocessor-definitions) ;
 
@@ -91,15 +92,12 @@ if [ os.on-unix ]
 		CXXFLAGS += -pthreads ;
 	}
 
-	if [ ta-version.ge $(TOOLSET_VERSION) : 4.7 ]
-	{
-		# CXXFLAGS += -std=c++11 ;
-	}
-
 	if [ os.name ] = SOLARIS
 	{
 		LINKFLAGS += "-z rescan" ;
 	}
+
+	CXXFLAGS += -std=$(config.gcc-std) ;
 
 	constant TOOLSET_OPTIONS : <cflags>$(CFLAGS) <cxxflags>$(CXXFLAGS) <linkflags>$(LINKFLAGS) ;
 
@@ -288,15 +286,20 @@ if [ os.on-unix ] && ( $(PCH) = true )
 		;
 }
 
+local all-ids = [ class.new set ] ;
 for ta-project in [ $(TA_Projects).projects ]
 {
 	use-project [ $(ta-project).id ] : [ $(ta-project).path ] ;
 	use-project [ $(ta-project).id2 ] : [ $(ta-project).path ] ;
 
-	local target-name = [ $(ta-project).target-name ] ;
-	if $(target-name)
+	local id3 = /$(target-name) ;
+	if $(id3)
 	{
-		use-project /$(target-name) : [ $(ta-project).path ] ;
+		if ! [ $(all-ids).contains $(id3) ]
+		{
+			$(all-ids).add $(id3) ;
+			use-project $(id3) : [ $(ta-project).path ] ;
+		}
 	}
 }
 
@@ -310,64 +313,23 @@ project
 #
 ###############
 
-rule files-are-different ( lhs rhs )
-{
-	if [ os.on-windows ]
-	{
-		local result = [ SHELL [ sequence.join FC /B $(lhs) $(rhs) : " " ] ] ;
-
-		if ! [ MATCH "(FC: no differences encountered)" : $(result) ]
-		{
-			return true ;
-		}
-	}
-	else
-	{
-		local result = [ SHELL [ sequence.join cmp -s $(lhs) $(rhs) : " " ] : exit-status ] ;
-
-		if $(result[2]) != 0
-		{
-			return true ;
-		}
-	}
-}
-
 rule hard-link ( real-file : link-file )
 {
-	local skip = ;
 	if [ path.exists $(link-file) ]
 	{
-		if [ files-are-different $(real-file) $(link-file) ]
-		{
-			echo $(link-file) ;
-			SHELL [ sequence.join [ common.rm-command ] $(link-file) : " " ] ;
-		}
-		else
-		{
-			skip = true ;
-		}
+		SHELL [ sequence.join [ common.rm-command ] $(link-file) : " " ] ;
+	}
+
+	if [ os.on-windows ]
+	{
+		SHELL [ sequence.join MKLINK /H $(link-file) $(real-file) : " " ] : no-output ;
 	}
 	else
 	{
-		if ! [ path.exists $(link-file:D) ]
-		{
-			path.makedirs $(link-file:D) ;
-		}
-
-		echo $(link-file) ;
+		SHELL [ sequence.join ln -f $(real-file) $(link-file) : " " ] : no-output ;
 	}
 
-	if ! $(skip)
-	{
-		if [ os.on-windows ]
-		{
-			SHELL [ sequence.join MKLINK /H $(link-file) $(real-file) : " " ] : no-output ;
-		}
-		else
-		{
-			SHELL [ sequence.join ln -f $(real-file) $(link-file) : " " ] : no-output ;
-		}
-	}
+	echo $(link-file) ;
 }
 
 if $(config.transactive-path)
@@ -384,6 +346,11 @@ rule ta-install ( )
 	if [ option.get "ta-install" : : true ]
 	{
 		local variant = [ ta-project.variant ] ;
+
+		if $(config.transactive-path)
+		{
+			path.makedirs $(config.transactive-path)/bin ;
+		}
 
 		for local vt in [ $(TA_Projects).virtual-targets EXE ]
 		{

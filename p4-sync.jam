@@ -4,7 +4,7 @@ TOP				= [ path.pwd ] ;
 p4.command		= p4 ;
 p4.user			= limin.zhu ;
 p4.port			= "192.168.253.15:1666" ;
-p4.client		= limin.zhu_windows_verify_build ;
+p4.client		= limin.zhu_solaris11 ;
 p4.password		= Coreteam ;
 Branchs			= PRIV_3001
 				  TA_Common_V1_TIP
@@ -63,7 +63,7 @@ rule soft-link-cots ( COTS )
 					}
 					else
 					{
-						SHELL "ln -s $(COTS) $(cots-path)" ;
+						SHELL "ln -sf $(COTS) $(cots-path)" ;
 					}
 				}
 			}
