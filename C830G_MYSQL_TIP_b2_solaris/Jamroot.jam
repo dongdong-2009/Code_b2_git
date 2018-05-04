@@ -164,6 +164,12 @@ rule current-ta-project.get ( function + )
 rule talib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
 	param.handle-named-params name sources requirements default-build usage-requirements ;
+	if ( ! $(sources) ) || ( $(sources) = pch )
+	{
+		local src-path = [ current-ta-project.get src-path ] ;
+		sources = [ path.glob $(src-path) : *.cpp *.idl ] ;
+		sources = src/$(sources:BS) ;
+	}
 	lib $(name)
 		: $(sources)
 		: [ get-transactive-includes ]
@@ -177,12 +183,6 @@ rule idl-lib ( name : sources * : requirements * : default-build * : usage-requi
 {
 	param.handle-named-params name sources requirements default-build usage-requirements ;
 	local idl-skeleton-path = [ path.native [ current-ta-project.get idl-skeleton-path ] ] ;
-	if ! $(sources)
-	{
-		local src-path = [ current-ta-project.get src-path ] ;
-		sources = [ path.glob $(src-path) : *.idl ] ;
-		sources = src/$(sources:BS) ;
-	}
 	talib $(name)
 		: $(sources)
 		: <link>static
@@ -193,24 +193,45 @@ rule idl-lib ( name : sources * : requirements * : default-build * : usage-requi
 		;
 }
 
-rule ta-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
+rule ta-slib ( name : sources * : requirements * : default-build * : usage-requirements * )
 {
 	param.handle-named-params name sources requirements default-build usage-requirements ;
-	if ! $(sources) # TODO: search .cpp .c
-	{
-		local src-path = [ current-ta-project.get src-path ] ;
-		sources = [ path.glob $(src-path) : *.cpp ] ;
-		sources = src/$(sources:BS) ;
-	}
-	if [ os.on-windows ] && ( $(PCH) = true ) # TODO: shared pch
-	{
-		cpp-pch pch : $(TOP)/pch.hpp : $(requirements) <link>static ;
-		sources += pch ;
-	}
 	talib $(name)
 		: $(sources)
 		: <link>static
 		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
+		;
+}
+
+rule ta-dlib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params name sources requirements default-build usage-requirements ;
+	talib $(name)
+		: $(sources)
+		: <link>shared
+		  $(requirements)
+		: $(default-build)
+		: $(usage-requirements)
+		;
+}
+
+rule ta-lib ( name : sources * : requirements * : default-build * : usage-requirements * )
+{
+	param.handle-named-params name sources requirements default-build usage-requirements ;
+	if [ os.on-windows ] && ( $(PCH) = true )
+	{
+		cpp-pch pch
+			: $(TOP)/pch.hpp
+			: <link>static
+			  $(requirements)
+			;
+		sources += pch ;
+	}
+	ta-slib $(name)
+		: $(sources)
+		: $(requirements)
 		: $(default-build)
 		: $(usage-requirements)
 		;
@@ -313,11 +334,28 @@ project
 #
 ###############
 
+rule ta-mkdir ( dir )
+{
+	if [ os.name ] = NT
+	{
+		SHELL [ sequence.join "if not exist" "$(dir)\\" mkdir "$(dir)" : " " ] : no-output ;
+	}
+	else
+	{
+		SHELL [ sequence.join mkdir -p "$(<)" : " " ] : no-output ;
+	}
+}
+
 rule hard-link ( real-file : link-file )
 {
 	if [ path.exists $(link-file) ]
 	{
-		SHELL [ sequence.join [ common.rm-command ] $(link-file) : " " ] ;
+		SHELL [ sequence.join [ common.rm-command ] $(link-file) : " " ] : no-output ;
+	}
+
+	if ! [ path.exists $(link-file:D) ]
+	{
+		ta-mkdir $(link-file:D) ;
 	}
 
 	if [ os.on-windows ]
@@ -332,15 +370,6 @@ rule hard-link ( real-file : link-file )
 	echo $(link-file) ;
 }
 
-if $(config.transactive-path)
-{
-	install transactive-lib
-		: [ $(Cots).get-shared-libraries ]
-		: <install-type>LIB
-		  <location>$(config.transactive-path)/lib
-		;
-}
-
 rule ta-install ( )
 {
 	if [ option.get "ta-install" : : true ]
@@ -349,7 +378,13 @@ rule ta-install ( )
 
 		if $(config.transactive-path)
 		{
-			path.makedirs $(config.transactive-path)/bin ;
+			ta-mkdir $(config.transactive-path)/bin ;
+
+			install install-transactive-lib
+				: [ $(Cots).get-shared-libraries ]
+				: <install-type>LIB
+				  <location>$(config.transactive-path)/lib
+				;
 		}
 
 		for local vt in [ $(TA_Projects).virtual-targets EXE ]

@@ -9,7 +9,6 @@ alias TA_IRS_Bus
 			: is-target-name-not-in $(not-build)
 		]
 	;
-ta-install-lib library : TA_IRS_Bus ;
 
 if [ option.get test : : true ]
 {

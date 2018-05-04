@@ -1,9 +1,12 @@
 
 rule build-or-not ( )
 {
-	if [ $(TA_OS).on-solaris-10 ]
+	if [ $(TA_OS).on-solaris ]
 	{
-		return <build>no ;
+		if ! [ $(TA_OS).on-sparc-solaris 11 ]
+		{
+			return <build>no ;
+		}
 	}
 	
 	if [ MATCH "(TA_Common_V1_TIP)" : [ $(TA_Path).branch ] ]

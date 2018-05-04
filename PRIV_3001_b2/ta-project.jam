@@ -360,7 +360,7 @@ class ta-project-class
 		return $(self.project) ;
 	}
 
-	rule module ( )
+	rule jam-module ( ) # module is key word
 	{
 		initialize ;
 		return $(self.module) ;

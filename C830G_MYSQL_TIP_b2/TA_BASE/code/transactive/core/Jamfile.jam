@@ -9,7 +9,6 @@ alias TA_Base_Core
 			: is-target-name-not-in $(not-build)
 		]
 	;
-ta-install-lib library : TA_Base_Core ;
 
 if [ option.get test : : true ]
 {

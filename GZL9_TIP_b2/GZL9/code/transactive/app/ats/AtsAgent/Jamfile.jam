@@ -1,11 +1,13 @@
 
 rule build-or-not ( )
 {
-	if [ $(TA_OS).on-solaris-10 ]
+	if [ $(TA_OS).on-solaris ]
 	{
-		return <build>no ;
+		if ! [ $(TA_OS).on-sparc-solaris 11 ]
+		{
+			return <build>no ;
+		}
 	}
-	return <build>yes ;
 }
 
 ta-exe AtsAgent

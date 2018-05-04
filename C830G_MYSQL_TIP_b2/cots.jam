@@ -77,14 +77,17 @@ rule create ( cots-configuration + )
 		local params = ;
 		local split = [ SPLIT_BY_CHARACTERS $(config) : / ] ;
 
-		for local pat in OMNIORB BOOST OPENSSL CURL SNMP GENERAL
+		if [ sequence.length $(split) ] = 1
 		{
-			local m = [ MATCH "^$($(pat)_PATTERN)" : $(split[1]) ] ;
-			if $(m)
+			for local pat in OMNIORB BOOST OPENSSL CURL SNMP GENERAL
 			{
-				cot-name ?= $(m[1]:L) ;
-				cot-version ?= $(split[1]) ;
-				params ?= $(split[2-]) ;
+				local m = [ MATCH "^$($(pat)_PATTERN)" : $(split[1]) ] ;
+				if $(m)
+				{
+					cot-name ?= $(m[1]:L) ;
+					cot-version ?= $(split[1]) ;
+					params ?= $(split[2-]) ;
+				}
 			}
 		}
 
@@ -774,7 +777,7 @@ class mysql : cot-class
 		self.library-path				= $(self.prefix)/lib ;
 		self.library					= mysqlclient ;
 
-		if $(self.version) = 5.5.15 && [ $(self.ta-os).on-solaris-11 ]
+		if $(self.version) = 5.5.15 && [ $(self.ta-os).on-sparc-solaris 11 ]
 		{
 			self.include-path			= $(self.prefix)/include ;
 		}
