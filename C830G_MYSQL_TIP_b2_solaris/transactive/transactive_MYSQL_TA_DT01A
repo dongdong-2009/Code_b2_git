@@ -18,11 +18,6 @@ PATH=$PATH:/etc:$TRA_HOME/bin:.
 export PATH
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TRA_HOME/lib:$ORACLE_HOME/lib
 export LD_LIBRARY_PATH
-
-# LANGUAGE
-export LANG=C
-export LC_ALL=C
-
 #SYSTEM_VERSION=`grep Version $TRA_HOME/bin/versions`
 #echo $LD_LIBRARY_PATH
 #
@@ -122,7 +117,7 @@ case $1 in
 		cd $TRA_HOME/bin
 		watson kill
 
-		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occa --debug-file-max-size=30000000 --startup-time=20000 --debug-level=SQL --dis-central-database=Mysql:TRA_OCC_F:ITS_FZL1:ITS_FZL1:176.90.10.11 --central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
+		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occ-cms-01 --debug-file-max-size=30000000 --startup-time=20000 --debug-level=SQL --central-database=Mysql:TA_DT01A:IT271350_5:IT271350_5:192.168.1.161 --db-connection-file=$TRA_HOME/config/MYSQL_TA_DT01A.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
 
 	;;
 
