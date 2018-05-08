@@ -1,0 +1,9 @@
+#! /bin/sh
+
+mkdir -p transactive /export/home/core/limin/u01
+cd transactive
+mkdir -p bin lib log config log_archive core_files core_dumps
+cd ..
+PWD=`pwd`
+# echo "$PWD"
+ln -sf $PWD/transactive /export/home/core/limin/u01
