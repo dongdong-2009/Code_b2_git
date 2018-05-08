@@ -42,7 +42,11 @@ class omniidl-generator : generator
         # Assign an action for each target.
         local action = [ action-class ] ;
         local a = [ class.new $(action) $(sources) : $(self.rule-name) : $(property-set) ] ;
-		local out-dir = [ path.native [ $(property-set).get <omniidl-out-dir> ] ] ;
+		local out-dir = [ $(property-set).get <omniidl-out-dir> ] ;
+		if $(out-dir)
+		{
+			out-dir = [ path.native $(out-dir) ] ;
+		}
 
         # Create generated target for each target type.
         local targets ;
