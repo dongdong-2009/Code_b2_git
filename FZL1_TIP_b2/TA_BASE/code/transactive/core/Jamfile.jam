@@ -5,7 +5,6 @@ alias TA_Base_Core
 			: is-library
 		]
 	;
-ta-install-lib library : TA_Base_Core ;
 
 if [ option.get test : : true ]
 {

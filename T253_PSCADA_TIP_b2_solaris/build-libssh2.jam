@@ -1,0 +1,31 @@
+import path sequence os string common "class" ;
+import ta-os ;
+using gcc ;
+
+path-constant 	HERE	: . ;
+constant		TA_OS	: [ class.new ta-os-class ] ;
+constant		PREFIX	: [ path.join $(HERE) build/lib [ $(TA_OS).identifier ] ] ;
+constant		JOBS	: [ $(TA_OS).processor-numbers ] ;
+
+if [ $(TA_OS).on-solaris ]
+{
+	SHELL "export PATH_BACKUP=$PATH" ;
+	SHELL "export PATH=/usr/sfw/bin:$PATH" ;
+}
+
+COMMANDS += "chmod +x ./configure" ;
+COMMANDS += "chmod +x ./install-sh" ;
+COMMANDS += "./configure --prefix=$(PREFIX)" ;
+COMMANDS += "make -j$(JOBS)" ;
+COMMANDS += "make install" ;
+
+for local cmd in $(COMMANDS)
+{
+	echo $(cmd) ;
+	# echo [ SHELL "$(cmd)" ] ;
+}
+
+if [ $(TA_OS).on-solaris ]
+{
+	SHELL "export PATH=$PATH_BACKUP" ;
+}

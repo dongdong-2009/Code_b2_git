@@ -5,36 +5,13 @@ import ta-os ta-version ;
 rule init ( root : gcc-ver ? : msvc-ver ? : address-model ? )
 {
 	.root = [ path.make $(root) ] ;
+	.ta-os = [ new ta-os-class $(address-model) ] ;
 	.cots = ;
-	.ta-os = [ new ta-os-class ] ;
-	address-model ?= 32 ;
 
 	if [ os.on-unix ]
 	{
-		TA_OS_IDENTIFIER = [ $(.ta-os).identifier ] ;
-
-		if [ $(.ta-os).on-unix ]
-		{
-			for local omni-ver in [ sequence.transform path.basename : [ path.glob $(.root)/omniORB : omniORB_?.?.? ] ]
-			{
-				local config.guess = [ path.native $(.root)/omniORB/$(omni-ver)/bin/scripts/config.guess ] ;
-
-				if ( ! $(OMNI_OS_IDENTIFIER) ) && [ path.exists $(config.guess) ]
-				{
-					SHELL "chmod +x $(config.guess)" : no-output ;
-					OMNI_OS_IDENTIFIER ?= [ string.words [ SHELL $(config.guess) ] ] ;
-					assert.variable-not-empty OMNI_OS_IDENTIFIER ;
-				}
-			}
-		}
-
-		if [ $(.ta-os).on-linux ]
-		{
-			OMNI_OS_IDENTIFIER = $(OMNI_OS_IDENTIFIER)_$(address-model) ;
-		}
-
-		.omni-os-identifier		= $(OMNI_OS_IDENTIFIER) ;
-		.ta-os-identifier		= $(TA_OS_IDENTIFIER) ;
+		.omni-os-identifier		= [ $(.ta-os).config-guess ] ;
+		.ta-os-identifier		= [ $(.ta-os).identifier ] ;
 		.gcc-ver				= $(gcc-ver) ;
 	}
 	else
@@ -77,17 +54,14 @@ rule create ( cots-configuration + )
 		local params = ;
 		local split = [ SPLIT_BY_CHARACTERS $(config) : / ] ;
 
-		if [ sequence.length $(split) ] = 1
+		for local pat in OMNIORB BOOST OPENSSL CURL SNMP GENERAL
 		{
-			for local pat in OMNIORB BOOST OPENSSL CURL SNMP GENERAL
+			local m = [ MATCH "^$($(pat)_PATTERN)" : $(split[1]) ] ;
+			if $(m)
 			{
-				local m = [ MATCH "^$($(pat)_PATTERN)" : $(split[1]) ] ;
-				if $(m)
-				{
-					cot-name ?= $(m[1]:L) ;
-					cot-version ?= $(split[1]) ;
-					params ?= $(split[2-]) ;
-				}
+				cot-name ?= $(m[1]:L) ;
+				cot-version ?= $(split[1]) ;
+				params ?= $(split[2-]) ;
 			}
 		}
 
@@ -633,6 +607,7 @@ class boost : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.library					= boost_$(self.library-names) ;
 		self.library-path				= $(self.path)/libs/$(self.os-identifier) ;
 
@@ -644,13 +619,11 @@ class boost : cot-class
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -679,7 +652,7 @@ class icu : cot-class
 		self.prefix						= $(self.path)/$(self.ta-os-identifier) ;
 		self.include-path				= $(self.prefix)/include ;
 		self.library-path				= $(self.prefix)/lib ;
-		self.library					= icuuc ;
+		self.library					= icuuc icui18n icudata ;
 	}
 
 	rule init-LINUX ( )
@@ -700,19 +673,18 @@ class ace : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.library					= ACE ;
 		self.library-path				= $(self.path)/lib/$(self.os-identifier) ;
 	}
 
 	rule init-SOLARIS
 	{
-		self.os-identifier			= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier			= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -737,6 +709,7 @@ class oracle : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.library					= clntsh ;
 		self.shared-library				= nnz$(self.main-version) ;
 		self.prefix						= $(self.path)/$(self.os-identifier) ;
@@ -744,13 +717,11 @@ class oracle : cot-class
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -772,6 +743,7 @@ class mysql : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.prefix						= $(self.path)/$(self.os-identifier) ;
 		self.include-path				= $(self.prefix)/inc ;
 		self.library-path				= $(self.prefix)/lib ;
@@ -785,13 +757,11 @@ class mysql : cot-class
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -841,7 +811,7 @@ class mcl : cot-class
 	{
 		# TODO mysql, boost version
 		self.library						= mysqlcppconn ;
-		self.library-path					= $(self.path)/lib/$(self.omni-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost_$(self.boost-version-numbers:J=_) ;
+		self.library-path					= $(self.path)/lib/$(self.ta-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost_$(self.boost-version-numbers:J=_) ;
 	}
 
 	rule init-NT ( )
@@ -879,27 +849,19 @@ class openssl : cot-class
 	rule init-UNIX ( )
 	{
 		self.library					= ssl crypto ;
+		self.prefix						= $(self.path)/build/$(self.ta-os-identifier) ;
+		self.include-path				= $(self.prefix)/include ;
+		self.library-path				= $(self.prefix)/lib ;
 	}
 
 	rule init-SOLARIS ( )
 	{
 		init-UNIX ;
-		# self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
-
-		# if [ $(self.ta-os).on-solaris-11 ]
-		{
-			self.prefix						= $(self.path)/build/$(self.ta-os-identifier) ;
-			self.include-path				= $(self.prefix)/include ;
-			self.library-path				= $(self.prefix)/lib ;
-		}
 	}
 
 	rule init-LINUX ( )
 	{
 		init-UNIX ;
-		self.prefix						= $(self.path)/build/$(self.omni-os-identifier) ;
-		self.include-path				= $(self.prefix)/include ;
-		self.library-path				= $(self.prefix)/lib ;
 	}
 
 	rule init-NT ( )
@@ -920,6 +882,7 @@ class libssh2 : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.library					= ssh2 ;
 		self.prefix						= $(self.path)/build/lib/$(self.os-identifier) ;
 		self.include-path				= $(self.prefix)/include ;
@@ -928,13 +891,11 @@ class libssh2 : cot-class
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -982,6 +943,7 @@ class poco : cot-class
 
 	rule init-UNIX ( )
 	{
+		self.os-identifier				= $(self.ta-os-identifier) ;
 		self.prefix						= $(self.path)/lib/$(self.os-identifier) ;
 		self.include-path				= $(self.prefix)/include ;
 		self.library-path				= $(self.prefix)/lib ;
@@ -989,13 +951,11 @@ class poco : cot-class
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 
@@ -1025,21 +985,19 @@ class curl : cot-class
 
 	rule init-UNIX ( )
 	{
-		self.library-path				= $(self.path)/build/lib/$(self.os-identifier) ;
+		self.library-path				= $(self.path)/build/lib/$(self.ta-os-identifier) ;
 	}
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
-		self.library					= curl ;
 		init-UNIX ;
+		self.library					= curl ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
-		self.library					=  ; # curl
 		init-UNIX ;
+		self.library					=  ; # curl
 	}
 
 	rule init-NT ( )
@@ -1158,19 +1116,17 @@ class sqlgen : cot-class
 
 	rule init-UNIX ( )
 	{
-		self.sqlgen						= $(self.path)/bin/$(self.os-identifier)/sqlgen ;
+		self.sqlgen						= $(self.path)/bin/$(self.ta-os-identifier)/sqlgen ;
 		SHELL "chmod +x $(self.root)/$(self.sqlgen:D)/*" ;
 	}
 
 	rule init-SOLARIS ( )
 	{
-		self.os-identifier				= $(self.ta-os-identifier) ;
 		init-UNIX ;
 	}
 
 	rule init-LINUX ( )
 	{
-		self.os-identifier				= $(self.omni-os-identifier) ;
 		init-UNIX ;
 	}
 

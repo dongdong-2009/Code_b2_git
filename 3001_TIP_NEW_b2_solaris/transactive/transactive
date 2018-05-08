@@ -12,17 +12,16 @@
 # TD14376, solve OmniOrb binding to the wrong ip address problem
 ORBendPoint=giop:tcp:`hostname`:
 export ORBendPoint
-TRA_HOME=/u01/transactive
+
+TRA_HOME=/export/home/core/limin/verify/3001_TIP_NEW/transactive
 export TRA_HOME
+
 PATH=$PATH:/etc:$TRA_HOME/bin:.
 export PATH
+
 LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$TRA_HOME/lib:$ORACLE_HOME/lib
 export LD_LIBRARY_PATH
-#SYSTEM_VERSION=`grep Version $TRA_HOME/bin/versions`
-#echo $LD_LIBRARY_PATH
-#
-# Determine which machine it is running on.
-#
+
 rm -rf $TRA_HOME/log/*
 
 #
@@ -117,8 +116,14 @@ case $1 in
 		cd $TRA_HOME/bin
 		watson kill
 
-		nohup $TRA_HOME/bin/SystemController --user=root --password=root --hostname=occa --debug-file-max-size=30000000 --startup-time=20000 --debug-level=SQL --dis-central-database=Mysql:TRA_OCC_F:ITS_FZL1:ITS_FZL1:176.90.10.11 --central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk --debug-file=$TRA_HOME/log/SystemController.log 2>&1 > $TRA_HOME/log/startup.out &
-
+		nohup $TRA_HOME/bin/SystemController \
+			--hostname=occa \
+			--bin-dir=$TRA_HOME/bin \
+			--debug-log-dir=$TRA_HOME/log \
+			--user=core --password=core123 \
+			--debug-level=SQL --debug-file-max-size=30000000 --startup-time=20000 --debug-file=$TRA_HOME/log/SystemController.log \
+			--central-database=Oracle:DEV_FZL1:ITS_FZL1:ITS_FZL1: --db-connection-file=$TRA_HOME/config/OCCConnectionStrings.csv --charset=gbk \
+			 2>&1 > $TRA_HOME/log/startup.out &
 	;;
 
     #

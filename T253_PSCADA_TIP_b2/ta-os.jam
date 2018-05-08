@@ -1,9 +1,9 @@
 
 class ta-os-class
 {
-	import os string print sequence errors ta-version ;
+	import os string print sequence errors ta-version common ;
 
-	rule __init__ ( )
+	rule __init__ ( address-model ? )
 	{
 		self.name	= [ os.name ] ;
 
@@ -18,6 +18,9 @@ class ta-os-class
 				case i?86 : self.processor = x86 ;
 			}
 		}
+
+		address-model ?= 32 ;
+		self.address-model = $(address-model) ;
 	}
 
 	rule name ( )
@@ -178,11 +181,44 @@ class ta-os-class
 		return __linux__ LINUX __OSVERSION__=4 ;
 	}
 
+	rule config-guess ( )
+	{
+		local automake-path = [ common.get-absolute-tool-path automake ] ;
+		local automake-version = [ MATCH "automake \\(GNU automake\\) ([0-9]+\\.[0-9]+)" : [ SHELL "automake --version" ] ] ;
+		local config.guess-path = $(automake-path)/../share/automake-$(automake-version)/config.guess ;
+		return [ string.words [ SHELL $(config.guess-path) ] ] ;
+	}
+
+	rule sparc-version ( )
+	{
+		return [ string.words [ MATCH "The (sparc[^ ]+) processor" : [ SHELL "psrinfo -v" ] ] ] ;
+	}
+
+	rule processor-numbers ( )
+	{
+		return [ MATCH "([0-9]+)" : [ SHELL "psrinfo | wc -l" ] ] ;
+	}
+
+	rule ta-identifier ( )
+	{
+		return [ sequence.join [ name ] [ version ] [ arch ] : _ ] ;
+	}
+
+	rule config-guess-identifier ( )
+	{
+		return [ sequence.join [ config-guess ] $(self.address-model) : _ ] ;
+	}
+
 	rule identifier ( )
 	{
-		if [ on-unix ]
+		if [ on-solaris ]
 		{
-			return [ sequence.join [ name ] [ version ] [ arch ] : _ ] ;
+			return [ ta-identifier ] ;
+		}
+
+		if [ on-linux ]
+		{
+			return [ config-guess-identifier ] ;
 		}
 	}
 

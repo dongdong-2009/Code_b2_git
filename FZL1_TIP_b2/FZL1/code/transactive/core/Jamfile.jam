@@ -6,7 +6,6 @@ alias TA_IRS_Core
 			: is-library
 		]
 	;
-ta-install-lib library : TA_IRS_Core ;
 
 if [ option.get test : : true ]
 {
