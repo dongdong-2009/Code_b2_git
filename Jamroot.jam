@@ -21,25 +21,21 @@ else
 if [ option.get "sync" ]
 {
 	sync-jamfiles [ option.get "sync" ] ;
-	exit ;
 }
 
 if [ option.get "remove" ]
 {
 	remove-jamfiles [ option.get "remove" ] ;
-	exit ;
 }
 
 if [ option.get "sync-jamfiles-between-b2-and-solaris-for-all-branch" : : true ]
 {
 	sync-jamfiles-between-b2-and-solaris-for-all-branch ;
-	exit ;
 }
 
 if [ option.get "sync-jamfiles-between-b2-and-verify-for-all-branch" : : true ]
 {
 	sync-jamfiles-between-b2-and-verify-for-all-branch ;
-	exit ;
 }
 
 if [ option.get "sync-between" : : true ]
@@ -50,7 +46,6 @@ if [ option.get "sync-between" : : true ]
 	{
 		sync-jamfiles-between-branches $(TOP)/$(from-branch) : $(TOP)/$(to-branch) ;
 	}
-	exit ;
 }
 
 ##########
@@ -58,19 +53,23 @@ if [ option.get "sync-between" : : true ]
 # DEBUG
 #
 ##########
-print.lines
-	"Usage:"
-	"--sync=<dir>"
-	"--remove=<x.jam>"
-	"--sync-jamfiles-between-b2-and-solaris-for-all-branch"
-	"--sync-jamfiles-between-b2-and-verify-for-all-branch"
-	""
-	""
-	: "\t"
-	;
 
-print.lines
-	"Directories:"
-	[ sequence.transform path.basename : [ sync-jamfiles.all-top-dirs ] ]
-	: "\t"
-	;
+if [ modules.peek : ARGV ] = b2 || [ option.get "help" : : true ]
+{
+	print.lines
+		"Usage:"
+		"--sync=<dir>"
+		"--remove=<x.jam>"
+		"--sync-jamfiles-between-b2-and-solaris-for-all-branch"
+		"--sync-jamfiles-between-b2-and-verify-for-all-branch"
+		""
+		""
+		: "\t"
+		;
+
+	print.lines
+		"Directories:"
+		[ sequence.transform path.basename : [ sync-jamfiles.all-top-dirs ] ]
+		: "\t"
+		;
+}

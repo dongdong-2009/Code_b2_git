@@ -1,0 +1,289 @@
+import "class" : new ;
+import sequence path option set print common regex ;
+import ta-path ;
+
+TOP = [ path.pwd ] ;
+VERIFY = F:/Verify ;
+
+BRANCH_LIST	=
+	PRIV_3001
+	C830G_TIP
+	C830G_MYSQL_TIP
+	FZL1_TIP
+	GZL9_TIP
+	3001_TIP_NEW
+	T253_PSCADA_TIP
+	TA_Common_V1_TIP
+	;
+
+SUFFIX = _b2 ;
+
+IGNORE_FILE_PATTERN = config.jam project-dependency.jam config-*.jam ;
+
+rule all-top-dirs ( )
+{
+	return [ path.glob $(TOP) : * : *.* ] ;
+}
+
+rule all-dirs ( exclude * )
+{
+	local suffixes = $(SUFFIX) ;
+
+	if [ option.get "with-solaris" : : true ]
+	{
+		suffixes += _solaris ;
+	}
+
+	local tops = $(TOP) ;
+
+	if [ option.get "with-verify" : : true ]
+	{
+		tops += $(VERIFY) ;
+	}
+
+	local result ;
+	local branches = $(BRANCH_LIST) $(BRANCH_LIST)$(suffixes) ;
+
+	for local dir in [ sequence.transform path.native : $(tops)/$(branches) $(tops)/$(branches)$(suffixes) ]
+	{
+		if [ path.exists $(dir) ]
+		{
+			result += $(dir) ;
+		}
+	}
+
+	result = [ sequence.unique $(result) ] ;
+
+	if $(exclude)
+	{
+		result = [ set.difference $(result) : [ sequence.transform path.native : $(exclude) ] ] ;
+	}
+	return $(result) ;
+}
+
+rule all-branches ( )
+{
+	local suffixes = $(SUFFIX) ;
+
+	if [ option.get "with-solaris" : : true ]
+	{
+		suffixes += _solaris ;
+	}
+
+	return $(BRANCH_LIST) $(BRANCH_LIST)$(suffixes) ;
+}
+
+rule sync-jamfiles ( from )
+{
+	if ! $(from) in [ all-branches ]
+	{
+		echo "'$(from)' is not a branch." ;
+		print.lines "\nBRANCH_LIST:" $(BRANCH_LIST) : "\t" ;
+		return ;
+	}
+
+	local files = [ sequence.transform path.native : [ path.glob $(TOP)/$(from) : *.jam pch.hpp : $(IGNORE_FILE_PATTERN) ] ] ;
+
+	if ! $(files)
+	{
+		echo "cannot find .jam in '$(from)'" ;
+		return ;
+	}
+
+	print.lines "Sync files" $(files:BS) : "\t" ;
+	print.lines "From" [ path.native $(from) ] : "\t" ;
+	print.lines "To" ;
+
+	for local dir in [ all-dirs $(TOP)/$(from) ]
+	{
+		print.lines $(dir) : "\t" "\t" ;
+
+		for file in $(files)
+		{
+			# if [ path.exists [ path.native $(dir)/$(file:BS) ] ]
+			{
+				local copy-command = "COPY /Y $(file) $(dir)" ;
+				# echo $(copy-command) ;
+				SHELL "$(copy-command)" ;
+			}
+		}
+	}
+}
+
+rule remove-jamfiles ( jamfiles + )
+{
+	local RM = [ common.rm-command ] ;
+
+	for local dir in [ all-dirs ]
+	{
+		for file in $(jamfiles)
+		{
+			local to-delete = [ path.native $(dir)/$(file) ] ;
+			if [ path.exists $(to-delete) ]
+			{
+				local rm-command = [ sequence.join $(RM) $(to-delete) : " " ] ;
+				SHELL "$(rm-command)" ;
+			}
+		}
+	}
+}
+
+# return true if <lhs> is different from <rhs>
+rule compare-file-with-comp ( lhs rhs )
+{
+	local comp-command = [ sequence.join "ECHO N | COMP" $(lhs) $(rhs) " 2>NUL" : " " ] ;
+	local result = [ SHELL $(comp-command) ] ;
+
+	if ! [ MATCH "(Files compare OK)" : $(result) ]
+	{
+		return true ;
+	}
+}
+
+# return true if <lhs> is different from <rhs>
+rule compare-file-with-fc ( lhs rhs )
+{
+	local fc-command = [ sequence.join FC /B $(lhs) $(rhs) : " " ] ;
+	local result = [ SHELL $(fc-command) ] ;
+
+	if ! [ MATCH "(FC: no differences encountered)" : $(result) ]
+	{
+		return true ;
+	}
+}
+
+rule sync-jamfiles-between-branches ( from-branch : to-branch )
+{
+	from-branch	= [ path.make $(from-branch) ] ;
+	to-branch	= [ path.make $(to-branch) ] ;
+
+	local tp-from = [ new ta-path $(from-branch) ] ;
+	local from-jamfiles	= [ $(tp-from).jamfiles ] [ path.glob $(from-branch) : *.jam : project-dependency.jam config.jam ] ;
+
+	for local jamfile in $(from-jamfiles)
+	{
+		local dest = [ regex.replace $(jamfile) $(from-branch) $(to-branch) ] ;
+
+		if $(jamfile) = $(dest)
+		{
+			continue ;
+		}
+
+		jamfile = [ path.native $(jamfile) ] ;
+		dest = [ path.native $(dest) ] ;
+
+		if ! [ path.exists $(dest) ]
+		{
+			if [ path.exists $(dest:D) ]
+			{
+				local copy-command = "COPY /Y $(jamfile) $(dest:D) " ;
+				SHELL $(copy-command) ;
+				ECHO "$(jamfile) => $(dest)" ;
+			}
+
+			continue ;
+		}
+
+		if [ compare-file-with-fc $(jamfile) $(dest) ]
+		{
+			local copy-command = "COPY /Y $(jamfile) $(dest) " ;
+			SHELL $(copy-command) ;
+			ECHO "$(jamfile) => $(dest)" ;
+		}
+	}
+}
+
+rule sync-jamfiles-between-b2-and-solaris ( branch )
+{
+	local from-branch = $(TOP)/$(branch)_b2 ;
+	local to-branch = $(TOP)/$(branch)_b2_solaris ;
+	sync-jamfiles-between-branches $(from-branch) : $(to-branch) ;
+}
+
+rule sync-jamfiles-between-b2-and-solaris-for-all-branch ( )
+{
+	for local branch in $(BRANCH_LIST)
+	{
+		echo "...patiance..." ;
+		sync-jamfiles-between-b2-and-solaris $(branch) ;
+	}
+}
+
+rule sync-jamfiles-between-b2-and-verify ( branch )
+{
+	local from-branch = $(TOP)/$(branch)_b2 ;
+	local to-branch = $(VERIFY)/$(branch) ;
+
+	if [ path.exists [ path.native $(from-branch) ] ] && [ path.exists [ path.native $(to-branch) ] ]
+	{
+		sync-jamfiles-between-branches $(from-branch) : $(to-branch) ;
+	}
+}
+
+rule sync-jamfiles-between-b2-and-verify-for-all-branch ( )
+{
+	for local branch in $(BRANCH_LIST)
+	{
+		echo "...patiance..." ;
+		sync-jamfiles-between-b2-and-verify $(branch) ;
+	}
+}
+
+IMPORT $(__name__) : [ RULENAMES $(__name__) ] : : [ RULENAMES $(__name__) ] ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

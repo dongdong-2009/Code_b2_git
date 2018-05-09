@@ -7,7 +7,7 @@ if [ os.platform ] != SPARC
 	not-build += MmsAgent ;
 }
 
-exe-projects ?= [ $(TA_Projects).selects : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] ;
+exe-projects ?= [ $(TA_PROJECTS).selects : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] ;
 
 for exe in $(exe-projects)
 {
@@ -20,7 +20,7 @@ if [ option.get test : : true ]
 	if [ current-ta-project.get path ] = [ path.pwd ]
 	{
 		current-ta-project.get __debug__ ;
-		print.lines [ $(TA_Projects).selects-x target-id : : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] : "\t" "\t" ;
+		print.lines [ $(TA_PROJECTS).selects-x target-id : : is-levels project app : is-exe : is-target-name-not-in $(not-build) ] : "\t" "\t" ;
 		exit ;
 	}
 }

@@ -1,6 +1,6 @@
 
 alias TA_Base_Bus
-	: [ $(TA_Projects).selects-ordered-x target-id
+	: [ $(TA_PROJECTS).selects-ordered-x target-id
 			:
 			: is-levels base bus
 			: is-library
@@ -13,7 +13,7 @@ if [ option.get test : : true ]
 	if [ current-ta-project.get path ] = [ path.pwd ]
 	{
 		current-ta-project.get __debug__ ;
-		print.lines [ $(TA_Projects).selects-ordered-x target-id
+		print.lines [ $(TA_PROJECTS).selects-ordered-x target-id
 			:
 			: is-levels base bus
 			: is-library

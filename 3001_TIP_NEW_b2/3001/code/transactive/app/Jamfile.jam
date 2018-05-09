@@ -1,5 +1,5 @@
 
-exe-projects ?= [ $(TA_Projects).selects : is-levels project app : is-exe ] ;
+exe-projects ?= [ $(TA_PROJECTS).selects : is-levels project app : is-exe ] ;
 
 for exe in $(exe-projects)
 {
@@ -12,7 +12,7 @@ if [ option.get test : : true ]
 	if [ current-ta-project.get path ] = [ path.pwd ]
 	{
 		current-ta-project.get __debug__ ;
-		print.lines [ $(TA_Projects).selects-x target-id : : is-levels project app : is-exe ] : "\t" "\t" ;
+		print.lines [ $(TA_PROJECTS).selects-x target-id : : is-levels project app : is-exe ] : "\t" "\t" ;
 		exit ;
 	}
 }

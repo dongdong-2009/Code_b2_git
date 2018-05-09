@@ -3,7 +3,7 @@ path-constant HERE : . ;
 
 if [ $(TA_OS).on-sparc-solaris ]
 {
-	sdk_lib = [ lib sdk : : <search>$(HERE)/protocols/imos_sdk_sparc ] ;
+	sdk_lib = [ lib sdk : : <search>$(HERE)/protocols/imos_sdk_sparc/lib ] ;
 }
 
 rule build-or-not ( )

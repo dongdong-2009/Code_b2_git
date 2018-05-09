@@ -992,6 +992,12 @@ class curl : cot-class
 	{
 		init-UNIX ;
 		self.library					= curl ;
+
+		if [ $(self.ta-os).on-solaris-11 ]
+		{
+			self.include-path			= $(self.path)/build/lib/$(self.ta-os-identifier)/include ;
+			self.library-path			= $(self.path)/build/lib/$(self.ta-os-identifier)/lib ;
+		}
 	}
 
 	rule init-LINUX ( )

@@ -4,7 +4,7 @@ import omniidl ;
 path-constant	IDL_SKELETONS_PATH : [ current-ta-project.get idl-skeleton-path ] ;
 
 omniidl.set-special-idl src/IFederatableEventChannel.idl : "-nf -bcxx -Wbkeep_inc_path -Wba -Wbh=.hh -Wbs=.cpp -Wbd=_skel.cpp" : CPP(%_skel) CPP HH ;
-local includes = [ sequence.transform path.native : [ $(Cots).get omniorb : idl-include-path ] [ $(Cots).get omniorb : include-path ] ] ;
+local includes = [ sequence.transform path.native : [ $(COTS).get omniorb : idl-include-path ] [ $(COTS).get omniorb : include-path ] ] ;
 
 lib TA_CorbaDef
 	: [ glob src/*.idl ]

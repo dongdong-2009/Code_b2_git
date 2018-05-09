@@ -6,7 +6,7 @@ path-constant	TOP							: . ;
 constant		ADDRESS_MODEL				: 32 ;
 constant 		PCH							: true ;
 path-constant	PROJECT_DEPENDENCY_FILE		: $(TOP)/project-dependency.jam ;
-constant		TA_Path						: [ new ta-path ] ;
+constant		TA_PATH						: [ new ta-path ] ;
 constant		TA_OS						: [ new ta-os-class ] ;
 
 include $(TOP)/config.jam ;
@@ -18,7 +18,7 @@ if $(config.p4.sync) = true
 	{
 		force-sync-option = -f ;
 	}
-	local branch = [ $(TA_Path).branch ] ;
+	local branch = [ $(TA_PATH).branch ] ;
 	local cmd = [ sequence.join "$(config.p4.command)"
 								"-p $(config.p4.port)"
 								"-u $(config.p4.user)"
@@ -37,14 +37,14 @@ if $(config.p4.sync) = true
 	}
 }
 
-constant TA_Projects : [ ta-project.create $(TA_Path) : $(PROJECT_DEPENDENCY_FILE) ] ;
+constant TA_PROJECTS : [ ta-project.create $(TA_PATH) : $(PROJECT_DEPENDENCY_FILE) ] ;
 
 import cots ;
-cots.init [ $(TA_Path).cots ] : $(config.gcc-version) : $(config.msvc-version) : $(ADDRESS_MODEL) ;
-constant Cots : [ cots.create $(config.cots) ] ;
+cots.init [ $(TA_PATH).cots ] : $(config.gcc-version) : $(config.msvc-version) : $(ADDRESS_MODEL) ;
+constant COTS : [ cots.create $(config.cots) ] ;
 
 import sqlgen ;
-sqlgen.init [ $(Cots).get sqlgen : sqlgen ] ;
+sqlgen.init [ $(COTS).get sqlgen : sqlgen ] ;
 
 ###############
 #
@@ -133,17 +133,17 @@ else
 
 	# use boost
 	# TODO: use boost in unix
-	local boost-version = [ $(Cots).get boost : version-numbers ] ;
+	local boost-version = [ $(COTS).get boost : version-numbers ] ;
 	boost-version = $(boost-version:J=_) ;
-	local include-path = [ path.native [ $(Cots).get boost : include-path ] ] ;
-	local library-path = [ path.native [ $(Cots).get boost : library-path ] ] ;
+	local include-path = [ path.native [ $(COTS).get boost : include-path ] ] ;
+	local library-path = [ path.native [ $(COTS).get boost : library-path ] ] ;
 	using boost : $(boost-version) : <include>$(include-path) <library>$(library-path) ;
 	import boost ;
 	boost.use-project $(boost-version) ;
 }
 
 import omniidl ; # MUST AFTER 'using msvc'
-omniidl.init [ $(Cots).get omniorb : omniidl ] : [ $(Cots).get omniorb : omniidl-options ] : [ $(TA_Path).transactive base proj ] ;
+omniidl.init [ $(COTS).get omniorb : omniidl ] : [ $(COTS).get omniorb : omniidl-options ] : [ $(TA_PATH).transactive base proj ] ;
 
 ###############
 #
@@ -154,7 +154,7 @@ omniidl.init [ $(Cots).get omniorb : omniidl ] : [ $(Cots).get omniorb : omniidl
 rule current-ta-project.get ( function + )
 {
 	local proj = [ project.current ] ;
-	return [ ta-project.transform [ $(TA_Projects).find [ $(proj).get location ] ] : $(function) ] ;
+	return [ ta-project.transform [ $(TA_PROJECTS).find [ $(proj).get location ] ] : $(function) ] ;
 }
 
 rule talib ( name : sources * : requirements * : default-build * : usage-requirements * )
@@ -254,12 +254,12 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 		project-level-libraries = TA_IRS_Bus TA_IRS_Core ;
 	}
 
-	local ta-libraries = [ ta-project.transform [ $(TA_Projects).find $(project-level-libraries) TA_Base_Bus TA_Base_Core ] : target-id ] ;
-	local boost-libraries = [ $(Cots).get boost : library-names ] ;
+	local ta-libraries = [ ta-project.transform [ $(TA_PROJECTS).find $(project-level-libraries) TA_Base_Bus TA_Base_Core ] : target-id ] ;
+	local boost-libraries = [ $(COTS).get boost : library-names ] ;
 	exe $(name)
 		: $(sources)
 		  $(ta-libraries)
-		  [ $(Cots).get-libraries ]
+		  [ $(COTS).get-libraries ]
 		  [ lib $(SYSTEM_LIBRARIES) ]
 		: <toolset>msvc:<library>/boost//$(boost-libraries)/<link>static
 		  [ get-transactive-includes ]
@@ -277,7 +277,7 @@ rule ta-exe ( name : sources * : requirements * : default-build * : usage-requir
 
 rule get-transactive-includes ( )
 {
-	local includes = [ sequence.transform path.native : [ $(TA_Path).includes ] ] ;
+	local includes = [ sequence.transform path.native : [ $(TA_PATH).includes ] ] ;
 	return <include>$(includes) ;
 }
 
@@ -287,7 +287,7 @@ rule get-project-requirements ( )
 		<warnings>off
 		<threading>multi
 		<address-model>$(ADDRESS_MODEL)
-		[ $(Cots).get-includes ] <include>$(TOP)
+		[ $(COTS).get-includes ] <include>$(TOP)
 	;
 	return $(.project-requirements) ;
 }
@@ -304,7 +304,7 @@ if [ os.on-unix ] && ( $(PCH) = true )
 }
 
 local all-ids = [ class.new set ] ;
-for ta-project in [ $(TA_Projects).projects ]
+for ta-project in [ $(TA_PROJECTS).projects ]
 {
 	use-project [ $(ta-project).id ] : [ $(ta-project).path ] ;
 	use-project [ $(ta-project).id2 ] : [ $(ta-project).path ] ;
@@ -378,16 +378,16 @@ rule ta-install ( )
 			ta-mkdir $(config.transactive-path)/bin ;
 
 			install install-transactive-lib
-				: [ $(Cots).get-shared-libraries ]
+				: [ $(COTS).get-shared-libraries ]
 				: <install-type>LIB
 				  <location>$(config.transactive-path)/lib
 				;
 		}
 
-		for local vt in [ $(TA_Projects).virtual-targets EXE ]
+		for local vt in [ $(TA_PROJECTS).virtual-targets EXE ]
 		{
 			local name = [ $(vt).name ] ;
-			local tp = [ $(TA_Projects).find $(name:B) ] ;
+			local tp = [ $(TA_PROJECTS).find $(name:B) ] ;
 
 			if $(tp)
 			{
@@ -449,7 +449,7 @@ rule ta-clean ( )
 		}
 
 		local files = ;
-		for local vt in [ $(TA_Projects).virtual-targets $(types) ]
+		for local vt in [ $(TA_PROJECTS).virtual-targets $(types) ]
 		{
 			local name = [ $(vt).name ] ;
 
@@ -458,7 +458,7 @@ rule ta-clean ( )
 				local file = [ path.native [ path.join [ $(vt).path ] $(name) ] ] ;
 				files += $(file) ;
 
-				local tp = [ $(TA_Projects).find $(name:B) ] ;
+				local tp = [ $(TA_PROJECTS).find $(name:B) ] ;
 
 				if $(tp)
 				{
@@ -495,12 +495,12 @@ ta-clean ;
 
 rule show-cots ( )
 {
-	$(Cots).__debug__ ;
+	$(COTS).__debug__ ;
 }
 
 rule show-branch ( )
 {
-	print.lines branch [ $(TA_Path).branch ] : "\t" ;
+	print.lines branch [ $(TA_PATH).branch ] : "\t" ;
 }
 
 rule show-ta-config ( )
@@ -516,13 +516,13 @@ rule show-ta-config ( )
 
 rule show-projects ( )
 {
-	$(TA_Projects).__debug__ ;
-	$(TA_Projects).transform : __debug__ ;
+	$(TA_PROJECTS).__debug__ ;
+	$(TA_PROJECTS).transform : __debug__ ;
 }
 
 rule show-project-ids ( )
 {
-	for local tp in [ $(TA_Projects).projects ]
+	for local tp in [ $(TA_PROJECTS).projects ]
 	{
 		print.lines [ sequence.join [ $(tp).id ] " => " [ path.native [ $(tp).path ] ] ] : "\t" "\t" ;
 	}
@@ -538,10 +538,10 @@ rule show-dependency ( )
 		exit ;
 	}
 
-	for local tp in [ $(TA_Projects).select is-library ]
+	for local tp in [ $(TA_PROJECTS).select is-library ]
 	{
 		print.lines [ $(tp).$(by) ] ;
-		for dep-tp in [ $(TA_Projects).find [ $(tp).dependency ] ]
+		for dep-tp in [ $(TA_PROJECTS).find [ $(tp).dependency ] ]
 		{
 			print.lines [ $(dep-tp).$(by) ] : "\t" "\t" ;
 		}
@@ -550,7 +550,7 @@ rule show-dependency ( )
 
 rule show-path ( )
 {
-	$(TA_Path).__debug__ ;
+	$(TA_PATH).__debug__ ;
 }
 
 rule show-env ( )
@@ -584,7 +584,7 @@ rule show-build ( )
 rule show-virtual-targets ( )
 {
 	local all-vt = ;
-	for local vt in [ $(TA_Projects).virtual-targets ]
+	for local vt in [ $(TA_PROJECTS).virtual-targets ]
 	{
 		local sources ;
 		local action = [ $(vt).action ] ;

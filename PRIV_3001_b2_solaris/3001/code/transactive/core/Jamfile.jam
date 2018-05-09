@@ -1,6 +1,6 @@
 
 alias TA_IRS_Core
-	: [ $(TA_Projects).selects-ordered-x target-id
+	: [ $(TA_PROJECTS).selects-ordered-x target-id
 			:
 			: is-levels project core
 			: is-library
@@ -13,7 +13,7 @@ if [ option.get test : : true ]
 	import option path print ;
 	if [ current-ta-project.get path ] = [ path.pwd ]
 	{
-		print.lines [ $(TA_Projects).selects-ordered-x target-id
+		print.lines [ $(TA_PROJECTS).selects-ordered-x target-id
 			:
 			: is-levels project core
 			: is-library

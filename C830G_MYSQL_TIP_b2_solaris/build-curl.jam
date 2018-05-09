@@ -1,0 +1,26 @@
+import path sequence os string common "class" ta-os ;
+using gcc ;
+
+path-constant 	HERE		: . ;
+constant		OPENSSL 	: openssl-1.0.0d ;
+constant		LIBSSH2 	: libssh2-1.2.9 ;
+constant		TA_OS		: [ class.new ta-os-class ] ;
+constant		IDENTIFIER	: [ $(TA_OS).identifier ] ;
+constant		PREFIX		: [ path.join $(HERE) build/lib $(IDENTIFIER) ] ;
+constant		JOBS		: [ $(TA_OS).processor-numbers ] ;
+
+COTS			= [ path.make $(HERE)/../.. ] ;
+WITH_SSL		= $(COTS)/openssl/$(OPENSSL)/build/$(IDENTIFIER) ;
+WITH_LIBSSH2	= $(COTS)/libssh2/$(LIBSSH2)/build/lib/$(IDENTIFIER) ;
+
+COMMANDS += "chmod +x ./configure" ;
+COMMANDS += "export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH" ;
+COMMANDS += [ sequence.join "./configure --prefix=$(PREFIX)" "--with-ssl=$(WITH_SSL)" "--with-libssh2=$(WITH_LIBSSH2)" : " " ] ;
+COMMANDS += "make -j$(JOBS)" ;
+COMMANDS += "make install" ;
+
+for local cmd in $(COMMANDS)
+{
+	echo $(cmd) ;
+	echo [ SHELL "$(cmd)" ] ;
+}

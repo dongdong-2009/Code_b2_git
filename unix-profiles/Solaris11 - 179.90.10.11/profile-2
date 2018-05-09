@@ -1,0 +1,36 @@
+
+alias ls='ls -lrt'
+alias start='transactive start'
+alias START='start'
+alias stop='watson kill'
+alias STOP='stop'
+alias rm='rm -f'
+alias PWD='pwd'
+
+export LIMIN_HOME=/export/home/limin
+export U01=$LIMIN_HOME/u01
+export TRA_HOME=$U01/transactive
+
+
+ulimit -n 65535
+
+coreadm -p $TRA_HOME/core_files/%n.%f.%p $$
+
+export PATH=$LIMIN_HOME/local/bin:$PATH
+
+export PATH=$TRA_HOME:$TRA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$TRA_HOME/lib:$LD_LIBRARY_PATH
+
+export P4USER=limin.zhu
+export P4PASSWD=Coreteam
+export P4CLIENT=limin.zhu_179.90.10.11_verify
+export P4PORT=192.168.253.15:1666
+
+export ORACLE_HOME=$U01/app/oracle/instantclient_11_2
+export TNS_ADMIN=$ORACLE_HOME
+export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
+export NLS_LANG="SIMPLIFIED CHINESE_CHINA.ZHS32GB18030"
+export PATH=$ORACLE_HOME:$PATH
+
+export PYTHONPATH=/export/home/limin/verify/COTS/omniORB/omniORB_4.2.1/sparc-sun-solaris2.11/lib/python2.6/site-packages
+
