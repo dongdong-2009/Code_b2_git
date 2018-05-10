@@ -1,0 +1,132 @@
+import path sequence os string common "class" ta-os ta-version notfile print option ;
+using gcc ;
+
+path-constant 	HERE		: . ;
+path-constant	ACE_ROOT	: $(HERE)/ACE_wrappers ;
+constant		ACE_VERSION : $(HERE:B) ;
+constant		TA_OS		: [ class.new ta-os-class ] ;
+constant		IDENTIFIER	: [ $(TA_OS).identifier ] ;
+path-constant	PREFIX		: $(HERE)/lib/$(IDENTIFIER) ;
+constant		DOLLOR_MARK	: $ ;
+
+switch [ os.name ]
+{
+	case LINUX :
+	{
+		CONFIG_INCLUDE	= config-linux.h ;
+		PLATFORM_CONFIG	= platform_linux.GNU ;
+	}
+	case SOLARIS :
+	{
+		CONFIG_INCLUDE	= [ sequence.join config-sunos [ $(TA_OS).version ] ".h" ] ;
+		PLATFORM_CONFIG	= platform_sunos5_g++.GNU ;
+
+		if [ ta-version.equal $(ACE_VERSION) : 5_6 ] && [ $(TA_OS).on-solaris-11 ]
+		{
+			CONFIG_INCLUDE	= config-sunos5.10.h ;
+		}
+	}
+}
+
+# 3. Create a configuration file, $ACE_ROOT/ace/config.h,
+# that includes the appropriate platform/compiler-specific header configurations
+# from the ACE source directory.
+# For example:
+# 	#include "ace/config-linux.h"
+rule make-config-h ( )
+{
+	local config-h = $(ACE_ROOT)/ace/config.h ;
+	make $(config-h) : : @make-config-h-action ;
+	always $(config-h) ;
+}
+
+actions make-config-h-action
+{
+	echo "#include \"ace/$(CONFIG_INCLUDE)\"" > $(<)
+}
+
+# 4. Create a build configuration file, $ACE_ROOT/include/makeinclude/platform_macros.GNU,
+# that contains the appropriate platform/compiler-specific Makefile configurations, e.g.,
+# include $(ACE_ROOT)/include/makeinclude/platform_linux.GNU
+rule make-platform-macros ( )
+{
+	local platform-macros = $(ACE_ROOT)/include/makeinclude/platform_macros.GNU ;
+	make $(platform-macros) : : @make-platform-macros-action ;
+	always $(platform-macros) ;
+}
+
+actions make-platform-macros-action
+{
+	echo 'include $(DOLLOR_MARK)(ACE_ROOT)/include/makeinclude/$(PLATFORM_CONFIG)' > $(<)
+	echo "INSTALL_PREFIX = $(PREFIX)" >> $(<)
+}
+
+rule check-build ( )
+{
+	if [ path.exists $(PREFIX)/lib/libACE.so ]
+	{
+		return true ;
+	}
+}
+
+# 7. When all this is done, hopefully all you'll need to do is type:
+# % make
+if ! [ check-build ]
+{
+	switch $(ACE_VERSION)
+	{
+		case 5_6 :
+		{
+			notfile build-ace : @build-ace-action-5_6 ;
+		}
+		case * :
+		{
+			make-config-h ;
+			make-platform-macros ;
+			notfile build-ace : @build-ace-action ;
+		}
+	}
+}
+
+actions build-ace-action
+{
+	export ACE_ROOT=$(ACE_ROOT)
+	cd $(ACE_ROOT)
+	chmod -R +x $(ACE_ROOT)/bin
+	chmod -R +x $(ACE_ROOT)/MPC
+	make -j
+	make install
+}
+
+actions build-ace-action-5_6
+{
+	export ACE_ROOT=$(ACE_ROOT)
+	cd $(ACE_ROOT)
+	rm -rf build
+	mkdir build
+	cd build
+	chmod -R +x $(ACE_ROOT)/bin
+	chmod -R +x $(ACE_ROOT)/MPC
+	chmod -R +x $(ACE_ROOT)/configure
+	../configure --prefix=$(PREFIX) --disable-ssl
+	make -j
+	make install
+}
+
+if [ MATCH "(--show)" : [ modules.peek : ARGV ] ]
+{
+	for local var in ACE_VERSION ACE_ROOT PREFIX CONFIG_INCLUDE PLATFORM_CONFIG
+	{
+		print.lines $(var) $($(var)) : "\t" ;
+	}
+	exit ;
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	SHELL "rm -rf $(PREFIX)" ;
+	exit ;
+}
+
+
+

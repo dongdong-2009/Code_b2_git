@@ -1,4 +1,4 @@
-import path sequence os string common "class" ta-os ;
+import path sequence os string common "class" ta-os notfile option print ;
 using gcc ;
 
 path-constant 	HERE		: . ;
@@ -13,14 +13,39 @@ COTS			= [ path.make $(HERE)/../.. ] ;
 WITH_SSL		= $(COTS)/openssl/$(OPENSSL)/build/$(IDENTIFIER) ;
 WITH_LIBSSH2	= $(COTS)/libssh2/$(LIBSSH2)/build/lib/$(IDENTIFIER) ;
 
-COMMANDS += "chmod +x ./configure" ;
-COMMANDS += "export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH" ;
-COMMANDS += [ sequence.join "./configure --prefix=$(PREFIX)" "--with-ssl=$(WITH_SSL)" "--with-libssh2=$(WITH_LIBSSH2)" : " " ] ;
-COMMANDS += "make -j$(JOBS)" ;
-COMMANDS += "make install" ;
-
-for local cmd in $(COMMANDS)
+rule check-build ( )
 {
-	echo $(cmd) ;
-	echo [ SHELL "$(cmd)" ] ;
+	if [ path.exists $(PREFIX)/lib/libcurl.so ]
+	{
+		return true ;
+	}
+}
+
+if ! [ check-build ]
+{
+	notfile build-curl : @build-curl-action ;	
+}
+
+actions build-curl-action
+{
+	export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:$LD_LIBRARY_PATH
+	chmod +x ./configure
+	./configure --prefix=$(PREFIX) --with-ssl=$(WITH_SSL) --with-libssh2=$(WITH_LIBSSH2)
+	make -j$(JOBS)
+	make install
+}
+
+if [ MATCH "(--show)" : [ modules.peek : ARGV ] ]
+{
+	for local var in PREFIX WITH_SSL WITH_LIBSSH2
+	{
+		print.lines $(var) $($(var)) : "\t" ;
+	}
+	exit ;
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	SHELL "rm -rf $(PREFIX)" ;
+	exit ;
 }
