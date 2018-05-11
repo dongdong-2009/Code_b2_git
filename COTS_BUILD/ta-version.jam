@@ -1,0 +1,102 @@
+import os version sequence regex numbers assert ;
+
+rule numbers ( name * )
+{
+	local result = ;
+
+	if [ sequence.length $(name) ] = 1
+	{
+		local vers = [ MATCH "(([0-9]+)([.-_][0-9]+)*)$" : $(name) ] ;
+		if $(vers)
+		{
+			result = [ SPLIT_BY_CHARACTERS $(vers[1]) : "_.-" ] ;
+		}
+	}
+
+	result ?= $(name) ;
+	return $(result) ;
+}
+
+rule main ( name * )
+{
+	local vers = [ numbers $(name) ] ;
+	return $(vers[1]) ;
+}
+
+rule equal ( lhs + : rhs + )
+{
+	if [ numbers $(lhs) ] = [ numbers $(rhs) ]
+	{
+		return true ;
+	}
+}
+
+rule less ( lhs + : rhs + )
+{
+	return [ version.version-less [ numbers $(lhs) ] : [ numbers $(rhs) ] ] ;
+}
+
+rule ge ( lhs + : rhs + )
+{
+    if ! [ less $(lhs) : $(rhs) ]
+	{
+		return true ;
+	}
+}
+
+rule greate ( lhs + : rhs + )
+{
+	if ( [ ge $(lhs) : $(rhs) ] ) && ! ( [ equal $(lhs) : $(rhs) ] )
+	{
+		return true ;
+	}
+}
+
+rule convert-msvc-to-toolset-version ( visual-studio-ver : prefix ? )
+{
+	prefix ?= "" ;
+	local toolset-ver = ;
+	switch $(visual-studio-ver)
+	{
+		case VS2008 : toolset-ver = 9.0 ;
+		case VS2013 : toolset-ver = 12.0 ;
+		case VS2017 : toolset-ver = 14.1 ;
+	}
+	return $(prefix)$(toolset-ver) ;
+}
+
+rule convert-msvc-to-visual-studio-version ( toolset-ver )
+{
+	local visual-studio-version = ;
+	local ns = [ numbers $(toolset-ver) ] ;
+	switch $(ns:J=.)
+	{
+		case 9.0  : visual-studio-version = VS2008 ;
+		case 12.0 : visual-studio-version = VS2013 ;
+		case 14.1 : visual-studio-version = VS2017 ;
+	}
+	return $(visual-studio-version) ;
+}
+
+rule __debug__ ( )
+{
+	assert.result 1 39 0	: numbers	boost_1_39_0 ;
+	assert.result 4 1 6		: numbers	omniORB_4.1.6 ;
+	assert.result 4			: main		omniORB_4.1.6 ;
+	assert.result true		: less		boost_1_39_0	: boost_1_56_0 ;
+	assert.result true		: ge		gcc-3.4.3		: 3.4.3 ;
+	assert.result true		: ge		gcc-4.8.5		: gcc-3.4.3 ;
+	assert.result 			: ge		gcc-3.4.3		: 4.8.5 ;
+	assert.result true		: ge		msvc-14.1		: msvc-14 ;
+	assert.result true		: ge		msvc-14.1		: msvc-14.1 ;
+	assert.result true		: equal		msvc-12.0		: 12.0 ;
+	assert.result true		: less		SOLARIS-5.10	: 5.11 ;
+	assert.result true		: ge		SOLARIS-5.10	: 5.10 ;
+	assert.result true		: ge		SOLARIS-5.11	: 5.10 ;
+	assert.result true		: greate	SOLARIS-5.11	: 5.10 ;
+	assert.result 			: greate	SOLARIS-5.10	: 5.10 ;
+	assert.result 			: greate	omniORB_4.2.2	: 4 2 2 ;
+	assert.result 4 2 2		: numbers	4 2 2 ;
+	assert.result 14.1		: convert-msvc-to-toolset-version VS2017 ;
+	assert.result VS2017	: convert-msvc-to-visual-studio-version 14.1 ;
+}

@@ -1,0 +1,30 @@
+import path "class" ta-os ta-version print option ;
+using gcc ;
+
+path-constant 	TOP				: . ;
+path-constant 	COTS			: . ;
+constant		TA_OS			: [ class.new ta-os-class ] ;
+constant		IDENTIFIER		: [ $(TA_OS).identifier ] ;
+constant		CONFIG_GUESS	: [ $(TA_OS).config-guess ] ;
+constant		JOBS			: [ $(TA_OS).processor-numbers ] ;
+
+rule check-build ( )
+{
+	local m = [ CALLER_MODULE ] ;
+	local prefix = [ modules.peek $(m) : PREFIX ] ;
+	if [ path.exists $(prefix) ]
+	{
+		return true ;
+	}
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	local m = [ CALLER_MODULE ] ;
+	local prefix = [ modules.peek $(m) : PREFIX ] ;
+	if [ path.exists $(prefix) ]
+	{
+		SHELL "rm -rf $(prefix)" ;
+	}
+	exit ;
+}

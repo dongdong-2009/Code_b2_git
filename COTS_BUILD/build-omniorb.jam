@@ -1,0 +1,27 @@
+import notfile ;
+
+path-constant 	HERE			: . ;
+path-constant	OMNIORB_TOP		: . ;
+path-constant	PREFIX			: $(HERE)/$(CONFIG_GUESS) ;
+
+if ! [ check-build ]
+{
+	notfile build-mcl : @build-mcl-action ;
+}
+
+actions build-mcl-action
+{
+	cd $(OMNIORB_TOP)
+	rm -rf build
+	mkdir build
+	cd build
+	chmod +x ../configure
+	../configure --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+# Note:
+# 1) Perforce omniORB_4.2.2, cannot build
+# 2) comment out: src/tool/omkdepend/ifparser.h:58
+#

@@ -1,0 +1,42 @@
+import path sequence os string common "class" ta-os ta-version notfile print option ;
+
+path-constant 	HERE			: . ;
+constant		MYSQL_VERSION	: 5.5.15 ;
+constant		BOOST_VERSION	: boost_1_56_0 ;
+path-constant	PREFIX			: $(HERE)/lib/$(IDENTIFIER)_mysql$(MYSQL_VERSION)_$(BOOST_VERSION) ;
+path-constant	BOOST_ROOT		: $(COTS)/boost/$(BOOST_VERSION) ;
+path-constant	MYSQL_DIR		: $(COTS)/mysql/$(MYSQL_VERSION)/$(IDENTIFIER) ;
+
+MYSQL_LIB_DIR		= $(MYSQL_DIR)/lib ;
+MYSQL_INCLUDE_DIR	= [ path.glob $(MYSQL_DIR) : inc* ] ;
+MYSQL_INCLUDE_DIR	= $(MYSQL_INCLUDE_DIR[1]) ;
+
+if ! [ check-build ]
+{
+	notfile build-mcl : @build-mcl-action ;
+}
+
+actions build-mcl-action
+{
+	rm -rf build
+	mkdir build
+	cd build
+	rm -f ../CMakeCache.txt
+	cmake .. -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DBOOST_ROOT=$(BOOST_ROOT) -DMYSQL_DIR=$(MYSQL_DIR) -DMYSQL_INCLUDE_DIR=$(MYSQL_INCLUDE_DIR) -DMYSQL_LIB_DIR=$(MYSQL_LIB_DIR)
+	make -j$(JOBS)
+	make install
+	cp $(PREFIX)/lib/*.* $(PREFIX)
+	cd $(PREFIX)/..
+	ln -sf $(PREFIX:BS) $(IDENTIFIER)
+}
+
+#
+# NOTE:
+# COMMENT OUT
+# 	CMakeLists.txt
+# 		ADD_SUBDIRECTORY(examples)
+# 		ADD_SUBDIRECTORY(test)
+# 		ADD_SUBDIRECTORY(test/framework)
+# 		ADD_SUBDIRECTORY(test/CJUnitTestsPort)
+# 		ADD_SUBDIRECTORY(test/unit)
+#

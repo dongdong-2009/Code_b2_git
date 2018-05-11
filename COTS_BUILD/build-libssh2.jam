@@ -1,0 +1,36 @@
+import notfile os ;
+
+path-constant 	HERE	: . ;
+constant		PREFIX	: $(HERE)/build/lib/$(IDENTIFIER) ;
+
+if ! [ check-build ]
+{
+	local os-name = [ os.name ] ;
+	notfile build-libssh2 : @build-libssh2-action-$(os-name) ;
+}
+
+actions build-libssh2-action-SOLARIS
+{
+	export PATH=/usr/sfw/bin:$PATH
+	chmod +x ./configure
+	chmod +x ./install-sh
+	./configure --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+actions build-libssh2-action-LINUX
+{
+	chmod +x ./configure
+	chmod +x ./install-sh
+	./configure --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+#
+# NOTE:
+# 	For Solaris11, need do:
+#		pkg install developer/gcc-3
+#		install GNU binutils-2.30.tar.bz2, mainly nm
+#

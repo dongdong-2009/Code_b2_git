@@ -1,0 +1,40 @@
+import os notfile sequence ;
+
+path-constant 	HERE 		: . ;
+constant		PREFIX		: $(HERE)/build/$(IDENTIFIER) ;
+
+rule guess-compiler ( )
+{
+	switch [ os.name ]
+	{
+		case LINUX : return linux-elf ;
+		case SOLARIS :
+		{
+			if [ $(TA_OS).sparc ]
+			{
+				# solaris-sparcv9-gcc
+				return [ sequence.join solaris [ $(TA_OS).sparc-version ] gcc : - ] ;
+			}
+			else
+			{
+				return solaris-x86-gcc ;
+			}
+		}
+	}
+}
+
+CONFIG_COMPILER = [ guess-compiler ] ;
+
+if ! [ check-build ]
+{
+	notfile build-openssl : @build-openssl-action ;
+}
+
+actions build-openssl-action
+{
+	chmod -R +x ./util
+	chmod +x ./Configure
+	./Configure $(CONFIG_COMPILER) shared --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}

@@ -1,0 +1,250 @@
+
+class ta-os-class
+{
+	import os string print sequence errors ta-version common ;
+
+	rule __init__ ( address-model ? )
+	{
+		self.name	= [ os.name ] ;
+
+		if [ os.on-unix ]
+		{
+			self.version		= [ string.words [ SHELL "uname -r" ] ] ;
+			self.architecture	= [ string.words [ SHELL "arch" ] ] ;
+			self.processor		= [ string.words [ SHELL "uname -p | tr A-Z a-z" ] ] ;
+
+			switch $(self.processor)
+			{
+				case i?86 : self.processor = x86 ;
+			}
+		}
+
+		address-model ?= 32 ;
+		self.address-model = $(address-model) ;
+	}
+
+	rule name ( )
+	{
+		return $(self.name) ;
+	}
+
+	rule version ( )
+	{
+		return $(self.version) ;
+	}
+
+	rule architecture ( )
+	{
+		return $(self.architecture) ;
+	}
+
+	rule arch ( )
+	{
+		return [ architecture ] ;
+	}
+
+	rule processor ( )
+	{
+		return $(self.processor) ;
+	}
+
+	rule cpu ( )
+	{
+		return [ processor ] ;
+	}
+
+	rule on-windows ( )
+	{
+		if [ os.on-windows ]
+		{
+			return true ;
+		}
+	}
+
+	rule on-unix ( )
+	{
+		if [ os.on-unix ]
+		{
+			return true ;
+		}
+	}
+
+	rule on-solaris ( os-version ? : cpu-type ? )
+	{
+		os-version ?= $(self.version) ;
+		cpu-type ?= $(self.processor) ;
+
+		if ! [ MATCH "5\\.([0-9]+)" : $(os-version) ]
+		{
+			os-version = 5.$(os-version) ;
+		}
+
+		if $(self.name) = SOLARIS && $(self.version) = $(os-version) && $(self.processor) = $(cpu-type)
+		{
+			return true ;
+		}
+	}
+
+	rule on-solaris-9 ( and-later ? )
+	{
+		return [ on-solaris-x 9 : $(and-later) ] ;
+	}
+
+	rule on-solaris-10 ( and-later ? )
+	{
+		return [ on-solaris-x 10 : $(and-later) ] ;
+	}
+
+	rule on-solaris-11 ( and-later ? )
+	{
+		return [ on-solaris-x 11 : $(and-later) ] ;
+	}
+
+	rule on-solaris-x ( version : and-later ? )
+	{
+		if $(self.name) = SOLARIS
+		{
+			if $(and-later) = and-later
+			{
+				return [ ta-version.ge $(self.version) : 5.$(version) ] ;
+			}
+			else if $(self.version) = 5.$(version)
+			{
+				return true ;
+			}
+		}
+	}
+
+	rule on-sparc-solaris ( version ? )
+	{
+		return [ on-solaris $(version) : sparc ] ;
+	}
+
+	rule on-x86-solaris ( version ? )
+	{
+		return [ on-solaris $(version) : x86 ] ;
+	}
+
+	rule on-linux ( )
+	{
+		if $(self.name) = LINUX
+		{
+			return true ;
+		}
+	}
+
+	rule sparc ( )
+	{
+		if $(self.processor) = sparc
+		{
+			return true ;
+		}
+	}
+
+	rule x86 ( )
+	{
+		if $(self.processor) = x86
+		{
+			return true ;
+		}
+	}
+
+	rule preprocessor ( )
+	{
+		return [ preprocessor-$(self.name) ] ;
+	}
+
+	rule preprocessor-NT ( )
+	{
+		return __OSVERSION__=4 WIN32 __WIN32__ __x86__ __NT__ ;
+	}
+
+	rule preprocessor-SOLARIS ( )
+	{
+		local result = __sunos__ SOLARIS __OSVERSION__=5 ;
+
+		if [ sparc ]
+		{
+			result += __sparc__ ;
+		}
+
+		if [ x86 ]
+		{
+			result += __x86__ ;
+		}
+
+		return $(result) ;
+	}
+
+	rule preprocessor-LINUX ( )
+	{
+		return __linux__ LINUX __OSVERSION__=4 ;
+	}
+
+	rule config-guess ( )
+	{
+		local automake-path = [ common.get-absolute-tool-path automake ] ;
+		local automake-version = [ MATCH "automake \\(GNU automake\\) ([0-9]+\\.[0-9]+)" : [ SHELL "automake --version" ] ] ;
+		local config.guess-path = $(automake-path)/../share/automake-$(automake-version)/config.guess ;
+		return [ string.words [ SHELL $(config.guess-path) ] ] ;
+	}
+
+	rule sparc-version ( )
+	{
+		return [ string.words [ MATCH "The (sparc[^ ]+) processor" : [ SHELL "psrinfo -v" ] ] ] ;
+	}
+
+	rule processor-numbers ( )
+	{
+		return [ MATCH "([0-9]+)" : [ SHELL "psrinfo | wc -l" ] ] ;
+	}
+
+	rule ta-identifier ( )
+	{
+		return [ sequence.join [ name ] [ version ] [ arch ] : _ ] ;
+	}
+
+	rule config-guess-identifier ( )
+	{
+		return [ sequence.join [ config-guess ] $(self.address-model) : _ ] ;
+	}
+
+	rule identifier ( )
+	{
+		if [ on-solaris ]
+		{
+			return [ ta-identifier ] ;
+		}
+
+		if [ on-linux ]
+		{
+			return [ config-guess-identifier ] ;
+		}
+	}
+
+	rule __debug__ ( )
+	{
+		for local var in name version architecture processor
+		{
+			echo [ PAD $(var) : 30 ] " : " $(self.$(var)) ;
+		}
+
+		for local test in
+			"preprocessor"
+			"identifier"
+			"on-solaris"
+			"on-linux"
+			"on-windows"
+			"on-solaris-9" "on-solaris-9 and-later"
+			"on-solaris-10" "on-solaris-10 and-later"
+			"on-solaris-11" "on-solaris-11 and-later"
+			"on-x86-solaris" "on-x86-solaris 9" "on-x86-solaris 10" "on-x86-solaris 11"
+			"on-sparc-solaris" "on-sparc-solaris 9" "on-sparc-solaris 10" "on-sparc-solaris 11"
+		{
+			local words = [ string.words $(test) ] ;
+			local function = $(words[1]) ;
+			local args = $(words[2-]) ;
+			echo [ PAD $(test) : 30 ] " : " [ $(function) $(args) ] ;
+		}
+	}
+}

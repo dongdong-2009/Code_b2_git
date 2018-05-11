@@ -1,5 +1,5 @@
-import path sequence os string common "class" ta-os ta-version notfile print option ;
-using gcc ;
+import path sequence notfile print option os ;
+import $(TOP)/ta-version.jam ;
 
 path-constant 	HERE				: . ;
 constant		ACE_VERSION 		: $(HERE:B) ;
@@ -7,9 +7,6 @@ path-constant	PREFIX				: $(HERE)/lib/$(IDENTIFIER) ;
 path-constant	ACE_ROOT			: $(HERE)/ACE_wrappers ;
 path-constant	CONFIG_H			: $(ACE_ROOT)/ace/config.h ;
 path-constant	PLATFORM_MACROS_GNU	: $(ACE_ROOT)/include/makeinclude/platform_macros.GNU ;
-constant		TA_OS				: [ class.new ta-os-class ] ;
-constant		IDENTIFIER			: [ $(TA_OS).identifier ] ;
-constant		JOBS				: [ $(TA_OS).processor-numbers ] ;
 constant		DOLLOR_MARK			: $ ;
 
 switch [ os.name ]
@@ -24,18 +21,10 @@ switch [ os.name ]
 		CONFIG_INCLUDE	= [ sequence.join config-sunos [ $(TA_OS).version ] ".h" ] ;
 		PLATFORM_CONFIG	= platform_sunos5_g++.GNU ;
 
-		if [ ta-version.equal $(ACE_VERSION) : 5_6 ] && [ $(TA_OS).on-solaris-11 ]
+		if [ ta-version.equal $(ACE_VERSION) : 5_6 ] && [ $(TA_OS).on-solaris-11 and-later ]
 		{
 			CONFIG_INCLUDE	= config-sunos5.10.h ;
 		}
-	}
-}
-
-rule check-build ( )
-{
-	if [ path.exists $(PREFIX)/lib/libACE.so ]
-	{
-		return true ;
 	}
 }
 
@@ -51,19 +40,28 @@ if ! [ check-build ]
 	}
 }
 
+#
+# NOTE:
+#	MODIFY
+#		$(ACE_ROOT)/ace/os_include/net/os_if.h:28
+#	FROM
+#		//#  include /**/ <net/if.h>
+#	TO
+#		#  include /**/ <net/if.h>
+#
 actions build-ace-action
 {
 	export ACE_ROOT=$(ACE_ROOT)
 	cd $(ACE_ROOT)
 	chmod -R +x $(ACE_ROOT)/bin
 	chmod -R +x $(ACE_ROOT)/MPC
-
-	echo '#include \"ace/$(CONFIG_INCLUDE)\"' > $(CONFIG_H)
+	echo '#include "ace/$(CONFIG_INCLUDE)"' > $(CONFIG_H)
 	echo 'include $(DOLLOR_MARK)(ACE_ROOT)/include/makeinclude/$(PLATFORM_CONFIG)' > $(PLATFORM_MACROS_GNU) ;
-	echo "INSTALL_PREFIX = $(PREFIX)" >> $(PLATFORM_MACROS_GNU) ;
-
+	echo 'INSTALL_PREFIX = $(DOLLOR_MARK)(ACE_ROOT)/../lib/$(IDENTIFIER)' >> $(PLATFORM_MACROS_GNU) ;
 	make -j$(JOBS)
 	make install
+	cd $(PREFIX)/lib
+	cp *.* ..
 }
 
 actions build-ace-action-autoconf
@@ -79,19 +77,6 @@ actions build-ace-action-autoconf
 	../configure --prefix=$(PREFIX)
 	make -j$(JOBS)
 	make install
-}
-
-if [ MATCH "(--show)" : [ modules.peek : ARGV ] ]
-{
-	for local var in ACE_VERSION ACE_ROOT PREFIX CONFIG_INCLUDE PLATFORM_CONFIG
-	{
-		print.lines $(var) $($(var)) : "\t" ;
-	}
-	exit ;
-}
-
-if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
-{
-	SHELL "rm -rf $(PREFIX)" ;
-	exit ;
+	cd $(PREFIX)/lib
+	cp *.* ..
 }
