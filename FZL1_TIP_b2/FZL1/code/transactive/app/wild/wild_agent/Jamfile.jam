@@ -1,7 +1,7 @@
 
 rule build-or-not ( )
 {
-	if [ MATCH "(FZL1)" : [ $(TA_Path).branch ] ]
+	if [ MATCH "(FZL1)" : [ $(TA_PATH).branch ] ]
 	{
 		return <build>no ;
 	}

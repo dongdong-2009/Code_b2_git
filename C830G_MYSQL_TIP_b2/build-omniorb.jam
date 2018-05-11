@@ -1,0 +1,54 @@
+import path sequence os string common "class" ta-os ta-version notfile print option ;
+using gcc ;
+
+path-constant 	HERE			: . ;
+path-constant	OMNIORB_TOP		: . ;
+constant		TA_OS			: [ class.new ta-os-class ] ;
+constant		IDENTIFIER		: [ $(TA_OS).config-guess ] ;
+path-constant	PREFIX			: $(HERE)/$(IDENTIFIER) ;
+constant		JOBS			: [ $(TA_OS).processor-numbers ] ;
+
+rule check-build ( )
+{
+	if [ path.exists $(PREFIX)/lib/libomniORB4.a ]
+	{
+		return true ;
+	}
+}
+
+if ! [ check-build ]
+{
+	notfile build-mcl : @build-mcl-action ;
+}
+
+actions build-mcl-action
+{
+	cd $(OMNIORB_TOP)
+	rm -rf build
+	mkdir build
+	cd build
+	chmod +x ../configure
+	../configure --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+if [ MATCH "(--show)" : [ modules.peek : ARGV ] ]
+{
+	for local var in PREFIX
+	{
+		print.lines $(var) $($(var)) : "\t" ;
+	}
+	exit ;
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	SHELL "rm -rf $(PREFIX)" ;
+	exit ;
+}
+
+# Note:
+# 1) Perforce omniORB_4.2.2, cannot build
+# 2) comment out: src/tool/omkdepend/ifparser.h:58
+#

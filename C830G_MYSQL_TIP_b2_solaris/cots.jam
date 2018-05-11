@@ -599,7 +599,7 @@ class boost : cot-class
 
 		if [ ta-version.ge $(version) : 1_65_1 ]
 		{
-			self.library-names += chrono thread ;
+			self.library-names += chrono thread atomic ;
 		}
 
 		init-$(self.os) ;
@@ -613,13 +613,22 @@ class boost : cot-class
 
 		if $(version) = boost_1_39_0
 		{
-			self.library				= boost_$(self.library-names)-gcc34-mt-1_39 ;
+			local gcc-ver = [ ta-version.numbers [ cots.get gcc-ver ] ] ;
+			gcc-ver = [ sequence.join $(gcc-ver[1]) $(gcc-ver[2]) ] ;
+			self.library = boost_$(self.library-names)-gcc$(gcc-ver)-mt-1_39 ;
 		}
 	}
 
 	rule init-SOLARIS ( )
 	{
 		init-UNIX ;
+
+		if $(version) = boost_1_65_1
+		{
+			local gcc-ver = [ ta-version.numbers [ cots.get gcc-ver ] ] ;
+			gcc-ver = [ sequence.join $(gcc-ver[1]) $(gcc-ver[2]) ] ;
+			self.library = boost_$(self.library-names)-gcc$(gcc-ver)-mt-1_65_1 ;
+		}
 	}
 
 	rule init-LINUX ( )
@@ -804,6 +813,7 @@ class mcl : cot-class
 		{
 			case 1.1.0 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier) ;
 			case 1.1.1 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost$(self.boost-version-numbers:J=.) ;
+			case 1.1.9 : self.library-path	= $(self.path)/lib/$(self.ta-os-identifier)_mysql$(self.mysql-version-numbers:J=.)_boost_$(self.boost-version-numbers:J=_) ;
 		}
 	}
 

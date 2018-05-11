@@ -60,7 +60,7 @@ if [ os.on-unix ]
 	switch [ os.name ]
 	{
 		case LINUX   : constant SYSTEM_LIBRARIES : pthread nsl ;
-		case SOLARIS : constant SYSTEM_LIBRARIES : z posix4 socket uuid nsl ;
+		case SOLARIS : constant SYSTEM_LIBRARIES : z posix4 socket uuid nsl atomic ;
 	}
 
 	local CFLAGS = ;

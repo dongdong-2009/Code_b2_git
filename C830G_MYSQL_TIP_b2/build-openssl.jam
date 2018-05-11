@@ -1,10 +1,10 @@
-import path sequence os string common ;
-import "class" ;
-import ta-os ;
+import path sequence os string common "class" print option notfile ta-os ;
 using gcc ;
 
-path-constant HERE : . ;
-constant TA_OS : [ class.new ta-os-class ] ;
+path-constant 	HERE 		: . ;
+constant		TA_OS		: [ class.new ta-os-class ] ;
+constant		PREFIX		: [ path.join $(HERE) build [ $(TA_OS).identifier ] ] ;
+constant		JOBS		: [ $(TA_OS).processor-numbers ] ;
 
 rule guess-compiler ( )
 {
@@ -26,19 +26,32 @@ rule guess-compiler ( )
 	}
 }
 
-constant PREFIX		: [ path.join $(HERE) build [ $(TA_OS).identifier ] ] ;
-constant COMPILER	: [ guess-compiler ] ;
-constant JOBS		: [ $(TA_OS).processor-numbers ] ;
+CONFIG_COMPILER = [ guess-compiler ] ;
 
-local commands = ;
-commands += "chmod +x ./Configure" ;
-commands += "chmod -R +x ./util" ;
-commands += "./Configure $(COMPILER) shared --prefix=$(PREFIX)" ;
-commands += "make -j$(JOBS)" ;
-commands += "make install" ;
-
-for local cmd in $(commands)
+rule check-build ( )
 {
-	echo $(cmd) ;
-	echo [ SHELL "$(cmd)" ] ;
+	if [ path.exists $(PREFIX)/lib/libssl.so ]
+	{
+		return true ;
+	}
+}
+
+if ! [ check-build ]
+{
+	notfile build-openssl : @build-openssl-action ;	
+}
+
+actions build-openssl-action
+{
+	chmod -R +x ./util
+	chmod +x ./Configure
+	./Configure $(CONFIG_COMPILER) shared --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	SHELL "rm -rf $(PREFIX)" ;
+	exit ;
 }

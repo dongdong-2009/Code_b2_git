@@ -6,7 +6,7 @@ rule build-or-not ( )
 		return <build>no ;
 	}
 	
-	if [ MATCH "(TA_Common_V1_TIP)" : [ $(TA_Path).branch ] ]
+	if [ MATCH "(TA_Common_V1_TIP)" : [ $(TA_PATH).branch ] ]
 	{
 		return <build>no ;
 	}

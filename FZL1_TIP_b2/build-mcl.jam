@@ -1,0 +1,56 @@
+import path sequence os string common "class" ta-os ta-version notfile print option ;
+using gcc ;
+
+path-constant 	HERE			: . ;
+constant		MCL_VERSION		: $(HERE:BS) ;
+constant		MYSQL_VERSION	: 5.5.15 ;
+constant		BOOST_VERSION	: boost_1_56_0 ;
+constant		TA_OS			: [ class.new ta-os-class ] ;
+constant		IDENTIFIER		: [ $(TA_OS).identifier ] ;
+path-constant	PREFIX			: $(HERE)/lib/$(IDENTIFIER)_mysql$(MYSQL_VERSION)_$(BOOST_VERSION) ;
+
+COTS				= [ path.make $(HERE)/../.. ] ;
+BOOST_ROOT			= $(COTS)/boost/$(BOOST_VERSION) ;
+MYSQL_DIR			= $(COTS)/mysql/$(MYSQL_VERSION)/$(IDENTIFIER) ;
+MYSQL_LIB_DIR		= $(MYSQL_DIR)/lib ;
+MYSQL_INCLUDE_DIR	= [ path.glob $(MYSQL_DIR) : inc* ] ;
+MYSQL_INCLUDE_DIR	= $(MYSQL_INCLUDE_DIR[1]) ;
+
+rule check-build ( )
+{
+	if [ path.exists $(PREFIX)/lib/libmysqlcppconn.so ] || [ path.exists $(PREFIX)/lib/libTA_mcl.so ]
+	{
+		return true ;
+	}
+}
+
+if ! [ check-build ]
+{
+	notfile build-mcl : @build-mcl-action ;
+}
+
+actions build-mcl-action
+{
+	rm -rf build
+	mkdir build
+	cd build
+	rm -f ../CMakeCache.txt
+	cmake .. -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DBOOST_ROOT=$(BOOST_ROOT) -DMYSQL_DIR=$(MYSQL_DIR) -DMYSQL_INCLUDE_DIR=$(MYSQL_INCLUDE_DIR) -DMYSQL_LIB_DIR=$(MYSQL_LIB_DIR)
+	make -j
+	make install
+}
+
+if [ MATCH "(--show)" : [ modules.peek : ARGV ] ]
+{
+	for local var in MCL_VERSION PREFIX BOOST_ROOT MYSQL_DIR
+	{
+		print.lines $(var) $($(var)) : "\t" ;
+	}
+	exit ;
+}
+
+if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
+{
+	SHELL "rm -rf $(PREFIX)" ;
+	exit ;
+}
