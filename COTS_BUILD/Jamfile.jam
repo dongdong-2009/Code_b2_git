@@ -1,0 +1,29 @@
+
+import path sequence ;
+
+constant COMPONENTS : ACE omniORB curl mcl libssh openssl sqlgen ;
+
+rule sync-jamfiles ( )
+{
+	for local component in $(COMPONENTS)
+	{
+		local src-jamfile = $(TOP)/build-$(component:L).jam ;
+		for sub-component in [ path.glob $(TOP)/$(component) : * ]
+		{
+			local dest-jamfile = $(sub-component)/Jamfile.jam ;
+			make $(dest-jamfile) : $(src-jamfile) : @copy-file-actions ;
+
+			if $(component) = omniORB
+			{
+				local dest-jamfile = $(sub-component)/src/services/omniNotify/Jamfile.jam ;
+				make $(dest-jamfile) : $(TOP)/build-omninotify.jam : @copy-file-actions ;
+			}
+		}
+	}
+}
+sync-jamfiles ;
+
+actions copy-file-actions
+{
+	cp $(>) $(<)
+}

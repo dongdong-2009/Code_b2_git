@@ -1,11 +1,11 @@
-import notfile ;
+import notfile sequence ;
 
 path-constant 	HERE				: . ;
 constant		OPENSSL_VERSION		: openssl-1.0.0d ;
 constant		LIBSSH2_VERSION		: libssh2-1.2.9 ;
 constant		PREFIX				: $(HERE)/build/lib/$(IDENTIFIER) ;
 constant		WITH_SSL			: $(COTS)/openssl/$(OPENSSL_VERSION)/build/$(IDENTIFIER) ;
-constant		WITH_LIBSSH2		: $(COTS)/libssh2/$(LIBSSH2_VERSION)/build/lib/$(IDENTIFIER) ;
+# constant		WITH_LIBSSH2		: $(COTS)/libssh2/$(LIBSSH2_VERSION)/build/lib/$(IDENTIFIER) ;
 
 if ! [ check-build ]
 {
@@ -14,10 +14,16 @@ if ! [ check-build ]
 
 actions build-curl-action
 {
-	export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib
 	chmod +x ./configure
 	./configure --prefix=$(PREFIX) --with-ssl=$(WITH_SSL) --with-libssh2=$(WITH_LIBSSH2)
 	make -j$(JOBS)
 	make install
 	cp $(PREFIX)/lib/*.* $(PREFIX)
 }
+
+#
+# TODO
+#	--with-libssh2=DIR will got thie error:
+# 	configure: error: one or more libs available at link-time are not available run-time.
+# 	Libs used at link-time: -lssl -lcrypto -lldap -lsocket  -lnsl -lz -lssh2
+#

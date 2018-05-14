@@ -1,0 +1,22 @@
+import notfile path ;
+
+path-constant 	HERE			: . ;
+path-constant	OMNINOTIFY_TOP	: . ;
+path-constant	OMNIORB_TOP		: ../../.. ;
+path-constant	PREFIX			: $(OMNIORB_TOP)/$(CONFIG_GUESS) ;
+
+if ! [ path.exists $(PREFIX)/lib/libCOSNotify4.a ]
+{
+	notfile build-omninotify : @build-omninotify-action ;
+}
+
+actions build-omninotify-action
+{
+	chmod -R +x configure bin
+	rm -rf build
+	mkdir build
+	cd build
+	../configure --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}

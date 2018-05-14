@@ -6,22 +6,29 @@ path-constant	PREFIX			: $(HERE)/$(CONFIG_GUESS) ;
 
 if ! [ check-build ]
 {
-	notfile build-mcl : @build-mcl-action ;
+	notfile build-omniorb : @build-omniorb-action ;
 }
 
-actions build-mcl-action
+actions build-omniorb-action
 {
 	cd $(OMNIORB_TOP)
+	find . -name "*.o" -exec rm -f {} \;
+	find . -name "*.d" -exec rm -f {} \;
+	find idl -type f -exec touch {} \;
+	chmod -R +x bin configure
 	rm -rf build
 	mkdir build
 	cd build
-	chmod +x ../configure
 	../configure --prefix=$(PREFIX)
 	make -j$(JOBS)
 	make install
 }
 
+#
 # Note:
-# 1) Perforce omniORB_4.2.2, cannot build
-# 2) comment out: src/tool/omkdepend/ifparser.h:58
+# 1) FOR omniORB_4.2.2
+#    comment out: src/tool/omkdepend/ifparser.h:58
+#    #include <stdio.h>
+# 2) FOR omniORB_4.0.5, omniORB_4.1.2
+#    cannot build on Solaris11
 #
