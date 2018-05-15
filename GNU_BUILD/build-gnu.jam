@@ -1,0 +1,60 @@
+import path sequence notfile option feature toolset ;
+using gcc ;
+
+path-constant	TOP 		: . ;
+path-constant	PREFIX		: /export/home/limin/local ; # <== MODIFY THIS
+constant		JOBS		: 16 ;
+
+rule build-gnu ( pkg-zip )
+{
+	UNZIP-zip		= unzip ;
+	UNZIP-tar.gz	= tar xzf ;
+	UNZIP-tar.bz2	= tar xjf ;
+
+	local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.bz2|zip)$" : $(pkg-zip) ] ;
+	local pkg = $(x[1])-$(x[2]) ;
+	local unzip = $(UNZIP-$(x[3])) ;
+	# SHELL "$(UNZIP-$(x[3])) $(TOP)/$(pkg)" ;
+	
+	notfile $(pkg)
+		: @build-gnu-actions
+		:
+		: <unzip-command>$(unzip[1])
+		  <unzip-options>$(unzip[2])
+		  <package>$(pkg)
+		  <package-zip>$(pkg-zip)
+		  <options>$(OPTIONS)
+		;
+}
+
+actions build-gnu-actions
+{
+	$(UNZIP_COMMAND) $(UNZIP_OPTIONS) $(PACKAGE_ZIP)
+	cd $(PACKAGE)
+	./configure --prefix=$(PREFIX) --options=$(OPTIONS)
+	make -j$(JOBS)
+	make install
+}
+
+rule declare-flag ( rule-name : flag )
+{
+	local split = [ SPLIT_BY_CHARACTERS $(name) : - ] ;
+	local option = [ sequence.join $(split:U) : _ ] ;
+	feature.feature $(flag) : : free incidental ;
+	toolset.flags $(rule-name) $(option) <$(flag)> ;
+}
+
+declare-flag unzip-command ;
+declare-flag unzip-options ;
+declare-flag package ;
+declare-flag package-zip ;
+declare-flag options ;
+
+{
+	local pkg-zip = [ option.get "build" ] ;
+
+	if $(pkg-zip)
+	{
+		build-gnu $(pkg-zip) ;
+	}
+}

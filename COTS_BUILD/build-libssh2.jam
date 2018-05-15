@@ -1,29 +1,29 @@
-import notfile os ;
+import notfile ;
 
-path-constant 	HERE	: . ;
-constant		PREFIX	: $(HERE)/build/lib/$(IDENTIFIER) ;
+path-constant 	HERE				: . ;
+constant		PREFIX				: $(HERE)/build/lib/$(IDENTIFIER) ;
+constant		OPENSSL_VERSION		: openssl-1.0.0d ;
+
+WITH_LIBSSL_PREFIX	= $(COTS)/openssl/$(OPENSSL_VERSION)/build/$(IDENTIFIER) ;
 
 if ! [ check-build ]
 {
-	local os-name = [ os.name ] ;
-	notfile build-libssh2 : @build-libssh2-action-$(os-name) ;
+	notfile build-libssh2 : @build-libssh2-action-$(OS_NAME) ;
 }
 
 actions build-libssh2-action-SOLARIS
 {
 	export PATH=/usr/sfw/bin:$PATH
-	chmod +x ./configure
-	chmod +x ./install-sh
-	./configure --prefix=$(PREFIX)
+	chmod +x configure install-sh
+	./configure --prefix=$(PREFIX) --with-libssl-prefix=$(WITH_LIBSSL_PREFIX)
 	make -j$(JOBS)
 	make install
 }
 
 actions build-libssh2-action-LINUX
 {
-	chmod +x ./configure
-	chmod +x ./install-sh
-	./configure --prefix=$(PREFIX)
+	chmod +x configure install-sh
+	./configure --prefix=$(PREFIX) --with-libssl-prefix=$(WITH_LIBSSL_PREFIX)
 	make -j$(JOBS)
 	make install
 }

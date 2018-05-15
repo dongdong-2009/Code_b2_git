@@ -1,14 +1,14 @@
 
 import path sequence ;
 
-constant COMPONENTS : ACE omniORB curl mcl libssh openssl sqlgen ;
+constant COMPONENTS : ACE omniORB curl mcl libssh openssl sqlgen libssh2 ;
 
 rule sync-jamfiles ( )
 {
 	for local component in $(COMPONENTS)
 	{
 		local src-jamfile = $(TOP)/build-$(component:L).jam ;
-		for sub-component in [ path.glob $(TOP)/$(component) : * ]
+		for sub-component in [ path.glob $(TOP)/$(component) : * : *.gz *.zip *.b2 ]
 		{
 			local dest-jamfile = $(sub-component)/Jamfile.jam ;
 			make $(dest-jamfile) : $(src-jamfile) : @copy-file-actions ;

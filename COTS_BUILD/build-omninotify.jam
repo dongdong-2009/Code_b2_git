@@ -5,7 +5,7 @@ path-constant	OMNINOTIFY_TOP	: . ;
 path-constant	OMNIORB_TOP		: ../../.. ;
 path-constant	PREFIX			: $(OMNIORB_TOP)/$(CONFIG_GUESS) ;
 
-if ! [ path.exists $(PREFIX)/lib/libCOSNotify4.a ]
+if ! [ path.exists $(PREFIX)/lib/libCOSNotify4.so ]
 {
 	notfile build-omninotify : @build-omninotify-action ;
 }

@@ -1,4 +1,4 @@
-import path "class" ta-os ta-version print option ;
+import path "class" print option os ta-os ta-version ;
 using gcc ;
 
 path-constant 	TOP				: . ;
@@ -7,6 +7,8 @@ constant		TA_OS			: [ class.new ta-os-class ] ;
 constant		IDENTIFIER		: [ $(TA_OS).identifier ] ;
 constant		CONFIG_GUESS	: [ $(TA_OS).config-guess ] ;
 constant		JOBS			: [ $(TA_OS).processor-numbers ] ;
+constant		OS_NAME			: [ $(TA_OS).name ] ;
+constant		OS_TYPE			: [ $(TA_OS).type ] ;
 
 rule check-build ( )
 {
@@ -16,15 +18,4 @@ rule check-build ( )
 	{
 		return true ;
 	}
-}
-
-if [ MATCH "(--ta-clean)" : [ modules.peek : ARGV ] ]
-{
-	local m = [ CALLER_MODULE ] ;
-	local prefix = [ modules.peek $(m) : PREFIX ] ;
-	if [ path.exists $(prefix) ]
-	{
-		SHELL "rm -rf $(prefix)" ;
-	}
-	exit ;
 }

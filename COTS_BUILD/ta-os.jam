@@ -29,6 +29,18 @@ class ta-os-class
 		return $(self.name) ;
 	}
 
+	rule type ( )
+	{
+		if [ on-unix ]
+		{
+			return UNIX ;
+		}
+		else
+		{
+			return WINDOWS ;
+		}
+	}
+
 	rule version ( )
 	{
 		return $(self.version) ;
