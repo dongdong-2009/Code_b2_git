@@ -1,0 +1,10 @@
+import feature toolset sequence modules ;
+
+rule flag ( rule-name : feature-name )
+{
+	local split = [ SPLIT_BY_CHARACTERS $(feature-name) : - ] ;
+	local variable-name = [ sequence.join $(split:U) : _ ] ;
+	feature.feature $(feature-name) : : free incidental ;
+	modules.call-in [ CALLER_MODULE ] : import toolset ;
+	modules.call-in [ CALLER_MODULE ] : toolset.flags $(rule-name) $(variable-name) <$(feature-name)> ;
+}

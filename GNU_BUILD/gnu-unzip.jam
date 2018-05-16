@@ -1,0 +1,62 @@
+import notfile gnu-rules ;
+
+.module-name = $(__name__) ;
+
+rule unzip ( zip )
+{
+	local x = [ MATCH "^(.*)\\.(tar.gz|tar.bz2|tar.xz|zip)$" : $(zip:BS) ] ;
+
+	switch $(x[2])
+	{
+		case zip     : notfile unzip-$(zip) : @$(.module-name).unzip-zip-action 	: : <zip-file>$(zip) ;
+		case tar.gz	 : notfile unzip-$(zip) : @$(.module-name).unzip-tar-gz-action  : : <tar-gz-file>$(zip) ;
+		case tar.bz2 : notfile unzip-$(zip) : @$(.module-name).unzip-tar-bz2-action : : <tar-bz2-file>$(zip) ;
+		case tar.xz  : notfile unzip-$(zip) : @$(.module-name).unzip-tar-xz-action  : : <tar-xz-file>$(zip) <tar-file>$(zip:D)$(x[1]).tar ;
+	}
+}
+
+rule ln ( real-file : link-file )
+{
+	notfile $(real-file)-$(link-file)
+		: @$(.module-name).ln-action
+		:
+		: <real-file>$(real-file)
+		  <link-file>$(link-file)
+		;
+}
+
+actions unzip-tar-gz-action
+{
+	tar xzf $(TAR_GZ_FILE)
+}
+
+actions unzip-tar-bz2-action
+{
+	tar xjf $(TAR_BZ2_FILE)
+}
+
+actions unzip-zip-action
+{
+	unzip $(ZIP_FILE)
+}
+
+actions unzip-tar-xz-action
+{
+	unxz $(TAR_XZ_FILE)
+	tar xf $(TAR_FILE)
+}
+
+actions ln-action
+{
+	ln -sf $(REAL_FILE) $(LINK_FILE)
+}
+
+gnu-rules.flag $(__name__).ln-action 				: real-file ;
+gnu-rules.flag $(__name__).ln-action 				: link-file ;
+gnu-rules.flag $(__name__).unzip-tar-gz-action		: tar-gz-file ;
+gnu-rules.flag $(__name__).unzip-tar-bz2-action		: tar-bz2-file ;
+gnu-rules.flag $(__name__).unzip-zip-action			: zip-file ;
+gnu-rules.flag $(__name__).unzip-tar-xz-action		: tar-xz-file ;
+gnu-rules.flag $(__name__).unzip-tar-xz-action		: tar-file ;
+
+IMPORT $(__name__) : unzip ln : : unzip ln ;

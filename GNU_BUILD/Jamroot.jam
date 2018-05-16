@@ -1,0 +1,53 @@
+import path sequence notfile option feature toolset ;
+using gcc ;
+
+path-constant	TOP 			: . ;
+path-constant	PREFIX			: /export/home/limin/local ; # <== MODIFY THIS
+path-constant	BINUTILS_PATH	: $(PREFIX) ;
+path-constant	MAKE_PATH		: $(PREFIX) ;
+constant		JOBS			: 16 ;
+
+rule build-gcc ( )
+{
+	import build-gcc ;
+	
+	local gcc-path = [ path.pwd ] ;
+	local gcc-ver = $(gcc-path:BS) ;
+	
+	build-gcc.build-gcc $(gcc-version)
+		: <prefix>$(PREFIX)/$(gcc-ver)
+		  <jobs>$(JOBS)
+		  <options>$(options)
+		  <binutils-path>$(BINUTILS_PATH)
+		  <make-path>$(MAKE_PATH)
+		;
+}
+
+# main
+{
+	local zip ;
+
+	zip = [ option.get "unzip" ] ;
+
+	if $(zip)
+	{
+		import gnu-unzip ;
+		
+		unzip $(zip) ;
+	}
+
+	zip = [ option.get "build" ] ;
+
+	if $(zip)
+	{
+		import build-gnu ;
+		
+		local options = [ option.get "options" ] ;
+
+		build-gnu $(zip)
+			: <prefix>$(PREFIX)
+			  <jobs>$(JOBS)
+			  <options>$(options)
+			;
+	}
+}

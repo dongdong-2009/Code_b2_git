@@ -1,30 +1,48 @@
-import path sequence notfile option ;
-using gcc ;
+#
+# Usage:
+#	cd gcc-7.3.1
+#	./contrib/download_prerequisites
+#	echo "build-gcc ;" > Jamfile.jam
+#	b2
+#
 
-path-constant	TOP 			: . ;
-path-constant	INSTALL_PATH	: /export/home/limin/local ; # <== MODIFY THIS
-constant		GCC_VERSION		: $(TOP:BS) ;
-path-constant	PREFIX			: $(INSTALL_PATH)/$(GCC_VERSION) ;
-path-constant	BINUTILS_PATH	: $(INSTALL_PATH) ;
-path-constant	MAKE_PATH		: $(BINUTILS_PATH) ;
-constant		JOBS			: 16 ;
+import path sequence notfile option gnu-rules gnu-unzip ;
 
-rule unpackage ( )
+.module-name = $(__name__) ;
+.options = "--enable-checking=release --enable-threads=posix --enable-languages=c,c++ --disable-multilib" ;
+
+rule init ( options )
+{
+	.options = $(options) ;
+}
+
+rule build-gcc ( : requirements * )
+{
+	unzip-prerequisites ;
+	
+	notfile build-gcc
+		: @$(.module-name).build-gcc-action
+		:
+		: $(requirements)
+		;
+}
+
+rule unzip-prerequisites ( )
 {
 	PACKAGES		= gmp mpfr mpc isl ;
-	UNZIP-zip		= unzip ;
-	UNZIP-tar.gz	= "tar xzf" ;
-	UNZIP-tar.bz2	= "tar xjf" ;
-
-	for local pkg in [ path.glob $(TOP) : $(PACKAGES)-*.tar.gz $(PACKAGES)-*.tar.bz2 $(PACKAGES)-*.zip ]
+	ZIP_EXTENSIONS	= tar.gz tar.xz tar.bz2 zip ;
+	GCC_PATH		= [ path.pwd ] ;
+	
+	for local pkg in [ path.glob $(GCC_PATH) : $(PACKAGES)-*.$(ZIP_EXTENSIONS) ]
 	{
 		pkg = $(pkg:BS) ;
-		local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.bz2|zip)$" : $(pkg) ] ;
-
-		if ! [ path.exists $(TOP)/$(x[1]) ]
+		local exts = [ sequence.join $(ZIP_EXTENSIONS) : "|" ] ;
+		local x = [ MATCH "^(.*)-(.*)\\.($(exts))$" : $(pkg) ] ;
+				
+		if ! [ path.exists $(GCC_PATH)/$(x[1]) ]
 		{
-			SHELL "$(UNZIP-$(x[3])) $(pkg)" ;
-			SHELL "ln -sf $(x[1])-$(x[2]) $(x[1])" ;
+			unzip $(pkg) ;
+			ln $(x[1])-$(x[2]) : $(x[1]) ;
 		}
 	}
 }
@@ -36,15 +54,12 @@ actions build-gcc-action
 	rm -rf build
 	mkdir build
 	cd build
-	../configure --enable-checking=release --enable-threads=posix --enable-languages=c,c++ --disable-multilib --prefix=$(PREFIX)
+	../configure --prefix=$(PREFIX) $(.options)
 	$(MAKE_PATH)/bin/make -j$(JOBS)
 	$(MAKE_PATH)/bin/make install
 }
 
-rule build-gcc ( )
-{
-	notfile gcc : @build-gcc-action ;
-}
-
-unpackage ;
-build-gcc ;
+gnu-rules.flag $(__name__).build-gcc-action : binutils-path ;
+gnu-rules.flag $(__name__).build-gcc-action : make-path ;
+gnu-rules.flag $(__name__).build-gcc-action : prefix ;
+gnu-rules.flag $(__name__).build-gcc-action : jobs ;
