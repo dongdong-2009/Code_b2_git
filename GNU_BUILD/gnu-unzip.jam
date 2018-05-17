@@ -2,6 +2,16 @@ import notfile gnu-rules ;
 
 .module-name = $(__name__) ;
 
+rule is-zip ( x )
+{
+	return [ MATCH "\\.(tar.gz|tar.bz2|tar.xz|zip)$" : $(x:BS) ] ;
+}
+
+rule is-archive ( x )
+{
+	return is-zip $(x) ;
+}
+
 rule unzip ( zip )
 {
 	local x = [ MATCH "^(.*)\\.(tar.gz|tar.bz2|tar.xz|zip)$" : $(zip:BS) ] ;
@@ -59,4 +69,4 @@ gnu-rules.flag $(__name__).unzip-zip-action			: zip-file ;
 gnu-rules.flag $(__name__).unzip-tar-xz-action		: tar-xz-file ;
 gnu-rules.flag $(__name__).unzip-tar-xz-action		: tar-file ;
 
-IMPORT $(__name__) : unzip ln : : unzip ln ;
+IMPORT $(__name__) : unzip ln is-zip : : unzip ln is-zip ;

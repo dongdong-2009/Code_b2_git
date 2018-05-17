@@ -28,14 +28,9 @@ esac
 #
 # alias
 #
-alias ls='ls -lrt'
+alias ls='ls -l'
 alias start='transactive start'
-alias START='start'
 alias stop='watson kill'
-alias STOP='stop'
-alias rm='rm -f'
-alias PWD='pwd'
-
 
 #
 # system

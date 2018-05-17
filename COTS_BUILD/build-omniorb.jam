@@ -3,9 +3,15 @@ import notfile ;
 path-constant 	HERE			: . ;
 path-constant	OMNIORB_TOP		: . ;
 path-constant	PREFIX			: $(HERE)/$(CONFIG_GUESS) ;
+constant		OMNIORB_VERSION	: $(HERE:BS) ;
 
 if ! [ check-build ]
 {
+	if $(OMNIORB_VERSION) = omniORB_4.2.2
+	{
+		notfile fix-4.2.2 : @fix-4.2.2-actions ;
+	}
+
 	notfile build-omniorb : @build-omniorb-action ;
 }
 
@@ -22,6 +28,13 @@ actions build-omniorb-action
 	../configure --prefix=$(PREFIX)
 	make -j$(JOBS)
 	make install
+}
+
+actions fix-4.2.2-actions
+{
+	cd $(HERE)/src/tool/omkdepend
+	mv ifparser.h ifparser.h-ori
+	sed 's/^#include <stdio.h>/\/\/ #include <stdio.h>/' ifparser.h-ori > ifparser.h
 }
 
 #

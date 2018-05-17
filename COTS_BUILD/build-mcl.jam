@@ -2,7 +2,7 @@ import path sequence os string common "class" ta-os ta-version notfile print opt
 
 path-constant 	HERE			: . ;
 constant		MYSQL_VERSION	: 5.5.15 ;
-constant		BOOST_VERSION	: boost_1_56_0 ;
+constant		BOOST_VERSION	: boost_1_65_1 ;
 path-constant	PREFIX			: $(HERE)/lib/$(IDENTIFIER)_mysql$(MYSQL_VERSION)_$(BOOST_VERSION) ;
 path-constant	BOOST_ROOT		: $(COTS)/boost/$(BOOST_VERSION) ;
 path-constant	MYSQL_DIR		: $(COTS)/mysql/$(MYSQL_VERSION)/$(IDENTIFIER) ;
@@ -13,7 +13,20 @@ MYSQL_INCLUDE_DIR	= $(MYSQL_INCLUDE_DIR[1]) ;
 
 if ! [ check-build ]
 {
-	notfile build-mcl : @build-mcl-action ;
+	notfile build-mcl-step-1 : @pre-build-action  ;
+	notfile build-mcl-step-2 : @build-mcl-action  ;
+	notfile build-mcl-step-3 : @post-build-action  ;
+}
+
+actions pre-build-action
+{
+	cp CMakeLists.txt CMakeLists.txt-ori
+	sed -e 's/ADD_SUBDIRECTORY(examples)/#ADD_SUBDIRECTORY(examples)/' -e 's/ADD_SUBDIRECTORY(test)/#ADD_SUBDIRECTORY(test)/' -e 's/ADD_SUBDIRECTORY(test\/framework)/#ADD_SUBDIRECTORY(test\/framework)/' -e 's/ADD_SUBDIRECTORY(test\/CJUnitTestsPort)/#ADD_SUBDIRECTORY(test\/CJUnitTestsPort)/' -e 's/ADD_SUBDIRECTORY(test\/unit)/#ADD_SUBDIRECTORY(test\/unit)/' CMakeLists.txt-ori > CMakeLists.txt
+}
+
+actions post-build-action
+{
+	mv CMakeLists.txt-ori CMakeLists.txt
 }
 
 actions build-mcl-action

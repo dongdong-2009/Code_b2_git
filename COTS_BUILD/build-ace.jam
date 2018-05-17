@@ -36,19 +36,11 @@ if ! [ check-build ]
 	}
 	else
 	{
+		notfile fix-os-if-h : @fix-os-if-h-action ;
 		notfile build-ace : @build-ace-action ;
 	}
 }
 
-#
-# NOTE:
-#	MODIFY
-#		$(ACE_ROOT)/ace/os_include/net/os_if.h:28
-#	FROM
-#		//#  include /**/ <net/if.h>
-#	TO
-#		#  include /**/ <net/if.h>
-#
 actions build-ace-action
 {
 	export ACE_ROOT=$(ACE_ROOT)
@@ -75,8 +67,22 @@ actions build-ace-action-autoconf
 	chmod -R +x $(ACE_ROOT)/MPC
 	chmod -R +x $(ACE_ROOT)/configure
 	../configure --prefix=$(PREFIX)
-	make -j$(JOBS)
-	make install
-	cd $(PREFIX)/lib
-	cp *.* ..
+	make -j$(JOBS) && make install
+	cd $(PREFIX)/lib && cp *.* ..
+}
+
+#
+# NOTE:
+#	MODIFY
+#		$(ACE_ROOT)/ace/os_include/net/os_if.h:28
+#	FROM
+#		//#  include /**/ <net/if.h>
+#	TO
+#		#  include /**/ <net/if.h>
+#
+actions fix-os-if-h-action
+{
+	cd $(ACE_ROOT)/ace/os_include/net
+	mv os_if.h os_if.h-ori
+	sed 's/^\/\/#  include \/\*\*\/ <net\/if.h>/#  include \/**\/ <net\/if.h>/' os_if.h-ori > os_if.h
 }

@@ -4,10 +4,14 @@ import path notfile gnu-unzip gnu-rules ;
 
 rule build-gnu ( zip : requirements * )
 {
-	unzip $(zip) ;
+	local name = $(zip) ;
 
-	local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.bz2|zip)$" : $(zip) ] ;
-	local name = $(x[1])-$(x[2]) ;
+	if [ is-zip $(zip) ]
+	{
+		unzip $(zip) ;
+		local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.bz2|zip)$" : $(zip) ] ;
+		name = $(x[1])-$(x[2]) ;
+	}
 
 	notfile build-$(name)
 		: @$(.module-name).build-gnu-actions
@@ -19,6 +23,7 @@ rule build-gnu ( zip : requirements * )
 
 actions build-gnu-actions
 {
+	export FORCE_UNSAFE_CONFIGURE=1
 	cd $(LIBRARY_NAME)
 	./configure --prefix=$(PREFIX) --options=$(OPTIONS)
 	make -j$(JOBS)

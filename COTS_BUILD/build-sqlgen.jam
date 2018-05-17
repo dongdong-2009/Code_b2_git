@@ -1,10 +1,6 @@
-import path sequence os string common "class" ta-os ta-version ;
-using gcc ;
 
-path-constant 	TOP			: . ;
-constant		TA_OS		: [ class.new ta-os-class ] ;
-constant		IDENTIFIER	: [ $(TA_OS).identifier ] ;
-constant		PREFIX		: $(TOP)/bin/$(IDENTIFIER) ;
+path-constant 	HERE		: . ;
+constant		PREFIX		: $(HERE)/bin/$(IDENTIFIER) ;
 
 project
 	: build-dir build
