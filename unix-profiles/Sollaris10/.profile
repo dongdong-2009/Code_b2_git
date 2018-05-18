@@ -1,0 +1,95 @@
+#
+# Copyright (c) 2001 by Sun Microsystems, Inc.
+# All rights reserved.
+#
+# ident	"@(#)local.profile	1.10	01/06/23 SMI"
+stty istrip
+PATH=/usr/bin:/usr/ucb:/etc:.
+export PATH
+
+#
+# Simple profile places /usr/bin at front, followed by /usr/sbin.
+#
+# Use less(1) or more(1) as the default pager for the man(1) command.
+#
+export PATH=/usr/bin:/usr/local/bin:/etc:/usr/sbin:/usr/ccs/bin:/usr/sfw/bin:.
+# DO-NOT-USE
+#	/usr/ucb
+
+if [ -f /usr/bin/less ]; then
+    export PAGER="/usr/bin/less -ins"
+elif [ -f /usr/bin/more ]; then
+    export PAGER="/usr/bin/more -s"
+fi
+
+#
+# Define default prompt to <username>@<hostname>:<path><"($|#) ">
+# and print '#' for user "root" and '$' for normal users.
+#
+# Currently this is only done for bash/pfbash(1).
+#
+
+case ${SHELL} in
+*bash)
+    typeset +x PS1="\u@\h: \w \\$ "
+    ;;
+esac
+
+#
+# system
+#
+export CDPATH=.:/export/home
+export LD_PRELOAD_32=/usr/lib/extendedFILE.so.1
+
+#
+# alias
+#
+alias ls='ls -l'
+alias start='transactive start'
+alias stop='watson kill'
+
+#
+# system
+#
+ulimit -n 65535
+
+#
+# core-dump
+#
+coreadm -p /u01/transactive/core_files/%n.%f.%p $$
+
+#
+# /export/home/local
+#
+export PATH=/export/home/local/bin:$PATH
+
+#
+# gcc
+#
+export PATH=/export/home/local/gcc-4.8.5/bin:$PATH
+export LD_LIBRARY_PATH=/lib:/usr/lib:/usr/local/lib:/export/home/local/gcc-4.8.5/lib:/usr/sfw/lib:$LD_LIBRARY_PATH
+# DO-NOT-USE:
+#	/usr/ccs/lib
+
+#
+# transactive
+#
+export PATH=/u01/transactive/bin:/u01/transactive:$PATH
+export LD_LIBRARY_PATH=/u01/transactive/lib:$LD_LIBRARY_PATH
+
+#
+# p4
+#
+export P4USER=limin.zhu
+export P4PASSWD=Coreteam
+export P4CLIENT=limin.zhu_solaris10
+export P4PORT=192.168.253.15:1666
+
+#
+# oracle
+#
+export ORACLE_HOME=/u01/app/oracle/instantclient_11_2
+export TNS_ADMIN=$ORACLE_HOME
+export LD_LIBRARY_PATH=$ORACLE_HOME:$LD_LIBRARY_PATH
+export NLS_LANG="SIMPLIFIED CHINESE_CHINA.ZHS32GB18030"
+export PATH=$ORACLE_HOME:$PATH

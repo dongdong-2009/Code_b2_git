@@ -1,10 +1,16 @@
 
 path-constant 	HERE		: . ;
+constant		SQLGEN_VER	: $(HERE:BS) ;
 constant		PREFIX		: $(HERE)/bin/$(IDENTIFIER) ;
 
 project
 	: build-dir build
 	;
+
+if $(SQLGEN_VER) = 1.1.0
+{
+	CXXFLAGS += "-include string.h" ;
+}
 
 exe sqlgen
 	: [ glob src/*.cpp ]
@@ -12,6 +18,7 @@ exe sqlgen
 	  <runtime-link>shared
 	  <threading>multi
 	  <optimization>speed
+	  <cxxflags>$(CXXFLAGS)
 	;
 
 install install-sqlgen

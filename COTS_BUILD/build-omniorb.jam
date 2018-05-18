@@ -24,7 +24,7 @@ actions build-omniorb-action
 	chmod -R +x bin configure
 	rm -rf build
 	mkdir build
-	cd build
+	cd ./build
 	../configure --prefix=$(PREFIX)
 	make -j$(JOBS)
 	make install

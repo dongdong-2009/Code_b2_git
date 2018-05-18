@@ -1,0 +1,57 @@
+import notfile gnu-rules ;
+
+.module-name = $(__name__) ;
+
+rule ln ( real-file : link-file )
+{
+	notfile $(real-file)-$(link-file)
+		: @$(.module-name).ln-action
+		:
+		: <real-file>$(real-file)
+		  <link-file>$(link-file)
+		;
+}
+
+rule p4-sync ( port : user : password : client : force ? : branch )
+{
+	notfile sync-$(branch)
+		: @p4-sync-action
+		:
+		: <p4-port>$(port)
+		  <p4-user>$(user)
+		  <p4-password>$(password)
+		  <p4-client>$(client)
+		  <p4-force>$(force)
+		  <p4-branch>$(branch)
+		;
+}
+
+actions p4-sync-action ( )
+{
+	p4 -p $(P4_PORT) -u $(P4_USER) -P $(P4_PASSWORD) -c $(P4_CLIENT) sync $(P4_FORCE) //depot/$(P4_BRANCH)/...
+}
+
+actions ln-action
+{
+	ln -sf $(REAL_FILE) $(LINK_FILE)
+}
+
+rule flag ( rule-name : feature-name )
+{
+	local split = [ SPLIT_BY_CHARACTERS $(feature-name) : - ] ;
+	local variable-name = [ sequence.join $(split:U) : _ ] ;
+	feature.feature $(feature-name) : : free incidental ;
+	modules.call-in [ CALLER_MODULE ] : import toolset ;
+	modules.call-in [ CALLER_MODULE ] : toolset.flags $(rule-name) $(variable-name) <$(feature-name)> ;
+}
+
+flag $(__name__).ln-action 			: real-file ;
+flag $(__name__).ln-action			: link-file ;
+flag $(__name__).p4-sync-action		: p4-port ;
+flag $(__name__).p4-sync-action		: p4-user ;
+flag $(__name__).p4-sync-action		: p4-password ;
+flag $(__name__).p4-sync-action		: p4-client ;
+flag $(__name__).p4-sync-action		: p4-force ;
+flag $(__name__).p4-sync-action		: p4-branch ;
+
+IMPORT $(__name__) : p4-sync ln : : p4-sync ln ;

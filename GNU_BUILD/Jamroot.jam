@@ -10,16 +10,15 @@ constant		JOBS			: 16 ;
 rule build-gcc ( )
 {
 	import build-gcc ;
-	
+
 	local gcc-path = [ path.pwd ] ;
 	local gcc-ver = $(gcc-path:BS) ;
-	
-	build-gcc.build-gcc $(gcc-version)
+
+	build-gcc.build-gcc $(gcc-ver)
 		: <prefix>$(PREFIX)/$(gcc-ver)
-		  <jobs>$(JOBS)
-		  <options>$(options)
 		  <binutils-path>$(BINUTILS_PATH)
 		  <make-path>$(MAKE_PATH)
+		  <jobs>$(JOBS)
 		;
 }
 
@@ -32,7 +31,7 @@ rule build-gcc ( )
 	if $(zip)
 	{
 		import gnu-unzip ;
-		
+
 		unzip $(zip) ;
 	}
 
@@ -41,7 +40,7 @@ rule build-gcc ( )
 	if $(zip)
 	{
 		import build-gnu ;
-		
+
 		local options = [ option.get "options" ] ;
 
 		build-gnu $(zip)

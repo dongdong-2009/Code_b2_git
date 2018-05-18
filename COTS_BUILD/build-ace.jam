@@ -43,7 +43,7 @@ if ! [ check-build ]
 
 actions build-ace-action
 {
-	export ACE_ROOT=$(ACE_ROOT)
+	ACE_ROOT=$(ACE_ROOT); export ACE_ROOT
 	cd $(ACE_ROOT)
 	chmod -R +x $(ACE_ROOT)/bin
 	chmod -R +x $(ACE_ROOT)/MPC
@@ -58,11 +58,11 @@ actions build-ace-action
 
 actions build-ace-action-autoconf
 {
-	export ACE_ROOT=$(ACE_ROOT)
+	ACE_ROOT=$(ACE_ROOT); export ACE_ROOT
 	cd $(ACE_ROOT)
 	rm -rf build
 	mkdir build
-	cd build
+	cd ./build
 	chmod -R +x $(ACE_ROOT)/bin
 	chmod -R +x $(ACE_ROOT)/MPC
 	chmod -R +x $(ACE_ROOT)/configure

@@ -10,12 +10,15 @@ constant		JOBS			: [ $(TA_OS).processor-numbers ] ;
 constant		OS_NAME			: [ $(TA_OS).name ] ;
 constant		OS_TYPE			: [ $(TA_OS).type ] ;
 
-rule check-build ( )
+rule check-build ( prefix ? )
 {
 	local m = [ CALLER_MODULE ] ;
-	local prefix = [ modules.peek $(m) : PREFIX ] ;
+	prefix ?= [ modules.peek $(m) : PREFIX ] ;
 	if [ path.exists $(prefix) ]
 	{
-		return true ;
+		if ! [ option.get "force" : : true ]
+		{
+			return true ;
+		}
 	}
 }

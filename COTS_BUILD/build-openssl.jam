@@ -27,11 +27,28 @@ CONFIG_COMPILER = [ guess-compiler ] ;
 
 if ! [ check-build ]
 {
-	notfile build-openssl : @build-openssl-action ;
+	if [ $(TA_OS).on-solaris-10 ]
+	{
+		notfile build-openssl : @build-openssl-on-solaris-10-action ;
+	}
+	else
+	{
+		notfile build-openssl : @build-openssl-action ;
+	}
 }
 
 actions build-openssl-action
 {
+	chmod -R +x ./util
+	chmod +x ./Configure
+	./Configure $(CONFIG_COMPILER) shared --prefix=$(PREFIX)
+	make -j$(JOBS)
+	make install
+}
+
+actions build-openssl-on-solaris-10-action
+{
+	PATH=/usr/sfw/bin:$PATH; export PATH
 	chmod -R +x ./util
 	chmod +x ./Configure
 	./Configure $(CONFIG_COMPILER) shared --prefix=$(PREFIX)

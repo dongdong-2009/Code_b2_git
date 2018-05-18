@@ -23,8 +23,8 @@ rule build-gnu ( zip : requirements * )
 
 actions build-gnu-actions
 {
-	export FORCE_UNSAFE_CONFIGURE=1
-	cd $(LIBRARY_NAME)
+	FORCE_UNSAFE_CONFIGURE=1; export FORCE_UNSAFE_CONFIGURE
+	cd ./$(LIBRARY_NAME)
 	./configure --prefix=$(PREFIX) --options=$(OPTIONS)
 	make -j$(JOBS)
 	make install

@@ -4,7 +4,7 @@ import notfile gnu-rules ;
 
 rule is-zip ( x )
 {
-	return [ MATCH "\\.(tar.gz|tar.bz2|tar.xz|zip)$" : $(x:BS) ] ;
+	return [ MATCH "\\.(tar.gz|tgz|tar.bz2|tar.xz|zip)$" : $(x:BS) ] ;
 }
 
 rule is-archive ( x )
@@ -14,11 +14,12 @@ rule is-archive ( x )
 
 rule unzip ( zip )
 {
-	local x = [ MATCH "^(.*)\\.(tar.gz|tar.bz2|tar.xz|zip)$" : $(zip:BS) ] ;
+	local x = [ MATCH "^(.*)\\.(tar.gz|tgz|tar.bz2|tar.xz|zip)$" : $(zip:BS) ] ;
 
 	switch $(x[2])
 	{
 		case zip     : notfile unzip-$(zip) : @$(.module-name).unzip-zip-action 	: : <zip-file>$(zip) ;
+		case tgz	 : notfile unzip-$(zip) : @$(.module-name).unzip-tar-gz-action  : : <tar-gz-file>$(zip) ;
 		case tar.gz	 : notfile unzip-$(zip) : @$(.module-name).unzip-tar-gz-action  : : <tar-gz-file>$(zip) ;
 		case tar.bz2 : notfile unzip-$(zip) : @$(.module-name).unzip-tar-bz2-action : : <tar-bz2-file>$(zip) ;
 		case tar.xz  : notfile unzip-$(zip) : @$(.module-name).unzip-tar-xz-action  : : <tar-xz-file>$(zip) <tar-file>$(zip:D)$(x[1]).tar ;

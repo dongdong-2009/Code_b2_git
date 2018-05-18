@@ -33,7 +33,7 @@ actions build-mcl-action
 {
 	rm -rf build
 	mkdir build
-	cd build
+	cd ./build
 	rm -f ../CMakeCache.txt
 	cmake .. -DCMAKE_INSTALL_PREFIX=$(PREFIX) -DBOOST_ROOT=$(BOOST_ROOT) -DMYSQL_DIR=$(MYSQL_DIR) -DMYSQL_INCLUDE_DIR=$(MYSQL_INCLUDE_DIR) -DMYSQL_LIB_DIR=$(MYSQL_LIB_DIR)
 	make -j$(JOBS)
@@ -52,4 +52,9 @@ actions build-mcl-action
 # 		ADD_SUBDIRECTORY(test/framework)
 # 		ADD_SUBDIRECTORY(test/CJUnitTestsPort)
 # 		ADD_SUBDIRECTORY(test/unit)
+#
+# FOR mcl-1.1.5 - Solaris10
+# 	comment out '-xstrconst -mt' from files: 
+#		build/driver/CMakeFiles/mysqlcppconn.dir/flags.make
+#		build/driver/CMakeFiles/mysqlcppconn-static.dir/flags.make
 #

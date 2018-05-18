@@ -16,10 +16,10 @@ rule init ( options )
 	.options = $(options) ;
 }
 
-rule build-gcc ( : requirements * )
+rule build-gcc ( gcc-ver ? : requirements * )
 {
 	unzip-prerequisites ;
-	
+
 	notfile build-gcc
 		: @$(.module-name).build-gcc-action
 		:
@@ -32,13 +32,13 @@ rule unzip-prerequisites ( )
 	PACKAGES		= gmp mpfr mpc isl ;
 	ZIP_EXTENSIONS	= tar.gz tar.xz tar.bz2 zip ;
 	GCC_PATH		= [ path.pwd ] ;
-	
+
 	for local pkg in [ path.glob $(GCC_PATH) : $(PACKAGES)-*.$(ZIP_EXTENSIONS) ]
 	{
 		pkg = $(pkg:BS) ;
 		local exts = [ sequence.join $(ZIP_EXTENSIONS) : "|" ] ;
 		local x = [ MATCH "^(.*)-(.*)\\.($(exts))$" : $(pkg) ] ;
-				
+
 		if ! [ path.exists $(GCC_PATH)/$(x[1]) ]
 		{
 			unzip $(pkg) ;
@@ -49,11 +49,11 @@ rule unzip-prerequisites ( )
 
 actions build-gcc-action
 {
-	export PATH=/usr/bin:/usr/sbin:/usr/local/bin:$(BINUTILS_PATH)/bin
+	PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/sfw/bin:/usr/ccs/bin:$(BINUTILS_PATH)/bin:$PATH; export PATH
 	rm -rf ./bin ./build
 	rm -rf build
 	mkdir build
-	cd build
+	cd ./build
 	../configure --prefix=$(PREFIX) $(.options)
 	$(MAKE_PATH)/bin/make -j$(JOBS)
 	$(MAKE_PATH)/bin/make install

@@ -14,7 +14,7 @@ if ! [ check-build ]
 
 actions build-curl-action
 {
-	chmod +x ./configure
+	chmod +x ./configure ./install-sh
 	./configure --prefix=$(PREFIX) --with-ssl=$(WITH_SSL) --with-libssh2=$(WITH_LIBSSH2)
 	make -j$(JOBS)
 	make install
