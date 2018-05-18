@@ -1,0 +1,132 @@
+#!/bin/sh
+#
+# Purpose:
+#
+#     The purpose of this script is to start and stop the ITS system
+#     controller as part of the server start up and shutdown
+#     procedure.
+#
+#
+# Set up the ITS operating environment.
+#
+
+# TD14376, solve OmniOrb binding to the wrong ip address problem
+ORBendPoint=giop:tcp:`hostname`:; export ORBendPoint
+TRA_HOME=/u01/transactive; export TRA_HOME
+PATH=/etc:$TRA_HOME/bin:$PATH; export PATH
+LANG=C; export LANG
+LC_ALL=C; export LC_ALL
+
+#LD_LIBRARY_PATH=$TRA_HOME/lib:$LD_LIBRARY_PATH
+#export LD_LIBRARY_PATH
+
+rm -rf $TRA_HOME/log/*
+
+#
+# Get the PID of the running SystemController.  It will be used to determine if
+# an existing SystemController is running.
+#
+SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+
+case $1 in
+
+    #
+    # Start the software.
+    #
+    start)
+
+        #
+        # Done start a second system controller if one is already
+        # running.
+        #
+        if [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+        then
+            echo "There is already a system controller running. $SYSTEM_VERSION A second one will not be started."
+            exit 255
+        fi
+
+		# speed up failover in event primary not contactable
+		# ndd -set /dev/tcp tcp_ip_abort_cinterval 30000
+
+		#
+		# Start the system controller.
+		#
+		cd $TRA_HOME/bin
+		watson kill
+
+		nohup $TRA_HOME/bin/SystemController \
+			--hostname=occa --startup-time=20000 \
+			--user=root --password=root \
+			--debug-level=SQL --debug-file-max-size=30000000 --debug-file=$TRA_HOME/log/SystemController.log \
+			--central-database=Oracle:GZL9_TRANSACT:ITS_GZL9:ITS_GZL9: --charset=gbk \
+			--db-connection-file=$TRA_HOME/config/ORACLE_GZL9_TRANSACT.csv \
+			2>&1 > $TRA_HOME/log/startup.out &
+
+	;;
+
+    #
+    # Stop the running system controller.
+    #
+    stop)
+
+        #
+        # If the system controller is not running, display an
+        # error message and exit.
+        #
+        if [ "" -eq "$SYSTEM_CONTROLLER_PID" ]
+        then
+            echo "ITS system controller not running"
+            exit 0
+        fi
+
+        #
+        # Now stop the system controller.
+        #
+        echo
+        echo
+        echo "Stopping the TRANSACTIVE system controller with entity name - $ENTITY_NAME"
+        kill -15 $SYSTEM_CONTROLLER_PID
+
+		#
+		# Wait until the system controller has stopped.
+		#
+		# DURATION=0
+		# while [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+		#  do
+		#     DURATION=`expr $DURATION + 1 `
+		# 	sleep 1
+		# 	echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+		#     #1.7 line below
+		#      SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+		#
+		#  done
+		# echo 'System Controller has now stopped'
+        ;;
+
+    *)
+        echo "usage: transactive start|stop"
+	exit
+        ;;
+esac
+
+case $2 in
+	#if this is being run as a startup script then we dont want watson to kill the terminal
+	nowatson)
+		if [ $1 = "stop" ]
+		then
+			DURATION=0
+			while [ "" -ne "$SYSTEM_CONTROLLER_PID" ]
+				do
+					DURATION=`expr $DURATION + 1 `
+				sleep 1
+				echo "Waited $DURATION seconds for TRANSACTIVE to shut down"
+						SYSTEM_CONTROLLER_PID=`ps -ef | grep SystemController | grep -v grep | awk '{ print $2 }'`
+				done
+
+		fi
+	;;
+
+	*)
+		watson
+	;;
+esac

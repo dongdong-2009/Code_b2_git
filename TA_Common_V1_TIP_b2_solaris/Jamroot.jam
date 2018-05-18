@@ -91,6 +91,7 @@ if [ os.on-unix ]
 	if [ os.name ] = SOLARIS
 	{
 		LINKFLAGS += "-z rescan" ;
+		LINKFLAGS += "-Wl,-t" ;
 	}
 
 	CXXFLAGS += -std=$(config.gcc-std) ;

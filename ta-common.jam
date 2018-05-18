@@ -1,6 +1,14 @@
-import notfile gnu-rules ;
+import notfile sequence feature modules numbers ;
 
 .module-name = $(__name__) ;
+
+rule unique-name ( )
+{
+	.count ?= 1 ;
+	local result = $(.count) ;
+	.count = [ numbers.increment $(.count) ] ;
+	return $(result) ;
+}
 
 rule ln ( real-file : link-file )
 {
@@ -14,8 +22,15 @@ rule ln ( real-file : link-file )
 
 rule p4-sync ( port : user : password : client : force ? : branch )
 {
-	notfile sync-$(branch)
-		: @p4-sync-action
+	if $(force)
+	{
+		force = "-f" ;
+	}
+
+	local count = [ unique-name ] ;
+
+	notfile sync-$(branch)-$(count)
+		: @$(.module-name).p4-sync-action
 		:
 		: <p4-port>$(port)
 		  <p4-user>$(user)
@@ -26,7 +41,7 @@ rule p4-sync ( port : user : password : client : force ? : branch )
 		;
 }
 
-actions p4-sync-action ( )
+actions p4-sync-action
 {
 	p4 -p $(P4_PORT) -u $(P4_USER) -P $(P4_PASSWORD) -c $(P4_CLIENT) sync $(P4_FORCE) //depot/$(P4_BRANCH)/...
 }

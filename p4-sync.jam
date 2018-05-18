@@ -1,42 +1,30 @@
-import path sequence os ;
+import path sequence os ta-common ;
 
 TOP				= [ path.pwd ] ;
-p4.command		= p4 ;
 p4.user			= limin.zhu ;
 p4.port			= "192.168.253.15:1666" ;
-p4.client		= limin.zhu_solaris11 ;
+p4.client		= limin.zhu_solaris10_verify limin.zhu_solaris10_verify_fzl1 limin.zhu_solaris10_verify_gzl9 ;
 p4.password		= Coreteam ;
-Branchs			= PRIV_3001
-				  TA_Common_V1_TIP
+Branchs			= TA_Common_V1_TIP
 				  T253_PSCADA_TIP
 				  C830G_TIP
+				  C830G_MYSQL_TIP
 				  3001_TIP_NEW
 				  FZL1_TIP
 				  GZL9_TIP
 				  ;
 
+.module-name = $(__name__) ;
+
 rule p4-sync ( )
 {
-	local force-sync-option = "" ;
-
-	if [ option.get "force" : : true ]
-	{
-		force-sync-option = -f ;
-	}
+	local force = [ option.get "force" ] ;
 
 	for local client in $(p4.client)
 	{
 		for local branch in $(Branchs)
 		{
-			local cmd = [ sequence.join "$(p4.command)"
-										"-p $(p4.port)"
-										"-u $(p4.user)"
-										"-P $(p4.password)"
-										"-c $(client)"
-										"sync $(force-sync-option) //depot/$(branch)/..."
-										: " " ] ;
-
-			echo [ SHELL "$(cmd)" ] ;
+			ta-common.p4-sync $(p4.port) : $(p4.user) : $(p4.password) : $(client) : $(force) : $(branch) ;
 		}
 	}
 }
@@ -57,18 +45,37 @@ rule soft-link-cots ( COTS )
 
 				if ! [ path.exists $(cots-path) ]
 				{
-					if [ os.on-windows ]
-					{
-						SHELL "junction -q $(cots-path) $(COTS)" ;
-					}
-					else
-					{
-						SHELL "ln -sf $(COTS) $(cots-path)" ;
-					}
+					ta-common.ln $(COTS) : $(cots-path) ;
 				}
 			}
 		}
 	}
 }
+
+rule fix-case-for-dsmcorbadef ( )
+{
+	for branch in $(Branchs)
+	{
+		local the-path = $(TOP)/$(branch)/TA_BASE/code/transactive/bus/database_status_monitor/dsmCorbaDef ;
+		if [ path.exists $(the-path) ]
+		{
+			notfile fix-$(branch)
+				: @$(.module-name).fix-case-for-dsmcorbadef-action
+				:
+				: <dsmcorbadef-path>$(the-path)
+				;
+		}
+	}
+}
+
+actions fix-case-for-dsmcorbadef-action
+{
+	cd $(DSMCORBADEF_PATH)
+	mv idl IDL
+	cd ..
+	mv dsmCorbaDef DsmCorbaDef
+}
+
+ta-common.flag $(__name__).fix-case-for-dsmcorbadef-action : dsmcorbadef-path ;
 
 IMPORT $(__name__) : [ RULENAMES $(__name__) ] : : [ RULENAMES $(__name__) ] ;

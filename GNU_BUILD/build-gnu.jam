@@ -5,18 +5,26 @@ import path notfile gnu-unzip gnu-rules ;
 rule build-gnu ( zip : requirements * )
 {
 	local name = $(zip) ;
+	local options ;
 
 	if [ is-zip $(zip) ]
 	{
 		unzip $(zip) ;
-		local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.bz2|zip)$" : $(zip) ] ;
+		local x = [ MATCH "^(.*)-(.*)\\.(tar.gz|tar.xz|tar.bz2|zip)$" : $(zip) ] ;
 		name = $(x[1])-$(x[2]) ;
+	}
+
+	if [ MATCH "^(gdb)" : $(zip) ]
+	{
+		options += "--disable-werror" ;
+		options += "--disable-largefile" ;
 	}
 
 	notfile build-$(name)
 		: @$(.module-name).build-gnu-actions
 		:
 		: <library-name>$(name)
+		  <options>$(options)
 		  $(requirements)
 		;
 }
@@ -25,7 +33,7 @@ actions build-gnu-actions
 {
 	FORCE_UNSAFE_CONFIGURE=1; export FORCE_UNSAFE_CONFIGURE
 	cd ./$(LIBRARY_NAME)
-	./configure --prefix=$(PREFIX) --options=$(OPTIONS)
+	./configure --prefix=$(PREFIX) $(OPTIONS)
 	make -j$(JOBS)
 	make install
 }
